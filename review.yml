@@ -1,0 +1,372 @@
+aid: 3gpp
+name: 3GPP
+kind: standards-body
+homeMarket: Global
+review:
+  question: >-
+    Does 3GPP operate a public developer surface, and are its network APIs
+    openly published as machine-readable specifications or gated behind
+    membership?
+  answer: >-
+    Specifications and OpenAPI files are fully open with no membership, login,
+    or fee. There is no developer portal, no API key, and no callable endpoint —
+    3GPP writes the interfaces that operators deploy, it does not run a service.
+  reviewer: API Evangelist
+  date: '2026-07-25'
+findings:
+  summary: |
+    3GPP is a standards partnership, not an API provider. The correct reading of
+    its posture is "specs open, service absent" — the opposite of the gated
+    standards bodies in this sector.
+
+    There is NO first-party developer portal. developer.3gpp.org,
+    developers.3gpp.org and docs.3gpp.org do not resolve (DNS failure, HTTP 000).
+    api.3gpp.org returns 404. www.3gpp.org/developer returns 200 but is an
+    ordinary content page inside the CMS, not a developer programme — no signup,
+    no key, no sandbox, no console. www.3gpp.org/api/ answers with
+    application/vnd.api+json and a JSON:API 404 envelope, showing a Drupal
+    JSON:API module is installed, but no documented resource path was found and
+    it is not offered as a product. There is no OAuth surface: probes of
+    /.well-known/openid-configuration on www.3gpp.org return HTTP 200 but with
+    Content-Type text/html (the CMS soft-404 page), and the same path on
+    portal.3gpp.org and forge.3gpp.org returns 404.
+
+    What 3GPP does publish is the specification corpus, free of charge and
+    without login. The FTP archive at www.3gpp.org/ftp/Specs/archive/ served a
+    live directory listing (HTTP 200) and a full specification ZIP
+    (29522-i80.zip, HTTP 200, 3,020,656 bytes) anonymously. 3GPP's own
+    specifications page states plainly that "3GPP specifications are made
+    available - free of charge - four times a year following the quarterly
+    Technical Specification Group (TSG) plenary meetings."
+
+    Machine-readable APIs live in the 3GPP Forge, a public GitLab at
+    forge.3gpp.org whose REST API (/rep/api/v4) answers anonymously. Two public
+    projects carry OpenAPI: all/5G_APIs (project id 9, default branch REL-20,
+    530 files of which 472 are .yaml, covering the 5G Core Service-Based
+    Interfaces, the SCEF/NEF northbound exposure APIs, CAPIF, SEAL and the
+    application-enabler layers) and sa5/MnS (project id 12, branch Rel-19, an
+    OpenAPI/ directory of 44 management-service YAML files plus xsd and
+    yang-models). Both are visibility=public. 3GPP also runs its own OpenAPI
+    tooling in the open at forge.3gpp.org/swagger/tools/ (parser/linter, data
+    type finder, API versions overview, ABNF header checker), all HTTP 200.
+
+    116 OpenAPI documents were harvested verbatim and all 116 parse as valid
+    OpenAPI 3.0.0/3.0.1 with a paths key. 72 of them are the exposure surfaces
+    that matter commercially (TS 29.122 T8/SCEF 16, TS 29.222 CAPIF 12, TS 29.522
+    5G NEF northbound 44); the other 44 are the SA5 management services. 214 paths total.
+    32 of the SA5 documents are data-model-only (empty paths, Network Resource
+    Model schemas) — that is how 3GPP publishes them and they were kept as-is.
+
+    3GPP has no GitHub organization (api.github.com/orgs/3gpp returns 404), no
+    verifiable public Postman workspace (postman.com/3gpp resolves to the
+    generic Postman shell with no workspace name), no first-party SDKs on
+    npm/PyPI/Maven/NuGet, and no AsyncAPI. Its event mechanism is HTTP callbacks
+    declared inline in the OpenAPI documents — 43 of the 116 harvested specs
+    declare a callbacks block.
+  developerPortal:
+    url: ''
+    confirmed: false
+    gated: false
+    note: >-
+      No developer portal exists in any form. This is not a login wall and not a
+      marketing landing page — the organization simply does not run a developer
+      programme. Probed 2026-07-25.
+  probes:
+    - url: https://www.3gpp.org/
+      status: 200
+      note: Main site. Drupal CMS. Standards organization content, no developer surface.
+    - url: https://developer.3gpp.org/
+      status: 000
+      note: DNS does not resolve.
+    - url: https://developers.3gpp.org/
+      status: 000
+      note: DNS does not resolve.
+    - url: https://docs.3gpp.org/
+      status: 000
+      note: DNS does not resolve.
+    - url: https://api.3gpp.org/
+      status: 404
+      note: Host resolves but returns 404.
+    - url: https://www.3gpp.org/developer
+      status: 200
+      note: CMS content page, not a developer programme. No signup, key, sandbox, or console.
+    - url: https://www.3gpp.org/api/
+      status: 404
+      note: >-
+        Returns application/vnd.api+json with {"errors":[{"title":"Resource not
+        found","code":404}]} — a Drupal JSON:API module is present but no
+        documented resource path was found and it is not published as a product.
+    - url: https://portal.3gpp.org/
+      status: 200
+      note: 3GPP Portal — specification/work-item browser, human UI, JavaScript app.
+    - url: https://portal.3gpp.org/webservices/
+      status: 500
+      note: Legacy ASMX SOAP web-service path errors out; not usable, not documented.
+    - url: https://portal.3gpp.org/swagger
+      status: 404
+      note: No OpenAPI served by the Portal.
+    - url: https://forge.3gpp.org/
+      status: 200
+      note: Public GitLab instance hosting 3GPP-produced software and OpenAPI files.
+    - url: https://forge.3gpp.org/rep/api/v4/projects/9
+      status: 200
+      note: >-
+        GitLab REST API answers anonymously. Project all/5G_APIs, visibility
+        public, default branch REL-20, branches REL-15 through REL-20.
+    - url: https://forge.3gpp.org/rep/api/v4/projects/12
+      status: 200
+      note: Project sa5/MnS, visibility public, default branch Rel-19, OpenAPI/ directory.
+    - url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/
+      status: 200
+      note: Anonymous directory listing of every published version of TS 29.522.
+    - url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/29522-i80.zip
+      status: 200
+      note: Full specification ZIP downloaded anonymously, 3,020,656 bytes. No membership required.
+    - url: https://forge.3gpp.org/swagger/tools/parser.html
+      status: 200
+      note: 3GPP's own public OpenAPI parser/linter.
+    - url: https://api.github.com/orgs/3gpp
+      status: 404
+      note: No 3GPP GitHub organization.
+    - url: https://www.3gpp.org/.well-known/openid-configuration
+      status: 200
+      note: >-
+        HTTP 200 but Content-Type text/html — the CMS soft-404 page, NOT an OIDC
+        discovery document. Same path on portal.3gpp.org and forge.3gpp.org: 404.
+  openStandardVsMemberGated:
+    verdict: fully open
+    detail: >-
+      This is the single most important finding for a standards body in this
+      sector. 3GPP gates nothing. Technical specifications are published free of
+      charge four times a year with no account; the OpenAPI files extracted from
+      those specifications are mirrored in a public GitLab; the validation
+      tooling is public. Membership buys a seat at the table (the right to
+      contribute and vote), not access to the output. Contrast with the sector's
+      other standards bodies, where the specification itself is the membership
+      product.
+  specsHarvested:
+    count: 116
+    allParse: true
+    oasVersions:
+      - 3.0.0
+      - 3.0.1
+    totalPaths: 214
+    dataModelOnlyDocuments: 32
+    sources:
+      - repository: https://forge.3gpp.org/rep/all/5G_APIs
+        ref: REL-20
+        rawPattern: https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/<FILE>.yaml
+        fetched: '2026-07-25'
+        status: 200
+        harvested: 72
+        note: >-
+          TS 29.122 (T8 northbound / SCEF, 16 files), TS 29.222 (CAPIF, 12
+          files), TS 29.522 (5G NEF northbound, 44 files). The repository holds
+          472 .yaml files in total for Release 20; the exposure families were
+          harvested because they are the surfaces third parties actually call.
+      - repository: https://forge.3gpp.org/rep/sa5/MnS
+        ref: Rel-19
+        rawPattern: https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/<FILE>.yaml
+        fetched: '2026-07-25'
+        status: 200
+        harvested: 44
+        note: >-
+          SA5 Management Services — provisioning (TS 28.532 ProvMnS),
+          performance (TS 28.532 PerfMnS, TS 28.550), fault (TS 28.111), network
+          slice provisioning (TS 28.531), intent (TS 28.312), plus the Network
+          Resource Model schema documents (TS 28.541, TS 28.623) and the PCF/
+          NWDAF policy and analytics APIs re-published in that repository.
+camara:
+  posture: >-
+    Underlying standard, not an implementer. 3GPP writes the NEF/SCEF northbound
+    APIs that CAMARA abstracts, and CAPIF is explicitly designed to host CAMARA
+    APIs — but 3GPP publishes no CAMARA API of its own and exposes nothing
+    callable.
+  exposesCamaraApis: false
+  camaraApisFound: []
+  openGatewayMember: false
+  openGatewayNote: >-
+    GSMA Open Gateway is an operator commitment programme; 3GPP is a standards
+    partnership and is not on the operator list. GSMA participates in 3GPP as a
+    Market Representation Partner, not as an Organizational Partner (the seven
+    OPs are ARIB, ATIS, CCSA, ETSI, TSDSI, TTA and TTC).
+  adunaChannel: false
+  cpaasChannel: false
+  evidence:
+    - url: https://www.3gpp.org/technologies/ct3-exp-fr-apis
+      status: 200
+      quote: >-
+        "CAPIF is defined to establish a single and harmonized platform for
+        exposure of all the 3GPP capability exposure APIs ... and also for any
+        non-3GPP defined APIs (i.e., APIs defined by other SDO or consortiums
+        such as ETSI ISG MEC, TM Forum, CAMARA, etc.)."
+      note: >-
+        First-party 3GPP statement. This is the only CAMARA reference found on
+        3gpp.org, and it names CAMARA as a consortium whose APIs CAPIF can host —
+        it is not a claim that 3GPP implements CAMARA.
+    - url: https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_AsSessionWithQoS.yaml
+      status: 200
+      note: >-
+        Harvested. AsSessionWithQoS is the 3GPP northbound API that CAMARA's
+        Quality on Demand abstracts. Recorded as the underlay, NOT as a CAMARA
+        implementation.
+    - url: https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_MonitoringEvent.yaml
+      status: 200
+      note: >-
+        Harvested. Monitoring Event is the 3GPP northbound API underneath the
+        device-location and device-status families of network APIs. Underlay only.
+  honestReading: >-
+    A press release is not an implementation, and neither is a standards
+    reference. 3GPP has not announced CAMARA support and does not need to — it
+    occupies the layer below. The CAMARA APIs that carriers advertise are
+    abstractions over exactly the TS 29.122 / TS 29.522 documents harvested here,
+    which is why 3GPP's openness matters commercially: the southbound contracts
+    are public even where the operators exposing them are not.
+tmForum:
+  conformanceCertified: false
+  note: >-
+    3GPP holds no TM Forum Open API conformance certification and would not — it
+    is a peer standards body, not an implementer. 3GPP's own equivalent is the
+    SA5 Management Services suite (TS 28.532 Provisioning MnS, TS 28.550
+    Performance, TS 28.111 Fault, TS 28.531 Network Slice Provisioning) with the
+    Network Resource Models in TS 28.541 and TS 28.623, harvested here. 3GPP's
+    CT3 page names TM Forum alongside CAMARA and ETSI ISG MEC as an SDO whose
+    APIs CAPIF is designed to host.
+threeGppExposure:
+  nef: true
+  scef: true
+  note: >-
+    This organization IS the source of NEF and SCEF. The 5G NEF northbound API
+    family is TS 29.522 (44 OpenAPI documents harvested), the 4G SCEF T8
+    northbound family is TS 29.122 (16 harvested), and the framework that fronts
+    them is CAPIF, TS 29.222 (12 harvested).
+  networkSlicing: true
+  networkSlicingNote: >-
+    Slice provisioning is exposed through TS 28.531 (NSProvMnS, NSSProvMnS) and
+    modelled in TS 28.541 SliceNrm; slice parameters are provisioned to third
+    parties via TS 29.522 SliceParamProvision, all harvested.
+  edgeMec: true
+  edgeMecNote: >-
+    Edge exposure appears as TS 29.522 EASDeployment, ECSAddress and
+    EcsAddressProvision, and as the SA5 edge NRM TS 28.538 — all harvested.
+    3GPP's CT3 page positions ETSI ISG MEC as a separate SDO hosted by CAPIF.
+auth:
+  schemes:
+    - type: oauth2
+      flow: clientCredentials
+      note: >-
+        Declared in 63 of the 116 harvested documents as
+        components.securitySchemes.oAuth2ClientCredentials, with tokenUrl
+        templated as '{nrfApiRoot}/oauth2/token' (5G Core service-based
+        interfaces, tokens issued by the NRF) or '{tokenUrl}'. One document uses
+        the variant casing oAuth2Clientcredentials.
+    - type: capif-token
+      note: >-
+        The CAPIF Security API (TS 29.222) defines POST
+        /securities/{securityId}/token for API-invoker access tokens; CAPIF
+        Rel-18 RNAA adds resource-owner-aware authorization so the subscriber
+        can consent to an API invocation on their behalf.
+  ciba:
+    present: false
+    note: >-
+      Grepped all 116 harvested documents for "CIBA" and "backchannel" — zero
+      hits, and no authorizationCode flow is declared anywhere. CIBA is CAMARA's
+      choice for network-based user authorization; it sits in the CAMARA/GSMA
+      abstraction layer, not in the 3GPP northbound specifications. 3GPP's
+      equivalent consent mechanism is CAPIF RNAA.
+  apiKey: false
+  mtls: false
+  openidConfiguration:
+    fetched: false
+    note: >-
+      No anonymous OIDC discovery document is served on any 3GPP host. The
+      tokenUrl values in the specifications are deployment-time templates, not
+      3GPP-operated endpoints.
+webhooks:
+  present: true
+  mechanism: OpenAPI callbacks
+  count: 43
+  note: >-
+    43 of the 116 harvested documents declare a callbacks block — the northbound
+    exposure APIs are overwhelmingly subscribe/notify. No AsyncAPI is published;
+    the event contracts live inline in the OpenAPI documents.
+sdks:
+  firstParty: false
+  note: >-
+    No first-party SDK on npm, PyPI, Maven or NuGet, no GitHub organization, and
+    no verified public Postman workspace. Tooling 3GPP does ship is
+    specification tooling — the public OpenAPI parser/linter, data type finder,
+    API versions overview and ABNF header checker at forge.3gpp.org/swagger/tools/.
+graphql:
+  present: false
+grpc:
+  present: false
+  note: >-
+    3GPP service-based interfaces are HTTP/2 + JSON REST. Protocol buffers are
+    not used.
+transports:
+  - protocol: REST
+    scheme: https
+    documented: true
+    note: >-
+      HTTP/2 with JSON payloads across the service-based interfaces and the
+      northbound exposure APIs. Base URLs in every harvested document are
+      templated ({apiRoot}, {nrfApiRoot}) because 3GPP defines interfaces that
+      operators instantiate — there is no 3GPP-operated host.
+  - protocol: HTTP callbacks
+    scheme: https
+    documented: true
+    note: Subscribe/notify pattern declared inline in 43 of the harvested specs.
+  - protocol: NETCONF/YANG
+    documented: true
+    note: >-
+      The SA5 MnS repository also ships yang-models alongside the OpenAPI
+      directory; not harvested here (out of scope for OpenAPI capture).
+  - protocol: WebSocket
+    documented: false
+  - protocol: GraphQL
+    documented: false
+channelToDevelopers: >-
+  Indirect and multi-hop. A developer never touches 3GPP. The 3GPP northbound
+  specification is implemented by a network vendor, deployed by an operator as a
+  NEF, abstracted by CAMARA into a developer-friendly API, committed to by the
+  operator through GSMA Open Gateway, aggregated commercially by Aduna or a
+  CPaaS reseller, and only then sold. What 3GPP contributes to that chain — and
+  it is not nothing — is that the bottom contract is public, versioned in git,
+  and lintable by anyone.
+sources:
+  - url: https://www.3gpp.org/
+    type: Website
+    status: 200
+  - url: https://www.3gpp.org/specifications-technologies
+    type: Documentation
+    status: 200
+    note: '"3GPP specifications are made available - free of charge - four times a year."'
+  - url: https://www.3gpp.org/technologies/openapis-for-the-service-based-architecture
+    type: Documentation
+    status: 200
+    note: >-
+      3GPP's own account of the Service-Based Architecture and why the OpenAPI
+      files are published.
+  - url: https://www.3gpp.org/technologies/ct3-exp-fr-apis
+    type: Documentation
+    status: 200
+    note: Capability Exposure Frameworks and APIs — SCEF/NEF, SEAL, CAPIF, and the CAMARA reference.
+  - url: https://www.3gpp.org/technologies/rnaa
+    type: Documentation
+    status: 200
+    note: CAPIF RNAA — resource-owner-aware northbound API access, 3GPP's consent model.
+  - url: https://forge.3gpp.org/rep/all/5G_APIs
+    type: SourceCode
+    status: 200
+    note: Public GitLab, 472 OpenAPI YAML files on REL-20, branches back to REL-15.
+  - url: https://forge.3gpp.org/rep/sa5/MnS
+    type: SourceCode
+    status: 200
+    note: SA5 Management Services — OpenAPI, xsd and yang-models directories.
+  - url: https://forge.3gpp.org/swagger/tools/parser.html
+    type: Tools
+    status: 200
+  - url: https://www.3gpp.org/ftp/Specs/archive/
+    type: SpecificationsArchive
+    status: 200
