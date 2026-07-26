@@ -1,0 +1,393 @@
+generated: '2026-07-25'
+method: derived
+source: openapi/3gpp-ts29122-assessionwithqos.yml, openapi/3gpp-ts29122-chargeableparty.yml, openapi/3gpp-ts29122-cpprovisioning.yml,
+  openapi/3gpp-ts29122-devicetriggering.yml, openapi/3gpp-ts29122-ecrcontrol.yml, openapi/3gpp-ts29122-gmdviambmsbymb2.yml,
+  openapi/3gpp-ts29122-gmdviambmsbyxmb.yml, openapi/3gpp-ts29122-monitoringevent.yml, openapi/3gpp-ts29122-msisdnlessmosms.yml,
+  openapi/3gpp-ts29122-nidd.yml, openapi/3gpp-ts29122-npconfiguration.yml, openapi/3gpp-ts29122-pfdmanagement.yml,
+  openapi/3gpp-ts29122-racsparameterprovisioning.yml, openapi/3gpp-ts29122-reportingnetworkstatus.yml, openapi/3gpp-ts29122-resourcemanagementofbdt.yml,
+  openapi/3gpp-ts29222-capif-api-invoker-management-api.yml, openapi/3gpp-ts29512-npcf-smpolicycontrol.yml, openapi/3gpp-ts29514-npcf-policyauthorization.yml,
+  openapi/3gpp-ts29520-nnwdaf-analyticsinfo.yml, openapi/3gpp-ts29520-nnwdaf-eventssubscription.yml, openapi/3gpp-ts29522-5glanparameterprovision.yml,
+  openapi/3gpp-ts29522-acsparameterprovision.yml, openapi/3gpp-ts29522-addressingparamprovision.yml, openapi/3gpp-ts29522-aiot.yml,
+  openapi/3gpp-ts29522-akma.yml, openapi/3gpp-ts29522-aminfluence.yml, openapi/3gpp-ts29522-ampolicyauthorization.yml,
+  openapi/3gpp-ts29522-analyticsexposure.yml, openapi/3gpp-ts29522-applyingbdtpolicy.yml, openapi/3gpp-ts29522-asti.yml,
+  openapi/3gpp-ts29522-caginfoparamprovision.yml, openapi/3gpp-ts29522-datareporting.yml, openapi/3gpp-ts29522-datareportingprovisioning.yml,
+  openapi/3gpp-ts29522-dnaimapping.yml, openapi/3gpp-ts29522-easdeployment.yml, openapi/3gpp-ts29522-ecsaddress.yml,
+  openapi/3gpp-ts29522-ecsaddressprovision.yml, openapi/3gpp-ts29522-groupparametersprovisioning.yml, openapi/3gpp-ts29522-imseventexposure.yml,
+  openapi/3gpp-ts29522-imsparamprovision.yml, openapi/3gpp-ts29522-imssessionmanagement.yml, openapi/3gpp-ts29522-iptvconfiguration.yml,
+  openapi/3gpp-ts29522-lpiparameterprovision.yml, openapi/3gpp-ts29522-mbsgroupmsgdelivery.yml, openapi/3gpp-ts29522-mbssession.yml,
+  openapi/3gpp-ts29522-mbstmgi.yml, openapi/3gpp-ts29522-mbsuserdataingestsession.yml, openapi/3gpp-ts29522-mbsuserservice.yml,
+  openapi/3gpp-ts29522-memberueselectionassistance.yml, openapi/3gpp-ts29522-molcsnotify.yml, openapi/3gpp-ts29522-mseventexposure.yml,
+  openapi/3gpp-ts29522-niddconfigurationtrigger.yml, openapi/3gpp-ts29522-pdtqpolicynegotiation.yml, openapi/3gpp-ts29522-rslppiparametersprovisioning.yml,
+  openapi/3gpp-ts29522-serviceparameter.yml, openapi/3gpp-ts29522-sliceparamprovision.yml, openapi/3gpp-ts29522-timesyncexposure.yml,
+  openapi/3gpp-ts29522-trafficinfluence.yml, openapi/3gpp-ts29522-uavflightassistance.yml, openapi/3gpp-ts29522-ueaddress.yml,
+  openapi/3gpp-ts29522-ueid.yml, openapi/3gpp-ts29522-vflinference.yml, openapi/3gpp-ts29522-vflnfdiscovery.yml,
+  openapi/3gpp-ts29522-vfltraining.yml
+docs: https://www.3gpp.org/ftp/Specs/archive/29_series/29.510/
+notes:
+- 'Scope strings in 3GPP are the service API name itself (for example nnwdaf-analyticsinfo, npcf-smpolicycontrol,
+  3gpp-vfl-inference): an access token is granted for a named network function service rather than for a fine grained
+  permission. TS 29.510 clause 6.3 defines the NRF Nnrf_AccessToken service that issues them; TS 29.222 defines
+  the CAPIF equivalent for northbound consumers.'
+- Most oauth2 securitySchemes in the estate declare an empty scopes map and carry the scope in the operation security
+  requirement instead, so the six scopes captured here are the ones the OpenAPI documents state explicitly, not
+  the full set an operator will enforce.
+- One additional scope, nnef-akma:gpsi-access, shows the finer grained form 3GPP uses when a single service exposes
+  a privacy sensitive field.
+schemes:
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-assessionwithqos.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-chargeableparty.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-cpprovisioning.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-devicetriggering.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-ecrcontrol.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-gmdviambmsbymb2.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-gmdviambmsbyxmb.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-monitoringevent.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-msisdnlessmosms.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-nidd.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-npconfiguration.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-pfdmanagement.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-racsparameterprovisioning.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-reportingnetworkstatus.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29122-resourcemanagementofbdt.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29222-capif-api-invoker-management-api.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2Clientcredentials
+  source: openapi/3gpp-ts29512-npcf-smpolicycontrol.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{nrfApiRoot}/oauth2/token'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29514-npcf-policyauthorization.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{nrfApiRoot}/oauth2/token'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29520-nnwdaf-analyticsinfo.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{nrfApiRoot}/oauth2/token'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29520-nnwdaf-eventssubscription.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{nrfApiRoot}/oauth2/token'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-5glanparameterprovision.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-acsparameterprovision.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-addressingparamprovision.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-aiot.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-akma.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-aminfluence.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-ampolicyauthorization.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-analyticsexposure.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-applyingbdtpolicy.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-asti.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-caginfoparamprovision.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-datareporting.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-datareportingprovisioning.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-dnaimapping.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-easdeployment.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-ecsaddress.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-ecsaddressprovision.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-groupparametersprovisioning.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-imseventexposure.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-imsparamprovision.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-imssessionmanagement.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-iptvconfiguration.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-lpiparameterprovision.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-mbsgroupmsgdelivery.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-mbssession.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-mbstmgi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-mbsuserdataingestsession.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-mbsuserservice.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-memberueselectionassistance.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-molcsnotify.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-mseventexposure.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-niddconfigurationtrigger.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-pdtqpolicynegotiation.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-rslppiparametersprovisioning.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-serviceparameter.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-sliceparamprovision.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-timesyncexposure.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-trafficinfluence.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-uavflightassistance.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-ueaddress.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-ueid.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-vflinference.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{nrfApiRoot}/oauth2/token'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-vflnfdiscovery.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+- name: oAuth2ClientCredentials
+  source: openapi/3gpp-ts29522-vfltraining.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+scopes:
+- scope: 3gpp-vfl-inference
+  description: Access to the VFLInference API
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/3gpp-ts29522-vflinference.yml
+- scope: nnef-akma:gpsi-access
+  description: Return GPSI in the AKMA Application Key information for the UE.
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/3gpp-ts29522-akma.yml
+- scope: nnwdaf-analyticsinfo
+  description: Access to the Nnwdaf_AnalyticsInfo API
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/3gpp-ts29520-nnwdaf-analyticsinfo.yml
+- scope: nnwdaf-eventssubscription
+  description: Access to the Nnwdaf_EventsSubscription API
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/3gpp-ts29520-nnwdaf-eventssubscription.yml
+- scope: npcf-policyauthorization
+  description: Access to the Npcf_PolicyAuthorization API
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/3gpp-ts29514-npcf-policyauthorization.yml
+- scope: npcf-smpolicycontrol
+  description: Access to the Npcf_SMPolicyControl API
+  flows:
+  - clientCredentials
+  sources:
+  - openapi/3gpp-ts29512-npcf-smpolicycontrol.yml

@@ -1,0 +1,90 @@
+generated: '2026-07-25'
+method: derived
+status: candidate
+source: openapi/*.yml operationIds in this repo
+summary: >-
+  3GPP publishes no MCP server, and could not host one: it specifies interfaces that mobile network operators
+  instantiate, and every server entry in its OpenAPI documents is an {apiRoot} template rather than a callable
+  host. What follows is a candidate tool surface derived from real operationIds in the specifications, so that
+  an operator or exposure platform that deploys these interfaces has a ready made agent binding. Every tool
+  below names the operationId it wraps; none of them are callable against 3GPP.
+server:
+  name: 3gpp
+  hosted: false
+  transport: null
+  url: null
+  note: >-
+    A deployment must supply apiRoot (and, for the SA5 management services, MnSRoot and MnSVersion) plus an
+    OAuth2 client-credentials token endpoint before any of these tools can be bound to an endpoint.
+authentication:
+  type: oauth2
+  flow: clientCredentials
+  note: token issued by the NRF (TS 29.510) or the CAPIF core function (TS 29.222); see authentication/3gpp-authentication.yml
+tools:
+  - name: capif_onboard_api_invoker
+    description: Onboard an API invoker to the CAPIF core function so it can consume northbound APIs.
+    source_operation: openapi/3gpp-ts29222-capif-api-invoker-management-api.yml#CreateOnboardedAPIInvoker
+  - name: capif_update_api_invoker
+    description: Update the details of an onboarded API invoker.
+    source_operation: openapi/3gpp-ts29222-capif-api-invoker-management-api.yml#UpdateIndOnboardedAPIInvoker
+  - name: capif_offboard_api_invoker
+    description: Offboard an API invoker from the CAPIF core function.
+    source_operation: openapi/3gpp-ts29222-capif-api-invoker-management-api.yml#DeleteIndOnboardedAPIInvoker
+  - name: capif_discover_service_apis
+    description: Discover the service APIs published to the CAPIF core function that an invoker is allowed to use.
+    source_operation: openapi/3gpp-ts29222-capif-discover-service-api.yml#GetPubServAPIs
+  - name: capif_publish_service_api
+    description: Publish a service API to the CAPIF core function as an API provider.
+    source_operation: openapi/3gpp-ts29222-capif-publish-service-api.yml#CreateAPFPubAPIs
+  - name: capif_list_published_apis
+    description: List the service APIs an API publishing function has published.
+    source_operation: openapi/3gpp-ts29222-capif-publish-service-api.yml#GetAPFPubAPIs
+  - name: capif_get_security_context
+    description: Retrieve the security context and authentication information for an API invoker.
+    source_operation: openapi/3gpp-ts29222-capif-security-api.yml#GetSecIndTrustedAPIInv
+  - name: capif_create_security_context
+    description: Create the security context for an API invoker with the CAPIF core function.
+    source_operation: openapi/3gpp-ts29222-capif-security-api.yml#CreateSecIndTrustedAPIInv
+  - name: capif_request_access_token
+    description: Obtain an OAuth2 access token for an API invoker from the CAPIF core function.
+    source_operation: openapi/3gpp-ts29222-capif-security-api.yml#GetOAuthIndAPIInv
+  - name: nef_create_monitoring_event_subscription
+    description: Subscribe to UE monitoring events such as location reporting, reachability or loss of connectivity.
+    source_operation: openapi/3gpp-ts29122-monitoringevent.yml#CreateMonitoringEventSubscription
+  - name: nef_list_monitoring_event_subscriptions
+    description: List the monitoring event subscriptions belonging to an AF.
+    source_operation: openapi/3gpp-ts29122-monitoringevent.yml#FetchAllMonitoringEventSubscriptions
+  - name: nef_delete_monitoring_event_subscription
+    description: Delete an individual monitoring event subscription.
+    source_operation: openapi/3gpp-ts29122-monitoringevent.yml#DeleteIndMonitoringEventSubscription
+  - name: nef_request_qos_for_session
+    description: Request a QoS treatment for an AS session (network quality on demand).
+    source_operation: openapi/3gpp-ts29122-assessionwithqos.yml#CreateASSessionWithQoSSubscription
+  - name: nef_delete_qos_session
+    description: Release a previously requested AS session QoS subscription.
+    source_operation: openapi/3gpp-ts29122-assessionwithqos.yml#DeleteIndASSessionWithQoSSubscription
+  - name: nef_create_nidd_configuration
+    description: Create a non-IP data delivery configuration for a device.
+    source_operation: openapi/3gpp-ts29122-nidd.yml#CreateNIDDConfiguration
+  - name: nef_send_nidd_downlink_data
+    description: Send downlink non-IP data to a device.
+    source_operation: openapi/3gpp-ts29122-nidd.yml#CreateDownlinkDataDelivery
+  - name: nef_trigger_device
+    description: Trigger a device over the control plane.
+    source_operation: openapi/3gpp-ts29122-devicetriggering.yml#CreateDeviceTriggeringTransaction
+  - name: nwdaf_get_analytics
+    description: Retrieve network data analytics from the NWDAF.
+    source_operation: openapi/3gpp-ts29520-nnwdaf-analyticsinfo.yml#GetNWDAFAnalytics
+  - name: nwdaf_get_context
+    description: Retrieve NWDAF context information.
+    source_operation: openapi/3gpp-ts29520-nnwdaf-analyticsinfo.yml#GetNwdafContext
+community_servers:
+  - name: 3gpp-mcp-server
+    url: https://www.npmjs.com/package/3gpp-mcp-server
+    official: false
+    description: third party MCP server that queries 3GPP protocol specifications as documents, not as live APIs
+  - name: 3gpp-kb-mcp
+    url: https://www.npmjs.com/package/3gpp-kb-mcp
+    official: false
+    description: third party MCP server over a local 3GPP knowledge base
+crosswalk: mcp/3gpp-tool-crosswalk.yml

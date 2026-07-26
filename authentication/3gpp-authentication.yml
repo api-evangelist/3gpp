@@ -1,0 +1,101 @@
+generated: '2026-07-25'
+method: derived
+source: openapi/3gpp-ts29122-assessionwithqos.yml, openapi/3gpp-ts29122-chargeableparty.yml, openapi/3gpp-ts29122-cpprovisioning.yml,
+  openapi/3gpp-ts29122-devicetriggering.yml, openapi/3gpp-ts29122-ecrcontrol.yml, openapi/3gpp-ts29122-gmdviambmsbymb2.yml,
+  openapi/3gpp-ts29122-gmdviambmsbyxmb.yml, openapi/3gpp-ts29122-monitoringevent.yml, openapi/3gpp-ts29122-msisdnlessmosms.yml,
+  openapi/3gpp-ts29122-nidd.yml, openapi/3gpp-ts29122-npconfiguration.yml, openapi/3gpp-ts29122-pfdmanagement.yml
+  ...
+docs:
+  capif_security: https://www.3gpp.org/ftp/Specs/archive/29_series/29.222/
+  capif_security_architecture: https://www.3gpp.org/ftp/Specs/archive/33_series/33.122/
+  5g_security_architecture: https://www.3gpp.org/ftp/Specs/archive/33_series/33.501/
+  nrf_access_token: https://www.3gpp.org/ftp/Specs/archive/29_series/29.510/
+notes:
+- The only security scheme declared anywhere in the 116 OpenAPI documents is oAuth2ClientCredentials, with a deployment
+  supplied {tokenUrl}; 64 of the documents declare it. There are no API keys, no basic auth and no openIdConnect
+  scheme in the estate.
+- Tokens are issued by the NRF (TS 29.510 Nnrf_AccessToken) for 5G core service based interfaces, and by the CAPIF
+  core function (TS 29.222, security architecture in TS 33.122) for northbound APIs consumed by third party application
+  functions.
+- Beyond the token, TS 33.501 and TS 33.122 require TLS between network functions and certificate based mutual authentication
+  on the CAPIF-1e and CAPIF-2e reference points; that is specified in prose and is not expressed as a mutualTLS
+  securityScheme in the OpenAPI.
+- 3GPP itself issues no credentials. The token endpoint, client id and secret all come from the operator or exposure
+  platform that deployed the interface.
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - clientCredentials
+schemes:
+- name: oAuth2ClientCredentials
+  type: oauth2
+  flows:
+  - flow: clientCredentials
+    tokenUrl: '{tokenUrl}'
+    scopes: 0
+  sources:
+  - openapi/3gpp-ts29122-assessionwithqos.yml
+  - openapi/3gpp-ts29122-chargeableparty.yml
+  - openapi/3gpp-ts29122-cpprovisioning.yml
+  - openapi/3gpp-ts29122-devicetriggering.yml
+  - openapi/3gpp-ts29122-ecrcontrol.yml
+  - openapi/3gpp-ts29122-gmdviambmsbymb2.yml
+  - openapi/3gpp-ts29122-gmdviambmsbyxmb.yml
+  - openapi/3gpp-ts29122-monitoringevent.yml
+  - openapi/3gpp-ts29122-msisdnlessmosms.yml
+  - openapi/3gpp-ts29122-nidd.yml
+  - openapi/3gpp-ts29122-npconfiguration.yml
+  - openapi/3gpp-ts29122-pfdmanagement.yml
+  - openapi/3gpp-ts29122-racsparameterprovisioning.yml
+  - openapi/3gpp-ts29122-reportingnetworkstatus.yml
+  - openapi/3gpp-ts29122-resourcemanagementofbdt.yml
+  - openapi/3gpp-ts29222-capif-api-invoker-management-api.yml
+  - openapi/3gpp-ts29512-npcf-smpolicycontrol.yml
+  - openapi/3gpp-ts29514-npcf-policyauthorization.yml
+  - openapi/3gpp-ts29520-nnwdaf-analyticsinfo.yml
+  - openapi/3gpp-ts29520-nnwdaf-eventssubscription.yml
+  - openapi/3gpp-ts29522-5glanparameterprovision.yml
+  - openapi/3gpp-ts29522-acsparameterprovision.yml
+  - openapi/3gpp-ts29522-addressingparamprovision.yml
+  - openapi/3gpp-ts29522-aiot.yml
+  - openapi/3gpp-ts29522-akma.yml
+  - openapi/3gpp-ts29522-aminfluence.yml
+  - openapi/3gpp-ts29522-ampolicyauthorization.yml
+  - openapi/3gpp-ts29522-analyticsexposure.yml
+  - openapi/3gpp-ts29522-applyingbdtpolicy.yml
+  - openapi/3gpp-ts29522-asti.yml
+  - openapi/3gpp-ts29522-caginfoparamprovision.yml
+  - openapi/3gpp-ts29522-datareporting.yml
+  - openapi/3gpp-ts29522-datareportingprovisioning.yml
+  - openapi/3gpp-ts29522-dnaimapping.yml
+  - openapi/3gpp-ts29522-easdeployment.yml
+  - openapi/3gpp-ts29522-ecsaddress.yml
+  - openapi/3gpp-ts29522-ecsaddressprovision.yml
+  - openapi/3gpp-ts29522-groupparametersprovisioning.yml
+  - openapi/3gpp-ts29522-imseventexposure.yml
+  - openapi/3gpp-ts29522-imsparamprovision.yml
+  - openapi/3gpp-ts29522-imssessionmanagement.yml
+  - openapi/3gpp-ts29522-iptvconfiguration.yml
+  - openapi/3gpp-ts29522-lpiparameterprovision.yml
+  - openapi/3gpp-ts29522-mbsgroupmsgdelivery.yml
+  - openapi/3gpp-ts29522-mbssession.yml
+  - openapi/3gpp-ts29522-mbstmgi.yml
+  - openapi/3gpp-ts29522-mbsuserdataingestsession.yml
+  - openapi/3gpp-ts29522-mbsuserservice.yml
+  - openapi/3gpp-ts29522-memberueselectionassistance.yml
+  - openapi/3gpp-ts29522-molcsnotify.yml
+  - openapi/3gpp-ts29522-mseventexposure.yml
+  - openapi/3gpp-ts29522-niddconfigurationtrigger.yml
+  - openapi/3gpp-ts29522-pdtqpolicynegotiation.yml
+  - openapi/3gpp-ts29522-rslppiparametersprovisioning.yml
+  - openapi/3gpp-ts29522-serviceparameter.yml
+  - openapi/3gpp-ts29522-sliceparamprovision.yml
+  - openapi/3gpp-ts29522-timesyncexposure.yml
+  - openapi/3gpp-ts29522-trafficinfluence.yml
+  - openapi/3gpp-ts29522-uavflightassistance.yml
+  - openapi/3gpp-ts29522-ueaddress.yml
+  - openapi/3gpp-ts29522-ueid.yml
+  - openapi/3gpp-ts29522-vflinference.yml
+  - openapi/3gpp-ts29522-vflnfdiscovery.yml
+  - openapi/3gpp-ts29522-vfltraining.yml

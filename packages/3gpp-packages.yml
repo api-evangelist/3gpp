@@ -1,0 +1,62 @@
+generated: '2026-07-25'
+method: searched
+source: npm registry search, PyPI, and the 3GPP forge tooling page
+summary: >-
+  3GPP publishes no client libraries. It ships specifications and machine readable OpenAPI, and leaves
+  implementation to vendors and operators. The registry search below found only third party work built around
+  3GPP specifications, none of it first party.
+official_packages: []
+first_party_tooling:
+  - name: API Parser / Linter
+    url: https://forge.3gpp.org/swagger/tools/parser.html
+    description: >-
+      3GPP hosted browser tool that parses the published OpenAPI documents with the APIDevTools Swagger
+      Parser and runs 3GPP lint rules over them.
+  - name: Data Type Finder
+    url: https://forge.3gpp.org/swagger/tools/types.html
+    description: finds which APIs are impacted by a change to a given data type
+  - name: API Versions Overview
+    url: https://forge.3gpp.org/swagger/tools/versions.html
+    description: report of the versions of every API in the repository
+  - name: Custom header ABNF checker
+    url: https://forge.3gpp.org/swagger/tools/headers.html?abnf=TS29500_CustomHeaders.abnf
+    description: checks 3GPP HTTP custom headers against the TS 29.500 ABNF
+third_party_packages:
+  - language: javascript
+    registry: npm
+    name: '3gpp'
+    url: https://www.npmjs.com/package/3gpp
+    publisher: learnwithexamples
+    official: false
+    description: community package for 3GPP specs focused on the 36 and 38 series
+  - language: javascript
+    registry: npm
+    name: sms-3gpp
+    url: https://www.npmjs.com/package/sms-3gpp
+    publisher: latysheff
+    official: false
+    description: 3GPP SMS TPDU and RPDU library
+  - language: javascript
+    registry: npm
+    name: milenage
+    url: https://www.npmjs.com/package/milenage
+    publisher: atesgoral
+    official: false
+    description: 3GPP MILENAGE authentication and key generation functions
+  - language: javascript
+    registry: npm
+    name: 3gpp-mcp-server
+    url: https://www.npmjs.com/package/3gpp-mcp-server
+    publisher: narendralomada
+    official: false
+    description: community MCP server for querying 3GPP telecom protocol specifications
+  - language: javascript
+    registry: npm
+    name: 3gpp-kb-mcp
+    url: https://www.npmjs.com/package/3gpp-kb-mcp
+    publisher: uvipatil
+    official: false
+    description: community MCP server over a local 3GPP knowledge base
+notes:
+  - PyPI has no package named 3gpp (404 on the JSON API).
+  - There is no github.com/3gpp organisation; 3GPP runs its own GitLab at forge.3gpp.org.

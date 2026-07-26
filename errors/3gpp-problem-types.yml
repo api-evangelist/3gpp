@@ -1,0 +1,120 @@
+generated: '2026-07-25'
+method: derived
+source: openapi/*.yml (116 3GPP OpenAPI documents in this repo)
+format: rfc7807
+notes:
+- Service Based Interface error handling is specified in 3GPP TS 29.500 and 3GPP TS 29.501; error bodies are RFC
+  7807 problem details (media type application/problem+json) carrying the ProblemDetails data type defined in TS
+  29.571 for the 5G core and the ProblemDetails / ErrorDetail types in TS 29.122 for the northbound APIs.
+- Status codes are aggregated across every OpenAPI in this repo. occurrences is the number of operation responses
+  declaring that status; problem_json_responses is the number declaring an application/problem+json body.
+- Application level cause values live inside ProblemDetails.cause and are specified in the prose of each Technical
+  Specification rather than in the OpenAPI documents, so they are not enumerated here.
+envelope:
+  media_type: application/problem+json
+  schema: ProblemDetails
+  fields:
+  - type
+  - title
+  - status
+  - detail
+  - instance
+  - cause
+  - invalidParams
+  - supportedFeatures
+  defined_in:
+  - 3GPP TS 29.571
+  - 3GPP TS 29.122
+problems:
+- status: 400
+  code: '400'
+  title: Bad Request
+  description: Invalid request parameters or malformed input.
+  occurrences: 418
+  problem_json_responses: 13
+- status: 401
+  code: '401'
+  title: Unauthorized
+  description: Unauthorized
+  occurrences: 408
+  problem_json_responses: 0
+- status: 403
+  code: '403'
+  title: Forbidden
+  description: Forbidden
+  occurrences: 408
+  problem_json_responses: 12
+- status: 404
+  code: '404'
+  title: Not Found
+  description: Plan descriptor does not exist
+  occurrences: 428
+  problem_json_responses: 27
+- status: 406
+  code: '406'
+  title: Not Acceptable
+  occurrences: 125
+  problem_json_responses: 0
+- status: 409
+  code: '409'
+  title: Conflict
+  description: A plan descriptor with the given ID already exists.
+  occurrences: 17
+  problem_json_responses: 8
+- status: 411
+  code: '411'
+  title: Length Required
+  occurrences: 213
+  problem_json_responses: 0
+- status: 413
+  code: '413'
+  title: Payload Too Large
+  occurrences: 213
+  problem_json_responses: 0
+- status: 414
+  code: '414'
+  title: URI Too Long
+  occurrences: 9
+  problem_json_responses: 0
+- status: 415
+  code: '415'
+  title: Unsupported Media Type
+  occurrences: 213
+  problem_json_responses: 0
+- status: 422
+  code: '422'
+  title: Unprocessable Entity
+  description: Semantic error - e.g. job was not in RUNNING state
+  occurrences: 2
+  problem_json_responses: 2
+- status: 429
+  code: '429'
+  title: Too Many Requests
+  occurrences: 408
+  problem_json_responses: 0
+- status: 500
+  code: '500'
+  title: Internal Server Error
+  description: Internal server error.
+  occurrences: 437
+  problem_json_responses: 44
+- status: 501
+  code: '501'
+  title: Not Implemented
+  occurrences: 4
+  problem_json_responses: 0
+- status: 503
+  code: '503'
+  title: Service Unavailable
+  occurrences: 408
+  problem_json_responses: 0
+- code: default
+  title: Unexpected error
+  description: Error case.
+  occurrences: 433
+  problem_json_responses: 0
+shared_error_schemas:
+- schema: ErrorDetail
+  references: 69
+- schema: ProblemDetails
+  references: 32

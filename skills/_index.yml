@@ -1,0 +1,33 @@
+generated: '2026-07-25'
+method: generated
+source: openapi/*.yml operationIds verified verbatim against the specifications in this repo
+note: >-
+  Skills are written against 3GPP specifications, not against a 3GPP hosted service. Every step names a real
+  operationId, but the base URL ({apiRoot}) has to come from the mobile network operator or exposure platform
+  that deployed the interface.
+skills:
+  - file: 3gpp-capif-onboard-and-discover.md
+    name: Onboard an API invoker and discover northbound service APIs with CAPIF
+    api: openapi/3gpp-ts29222-capif-api-invoker-management-api.yml
+    operations: [CreateOnboardedAPIInvoker, UpdateIndOnboardedAPIInvoker, DeleteIndOnboardedAPIInvoker,
+                 CreateSecIndTrustedAPIInv, GetSecIndTrustedAPIInv, GetOAuthIndAPIInv, GetPubServAPIs]
+  - file: 3gpp-nef-monitoring-events.md
+    name: Subscribe to UE monitoring events through the NEF
+    api: openapi/3gpp-ts29122-monitoringevent.yml
+    operations: [CreateMonitoringEventSubscription, FetchAllMonitoringEventSubscriptions,
+                 FetchIndMonitoringEventSubscription, UpdateIndMonitoringEventSubscription,
+                 ModifyIndMonitoringEventSubscription, DeleteIndMonitoringEventSubscription]
+  - file: 3gpp-nef-qos-on-demand.md
+    name: Request quality of service on demand for an application session
+    api: openapi/3gpp-ts29122-assessionwithqos.yml
+    operations: [CreateASSessionWithQoSSubscription, FetchAllASSessionWithQoSSubscriptions,
+                 FetchIndASSessionWithQoSSubscription, UpdateIndASSessionWithQoSSubscription,
+                 ModifyIndASSessionWithQoSSubscription, DeleteIndASSessionWithQoSSubscription]
+  - file: 3gpp-nef-nidd-and-device-triggering.md
+    name: Deliver non-IP data and trigger IoT devices through the NEF
+    api: openapi/3gpp-ts29122-nidd.yml
+    operations: [CreateNIDDConfiguration, FetchAllNIDDConfigurations, FetchIndNIDDConfiguration,
+                 ModifyNIDDConfiguration, DeleteNIDDConfiguration, CreateDownlinkDataDelivery,
+                 FetchAllDownlinkDataDeliveries, FetchIndDownlinkDataDelivery,
+                 UpdateIndDownlinkDataDelivery, DeleteIndDownlinkDataDelivery,
+                 CreateDeviceTriggeringTransaction]

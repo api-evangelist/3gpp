@@ -1,0 +1,61 @@
+generated: '2026-07-25'
+method: derived
+source: mcp/3gpp-mcp.yml bound to operationIds in openapi/*.yml
+summary: >-
+  Every candidate MCP tool for 3GPP is backed one-to-one by a real OpenAPI operation, because the tool list was
+  derived from the specifications rather than from a running server. There are no MCP-only tools: 3GPP has no
+  GraphQL surface and no server-side composite. The interesting number is the other direction, rest_only:
+  446 of the 465 specified operations have no candidate tool, because the estate is far larger than any
+  sensible agent surface.
+surfaces:
+  openapi:
+    location: openapi/ (116 documents, 465 operations)
+    source: https://forge.3gpp.org/rep/all/5G_APIs
+    gated: false
+    note: server entries are {apiRoot} templates; there is no 3GPP hosted endpoint
+  graphql: null
+  mcp:
+    url: null
+    gated: null
+    note: no 3GPP MCP server exists; tools are candidates only
+crosswalk:
+  - {tool: capif_onboard_api_invoker, category: capif, rest: [CreateOnboardedAPIInvoker], binding: rest, confidence: high}
+  - {tool: capif_update_api_invoker, category: capif, rest: [UpdateIndOnboardedAPIInvoker], binding: rest, confidence: high}
+  - {tool: capif_offboard_api_invoker, category: capif, rest: [DeleteIndOnboardedAPIInvoker], binding: rest, confidence: high}
+  - {tool: capif_discover_service_apis, category: capif, rest: [GetPubServAPIs], binding: rest, confidence: high}
+  - {tool: capif_publish_service_api, category: capif, rest: [CreateAPFPubAPIs], binding: rest, confidence: high}
+  - {tool: capif_list_published_apis, category: capif, rest: [GetAPFPubAPIs], binding: rest, confidence: high}
+  - {tool: capif_get_security_context, category: capif-security, rest: [GetSecIndTrustedAPIInv], binding: rest, confidence: high}
+  - {tool: capif_create_security_context, category: capif-security, rest: [CreateSecIndTrustedAPIInv], binding: rest, confidence: high}
+  - {tool: capif_request_access_token, category: capif-security, rest: [GetOAuthIndAPIInv], binding: rest, confidence: high}
+  - {tool: nef_create_monitoring_event_subscription, category: nef-exposure, rest: [CreateMonitoringEventSubscription], binding: rest, confidence: high}
+  - {tool: nef_list_monitoring_event_subscriptions, category: nef-exposure, rest: [FetchAllMonitoringEventSubscriptions], binding: rest, confidence: high}
+  - {tool: nef_delete_monitoring_event_subscription, category: nef-exposure, rest: [DeleteIndMonitoringEventSubscription], binding: rest, confidence: high}
+  - {tool: nef_request_qos_for_session, category: nef-qos, rest: [CreateASSessionWithQoSSubscription], binding: rest, confidence: high}
+  - {tool: nef_delete_qos_session, category: nef-qos, rest: [DeleteIndASSessionWithQoSSubscription], binding: rest, confidence: high}
+  - {tool: nef_create_nidd_configuration, category: nef-iot, rest: [CreateNIDDConfiguration], binding: rest, confidence: high}
+  - {tool: nef_send_nidd_downlink_data, category: nef-iot, rest: [CreateDownlinkDataDelivery], binding: rest, confidence: high}
+  - {tool: nef_trigger_device, category: nef-iot, rest: [CreateDeviceTriggeringTransaction], binding: rest, confidence: high}
+  - {tool: nwdaf_get_analytics, category: analytics, rest: [GetNWDAFAnalytics], binding: rest, confidence: high}
+  - {tool: nwdaf_get_context, category: analytics, rest: [GetNwdafContext], binding: rest, confidence: high}
+mcp_only: []
+rest_only:
+  - capability: SA5 management services (provisioning, performance, fault, file and streaming data reporting)
+    specifications: [TS 28.532, TS 28.550, TS 28.111, TS 28.531, TS 28.572]
+    note: >-
+      operator-internal OAM surface; the network resource model documents in the 28-series are schema-only and
+      declare no operations
+  - capability: Policy control (Npcf_SMPolicyControl, Npcf_PolicyAuthorization)
+    specifications: [TS 29.512, TS 29.514]
+    note: inter-network-function interfaces, not exposed to third party applications
+  - capability: The remainder of the TS 29.522 northbound exposure surface (MBS, IMS, edge, time sync, UAV, AI/ML, AIoT and parameter provisioning)
+    specifications: [TS 29.522]
+    note: >-
+      roughly fifty additional service APIs, each a candidate for a tool once an operator decides which of
+      them it actually exposes
+coverage:
+  tools_named: 19
+  tools_bound: 19
+  mcp_only: 0
+  rest_operations_total: 465
+  rest_operations_with_a_tool: 19

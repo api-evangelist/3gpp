@@ -1,0 +1,49 @@
+# 3GPP
+
+> The 3rd Generation Partnership Project writes the technical specifications for the world's mobile networks — GSM, UMTS, LTE, 5G and the ongoing 6G work — through seven regional Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). It sells nothing to developers and runs no developer programme, but since Release 15 it has published the RESTful Service Based Architecture, the SCEF/NEF northbound exposure APIs and the SA5 management services as machine readable OpenAPI 3.0, free of charge and without a login, in a public GitLab at forge.3gpp.org.
+
+Important: 3GPP hosts no callable API. Every `servers` entry in its OpenAPI documents is an `{apiRoot}` (or `{MnSRoot}`) template that a mobile network operator fills in when it deploys the interface. There is no portal, no API key, no sandbox and no base URL to point an agent at. The developer facing abstraction over these interfaces is CAMARA and GSMA Open Gateway, not 3GPP itself.
+
+## Specifications
+- [OpenAPI documents in this repository](https://github.com/api-evangelist/3gpp/tree/main/openapi): 116 OpenAPI 3.0 documents, 465 operations, harvested from forge.3gpp.org
+- [5G_APIs on forge.3gpp.org](https://forge.3gpp.org/rep/all/5G_APIs): 5G core Service Based Interfaces, NEF/SCEF northbound APIs and CAPIF, one branch per Release (REL-15 through REL-20)
+- [Management and Orchestration APIs (SA5 MnS)](https://forge.3gpp.org/rep/sa5/MnS): provisioning, performance, fault and data reporting management services
+- [Specification archive](https://www.3gpp.org/ftp/Specs/archive/): every version of every Technical Specification and Technical Report
+- [Specifications by series](https://www.3gpp.org/specifications-technologies/specifications-by-series)
+
+## Key specification families
+- TS 29.500 / TS 29.501: technical realization and design guidelines for the Service Based Interface (HTTP/2, JSON, RFC 7807 problem details, 3gpp-Sbi-* custom headers)
+- TS 29.122 / TS 29.522: northbound exposure APIs (SCEF and NEF) — monitoring events, QoS on demand, NIDD, device triggering, MBS, edge, time sync
+- TS 29.222: CAPIF, the Common API Framework — invoker onboarding, service discovery, security, auditing and logging
+- TS 29.510 / TS 29.512 / TS 29.514 / TS 29.520: NRF, policy control and NWDAF analytics
+- TS 28.532 and the 28-series: management services and the network resource models
+- TS 29.571: the 5G core common data types every other document $refs
+
+## Artifacts in this repository
+- [Authentication profile](https://github.com/api-evangelist/3gpp/blob/main/authentication/3gpp-authentication.yml): OAuth2 client credentials, deployment supplied token endpoint
+- [OAuth scopes](https://github.com/api-evangelist/3gpp/blob/main/scopes/3gpp-scopes.yml)
+- [API conventions](https://github.com/api-evangelist/3gpp/blob/main/conventions/3gpp-conventions.yml): URI structure, feature negotiation with supportedFeatures, JSON merge patch, no idempotency key, no pagination
+- [Error catalog](https://github.com/api-evangelist/3gpp/blob/main/errors/3gpp-problem-types.yml): RFC 7807 ProblemDetails
+- [Notifications and webhooks](https://github.com/api-evangelist/3gpp/blob/main/asyncapi/3gpp-notifications-webhooks.yml): OpenAPI callbacks, consumer supplied notification URI
+- [Lifecycle](https://github.com/api-evangelist/3gpp/blob/main/lifecycle/3gpp-lifecycle.yml): version numbering, parallel Releases, withdrawal policy
+- [Changelog](https://github.com/api-evangelist/3gpp/blob/main/changelog/3gpp-changelog.yml): per-plenary git tags on forge.3gpp.org
+- [Conformance](https://github.com/api-evangelist/3gpp/blob/main/conformance/3gpp-conformance.yml)
+- [Data model](https://github.com/api-evangelist/3gpp/blob/main/data-model/3gpp-data-model.yml): the shared $ref graph across the estate
+- [Candidate MCP tools](https://github.com/api-evangelist/3gpp/blob/main/mcp/3gpp-mcp.yml) and [tool crosswalk](https://github.com/api-evangelist/3gpp/blob/main/mcp/3gpp-tool-crosswalk.yml)
+- [Agent skills](https://github.com/api-evangelist/3gpp/tree/main/skills)
+
+## Docs
+- [3GPP home](https://www.3gpp.org/)
+- [Specifications and technologies](https://www.3gpp.org/specifications-technologies)
+- [Releases and the system of parallel releases](https://www.3gpp.org/specifications-technologies/releases)
+- [Version numbering scheme](https://www.3gpp.org/specifications-technologies/specifications-by-series/version-numbering-scheme)
+- [Change requests](https://www.3gpp.org/specifications-technologies/specifications-by-series/change-requests)
+- [TS or TR proposed for withdrawal](https://www.3gpp.org/specifications-technologies/specifications-by-series/ts-or-tr-proposed-for-withdrawal)
+- [3GPP Portal (3GU)](https://portal.3gpp.org/)
+- [Coordinated Vulnerability Disclosure](https://www.3gpp.org/delegates-corner/coordinated-vulnerability-disclosure)
+- [API parser and linter](https://forge.3gpp.org/swagger/tools/parser.html)
+
+## Optional
+- [News and events](https://www.3gpp.org/news-events)
+- [3GPP FAQs](https://www.3gpp.org/about-us/3gpp-faqs)
+- [Legal notice](https://www.3gpp.org/legal-notice) · [Terms of use](https://www.3gpp.org/terms-of-use) · [Privacy policy](https://www.3gpp.org/about-us/legal-matters/3gpp-privacy-policy)

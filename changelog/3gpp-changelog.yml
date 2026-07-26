@@ -1,0 +1,92 @@
+generated: '2026-07-25'
+method: searched
+source: https://forge.3gpp.org/rep/all/5G_APIs/-/tags
+also_source: https://forge.3gpp.org/rep/sa5/MnS/-/tags
+docs: https://www.3gpp.org/specifications-technologies/specifications-by-series/change-requests
+summary: >-
+  3GPP has no prose changelog page for its APIs. The real changelog is git: the OpenAPI documents live in
+  GitLab on forge.3gpp.org, one long lived branch per Release, and every TSG plenary produces a tag per
+  Release. The tags below were read from the live repositories on 2026-07-25 and are the machine readable
+  record of what the API set looked like at each plenary.
+scheme: per-plenary tags over per-Release branches
+current:
+  open_release: Rel-20
+  latest_5g_apis_tag: TSG111-Rel20
+  latest_5g_apis_tag_date: '2026-03-20'
+  latest_mns_tag: Tag_Rel20_SA112
+  latest_mns_tag_date: '2026-06-22'
+  api_version_label: March 2026
+repositories:
+  - name: 5G_APIs
+    url: https://forge.3gpp.org/rep/all/5G_APIs
+    scope: 5G core Service Based Interfaces, NEF/SCEF northbound APIs, CAPIF
+    branches: [REL-15, REL-16, REL-17, REL-18, REL-19, REL-20]
+    tag_pattern: TSG<plenary number>-Rel<release>
+  - name: MnS
+    url: https://forge.3gpp.org/rep/sa5/MnS
+    scope: SA5 management and orchestration services and network resource models
+    tag_pattern: Tag_Rel<release>_SA<plenary number>
+entries:
+  - tag: TSG111-Rel20
+    date: '2026-03-20'
+    release: Rel-20
+    repository: 5G_APIs
+    note: plenary 111 snapshot of the open Release
+  - tag: TSG111-Rel19
+    date: '2026-03-20'
+    release: Rel-19
+    repository: 5G_APIs
+  - tag: TSG111-Rel18
+    date: '2026-03-20'
+    release: Rel-18
+    repository: 5G_APIs
+  - tag: TSG111-Rel17
+    date: '2026-03-20'
+    release: Rel-17
+    repository: 5G_APIs
+  - tag: TSG111-Rel16
+    date: '2026-03-20'
+    release: Rel-16
+    repository: 5G_APIs
+  - tag: TSG110-Rel19
+    date: '2026-01-26'
+    release: Rel-19
+    repository: 5G_APIs
+  - tag: TSG110-Rel18
+    date: '2026-01-26'
+    release: Rel-18
+    repository: 5G_APIs
+  - tag: TSG109-Rel17
+    date: '2025-10-08'
+    release: Rel-17
+    repository: 5G_APIs
+  - tag: Tag_Rel20_SA112
+    date: '2026-06-22'
+    release: Rel-20
+    repository: MnS
+    note: SA5 plenary 112 integration of the Rel-20 management service YAML
+  - tag: Tag_Rel19_SA112
+    date: '2026-06-22'
+    release: Rel-19
+    repository: MnS
+  - tag: Tag_Rel19_SA111
+    date: '2026-03-16'
+    release: Rel-19
+    repository: MnS
+  - tag: Tag_Rel18_SA111
+    date: '2026-03-16'
+    release: Rel-18
+    repository: MnS
+  - tag: Tag_Rel18_SA110
+    date: '2025-12-16'
+    release: Rel-18
+    repository: MnS
+  - tag: Tag_Rel17_SA108
+    date: '2025-06-16'
+    release: Rel-17
+    repository: MnS
+change_process:
+  unit: Change Request (CR)
+  approval: responsible Technical Specification Group at plenary
+  per_document_history: change history annex of each Technical Specification
+  docs: https://www.3gpp.org/specifications-technologies/specifications-by-series/change-requests-step-by-step

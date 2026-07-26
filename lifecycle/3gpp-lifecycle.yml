@@ -1,0 +1,73 @@
+generated: '2026-07-25'
+method: searched
+source: https://www.3gpp.org/specifications-technologies/specifications-by-series/version-numbering-scheme
+summary: >-
+  3GPP runs the most formalised API lifecycle in this catalog, but it is a specification lifecycle rather than
+  a service lifecycle. Documents move through draft maturity stages, are brought under change control, are
+  assigned to a parallel Release, and are eventually proposed for withdrawal. There is no runtime to take
+  down, so there is no status page and no sunset header; the equivalent signals are the Release freeze and the
+  withdrawal process.
+
+versioning:
+  scheme: three-field major.technical.editorial per document, plus a Release train
+  current_open_release: Rel-20
+  frozen_releases: [Rel-19, Rel-18, Rel-17, Rel-16, Rel-15]
+  planned_release: Rel-21
+  docs: https://www.3gpp.org/specifications-technologies/specifications-by-series/version-numbering-scheme
+  rules_specification: 3GPP TR 21.900 clause 4.4
+  maturity_stages:
+    - {major: 0, meaning: immature draft}
+    - {major: 1, meaning: draft at least 60 per cent complete, presented to the TSG for information}
+    - {major: 2, meaning: draft at least 80 per cent complete, presented to the TSG for approval}
+    - {major: '3+', meaning: approved by the responsible TSG and under change control}
+  api_version_in_path: true
+  notes: >-
+    The OpenAPI documents carry both versions: info.version is the document version (for example 1.4.0) and
+    the servers template carries the API major version (for example /v1).
+
+release_management:
+  docs: https://www.3gpp.org/specifications-technologies/releases
+  work_plan: https://www.3gpp.org/specifications-technologies/3gpp-work-plan
+  model: parallel releases
+  detail: >-
+    Several Releases are worked in parallel. On forge.3gpp.org each Release is a branch (REL-15 through
+    REL-20) and each TSG plenary produces per-Release tags, so the machine readable API set is versioned in
+    git alongside the prose specifications.
+  branches: [REL-15, REL-16, REL-17, REL-18, REL-19, REL-20]
+  repositories:
+    - https://forge.3gpp.org/rep/all/5G_APIs
+    - https://forge.3gpp.org/rep/sa5/MnS
+
+change_control:
+  mechanism: Change Request (CR)
+  docs: https://www.3gpp.org/specifications-technologies/specifications-by-series/change-requests
+  step_by_step: https://www.3gpp.org/specifications-technologies/specifications-by-series/change-requests-step-by-step
+  detail: >-
+    Once a specification is under change control every modification is a Change Request approved by the
+    responsible Technical Specification Group; the change history annex of each document records them.
+
+deprecation:
+  policy_url: https://www.3gpp.org/specifications-technologies/specifications-by-series/ts-or-tr-proposed-for-withdrawal
+  policy: >-
+    3GPP publishes a standing list of Technical Specifications and Technical Reports proposed for withdrawal.
+    Withdrawal is the standards-body equivalent of deprecation: the document stops being maintained for new
+    Releases while remaining available in the archive for the Releases it was part of.
+  sunset_header: false
+  deprecation_header: false
+  deprecated_operations: []
+  notes: >-
+    No operation in any of the 116 OpenAPI documents in this repo is marked deprecated: true, and the SBI
+    specifications define no RFC 8594 Sunset or Deprecation header. Removal happens at the document and
+    Release level, not the operation level.
+
+status_page: null
+sla: null
+availability_notes: >-
+  3GPP hosts no callable API, so it publishes no status page and no SLA. Availability of a 3GPP defined
+  interface is the responsibility of the mobile network operator that deploys it. The infrastructure 3GPP does
+  operate (www.3gpp.org, portal.3gpp.org, forge.3gpp.org) has no public status page.
+
+archives:
+  specifications: https://www.3gpp.org/ftp/Specs/archive/
+  portal: https://portal.3gpp.org/
+  notes: Every version of every specification stays downloadable free of charge, with no login.

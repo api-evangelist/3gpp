@@ -1,0 +1,278 @@
+generated: '2026-07-25'
+method: derived
+source: OpenAPI callbacks objects across openapi/*.yml
+spec_type: Webhooks
+asyncapi_published: false
+notes:
+- '3GPP publishes no AsyncAPI document. Its event surface is modelled inside the OpenAPI documents as OpenAPI 3.0
+  callbacks: the consumer supplies a notification URI (notificationDestination, notifyUri or notificationRecipientAddress)
+  when it creates a subscription, and the network function HTTP POSTs notifications back to that URI. That is a
+  webhook contract expressed in OpenAPI rather than in AsyncAPI.'
+- Transport is HTTP/2 with JSON bodies per 3GPP TS 29.500. Correlation is by subscription resource URI.
+- Callback names are verbatim from the callbacks keys in the specification documents.
+delivery:
+  protocol: HTTP/2
+  method: POST
+  content_type: application/json
+  consumer_supplied_uri_fields:
+  - notificationDestination
+  - notifyUri
+  - notificationRecipientAddress
+  specified_in:
+  - 3GPP TS 29.500
+  - 3GPP TS 29.501
+  - 3GPP TS 29.122
+  - 3GPP TS 28.532
+coverage:
+  documents_with_callbacks: 43
+  callbacks: 60
+events:
+- specification: 3gpp-ts28532-filedatareportingmns.yml
+  file: openapi/3gpp-ts28532-filedatareportingmns.yml
+  callbacks:
+  - callback: notifyFileReady
+    subscribe_operation: null
+  - callback: notifyFilePreparationError
+    subscribe_operation: null
+- specification: 3gpp-ts28532-provmns.yml
+  file: openapi/3gpp-ts28532-provmns.yml
+  callbacks:
+  - callback: notifyMOICreation
+    subscribe_operation: null
+  - callback: notifyMOIDeletion
+    subscribe_operation: null
+  - callback: notifyMOIAttributeValueChanges
+    subscribe_operation: null
+  - callback: notifyEvent
+    subscribe_operation: null
+  - callback: notifyMOIChanges
+    subscribe_operation: null
+  - callback: notifyPotentialFaultyDataNodeTree
+    subscribe_operation: null
+  - callback: notifyDataNodeTreeSyncRecommended
+    subscribe_operation: null
+- specification: 3gpp-ts29122-assessionwithqos.yml
+  file: openapi/3gpp-ts29122-assessionwithqos.yml
+  callbacks:
+  - callback: notificationDestination
+    subscribe_operation: CreateASSessionWithQoSSubscription
+- specification: 3gpp-ts29122-chargeableparty.yml
+  file: openapi/3gpp-ts29122-chargeableparty.yml
+  callbacks:
+  - callback: eventNotification
+    subscribe_operation: CreateChargeablePartyTransaction
+- specification: 3gpp-ts29122-devicetriggering.yml
+  file: openapi/3gpp-ts29122-devicetriggering.yml
+  callbacks:
+  - callback: notificationDestination
+    subscribe_operation: CreateDeviceTriggeringTransaction
+- specification: 3gpp-ts29122-gmdviambmsbymb2.yml
+  file: openapi/3gpp-ts29122-gmdviambmsbymb2.yml
+  callbacks:
+  - callback: gMDByMb2Notification
+    subscribe_operation: CreateGMDViaMBMSByMB2
+- specification: 3gpp-ts29122-gmdviambmsbyxmb.yml
+  file: openapi/3gpp-ts29122-gmdviambmsbyxmb.yml
+  callbacks:
+  - callback: gMDByxMBNotification
+    subscribe_operation: CreateGMDViaMBMS
+- specification: 3gpp-ts29122-monitoringevent.yml
+  file: openapi/3gpp-ts29122-monitoringevent.yml
+  callbacks:
+  - callback: notificationDestination
+    subscribe_operation: CreateMonitoringEventSubscription
+  - callback: UserConsentRevocationNotif
+    subscribe_operation: CreateMonitoringEventSubscription
+- specification: 3gpp-ts29122-nidd.yml
+  file: openapi/3gpp-ts29122-nidd.yml
+  callbacks:
+  - callback: niddNotifications
+    subscribe_operation: CreateNIDDConfiguration
+- specification: 3gpp-ts29122-npconfiguration.yml
+  file: openapi/3gpp-ts29122-npconfiguration.yml
+  callbacks:
+  - callback: notificationDestination
+    subscribe_operation: CreateNPConfiguration
+- specification: 3gpp-ts29122-pfdmanagement.yml
+  file: openapi/3gpp-ts29122-pfdmanagement.yml
+  callbacks:
+  - callback: notificationDestination
+    subscribe_operation: CreatePFDManagementTransaction
+- specification: 3gpp-ts29122-reportingnetworkstatus.yml
+  file: openapi/3gpp-ts29122-reportingnetworkstatus.yml
+  callbacks:
+  - callback: notificationDestination
+    subscribe_operation: CreateNwStatusReportSubscription
+- specification: 3gpp-ts29122-resourcemanagementofbdt.yml
+  file: openapi/3gpp-ts29122-resourcemanagementofbdt.yml
+  callbacks:
+  - callback: bDTWarningNotification
+    subscribe_operation: CreateBDTSubscription
+- specification: 3gpp-ts29222-capif-api-invoker-management-api.yml
+  file: openapi/3gpp-ts29222-capif-api-invoker-management-api.yml
+  callbacks:
+  - callback: notificationDestination
+    subscribe_operation: CreateOnboardedAPIInvoker
+- specification: 3gpp-ts29222-capif-events-api.yml
+  file: openapi/3gpp-ts29222-capif-events-api.yml
+  callbacks:
+  - callback: notificationDestination
+    subscribe_operation: CreateEventSubsc
+- specification: 3gpp-ts29222-capif-security-api.yml
+  file: openapi/3gpp-ts29222-capif-security-api.yml
+  callbacks:
+  - callback: notificationDestination
+    subscribe_operation: CreateSecIndTrustedAPIInv
+- specification: 3gpp-ts29512-npcf-smpolicycontrol.yml
+  file: openapi/3gpp-ts29512-npcf-smpolicycontrol.yml
+  callbacks:
+  - callback: SmPolicyUpdateNotification
+    subscribe_operation: CreateSMPolicy
+  - callback: SmPolicyControlTerminationRequestNotification
+    subscribe_operation: CreateSMPolicy
+- specification: 3gpp-ts29514-npcf-policyauthorization.yml
+  file: openapi/3gpp-ts29514-npcf-policyauthorization.yml
+  callbacks:
+  - callback: terminationRequest
+    subscribe_operation: PostAppSessions
+  - callback: eventNotification
+    subscribe_operation: PostAppSessions
+  - callback: detected5GsBridgeForPduSession
+    subscribe_operation: PostAppSessions
+  - callback: eventNotification
+    subscribe_operation: ModAppSession
+  - callback: eventNotification
+    subscribe_operation: updateEventsSubsc
+- specification: 3gpp-ts29520-nnwdaf-eventssubscription.yml
+  file: openapi/3gpp-ts29520-nnwdaf-eventssubscription.yml
+  callbacks:
+  - callback: myNotification
+    subscribe_operation: CreateNWDAFEventsSubscription
+- specification: 3gpp-ts29522-5glanparameterprovision.yml
+  file: openapi/3gpp-ts29522-5glanparameterprovision.yml
+  callbacks:
+  - callback: 5GLANParamProvNotif
+    subscribe_operation: CreateAnSubscription
+- specification: 3gpp-ts29522-aiot.yml
+  file: openapi/3gpp-ts29522-aiot.yml
+  callbacks:
+  - callback: AIoTOperationsNotif
+    subscribe_operation: InventoryRequest
+  - callback: AIoTOperationsNotif
+    subscribe_operation: CommandRequest
+- specification: 3gpp-ts29522-akma.yml
+  file: openapi/3gpp-ts29522-akma.yml
+  callbacks:
+  - callback: ServiceDisablementNotification
+    subscribe_operation: RetrieveAKMAAppKey
+- specification: 3gpp-ts29522-aminfluence.yml
+  file: openapi/3gpp-ts29522-aminfluence.yml
+  callbacks:
+  - callback: notificationDestination
+    subscribe_operation: CreateAMInfluenceSubcription
+- specification: 3gpp-ts29522-ampolicyauthorization.yml
+  file: openapi/3gpp-ts29522-ampolicyauthorization.yml
+  callbacks:
+  - callback: amEventNotification
+    subscribe_operation: PostAppAmContexts
+  - callback: amEventNotification
+    subscribe_operation: UpdateAmEventsSubsc
+- specification: 3gpp-ts29522-analyticsexposure.yml
+  file: openapi/3gpp-ts29522-analyticsexposure.yml
+  callbacks:
+  - callback: notification
+    subscribe_operation: CreateNewSubscription
+- specification: 3gpp-ts29522-asti.yml
+  file: openapi/3gpp-ts29522-asti.yml
+  callbacks:
+  - callback: astiNotification
+    subscribe_operation: CreateNewConfiguration
+- specification: 3gpp-ts29522-dnaimapping.yml
+  file: openapi/3gpp-ts29522-dnaimapping.yml
+  callbacks:
+  - callback: DNAIMapInfoUpdateNotif
+    subscribe_operation: DNAIMapSubsc
+- specification: 3gpp-ts29522-imseventexposure.yml
+  file: openapi/3gpp-ts29522-imseventexposure.yml
+  callbacks:
+  - callback: IMSEENotif
+    subscribe_operation: CreateImsEESubsc
+- specification: 3gpp-ts29522-imssessionmanagement.yml
+  file: openapi/3gpp-ts29522-imssessionmanagement.yml
+  callbacks:
+  - callback: ImsSessionNotif
+    subscribe_operation: CreateImsSession
+- specification: 3gpp-ts29522-mbsgroupmsgdelivery.yml
+  file: openapi/3gpp-ts29522-mbsgroupmsgdelivery.yml
+  callbacks:
+  - callback: MbsGroupMsgDelStatusNotif
+    subscribe_operation: CreateMbsGroupMsgDelivery
+- specification: 3gpp-ts29522-mbssession.yml
+  file: openapi/3gpp-ts29522-mbssession.yml
+  callbacks:
+  - callback: MBSSessionStatusNotification
+    subscribe_operation: CreateMBSSessionsSubsc
+- specification: 3gpp-ts29522-mbstmgi.yml
+  file: openapi/3gpp-ts29522-mbstmgi.yml
+  callbacks:
+  - callback: TmgiTimerExpiryNotification
+    subscribe_operation: AllocateTmgi
+- specification: 3gpp-ts29522-mbsuserdataingestsession.yml
+  file: openapi/3gpp-ts29522-mbsuserdataingestsession.yml
+  callbacks:
+  - callback: mbsUserDataIngestSessionStatusNotif
+    subscribe_operation: CreateMBSUserDataIngStatSubsc
+- specification: 3gpp-ts29522-memberueselectionassistance.yml
+  file: openapi/3gpp-ts29522-memberueselectionassistance.yml
+  callbacks:
+  - callback: MemberUESelectAssistNotif
+    subscribe_operation: CreateMemberUESelectAssist
+- specification: 3gpp-ts29522-mseventexposure.yml
+  file: openapi/3gpp-ts29522-mseventexposure.yml
+  callbacks:
+  - callback: msEventExposureNotif
+    subscribe_operation: CreateMSEventExposureSubsc
+- specification: 3gpp-ts29522-pdtqpolicynegotiation.yml
+  file: openapi/3gpp-ts29522-pdtqpolicynegotiation.yml
+  callbacks:
+  - callback: PDTQWarningNotification
+    subscribe_operation: CreatePDTQPolicySubsc
+- specification: 3gpp-ts29522-serviceparameter.yml
+  file: openapi/3gpp-ts29522-serviceparameter.yml
+  callbacks:
+  - callback: notificationDestination
+    subscribe_operation: CreateAnSubscription
+- specification: 3gpp-ts29522-timesyncexposure.yml
+  file: openapi/3gpp-ts29522-timesyncexposure.yml
+  callbacks:
+  - callback: timeSyncSubsNotification
+    subscribe_operation: CreateNewSubscription
+  - callback: timeSyncConfigNotification
+    subscribe_operation: CreateNewConfirguation
+- specification: 3gpp-ts29522-trafficinfluence.yml
+  file: openapi/3gpp-ts29522-trafficinfluence.yml
+  callbacks:
+  - callback: notificationDestination
+    subscribe_operation: CreateNewSubscription
+  - callback: eventNotificationPayloadHeaders
+    subscribe_operation: CreateNewSubscription
+- specification: 3gpp-ts29522-uavflightassistance.yml
+  file: openapi/3gpp-ts29522-uavflightassistance.yml
+  callbacks:
+  - callback: UavFlightAssistNotif
+    subscribe_operation: CreateUavFlightAssistConfig
+- specification: 3gpp-ts29522-ueaddress.yml
+  file: openapi/3gpp-ts29522-ueaddress.yml
+  callbacks:
+  - callback: notification
+    subscribe_operation: CreateUEAddrSubsc
+- specification: 3gpp-ts29522-vflinference.yml
+  file: openapi/3gpp-ts29522-vflinference.yml
+  callbacks:
+  - callback: myNotification
+    subscribe_operation: CreateVFLInferenceSubcription
+- specification: 3gpp-ts29522-vfltraining.yml
+  file: openapi/3gpp-ts29522-vfltraining.yml
+  callbacks:
+  - callback: VFLTrainingNotification
+    subscribe_operation: CreateVFLTrainingSubscription

@@ -1,0 +1,97 @@
+generated: '2026-07-25'
+method: searched
+source: live probes of www.3gpp.org, forge.3gpp.org and portal.3gpp.org on 2026-07-25
+summary: 3GPP publishes no /.well-known/ discovery surface and no llms.txt on any of its hosts. Every 200 recorded
+  against www.3gpp.org is a soft 404 (the CMS returns the home page for unknown paths), not a real document.
+found: 0
+documents:
+- host: https://www.3gpp.org
+  path: /.well-known/security.txt
+  status: 200
+  result: 'soft-404: the Joomla CMS answers 200 with the site home page for any unknown path'
+  file: null
+- host: https://www.3gpp.org
+  path: /.well-known/openid-configuration
+  status: 200
+  result: 'soft-404: the Joomla CMS answers 200 with the site home page for any unknown path'
+  file: null
+- host: https://www.3gpp.org
+  path: /.well-known/oauth-authorization-server
+  status: 200
+  result: 'soft-404: the Joomla CMS answers 200 with the site home page for any unknown path'
+  file: null
+- host: https://www.3gpp.org
+  path: /.well-known/api-catalog
+  status: 200
+  result: 'soft-404: the Joomla CMS answers 200 with the site home page for any unknown path'
+  file: null
+- host: https://www.3gpp.org
+  path: /.well-known/ai-plugin.json
+  status: 200
+  result: 'soft-404: the Joomla CMS answers 200 with the site home page for any unknown path'
+  file: null
+- host: https://www.3gpp.org
+  path: /llms.txt
+  status: 200
+  result: 'soft-404: the Joomla CMS answers 200 with the site home page for any unknown path'
+  file: null
+- host: https://forge.3gpp.org
+  path: /.well-known/security.txt
+  status: 404
+  result: not found
+  file: null
+- host: https://forge.3gpp.org
+  path: /.well-known/openid-configuration
+  status: 404
+  result: not found
+  file: null
+- host: https://forge.3gpp.org
+  path: /.well-known/oauth-authorization-server
+  status: 404
+  result: not found
+  file: null
+- host: https://forge.3gpp.org
+  path: /.well-known/api-catalog
+  status: 404
+  result: not found
+  file: null
+- host: https://forge.3gpp.org
+  path: /.well-known/ai-plugin.json
+  status: 404
+  result: not found
+  file: null
+- host: https://forge.3gpp.org
+  path: /llms.txt
+  status: 404
+  result: not found
+  file: null
+- host: https://portal.3gpp.org
+  path: /.well-known/security.txt
+  status: 404
+  result: not found
+  file: null
+- host: https://portal.3gpp.org
+  path: /.well-known/openid-configuration
+  status: 404
+  result: not found
+  file: null
+- host: https://portal.3gpp.org
+  path: /.well-known/oauth-authorization-server
+  status: 404
+  result: not found
+  file: null
+- host: https://portal.3gpp.org
+  path: /.well-known/api-catalog
+  status: 404
+  result: not found
+  file: null
+- host: https://portal.3gpp.org
+  path: /.well-known/ai-plugin.json
+  status: 404
+  result: not found
+  file: null
+- host: https://portal.3gpp.org
+  path: /llms.txt
+  status: 404
+  result: not found
+  file: null

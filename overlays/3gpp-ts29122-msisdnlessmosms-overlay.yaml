@@ -1,0 +1,24 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for 3gpp-msisdn-less-mo-sms
+  version: 1.0.0
+extends: openapi/3gpp-ts29122-msisdnlessmosms.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: 3gpp
+    x-apievangelist-artifact-set:
+    - authentication/3gpp-authentication.yml
+    - scopes/3gpp-scopes.yml
+    - errors/3gpp-problem-types.yml
+    - conventions/3gpp-conventions.yml
+    - lifecycle/3gpp-lifecycle.yml
+    - conformance/3gpp-conformance.yml
+    - data-model/3gpp-data-model.yml
+    x-apievangelist-source: https://forge.3gpp.org/rep/all/5G_APIs
+    x-apievangelist-deployment: 'template: this document describes an interface that mobile network operators instantiate.
+      The servers entry is a {apiRoot} template, not a callable 3GPP endpoint.'
+- target: $.servers[0]
+  update:
+    x-apievangelist-note: apiRoot is deployment specific and assigned by the operator or exposure function; 3GPP
+      itself hosts no runtime endpoint for this API.

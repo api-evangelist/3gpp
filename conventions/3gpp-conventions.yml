@@ -1,0 +1,123 @@
+generated: '2026-07-25'
+method: derived
+source: openapi/*.yml (116 documents) plus the 3GPP specifications that define the conventions
+docs:
+  design_guidelines: https://www.3gpp.org/ftp/Specs/archive/29_series/29.501/
+  protocol_realisation: https://www.3gpp.org/ftp/Specs/archive/29_series/29.500/
+  northbound_apis: https://www.3gpp.org/ftp/Specs/archive/29_series/29.122/
+  custom_header_abnf: https://forge.3gpp.org/swagger/tools/headers.html?abnf=TS29500_CustomHeaders.abnf
+summary: >-
+  3GPP does not operate an API; it specifies one. The cross-cutting request and response semantics below are
+  set once, in 3GPP TS 29.501 (principles and guidelines for services definition) and 3GPP TS 29.500
+  (technical realization of the Service Based Architecture), and are then inherited by every Service Based
+  Interface, every NEF/SCEF northbound API in TS 29.122 and TS 29.522, and every CAPIF API in TS 29.222.
+  Anything an agent learns about one 3GPP API is therefore true of the rest, which is unusual in this catalog.
+
+authentication:
+  style: oauth2 client credentials, per service scope
+  detail: >-
+    Service consumers obtain an access token from the NRF (TS 29.510 Nnrf_AccessToken) or, for northbound
+    exposure, from the CAPIF core function (TS 29.222) and present it as a bearer token. Transport is
+    protected with TLS. 64 of the 116 documents in this repo declare an oAuth2ClientCredentials security
+    scheme with a deployment supplied {tokenUrl}.
+  artifacts:
+    - authentication/3gpp-authentication.yml
+    - scopes/3gpp-scopes.yml
+
+uri_structure:
+  pattern: '{apiRoot}/<apiName>/<apiVersion>/<resource>'
+  example_servers:
+    - '{apiRoot}/3gpp-monitoring-event/v1'
+    - '{apiRoot}/capif-security/v1'
+    - '{MnSRoot}/ProvMnS/{MnSVersion}/{URI-LDN-first-part}'
+  notes: >-
+    apiRoot (and MnSRoot for the SA5 management services) is a deployment variable supplied by the operator or
+    the exposure function. 75 of the OpenAPI documents in this repo carry an {apiRoot} server template. There is
+    no 3GPP hosted host name; a base URL only exists once an operator instantiates the interface.
+
+versioning:
+  api_version:
+    style: uri-path
+    detail: the major version appears in the path segment after the API name, for example /v1
+  document_version:
+    style: semver-like three field scheme (major.technical.editorial)
+    docs: https://www.3gpp.org/specifications-technologies/specifications-by-series/version-numbering-scheme
+    detail: >-
+      Major 0 is an immature draft, 1 is at least 60 per cent complete, 2 is at least 80 per cent complete and
+      presented for approval, 3 or greater means the specification is approved and under change control. The
+      Release digit resets the technical and editorial fields.
+  release_trains:
+    detail: >-
+      Every API document also belongs to a 3GPP Release. On forge.3gpp.org each Release is a long lived branch
+      (REL-15 through REL-20) and each plenary produces a tag.
+  artifacts:
+    - lifecycle/3gpp-lifecycle.yml
+    - changelog/3gpp-changelog.yml
+
+feature_negotiation:
+  mechanism: supportedFeatures
+  detail: >-
+    Instead of proliferating versions, 3GPP APIs negotiate optional behaviour with a supportedFeatures bitmask
+    exchanged in the request and echoed in the response, as defined in TS 29.500 and TS 29.501. 72 of the 116
+    documents in this repo use it.
+
+idempotency:
+  supported: false
+  detail: >-
+    No 3GPP OpenAPI in this repo declares an Idempotency-Key header or any equivalent replay key, and the SBI
+    specifications do not define one. Safe replay is achieved instead by modelling long lived state as
+    addressable resources: a consumer PUTs or PATCHes a known subscription URI rather than re-POSTing a
+    command. Agents must not assume POST retries are safe.
+
+partial_update:
+  media_types:
+    - application/merge-patch+json
+    - application/json-patch+json
+  detail: >-
+    PATCH is the normal modify operation across the estate; 46 documents accept RFC 7396 JSON merge patch and
+    6 accept RFC 6902 JSON patch.
+
+pagination:
+  supported: false
+  detail: >-
+    The specifications in this repo expose collections as bounded resources scoped to a subscriber, an AF or an
+    MnS root and define no cursor or offset parameters. Management service queries in TS 28.532 use scope and
+    filter parameters rather than pages.
+
+error_envelope:
+  media_type: application/problem+json
+  schema: ProblemDetails
+  format: rfc7807
+  detail: >-
+    Errors are RFC 7807 problem details carrying the ProblemDetails type from TS 29.571 (5G core) or TS 29.122
+    (northbound), with an application level cause value inside the body. See errors/3gpp-problem-types.yml.
+  artifact: errors/3gpp-problem-types.yml
+
+notifications:
+  style: consumer supplied callback URI
+  detail: >-
+    Event delivery is modelled as OpenAPI callbacks. The consumer supplies notificationDestination, notifyUri
+    or notificationRecipientAddress when creating a subscription and the network function POSTs JSON
+    notifications to it over HTTP/2.
+  artifact: asyncapi/3gpp-notifications-webhooks.yml
+
+custom_headers:
+  detail: >-
+    TS 29.500 defines a family of 3gpp-Sbi-* HTTP headers for routing, discovery and binding between network
+    functions; 3GPP publishes their ABNF and an online checker for them on forge.
+  observed_in_repo:
+    - 3gpp-Sbi-Target-Nf-Id
+  abnf: https://forge.3gpp.org/swagger/tools/headers.html?abnf=TS29500_CustomHeaders.abnf
+
+rate_limiting:
+  detail: >-
+    Rate limiting is a deployment and operator concern, not a specified one. The specifications do define the
+    HTTP status codes an overloaded producer returns: 429 Too Many Requests appears in 408 operation responses
+    and 503 Service Unavailable in 408, both with Retry-After semantics per TS 29.500 overload control.
+  status_codes: [429, 503]
+
+transport:
+  protocol: HTTP/2
+  content_type: application/json
+  tls: required
+  detail: TS 29.500 mandates HTTP/2 over TLS for Service Based Interfaces.
