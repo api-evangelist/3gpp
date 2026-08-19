@@ -1,0 +1,194 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-monitoring-event",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Monitoring Event Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all or queried active subscriptions for the SCS/AS.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-monitoring-event/v1/:scsAsId/subscriptions",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "ip-addrs",
+                "value": "",
+                "type": "query",
+                "description": "The IP address(es) of the requested UE(s)."
+              },
+              {
+                "name": "ip-domain",
+                "value": "",
+                "type": "query",
+                "description": "The IPv4 address domain identifier. The attribute may only be provided if IPv4 address is included in the ip-addrs query parameter.\n"
+              },
+              {
+                "name": "mac-addrs",
+                "value": "",
+                "type": "query",
+                "description": "The MAC address(es) of the requested UE(s)."
+              }
+            ]
+          },
+          "docs": "Read all or queried active subscriptions for the SCS/AS."
+        },
+        {
+          "info": {
+            "name": "Creates a new subscription resource for monitoring event notification.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-monitoring-event/v1/:scsAsId/subscriptions",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new subscription resource for monitoring event notification."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Monitoring Event Subscription",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read an active subscriptions for the SCS/AS and the subscription Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-monitoring-event/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ]
+          },
+          "docs": "Read an active subscriptions for the SCS/AS and the subscription Id."
+        },
+        {
+          "info": {
+            "name": "Updates/replaces an existing subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-monitoring-event/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates/replaces an existing subscription resource."
+        },
+        {
+          "info": {
+            "name": "Modifies an existing subscription of monitoring event.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-monitoring-event/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modifies an existing subscription of monitoring event."
+        },
+        {
+          "info": {
+            "name": "Deletes an already existing monitoring event subscription.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-monitoring-event/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ]
+          },
+          "docs": "Deletes an already existing monitoring event subscription."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

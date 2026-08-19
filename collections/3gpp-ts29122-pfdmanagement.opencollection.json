@@ -1,0 +1,328 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-pfd-management",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PFD Management Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all or queried PFDs for a given SCS/AS.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-pfd-management/v1/:scsAsId/transactions",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "external-app-ids",
+                "value": "",
+                "type": "query",
+                "description": "The external application identifier(s) of the requested PFD data."
+              },
+              {
+                "name": "supp-feat",
+                "value": "",
+                "type": "query",
+                "description": "Contains the list of supported features."
+              }
+            ]
+          },
+          "docs": "Read all or queried PFDs for a given SCS/AS."
+        },
+        {
+          "info": {
+            "name": "Create PFDs for a given SCS/AS and one or more external Application Identifier(s).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-pfd-management/v1/:scsAsId/transactions",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create PFDs for a given SCS/AS and one or more external Application Identifier(s)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual PFD Management Transaction",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all PFDs for a given SCS/AS and a transaction for one or more external Application Identifier(s).",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-pfd-management/v1/:scsAsId/transactions/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Transaction ID"
+              }
+            ]
+          },
+          "docs": "Read all PFDs for a given SCS/AS and a transaction for one or more external Application Identifier(s)."
+        },
+        {
+          "info": {
+            "name": "Update PFDs for a given SCS/AS and a transaction for one or more external Application Identifier(s).",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-pfd-management/v1/:scsAsId/transactions/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Transaction ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update PFDs for a given SCS/AS and a transaction for one or more external Application Identifier(s)."
+        },
+        {
+          "info": {
+            "name": "Modify an existing PFD Management Transaction resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-pfd-management/v1/:scsAsId/transactions/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Transaction ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify an existing PFD Management Transaction resource."
+        },
+        {
+          "info": {
+            "name": "Delete PFDs for a given SCS/AS and a transaction for one or more external Application Identifier(s).",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-pfd-management/v1/:scsAsId/transactions/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Transaction ID"
+              }
+            ]
+          },
+          "docs": "Delete PFDs for a given SCS/AS and a transaction for one or more external Application Identifier(s)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Application PFD Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read PFDs at individual application level.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-pfd-management/v1/:scsAsId/transactions/:transactionId/applications/:appId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Transaction ID"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the application"
+              }
+            ]
+          },
+          "docs": "Read PFDs at individual application level."
+        },
+        {
+          "info": {
+            "name": "Update PFDs at individual application level.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-pfd-management/v1/:scsAsId/transactions/:transactionId/applications/:appId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Transaction ID"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the application"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update PFDs at individual application level."
+        },
+        {
+          "info": {
+            "name": "Update PFDs at individual application level.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-pfd-management/v1/:scsAsId/transactions/:transactionId/applications/:appId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Transaction ID"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the application"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update PFDs at individual application level."
+        },
+        {
+          "info": {
+            "name": "Delete PFDs at individual application level.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-pfd-management/v1/:scsAsId/transactions/:transactionId/applications/:appId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Transaction ID"
+              },
+              {
+                "name": "appId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the application"
+              }
+            ]
+          },
+          "docs": "Delete PFDs at individual application level."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,4538 @@
+{
+  "item": [
+    {
+      "id": "0b2a4a6f-9bbb-40a5-9a89-9b25781050c1",
+      "name": "RACS Parameter Provisionings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9a479ba5-5044-43c5-b6eb-809181e430d0",
+          "name": "Read all RACS parameter provisionings for a given AF.",
+          "request": {
+            "name": "Read all RACS parameter provisionings for a given AF.",
+            "description": {},
+            "url": {
+              "path": [
+                ":scsAsId",
+                "provisionings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "scsAsId",
+                  "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "af45af7c-c90c-48ba-b850-90e0f0a14cd8",
+              "name": "OK. The provisioning information related to the request URI is returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"racsConfigs\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {},\n      \"key_3\": {},\n      \"key_4\": {}\n    },\n    \"self\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n    },\n    \"supportedFeatures\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    },\n    \"racsReports\": {\n      \"key_0\": {\n        \"racsIds\": [\n          \"string\"\n        ],\n        \"failureCode\": \"MALFUNCTION\"\n      },\n      \"key_1\": {\n        \"racsIds\": [\n          \"string\"\n        ],\n        \"failureCode\": \"OTHER_REASON\"\n      }\n    }\n  },\n  {\n    \"racsConfigs\": {\n      \"key_0\": {},\n      \"key_1\": {},\n      \"key_2\": {}\n    },\n    \"self\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n    },\n    \"supportedFeatures\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    },\n    \"racsReports\": {\n      \"key_0\": {\n        \"racsIds\": [\n          \"string\"\n        ],\n        \"failureCode\": \"OTHER_REASON\"\n      },\n      \"key_1\": {\n        \"racsIds\": [\n          \"string\"\n        ],\n        \"failureCode\": \"RACS_ID_DUPLICATED\"\n      }\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e6fe4594-6470-4d6a-b094-b5aeaf8f1673",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4b657c90-d38a-40e0-8233-582d376f4a0c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6ece9b46-13ef-4677-89f8-95f2e98ca792",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3ccdbc54-f0dc-488d-9b3e-6cad2dc2feeb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8cf75460-dda0-4f5c-8dd5-7b6ccccfa0d6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "12604e68-8b9d-48ec-bafe-51d6fa6c0069",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ce3bca7f-c56a-44fc-b816-f703926d95b4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "450f4a97-c859-473d-a915-2df9503f3fa2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8ee8e37e-bf04-4b92-a3d8-298f709f297d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "baddb07c-f039-4a07-9906-c0e9184f9530",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3a4d12be-e8c5-45b7-a5aa-5328e9746213",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "857daab4-d9f8-4469-9565-180594bf2298",
+          "name": "Create a new RACS parameter provisioning.",
+          "request": {
+            "name": "Create a new RACS parameter provisioning.",
+            "description": {},
+            "url": {
+              "path": [
+                ":scsAsId",
+                "provisionings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "scsAsId",
+                  "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "51d8e312-c2f2-42b0-bfad-b4f9bab5f520",
+              "name": "Created. The provisioning was created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"racsConfigs\": {\n    \"key_0\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"racsReports\": {\n    \"key_0\": {\n      \"racsIds\": [\n        \"string\"\n      ],\n      \"failureCode\": \"OTHER_REASON\"\n    },\n    \"key_1\": {\n      \"racsIds\": [\n        \"string\"\n      ],\n      \"failureCode\": \"OTHER_REASON\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d94414d1-70fd-4bdc-b4ea-e8d23cce0ccd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bf2ddc6a-8e5b-442d-a70b-a7bb04640f12",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "555641af-68c4-4cb4-9181-725815ea1672",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6cac7ea5-81ac-48e9-81d6-4cb885a12708",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f9851c55-16a7-4859-ac0b-0c9f50f594b9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "11a1f326-4501-4092-bd51-7b40e70e88c1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "95ef1f9f-232f-4313-a3d5-2bd3c01dfaf8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "79c18dc5-4a8c-4c52-9d80-fb06c47b6deb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1e64a466-edae-42a3-8a67-65007503a210",
+              "name": "The RACS data for all RACS IDs were not provisioned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"racsIds\": [\n      \"string\"\n    ],\n    \"failureCode\": \"RACS_ID_DUPLICATED\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "48cf181e-f2f0-4a16-ad3b-2060c5f06d5b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6956e9f2-9d3e-4947-801c-065a52e0cfff",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "247701bc-53f5-4966-a0e1-152ac189a90f",
+      "name": "Individual RACS Parameter Provisioning",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3e677386-3c64-4ddb-afd3-6e20a116e1b9",
+          "name": "Read an existing RACS parameter provisioning.",
+          "request": {
+            "name": "Read an existing RACS parameter provisioning.",
+            "description": {},
+            "url": {
+              "path": [
+                ":scsAsId",
+                "provisionings",
+                ":provisioningId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "scsAsId",
+                  "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "provisioningId",
+                  "description": "(Required) Provisioning ID"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "abf53740-bea2-46f8-bc61-4b3682444b13",
+              "name": "OK. The provisioning information related to the request URI is returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"racsConfigs\": {\n    \"key_0\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"racsReports\": {\n    \"key_0\": {\n      \"racsIds\": [\n        \"string\"\n      ],\n      \"failureCode\": \"OTHER_REASON\"\n    },\n    \"key_1\": {\n      \"racsIds\": [\n        \"string\"\n      ],\n      \"failureCode\": \"OTHER_REASON\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0b1c1bdc-39b9-47a0-84dc-264aef38ab57",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4a6832aa-f547-43c4-9c96-838700c829f7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "aa1a592f-734c-4443-8ebd-8b67bddd6e2d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "29fde0e3-b5a2-4a5a-b194-815d73cacbff",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d44a1d7f-f1ce-492f-853a-26537a17e981",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9e321598-dcc3-4c53-a828-e15f331256f5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0b4f16d3-cd6e-4db5-87f9-0bc6d5ddccc3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "96572d10-49eb-4c66-b953-ba11b3a63ff6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3a1ec369-c311-44a3-999e-a7bd49f74215",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7b6fa8b1-18e9-4c47-b2ff-429c64ac2f7f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "17e6ace0-509b-4ff8-982f-325f073b511c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2b5cb366-a660-48f3-905d-1a0ae2a929f1",
+          "name": "Modify some properties in an existing RACS parameter provisioning.",
+          "request": {
+            "name": "Modify some properties in an existing RACS parameter provisioning.",
+            "description": {},
+            "url": {
+              "path": [
+                ":scsAsId",
+                "provisionings",
+                ":provisioningId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "scsAsId",
+                  "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "provisioningId",
+                  "description": "(Required) Provisioning ID"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/merge-patch+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    },\n    \"key_1\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    },\n    \"key_2\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7e48daf3-b58b-41cf-b6a6-610145649889",
+              "name": "OK. The provisioning data was updated successfully. The SCEF shall return an updated provisioning information in the response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"racsConfigs\": {\n    \"key_0\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"racsReports\": {\n    \"key_0\": {\n      \"racsIds\": [\n        \"string\"\n      ],\n      \"failureCode\": \"OTHER_REASON\"\n    },\n    \"key_1\": {\n      \"racsIds\": [\n        \"string\"\n      ],\n      \"failureCode\": \"OTHER_REASON\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2dc24226-ebc1-4cf7-a7e0-826ae1161a4d",
+              "name": "The provisioning data was updated successfully, and no content is to be sent in the response message body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "17a0b7bd-dafe-4641-8922-1fcce57bbdda",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "63dfafe9-db3a-4040-af16-03f27233e24d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3cc76516-5bb7-4737-b58e-a41f4c69a374",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d2644d94-61cf-4120-ac15-9aaf14e470a4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9696c920-7903-4a36-afae-8e3085320388",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e1e319a0-9059-434f-8c6f-e7bd20320396",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b2f01c57-a65d-4399-84e2-5903d57142a2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a638c785-d5e4-4dad-be19-8daf17c22094",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e6041030-e097-4837-859b-ff2ef8ff7c17",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c1acc8d1-bac1-4465-a75e-7dbb56045bc2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "78ed24e8-5307-41ec-bcb7-749ab725b83a",
+              "name": "The RACS data for all RACS IDs were not provisioned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"racsIds\": [\n      \"string\"\n    ],\n    \"failureCode\": \"RACS_ID_DUPLICATED\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b19e1347-04fe-4aae-a652-5a75befd3a96",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8a27f8a1-a436-4ae4-8f83-7777020bcb7f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {\n      \"racsParamEps\": \"<string>\",\n      \"racsParam5Gs\": \"<string>\",\n      \"imeiTacs\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57c1c498-f480-4c74-9857-bc06809bc694",
+          "name": "Modify all properties in an existing RACS parameter provisioning.",
+          "request": {
+            "name": "Modify all properties in an existing RACS parameter provisioning.",
+            "description": {},
+            "url": {
+              "path": [
+                ":scsAsId",
+                "provisionings",
+                ":provisioningId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "scsAsId",
+                  "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "provisioningId",
+                  "description": "(Required) Provisioning ID"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ea05b4a0-4ef8-4698-b42c-36e706010c5b",
+              "name": "OK. The provisioning data was updated successfully. The SCEF shall return an updated provisioning information in the response.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"racsConfigs\": {\n    \"key_0\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"racsReports\": {\n    \"key_0\": {\n      \"racsIds\": [\n        \"string\"\n      ],\n      \"failureCode\": \"OTHER_REASON\"\n    },\n    \"key_1\": {\n      \"racsIds\": [\n        \"string\"\n      ],\n      \"failureCode\": \"OTHER_REASON\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "318c4a66-2eaf-4edf-9684-86799d11eb89",
+              "name": "The provisioning data was updated successfully, and no content is to be sent in the response message body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "60c11cab-a42b-4d20-b5eb-252c9c5e1819",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dee9f050-4d54-4e45-998e-10090d45c980",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e0c3f2c8-d482-41db-bef8-21da076395ba",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "eda05d7d-84cd-43ea-90a5-769420f5ef03",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8903733c-6f91-4cb0-b146-1b731e967d55",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "143d5cc7-59cb-4dbd-a0bf-90eb8995fba3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "531b80ec-23f9-4853-8791-8c80adce5601",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d26b3c1a-6061-4073-99de-073b07d2a6cb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3f134336-ec82-4c10-8f34-90a7a132a760",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "07c952a6-6f1f-43e7-86a4-9d997371fa0b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a9c34de1-8b14-4688-92ff-aa1b2550d8ee",
+              "name": "The RACS data for all RACS IDs were not provisioned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"racsIds\": [\n      \"string\"\n    ],\n    \"failureCode\": \"RACS_ID_DUPLICATED\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b0bdd11f-e9e4-458a-98b8-ac1af7593e88",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "235ed56a-f5a2-4c7a-a4ee-7e14c01f58ea",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"racsConfigs\": {\n    \"key_0\": {},\n    \"key_1\": {},\n    \"key_2\": {},\n    \"key_3\": {}\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71ebf54f-48d4-417c-86af-97792288e183",
+          "name": "Delete a RACS parameter provisioning.",
+          "request": {
+            "name": "Delete a RACS parameter provisioning.",
+            "description": {},
+            "url": {
+              "path": [
+                ":scsAsId",
+                "provisionings",
+                ":provisioningId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "scsAsId",
+                  "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "provisioningId",
+                  "description": "(Required) Provisioning ID"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d1cedce8-cd2f-485b-bb3b-171e0e707d0c",
+              "name": "No Content. The provisioning was terminated successfully. The content shall be empty.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "73907bd1-0e52-46e2-a0a3-be6493219ddd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cb10ad8d-d7a0-40d4-b8b2-0db1a58a6112",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "489e39af-a201-4e3d-a7f1-4c60f2bdf0cd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d1a66466-f22f-4247-9698-fbb6c109b51c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3076b62a-749b-4767-bd0f-0ce3fb526b5b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "983b2d01-d8f1-4716-87f5-f3b9fc799e9a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dc63e285-ce5b-4bfc-9cfd-7791b3bb7f7e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "082bf3a2-f3c4-42d5-b443-48fd4a71b0a3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5a3612b2-f891-4c75-9c7e-4541ad7d9d17",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6720d324-26e2-45c8-934b-1135bbc65d20",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "provisionings",
+                    ":provisioningId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisioningId",
+                      "description": "(Required) Provisioning ID"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/3gpp-racs-pp/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "28add10a-9664-4b7b-8d04-5266d05b52d9",
+    "name": "3gpp-racs-parameter-provisioning",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for provisioning UE radio capability parameters.  \n© 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

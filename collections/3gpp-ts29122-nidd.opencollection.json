@@ -1,0 +1,487 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-nidd",
+    "version": "1.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NIDD configurations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all NIDD configuration resources for a given SCS/AS.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              }
+            ]
+          },
+          "docs": "Read all NIDD configuration resources for a given SCS/AS."
+        },
+        {
+          "info": {
+            "name": "Create a new NIDD configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new NIDD configuration resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual NIDD configuration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read an NIDD configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD configuration resource in the SCEF."
+              }
+            ]
+          },
+          "docs": "Read an NIDD configuration resource."
+        },
+        {
+          "info": {
+            "name": "Modify an existing NIDD configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD configuration resource in the SCEF."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify an existing NIDD configuration resource."
+        },
+        {
+          "info": {
+            "name": "Delete an existing NIDD configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD configuration resource in the SCEF."
+              }
+            ]
+          },
+          "docs": "Delete an existing NIDD configuration resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "NIDD downlink data deliveries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all pending NIDD downlink data delivery resources related to a particular NIDD configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations/:configurationId/downlink-data-deliveries",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD configuration resource in the SCEF."
+              }
+            ]
+          },
+          "docs": "Read all pending NIDD downlink data delivery resources related to a particular NIDD configuration resource."
+        },
+        {
+          "info": {
+            "name": "Create an NIDD downlink data delivery resource related to a particular NIDD configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations/:configurationId/downlink-data-deliveries",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD configuration resource in the SCEF."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an NIDD downlink data delivery resource related to a particular NIDD configuration resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual NIDD downlink data delivery",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read pending NIDD downlink data delivery resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations/:configurationId/downlink-data-deliveries/:downlinkDataDeliveryId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD configuration resource in the SCEF."
+              },
+              {
+                "name": "downlinkDataDeliveryId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD downlink data delivery in the SCEF."
+              }
+            ]
+          },
+          "docs": "Read pending NIDD downlink data delivery resource."
+        },
+        {
+          "info": {
+            "name": "Replace an NIDD downlink data delivery resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations/:configurationId/downlink-data-deliveries/:downlinkDataDeliveryId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD configuration resource in the SCEF."
+              },
+              {
+                "name": "downlinkDataDeliveryId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD downlink data delivery in the SCEF."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Replace an NIDD downlink data delivery resource."
+        },
+        {
+          "info": {
+            "name": "Modify an existing Individual NIDD downlink data delivery resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations/:configurationId/downlink-data-deliveries/:downlinkDataDeliveryId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD configuration resource in the SCEF."
+              },
+              {
+                "name": "downlinkDataDeliveryId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD downlink data delivery in the SCEF."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify an existing Individual NIDD downlink data delivery resource."
+        },
+        {
+          "info": {
+            "name": "Delete an NIDD downlink data delivery resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations/:configurationId/downlink-data-deliveries/:downlinkDataDeliveryId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD configuration resource in the SCEF."
+              },
+              {
+                "name": "downlinkDataDeliveryId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD downlink data delivery in the SCEF."
+              }
+            ]
+          },
+          "docs": "Delete an NIDD downlink data delivery resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ManagePort Configurations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all RDS ManagePort Configurations.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations/:configurationId/rds-ports",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD configuration resource in the SCEF."
+              }
+            ]
+          },
+          "docs": "Read all RDS ManagePort Configurations."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual ManagePort Configuration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read an Individual ManagePort Configuration resource to query port numbers.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations/:configurationId/rds-ports/:portId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD configuration resource in the SCEF."
+              },
+              {
+                "name": "portId",
+                "value": "",
+                "type": "path",
+                "description": "The UE port number."
+              }
+            ]
+          },
+          "docs": "Read an Individual ManagePort Configuration resource to query port numbers."
+        },
+        {
+          "info": {
+            "name": "Create a new Individual ManagePort Configuration resource to reserve port numbers.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations/:configurationId/rds-ports/:portId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD configuration resource in the SCEF."
+              },
+              {
+                "name": "portId",
+                "value": "",
+                "type": "path",
+                "description": "The UE port number."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Individual ManagePort Configuration resource to reserve port numbers."
+        },
+        {
+          "info": {
+            "name": "Delete an Individual ManagePort Configuration resource to release port numbers.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-nidd/v1/:scsAsId/configurations/:configurationId/rds-ports/:portId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual NIDD configuration resource in the SCEF."
+              },
+              {
+                "name": "portId",
+                "value": "",
+                "type": "path",
+                "description": "The UE port number."
+              }
+            ]
+          },
+          "docs": "Delete an Individual ManagePort Configuration resource to release port numbers."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

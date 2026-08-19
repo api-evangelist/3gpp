@@ -2,10 +2,8 @@ openapi: 3.0.1
 info:
   title: Heartbeat notification
   version: 18.1.0
-  description: >-
-    OAS 3.0.1 definition of the heartbeat notification
-    © 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
-    All rights reserved.
+  description: OAS 3.0.1 definition of the heartbeat notification © 2023, 3GPP Organizational Partners
+    (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 externalDocs:
   description: 3GPP TS 28.532; Generic management services
   url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.6532/
@@ -15,11 +13,14 @@ components:
     HeartbeatNotificationTypes:
       type: string
       enum:
-        - notifyHeartbeat
+      - notifyHeartbeat
     NotifyHeartbeat:
       allOf:
-        - $ref: 'TS28623_ComDefs.yaml#/components/schemas/NotificationHeader'
-        - type: object
-          properties:
-            heartbeatNtfPeriod:
-              type: integer
+      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
+      - type: object
+        properties:
+          heartbeatNtfPeriod:
+            type: integer
+servers:
+- url: https://forge.3gpp.org/rep/api/v4
+  description: Base URL reconciled from apis.yml

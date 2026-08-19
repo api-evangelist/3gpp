@@ -1,0 +1,125 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-data-reporting",
+    "version": "1.2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Data Reporting Sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a new Data Reporting Session.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-data-reporting/v1/sessions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Data Reporting Session."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Data Reporting Session",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request the retrieval of an existing Individual Data Reporting Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-data-reporting/v1/sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Session."
+              }
+            ]
+          },
+          "docs": "Request the retrieval of an existing Individual Data Reporting Session resource."
+        },
+        {
+          "info": {
+            "name": "Request the update of an existing Individual Data Reporting Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-data-reporting/v1/sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Session."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the update of an existing Individual Data Reporting Session resource."
+        },
+        {
+          "info": {
+            "name": "Deletes an already existing Data Reporting Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-data-reporting/v1/sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Session."
+              }
+            ]
+          },
+          "docs": "Deletes an already existing Data Reporting Session resource."
+        },
+        {
+          "info": {
+            "name": "Report collected UE data.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-data-reporting/v1/sessions/:sessionId/report",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Session."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Report collected UE data."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

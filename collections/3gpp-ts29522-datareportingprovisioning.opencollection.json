@@ -1,0 +1,226 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-data-reporting-provisioning",
+    "version": "1.2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Data Reporting Provisioning Sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a new Data Reporting Provisioning Session.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-data-reporting-provisioning/v1/sessions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Data Reporting Provisioning Session."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Data Reporting Provisioning Session",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request the retrieval of an existing Individual Data Reporting Provisioning Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-data-reporting-provisioning/v1/sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Provisioning Session."
+              }
+            ]
+          },
+          "docs": "Request the retrieval of an existing Individual Data Reporting Provisioning Session resource."
+        },
+        {
+          "info": {
+            "name": "Deletes an already existing Individual Data Reporting Provisioning Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-data-reporting-provisioning/v1/sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Provisioning Session."
+              }
+            ]
+          },
+          "docs": "Deletes an already existing Individual Data Reporting Provisioning Session resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Data Reporting Configurations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a new Data Reporting Configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-data-reporting-provisioning/v1/sessions/:sessionId/configurations",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Provisioning Session."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Data Reporting Configuration resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Data Reporting Configuration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request the retrieval of an existing Individual Data Reporting Configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-data-reporting-provisioning/v1/sessions/:sessionId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Provisioning Session."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Configuration."
+              }
+            ]
+          },
+          "docs": "Request the retrieval of an existing Individual Data Reporting Configuration resource."
+        },
+        {
+          "info": {
+            "name": "Request to update an existing Individual Data Reporting Configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-data-reporting-provisioning/v1/sessions/:sessionId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Provisioning Session."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Configuration."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request to update an existing Individual Data Reporting Configuration resource."
+        },
+        {
+          "info": {
+            "name": "Request to modify an existing Individual Data Reporting Configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-data-reporting-provisioning/v1/sessions/:sessionId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Provisioning Session."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Configuration."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request to modify an existing Individual Data Reporting Configuration resource."
+        },
+        {
+          "info": {
+            "name": "Deletes an already existing Data Reporting Configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-data-reporting-provisioning/v1/sessions/:sessionId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Provisioning Session."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Data Reporting Configuration."
+              }
+            ]
+          },
+          "docs": "Deletes an already existing Data Reporting Configuration resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

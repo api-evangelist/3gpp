@@ -1,0 +1,109 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CAPIF_Open_Discover_Service_API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Service APIs (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetServAPIs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/open-api-disc/v1/service-apis",
+            "params": [
+              {
+                "name": "api-names",
+                "value": "",
+                "type": "query",
+                "description": "Contains the name(s) of the target Service API(s). Each Service API name shall be set to the value of the <apiName> placeholder of the target Service API URI structure as defined in clause 5.2.4 of 3GPP TS 29.122 [14].\n"
+              },
+              {
+                "name": "api-versions",
+                "value": "",
+                "type": "query",
+                "description": "Contains the major version(s) (e.g., v1) of the target Service API(s). Each Service API version shall be set to the value of the <apiVersion> placeholder of the target Service API URI structure as defined in clause 5.2.4 of 3GPP TS 29.122 [14]. The key of the map shall be set to the value of the Service API name (i.e., the value of the <apiName> placeholder of the Service API URI structure as defined in clause 5.2.4 of 3GPP TS 29.122 [14]) of the Service API to which the provided list of Service API version(s) provided within the map value applies.\n"
+              },
+              {
+                "name": "comm-type",
+                "value": "",
+                "type": "query",
+                "description": "Contains the communication type supported by the target Service API(s).\n"
+              },
+              {
+                "name": "protocols",
+                "value": "",
+                "type": "query",
+                "description": "Contains the protocol(s) supported by the target Service API(s). \n"
+              },
+              {
+                "name": "data-format",
+                "value": "",
+                "type": "query",
+                "description": "Contains data format supported by the target Service API(s).\n"
+              },
+              {
+                "name": "api-cats",
+                "value": "",
+                "type": "query",
+                "description": "Contains the category(ies) of the target Service API(s).\n"
+              },
+              {
+                "name": "preferred-aef-loc",
+                "value": "",
+                "type": "query",
+                "description": "Contains the preferred location information for AEF(s) exposing the target Service API(s). This query parameter is ignored by the CCF if there are no matching records at the CCF.\n"
+              },
+              {
+                "name": "api-prov-names",
+                "value": "",
+                "type": "query",
+                "description": "Contains the name(s) of the provider(s) of the target Service API(s).\n"
+              },
+              {
+                "name": "api-supported-features",
+                "value": "",
+                "type": "query",
+                "description": "Contains the list of the features supported by the target Service API(s) identified by  the api-name query parameter. This query parameter may be present only if the api-name query parameter is also present. The key of the map shall be set to the value of the Service API name (among the ones provided within the api-names query parameter) of the Service API to which the provided list of supported feature(s) provided within the map value applies.\n"
+              },
+              {
+                "name": "service-kpis",
+                "value": "",
+                "type": "query",
+                "description": "Contains iInformation about service characteristics provided by the target  Service API(s). \n"
+              },
+              {
+                "name": "api-ids",
+                "value": "",
+                "type": "query",
+                "description": "Contains the identifier(s) of the targeted Service APIs.\n"
+              },
+              {
+                "name": "res-ops",
+                "value": "",
+                "type": "query",
+                "description": "Contains the list of supported Service API resource(s) and service operation(s). This query parameter may be present only if the api-names query parameter is present.\n"
+              },
+              {
+                "name": "supported-features",
+                "value": "",
+                "type": "query",
+                "description": "Contains the list of supported features among the ones defined in clause 8.11.6. This query parameter shall be present only when feature negotiation is required.\n"
+              }
+            ]
+          },
+          "docs": "Request Open discovery of the Service API(s) according to a set of filtering criteria.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

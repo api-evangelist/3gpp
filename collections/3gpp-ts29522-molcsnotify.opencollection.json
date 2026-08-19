@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-mo-lcs-notify",
+    "version": "1.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AF level UE location update notification operation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UE location information update notification",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-mo-lcs-notify/v1/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "UE location information update notification"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

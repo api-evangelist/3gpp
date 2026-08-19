@@ -1,0 +1,139 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CAPIF_Discover_Service_API",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "All published service APIs (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetPubServAPIs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/service-apis/v1/allServiceAPIs",
+            "params": [
+              {
+                "name": "api-invoker-id",
+                "value": "",
+                "type": "query",
+                "description": "String identifying the API invoker assigned by the CAPIF core function. It also represents the CCF identifier in the CAPIF-6/6e interface.\n"
+              },
+              {
+                "name": "api-name",
+                "value": "",
+                "type": "query",
+                "description": "Contains the API name set to the value of the \"<apiName>\" placeholder of the API URI as defined in clause 5.2.4 of 3GPP TS 29.122 [14].\n"
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "API major version the URI (e.g. v1)."
+              },
+              {
+                "name": "comm-type",
+                "value": "",
+                "type": "query",
+                "description": "Communication type used by the API (e.g. REQUEST_RESPONSE)."
+              },
+              {
+                "name": "protocol",
+                "value": "",
+                "type": "query",
+                "description": "Protocol used by the API."
+              },
+              {
+                "name": "aef-id",
+                "value": "",
+                "type": "query",
+                "description": "AEF identifer."
+              },
+              {
+                "name": "data-format",
+                "value": "",
+                "type": "query",
+                "description": "Data formats used by the API (e.g. serialization protocol JSON used)."
+              },
+              {
+                "name": "api-cat",
+                "value": "",
+                "type": "query",
+                "description": "The service API category to which the service API belongs to."
+              },
+              {
+                "name": "preferred-aef-loc",
+                "value": "",
+                "type": "query",
+                "description": "The preferred AEF location."
+              },
+              {
+                "name": "req-api-prov-name",
+                "value": "",
+                "type": "query",
+                "description": "Represents the required API provider name."
+              },
+              {
+                "name": "api-supported-features",
+                "value": "",
+                "type": "query",
+                "description": "Features supported by the discovered service API indicated by api-name parameter. This may only be present if api-name query parameter is present.\n"
+              },
+              {
+                "name": "ue-ip-addr",
+                "value": "",
+                "type": "query",
+                "description": "Represents the UE IP address information."
+              },
+              {
+                "name": "service-kpis",
+                "value": "",
+                "type": "query",
+                "description": "Contains iInformation about service characteristics provided by the targeted  service API(s).\n"
+              },
+              {
+                "name": "net-slice-info",
+                "value": "",
+                "type": "query",
+                "description": "Contains the identifier(s) of the network slice(s) within which the API shall be available.\n"
+              },
+              {
+                "name": "grant-types",
+                "value": "",
+                "type": "query",
+                "description": "Contains the OAuth grant types that need to be supported."
+              },
+              {
+                "name": "api-ids",
+                "value": "",
+                "type": "query",
+                "description": "Contains the identifier(s) of the targeted service APIs. When this query parameter is present, then all the other query parameters shall be absent except the supported-features and api-invoker-id query parameters.\n"
+              },
+              {
+                "name": "res-ops",
+                "value": "",
+                "type": "query",
+                "description": "Contains the list of supported API resource(s) and service operation(s).\n"
+              },
+              {
+                "name": "supported-features",
+                "value": "",
+                "type": "query",
+                "description": "Features supported by the NF consumer for the CAPIF Discover Service API."
+              }
+            ]
+          },
+          "docs": "Discover published service APIs and retrieve a collection of APIs according to certain filter criteria.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

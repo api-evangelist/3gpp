@@ -1,0 +1,176 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AMInfluence",
+    "version": "1.2.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AM Influence Subscription",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all of the active subscriptions for the AF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-am-influence/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              }
+            ]
+          },
+          "docs": "Read all of the active subscriptions for the AF."
+        },
+        {
+          "info": {
+            "name": "Create a new subscription to AM influence.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-am-influence/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new subscription to AM influence."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual AM Influence Subscription",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read an active subscription identified by the subscriptionId.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-am-influence/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource."
+              }
+            ]
+          },
+          "docs": "Read an active subscription identified by the subscriptionId."
+        },
+        {
+          "info": {
+            "name": "Update/Replace an existing subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-am-influence/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update/Replace an existing subscription resource."
+        },
+        {
+          "info": {
+            "name": "Update/Replace an existing subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-am-influence/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update/Replace an existing subscription resource."
+        },
+        {
+          "info": {
+            "name": "Delete an existing subscription.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-am-influence/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource."
+              }
+            ]
+          },
+          "docs": "Delete an existing subscription."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

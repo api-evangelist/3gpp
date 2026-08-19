@@ -1,0 +1,121 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-ue-address",
+    "version": "1.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "UE Address(es) Information Retrieval",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve UE Address information.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-ue-address/v1/retrieve",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request to retrieve UE Address information."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "UE Address Subscriptions (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve all the active UE Address Subscriptions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-ue-address/v1/subscriptions",
+            "params": [
+              {
+                "name": "supp-feat",
+                "value": "",
+                "type": "query",
+                "description": "Contains the list of supported features among the ones defined in clause 5.35.6.\n"
+              }
+            ]
+          },
+          "docs": "Request to retrieve all the active UE Address Subscriptions."
+        },
+        {
+          "info": {
+            "name": "Request the creation of a new UE Address Subscription at the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-ue-address/v1/subscriptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the creation of a new UE Address Subscription at the NEF."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual UE Address Subscription (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve an existing Individual UE Address Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-ue-address/v1/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual UE Address Subscription resource."
+              }
+            ]
+          },
+          "docs": "Request to retrieve an existing Individual UE Address Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Request the deletion of an existing Individual UE Address Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-ue-address/v1/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual UE Address Subscription resource."
+              }
+            ]
+          },
+          "docs": "Request the deletion of an existing Individual UE Address Subscription resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

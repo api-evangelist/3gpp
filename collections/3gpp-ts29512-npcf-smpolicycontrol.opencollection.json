@@ -1,0 +1,106 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Npcf_SMPolicyControl API",
+    "version": "1.1.7"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SM Policies (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a new Individual SM Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/npcf-smpolicycontrol/v1/sm-policies",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Individual SM Policy"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual SM Policy (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read an Individual SM Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/npcf-smpolicycontrol/v1/sm-policies/:smPolicyId",
+            "params": [
+              {
+                "name": "smPolicyId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of a policy association"
+              }
+            ]
+          },
+          "docs": "Read an Individual SM Policy"
+        },
+        {
+          "info": {
+            "name": "Update an existing Individual SM Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/npcf-smpolicycontrol/v1/sm-policies/:smPolicyId/update",
+            "params": [
+              {
+                "name": "smPolicyId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of a policy association"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing Individual SM Policy"
+        },
+        {
+          "info": {
+            "name": "Delete an existing Individual SM Policy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/npcf-smpolicycontrol/v1/sm-policies/:smPolicyId/delete",
+            "params": [
+              {
+                "name": "smPolicyId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of a policy association"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete an existing Individual SM Policy"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

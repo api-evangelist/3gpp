@@ -1,0 +1,4517 @@
+{
+  "item": [
+    {
+      "id": "56eca9b4-175f-4c14-9a86-370dbea1d614",
+      "name": "VFL Training Subscriptions (Collection)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b2c8d0a0-fef1-4a0c-9bf8-4d8bbdec8ca9",
+          "name": "Retrieve all the active VFL Training Subscriptions.",
+          "request": {
+            "name": "Retrieve all the active VFL Training Subscriptions.",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Represents the identifier of the AF"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b71264a8-c131-4811-a7cf-ddce13b9f89f",
+              "name": "OK. All the Individual VFL Training Subscription resource(s) managed by the NEF are returned. If there are no active Individual VFL Training Subscription resources at the NEF, an empty array is returned.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"vflTrainSubs\": [\n      {\n        \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n      }\n    ],\n    \"extNwdafId\": \"<string>\",\n    \"notifUri\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n    },\n    \"notifCorrId\": \"<string>\",\n    \"vflPreFlag\": \"<boolean>\",\n    \"reportingReqs\": {\n      \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n    },\n    \"trainReports\": [\n      {\n        \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n      }\n    ],\n    \"suppFeat\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    }\n  },\n  {\n    \"vflTrainSubs\": [\n      {\n        \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n      }\n    ],\n    \"extNwdafId\": \"<string>\",\n    \"notifUri\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n    },\n    \"notifCorrId\": \"<string>\",\n    \"vflPreFlag\": \"<boolean>\",\n    \"reportingReqs\": {\n      \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n    },\n    \"trainReports\": [\n      {\n        \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n      }\n    ],\n    \"suppFeat\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13adc084-4fce-4f84-9cd4-0990226ab28a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2c3366f5-ddeb-4e56-af48-53b74605b0ee",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8243ad1a-b685-4b7e-ab9c-8d9ad93a20ab",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e77df44c-2858-47fc-b259-8f91a45c4824",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f6f899db-c4be-4edc-856f-79c76d594234",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ec3ae8dd-ab1a-40e3-b459-5ee519c3c8a3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7dda7eae-cbb2-4bc4-9808-d8686d66d346",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e75a1d55-07d5-48a4-83e0-e9a199594084",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "883fa058-8bd4-4be3-ae24-942b92bb15d9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "02b5429d-3642-4f4b-a357-40d2404461ef",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "38db9c67-d5ff-4046-8475-edb3df1c7f42",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19fae950-d67f-460e-a3d8-2958f45fff5a",
+          "name": "Create a new Individual VFL Training Subscription.",
+          "request": {
+            "name": "Create a new Individual VFL Training Subscription.",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Represents the identifier of the AF"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ed3d0efe-41a3-497d-8913-77cdb79dc9be",
+              "name": "Created. A representation of the created Individual VFL Training Subscription resource is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource.\n",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "44f9e86c-5729-477e-8108-b73723e3d9be",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7173b529-9a60-4c83-b453-fa5fcb18100a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e0e72361-d4c8-480e-94fb-03b00658dcf6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "10451f5d-1446-4b70-8b6e-960bd1c742fa",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "581aceb7-3f1a-4bc3-a9e2-b22352b4a613",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d4b84fd5-0d3a-4e51-818e-8ca394c440d0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fcdfdfd8-0351-42af-baeb-2cfd24de4f40",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "84b44587-54a4-4f7f-a786-d1a6d6a252e1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2e879ef8-8c8f-4f57-9b27-5ce9be6cede1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3b79c6e0-c859-496b-a8a9-1b9bc354b593",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "53e37d1c-0bc2-47b1-82c8-a418cdd4d819",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "09a9f83b-682a-4ba2-8121-c18486364687",
+      "name": "Individual VFL Training Subscription (Document)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8f4cb337-a82a-4717-a44e-ed6223f80f49",
+          "name": "Retrieve an existing Individual VFL Training Subscription resource.",
+          "request": {
+            "name": "Retrieve an existing Individual VFL Training Subscription resource.",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "subscriptions",
+                ":subId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Represents the identifier of the AF."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subId",
+                  "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1a3600ea-5474-4d08-ac87-929f8472532d",
+              "name": "OK. The requested Individual VFL Training Subscription resource is successfully returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"string\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"string\",\n  \"vflPreFlag\": true,\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4bcb2017-369f-4139-857b-f6331a502b79",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b186b62d-785e-4578-ad76-158e07c43c4f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3cf5d492-a34f-489b-be25-1eae51445730",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e7d34ab0-5fc6-4ad6-b6ec-cdaba0cea157",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6c904f8e-1368-4963-99f3-efb9cc1ef0d8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3faef156-04a3-4070-8952-ece8a361e589",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9bff8571-362b-4266-9c1f-0b7b0a721131",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a12f966f-e4a7-469b-ab50-207b5b3a378d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "77eb83c2-6a30-4ef8-b32d-7dd21ecc9764",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cbd6a999-0bc4-4ca0-9386-2c42d6504c1c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "473843d9-9009-4722-8fc5-9620e75a5fb1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f1de16d2-5853-41bc-87d2-0a32e0619930",
+          "name": "Request the update of an existing Individual VFL Training Subscription resource.",
+          "request": {
+            "name": "Request the update of an existing Individual VFL Training Subscription resource.",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "subscriptions",
+                ":subId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Represents the identifier of the AF."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subId",
+                  "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9c8f7662-e218-4ed7-b0ee-bfc00176f0c4",
+              "name": "OK. The Individual VFL Training Subscription resource is successfully updated and a representation of the updated resource is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "25bed229-561c-4e83-aeb0-408a80e6b417",
+              "name": "No Content. The Individual VFL Training Subscription resource is successfully updated and no content is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "af1827db-ca9b-47ab-a6bf-6e7c0903744b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4aced9a8-49aa-44ce-ac85-54681518c703",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e9e80d88-332a-452a-9b44-a0e080f520d9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f83e7078-c60b-431a-a904-daf3f89276de",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8e016795-4458-4c01-b902-8f40dadd39c0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bbfc22c1-6395-4716-863d-a518d624d1d5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "85f6cef0-59d8-4b11-a13c-bf884399dde5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "95a770fe-f186-4308-9a22-bc3dff2f112a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8e36afc9-d15a-4bbb-abf6-dea59d242336",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0ea215a2-5706-4e75-8b88-e596a9d829e3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "aecf4440-45e6-40b4-b1db-1ba3e6581739",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "02168155-2d87-4443-9513-6559d024f2fc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "58d98264-5e3f-4398-9bfe-bb0a6068965c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e44a3e6a-d7f5-4349-b7f9-dda9b7ec7535",
+          "name": "Request modification of an existing Individual VFL Training Subscription resource.",
+          "request": {
+            "name": "Request modification of an existing Individual VFL Training Subscription resource.",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "subscriptions",
+                ":subId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Represents the identifier of the AF."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subId",
+                  "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/merge-patch+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cc0dad2c-bfe0-4a2b-8794-546137f68ea6",
+              "name": "OK. The Individual VFL Training Subscription resource is successfully modified and a representation of the updated resource is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflPreFlag\": \"<boolean>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"trainReports\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingNotify not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bce80b32-b41d-4dbe-b085-80511e7368ea",
+              "name": "No Content. The Individual VFL Training Subscription resource is successfully modified and no content is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f25982a7-edeb-4d53-9d4b-9001df9fe949",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "06f3be93-90ca-41c2-a4d6-9399c2a77655",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1179f4be-51d5-4b11-872f-8ecd30b3f254",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "eb00771e-87c9-4050-8e36-75bce3991c61",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "27979302-7eb9-471d-95c1-50ca7ed0817d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "165ce0ca-c5e8-40ea-9180-cce5ae63bfeb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "45a5b2d3-2803-4fca-a8b5-96e34f5d47e7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4dc91ecf-a9f1-417d-9d2a-68177a659ae1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3966c694-8e7e-4823-a8b8-dcfd450e6259",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b6a82d4b-76af-485a-b1d3-6ad811394799",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fb478643-f190-4c42-a839-b3f383fc41f0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a8250a79-ba5c-4092-b4e0-e49e72929f42",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "462dfdd3-f539-422b-b8e1-063fbf7009b4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vflTrainSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "54b78dd7-0b55-4e3f-95df-3213e076422f",
+          "name": "Request deletion of an existing Individual VFL Training Subscription resource.",
+          "request": {
+            "name": "Request deletion of an existing Individual VFL Training Subscription resource.",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "subscriptions",
+                ":subId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Represents the identifier of the AF."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subId",
+                  "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "07b5e774-636d-48e8-9a17-a11ed5744bae",
+              "name": "No Content. The Individual VFL Training Subscription resource is successfully deleted.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "414f903f-834f-429d-8f78-82d197325693",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cd84595b-ff55-4322-b14f-c24470dc998d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1d70bb46-dfb3-415d-9df8-c5c23fd0b769",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3fa9493f-d2ba-45e5-ac46-9b6d87ab22bd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f71f8f55-a1e5-43c0-8c2c-e3b6cf0dc85c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "298873f7-2856-44b7-902d-f1ad2d210c74",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4df73a52-d3f7-40e1-8675-57052bafb04a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "786d06ff-9cac-4363-87da-e103f278b23c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b3e1f912-3d50-4287-8f23-bcec06817a09",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76a0830c-8c38-48de-ae34-6448a2e160b3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subId",
+                      "description": "(Required) Represents the identifier of the Individual VFL Training Subscription resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/3gpp-vfl-training/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "426e27ae-8540-4bb9-a8bf-0fec62a60b48",
+    "name": "3gpp-vfl-training",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for VFL Training.  \n© 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

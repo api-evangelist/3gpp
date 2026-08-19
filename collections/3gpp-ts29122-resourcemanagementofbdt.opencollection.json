@@ -1,0 +1,176 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-bdt",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "BDT Subscription",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch all active background data transfer subscription resources for a given SCS/AS.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-bdt/v1/:scsAsId/subscriptions",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              }
+            ]
+          },
+          "docs": "Fetch all active background data transfer subscription resources for a given SCS/AS."
+        },
+        {
+          "info": {
+            "name": "Creates a new background data transfer subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-bdt/v1/:scsAsId/subscriptions",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new background data transfer subscription resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual BDT Subscription",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read a background data transfer subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-bdt/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual BDT policy resource in the SCEF."
+              }
+            ]
+          },
+          "docs": "Read a background data transfer subscription resource."
+        },
+        {
+          "info": {
+            "name": "Update a background data transfer subscription resource for negotiation of background data transfer policy.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-bdt/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual BDT policy resource in the SCEF."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a background data transfer subscription resource for negotiation of background data transfer policy."
+        },
+        {
+          "info": {
+            "name": "Modify a background data transfer subscription resource to select one of the transfer policies offered by the SCEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-bdt/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual BDT policy resource in the SCEF."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify a background data transfer subscription resource to select one of the transfer policies offered by the SCEF."
+        },
+        {
+          "info": {
+            "name": "Delete a background data transfer resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-bdt/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the SCS/AS."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying the individual BDT policy resource in the SCEF."
+              }
+            ]
+          },
+          "docs": "Delete a background data transfer resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

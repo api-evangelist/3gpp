@@ -1,0 +1,738 @@
+{
+  "item": [
+    {
+      "id": "6f694e8b-7f62-4f4a-9f11-a8c9a1b63414",
+      "name": "Retrieve AKMA Application Key Information.",
+      "request": {
+        "name": "Retrieve AKMA Application Key Information.",
+        "description": {},
+        "url": {
+          "path": [
+            "retrieve"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+              "type": "any",
+              "value": "{{apiRoot}}",
+              "key": "apiRoot"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "0328e0b3-ce87-466b-8722-e4198aca43a6",
+          "name": "The requested information was returned successfully.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"kaf\": \"string\",\n  \"expiry\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"supi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Supi not found in the OpenAPI spec\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "22bc0b51-a706-4eae-a3c2-40ca3d5199f5",
+          "name": "No Content.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "16eeb00c-ea07-4906-b851-c149cb618fef",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Temporary Redirect (since HTTP/1.1)",
+          "code": 307,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "8eb0dc32-b30c-4e7d-9ddc-3891b26200ea",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Resume Incomplete",
+          "code": 308,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "01b01353-3d21-4bdb-8fc1-b773af87be24",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "7f677cd4-8f11-45b2-a784-702aa576953a",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "e6cc8666-3ba6-4b34-b370-52a0df1d8327",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "c9505440-3141-41cb-89a3-b0f289810f14",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "b312f6c7-70a9-48ce-b8dd-cbf92d898de7",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Length Required",
+          "code": 411,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "455f58ce-cb6c-4bb0-9176-bac1e1577fee",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Request Entity Too Large",
+          "code": 413,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "7e884089-f43d-47cc-bf0c-9a332fda9db6",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Unsupported Media Type",
+          "code": 415,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "cf06336f-7384-48fe-a9d6-072bc926869c",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "078df894-2223-437c-8b1b-820b6bccefc5",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "0110febd-81ff-4135-9a12-cd4067147d4c",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Service Unavailable",
+          "code": 503,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "70bbae73-95bf-46ab-b13d-ecb4e3b0b680",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "retrieve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"aKId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"anonInd\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/3gpp-akma/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "d95e1913-67b9-4294-9525-e71e4e3c0362",
+    "name": "3gpp-akma",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for AKMA.  \n© 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

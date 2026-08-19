@@ -1,0 +1,147 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-pdtq-policy-negotiation",
+    "version": "1.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PDTQ Policy Subscriptions (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all the active PDTQ Policy Subscriptions managed by the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-pdtq-policy-negotiation/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              }
+            ]
+          },
+          "docs": "Retrieve all the active PDTQ Policy Subscriptions managed by the NEF."
+        },
+        {
+          "info": {
+            "name": "Create a new PDTQ Policy Subscription.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-pdtq-policy-negotiation/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new PDTQ Policy Subscription."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual PDTQ Policy Subscription (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an existing Individual PDTQ Policy Subscription resource at the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-pdtq-policy-negotiation/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual PDTQ Policy Subscription resource.\n"
+              }
+            ]
+          },
+          "docs": "Retrieve an existing Individual PDTQ Policy Subscription resource at the NEF."
+        },
+        {
+          "info": {
+            "name": "Request the modification of an existing Individual PDTQ Policy Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-pdtq-policy-negotiation/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual PDTQ Policy Subscription resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the modification of an existing Individual PDTQ Policy Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Request the deletion of an existing Individual PDTQ Policy Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-pdtq-policy-negotiation/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual PDTQ Policy Subscription resource.\n"
+              }
+            ]
+          },
+          "docs": "Request the deletion of an existing Individual PDTQ Policy Subscription resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

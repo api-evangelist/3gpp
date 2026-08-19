@@ -1,0 +1,262 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-mbs-ud-ingest",
+    "version": "1.2.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MBS User Data Ingest Sessions (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all the active MBS User Data Ingest Sessions managed by the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-mbs-ud-ingest/v1/sessions"
+          },
+          "docs": "Retrieve all the active MBS User Data Ingest Sessions managed by the NEF."
+        },
+        {
+          "info": {
+            "name": "Request the creation of a new Individual MBS User Data Ingest Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-mbs-ud-ingest/v1/sessions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the creation of a new Individual MBS User Data Ingest Session resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual MBS User Data Ingest Session (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an existing Individual MBS User Data Ingest Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-mbs-ud-ingest/v1/sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual MBS User Data Ingest Session resource."
+              }
+            ]
+          },
+          "docs": "Retrieve an existing Individual MBS User Data Ingest Session resource."
+        },
+        {
+          "info": {
+            "name": "Request the update of an existing Individual MBS User Data Ingest Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-mbs-ud-ingest/v1/sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual MBS User Data Ingest Session resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the update of an existing Individual MBS User Data Ingest Session resource."
+        },
+        {
+          "info": {
+            "name": "Request the modification of an existing Individual MBS User Data Ingest Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-mbs-ud-ingest/v1/sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual MBS User Data Ingest Session resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the modification of an existing Individual MBS User Data Ingest Session resource."
+        },
+        {
+          "info": {
+            "name": "Deletes an existing Individual MBS User Data Ingest Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-mbs-ud-ingest/v1/sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual MBS User Data Ingest Session resource."
+              }
+            ]
+          },
+          "docs": "Deletes an existing Individual MBS User Data Ingest Session resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "MBS User Data Ingest Session Status Subscriptions (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all the active MBS User Data Ingest Session Status Subscriptions resources managed by the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-mbs-ud-ingest/v1/status-subscriptions"
+          },
+          "docs": "Retrieve all the active MBS User Data Ingest Session Status Subscriptions resources managed by the NEF."
+        },
+        {
+          "info": {
+            "name": "Creates a new Individual MBS User Data Ingest Session Status Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-mbs-ud-ingest/v1/status-subscriptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new Individual MBS User Data Ingest Session Status Subscription resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual MBS User Data Ingest Session Status Subscription (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an existing Individual MBS User Data Ingest Session Status Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-mbs-ud-ingest/v1/status-subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual MBS User Data Ingest Session Status Subscription resource.\n"
+              }
+            ]
+          },
+          "docs": "Retrieve an existing Individual MBS User Data Ingest Session Status Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Request the update of an existing Individual MBS User Data Ingest Session Status Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-mbs-ud-ingest/v1/status-subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual MBS User Data Ingest Session Status Subscription resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the update of an existing Individual MBS User Data Ingest Session Status Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Request the modification of an existing Individual MBS User Data Ingest Session Status Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-mbs-ud-ingest/v1/status-subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual MBS User Data Ingest Session Status Subscription resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the modification of an existing Individual MBS User Data Ingest Session Status Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Deletes an existing Individual MBS User Data Ingest Session Status Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-mbs-ud-ingest/v1/status-subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual MBS User Data Ingest Session Status Subscription resource.\n"
+              }
+            ]
+          },
+          "docs": "Deletes an existing Individual MBS User Data Ingest Session Status Subscription resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,113 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-ms-event-exposure",
+    "version": "1.2.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Media Streaming Event Exposure Subscriptions (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all the active Media Streaming Event Exposure Subscription resources managed by the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-ms-event-exposure/v1/subscriptions"
+          },
+          "docs": "Retrieve all the active Media Streaming Event Exposure Subscription resources managed by the NEF."
+        },
+        {
+          "info": {
+            "name": "Request the creation of a new Individual Media Streaming Event Exposure Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-ms-event-exposure/v1/subscriptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the creation of a new Individual Media Streaming Event Exposure Subscription resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Media Streaming Event Exposure Subscription (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an existing Individual Media Streaming Event Exposure Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-ms-event-exposure/v1/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual Media Streaming Event Exposure Subscription resource.\n"
+              }
+            ]
+          },
+          "docs": "Retrieve an existing Individual Media Streaming Event Exposure Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Request the update of an existing Individual Media Streaming Event Exposure Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-ms-event-exposure/v1/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual Media Streaming Event Exposure Subscription resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the update of an existing Individual Media Streaming Event Exposure Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Request the deletion of an existing Individual Media Streaming Event Exposure Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-ms-event-exposure/v1/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual Media Streaming Event Exposure Subscription resource.\n"
+              }
+            ]
+          },
+          "docs": "Request the deletion of an existing Individual Media Streaming Event Exposure Subscription resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

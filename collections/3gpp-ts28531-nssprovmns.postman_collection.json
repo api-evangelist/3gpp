@@ -1,0 +1,391 @@
+{
+  "item": [
+    {
+      "id": "e8ade734-0d62-4210-b7a2-21d4dcc9e556",
+      "name": "Create a SliceProfile",
+      "request": {
+        "name": "Create a SliceProfile",
+        "description": {
+          "content": "To create a SliceeProfile resource to represent network slice subnet related requirements.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "SliceProfiles"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "a98f29bc-4814-453d-824a-6bbac9759dfa",
+          "name": "Success case (\"201 Created\"). The representation of the newly created SliceProfile resource shall be returned.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "SliceProfiles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "\"string\"",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "b0727a76-b91a-45f4-9bb3-7464802ab191",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "SliceProfiles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "a0839e12-e835-4f90-aa59-7d19990da81f",
+      "name": "Delete a SliceProfile",
+      "request": {
+        "name": "Delete a SliceProfile",
+        "description": {
+          "content": "To delete a SliceProfile resource to represent network slice suubnet related requirements.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "SliceProfiles",
+            ":SliceProfileId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "value",
+              "value": "reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec",
+              "description": "(Required) Identifies the DN of NetworkSliceSubnet MOI uniquely identifying the network slice subnet instance"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "SliceProfileId",
+              "description": "(Required) Identifies an individual SliceProfille."
+            },
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "DELETE",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "7c0589db-2817-40b4-a0a9-020b06f06a2b",
+          "name": "Success case (\"204 No Content\"). The ServiceProfile resource has been deleted. The response message body is absent.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "SliceProfiles",
+                ":SliceProfileId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "value",
+                  "value": "reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "SliceProfileId",
+                  "description": "(Required) Identifies an individual SliceProfille."
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "a03fea78-8fd0-4158-aaff-a1702f8e39c1",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "SliceProfiles",
+                ":SliceProfileId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "value",
+                  "value": "reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "SliceProfileId",
+                  "description": "(Required) Identifies an individual SliceProfille."
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "See clause 4.4.2 of TS 32.158",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "http://example.com/3GPPManagement",
+      "key": "MnSRoot"
+    },
+    {
+      "description": {
+        "content": "Version number of the OpenAPI definition",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "XXX",
+      "key": "MnSVersion"
+    },
+    {
+      "type": "string",
+      "value": "{{MnSRoot}}/NSSProvMnS/{{MnSVersion}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1114a047-7d20-4bcf-977d-a6e17bded3b9",
+    "name": "Network Slice Subnet Provisioning MnS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OAS 3.0.1 definition of the Network Slice Suubnet Provisioning MnS © 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.",
+      "type": "text/plain"
+    }
+  }
+}

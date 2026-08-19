@@ -1,0 +1,132 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CAPIF_Events_API",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CAPIFs Events Subscriptions (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a new CAPIFs Event Subscription.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/capif-events/v1/:subscriberId/subscriptions",
+            "params": [
+              {
+                "name": "subscriberId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Subscriber"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new CAPIFs Event Subscription."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual CAPIFs Events Subscription (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update an existing Individual CAPIF Events Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/capif-events/v1/:subscriberId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriberId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Subscriber"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the individual Subscriber"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing Individual CAPIF Events Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Modify an existing Individual CAPIF Events Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/capif-events/v1/:subscriberId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriberId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Subscriber"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the individual Subscriber"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify an existing Individual CAPIF Events Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Delete an existing Individual CAPIF Events Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/capif-events/v1/:subscriberId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriberId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Subscriber"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of an individual Events Subscription"
+              }
+            ]
+          },
+          "docs": "Delete an existing Individual CAPIF Events Subscription resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

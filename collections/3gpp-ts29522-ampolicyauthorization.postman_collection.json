@@ -1,0 +1,4823 @@
+{
+  "item": [
+    {
+      "id": "385f0119-3a73-4ae7-a391-e2fea77371aa",
+      "name": "Application AM Contexts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0bad2e05-72bc-4a7d-82b9-26a0d4ac2850",
+          "name": "Creates a new Individual application AM Context resource",
+          "request": {
+            "name": "Creates a new Individual application AM Context resource",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "app-am-contexts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f158f525-6805-4a3c-9329-abc551ffdf75",
+              "name": "Created (Successful creation)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource.",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AppAmContextData not found in the OpenAPI spec\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b195f16b-75db-4472-b486-6f8405136258",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8ee29be2-56f6-4590-933d-7b7a15f537b6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6ac53150-e97d-4841-90e4-0b5769a08b29",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c817b5c1-9e19-4693-a1e7-dc789b1fe8d1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "946f56d3-bbf3-44ac-a043-d67deaf68a7f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "82d0f591-ed17-450b-9143-4cb452d57a8c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cb5b1452-aca7-48e4-a74b-c72cdab57409",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "58a46739-22a3-49f2-88dd-dc023530f366",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b79eb646-b67f-46d2-b11d-669e1f86e847",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "699aedcd-7ae0-4917-8ecd-6a0dc95e2863",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6d9fda53-9b4c-469a-918f-ab66efb57de0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8d743bc4-e02c-4962-9cb8-b204f9c4d80a",
+      "name": "Individual Application AM Context",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "536434d6-b805-4660-8272-569e2f5db6c6",
+          "name": "read an existing Individual application AM context",
+          "request": {
+            "name": "read an existing Individual application AM context",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "app-am-contexts",
+                ":appAmContextId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appAmContextId",
+                  "description": "(Required) Identifier of the Individual application AM context"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "706814c5-958c-43b4-97dd-389f599a118a",
+              "name": "OK (A representation of the resource is successfully returned)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the Individual application AM context"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fcc9b131-e56d-4907-ae13-22ddf556a674",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the Individual application AM context"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "35daa922-069c-4509-a64a-bf2f69329aab",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the Individual application AM context"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dda39cfc-b9ca-40e7-9ef6-2e01b51a2b9b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the Individual application AM context"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a5f79674-a2f6-4cda-b45f-a7a74a5be565",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the Individual application AM context"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e5e8fffc-8ee1-4f7d-b826-baf5b68f7fa3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the Individual application AM context"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b08659aa-108d-4141-9f0e-ae3163177673",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the Individual application AM context"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c000bc2c-1eb1-4309-aeb1-4a94c1f28666",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the Individual application AM context"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f7d897b8-320c-418c-8468-7a23b6e82b24",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the Individual application AM context"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ceaee4cf-82ee-4f38-b3ad-1680440054ec",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the Individual application AM context"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d3392075-0383-49e4-865d-eab91cd76b22",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the Individual application AM context"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a3488ec5-0581-4270-ac1b-e1dea1034c06",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the Individual application AM context"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8bde112f-2067-4282-aa5f-ae46ee690811",
+          "name": "partial modifies an existing Individual application AM context",
+          "request": {
+            "name": "partial modifies an existing Individual application AM context",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "app-am-contexts",
+                ":appAmContextId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appAmContextId",
+                  "description": "(Required) Identifier of the application AM context resource"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/merge-patch+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8996aec5-2564-4942-b650-3c8e04b05052",
+              "name": "successful modification of the resource and a representation of that resource is returned. If a subscribed event is matched, the event notification is also included in the response.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AppAmContextData not found in the OpenAPI spec\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "19f7ded1-5816-4ed1-81f3-fccccbbeb92b",
+              "name": "The successful modification",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8f0e38a8-1977-43f7-a61a-88df2a502972",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "22f80879-f97e-4acf-b43e-524a69580f7a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7e87b500-5800-4768-915c-9294ccc1aec8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c04aec38-603a-4e5d-a16e-defbc694eada",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "39f13d71-9fc8-4d63-8e56-c489ae807492",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b976ec0c-9c5e-4584-a7f5-c3c21c5173c8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "94924331-a8f7-4fcc-84cb-4703e8e2ff9a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fda044b3-fc55-43c6-8b90-ad94eaad4faa",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "681f0eb9-6d2e-4d2a-b213-09a1e3a2a67e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d80302e7-1f8f-4cca-8bfb-654a56a43bd5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8ab11850-e440-4834-83e3-01a9c8626dbb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "44938f7d-68b2-4a76-a92a-b4fc70068e89",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2c77bbf9-2152-4c23-8a14-d45f37f1536c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) Identifier of the application AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"evSubscs\": {\n    \"value\": \"reference TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm not found in the OpenAPI spec\"\n  },\n  \"highThruInd\": \"<boolean>\",\n  \"covReqs\": [\n    {\n      \"civicAddress\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress not found in the OpenAPI spec\"\n      },\n      \"shapes\": {\n        \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"policyDuration\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSecRm not found in the OpenAPI spec\"\n  },\n  \"sliceReplReq\": {\n    \"type\": \"<string>\",\n    \"afSliceReplReq\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6009fd1f-a9c3-42bc-9c5b-b3801f8141bf",
+          "name": "Deletes an existing Individual Application AM Context",
+          "request": {
+            "name": "Deletes an existing Individual Application AM Context",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "app-am-contexts",
+                ":appAmContextId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appAmContextId",
+                  "description": "(Required) string identifying the Individual aaplication AM context resource"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a9b2e717-c534-4317-b76a-182fd2a22e24",
+              "name": "The deletion is confirmed without returning additional data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual aaplication AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0fc566cd-beb9-4e13-82f5-8955c447dbd8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual aaplication AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7300555a-ee12-4f2b-9fdb-4c91c59c63e8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual aaplication AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2be69a56-fd11-4f4a-9cd6-63497bab1f44",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual aaplication AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9a049850-505e-41ed-928e-56c640d70b1b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual aaplication AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7aa8ef70-b714-4645-97a9-f7443fc4b5c5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual aaplication AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e821c6fc-b57b-4baf-9f5d-7f0f6b1f5cca",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual aaplication AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cec5a180-6676-49cd-ad30-a36b77aca374",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual aaplication AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b97349e3-783d-4793-9e79-6129db0db491",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual aaplication AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cb0ca335-213b-40a1-a386-c08019ba0252",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual aaplication AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "006f2993-2305-47ef-8baf-9495df56dbb1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual aaplication AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "de5d0cec-7925-4a4f-b42d-f1ba96c789cc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual aaplication AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7066f11f-dd10-425a-a520-642b92bbb0ad",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual aaplication AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c145bc6c-74c2-49ce-be1f-63b1a60dba5d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual aaplication AM context resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "80bb7931-d953-40cc-967e-7dc95bebbca5",
+      "name": "AM Policy Events Subscription",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cd0bc06f-c5a6-497a-9d03-313d6f0e7f9e",
+          "name": "creates or modifies an AM Policy Events Subscription sub-resource.",
+          "request": {
+            "name": "creates or modifies an AM Policy Events Subscription sub-resource.",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "app-am-contexts",
+                ":appAmContextId",
+                "events-subscription"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appAmContextId",
+                  "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f5a47275-e537-4127-b5db-cb8e14f66f0f",
+              "name": "The modification of the AM Policy Events Subscription subresource is confirmed and its representation is returned. If an AM Event is matched, the response also includes the notification.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ac2bb943-841b-4aeb-a188-24f2c33d3a29",
+              "name": "The creation of the application AM Policy Events Subscription sub-resource is confirmed and its representation is returned. If an AM Event is matched, the response also includes the notification.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the created AM Policy Events Subscription subresource, according to the structure {apiRoot}/3gpp-am-policyauthorization/v1/{afId}/app-am- contexts/{appAmContextId}/events-subscription}\n",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a89ee36d-8652-4a88-984d-0573a2199f82",
+              "name": "The modification of the AM Policy Events Subscription subresource is confirmed without returning additional data.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c79d3d27-5b6c-41c1-b72b-10a1c5df50ac",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9f23535d-92bd-4bc5-9862-15a4439d9815",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "842b11f8-6e93-402b-8a39-7a8c70881405",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "056b573c-ec45-4c4d-b7d6-6f97e69faac0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fda4b593-4c30-4cc2-baeb-6380e7e4a211",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "af890d0c-f722-4481-961c-fc81e3f0ff48",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "800a7f33-818a-424b-8574-75c8e4e487b5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "18ac4472-131f-42f2-bdff-2463c46aa5a4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "86b57814-ed48-410b-a893-cfb967ec1407",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f3313612-2185-4f6f-a681-0708c18708a1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3ae8cb5d-1d84-4893-97bc-8f78425fb243",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ba057bf8-ffd4-4e25-b3b2-1f9aa4b669a6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b20a8781-df8f-49ad-9951-03dcc2cb2b45",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the AM Policy Events Subscription subresource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "deaf6068-c222-4677-a0c6-a6bdc28ffd60",
+          "name": "deletes the AM Policy Events Subscription sub-resource",
+          "request": {
+            "name": "deletes the AM Policy Events Subscription sub-resource",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "app-am-contexts",
+                ":appAmContextId",
+                "events-subscription"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "appAmContextId",
+                  "description": "(Required) string identifying the Individual Application AM Context resource."
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "482fd1f4-7c50-4b80-890c-22c66423338e",
+              "name": "The deletion of the of the AM Policy Events Subscription subresource is confirmed without returning additional data.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual Application AM Context resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d9b7b306-01c6-4341-a0ea-40f9c3a8069a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual Application AM Context resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e3559239-f08e-410a-81a3-4198b3d1c687",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual Application AM Context resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "51ef0e45-8a23-4b8e-82d7-d203abfd38a9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual Application AM Context resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9d680ebe-59fa-4ff6-8669-9fb8bc7b9c7f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual Application AM Context resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fa1375af-17df-44d8-a0a1-a1bd562f7122",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual Application AM Context resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b039b0ca-1459-48f0-8ba4-9b98d858799a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual Application AM Context resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "08b2ce64-de57-4781-b49d-879df2a3f9b6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual Application AM Context resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f1cf0b69-393a-48ab-af2b-b6fdc857233b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual Application AM Context resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ffe31620-f7cb-4abb-935f-7ff20efa9024",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual Application AM Context resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8c632b4c-1578-40de-bff8-b4f9f3558162",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "app-am-contexts",
+                    ":appAmContextId",
+                    "events-subscription"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "appAmContextId",
+                      "description": "(Required) string identifying the Individual Application AM Context resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/3gpp-am-policyauthorization/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "d449d005-e3d3-4a49-ae89-4ebe85ae5159",
+    "name": "3gpp-am-policyauthorization",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for AM policy authorization.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

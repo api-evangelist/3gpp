@@ -1,0 +1,121 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CAPIF_Auditing_API",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "All service API invocation logs (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetAPIInvLogs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/logs/v1/apiInvocationLogs",
+            "params": [
+              {
+                "name": "aef-id",
+                "value": "",
+                "type": "query",
+                "description": "String identifying the API exposing function."
+              },
+              {
+                "name": "api-invoker-id",
+                "value": "",
+                "type": "query",
+                "description": "String identifying the API invoker which invoked the service API."
+              },
+              {
+                "name": "time-range-start",
+                "value": "",
+                "type": "query",
+                "description": "Start time of the invocation time range."
+              },
+              {
+                "name": "time-range-end",
+                "value": "",
+                "type": "query",
+                "description": "End time of the invocation time range."
+              },
+              {
+                "name": "api-id",
+                "value": "",
+                "type": "query",
+                "description": "String identifying the API invoked."
+              },
+              {
+                "name": "api-name",
+                "value": "",
+                "type": "query",
+                "description": "Contains the API name set to the value of the \"<apiName>\" placeholder of the API URI as defined in clause 5.2.4 of 3GPP TS 29.122 [14].\n"
+              },
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query",
+                "description": "Version of the API which was invoked."
+              },
+              {
+                "name": "protocol",
+                "value": "",
+                "type": "query",
+                "description": "Protocol invoked."
+              },
+              {
+                "name": "operation",
+                "value": "",
+                "type": "query",
+                "description": "Operation that was invoked on the API."
+              },
+              {
+                "name": "result",
+                "value": "",
+                "type": "query",
+                "description": "Result or output of the invocation."
+              },
+              {
+                "name": "resource-name",
+                "value": "",
+                "type": "query",
+                "description": "Name of the specific resource invoked."
+              },
+              {
+                "name": "src-interface",
+                "value": "",
+                "type": "query",
+                "description": "Interface description of the API invoker."
+              },
+              {
+                "name": "dest-interface",
+                "value": "",
+                "type": "query",
+                "description": "Interface description of the API invoked."
+              },
+              {
+                "name": "supported-features",
+                "value": "",
+                "type": "query",
+                "description": "To filter irrelevant responses related to unsupported features"
+              },
+              {
+                "name": "net-slice-info",
+                "value": "",
+                "type": "query",
+                "description": "Contains the identifier(s) of the network slice(s) within which the API shall be available.\n"
+              }
+            ]
+          },
+          "docs": "Query and retrieve service API invocation logs stored on the CAPIF core function."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

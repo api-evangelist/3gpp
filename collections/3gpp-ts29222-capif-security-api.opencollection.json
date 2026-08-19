@@ -1,0 +1,160 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CAPIF_Security_API",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Individual trusted API invoker (Store)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve authentication information of an API invoker.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/capif-security/v1/trustedInvokers/:apiInvokerId",
+            "params": [
+              {
+                "name": "apiInvokerId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of an individual API invoker"
+              },
+              {
+                "name": "authenticationInfo",
+                "value": "",
+                "type": "query",
+                "description": "When set to 'true', it indicates the CAPIF core function to send the authentication information of the API invoker. Set to false or omitted otherwise.\n"
+              },
+              {
+                "name": "authorizationInfo",
+                "value": "",
+                "type": "query",
+                "description": "When set to 'true', it indicates the CAPIF core function to send the authorization information of the API invoker. Set to false or omitted otherwise.\n"
+              }
+            ]
+          },
+          "docs": "Retrieve authentication information of an API invoker."
+        },
+        {
+          "info": {
+            "name": "Create a security context for individual API invoker.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/capif-security/v1/trustedInvokers/:apiInvokerId",
+            "params": [
+              {
+                "name": "apiInvokerId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of an individual API invoker"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a security context for individual API invoker."
+        },
+        {
+          "info": {
+            "name": "Delete authorization of the individual trusted API invoker.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/capif-security/v1/trustedInvokers/:apiInvokerId",
+            "params": [
+              {
+                "name": "apiInvokerId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of an individual API invoker"
+              }
+            ]
+          },
+          "docs": "Delete authorization of the individual trusted API invoker."
+        },
+        {
+          "info": {
+            "name": "Update security context.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/capif-security/v1/trustedInvokers/:apiInvokerId/update",
+            "params": [
+              {
+                "name": "apiInvokerId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of an individual API invoker"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update security context."
+        },
+        {
+          "info": {
+            "name": "Delete authorization of API invoker for some APIs.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/capif-security/v1/trustedInvokers/:apiInvokerId/delete",
+            "params": [
+              {
+                "name": "apiInvokerId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of an individual API invoker"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delete authorization of API invoker for some APIs."
+        },
+        {
+          "info": {
+            "name": "Obtain the OAuth 2.0 authorization information.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/capif-security/v1/securities/:securityId/token",
+            "params": [
+              {
+                "name": "securityId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of an individual API invoker"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": []
+            }
+          },
+          "docs": "Obtain the OAuth 2.0 authorization information."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

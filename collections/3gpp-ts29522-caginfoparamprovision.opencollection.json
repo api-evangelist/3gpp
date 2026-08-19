@@ -1,0 +1,136 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-caginfo-pp",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CAG Information Parameters Provisionings (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve all the active CAG Information Parameters Provisionings at the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-caginfo-pp/v1/pp"
+          },
+          "docs": "Request to retrieve all the active CAG Information Parameters Provisionings at the NEF."
+        },
+        {
+          "info": {
+            "name": "Request the creation of a new CAG Information Parameters Provisioning.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-caginfo-pp/v1/pp",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the creation of a new CAG Information Parameters Provisioning."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual CAG Information Parameters Provisioning (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an existing Individual CAG Information Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-caginfo-pp/v1/pp/:ppId",
+            "params": [
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual CAG Information Parameters Provisioning resource.\n"
+              }
+            ]
+          },
+          "docs": "Retrieve an existing Individual CAG Information Parameters Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Update an existing Individual CAG Information Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-caginfo-pp/v1/pp/:ppId",
+            "params": [
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual CAG Information Parameters Provisioning resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing Individual CAG Information Parameters Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Modify an existing Individual CAG Information Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-caginfo-pp/v1/pp/:ppId",
+            "params": [
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual CAG Information Parameters Provisioning resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify an existing Individual CAG Information Parameters Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Delete an existing Individual CAG Information Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-caginfo-pp/v1/pp/:ppId",
+            "params": [
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual CAG Information Parameters Provisioning resource.\n"
+              }
+            ]
+          },
+          "docs": "Delete an existing Individual CAG Information Parameters Provisioning resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

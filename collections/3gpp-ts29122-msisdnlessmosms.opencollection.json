@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-msisdn-less-mo-sms",
+    "version": "1.2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MSISDN-less MO SMS Notification",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Deliver a received MSIDN-less MO SMS from the SCEF to the SCS/AS.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deliver a received MSIDN-less MO SMS from the SCEF to the SCS/AS."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

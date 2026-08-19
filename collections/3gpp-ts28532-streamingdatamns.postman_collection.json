@@ -1,0 +1,1676 @@
+{
+  "item": [
+    {
+      "id": "972ac966-6d30-4e6f-ac94-80377d04e728",
+      "name": "Inform consumer about reporting streams to be carried by the new connection and receive a new connection id.",
+      "request": {
+        "name": "Inform consumer about reporting streams to be carried by the new connection and receive a new connection id.",
+        "description": {
+          "content": "Exchange of meta-data (producer informs consumer about its own identity and the nature of the data to be reported via streaming) phase of the connection establishement by streaming data reporting producer to the streaming data reporting consumer (i.e. streaming target).",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "connections"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "See clause 4.4.3 of TS 32.158.",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "See clause 4.4.3 of TS 32.158.",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"producer\": \"<string>\",\n  \"streams\": [\n    {\n      \"streamType\": \"<string>\",\n      \"serializationFormat\": \"<string>\",\n      \"streamId\": \"<string>\",\n      \"additionalInfo\": {\n        \"description\": \"Information specific to trace data reporting\",\n        \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n      }\n    },\n    {\n      \"streamType\": \"<string>\",\n      \"serializationFormat\": \"<string>\",\n      \"streamId\": \"<string>\",\n      \"additionalInfo\": {\n        \"description\": \"Information specific to trace data reporting\",\n        \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n      }\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "fa767490-5d84-4039-8731-e219d0846e31",
+          "name": "Success case (201 Created).",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"producer\": \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\",\n  \"streams\": [\n    {\n      \"streamType\": \"<string>\",\n      \"serializationFormat\": \"<string>\",\n      \"streamId\": \"26F452550021\",\n      \"additionalInfo\": {\n        \"description\": \"Information specific to trace data reporting\",\n        \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n      }\n    },\n    {\n      \"streamType\": \"<string>\",\n      \"serializationFormat\": \"<string>\",\n      \"streamId\": \"26F452550021\",\n      \"additionalInfo\": {\n        \"description\": \"Information specific to trace data reporting\",\n        \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "disabled": false,
+              "description": "Location of the created connection resource.",
+              "key": "Location",
+              "value": "string"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "c61cfb61-b7bb-43e1-9cbb-c1c75d82ac72",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"producer\": \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\",\n  \"streams\": [\n    {\n      \"streamType\": \"<string>\",\n      \"serializationFormat\": \"<string>\",\n      \"streamId\": \"26F452550021\",\n      \"additionalInfo\": {\n        \"description\": \"Information specific to trace data reporting\",\n        \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n      }\n    },\n    {\n      \"streamType\": \"<string>\",\n      \"serializationFormat\": \"<string>\",\n      \"streamId\": \"26F452550021\",\n      \"additionalInfo\": {\n        \"description\": \"Information specific to trace data reporting\",\n        \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": [\n    {\n      \"streamId\": \"26F452550021\",\n      \"errorReason\": \"string\"\n    },\n    {\n      \"streamId\": \"26F452550021\",\n      \"errorReason\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "ccd473d8-9b78-4717-8bbc-258e305c80cc",
+      "name": "Obtain information about connections.",
+      "request": {
+        "name": "Obtain information about connections.",
+        "description": {
+          "content": "Enables the streaming data reporting service producer to obtain information about one or more streaming connections.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "connections"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "connectionIdList",
+              "value": "<string>,<string>",
+              "description": "The list of connectionId for which the connection information is to be returned."
+            }
+          ],
+          "variable": [
+            {
+              "description": "See clause 4.4.3 of TS 32.158.",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "See clause 4.4.3 of TS 32.158.",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "876a9de7-51f1-47fc-ac76-6cdaf004f8d3",
+          "name": "Success case (200 OK). The resources identified in the request for retrieval are returned in the response message body. In case the fields query parameter is used, the selected resources are returned.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "connectionIdList",
+                  "value": "<string>,<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"connection\": \"<string>\",\n    \"producer\": \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\",\n    \"streams\": [\n      \"26F452550021\",\n      \"26F452550021\"\n    ]\n  },\n  {\n    \"connection\": \"<string>\",\n    \"producer\": \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\",\n    \"streams\": [\n      \"26F452550021\",\n      \"26F452550021\"\n    ]\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "72b41791-246a-47bb-b616-dcad45066c8d",
+          "name": "Partial success case (202 Partially retrieved). Subset of the resources identified in the request for retrieval are returned in the response message body.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "connectionIdList",
+                  "value": "<string>,<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"connection\": \"<string>\",\n    \"producer\": \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\",\n    \"streams\": [\n      \"26F452550021\",\n      \"26F452550021\"\n    ]\n  },\n  {\n    \"connection\": \"<string>\",\n    \"producer\": \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\",\n    \"streams\": [\n      \"26F452550021\",\n      \"26F452550021\"\n    ]\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "5737216b-ba47-4a60-9ea9-c81c41b2232a",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "connectionIdList",
+                  "value": "<string>,<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": {\n    \"errorInfo\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "6222d98e-b7ff-4219-9a50-2123b9949715",
+      "name": "Obtain information about a connection.",
+      "request": {
+        "name": "Obtain information about a connection.",
+        "description": {
+          "content": "Enables the streaming data reporting service producer to obtain information about one streaming connection.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "connections",
+            ":connectionId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "connectionId",
+              "description": "(Required) Indicate the ID (URI) of the connection for which the information is being retrieved"
+            },
+            {
+              "description": "See clause 4.4.3 of TS 32.158.",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "See clause 4.4.3 of TS 32.158.",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "disabled": false,
+            "key": "Connection",
+            "value": "<string>",
+            "description": ""
+          },
+          {
+            "disabled": false,
+            "key": "Sec-WebSocket-Extensions",
+            "value": "<string>",
+            "description": ""
+          },
+          {
+            "disabled": false,
+            "key": "Sec-WebSocket-Key",
+            "value": "<string>",
+            "description": ""
+          },
+          {
+            "disabled": false,
+            "key": "Sec-WebSocket-Protocol",
+            "value": "<string>",
+            "description": ""
+          },
+          {
+            "disabled": false,
+            "key": "Sec-WebSocket-Version",
+            "value": "<string>",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "b894005e-03f9-4b09-a234-e0deafe2b29f",
+          "name": "Success case (101 Switching Protocols). The connection has been successfully switched to WebSocket. The response message body is absent.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections",
+                ":connectionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "connectionId",
+                  "description": "(Required) Indicate the ID (URI) of the connection for which the information is being retrieved"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "Connection",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "Sec-WebSocket-Extensions",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "Sec-WebSocket-Key",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "Sec-WebSocket-Protocol",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "Sec-WebSocket-Version",
+                "value": "<string>",
+                "description": ""
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Switching Protocols",
+          "code": 101,
+          "header": [
+            {
+              "disabled": false,
+              "key": "Upgrade",
+              "value": "websocket",
+              "description": ""
+            },
+            {
+              "disabled": false,
+              "key": "Connection",
+              "value": "<string>",
+              "description": ""
+            },
+            {
+              "disabled": false,
+              "key": "Sec-WebSocket-Accept",
+              "value": "string",
+              "description": ""
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "269316f6-3aac-47e2-b976-0fcda614f117",
+          "name": "Success case (200 OK). The resource identified in the request for retrieval returned in the response message body.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections",
+                ":connectionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "connectionId",
+                  "description": "(Required) Indicate the ID (URI) of the connection for which the information is being retrieved"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "Connection",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "Sec-WebSocket-Extensions",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "Sec-WebSocket-Key",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "Sec-WebSocket-Protocol",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "Sec-WebSocket-Version",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"connection\": \"<string>\",\n  \"producer\": \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\",\n  \"streams\": [\n    \"26F452550021\",\n    \"26F452550021\"\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "38998d42-f354-402e-8618-0a1089f17a16",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections",
+                ":connectionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "connectionId",
+                  "description": "(Required) Indicate the ID (URI) of the connection for which the information is being retrieved"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "Connection",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "Sec-WebSocket-Extensions",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "Sec-WebSocket-Key",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "Sec-WebSocket-Protocol",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "Sec-WebSocket-Version",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": {\n    \"errorInfo\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "25c2436c-df4c-4758-bac8-268dcbfdaecf",
+      "name": "Inform consumer about new reporting streams on an existing connection.",
+      "request": {
+        "name": "Inform consumer about new reporting streams on an existing connection.",
+        "description": {
+          "content": "Allows the producer to add one or more reporting streams to an already established streaming connection.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "connections",
+            ":connectionId",
+            "streams"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "connectionId",
+              "description": "(Required) Indicate the ID (URI) of the connection for which the reporting stream information is being added."
+            },
+            {
+              "description": "See clause 4.4.3 of TS 32.158.",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "See clause 4.4.3 of TS 32.158.",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "[\n  {\n    \"streamType\": \"<string>\",\n    \"serializationFormat\": \"<string>\",\n    \"streamId\": \"<string>\",\n    \"additionalInfo\": {\n      \"description\": \"Information specific to trace data reporting\",\n      \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n    }\n  },\n  {\n    \"streamType\": \"<string>\",\n    \"serializationFormat\": \"<string>\",\n    \"streamId\": \"<string>\",\n    \"additionalInfo\": {\n      \"description\": \"Information specific to trace data reporting\",\n      \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n    }\n  }\n]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "2057bc42-6469-4c31-b54e-03b543a9b8ee",
+          "name": "Success case (201 Posted).",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections",
+                ":connectionId",
+                "streams"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "connectionId",
+                  "description": "(Required) Indicate the ID (URI) of the connection for which the reporting stream information is being added."
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"streamType\": \"<string>\",\n    \"serializationFormat\": \"<string>\",\n    \"streamId\": \"26F452550021\",\n    \"additionalInfo\": {\n      \"description\": \"Information specific to trace data reporting\",\n      \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n    }\n  },\n  {\n    \"streamType\": \"<string>\",\n    \"serializationFormat\": \"<string>\",\n    \"streamId\": \"26F452550021\",\n    \"additionalInfo\": {\n      \"description\": \"Information specific to trace data reporting\",\n      \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n    }\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"streamType\": \"<string>\",\n    \"serializationFormat\": \"<string>\",\n    \"streamId\": \"26F452550021\",\n    \"additionalInfo\": {\n      \"description\": \"Information specific to trace data reporting\",\n      \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n    }\n  },\n  {\n    \"streamType\": \"<string>\",\n    \"serializationFormat\": \"<string>\",\n    \"streamId\": \"26F452550021\",\n    \"additionalInfo\": {\n      \"description\": \"Information specific to trace data reporting\",\n      \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n    }\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "dac8b8ef-f707-409c-b6fd-d73927763bd2",
+          "name": "Partial success case (202 Posted).",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections",
+                ":connectionId",
+                "streams"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "connectionId",
+                  "description": "(Required) Indicate the ID (URI) of the connection for which the reporting stream information is being added."
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"streamType\": \"<string>\",\n    \"serializationFormat\": \"<string>\",\n    \"streamId\": \"26F452550021\",\n    \"additionalInfo\": {\n      \"description\": \"Information specific to trace data reporting\",\n      \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n    }\n  },\n  {\n    \"streamType\": \"<string>\",\n    \"serializationFormat\": \"<string>\",\n    \"streamId\": \"26F452550021\",\n    \"additionalInfo\": {\n      \"description\": \"Information specific to trace data reporting\",\n      \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n    }\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"streamType\": \"<string>\",\n    \"serializationFormat\": \"<string>\",\n    \"streamId\": \"26F452550021\",\n    \"additionalInfo\": {\n      \"description\": \"Information specific to trace data reporting\",\n      \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n    }\n  },\n  {\n    \"streamType\": \"<string>\",\n    \"serializationFormat\": \"<string>\",\n    \"streamId\": \"26F452550021\",\n    \"additionalInfo\": {\n      \"description\": \"Information specific to trace data reporting\",\n      \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n    }\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "89a4c08a-a711-4156-ba89-f660b4bdd7a2",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections",
+                ":connectionId",
+                "streams"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "connectionId",
+                  "description": "(Required) Indicate the ID (URI) of the connection for which the reporting stream information is being added."
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"streamType\": \"<string>\",\n    \"serializationFormat\": \"<string>\",\n    \"streamId\": \"26F452550021\",\n    \"additionalInfo\": {\n      \"description\": \"Information specific to trace data reporting\",\n      \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n    }\n  },\n  {\n    \"streamType\": \"<string>\",\n    \"serializationFormat\": \"<string>\",\n    \"streamId\": \"26F452550021\",\n    \"additionalInfo\": {\n      \"description\": \"Information specific to trace data reporting\",\n      \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n    }\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": {\n    \"errorInfo\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "1fd62609-6446-4666-ab3e-ed43bdbc7c32",
+      "name": "Remove reporting streams from an existing connection",
+      "request": {
+        "name": "Remove reporting streams from an existing connection",
+        "description": {
+          "content": "Allows the producer to remove one or more reporting streams from an already established streaming connection.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "connections",
+            ":connectionId",
+            "streams"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "streamIds",
+              "value": "<string>,<string>",
+              "description": "(Required) The list of streamId for the stream(s) to be deleted."
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "connectionId",
+              "description": "(Required) Indicate the ID (URI) of the connection for which the reporting stream information is being removed."
+            },
+            {
+              "description": "See clause 4.4.3 of TS 32.158.",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "See clause 4.4.3 of TS 32.158.",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "DELETE",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "675db09c-39b2-41df-a04a-40c84a95eed8",
+          "name": "Success case (204 No Content). The stream information resource has been deleted. The response message body is absent.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections",
+                ":connectionId",
+                "streams"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "streamIds",
+                  "value": "26F452550021,26F452550021"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "connectionId",
+                  "description": "(Required) Indicate the ID (URI) of the connection for which the reporting stream information is being removed."
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "8d8284e0-a3aa-4173-90b1-4756699046f1",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections",
+                ":connectionId",
+                "streams"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "streamIds",
+                  "value": "26F452550021,26F452550021"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "connectionId",
+                  "description": "(Required) Indicate the ID (URI) of the connection for which the reporting stream information is being removed."
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": {\n    \"errorInfo\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "9f67c7a0-1d80-4810-8adc-4bb19b63df1d",
+      "name": "Obtain information about streams.",
+      "request": {
+        "name": "Obtain information about streams.",
+        "description": {
+          "content": "Enables the streaming data reporting service producer to obtain information about one or more reporting streams.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "connections",
+            ":connectionId",
+            "streams"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "streamIds",
+              "value": "<string>,<string>",
+              "description": "(Required) The list of streamId for which the stream information is to be retrieved."
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "connectionId",
+              "description": "(Required) Indicate the ID (URI) of the connection for which the information is being retrieved"
+            },
+            {
+              "description": "See clause 4.4.3 of TS 32.158.",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "See clause 4.4.3 of TS 32.158.",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "54fa459f-fdaa-427d-bbee-24cc0a8772a4",
+          "name": "Success case (200 OK).",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections",
+                ":connectionId",
+                "streams"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "streamIds",
+                  "value": "26F452550021,26F452550021"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "connectionId",
+                  "description": "(Required) Indicate the ID (URI) of the connection for which the information is being retrieved"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"streamInfo\": {\n      \"streamType\": \"<string>\",\n      \"serializationFormat\": \"<string>\",\n      \"streamId\": \"26F452550021\",\n      \"additionalInfo\": {\n        \"description\": \"Information specific to trace data reporting\",\n        \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n      }\n    },\n    \"reporters\": [\n      \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\",\n      \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\"\n    ]\n  },\n  {\n    \"streamInfo\": {\n      \"streamType\": \"<string>\",\n      \"serializationFormat\": \"<string>\",\n      \"streamId\": \"26F452550021\",\n      \"additionalInfo\": {\n        \"description\": \"Information specific to trace data reporting\",\n        \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n      }\n    },\n    \"reporters\": [\n      \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\",\n      \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\"\n    ]\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "9d846af7-26c3-4d79-9731-b9160291c073",
+          "name": "Partial success case (202 Partially retrieved).",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections",
+                ":connectionId",
+                "streams"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "streamIds",
+                  "value": "26F452550021,26F452550021"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "connectionId",
+                  "description": "(Required) Indicate the ID (URI) of the connection for which the information is being retrieved"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"streamInfo\": {\n      \"streamType\": \"<string>\",\n      \"serializationFormat\": \"<string>\",\n      \"streamId\": \"26F452550021\",\n      \"additionalInfo\": {\n        \"description\": \"Information specific to trace data reporting\",\n        \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n      }\n    },\n    \"reporters\": [\n      \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\",\n      \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\"\n    ]\n  },\n  {\n    \"streamInfo\": {\n      \"streamType\": \"<string>\",\n      \"serializationFormat\": \"<string>\",\n      \"streamId\": \"26F452550021\",\n      \"additionalInfo\": {\n        \"description\": \"Information specific to trace data reporting\",\n        \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n      }\n    },\n    \"reporters\": [\n      \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\",\n      \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\"\n    ]\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "3ff5e633-bfd7-406a-a193-56496973ec29",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections",
+                ":connectionId",
+                "streams"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "streamIds",
+                  "value": "26F452550021,26F452550021"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "connectionId",
+                  "description": "(Required) Indicate the ID (URI) of the connection for which the information is being retrieved"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": {\n    \"errorInfo\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "8f2380ca-c053-44eb-9472-d4ffe3bab868",
+      "name": "Obtain information about stream",
+      "request": {
+        "name": "Obtain information about stream",
+        "description": {
+          "content": "Enables the streaming data reporting service producer to obtain information about a reporting stream.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "connections",
+            ":connectionId",
+            "streams",
+            ":streamId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "connectionId",
+              "description": "(Required) Indicate the ID (URI) of the connection for which the information is being retrieved"
+            },
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "streamId",
+              "description": "(Required) Indicate the ID of the reporting stream for which the information is being retrieved"
+            },
+            {
+              "description": "See clause 4.4.3 of TS 32.158.",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "See clause 4.4.3 of TS 32.158.",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "3a7004b5-cecc-4632-8fee-ad03787b561f",
+          "name": "Success case (200 OK).",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections",
+                ":connectionId",
+                "streams",
+                ":streamId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "connectionId",
+                  "description": "(Required) Indicate the ID (URI) of the connection for which the information is being retrieved"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "streamId",
+                  "description": "(Required) Indicate the ID of the reporting stream for which the information is being retrieved"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"streamInfo\": {\n    \"streamType\": \"<string>\",\n    \"serializationFormat\": \"<string>\",\n    \"streamId\": \"26F452550021\",\n    \"additionalInfo\": {\n      \"description\": \"Information specific to trace data reporting\",\n      \"value\": \"reference TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr not found in the OpenAPI spec\"\n    }\n  },\n  \"reporters\": [\n    \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\",\n    \"SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100\"\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "ef3dfc7e-d9e4-4d4f-baa3-50ba8f22010d",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "connections",
+                ":connectionId",
+                "streams",
+                ":streamId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "connectionId",
+                  "description": "(Required) Indicate the ID (URI) of the connection for which the information is being retrieved"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "streamId",
+                  "description": "(Required) Indicate the ID of the reporting stream for which the information is being retrieved"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158.",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": {\n    \"errorInfo\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "See clause 4.4.3 of TS 32.158.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com/3GPPManagement",
+      "key": "MnSRoot"
+    },
+    {
+      "description": {
+        "content": "See clause 4.4.3 of TS 32.158.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "",
+      "key": "MnSVersion"
+    },
+    {
+      "type": "string",
+      "value": "{{MnSRoot}}/StreamingDataReportingMnS/{{MnSVersion}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "53ae412c-fb47-4657-921c-1acc05d0558f",
+    "name": "TS 28.532 Streaming data reporting service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OAS 3.0.1 specification for the Streaming data reporting service (Streaming MnS) © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.",
+      "type": "text/plain"
+    }
+  }
+}

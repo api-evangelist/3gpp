@@ -1,0 +1,184 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-vfl-inference",
+    "version": "1.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "VFL Inference Subscriptions (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all the active VFL Inference Subscriptions for the given AF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-vfl-inference/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              }
+            ]
+          },
+          "docs": "Retrieve all the active VFL Inference Subscriptions for the given AF."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Subscriptions (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a new Individual VFL Inference Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-vfl-inference/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Individual VFL Inference Subscription resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual VFL Inference Subscription (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an existing Individual VFL Inference Subscription.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-vfl-inference/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying a VFL Inference Subscription."
+              }
+            ]
+          },
+          "docs": "Retrieve an existing Individual VFL Inference Subscription."
+        },
+        {
+          "info": {
+            "name": "Update an existing Individual VFL Inference Subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-vfl-inference/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying a VFL Inference Subscription."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing Individual VFL Inference Subscription"
+        },
+        {
+          "info": {
+            "name": "Partial update an existing Individual VFL Inference Subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-vfl-inference/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying a VFL Inference Subscription."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Partial update an existing Individual VFL Inference Subscription"
+        },
+        {
+          "info": {
+            "name": "Delete an existing Individual VFL Inference Subscription.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-vfl-inference/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying a VFL Inference Subscription."
+              }
+            ]
+          },
+          "docs": "Delete an existing Individual VFL Inference Subscription."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

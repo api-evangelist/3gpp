@@ -1,0 +1,170 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-eas-deployment",
+    "version": "1.2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "EAS Deployment Information (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all EAS Deployment information for a given AF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-eas-deployment/v1/:afId/eas-deployment-info",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              }
+            ]
+          },
+          "docs": "Read all EAS Deployment information for a given AF"
+        },
+        {
+          "info": {
+            "name": "Create a new Individual EAS Deployment information resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-eas-deployment/v1/:afId/eas-deployment-info",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Individual EAS Deployment information resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual EAS Deployment Information",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read an active Individual EAS Deployment Information resource for the AF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-eas-deployment/v1/:afId/eas-deployment-info/:easDeployInfoId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "easDeployInfoId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of an EAS Deployment Information."
+              }
+            ]
+          },
+          "docs": "Read an active Individual EAS Deployment Information resource for the AF"
+        },
+        {
+          "info": {
+            "name": "Fully updates/replaces an existing resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-eas-deployment/v1/:afId/eas-deployment-info/:easDeployInfoId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "easDeployInfoId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the EAS Deployment information resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Fully updates/replaces an existing resource"
+        },
+        {
+          "info": {
+            "name": "Deletes an already existing EAS Deployment information resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-eas-deployment/v1/:afId/eas-deployment-info/:easDeployInfoId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "easDeployInfoId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the EAS Deployment information resource"
+              }
+            ]
+          },
+          "docs": "Deletes an already existing EAS Deployment information resource"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "EAS Deployment Information removal",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Remove EAS Deployment Information based on given criteria.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-eas-deployment/v1/remove-edis",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove EAS Deployment Information based on given criteria."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

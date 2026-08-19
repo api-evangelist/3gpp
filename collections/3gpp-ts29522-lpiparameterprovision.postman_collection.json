@@ -1,0 +1,4517 @@
+{
+  "item": [
+    {
+      "id": "4dba8f8c-7d11-46e8-adcc-7256a89c9f13",
+      "name": "LPI Parameters Provisionings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "73b3769b-a568-47e6-9723-b87dfef51935",
+          "name": "read all of the active LPI Parameters Provisioning resources for the AF",
+          "request": {
+            "name": "read all of the active LPI Parameters Provisioning resources for the AF",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "provisionedLpis"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "59284c2b-f75e-489e-a356-21f5e8b08a80",
+              "name": "OK (Successful get all of the active resources for the AF)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"lpi\": {\n      \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n    },\n    \"suppFeat\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    },\n    \"self\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n    },\n    \"exterGroupId\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n    },\n    \"gpsi\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n    },\n    \"mtcProviderId\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n    }\n  },\n  {\n    \"lpi\": {\n      \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n    },\n    \"suppFeat\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    },\n    \"self\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n    },\n    \"exterGroupId\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n    },\n    \"gpsi\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n    },\n    \"mtcProviderId\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "54e3cdb8-bfea-4244-9698-67450021eee6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8106df21-386d-4dd0-be2e-72623fd51630",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2ca781a4-4dff-41fa-af5a-5cc5c611eb84",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "db37ad1e-2104-4afd-8ba9-40e5f67bbb97",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "415da4d4-9fae-4403-8a06-1aded0ffd47a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "989278ed-f8ec-46ef-980c-5ed0e83f7cdb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "59125f98-1a5a-46f6-8c97-b81302def88e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "88c2f56b-eb12-45d2-9e8c-790d580a38e2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e53163c5-69f2-47a5-bd65-63d2845c1124",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9c8a63b5-2ea2-426b-bbfa-76dbff7dd3ea",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1af8b080-ceef-45b4-8e36-2729d6557808",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3dea894e-284c-441e-986e-5324a68fd727",
+          "name": "Creates a new LPI Parameters Provisioning resource",
+          "request": {
+            "name": "Creates a new LPI Parameters Provisioning resource",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "provisionedLpis"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "941559b5-8351-45c8-9610-58822d3f4e84",
+              "name": "Created (Successful creation)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource.",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "59b9d4d6-e7be-43c5-800a-2f7be991ceb0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "06ad6d06-bcb4-477a-b812-097d2c18dd7d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "db04b4b9-4c09-498c-9b0e-c64a6130ac4b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1603d942-c437-4724-9f56-65fd794da01e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5b64e428-8495-462e-a131-bcc19f280046",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5cfacd83-1b3a-4315-9494-58050b2730c4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "32358b01-d947-48f8-8938-2c7a3a0ca282",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6d0e5383-98a9-44dc-9f9c-10392fae357d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "00a40934-5e15-447e-8127-7bbe98704cda",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5b52260e-7ea1-4717-8474-6903e87ef7d8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6b0b78c7-8f63-40c7-b507-791f97992931",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3f0905b8-d633-4a60-8955-f26dc7cf49c1",
+      "name": "Individual LPI Parameters Provisioning",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2b00ce85-aa00-4284-8de7-9d5e4d3eceb8",
+          "name": "read an active LPI Parameters Provisioning resource for the AF and the provisioned LPI Id",
+          "request": {
+            "name": "read an active LPI Parameters Provisioning resource for the AF and the provisioned LPI Id",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "provisionedLpis",
+                ":provisionedLpiId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "provisionedLpiId",
+                  "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e8cb6e56-cc5f-4e8d-a41c-2838f6560453",
+              "name": "OK (Successful get the active resource)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "75d12aa0-b3ec-45ce-8a22-2d81409d8755",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "553b1042-87ab-48dd-a323-c1c272c0846b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b6061e45-b253-4156-b0d9-f01edfdf5a8b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "69ee215a-a203-4c36-b229-caf7e86d97d1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c03ce25f-8631-45ee-8bae-70997925c039",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "64aa802b-8ef0-4e91-abcd-b889aaa677e9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2150d98b-ea45-4977-80dd-8c1e10cb6de3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a477e43f-8267-4895-a5f6-d6aa5817e36c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a0154428-9a64-4407-a728-3bd86dd4d58e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cde16def-a181-46d5-95e0-9e500e66f421",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e5b59849-ed8d-4fad-866d-8855eea092b3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7d26b4c5-e1ea-4f95-88e8-1bf26705ad55",
+          "name": "Fully updates/replaces an existing LPI Parameters Provisioning resource",
+          "request": {
+            "name": "Fully updates/replaces an existing LPI Parameters Provisioning resource",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "provisionedLpis",
+                ":provisionedLpiId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "provisionedLpiId",
+                  "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "610fbb85-b50b-403a-b5c2-385b368ed19c",
+              "name": "OK. The resource has been successfully updated and a representation of the updated  resource is returned.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "11ed5275-8a8d-40d8-8659-d4052ef1d7b6",
+              "name": "Successful case. The resource has been successfully updated and no additional content is sent in the response message.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4291ad87-5960-4d8d-85ae-45c1423b51be",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "996186c7-0841-4255-9bd2-ebbaf355e286",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "974e873e-70d5-45cb-8484-1a8da92d8040",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "32029ec8-49af-4e71-95d0-7afc4515122d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "39f601ae-1d29-4405-b747-1df51f3a170c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6823434f-8859-4387-907b-50cf3ef0776b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "456f8cdb-e5fe-4d5a-92e7-9378eec91c90",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "47b95ff3-2de2-4c0a-8880-d10b4f2a0d39",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0f8110cc-417c-4463-8b93-062413ba80bd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "182841d8-4aa2-4edc-8cdf-66bfed2d8a85",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1b0590a7-ae25-4b0a-adf1-1cf29b062ca5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9ba451d4-5bb5-4822-885e-9af54fa47769",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "168a1b05-7a26-4deb-a737-2eb4b924ea48",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "97e31f8d-9f25-42ba-a286-82da9bd4e7ad",
+          "name": "Partially modifies an existing LPI Parameters Provisioning resource.",
+          "request": {
+            "name": "Partially modifies an existing LPI Parameters Provisioning resource.",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "provisionedLpis",
+                ":provisionedLpiId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "provisionedLpiId",
+                  "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4bbff861-ee33-4263-95ca-887aaeef0c24",
+              "name": "OK. The resource has been successfully modified and a representation of the  updated resource is returned.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"exterGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"gpsi\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f3ae88ad-9da8-4548-bfac-fd4a310dbc58",
+              "name": "Successful case. The resource has been successfully modified and no additional content  is sent in the response message.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c01da386-50bf-4fe5-9731-0090a92ee000",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e2a2a476-51ea-4c96-8ac8-a6025e2642e8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ca7c5459-9a26-4dd3-89da-b04c229cb589",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "40e593ee-140b-44ba-8b08-b86802f362e1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "eb1eb5a2-deb0-4581-971b-52e3d42fc34c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e395708f-36a9-4c75-b5ea-89450782357b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2bea7273-5b71-4c94-b438-a6fff615fbac",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d6fe0560-8c1c-468a-ae1c-303e34cec5db",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3b53e05a-c032-4b2c-b3aa-4e6076c48f58",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "04ce38e4-213a-43fd-990e-0771c2d96561",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "edfcb170-8ccb-4fb6-84de-16764ab926f4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "00f4a12b-065e-423b-90e8-955e0117ed34",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a22f4336-6b1a-4b7b-8479-104433f04043",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lpi\": {\n    \"value\": \"reference TS29503_Nudm_SDM.yaml#/components/schemas/Lpi not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "28f32adc-97ca-4752-bc96-c5322b781c02",
+          "name": "Deletes an already existing LPI Parameters Provisioning resource",
+          "request": {
+            "name": "Deletes an already existing LPI Parameters Provisioning resource",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "provisionedLpis",
+                ":provisionedLpiId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "provisionedLpiId",
+                  "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "83a36f27-b252-4b0d-b9c4-2b95a4d66391",
+              "name": "No Content (Successful deletion of the existing resource)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4fdc894e-21f9-446c-9273-37bad4dc3690",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "506f9939-760d-485a-878d-ae8ab5c7d38f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "abd8118b-a2f1-4265-bc21-6288b8605683",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "452b8c23-b3f3-4061-a69b-e66186c5c089",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5821cb4e-e16e-43a0-a3ea-347b36cb0f8a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "775b20de-7239-4222-ab0e-cbd1d9f8b425",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c32ccb71-73e1-4414-acfb-53f7abe56343",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "954272e1-3072-47af-b9bc-d5d6d7f5322a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b60a71af-7337-4508-80db-b6d5e53bfa1e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "023b5311-5c80-4161-aa81-291c07fad90c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "provisionedLpis",
+                    ":provisionedLpiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "provisionedLpiId",
+                      "description": "(Required) Identifier of the provisioned LPI parameter resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/3gpp-lpi-pp/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "2b64399c-ebae-45c1-9f5f-36577514c053",
+    "name": "3gpp-lpi-pp",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for Location Privacy Indication Parameters Provisioning.  \n© 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

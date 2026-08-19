@@ -1,0 +1,25 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TS 28.532 Performance Threshold Monitoring MnS",
+    "version": "18.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Send notifications about performance threshold crossing",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{root}/notificationSink",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "To send a notifyThresholdCrossing notification"
+    }
+  ],
+  "bundled": true
+}

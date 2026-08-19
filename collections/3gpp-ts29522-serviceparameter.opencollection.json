@@ -1,0 +1,200 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-service-parameter",
+    "version": "1.3.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Service Parameter Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "read all of the active subscriptions for the AF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-service-parameter/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "gpsis",
+                "value": "",
+                "type": "query",
+                "description": "The GPSI of the requested UE(s)."
+              },
+              {
+                "name": "ip-addrs",
+                "value": "",
+                "type": "query",
+                "description": "The IP address(es) of the requested UE(s)."
+              },
+              {
+                "name": "ip-domain",
+                "value": "",
+                "type": "query",
+                "description": "The IPv4 address domain identifier. The attribute may only be provided if IPv4 address is included in the ip-addrs query parameter.\n"
+              },
+              {
+                "name": "mac-addrs",
+                "value": "",
+                "type": "query",
+                "description": "The MAC address(es) of the requested UE(s)."
+              }
+            ]
+          },
+          "docs": "read all of the active subscriptions for the AF"
+        },
+        {
+          "info": {
+            "name": "Creates a new subscription resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-service-parameter/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new subscription resource"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Service Parameter Subscription",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "read an active subscriptions for the SCS/AS and the subscription Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-service-parameter/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ]
+          },
+          "docs": "read an active subscriptions for the SCS/AS and the subscription Id"
+        },
+        {
+          "info": {
+            "name": "Fully updates/replaces an existing subscription resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-service-parameter/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Fully updates/replaces an existing subscription resource"
+        },
+        {
+          "info": {
+            "name": "Partial updates/replaces an existing subscription resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-service-parameter/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Partial updates/replaces an existing subscription resource"
+        },
+        {
+          "info": {
+            "name": "Deletes an already existing subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-service-parameter/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ]
+          },
+          "docs": "Deletes an already existing subscription"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

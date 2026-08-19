@@ -1,0 +1,179 @@
+{
+  "item": [
+    {
+      "id": "a883cf45-81b3-4aeb-b172-80868ead415d",
+      "name": "Send notifications about performance threshold crossing",
+      "request": {
+        "name": "Send notifications about performance threshold crossing",
+        "description": {
+          "content": "To send a notifyThresholdCrossing notification",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "notificationSink"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "The open API server of the performance threshold monitoring service is located in the consumer side, see monitoringNotifTarget attribute of the IOC ThresholdMonitor defined in 3GPP TS 28.622 [11]. ",
+              "type": "any",
+              "value": "{{root}}",
+              "key": "root"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"observedPerfMetricName\": \"<string>\",\n  \"observedPerfMetricValue\": \"<integer>\",\n  \"observedPerfMetricDirection\": \"<string>\",\n  \"thresholdValue\": \"<integer>\",\n  \"hysteresis\": \"<integer>\",\n  \"monitorGranularityPeriod\": \"<integer>\",\n  \"additionalText\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "083df9e1-2135-41ac-ade8-7fd93c77c55e",
+          "name": "Success case (\"204 No Content\"). The notification is successfully delivered. The response message body is absent.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "notificationSink"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The open API server of the performance threshold monitoring service is located in the consumer side, see monitoringNotifTarget attribute of the IOC ThresholdMonitor defined in 3GPP TS 28.622 [11]. ",
+                  "type": "any",
+                  "value": "{{root}}",
+                  "key": "root"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"observedPerfMetricName\": \"<string>\",\n  \"observedPerfMetricValue\": \"<integer>\",\n  \"observedPerfMetricDirection\": \"<string>\",\n  \"thresholdValue\": \"<integer>\",\n  \"hysteresis\": \"<integer>\",\n  \"monitorGranularityPeriod\": \"<integer>\",\n  \"additionalText\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "58843284-462d-4099-8c63-5ec6e397fa3e",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "notificationSink"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The open API server of the performance threshold monitoring service is located in the consumer side, see monitoringNotifTarget attribute of the IOC ThresholdMonitor defined in 3GPP TS 28.622 [11]. ",
+                  "type": "any",
+                  "value": "{{root}}",
+                  "key": "root"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"observedPerfMetricName\": \"<string>\",\n  \"observedPerfMetricValue\": \"<integer>\",\n  \"observedPerfMetricDirection\": \"<string>\",\n  \"thresholdValue\": \"<integer>\",\n  \"hysteresis\": \"<integer>\",\n  \"monitorGranularityPeriod\": \"<integer>\",\n  \"additionalText\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The open API server of the performance threshold monitoring service is located in the consumer side, see monitoringNotifTarget attribute of the IOC ThresholdMonitor defined in 3GPP TS 28.622 [11]. ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "http://example.com/3GPPManagement",
+      "key": "root"
+    },
+    {
+      "type": "string",
+      "value": "{{root}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d250b833-bf9a-4559-9ca8-0e904a4db5d2",
+    "name": "TS 28.532 Performance Threshold Monitoring MnS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OAS 3.0.1 definition of the Performance Threshold Monitoring MnS © 2023, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.",
+      "type": "text/plain"
+    }
+  }
+}

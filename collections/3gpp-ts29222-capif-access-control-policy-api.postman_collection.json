@@ -1,0 +1,845 @@
+{
+  "item": [
+    {
+      "id": "95fbe3be-c847-4ab1-9493-25f8a1ea07c2",
+      "name": "Access Control Policy List (Collection)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e82eacf0-00f7-49d9-9d12-820ed3c9e12d",
+          "name": "Get Acc Cont Pol List",
+          "request": {
+            "name": "Get Acc Cont Pol List",
+            "description": {
+              "content": "Retrieves the access control policy list.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accessControlPolicyList",
+                ":serviceApiId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "aef-id",
+                  "value": "<string>",
+                  "description": "(Required) Identifier of the AEF"
+                },
+                {
+                  "disabled": false,
+                  "key": "api-invoker-id",
+                  "value": "<string>",
+                  "description": "Identifier of the API invoker"
+                },
+                {
+                  "disabled": false,
+                  "key": "value",
+                  "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec",
+                  "description": "To filter irrelevant responses related to unsupported features"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "serviceApiId",
+                  "description": "(Required) Identifier of a published service API"
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "874d9b3c-ac19-446f-8b82-0d78be09a28d",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accessControlPolicyList",
+                    ":serviceApiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "aef-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-invoker-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceApiId",
+                      "description": "(Required) Identifier of a published service API"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apiInvokerPolicies\": [\n    {\n      \"apiInvokerId\": \"string\",\n      \"allowedTotalInvocations\": 9415,\n      \"allowedInvocationsPerSecond\": 3782,\n      \"allowedInvocationTimeRangeList\": [\n        {\n          \"startTime\": {\n            \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n          },\n          \"stopTime\": {\n            \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n          }\n        },\n        {\n          \"startTime\": {\n            \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n          },\n          \"stopTime\": {\n            \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n          }\n        }\n      ],\n      \"netSliceInfo\": [\n        {\n          \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n        }\n      ]\n    },\n    {\n      \"apiInvokerId\": \"string\",\n      \"allowedTotalInvocations\": 9419,\n      \"allowedInvocationsPerSecond\": 2617,\n      \"allowedInvocationTimeRangeList\": [\n        {\n          \"startTime\": {\n            \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n          },\n          \"stopTime\": {\n            \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n          }\n        },\n        {\n          \"startTime\": {\n            \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n          },\n          \"stopTime\": {\n            \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n          }\n        }\n      ],\n      \"netSliceInfo\": [\n        {\n          \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7a529669-8196-44af-9c3f-d7c05d7ef9f8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accessControlPolicyList",
+                    ":serviceApiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "aef-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-invoker-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceApiId",
+                      "description": "(Required) Identifier of a published service API"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b1a24843-cb48-4182-9092-aa27cf2cff24",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accessControlPolicyList",
+                    ":serviceApiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "aef-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-invoker-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceApiId",
+                      "description": "(Required) Identifier of a published service API"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "34e92d6d-b388-466d-bdbf-4c058e31d1bd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accessControlPolicyList",
+                    ":serviceApiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "aef-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-invoker-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceApiId",
+                      "description": "(Required) Identifier of a published service API"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3a348a8a-b7ee-4a45-bb86-316a105d41d3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accessControlPolicyList",
+                    ":serviceApiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "aef-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-invoker-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceApiId",
+                      "description": "(Required) Identifier of a published service API"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1f02842b-4716-4d45-a16b-272afd743836",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accessControlPolicyList",
+                    ":serviceApiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "aef-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-invoker-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceApiId",
+                      "description": "(Required) Identifier of a published service API"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "34c8fc37-25c5-4f79-a8dc-9eb6cddb4c01",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accessControlPolicyList",
+                    ":serviceApiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "aef-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-invoker-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceApiId",
+                      "description": "(Required) Identifier of a published service API"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cb300f2b-2392-4140-b9e6-dde78ec10732",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accessControlPolicyList",
+                    ":serviceApiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "aef-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-invoker-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceApiId",
+                      "description": "(Required) Identifier of a published service API"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4a2e6482-a8a8-4006-805f-60a2d725549b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accessControlPolicyList",
+                    ":serviceApiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "aef-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-invoker-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceApiId",
+                      "description": "(Required) Identifier of a published service API"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Request-URI Too Long",
+              "code": 414,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "19d8b312-8ab4-4397-8fad-0c2370532c84",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accessControlPolicyList",
+                    ":serviceApiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "aef-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-invoker-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceApiId",
+                      "description": "(Required) Identifier of a published service API"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2e21b643-c0eb-49d0-92a9-596d8dd29658",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accessControlPolicyList",
+                    ":serviceApiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "aef-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-invoker-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceApiId",
+                      "description": "(Required) Identifier of a published service API"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4363572c-e750-4a48-80d6-9774d6178bf4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accessControlPolicyList",
+                    ":serviceApiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "aef-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-invoker-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceApiId",
+                      "description": "(Required) Identifier of a published service API"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "94564ced-b12c-49a3-9cc4-f6af15c11ac3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accessControlPolicyList",
+                    ":serviceApiId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "aef-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api-invoker-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceApiId",
+                      "description": "(Required) Identifier of a published service API"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/access-control-policy/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dbd6956e-76ee-4c65-adb5-477faaaff35d",
+    "name": "CAPIF_Access_Control_Policy_API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for access control policy.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CAPIF_API_Invoker_Management_API",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "On-boarded API Invokers (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request the Creation of a new On-boarded API Invoker.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/api-invoker-management/v1/onboardedInvokers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the Creation of a new On-boarded API Invoker."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual On-boarded API Invoker (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update an existing Individual On-boarded API Invoker resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/api-invoker-management/v1/onboardedInvokers/:onboardingId",
+            "params": [
+              {
+                "name": "onboardingId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing Individual On-boarded API Invoker resource."
+        },
+        {
+          "info": {
+            "name": "Modify an existing Individual On-boarded API Invoker resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/api-invoker-management/v1/onboardedInvokers/:onboardingId",
+            "params": [
+              {
+                "name": "onboardingId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify an existing Individual On-boarded API Invoker resource."
+        },
+        {
+          "info": {
+            "name": "Delete an existing Individual On-boarded API Invoker resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/api-invoker-management/v1/onboardedInvokers/:onboardingId",
+            "params": [
+              {
+                "name": "onboardingId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes an existing Individual On-boarded API Invoker."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

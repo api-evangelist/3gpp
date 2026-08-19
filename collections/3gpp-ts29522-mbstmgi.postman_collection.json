@@ -1,0 +1,1374 @@
+{
+  "item": [
+    {
+      "id": "a4e9ac56-0ac1-4d35-9024-184251b35508",
+      "name": "TMGI Allocation or Timer Expiry Refresh",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ba228678-73be-4383-9a4b-64fe2fd05073",
+          "name": "Request the allocation of TMGI(s) for new MBS session(s) or the refresh of the expiry time of already allocated TMGI(s).",
+          "request": {
+            "name": "Request the allocation of TMGI(s) for new MBS session(s) or the refresh of the expiry time of already allocated TMGI(s).",
+            "description": {},
+            "url": {
+              "path": [
+                "allocate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f4b7f5cc-0e72-4fcd-9e65-6dde3116259f",
+              "name": "OK. Successful case. The allocated TMGI(s) or a refreshed expiry time for the concerned already allocated TMGI(s) is/are returned to the requesting AF.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "allocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tmgiInfo\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocated not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9834dc94-20cd-4049-87b2-f1e4d006f77c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "allocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a17b30f7-cee1-42ba-aa44-3403bf487700",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "allocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "63c3b0c4-de07-46f4-95bf-727c106e3089",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "allocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0c83154b-c567-4498-8a36-ddb625390671",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "allocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5fd07307-e859-46d6-954d-19baff72d4c9",
+              "name": "The request is rejected by the NEF and more details (along with ProblemDetails) may be returned.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "allocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "15b14283-3fb2-4215-b2a0-f7d1f8fffe71",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "allocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7945d1cd-a3fb-4e09-8d16-19518a7f56d5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "allocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "21cefa34-b107-4ee4-b7ca-4e88c241d83a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "allocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "772e84ab-3886-4ef9-8c05-4d538966dcfe",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "allocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5f39ba9b-50f0-4ae9-bcda-8053df008d18",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "allocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2ec15ccd-93f1-4ed8-9599-4563b36cb050",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "allocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "25a26adb-c49c-4ae0-b0c7-fbb48d512f37",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "allocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "eea2e02c-031b-4770-81e0-1c2d07ff5d15",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "allocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgiParams\": {\n    \"value\": \"reference TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate not found in the OpenAPI spec\"\n  },\n  \"notificationUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "5ec44155-7c30-4866-afe7-6cdadb2edbd1",
+      "name": "MBS TMGI Deallocation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ab64ada9-feb0-42bd-ad3c-33c282bfed2e",
+          "name": "Request the deallocation of MBS TMGI(s).",
+          "request": {
+            "name": "Request the deallocation of MBS TMGI(s).",
+            "description": {},
+            "url": {
+              "path": [
+                "deallocate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ca4b595b-399c-441e-8946-3f4687637d44",
+              "name": "No Content. Successful case, the TMGI(s) are deallocated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deallocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a296f2dd-128b-4548-bd3e-8cd9b3f8edb1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deallocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ed983ec8-3dd7-4f7f-b040-00b16847230f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deallocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1f03bdb8-68db-476e-9a9a-5413a7060b72",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deallocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2a88f2c5-f290-4143-ab8e-851add10d6cf",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deallocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d587769b-de56-426a-8d1e-5932bb23f663",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deallocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b73adc78-7bbe-401f-ba3b-1dfc26d0f143",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deallocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2b945492-f264-4489-98a9-cc73ca083136",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deallocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "80f94d18-0361-4e90-9d74-85678ea2826e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deallocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "981c2abf-39d6-4a52-b7d6-6675c370acec",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deallocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bddb99cf-51bd-4497-be72-5ee0c7a7c69e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deallocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e2404040-75e5-435f-abf0-44f776b8246e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deallocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "28e2d32a-cef8-4a66-a98d-28a8d6de4727",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deallocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5204bd0f-93eb-429f-bced-acf960bc9659",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deallocate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"tmgis\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Tmgi not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/3gpp-mbs-tmgi/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "4ea59e2e-0fca-4aa0-b082-2421f902bdd3",
+    "name": "3gpp-mbs-tmgi",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the allocation, deallocation and management of TMGI(s) for MBS.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

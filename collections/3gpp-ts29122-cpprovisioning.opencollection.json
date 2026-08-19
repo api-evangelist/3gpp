@@ -1,0 +1,252 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-cp-parameter-provisioning",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CP provisioning Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all active CP parameter provisioning subscription resources for a given SCS/AS.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-cp-parameter-provisioning/v1/:scsAsId/subscriptions",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              }
+            ]
+          },
+          "docs": "Read all active CP parameter provisioning subscription resources for a given SCS/AS."
+        },
+        {
+          "info": {
+            "name": "Create a new subscription resource of provisioning CP parameter set(s).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-cp-parameter-provisioning/v1/:scsAsId/subscriptions",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new subscription resource of provisioning CP parameter set(s)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual CP Provisioning Subscription",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read a CP parameter provisioning subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-cp-parameter-provisioning/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Subscription ID"
+              }
+            ]
+          },
+          "docs": "Read a CP parameter provisioning subscription resource."
+        },
+        {
+          "info": {
+            "name": "Modify a CP parameter provisioning subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-cp-parameter-provisioning/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Subscription ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify a CP parameter provisioning subscription resource."
+        },
+        {
+          "info": {
+            "name": "Delete a CP parameter provisioning subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-cp-parameter-provisioning/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Subscription ID"
+              }
+            ]
+          },
+          "docs": "Delete a CP parameter provisioning subscription resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual CP set Provisioning",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read CP at individual CP set(s) level associated with a CP parameter set Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-cp-parameter-provisioning/v1/:scsAsId/subscriptions/:subscriptionId/cpSets/:setId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Subscription ID"
+              },
+              {
+                "name": "setId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the CP parameter set"
+              }
+            ]
+          },
+          "docs": "Read CP at individual CP set(s) level associated with a CP parameter set Id."
+        },
+        {
+          "info": {
+            "name": "Update CP at individual CP set(s) level associated with a CP parameter set Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-cp-parameter-provisioning/v1/:scsAsId/subscriptions/:subscriptionId/cpSets/:setId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Subscription ID"
+              },
+              {
+                "name": "setId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the CP parameter set"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update CP at individual CP set(s) level associated with a CP parameter set Id."
+        },
+        {
+          "info": {
+            "name": "Delete CP at individual CP set(s) level associated with a CP parameter set Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-cp-parameter-provisioning/v1/:scsAsId/subscriptions/:subscriptionId/cpSets/:setId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS as defined in clause 5.2.4 of 3GPP TS 29.122."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Subscription ID"
+              },
+              {
+                "name": "setId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the CP parameter set"
+              }
+            ]
+          },
+          "docs": "Delete CP at individual CP set(s) level associated with a CP parameter set Id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

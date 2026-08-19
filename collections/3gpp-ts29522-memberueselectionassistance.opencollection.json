@@ -1,0 +1,176 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-musa",
+    "version": "1.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Member UE Selection Assistance Subscriptions (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all the active Member UE Selection Assistance Subscriptions  managed by the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-musa/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF"
+              }
+            ]
+          },
+          "docs": "Retrieve all the active Member UE Selection Assistance Subscriptions  managed by the NEF."
+        },
+        {
+          "info": {
+            "name": "Create a new Member UE Selection Assistance Subscription.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-musa/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Member UE Selection Assistance Subscription."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Member UE Selection Assistance Subscription (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an existing Individual Member UE Selection Assistance Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-musa/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual Member UE Selection Assistance Subscription resource.\n"
+              }
+            ]
+          },
+          "docs": "Retrieve an existing Individual Member UE Selection Assistance Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Request the update of an existing Individual Member UE Selection Assistance Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-musa/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual Member UE Selection Assistance Subscription resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the update of an existing Individual Member UE Selection Assistance Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Request the Modification of an existing Individual Member UE Selection Assistance Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-musa/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual Member UE Selection Assistance Subscription resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the Modification of an existing Individual Member UE Selection Assistance Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Request the deletion of an existing Individual Member UE Selection Assistance Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-musa/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual Member UE Selection Assistance Subscription resource.\n"
+              }
+            ]
+          },
+          "docs": "Request the deletion of an existing Individual Member UE Selection Assistance Subscription resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

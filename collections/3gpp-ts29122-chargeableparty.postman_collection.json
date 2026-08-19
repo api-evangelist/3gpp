@@ -1,0 +1,3851 @@
+{
+  "item": [
+    {
+      "id": "21722639-3745-4cf5-a8b3-a5175bd5ed69",
+      "name": "Chargeable Party Transaction Operation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2fb2f6e0-93c6-4fd5-8704-e3a9bd894741",
+          "name": "Read all or queried chargeable party transaction resources for a given SCS/AS.",
+          "request": {
+            "name": "Read all or queried chargeable party transaction resources for a given SCS/AS.",
+            "description": {},
+            "url": {
+              "path": [
+                ":scsAsId",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "The IP address(es) of the requested UE(s).",
+                    "type": "text/plain"
+                  },
+                  "key": "ip-addrs",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "ip-domain",
+                  "value": "<string>",
+                  "description": "The IPv4 address domain identifier. The attribute may only be provided if IPv4 address is included in the ip-addrs query parameter."
+                },
+                {
+                  "disabled": false,
+                  "key": "mac-addrs",
+                  "value": "{\"value\":\"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"}",
+                  "description": "The MAC address(es) of the requested UE(s)."
+                },
+                {
+                  "disabled": false,
+                  "key": "value",
+                  "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec",
+                  "description": "Contains the list of supported features."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "scsAsId",
+                  "description": "(Required) Identifier of SCS/AS"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3b429cfb-8548-4fe6-8ec2-4bc35733f88c",
+              "name": "OK (successful query of Chargeable Party resource)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ip-addrs",
+                      "value": ""
+                    },
+                    {
+                      "key": "ip-domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mac-addrs",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"notificationDestination\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n    },\n    \"sponsorInformation\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n    },\n    \"sponsoringEnabled\": false,\n    \"self\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n    },\n    \"supportedFeatures\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    },\n    \"dnn\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n    },\n    \"snssai\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n    },\n    \"requestTestNotification\": true,\n    \"websockNotifConfig\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n    },\n    \"exterAppId\": \"string\",\n    \"ipv4Addr\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n    },\n    \"ipDomain\": \"string\",\n    \"ipv6Addr\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n    },\n    \"macAddr\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n    },\n    \"flowInfo\": [\n      {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n      }\n    ],\n    \"ethFlowInfo\": [\n      {\n        \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n      }\n    ],\n    \"referenceId\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n    },\n    \"servAuthInfo\": {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n    },\n    \"usageThreshold\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n    },\n    \"events\": [\n      {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  {\n    \"notificationDestination\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n    },\n    \"sponsorInformation\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n    },\n    \"sponsoringEnabled\": false,\n    \"self\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n    },\n    \"supportedFeatures\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    },\n    \"dnn\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n    },\n    \"snssai\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n    },\n    \"requestTestNotification\": true,\n    \"websockNotifConfig\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n    },\n    \"exterAppId\": \"string\",\n    \"ipv4Addr\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n    },\n    \"ipDomain\": \"string\",\n    \"ipv6Addr\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n    },\n    \"macAddr\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n    },\n    \"flowInfo\": [\n      {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n      }\n    ],\n    \"ethFlowInfo\": [\n      {\n        \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n      }\n    ],\n    \"referenceId\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n    },\n    \"servAuthInfo\": {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n    },\n    \"usageThreshold\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n    },\n    \"events\": [\n      {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d53546f1-6137-4bbe-b536-942231c8c327",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ip-addrs",
+                      "value": ""
+                    },
+                    {
+                      "key": "ip-domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mac-addrs",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "90f2db1a-1f5c-4182-b9ee-1110f182f68e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ip-addrs",
+                      "value": ""
+                    },
+                    {
+                      "key": "ip-domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mac-addrs",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0cb7578f-4acd-45e1-a99d-40345539cc7e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ip-addrs",
+                      "value": ""
+                    },
+                    {
+                      "key": "ip-domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mac-addrs",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cf755641-be8a-4249-aabd-93a8c7cdcd5c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ip-addrs",
+                      "value": ""
+                    },
+                    {
+                      "key": "ip-domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mac-addrs",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "154e6004-a4c0-42ea-834b-7e4d284da50a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ip-addrs",
+                      "value": ""
+                    },
+                    {
+                      "key": "ip-domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mac-addrs",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a3b5e11b-3c40-41be-8e46-b60b5a5f96c9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ip-addrs",
+                      "value": ""
+                    },
+                    {
+                      "key": "ip-domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mac-addrs",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7921cf24-c33e-4fec-8922-3958b3bc5fa8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ip-addrs",
+                      "value": ""
+                    },
+                    {
+                      "key": "ip-domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mac-addrs",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9ebd8625-2c43-42eb-af1e-4c9a31957ba1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ip-addrs",
+                      "value": ""
+                    },
+                    {
+                      "key": "ip-domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mac-addrs",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "712e7aff-01fd-4e79-a82f-d570aa9a337b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ip-addrs",
+                      "value": ""
+                    },
+                    {
+                      "key": "ip-domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mac-addrs",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3fc919c4-46fe-4e36-bc7b-b76a2d40d8d3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ip-addrs",
+                      "value": ""
+                    },
+                    {
+                      "key": "ip-domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mac-addrs",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6102b01d-9081-4d4d-bcca-6daa6957ce9f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ip-addrs",
+                      "value": ""
+                    },
+                    {
+                      "key": "ip-domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mac-addrs",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c81d107a-f7bb-49e9-a218-bfabd695d97e",
+          "name": "Create a new chargeable party transaction resource.",
+          "request": {
+            "name": "Create a new chargeable party transaction resource.",
+            "description": {},
+            "url": {
+              "path": [
+                ":scsAsId",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "scsAsId",
+                  "description": "(Required) Identifier of SCS/AS"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"<string>\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"<string>\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ff34a12c-cc93-45d8-84de-ba3af340f48f",
+              "name": "successful creation of a chargeable party resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"<string>\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"<string>\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"<string>\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"<string>\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc820926-7d5b-4fa0-8bd4-2d9cbd434f29",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"<string>\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"<string>\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1c0ec4e1-1dec-4a72-a3c0-4dbda1c2aeca",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"<string>\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"<string>\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5b89deb5-13b9-4e4d-9c77-529e966a6344",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"<string>\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"<string>\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e727d7e5-bc40-48cc-bb7e-93fdb0250f4b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"<string>\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"<string>\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "565daed3-87a8-4bc6-b3e2-79229405c5fc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"<string>\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"<string>\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0274c3f4-a969-410e-8681-808048b7e66e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"<string>\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"<string>\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "16fa41d0-c686-4c05-845c-321d03a2943d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"<string>\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"<string>\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "40327457-5d3c-4fb1-854a-6137e393aae4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"<string>\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"<string>\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "331875bc-5948-4b76-a1dc-7f700cabd42a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"<string>\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"<string>\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "45c031a7-0565-4754-96c2-198c2872b385",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"<string>\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"<string>\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c162e454-8ade-4f94-86ca-9a9b7ea6822a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"<string>\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"<string>\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2d7d9ab6-7b24-456c-ab86-9b42ba2b2149",
+      "name": "Individual chargeable party resource Operation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "35ceb4c1-010c-4ff0-844f-4cda10a24431",
+          "name": "Read a chargeable party resource for a given SCS/AS and a transaction Id.",
+          "request": {
+            "name": "Read a chargeable party resource for a given SCS/AS and a transaction Id.",
+            "description": {},
+            "url": {
+              "path": [
+                ":scsAsId",
+                "transactions",
+                ":transactionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "scsAsId",
+                  "description": "(Required) Identifier of SCS/AS"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transactionId",
+                  "description": "(Required) Identifier of transaction"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7e0bce34-e813-4c6d-b649-f956a9395e92",
+              "name": "OK (successful query of a chargeable party resource)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": true,\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": false,\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"string\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"string\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "61a7ec04-3571-44d6-8a51-b826ebf32fec",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7597ebdb-b621-400a-8d9e-b55904f1dfe1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "81e3a7ab-7ba4-467e-96ca-c783f916ce9b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9f4ba673-6e3b-4447-8fdc-f055f885dc45",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dfee9488-f592-4f79-a992-0bc951fb4f79",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9cca19b5-42f6-4ba3-97b3-1c3a795ae440",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ec9b666a-c148-4657-ad74-c76e65c44fc8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3c59ea9f-7485-4e77-a366-afbd7881dece",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f82dae9e-24f4-4cd7-94e0-0ec8d8a3cb47",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5d2bdbde-882f-4144-b788-50d62aa1c509",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4f67cad8-afd7-4fbb-b087-c3fe60073980",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c69135aa-ddd5-45bc-8c17-342b643fbce4",
+          "name": "Updates a existing chargeable party resource for a given SCS/AS and transaction Id.",
+          "request": {
+            "name": "Updates a existing chargeable party resource for a given SCS/AS and transaction Id.",
+            "description": {},
+            "url": {
+              "path": [
+                ":scsAsId",
+                "transactions",
+                ":transactionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "scsAsId",
+                  "description": "(Required) Identifier of SCS/AS"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transactionId",
+                  "description": "(Required) Identifier of transaction"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/merge-patch+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7fcacf3b-42df-4fa8-80c6-9d371a16ec63",
+              "name": "successful update of a chargeable party resource",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"sponsorInformation\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/SponsorInformation not found in the OpenAPI spec\"\n  },\n  \"sponsoringEnabled\": true,\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": false,\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"exterAppId\": \"string\",\n  \"ipv4Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv4Addr not found in the OpenAPI spec\"\n  },\n  \"ipDomain\": \"string\",\n  \"ipv6Addr\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Ipv6Addr not found in the OpenAPI spec\"\n  },\n  \"macAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MacAddr48 not found in the OpenAPI spec\"\n  },\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"servAuthInfo\": {\n    \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/ServAuthInfo not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThreshold not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "45982137-be7e-4f6f-901f-eb03e9d12efa",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "df6aee5d-e6a7-40e5-950f-e2e6a4b9b74d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0e36d0f2-538a-4deb-8b61-8df59dfb396e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "371a6390-fdf4-49b1-987b-7d8c91200a76",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dd966493-273e-44b7-90a1-8e4aebc94dfa",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "63466e20-a5dc-4c99-9deb-d5c9c4bc745b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f7cbf127-f6b0-4c36-8de9-befb4dcc8bc9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "03daf04f-42fb-4fdf-8fab-035788918b91",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3cf052b2-fe6e-4c9f-87cd-2b6e0471402a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "951189b9-1418-4dc4-8a7f-e201d61837cd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e98611ea-49cf-4ff9-bf4b-c1fbf1f43014",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7dff650c-4c18-485b-ae57-2789c6d6f86c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "16aae64e-ffcd-43bc-b585-89c3d3bf8855",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "687b22c0-5da1-4b78-8c68-02cbdd6b3a17",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"flowInfo\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/FlowInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"exterAppId\": \"<string>\",\n  \"ethFlowInfo\": [\n    {\n      \"value\": \"reference TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/EthFlowDescription not found in the OpenAPI spec\"\n    }\n  ],\n  \"sponsoringEnabled\": \"<boolean>\",\n  \"referenceId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/BdtReferenceId not found in the OpenAPI spec\"\n  },\n  \"usageThreshold\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/UsageThresholdRm not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"events\": [\n    {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Event not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61e88ede-5f29-4531-bdee-6c714fea06ef",
+          "name": "Deletes a chargeable party resource for a given SCS/AS and a transcation Id.",
+          "request": {
+            "name": "Deletes a chargeable party resource for a given SCS/AS and a transcation Id.",
+            "description": {},
+            "url": {
+              "path": [
+                ":scsAsId",
+                "transactions",
+                ":transactionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "scsAsId",
+                  "description": "(Required) Identifier of SCS/AS"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transactionId",
+                  "description": "(Required) Identifier of transaction"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e1275d67-0d47-404e-be77-1d431f137d03",
+              "name": "OK (Successful deletion of the existing subscription)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a1ee0f86-4248-4bef-a9aa-62a622fda44c",
+              "name": "successful deletion of an resouce of chargeable party",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "42c5f343-0e14-429b-bacd-96f28a61a069",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "99edfb94-0c0b-409e-9e40-60c053d5e914",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a5ed3e54-ad41-43a6-b630-ede67c1d3bc0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0b0d62f0-94a4-4165-844f-b84c1843ae2f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "47bff7b7-221e-4aff-97d2-1e1cf401b5b9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7b5aa76c-9178-4a55-9cc1-cc25cab99be3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d947be64-8fa6-4ef9-871a-3ebecea02da9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a04ee7c4-b211-4a8b-be4f-351633bf6703",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cad5a90b-16bc-4a56-a3bc-2fc046fdd78c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bc8deb7f-754e-4c96-a40e-9ab06bb297e9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":scsAsId",
+                    "transactions",
+                    ":transactionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "scsAsId",
+                      "description": "(Required) Identifier of SCS/AS"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) Identifier of transaction"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/3gpp-chargeable-party/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "8285cc2f-0bac-4ec7-b416-47cde8ae351d",
+    "name": "3gpp-chargeable-party",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for Chargeable Party management.  \n© 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

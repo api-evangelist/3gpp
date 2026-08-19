@@ -1,0 +1,305 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-mbs-session",
+    "version": "1.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MBS Sessions collection",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request the creation of a new MBS Session.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-mbs-session/v1/mbs-sessions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the creation of a new MBS Session."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual MBS Session",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request the modification of an existing Individual MBS Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-mbs-session/v1/mbs-sessions/:mbsSessionRef",
+            "params": [
+              {
+                "name": "mbsSessionRef",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual MBS Session resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the modification of an existing Individual MBS Session resource."
+        },
+        {
+          "info": {
+            "name": "Request the Deletion of an existing Individual MBS Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-mbs-session/v1/mbs-sessions/:mbsSessionRef",
+            "params": [
+              {
+                "name": "mbsSessionRef",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual MBS Session resource."
+              }
+            ]
+          },
+          "docs": "Request the Deletion of an existing Individual MBS Session resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "MBS Session Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all the active MBS Sessions subscriptions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-mbs-session/v1/mbs-sessions/subscriptions"
+          },
+          "docs": "Retrieve all the active MBS Sessions subscriptions."
+        },
+        {
+          "info": {
+            "name": "Request the creation of a new Individual MBS Session subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-mbs-session/v1/mbs-sessions/subscriptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the creation of a new Individual MBS Session subscription resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual MBS Session subscription",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an existing Individual MBS Session Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-mbs-session/v1/mbs-sessions/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual MBS Session Subscription resource."
+              }
+            ]
+          },
+          "docs": "Retrieve an existing Individual MBS Session Subscription resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual MBS Session Subscription",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request the deletion of an existing Individual MBS Session subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-mbs-session/v1/mbs-sessions/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual MBS Session Subscription resource."
+              }
+            ]
+          },
+          "docs": "Request the deletion of an existing Individual MBS Session subscription resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "MBS Parameters Provisionings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve all the active MBS Parameters Provisioning resources at the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-mbs-session/v1/mbs-pp"
+          },
+          "docs": "Request to retrieve all the active MBS Parameters Provisioning resources at the NEF."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "MBS Parameters Provisioning",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request the creation of a new MBS Parameters Provisioning.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-mbs-session/v1/mbs-pp",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the creation of a new MBS Parameters Provisioning."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual MBS Parameters Provisioning",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve an existing Individual MBS Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-mbs-session/v1/mbs-pp/:mbsPpId",
+            "params": [
+              {
+                "name": "mbsPpId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual MBS Parameters Provisioning resource.\n"
+              }
+            ]
+          },
+          "docs": "Request to retrieve an existing Individual MBS Parameters Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Request the update of an existing Individual MBS Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-mbs-session/v1/mbs-pp/:mbsPpId",
+            "params": [
+              {
+                "name": "mbsPpId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual MBS Parameters Provisioning resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the update of an existing Individual MBS Parameters Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Request the modification of an existing Individual MBS Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-mbs-session/v1/mbs-pp/:mbsPpId",
+            "params": [
+              {
+                "name": "mbsPpId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual MBS Parameters Provisioning resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the modification of an existing Individual MBS Parameters Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Request the deletion of an existing Individual MBS Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-mbs-session/v1/mbs-pp/:mbsPpId",
+            "params": [
+              {
+                "name": "mbsPpId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual MBS Parameters Provisioning resource.\n"
+              }
+            ]
+          },
+          "docs": "Request the deletion of an existing Individual MBS Parameters Provisioning resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

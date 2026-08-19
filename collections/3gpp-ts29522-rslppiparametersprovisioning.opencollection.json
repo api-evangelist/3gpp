@@ -1,0 +1,144 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-rslppi-pp",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "RSLPPI Parameters Provisionings (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve all the active RSLPPI Parameters Provisioning resources at the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-rslppi-pp/v1/pp"
+          },
+          "docs": "Request to retrieve all the active RSLPPI Parameters Provisioning resources at the NEF."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "RSLPPI Parameters Provisioning (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request the creation of a new RSLPPI Parameters Provisioning.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-rslppi-pp/v1/pp",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the creation of a new RSLPPI Parameters Provisioning."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual RSLPPI Parameters Provisioning (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve an existing Individual RSLPPI Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-rslppi-pp/v1/pp/:ppId",
+            "params": [
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual RSLPPI Parameters Provisioning resource.\n"
+              }
+            ]
+          },
+          "docs": "Request to retrieve an existing Individual RSLPPI Parameters Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Request the update of an existing Individual RSLPPI Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-rslppi-pp/v1/pp/:ppId",
+            "params": [
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual RSLPPI Parameters Provisioning resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the update of an existing Individual RSLPPI Parameters Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Request the modification of an existing Individual RSLPPI Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-rslppi-pp/v1/pp/:ppId",
+            "params": [
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual RSLPPI Parameters Provisioning resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the modification of an existing Individual RSLPPI Parameters Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Request the deletion of an existing Individual RSLPPI Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-rslppi-pp/v1/pp/:ppId",
+            "params": [
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual RSLPPI Parameters Provisioning resource.\n"
+              }
+            ]
+          },
+          "docs": "Request the deletion of an existing Individual RSLPPI Parameters Provisioning resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

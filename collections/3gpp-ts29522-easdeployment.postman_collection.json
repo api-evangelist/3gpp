@@ -1,0 +1,4132 @@
+{
+  "item": [
+    {
+      "id": "e7b52402-a87b-4a6c-a8ee-f12f0ee8f49b",
+      "name": "EAS Deployment Information (Collection)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9ba1afb4-63a3-4c0c-98b5-b91a3bc4e3c3",
+          "name": "Read all EAS Deployment information for a given AF",
+          "request": {
+            "name": "Read all EAS Deployment information for a given AF",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "eas-deployment-info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "95fffd43-7828-4b1a-87bd-d358310efc69",
+              "name": "OK (Successful get all of the EAS Deployment information for the AF)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"fqdnPatternList\": [\n      {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n      }\n    ],\n    \"self\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n    },\n    \"afServiceId\": \"<string>\",\n    \"appId\": \"<string>\",\n    \"dnn\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n    },\n    \"snssai\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n    },\n    \"externalGroupId\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n    },\n    \"dnaiInfos\": {\n      \"key_0\": {}\n    },\n    \"targetAfId\": \"<string>\",\n    \"suppFeat\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    }\n  },\n  {\n    \"fqdnPatternList\": [\n      {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n      }\n    ],\n    \"self\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n    },\n    \"afServiceId\": \"<string>\",\n    \"appId\": \"<string>\",\n    \"dnn\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n    },\n    \"snssai\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n    },\n    \"externalGroupId\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n    },\n    \"dnaiInfos\": {\n      \"key_0\": {}\n    },\n    \"targetAfId\": \"<string>\",\n    \"suppFeat\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "75c83cf5-ee33-482e-922f-39c81d66a992",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8d3adfe8-8a67-4c55-9ed3-ede766f25a9c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b810ad2f-9dd6-457b-87e7-a84d09426593",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "13456b00-3672-4bb6-aadc-48e7caa32afa",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "75e1c0f8-f251-4326-aaa5-ad61f1ed57e9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "066c0954-72b2-4da7-9377-66ad82ce850f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f3b9333e-940d-45ef-aed6-a68eb37e52f2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e00cf9bb-663e-460b-b550-0c0986ac68e0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5ec3b7b8-732f-4667-b866-4ab778d514b3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "78f1fe82-f837-4327-a2ac-fcbf4704f651",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76b07f07-7b18-4d13-9ba2-c1c8d53b2b17",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "221673b6-a17e-4826-a37a-4db88a9b27a2",
+          "name": "Create a new Individual EAS Deployment information resource.",
+          "request": {
+            "name": "Create a new Individual EAS Deployment information resource.",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "eas-deployment-info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ec418457-f731-46d4-a7c8-f94887bbab96",
+              "name": "Created (Successful creation)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c0e7369-d1d2-4941-82fd-a94ab5605814",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a914dd54-de53-4083-9251-9d893b2400df",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b2615789-9a8a-4abf-b7ae-50fbaf703a5a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "25d9a8be-54b4-4bbe-b51f-75c9ff095546",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c73c374b-81d6-4007-b177-a6df7cdce588",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ee7aabaf-8e06-40ab-934c-cd664e3aeb9a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b3b097bc-99c4-4cc3-890e-f5aeef4fe2dd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b856fc7e-7dca-4ed0-871a-6d842d4704b1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ec75aef3-158d-4888-a9cc-16297445191c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8120d76e-0fd7-40b5-97a7-31bf79dc4030",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d33cf611-a37d-4cf5-becb-d41f349edf6c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b006d037-5c9f-4c81-87e7-ac3592b929b2",
+      "name": "Individual EAS Deployment Information",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5222a382-8662-4e4c-b041-7121cbd93d58",
+          "name": "Read an active Individual EAS Deployment Information resource for the AF",
+          "request": {
+            "name": "Read an active Individual EAS Deployment Information resource for the AF",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "eas-deployment-info",
+                ":easDeployInfoId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "easDeployInfoId",
+                  "description": "(Required) Identifier of an EAS Deployment Information."
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f92ebe6d-e194-49c5-b5a1-a51704fdeeca",
+              "name": "OK (Successful get the active resource)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of an EAS Deployment Information."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"string\",\n  \"appId\": \"string\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"string\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "030da723-f946-43b0-b529-21d5bbb0e03b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of an EAS Deployment Information."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "79d0d6b7-200a-4614-aa80-ced808d2a390",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of an EAS Deployment Information."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c7727390-2caf-46d8-b55c-bdc97c4d5094",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of an EAS Deployment Information."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e99aabae-4eff-482a-9cd4-7e0f1d92841d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of an EAS Deployment Information."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3543dfbf-7caa-48a8-83b0-88c26698c755",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of an EAS Deployment Information."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "14b9d20d-1930-40bb-a28f-f38761610459",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of an EAS Deployment Information."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "19ff65bd-86ff-4ecd-be7d-49d71d7b85f9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of an EAS Deployment Information."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e98f0f36-77fc-4dea-8c42-0116b86199e8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of an EAS Deployment Information."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8cee5283-6b0a-4572-8206-26b4b48e57a3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of an EAS Deployment Information."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "17fd6600-bcdc-4a9a-839c-8f8e7e34b44d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of an EAS Deployment Information."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6ee0bb70-f0ec-4c46-a354-259933e202e3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of an EAS Deployment Information."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "795d3676-b2d9-4e31-83d0-f4e9e4392ad9",
+          "name": "Fully updates/replaces an existing resource",
+          "request": {
+            "name": "Fully updates/replaces an existing resource",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "eas-deployment-info",
+                ":easDeployInfoId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "easDeployInfoId",
+                  "description": "(Required) Identifier of the EAS Deployment information resource"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {},\n    \"key_1\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cb97f677-c3bf-49d7-9631-5e601886b8ff",
+              "name": "OK (Successful update of the existing resource)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bd0b70e6-f97c-4755-a22b-131950e9fe7d",
+              "name": "Successful case. The resource has been successfully updated and no additional content is  sent in the response message.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b568a91d-cd07-4d09-941d-45ef0294a4d6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8e643ffe-e8a3-46f5-b355-6c1e5fdec1e9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e8388ce3-ce12-4478-b38c-9346b4aa6c0e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4db244ac-eaff-4a46-98b6-6ae8135b0968",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ed42a299-2744-4099-995a-949771114b49",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "67c21e9f-402b-49ba-9ddc-dabde16026af",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b34d7c6c-c4b3-4e00-86eb-817689ff9f2a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ca589f40-27f0-4359-a1e7-4df796113f39",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6eb7a38e-ad7d-42f4-9c4e-1598712382b5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d7cf75db-b406-47e3-a61d-5b6d640dea3d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ddcdeee2-1dd0-4c2d-95d8-7517f4ba8028",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "530185e5-8194-4295-b1d1-a06b039a9b84",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "df1ac07e-c293-4ac5-adc3-46cea680a5bf",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqdnPatternList\": [\n    {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/FqdnPatternMatchingRule not found in the OpenAPI spec\"\n    }\n  ],\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"afServiceId\": \"<string>\",\n  \"appId\": \"<string>\",\n  \"dnn\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n  },\n  \"snssai\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n  },\n  \"externalGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"dnaiInfos\": {\n    \"key_0\": {}\n  },\n  \"targetAfId\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "248ee18e-b864-4a7f-98e9-0d2128c9bcf3",
+          "name": "Deletes an already existing EAS Deployment information resource",
+          "request": {
+            "name": "Deletes an already existing EAS Deployment information resource",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "eas-deployment-info",
+                ":easDeployInfoId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "easDeployInfoId",
+                  "description": "(Required) Identifier of the EAS Deployment information resource"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5b8f4011-5aec-4503-a4ac-74333e18b899",
+              "name": "No Content (Successful deletion of the existing resource)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3462facd-0294-4e6f-bc34-4ba083a0484e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6a9fe5e7-417d-489a-89a2-9c4c1417e348",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "447cdbc4-0bc9-4288-902a-f76f9952dc20",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bdfd99af-d21b-4ea5-8838-59518bf10687",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4ba8b9d8-7479-4e91-8671-29e7f9c88c5c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f7070cae-ae42-4a8d-ad40-e7469c3462d6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6dda8070-d61e-4b62-ab4e-402fd0540801",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0a523c5c-b03d-4515-9129-cb001f34377e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "184f12c3-6666-4d0e-add7-c0255a7db470",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "90281233-d12c-43f6-a7e9-d6302e3e5b59",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "eas-deployment-info",
+                    ":easDeployInfoId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "easDeployInfoId",
+                      "description": "(Required) Identifier of the EAS Deployment information resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c3346519-1c99-4dbd-9993-6ac2bfb500e3",
+      "name": "EAS Deployment Information removal",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9fa169dc-2f35-42e2-a3f6-b8cbd943b5a6",
+          "name": "Remove EAS Deployment Information based on given criteria.",
+          "request": {
+            "name": "Remove EAS Deployment Information based on given criteria.",
+            "description": {},
+            "url": {
+              "path": [
+                "remove-edis"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f59a2301-f429-4b76-8cb4-bc8282262f36",
+              "name": "No Content. The EDIs matching the provided criteria have been successfully deleted.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove-edis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "43a97b68-5f13-4f9d-a2ec-3f07fa07cf1d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove-edis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "25d77a07-b863-431d-becf-d0ba60dc42e4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove-edis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "699fbe59-21a9-45ae-aafc-a01076917633",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove-edis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cb382255-1343-48a4-b9af-a7725170e17e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove-edis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "adb6d274-a749-4f28-b052-f27f53af6c9a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove-edis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "51b99089-d474-4f6a-ac63-8f780e71c8a1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove-edis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76d88dfb-324c-42fc-bfee-3cf6498cee2c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove-edis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "39cfef68-fdec-42f3-b6f5-b27a148a927a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove-edis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e26655e3-92de-4996-91e0-12dbab6150ab",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove-edis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "908c515d-3418-4cb6-9895-2ae5f349842a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove-edis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0569cfa7-a4fc-4806-bc16-53eb85624dca",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "remove-edis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/3gpp-eas-deployment/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "455516cf-ce57-44df-adc5-98546c130260",
+    "name": "3gpp-eas-deployment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for AF provisioned EAS Deployment.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

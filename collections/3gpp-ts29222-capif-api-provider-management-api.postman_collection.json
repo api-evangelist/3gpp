@@ -1,0 +1,2826 @@
+{
+  "item": [
+    {
+      "id": "a5a59cc1-36dd-4b71-9f88-2e948813f252",
+      "name": "All API Provider Domains Registrations (Collection)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1b21a693-ed89-4810-bc7f-8335d0a69c3b",
+          "name": "Create Api Prov Regist",
+          "request": {
+            "name": "Create Api Prov Regist",
+            "description": {
+              "content": "Registers a new API Provider domain with API provider domain functions profiles.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "registrations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8803ceb9-7806-4482-b086-fbd0ec4ea80e",
+              "name": "API provider domain registered successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource, according to the structure {apiRoot}/api-provider-management/v1/registrations/{registrationId}\n",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"regSec\": \"<string>\",\n  \"apiProvDomId\": \"string\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5558a12a-0078-4bf8-9d11-83cdf71f2a7e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bedcb9c2-1877-4ec7-a455-e865e5896dbe",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "328e5d0d-0b8f-4389-8956-4d7ade6bb73e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "74bfbd86-00b9-4fe2-91eb-e64287618699",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d4ba2333-8699-4b44-97b3-4eab7bfb8515",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d075e324-c21a-4adc-8532-5c3923aca4dc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c5798c86-1fc3-4d72-ae51-caa78ad14924",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "35f5767b-2440-441b-baf7-191bb5b7de1b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "16a6f03c-a9bd-40ab-89b8-d438c5119637",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fc2e2bb0-3279-4d2f-941a-aff3a8b9c008",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4c49519b-8a60-4676-9400-751fc5df728e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7be7ab5a-940e-427b-8b87-91d1c35087ce",
+      "name": "Individual API Provider Domain Registration (Document)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1043e9e0-d3bc-4ba0-81a6-050b6ec6b583",
+          "name": "Delete Ind Api Prov Domain Regist",
+          "request": {
+            "name": "Delete Ind Api Prov Domain Regist",
+            "description": {
+              "content": "Deregisters API provider domain by deleting API provider domain and functions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "registrations",
+                ":registrationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registrationId",
+                  "description": "(Required) String identifying an registered API provider domain resource."
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ac39f946-6ac3-472c-9896-e7e830f35a2b",
+              "name": "The API provider domain matching registrationId is deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9e003a91-892a-470c-b371-6a8b37a64a5d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "69c43fb0-5bde-40fa-9bc4-bf7f5e201e49",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "002b87bb-6ccd-4e23-a829-21cd447f9059",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e89367a4-fba9-4d7e-867b-9b94b7f92d13",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4c830012-dccf-45ef-93c2-0bed419942b1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "517fb60f-0184-4d33-a29c-50382dc81df0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "197da891-9ef3-4515-b5e9-5ecb557df603",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b065029b-cc98-48a0-8a26-b8f48b2f37dc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a155c118-ef00-4153-bdaa-4cca71677ed3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "69a75c8b-c192-4c8c-820e-ea23a983724c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b128b76-5bcd-4e6c-a171-b80cb13f5e5b",
+          "name": "Update Ind Api Prov Domain Regist",
+          "request": {
+            "name": "Update Ind Api Prov Domain Regist",
+            "description": {
+              "content": "Updates an API provider domain's registration details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "registrations",
+                ":registrationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registrationId",
+                  "description": "(Required) String identifying an registered API provider domain resource."
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "04b24366-8423-4e19-a01a-ea18b3fa98b2",
+              "name": "API provider domain registration details updated successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"regSec\": \"<string>\",\n  \"apiProvDomId\": \"string\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "97063ce3-096b-4118-8b05-35cb413ede71",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "db6a8ef3-8f1d-4721-90d1-197467a29584",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b80cbed6-3ab8-43ba-9634-f2dad6111f4c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bf0da211-067e-47a6-b5b9-6eba733ee093",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "709bd211-00fa-45da-9e88-bd042785857c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6e8a98f7-725e-4077-90ec-798790962569",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "71a3fa0f-222a-4dc0-91f4-94f733dd1a61",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "44c98b95-398b-4b13-87f8-3402372761b6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "feefe66b-0fe1-441e-90ff-8a82932222e5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4247916b-751f-4fa6-880b-72492ecfe16e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2fa7ae6a-1991-4f7b-a3be-d9a0b1bb45ac",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3f1ffc05-bd17-4211-90b3-6146836c0e88",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "48f3e9b1-095f-49b0-8426-f34834ade436",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "48da4987-170b-4fbb-8ec7-245c6b4109f5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) String identifying an registered API provider domain resource."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"regSec\": \"<string>\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5afa60af-80f1-469c-99c7-d826222f80ac",
+          "name": "Modify Ind Api Prov Domain Regist",
+          "request": {
+            "name": "Modify Ind Api Prov Domain Regist",
+            "description": {
+              "content": "Modify an individual API provider details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "registrations",
+                ":registrationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "registrationId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/merge-patch+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "85c1c038-fb00-4114-a583-d5a7caa6ff1f",
+              "name": "The definition of the service API is modified successfully and a representation of the updated service API is returned in the request body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"regSec\": \"<string>\",\n  \"apiProvDomId\": \"string\",\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\",\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failReason\": \"<string>\",\n  \"apiProvName\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f12669cd-b955-47c9-9c59-0f065465fc3c",
+              "name": "No Content. The definition of the service API is modified successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5fa34216-1043-4e6b-8e82-5120c24ea41c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7a4bd5f7-21a6-4ef2-9734-75e4a9d7e2fe",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d5128cda-dfbe-4ca2-9e4e-5c2d5515a331",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "abe8f99b-880c-4dbd-805c-4b696c4db221",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9910f176-7f61-44d3-90dc-b7e01ebc2017",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5d9914f1-6098-4c63-af9c-1f362ffc490a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "54df2724-26ac-40b3-9f43-68071c2c3ec4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0af8aa87-a935-4135-a9ec-6c03ff4a00db",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fa75625b-08c2-463b-bb4c-43cfecadc412",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0a156d0f-0a10-461d-8c3b-5c665ef06496",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "62e5d817-4882-41d1-80c1-07a0c4d553d9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5a607108-a660-4102-af7f-4ac012e9560b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9f083dce-0c91-49bc-86f7-51c160a13239",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "registrations",
+                    ":registrationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "registrationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiProvFuncs\": [\n    {\n      \"regInfo\": {\n        \"apiProvPubKey\": \"<string>\",\n        \"apiProvCert\": \"<string>\"\n      },\n      \"apiProvFuncRole\": \"<string>\",\n      \"apiProvFuncId\": \"<string>\",\n      \"apiProvFuncInfo\": \"<string>\"\n    }\n  ],\n  \"apiProvDomInfo\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/api-provider-management/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c859b729-999e-47e7-b57c-9826a4052139",
+    "name": "CAPIF_API_Provider_Management_API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for API provider domain functions management.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

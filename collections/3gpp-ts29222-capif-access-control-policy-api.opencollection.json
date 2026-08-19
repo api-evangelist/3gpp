@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CAPIF_Access_Control_Policy_API",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Access Control Policy List (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetAccContPolList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/access-control-policy/v1/accessControlPolicyList/:serviceApiId",
+            "params": [
+              {
+                "name": "serviceApiId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of a published service API"
+              },
+              {
+                "name": "aef-id",
+                "value": "",
+                "type": "query",
+                "description": "Identifier of the AEF"
+              },
+              {
+                "name": "api-invoker-id",
+                "value": "",
+                "type": "query",
+                "description": "Identifier of the API invoker"
+              },
+              {
+                "name": "supported-features",
+                "value": "",
+                "type": "query",
+                "description": "To filter irrelevant responses related to unsupported features"
+              }
+            ]
+          },
+          "docs": "Retrieves the access control policy list."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

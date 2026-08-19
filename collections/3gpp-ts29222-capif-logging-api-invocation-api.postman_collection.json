@@ -1,0 +1,729 @@
+{
+  "item": [
+    {
+      "id": "830d8240-423e-4255-a629-3c4fc665954b",
+      "name": "Logs (Collection)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "aac8ebc8-1ac5-43ce-97ae-00aee90a499f",
+          "name": "Create Log Ent Serv API Inv",
+          "request": {
+            "name": "Create Log Ent Serv API Inv",
+            "description": {
+              "content": "Creates a new log entry for service API invocations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":aefId",
+                "logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "aefId",
+                  "description": "(Required) Identifier of the API exposing function"
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"aefId\": \"<string>\",\n  \"apiInvokerId\": \"<string>\",\n  \"logs\": [\n    {\n      \"apiId\": \"<string>\",\n      \"apiName\": \"<string>\",\n      \"apiVersion\": \"<string>\",\n      \"resourceName\": \"<string>\",\n      \"protocol\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol not found in the OpenAPI spec\"\n      },\n      \"result\": \"<string>\",\n      \"uri\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n      },\n      \"operation\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Operation not found in the OpenAPI spec\"\n      },\n      \"invocationTime\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"invocationLatency\": \"<integer>\",\n      \"inputParameters\": {},\n      \"outputParameters\": {},\n      \"srcInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"destInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"fwdInterface\": \"<string>\",\n      \"netSliceInfo\": {\n        \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "03373def-b942-4bb8-a894-b9d51f04a0f4",
+              "name": "Log of service API invocations provided by API exposing function successfully stored on the CAPIF core function.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":aefId",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "aefId",
+                      "description": "(Required) Identifier of the API exposing function"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aefId\": \"<string>\",\n  \"apiInvokerId\": \"<string>\",\n  \"logs\": [\n    {\n      \"apiId\": \"<string>\",\n      \"apiName\": \"<string>\",\n      \"apiVersion\": \"<string>\",\n      \"resourceName\": \"<string>\",\n      \"protocol\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol not found in the OpenAPI spec\"\n      },\n      \"result\": \"<string>\",\n      \"uri\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n      },\n      \"operation\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Operation not found in the OpenAPI spec\"\n      },\n      \"invocationTime\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"invocationLatency\": \"<integer>\",\n      \"inputParameters\": {},\n      \"outputParameters\": {},\n      \"srcInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"destInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"fwdInterface\": \"<string>\",\n      \"netSliceInfo\": {\n        \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource, according to the structure {apiRoot}/api-invocation-logs/v1/{aefId}/logs/{logId}\n",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"aefId\": \"<string>\",\n  \"apiInvokerId\": \"<string>\",\n  \"logs\": [\n    {\n      \"apiId\": \"<string>\",\n      \"apiName\": \"<string>\",\n      \"apiVersion\": \"<string>\",\n      \"resourceName\": \"<string>\",\n      \"protocol\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol not found in the OpenAPI spec\"\n      },\n      \"result\": \"<string>\",\n      \"uri\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n      },\n      \"operation\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Operation not found in the OpenAPI spec\"\n      },\n      \"invocationTime\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"invocationLatency\": \"<integer>\",\n      \"inputParameters\": {},\n      \"outputParameters\": {},\n      \"srcInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"destInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"fwdInterface\": \"<string>\",\n      \"netSliceInfo\": {\n        \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0ad3a433-ce9f-4970-a932-53bf3f808a97",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":aefId",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "aefId",
+                      "description": "(Required) Identifier of the API exposing function"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aefId\": \"<string>\",\n  \"apiInvokerId\": \"<string>\",\n  \"logs\": [\n    {\n      \"apiId\": \"<string>\",\n      \"apiName\": \"<string>\",\n      \"apiVersion\": \"<string>\",\n      \"resourceName\": \"<string>\",\n      \"protocol\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol not found in the OpenAPI spec\"\n      },\n      \"result\": \"<string>\",\n      \"uri\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n      },\n      \"operation\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Operation not found in the OpenAPI spec\"\n      },\n      \"invocationTime\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"invocationLatency\": \"<integer>\",\n      \"inputParameters\": {},\n      \"outputParameters\": {},\n      \"srcInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"destInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"fwdInterface\": \"<string>\",\n      \"netSliceInfo\": {\n        \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3a1a26f7-b900-4d97-af2e-0f99bb4b4282",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":aefId",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "aefId",
+                      "description": "(Required) Identifier of the API exposing function"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aefId\": \"<string>\",\n  \"apiInvokerId\": \"<string>\",\n  \"logs\": [\n    {\n      \"apiId\": \"<string>\",\n      \"apiName\": \"<string>\",\n      \"apiVersion\": \"<string>\",\n      \"resourceName\": \"<string>\",\n      \"protocol\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol not found in the OpenAPI spec\"\n      },\n      \"result\": \"<string>\",\n      \"uri\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n      },\n      \"operation\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Operation not found in the OpenAPI spec\"\n      },\n      \"invocationTime\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"invocationLatency\": \"<integer>\",\n      \"inputParameters\": {},\n      \"outputParameters\": {},\n      \"srcInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"destInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"fwdInterface\": \"<string>\",\n      \"netSliceInfo\": {\n        \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "49793988-937f-41c0-a3a0-f4c65bcf3341",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":aefId",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "aefId",
+                      "description": "(Required) Identifier of the API exposing function"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aefId\": \"<string>\",\n  \"apiInvokerId\": \"<string>\",\n  \"logs\": [\n    {\n      \"apiId\": \"<string>\",\n      \"apiName\": \"<string>\",\n      \"apiVersion\": \"<string>\",\n      \"resourceName\": \"<string>\",\n      \"protocol\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol not found in the OpenAPI spec\"\n      },\n      \"result\": \"<string>\",\n      \"uri\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n      },\n      \"operation\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Operation not found in the OpenAPI spec\"\n      },\n      \"invocationTime\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"invocationLatency\": \"<integer>\",\n      \"inputParameters\": {},\n      \"outputParameters\": {},\n      \"srcInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"destInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"fwdInterface\": \"<string>\",\n      \"netSliceInfo\": {\n        \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0172acf6-7cc4-4e48-849b-9dbddbee82c5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":aefId",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "aefId",
+                      "description": "(Required) Identifier of the API exposing function"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aefId\": \"<string>\",\n  \"apiInvokerId\": \"<string>\",\n  \"logs\": [\n    {\n      \"apiId\": \"<string>\",\n      \"apiName\": \"<string>\",\n      \"apiVersion\": \"<string>\",\n      \"resourceName\": \"<string>\",\n      \"protocol\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol not found in the OpenAPI spec\"\n      },\n      \"result\": \"<string>\",\n      \"uri\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n      },\n      \"operation\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Operation not found in the OpenAPI spec\"\n      },\n      \"invocationTime\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"invocationLatency\": \"<integer>\",\n      \"inputParameters\": {},\n      \"outputParameters\": {},\n      \"srcInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"destInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"fwdInterface\": \"<string>\",\n      \"netSliceInfo\": {\n        \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "52e766aa-20bb-423d-a286-2e77f4de2c1f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":aefId",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "aefId",
+                      "description": "(Required) Identifier of the API exposing function"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aefId\": \"<string>\",\n  \"apiInvokerId\": \"<string>\",\n  \"logs\": [\n    {\n      \"apiId\": \"<string>\",\n      \"apiName\": \"<string>\",\n      \"apiVersion\": \"<string>\",\n      \"resourceName\": \"<string>\",\n      \"protocol\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol not found in the OpenAPI spec\"\n      },\n      \"result\": \"<string>\",\n      \"uri\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n      },\n      \"operation\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Operation not found in the OpenAPI spec\"\n      },\n      \"invocationTime\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"invocationLatency\": \"<integer>\",\n      \"inputParameters\": {},\n      \"outputParameters\": {},\n      \"srcInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"destInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"fwdInterface\": \"<string>\",\n      \"netSliceInfo\": {\n        \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "423dad06-f4e9-4ad8-a785-ad3e44804bc4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":aefId",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "aefId",
+                      "description": "(Required) Identifier of the API exposing function"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aefId\": \"<string>\",\n  \"apiInvokerId\": \"<string>\",\n  \"logs\": [\n    {\n      \"apiId\": \"<string>\",\n      \"apiName\": \"<string>\",\n      \"apiVersion\": \"<string>\",\n      \"resourceName\": \"<string>\",\n      \"protocol\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol not found in the OpenAPI spec\"\n      },\n      \"result\": \"<string>\",\n      \"uri\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n      },\n      \"operation\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Operation not found in the OpenAPI spec\"\n      },\n      \"invocationTime\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"invocationLatency\": \"<integer>\",\n      \"inputParameters\": {},\n      \"outputParameters\": {},\n      \"srcInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"destInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"fwdInterface\": \"<string>\",\n      \"netSliceInfo\": {\n        \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4927782b-8743-4afc-9d50-29ff45b0f2ce",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":aefId",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "aefId",
+                      "description": "(Required) Identifier of the API exposing function"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aefId\": \"<string>\",\n  \"apiInvokerId\": \"<string>\",\n  \"logs\": [\n    {\n      \"apiId\": \"<string>\",\n      \"apiName\": \"<string>\",\n      \"apiVersion\": \"<string>\",\n      \"resourceName\": \"<string>\",\n      \"protocol\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol not found in the OpenAPI spec\"\n      },\n      \"result\": \"<string>\",\n      \"uri\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n      },\n      \"operation\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Operation not found in the OpenAPI spec\"\n      },\n      \"invocationTime\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"invocationLatency\": \"<integer>\",\n      \"inputParameters\": {},\n      \"outputParameters\": {},\n      \"srcInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"destInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"fwdInterface\": \"<string>\",\n      \"netSliceInfo\": {\n        \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f97d34da-960d-489f-8251-173cf67bfa57",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":aefId",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "aefId",
+                      "description": "(Required) Identifier of the API exposing function"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aefId\": \"<string>\",\n  \"apiInvokerId\": \"<string>\",\n  \"logs\": [\n    {\n      \"apiId\": \"<string>\",\n      \"apiName\": \"<string>\",\n      \"apiVersion\": \"<string>\",\n      \"resourceName\": \"<string>\",\n      \"protocol\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol not found in the OpenAPI spec\"\n      },\n      \"result\": \"<string>\",\n      \"uri\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n      },\n      \"operation\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Operation not found in the OpenAPI spec\"\n      },\n      \"invocationTime\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"invocationLatency\": \"<integer>\",\n      \"inputParameters\": {},\n      \"outputParameters\": {},\n      \"srcInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"destInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"fwdInterface\": \"<string>\",\n      \"netSliceInfo\": {\n        \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "da32ccce-e9d0-4c0d-a1d7-7b186efb1028",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":aefId",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "aefId",
+                      "description": "(Required) Identifier of the API exposing function"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aefId\": \"<string>\",\n  \"apiInvokerId\": \"<string>\",\n  \"logs\": [\n    {\n      \"apiId\": \"<string>\",\n      \"apiName\": \"<string>\",\n      \"apiVersion\": \"<string>\",\n      \"resourceName\": \"<string>\",\n      \"protocol\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol not found in the OpenAPI spec\"\n      },\n      \"result\": \"<string>\",\n      \"uri\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n      },\n      \"operation\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Operation not found in the OpenAPI spec\"\n      },\n      \"invocationTime\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"invocationLatency\": \"<integer>\",\n      \"inputParameters\": {},\n      \"outputParameters\": {},\n      \"srcInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"destInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"fwdInterface\": \"<string>\",\n      \"netSliceInfo\": {\n        \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "680ed1a7-91fc-4294-a56e-6ccb83771488",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":aefId",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "aefId",
+                      "description": "(Required) Identifier of the API exposing function"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aefId\": \"<string>\",\n  \"apiInvokerId\": \"<string>\",\n  \"logs\": [\n    {\n      \"apiId\": \"<string>\",\n      \"apiName\": \"<string>\",\n      \"apiVersion\": \"<string>\",\n      \"resourceName\": \"<string>\",\n      \"protocol\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol not found in the OpenAPI spec\"\n      },\n      \"result\": \"<string>\",\n      \"uri\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n      },\n      \"operation\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Operation not found in the OpenAPI spec\"\n      },\n      \"invocationTime\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"invocationLatency\": \"<integer>\",\n      \"inputParameters\": {},\n      \"outputParameters\": {},\n      \"srcInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"destInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"fwdInterface\": \"<string>\",\n      \"netSliceInfo\": {\n        \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "942bde29-aad7-4feb-916f-ba2b714e1771",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":aefId",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "aefId",
+                      "description": "(Required) Identifier of the API exposing function"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aefId\": \"<string>\",\n  \"apiInvokerId\": \"<string>\",\n  \"logs\": [\n    {\n      \"apiId\": \"<string>\",\n      \"apiName\": \"<string>\",\n      \"apiVersion\": \"<string>\",\n      \"resourceName\": \"<string>\",\n      \"protocol\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol not found in the OpenAPI spec\"\n      },\n      \"result\": \"<string>\",\n      \"uri\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n      },\n      \"operation\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Operation not found in the OpenAPI spec\"\n      },\n      \"invocationTime\": {\n        \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"invocationLatency\": \"<integer>\",\n      \"inputParameters\": {},\n      \"outputParameters\": {},\n      \"srcInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"destInterface\": {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/InterfaceDescription not found in the OpenAPI spec\"\n      },\n      \"fwdInterface\": \"<string>\",\n      \"netSliceInfo\": {\n        \"value\": \"reference TS29435_NSCE_PolicyManagement.yaml#/components/schemas/NetSliceId not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/api-invocation-logs/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9b1c3cfb-d67d-453c-8b3f-050234442142",
+    "name": "CAPIF_Logging_API_Invocation_API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for invocation logs.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

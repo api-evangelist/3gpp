@@ -1,0 +1,171 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-chargeable-party",
+    "version": "1.4.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Chargeable Party Transaction Operation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all or queried chargeable party transaction resources for a given SCS/AS.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-chargeable-party/v1/:scsAsId/transactions",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "ip-addrs",
+                "value": "",
+                "type": "query",
+                "description": "The IP address(es) of the requested UE(s)."
+              },
+              {
+                "name": "ip-domain",
+                "value": "",
+                "type": "query",
+                "description": "The IPv4 address domain identifier. The attribute may only be provided if IPv4 address is included in the ip-addrs query parameter."
+              },
+              {
+                "name": "mac-addrs",
+                "value": "",
+                "type": "query",
+                "description": "The MAC address(es) of the requested UE(s)."
+              },
+              {
+                "name": "supp-feat",
+                "value": "",
+                "type": "query",
+                "description": "Contains the list of supported features."
+              }
+            ]
+          },
+          "docs": "Read all or queried chargeable party transaction resources for a given SCS/AS."
+        },
+        {
+          "info": {
+            "name": "Create a new chargeable party transaction resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-chargeable-party/v1/:scsAsId/transactions",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new chargeable party transaction resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual chargeable party resource Operation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read a chargeable party resource for a given SCS/AS and a transaction Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-chargeable-party/v1/:scsAsId/transactions/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of transaction"
+              }
+            ]
+          },
+          "docs": "Read a chargeable party resource for a given SCS/AS and a transaction Id."
+        },
+        {
+          "info": {
+            "name": "Updates a existing chargeable party resource for a given SCS/AS and transaction Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-chargeable-party/v1/:scsAsId/transactions/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of transaction"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a existing chargeable party resource for a given SCS/AS and transaction Id."
+        },
+        {
+          "info": {
+            "name": "Deletes a chargeable party resource for a given SCS/AS and a transcation Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-chargeable-party/v1/:scsAsId/transactions/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of transaction"
+              }
+            ]
+          },
+          "docs": "Deletes a chargeable party resource for a given SCS/AS and a transcation Id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

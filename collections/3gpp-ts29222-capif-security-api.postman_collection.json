@@ -1,0 +1,4880 @@
+{
+  "item": [
+    {
+      "id": "aa5c00db-755d-428b-ae07-7fe94f721625",
+      "name": "Individual trusted API invoker (Store)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fcb1e5e5-00d0-4d8a-afc1-45c4c3510c4e",
+          "name": "Retrieve authentication information of an API invoker.",
+          "request": {
+            "name": "Retrieve authentication information of an API invoker.",
+            "description": {},
+            "url": {
+              "path": [
+                "trustedInvokers",
+                ":apiInvokerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "authenticationInfo",
+                  "value": "<boolean>",
+                  "description": "When set to 'true', it indicates the CAPIF core function to send the authentication information of the API invoker. Set to false or omitted otherwise.\n"
+                },
+                {
+                  "disabled": false,
+                  "key": "authorizationInfo",
+                  "value": "<boolean>",
+                  "description": "When set to 'true', it indicates the CAPIF core function to send the authorization information of the API invoker. Set to false or omitted otherwise.\n"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "apiInvokerId",
+                  "description": "(Required) Identifier of an individual API invoker"
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d581038-5e48-4342-b797-3c9a8b17da82",
+              "name": "The security related information of the API Invoker based on the request from the API exposing function.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authenticationInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "authorizationInfo",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": true,\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c047c452-fca9-4f0b-8140-780198e6d8b5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authenticationInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "authorizationInfo",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "869ab020-a48b-461d-95e6-44e5864a219d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authenticationInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "authorizationInfo",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "09191887-e872-457a-b593-5f7529119d3e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authenticationInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "authorizationInfo",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1fdfc071-1fd3-4186-a89f-3524c41e476e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authenticationInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "authorizationInfo",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "783ba9b3-d936-436d-ade3-56b78f299dfc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authenticationInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "authorizationInfo",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b7feab4e-a752-495e-aad7-77f95e00c26a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authenticationInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "authorizationInfo",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "75037624-77f0-48be-95ae-253ccd0863bd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authenticationInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "authorizationInfo",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "623decd2-4c0d-4eb9-a857-15c128a541a3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authenticationInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "authorizationInfo",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Request-URI Too Long",
+              "code": 414,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c59d0053-a169-453a-a50c-dd97f59ce217",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authenticationInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "authorizationInfo",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e03219df-906f-4886-bcbb-5e6db7c60d15",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authenticationInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "authorizationInfo",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "00193094-27a8-4350-8a80-ccd622764cd1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authenticationInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "authorizationInfo",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "20cb5c5d-9f51-4dda-852a-63eb4a06067f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "authenticationInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "authorizationInfo",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5565d3a7-d111-4cb3-9db4-7129665cedc0",
+          "name": "Create a security context for individual API invoker.",
+          "request": {
+            "name": "Create a security context for individual API invoker.",
+            "description": {},
+            "url": {
+              "path": [
+                "trustedInvokers",
+                ":apiInvokerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "apiInvokerId",
+                  "description": "(Required) Identifier of an individual API invoker"
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a1d35904-b9b2-4566-a891-1d7f933bafdb",
+              "name": "Successful created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource, according to the structure {apiRoot}/capif-security/v1/trustedInvokers/{apiInvokerId}\n",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9d370c18-1c05-47b9-84c4-e3dfe05a8f9c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "45f6dd53-c72e-4cdd-901e-4195d55b5fa5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e85fc7ae-e325-41ce-a582-d9348e110039",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d631038a-da34-4c10-8dae-52da5c6aa82a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "036239d0-8d49-4127-bb25-322e37fda879",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b202816f-308c-4bf0-b2bd-7247c7a1c13f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request-URI Too Long",
+              "code": 414,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cfa9e96a-d561-4356-a069-d8980147e38c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e7236562-45c8-4c72-bc8c-bd94961cd5eb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "10d84aab-e885-4e98-b06e-331491b51a5e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f314321c-3962-4c36-bfbe-fb0381dbeb09",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "153ec71f-0f63-4da8-99da-4f0a36677742",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cba469bb-61de-4fda-aaf1-84e30f5e2e41",
+          "name": "Delete authorization of the individual trusted API invoker.",
+          "request": {
+            "name": "Delete authorization of the individual trusted API invoker.",
+            "description": {},
+            "url": {
+              "path": [
+                "trustedInvokers",
+                ":apiInvokerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "apiInvokerId",
+                  "description": "(Required) Identifier of an individual API invoker"
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cc52f268-f06e-49d7-9a11-544d0393a702",
+              "name": "No Content (Successful deletion of the existing subscription)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "67bbbad9-35bf-4ddd-bad4-a1e895936753",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "333cdb9a-ec9e-48be-b7d3-8e1af707f3b1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a537e865-b804-453d-bad2-b79d1369d05f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1efa3855-762d-4a6b-81cc-76b1eb04a343",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fd21aa26-16a7-4d80-a7db-2c6f9ce35372",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6c421877-0e2e-4a5c-bfc9-eca97d38d004",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4b46761b-59b8-4cb9-a0ec-99fee0d42bbf",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "836dd5be-5950-488c-9895-b742755b56f5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b6bc2c2b-f903-4685-87ac-967e738b756e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "98f31db5-1d73-45ee-b503-329c53b65dc0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "deeaecba-bbfe-41a5-a4d6-4efd7f3c3414",
+          "name": "Update security context.",
+          "request": {
+            "name": "Update security context.",
+            "description": {},
+            "url": {
+              "path": [
+                "trustedInvokers",
+                ":apiInvokerId",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "apiInvokerId",
+                  "description": "(Required) Identifier of an individual API invoker"
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "996fed74-e6c8-4709-bec0-35910f342439",
+              "name": "Successful updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "659f482a-0882-4021-ad5c-659487d3a65b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3c0808b3-1898-44bb-a61d-9650323aa9e3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "59f34a61-cd25-40f0-b8fc-e15ae16fa896",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0ea9e416-6003-42c3-98bd-74d7f347e357",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "faabd2bf-0559-4f3f-b738-8ec49a31bc7f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f97fb69b-6976-4030-a050-7e43d88b1689",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d81c7c70-e9db-49f5-8fa8-e76c41518fa3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ad9605d8-963d-42a0-9eec-4d9e16fab9dc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "05fb775b-62c1-4cab-a010-c9a9b4a2794f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3d470d2b-d4f2-470f-8d9e-090b810bb1f0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2fbd55a9-ae53-40aa-8c47-f1456a054be6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "18697aff-d13f-42cd-a51f-4be8e6a31b2b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "09c7e43d-77e0-493b-bd2a-1e3ca9b3c5d3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"securityInfo\": [],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0950515f-2a35-4fa2-9396-cfb9baea6697",
+          "name": "Delete authorization of API invoker for some APIs.",
+          "request": {
+            "name": "Delete authorization of API invoker for some APIs.",
+            "description": {},
+            "url": {
+              "path": [
+                "trustedInvokers",
+                ":apiInvokerId",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "apiInvokerId",
+                  "description": "(Required) Identifier of an individual API invoker"
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4fb09489-e17e-424f-9d02-42b675b17152",
+              "name": "Successful revoked.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2ec9941f-846f-483e-a38b-bfdb122241c9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e2c558a9-f1f7-4805-936d-256bf065ba2e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "06effe57-0e46-480a-808e-e6fa2e2ab69f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7e339825-eea9-4741-bf70-6512c19519e3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "541d7593-c04a-4fd4-ae80-3394d9d1a244",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7796d6b3-ab03-44ac-8182-cb97e1a34944",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "754db8ab-f6b6-4f69-83a0-12c787de89f3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7c2f1215-72c4-4761-a1eb-d7c896ac3e05",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "412352db-9256-4374-b46a-22f5322871f0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "03d944fc-abd2-4662-94b1-991ab5de17af",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b6c9a85d-9e4d-437b-a367-3bb27524542b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "497ac0a0-c05d-4542-a5c6-d51ec2e8c9b4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ce1cf76d-ae19-4599-96b4-072b50ba91c0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "trustedInvokers",
+                    ":apiInvokerId",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "apiInvokerId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apiInvokerId\": \"<string>\",\n  \"apiIds\": [\n    \"<string>\"\n  ],\n  \"cause\": \"<string>\",\n  \"aefId\": \"<string>\",\n  \"accessToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d96875cf-547a-4982-9ad8-2ae681c2e739",
+          "name": "Obtain the OAuth 2.0 authorization information.",
+          "request": {
+            "name": "Obtain the OAuth 2.0 authorization information.",
+            "description": {},
+            "url": {
+              "path": [
+                "securities",
+                ":securityId",
+                "token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "securityId",
+                  "description": "(Required) Identifier of an individual API invoker"
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "grant_type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "client_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "client_secret",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "scope",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "authCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "redirect_uri",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8fc3ef43-f53a-4ccd-ae8e-53f864a74cf0",
+              "name": "Successful Access Token Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "securities",
+                    ":securityId",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "authCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"access_token\": \"string\",\n  \"token_type\": \"Bearer\",\n  \"expires_in\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DurationSec not found in the OpenAPI spec\"\n  },\n  \"scope\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bd4a540b-266a-44c4-b00e-e172f340cb11",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "securities",
+                    ":securityId",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "authCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fda9d2b3-b712-46f4-8c3c-ae9c4a76aa95",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "securities",
+                    ":securityId",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "authCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fc7d8bb7-3fca-4490-a9ce-3ef250a4be11",
+              "name": "Error in the Access Token Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "securities",
+                    ":securityId",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "authCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unsupported_grant_type\",\n  \"error_description\": \"string\",\n  \"error_uri\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d4e10911-f00a-4d56-b505-a1fd5b8dc0c6",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "securities",
+                    ":securityId",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "authCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unsupported_grant_type\",\n  \"error_description\": \"string\",\n  \"error_uri\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9a66debc-465e-4d2f-bcfc-a60633aa7ecc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "securities",
+                    ":securityId",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "authCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6abfb49b-9542-4636-967b-d08b882eef2c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "securities",
+                    ":securityId",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "authCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "64d9edfe-f9c8-464d-88b1-f8fab627dfee",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "securities",
+                    ":securityId",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "authCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "20cd9c6e-2bda-485a-8cc8-66d5d5ac3dfd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "securities",
+                    ":securityId",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "authCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "411199f2-5cf3-47d4-89f4-b8d3a80c2373",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "securities",
+                    ":securityId",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "authCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3859b9f9-bb1e-4601-bf7b-d6541d9ece28",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "securities",
+                    ":securityId",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "authCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "54e4cf0d-b532-4a06-ab75-3ea6985857f6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "securities",
+                    ":securityId",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "authCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "81235003-629f-488a-9ddc-21713131df28",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "securities",
+                    ":securityId",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "authCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0a801559-d1b1-4b18-bb3c-0451bc05a552",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "securities",
+                    ":securityId",
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "securityId",
+                      "description": "(Required) Identifier of an individual API invoker"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "scope",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "authCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "redirect_uri",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/capif-security/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e6d135f5-b157-481d-8d85-9c923cc457c0",
+    "name": "CAPIF_Security_API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for CAPIF security management.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

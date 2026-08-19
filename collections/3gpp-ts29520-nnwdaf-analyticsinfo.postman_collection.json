@@ -1,0 +1,1417 @@
+{
+  "item": [
+    {
+      "id": "b1f64c6c-38e9-44cc-82f5-742b96ef2525",
+      "name": "NWDAF Analytics (Document)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "db74b616-73a9-4be1-901a-7f8ff66fbd8b",
+          "name": "Read a NWDAF Analytics",
+          "request": {
+            "name": "Read a NWDAF Analytics",
+            "description": {},
+            "url": {
+              "path": [
+                "analytics"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "event-id",
+                  "value": "<string>",
+                  "description": "(Required) Identify the analytics."
+                },
+                {
+                  "description": {
+                    "content": "Identifies the analytics reporting requirement information.",
+                    "type": "text/plain"
+                  },
+                  "key": "ana-req",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Identify the analytics.",
+                    "type": "text/plain"
+                  },
+                  "key": "event-filter",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "value",
+                  "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec",
+                  "description": "To filter irrelevant responses related to unsupported features."
+                },
+                {
+                  "description": {
+                    "content": "Identify the target UE information.",
+                    "type": "text/plain"
+                  },
+                  "key": "tgt-ue",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6900d3c7-a4f2-4e74-80eb-1ed3c361db2c",
+              "name": "Containing the analytics with parameters as relevant for the requesting NF service  consumer.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ana-req",
+                      "value": ""
+                    },
+                    {
+                      "key": "event-filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    },
+                    {
+                      "key": "tgt-ue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"start\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"expiry\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"timeStampGen\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"anaMetaInfo\": {\n    \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/AnalyticsMetadataInfo not found in the OpenAPI spec\"\n  },\n  \"sliceLoadLevelInfos\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/SliceLoadLevelInformation not found in the OpenAPI spec\"\n    }\n  ],\n  \"nsiLoadLevelInfos\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NsiLoadLevelInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"nfLoadLevelInfos\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NfLoadLevelInformation not found in the OpenAPI spec\"\n    }\n  ],\n  \"nwPerfs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NetworkPerfInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"svcExps\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/ServiceExperienceInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"qosSustainInfos\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/QosSustainabilityInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"ueMobs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/UeMobility not found in the OpenAPI spec\"\n    }\n  ],\n  \"ueComms\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/UeCommunication not found in the OpenAPI spec\"\n    }\n  ],\n  \"userDataCongInfos\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/UserDataCongestionInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"abnorBehavrs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/AbnormalBehaviour not found in the OpenAPI spec\"\n    }\n  ],\n  \"smccExps\": [\n    {\n      \"smcceUeList\": {},\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      }\n    }\n  ],\n  \"disperInfos\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/DispersionInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"redTransInfos\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/RedundantTransmissionExpInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"wlanInfos\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/WlanPerformanceInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"dnPerfInfos\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/DnPerfInfo not found in the OpenAPI spec\"\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "119abbb3-bd44-452e-9e7a-46fa84161aec",
+              "name": "No Content. The requested NWDAF Analytics data does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ana-req",
+                      "value": ""
+                    },
+                    {
+                      "key": "event-filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    },
+                    {
+                      "key": "tgt-ue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1bf83855-237a-4d3e-8cff-68f690d91c43",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ana-req",
+                      "value": ""
+                    },
+                    {
+                      "key": "event-filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    },
+                    {
+                      "key": "tgt-ue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b54eb22a-6009-42b9-8102-f10142aa657d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ana-req",
+                      "value": ""
+                    },
+                    {
+                      "key": "event-filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    },
+                    {
+                      "key": "tgt-ue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "212a7b0d-e5a6-4374-9820-32f3228be0b5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ana-req",
+                      "value": ""
+                    },
+                    {
+                      "key": "event-filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    },
+                    {
+                      "key": "tgt-ue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dc9b07e9-1d4e-45a6-8be2-58cb03d2e90d",
+              "name": "Indicates that the NWDAF Analytics resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ana-req",
+                      "value": ""
+                    },
+                    {
+                      "key": "event-filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    },
+                    {
+                      "key": "tgt-ue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c5efaa56-64a2-472e-aef3-68b0b72e6721",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ana-req",
+                      "value": ""
+                    },
+                    {
+                      "key": "event-filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    },
+                    {
+                      "key": "tgt-ue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9a358aed-c4bf-426c-900e-6039435fcbb3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ana-req",
+                      "value": ""
+                    },
+                    {
+                      "key": "event-filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    },
+                    {
+                      "key": "tgt-ue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Request-URI Too Long",
+              "code": 414,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a3b64c7b-1111-42cd-8c26-ea482f89a35a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ana-req",
+                      "value": ""
+                    },
+                    {
+                      "key": "event-filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    },
+                    {
+                      "key": "tgt-ue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ccba0f86-89aa-44d7-acc5-7329b9dfe015",
+              "name": "The request is rejected by the NWDAF and more details (not only the ProblemDetails) are  returned.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ana-req",
+                      "value": ""
+                    },
+                    {
+                      "key": "event-filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    },
+                    {
+                      "key": "tgt-ue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"rvWaitTime\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/DurationSec not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "06c17025-4707-4e3b-9178-21a932e8e2b9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ana-req",
+                      "value": ""
+                    },
+                    {
+                      "key": "event-filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    },
+                    {
+                      "key": "tgt-ue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "276a6ad9-dd6e-44fe-953a-40709155b7f1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analytics"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "event-id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ana-req",
+                      "value": ""
+                    },
+                    {
+                      "key": "event-filter",
+                      "value": ""
+                    },
+                    {
+                      "key": "value",
+                      "value": "reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec"
+                    },
+                    {
+                      "key": "tgt-ue",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "995c4215-b38c-4ab8-a36a-31506e00232d",
+      "name": "NWDAF Context (Document)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b0b503ac-5f4c-4f52-9baf-24f368bb4dcb",
+          "name": "Get context information related to analytics subscriptions.",
+          "request": {
+            "name": "Get context information related to analytics subscriptions.",
+            "description": {},
+            "url": {
+              "path": [
+                "context"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "description": {
+                    "content": "(Required) Identifies specific context information related to analytics subscriptions.",
+                    "type": "text/plain"
+                  },
+                  "key": "context-ids",
+                  "value": ""
+                },
+                {
+                  "description": {
+                    "content": "Identfies the type(s) of the analytics context information the consumer wishes to receive.\n",
+                    "type": "text/plain"
+                  },
+                  "key": "req-context",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f1fb37b5-1f12-4102-be35-c08af3af4a71",
+              "name": "Contains context information related to analytics subscriptions corresponding with one or  more context identifiers.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "context"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context-ids",
+                      "value": ""
+                    },
+                    {
+                      "key": "req-context",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"contextElems\": [\n    {\n      \"contextId\": {\n        \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/AnalyticsContextIdentifier not found in the OpenAPI spec\"\n      },\n      \"pendAnalytics\": [\n        {\n          \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/EventNotification not found in the OpenAPI spec\"\n        }\n      ],\n      \"histAnalytics\": [\n        {\n          \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/EventNotification not found in the OpenAPI spec\"\n        }\n      ],\n      \"lastOutputTime\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n      },\n      \"aggrSubs\": [\n        {\n          \"nwdafEvSub\": {\n            \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NnwdafEventsSubscription not found in the OpenAPI spec\"\n          },\n          \"subscriptionId\": \"string\",\n          \"producerId\": {\n            \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NfInstanceId not found in the OpenAPI spec\"\n          },\n          \"producerSetId\": {\n            \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NfSetId not found in the OpenAPI spec\"\n          }\n        }\n      ],\n      \"histData\": [\n        {\n          \"data\": [\n            \"string\"\n          ],\n          \"startTime\": {\n            \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n          },\n          \"endTime\": {\n            \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n          },\n          \"subsWithSources\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      ],\n      \"adrfId\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NfInstanceId not found in the OpenAPI spec\"\n      },\n      \"adrfDataTypes\": [\n        \"HISTORICAL_ANALYTICS\"\n      ],\n      \"aggrNwdafIds\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NfInstanceId not found in the OpenAPI spec\"\n        }\n      ],\n      \"modelInfo\": [\n        {\n          \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/ModelInfo not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0888938b-80ef-49d9-a962-f47a3cac24a3",
+              "name": "No Content. (\\No context information could be retrieved for the requested context  Identifiers.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "context"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context-ids",
+                      "value": ""
+                    },
+                    {
+                      "key": "req-context",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e86fa5a2-f90b-4153-b2c3-2c51f55638fe",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "context"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context-ids",
+                      "value": ""
+                    },
+                    {
+                      "key": "req-context",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3dfcda21-286e-4221-a379-012d3617e918",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "context"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context-ids",
+                      "value": ""
+                    },
+                    {
+                      "key": "req-context",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8dc91ea4-3a84-4db8-ae09-2fae26d4ae6f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "context"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context-ids",
+                      "value": ""
+                    },
+                    {
+                      "key": "req-context",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6582eb63-12cf-490f-8f51-28952bd9df45",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "context"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context-ids",
+                      "value": ""
+                    },
+                    {
+                      "key": "req-context",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bb0cdff6-e3a3-46b3-af12-177a614d1430",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "context"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context-ids",
+                      "value": ""
+                    },
+                    {
+                      "key": "req-context",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "90e14a1a-bdc8-4910-8130-0bca96dda41b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "context"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context-ids",
+                      "value": ""
+                    },
+                    {
+                      "key": "req-context",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Request-URI Too Long",
+              "code": 414,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0a4207a5-26d1-4c04-97e8-b7415fb9a778",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "context"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context-ids",
+                      "value": ""
+                    },
+                    {
+                      "key": "req-context",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4dc9b810-f9d6-4338-a07d-63104c6d3ef4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "context"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context-ids",
+                      "value": ""
+                    },
+                    {
+                      "key": "req-context",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2217d194-29a5-4283-abe9-af90867edc9d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "context"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context-ids",
+                      "value": ""
+                    },
+                    {
+                      "key": "req-context",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "35252972-1800-42df-b6da-4aad263f5598",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "context"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "context-ids",
+                      "value": ""
+                    },
+                    {
+                      "key": "req-context",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/nnwdaf-analyticsinfo/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "adeef728-f852-44a8-a333-ededb98e4a7f",
+    "name": "Nnwdaf_AnalyticsInfo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Nnwdaf_AnalyticsInfo Service API.  \n© 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

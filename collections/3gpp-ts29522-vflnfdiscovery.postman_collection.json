@@ -1,0 +1,1367 @@
+{
+  "item": [
+    {
+      "id": "2dd16880-5db3-42c0-8477-19703fc32c80",
+      "name": "VFL NF discovery",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f34b913b-26fb-42cb-bab0-8a5a0d0181df",
+          "name": "Request of NWDAF(s) that are to act as VFL client(s).",
+          "request": {
+            "name": "Request of NWDAF(s) that are to act as VFL client(s).",
+            "description": {},
+            "url": {
+              "path": [
+                "discover-nwdaf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7981964a-8f3e-428f-97c8-c53f453a8cd7",
+              "name": "OK. Successful case. The external NWDAF ID is provisioned.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discover-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"exNwdafIds\": [\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9d081719-d695-41a9-b2aa-e491af39bf5e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discover-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f7bfc475-bc1f-4c44-9398-51a17971afed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discover-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "61657c8b-5b4f-4606-9e74-3f0b06f0300d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discover-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e80dbba1-675e-40bd-9a20-a3bc09bf09bc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discover-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "758d9581-70fe-4ce1-9bdb-8cd1a1d58f1b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discover-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0aeca167-275f-45d9-b0ce-4aea8cc6182b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discover-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "86858cc9-8687-4382-9ef6-159bf37b7c61",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discover-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ff640441-4cac-4252-bdc5-dd2395102c47",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discover-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "34d2582f-4404-4e3c-8556-2a3fe3366d62",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discover-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5585b555-fe69-4ed5-afc2-f2a63a66502a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discover-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f3529123-c51e-40e0-9803-728a26ad96eb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discover-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a7dc8cff-69db-4d83-9bad-3f1a8c72669b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discover-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "010cbc01-236c-42cd-946e-277167373fc0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discover-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"analyticIds\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NwdafEvent not found in the OpenAPI spec\"\n    }\n  ],\n  \"vflCapType\": \"<string>\",\n  \"vflInterInfo\": \"<string>\",\n  \"reqFeatureIds\": [\n    \"<string>\"\n  ],\n  \"timePeriod\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/TimeWindow not found in the OpenAPI spec\"\n  },\n  \"serviceAreas\": [\n    {\n      \"value\": \"reference TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c4a6e063-e2dc-4a58-b170-c755255f8bd2",
+      "name": "VFL NF discovery release",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e7a04f5b-cf52-4275-af9f-7f775ee82e3e",
+          "name": "Request to inform the external NWDAF ID(s) are not used anymore.",
+          "request": {
+            "name": "Request to inform the external NWDAF ID(s) are not used anymore.",
+            "description": {},
+            "url": {
+              "path": [
+                "release-nwdaf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7e4a4275-c14a-43aa-905c-dc03b2e600f1",
+              "name": "No Content. Successful case.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "release-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f89cc504-f349-4806-8649-c07cfa02acb8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "release-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "409ca808-8635-422a-a5dc-008c8351a37e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "release-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dce72b6c-f2e4-4283-8539-09b1b66c3443",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "release-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fee1c776-571e-4886-a823-d9d757b9819d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "release-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8660b832-ebc3-402b-a93d-95dc8c91fe87",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "release-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "eae84399-25fa-4611-9d8e-c27d20b56491",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "release-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6cb5200b-c57b-448c-8328-96e032f5762d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "release-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c7ae8f0f-48ec-40bf-8656-a691348a289e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "release-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6220abf8-cc1a-4676-a1b8-cefc571376e7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "release-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "90417c5d-1fa0-4141-a048-561b19a07b07",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "release-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9d78b194-ef2f-49c3-9577-0b8150653bde",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "release-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fb3a36b5-845c-4523-9997-77c567873616",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "release-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f6138bd6-5b35-454a-9fc0-a924b1a99cfd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "release-nwdaf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exNwdafIds\": [\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/3gpp-vfl-nf-discovery/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "5b401a47-3326-49a3-ba19-dc8850ddfee2",
+    "name": "3gpp-vfl-nf-discovery",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for VFL NF Discovery.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

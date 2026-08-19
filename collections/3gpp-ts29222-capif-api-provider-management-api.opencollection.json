@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CAPIF_API_Provider_Management_API",
+    "version": "1.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "All API Provider Domains Registrations (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "CreateApiProvRegist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/api-provider-management/v1/registrations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Registers a new API Provider domain with API provider domain functions profiles."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual API Provider Domain Registration (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "UpdateIndApiProvDomainRegist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/api-provider-management/v1/registrations/:registrationId",
+            "params": [
+              {
+                "name": "registrationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying an registered API provider domain resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an API provider domain's registration details."
+        },
+        {
+          "info": {
+            "name": "ModifyIndApiProvDomainRegist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/api-provider-management/v1/registrations/:registrationId",
+            "params": [
+              {
+                "name": "registrationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify an individual API provider details."
+        },
+        {
+          "info": {
+            "name": "DeleteIndApiProvDomainRegist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/api-provider-management/v1/registrations/:registrationId",
+            "params": [
+              {
+                "name": "registrationId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying an registered API provider domain resource."
+              }
+            ]
+          },
+          "docs": "Deregisters API provider domain by deleting API provider domain and functions."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

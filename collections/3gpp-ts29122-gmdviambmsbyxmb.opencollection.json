@@ -1,0 +1,320 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GMDviaMBMSbyxMB",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Service Operation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all service resources for a given SCS/AS.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-group-message-delivery-xmb/v1/:scsAsId/services",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              }
+            ]
+          },
+          "docs": "Read all service resources for a given SCS/AS."
+        },
+        {
+          "info": {
+            "name": "Creates a new service creation resource for a given SCS/AS.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-group-message-delivery-xmb/v1/:scsAsId/services",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new service creation resource for a given SCS/AS."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Service Operation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read a service resource for a given SCS/AS and a Service Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-group-message-delivery-xmb/v1/:scsAsId/services/:serviceId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path",
+                "description": "Service Id"
+              }
+            ]
+          },
+          "docs": "Read a service resource for a given SCS/AS and a Service Id."
+        },
+        {
+          "info": {
+            "name": "Deletes an existing service resource for a given SCS/AS and a service id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-group-message-delivery-xmb/v1/:scsAsId/services/:serviceId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path",
+                "description": "Service Id"
+              }
+            ]
+          },
+          "docs": "Deletes an existing service resource for a given SCS/AS and a service id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Delivery via MBMS Operation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all group message delivery via MBMS resource for a given SCS/AS and a service id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-group-message-delivery-xmb/v1/:scsAsId/services/:serviceId/delivery-via-mbms",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path",
+                "description": "Service Id"
+              }
+            ]
+          },
+          "docs": "Read all group message delivery via MBMS resource for a given SCS/AS and a service id."
+        },
+        {
+          "info": {
+            "name": "Creates a new delivery via MBMS for a given SCS/AS and a service Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-group-message-delivery-xmb/v1/:scsAsId/services/:serviceId/delivery-via-mbms",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path",
+                "description": "Service Id"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new delivery via MBMS for a given SCS/AS and a service Id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Delivery via MBMS resource Operation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all group message delivery via MBMS resource for a given SCS/AS and a service Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-group-message-delivery-xmb/v1/:scsAsId/services/:serviceId/delivery-via-mbms/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path",
+                "description": "Service Id"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of transaction"
+              }
+            ]
+          },
+          "docs": "Read all group message delivery via MBMS resource for a given SCS/AS and a service Id."
+        },
+        {
+          "info": {
+            "name": "Updates an existing delivery via MBMS for a given SCS/AS, a service Id and transaction Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-group-message-delivery-xmb/v1/:scsAsId/services/:serviceId/delivery-via-mbms/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path",
+                "description": "Service Id"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of transaction"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing delivery via MBMS for a given SCS/AS, a service Id and transaction Id."
+        },
+        {
+          "info": {
+            "name": "Updates an existing delivery via MBMS for a given SCS/AS, a service Id and transaction Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-group-message-delivery-xmb/v1/:scsAsId/services/:serviceId/delivery-via-mbms/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path",
+                "description": "Service Id"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of transaction"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing delivery via MBMS for a given SCS/AS, a service Id and transaction Id."
+        },
+        {
+          "info": {
+            "name": "Deletes a delivery via MBMS resource for a given SCS/AS, a service Id and a transcation Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-group-message-delivery-xmb/v1/:scsAsId/services/:serviceId/delivery-via-mbms/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path",
+                "description": "Service Id"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of transaction"
+              }
+            ]
+          },
+          "docs": "Deletes a delivery via MBMS resource for a given SCS/AS, a service Id and a transcation Id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

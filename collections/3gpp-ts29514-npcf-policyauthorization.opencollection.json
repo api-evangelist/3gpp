@@ -1,0 +1,179 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Npcf_PolicyAuthorization Service API",
+    "version": "1.1.5"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Application Sessions (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Creates a new Individual Application Session Context resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/npcf-policyauthorization/v1/app-sessions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new Individual Application Session Context resource"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "PCSCF Restoration Indication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Indicates P-CSCF restoration and does not create an Individual Application Session Context",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/npcf-policyauthorization/v1/app-sessions/pcscf-restoration",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Indicates P-CSCF restoration and does not create an Individual Application Session Context"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Application Session Context (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Reads an existing Individual Application Session Context",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/npcf-policyauthorization/v1/app-sessions/:appSessionId",
+            "params": [
+              {
+                "name": "appSessionId",
+                "value": "",
+                "type": "path",
+                "description": "string identifying the resource"
+              }
+            ]
+          },
+          "docs": "Reads an existing Individual Application Session Context"
+        },
+        {
+          "info": {
+            "name": "Modifies an existing Individual Application Session Context",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/npcf-policyauthorization/v1/app-sessions/:appSessionId",
+            "params": [
+              {
+                "name": "appSessionId",
+                "value": "",
+                "type": "path",
+                "description": "string identifying the resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modifies an existing Individual Application Session Context"
+        },
+        {
+          "info": {
+            "name": "Deletes an existing Individual Application Session Context",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/npcf-policyauthorization/v1/app-sessions/:appSessionId/delete",
+            "params": [
+              {
+                "name": "appSessionId",
+                "value": "",
+                "type": "path",
+                "description": "string identifying the Individual Application Session Context resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deletes an existing Individual Application Session Context"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Events Subscription (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "creates or modifies an Events Subscription subresource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/npcf-policyauthorization/v1/app-sessions/:appSessionId/events-subscription",
+            "params": [
+              {
+                "name": "appSessionId",
+                "value": "",
+                "type": "path",
+                "description": "string identifying the Events Subscription resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "creates or modifies an Events Subscription subresource"
+        },
+        {
+          "info": {
+            "name": "deletes the Events Subscription subresource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/npcf-policyauthorization/v1/app-sessions/:appSessionId/events-subscription",
+            "params": [
+              {
+                "name": "appSessionId",
+                "value": "",
+                "type": "path",
+                "description": "string identifying the Individual Application Session Context resource"
+              }
+            ]
+          },
+          "docs": "deletes the Events Subscription subresource"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,206 @@
+{
+  "item": [
+    {
+      "id": "e14d8574-b0b1-4712-a653-dcaae1b85fa3",
+      "name": "Receive one of a set of alarm related notifications",
+      "request": {
+        "name": "Receive one of a set of alarm related notifications",
+        "description": {
+          "content": "The MnS producer sends an alarm to the consumer.  This interface shall be implemented by the notification-receiver and  used by the notification-sender.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "Address on the MnS consumer side defined by NtfSubscriptionControl.notificationRecipientAddress. See 3GPP TS 28.622 clause 4.3.22",
+              "type": "any",
+              "value": "{{notificationRecipientAddress}}",
+              "key": "notificationRecipientAddress"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSversion}}",
+              "key": "MnSversion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"value\": \"reference TS28111_FaultNrm.yaml#/components/schemas/NotifyNewAlarm not found in the OpenAPI spec\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "c1470259-b777-4e32-9a16-df1de28631e7",
+          "name": "Success case (\"204 No Content\"). The notification is successfully delivered. The response message body is absent.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Address on the MnS consumer side defined by NtfSubscriptionControl.notificationRecipientAddress. See 3GPP TS 28.622 clause 4.3.22",
+                  "type": "any",
+                  "value": "{{notificationRecipientAddress}}",
+                  "key": "notificationRecipientAddress"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSversion}}",
+                  "key": "MnSversion"
+                }
+              ]
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"value\": \"reference TS28111_FaultNrm.yaml#/components/schemas/NotifyNewAlarm not found in the OpenAPI spec\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "07ae6f00-267b-4fdc-aabc-75c4f957a0ca",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Address on the MnS consumer side defined by NtfSubscriptionControl.notificationRecipientAddress. See 3GPP TS 28.622 clause 4.3.22",
+                  "type": "any",
+                  "value": "{{notificationRecipientAddress}}",
+                  "key": "notificationRecipientAddress"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSversion}}",
+                  "key": "MnSversion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"value\": \"reference TS28111_FaultNrm.yaml#/components/schemas/NotifyNewAlarm not found in the OpenAPI spec\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Address on the MnS consumer side defined by NtfSubscriptionControl.notificationRecipientAddress. See 3GPP TS 28.622 clause 4.3.22",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "http://exampleConsumer.com/notificationReceiver",
+      "key": "notificationRecipientAddress"
+    },
+    {
+      "description": {
+        "content": "Version number of the OpenAPI definition",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "XXX",
+      "key": "MnSversion"
+    },
+    {
+      "type": "string",
+      "value": "{{notificationRecipientAddress}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "733d26a9-70f2-41e2-a5a9-ea96d75abf54",
+    "name": "Fault Management Notifications",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OAS 3.0.1 definition of the Fault Supervision MnS © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.",
+      "type": "text/plain"
+    }
+  }
+}

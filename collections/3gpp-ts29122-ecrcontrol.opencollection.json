@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-ecr-control",
+    "version": "1.2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Query the status of enhanced converage restriction for a UE.",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{apiRoot}/3gpp-ecr-control/v1/query",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Query the status of enhanced converage restriction for a UE."
+    },
+    {
+      "info": {
+        "name": "Configure the enhanced converage restriction for a UE.",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{apiRoot}/3gpp-ecr-control/v1/configure",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Configure the enhanced converage restriction for a UE."
+    }
+  ],
+  "bundled": true
+}

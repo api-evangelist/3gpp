@@ -1,0 +1,183 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TS 28.532 Streaming data reporting service",
+    "version": "19.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Obtain information about connections.",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{MnSRoot}/StreamingDataReportingMnS/{MnSVersion}/connections",
+        "params": [
+          {
+            "name": "connectionIdList",
+            "value": "",
+            "type": "query",
+            "description": "The list of connectionId for which the connection information is to be returned."
+          }
+        ]
+      },
+      "docs": "Enables the streaming data reporting service producer to obtain information about one or more streaming connections."
+    },
+    {
+      "info": {
+        "name": "Inform consumer about reporting streams to be carried by the new connection and receive a new connection id.",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{MnSRoot}/StreamingDataReportingMnS/{MnSVersion}/connections",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Exchange of meta-data (producer informs consumer about its own identity and the nature of the data to be reported via streaming) phase of the connection establishement by streaming data reporting producer to the streaming data reporting consumer (i.e. streaming target)."
+    },
+    {
+      "info": {
+        "name": "Obtain information about a connection.",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{MnSRoot}/StreamingDataReportingMnS/{MnSVersion}/connections/:connectionId",
+        "headers": [
+          {
+            "name": "Connection",
+            "value": ""
+          },
+          {
+            "name": "Sec-WebSocket-Extensions",
+            "value": ""
+          },
+          {
+            "name": "Sec-WebSocket-Key",
+            "value": ""
+          },
+          {
+            "name": "Sec-WebSocket-Protocol",
+            "value": ""
+          },
+          {
+            "name": "Sec-WebSocket-Version",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "connectionId",
+            "value": "",
+            "type": "path",
+            "description": "Indicate the ID (URI) of the connection for which the information is being retrieved"
+          }
+        ]
+      },
+      "docs": "Enables the streaming data reporting service producer to obtain information about one streaming connection."
+    },
+    {
+      "info": {
+        "name": "Obtain information about streams.",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{MnSRoot}/StreamingDataReportingMnS/{MnSVersion}/connections/:connectionId/streams",
+        "params": [
+          {
+            "name": "connectionId",
+            "value": "",
+            "type": "path",
+            "description": "Indicate the ID (URI) of the connection for which the information is being retrieved"
+          },
+          {
+            "name": "streamIds",
+            "value": "",
+            "type": "query",
+            "description": "The list of streamId for which the stream information is to be retrieved."
+          }
+        ]
+      },
+      "docs": "Enables the streaming data reporting service producer to obtain information about one or more reporting streams."
+    },
+    {
+      "info": {
+        "name": "Inform consumer about new reporting streams on an existing connection.",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{MnSRoot}/StreamingDataReportingMnS/{MnSVersion}/connections/:connectionId/streams",
+        "params": [
+          {
+            "name": "connectionId",
+            "value": "",
+            "type": "path",
+            "description": "Indicate the ID (URI) of the connection for which the reporting stream information is being added."
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Allows the producer to add one or more reporting streams to an already established streaming connection."
+    },
+    {
+      "info": {
+        "name": "Remove reporting streams from an existing connection",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "{MnSRoot}/StreamingDataReportingMnS/{MnSVersion}/connections/:connectionId/streams",
+        "params": [
+          {
+            "name": "connectionId",
+            "value": "",
+            "type": "path",
+            "description": "Indicate the ID (URI) of the connection for which the reporting stream information is being removed."
+          },
+          {
+            "name": "streamIds",
+            "value": "",
+            "type": "query",
+            "description": "The list of streamId for the stream(s) to be deleted."
+          }
+        ]
+      },
+      "docs": "Allows the producer to remove one or more reporting streams from an already established streaming connection."
+    },
+    {
+      "info": {
+        "name": "Obtain information about stream",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{MnSRoot}/StreamingDataReportingMnS/{MnSVersion}/connections/:connectionId/streams/:streamId",
+        "params": [
+          {
+            "name": "connectionId",
+            "value": "",
+            "type": "path",
+            "description": "Indicate the ID (URI) of the connection for which the information is being retrieved"
+          },
+          {
+            "name": "streamId",
+            "value": "",
+            "type": "path",
+            "description": "Indicate the ID of the reporting stream for which the information is being retrieved"
+          }
+        ]
+      },
+      "docs": "Enables the streaming data reporting service producer to obtain information about a reporting stream."
+    }
+  ],
+  "bundled": true
+}

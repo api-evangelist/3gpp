@@ -1,0 +1,166 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CAPIF_Publish_Service_API",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "APF published APIs (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetAPFPubAPIs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/published-apis/v1/:apfId/service-apis",
+            "params": [
+              {
+                "name": "apfId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve all published APIs."
+        },
+        {
+          "info": {
+            "name": "CreateAPFPubAPIs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/published-apis/v1/:apfId/service-apis",
+            "params": [
+              {
+                "name": "apfId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Publish a new API."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual APF published API (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetIndAPFPubAPI",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/published-apis/v1/:apfId/service-apis/:serviceApiId",
+            "params": [
+              {
+                "name": "serviceApiId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "apfId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a published service API."
+        },
+        {
+          "info": {
+            "name": "UpdateIndAPFPubAPI",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/published-apis/v1/:apfId/service-apis/:serviceApiId",
+            "params": [
+              {
+                "name": "serviceApiId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "apfId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a published service API."
+        },
+        {
+          "info": {
+            "name": "ModifyIndAPFPubAPI",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/published-apis/v1/:apfId/service-apis/:serviceApiId",
+            "params": [
+              {
+                "name": "serviceApiId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "apfId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify an existing published service API."
+        },
+        {
+          "info": {
+            "name": "DeleteIndAPFPubAPI",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/published-apis/v1/:apfId/service-apis/:serviceApiId",
+            "params": [
+              {
+                "name": "serviceApiId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "apfId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Unpublish a published service API."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

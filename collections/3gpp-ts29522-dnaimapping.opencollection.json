@@ -1,0 +1,126 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-dnai-mapping",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "DNAI Mapping Subscriptions (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all the active DNAI Mapping Subscriptions managed by the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-dnai-mapping/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              }
+            ]
+          },
+          "docs": "Read all the active DNAI Mapping Subscriptions managed by the NEF."
+        },
+        {
+          "info": {
+            "name": "Create a new DNAI Mapping Subscription.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-dnai-mapping/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new DNAI Mapping Subscription."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual DNAI Mapping Subscription (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an existing Individual DNAI Mapping Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-dnai-mapping/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual DNAI Mapping Subscription resource."
+              }
+            ]
+          },
+          "docs": "Retrieve an existing Individual DNAI Mapping Subscription resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Dnai Mapping Subscription (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Delete an existing Individual DNAI Mapping Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-dnai-mapping/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual DNAI Mapping Subscription resource."
+              }
+            ]
+          },
+          "docs": "Delete an existing Individual DNAI Mapping Subscription resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

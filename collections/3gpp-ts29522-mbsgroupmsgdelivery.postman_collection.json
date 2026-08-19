@@ -1,0 +1,3020 @@
+{
+  "item": [
+    {
+      "id": "a959c986-e7ce-477e-a2ee-98e14f62f545",
+      "name": "MBS Group Message Deliveries (Collection)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f59b3df7-c75f-405d-8896-7fe21519f29c",
+          "name": "Retrieve all the active MBS Group Message Deliveries.",
+          "request": {
+            "name": "Retrieve all the active MBS Group Message Deliveries.",
+            "description": {},
+            "url": {
+              "path": [
+                "deliveries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "adba37c1-da8c-442c-831e-3df32d2ed2af",
+              "name": "OK. All the active MBS Group Message Deliveries managed by the NEF are returned. If there are no active MBS Group Message Delivery(ies) is available at the NEF, an empty array shall be returned.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"extGroupId\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n    },\n    \"payload\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n    },\n    \"mbsServArea\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n    },\n    \"startTime\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n    },\n    \"endTime\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n    },\n    \"notifUri\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n    },\n    \"afId\": \"string\",\n    \"delStatus\": true,\n    \"mbsUserServAnmt\": {\n      \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n    },\n    \"servAreaWithoutMbs\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n    },\n    \"nrRedCapUeInfo\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n    },\n    \"suppFeat\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    }\n  },\n  {\n    \"extGroupId\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n    },\n    \"payload\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n    },\n    \"mbsServArea\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n    },\n    \"startTime\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n    },\n    \"endTime\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n    },\n    \"notifUri\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n    },\n    \"afId\": \"string\",\n    \"delStatus\": true,\n    \"mbsUserServAnmt\": {\n      \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n    },\n    \"servAreaWithoutMbs\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n    },\n    \"nrRedCapUeInfo\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n    },\n    \"suppFeat\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e4c52a4f-be26-4db1-a0e0-f2d667d3dc8e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "550a6cc7-0c82-412b-a6b7-9f7ac3888392",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c1cf05bb-1ca2-428f-8e74-a4dda2a5e422",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "64a215ad-fdf0-49f8-8e10-4c85c79433e6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "727b81cd-7a8a-442d-9971-259d289aacda",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "032efbc9-5947-4b88-ab95-09f7445df320",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a1faca78-ce5f-481f-8f49-f7a51b58d09d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "88cf8b55-db34-4418-9e3b-5dec7b9a5745",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c820b8ea-f1d3-4add-826d-01115a6b829f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4d3c3f78-4541-43e8-86b8-4068365b5d5c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2903a53e-645b-4da7-be2e-22daaaf0674c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "09c102c5-c536-4eb2-b219-fa79050bb4bf",
+          "name": "Request the creation of an MBS Group Message Delivery.",
+          "request": {
+            "name": "Request the creation of an MBS Group Message Delivery.",
+            "description": {},
+            "url": {
+              "path": [
+                "deliveries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"<string>\",\n  \"delStatus\": \"<boolean>\",\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "88998115-4f11-4aca-917a-6182faca6d1b",
+              "name": "Created. Successful case. The requested MBS Group Message Delivery is successfully created.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"<string>\",\n  \"delStatus\": \"<boolean>\",\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource.",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"<string>\",\n  \"delStatus\": \"<boolean>\",\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47b475d6-e0b2-4fb0-8950-db6136da2a39",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"<string>\",\n  \"delStatus\": \"<boolean>\",\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "89d3293e-30de-44e0-b9e8-b4401f3412a3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"<string>\",\n  \"delStatus\": \"<boolean>\",\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e64d4f34-789c-48a9-b2b5-345ffbf8e12f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"<string>\",\n  \"delStatus\": \"<boolean>\",\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dd1d71fc-d746-458d-a046-27bd47973097",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"<string>\",\n  \"delStatus\": \"<boolean>\",\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e72715fa-0b87-43fc-9757-67f2d89bef0f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"<string>\",\n  \"delStatus\": \"<boolean>\",\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "926f9651-eadf-44ea-8335-70c2cbc95a99",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"<string>\",\n  \"delStatus\": \"<boolean>\",\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "05915148-4695-412f-b6ab-e42c479515ca",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"<string>\",\n  \"delStatus\": \"<boolean>\",\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a8fce78c-1f67-4b25-b943-c053475bf1ce",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"<string>\",\n  \"delStatus\": \"<boolean>\",\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f3dbf271-ee99-400c-9200-6c1852b82bf7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"<string>\",\n  \"delStatus\": \"<boolean>\",\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "17ef66f5-3c3c-4e60-b611-f24c9e1aedd2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"<string>\",\n  \"delStatus\": \"<boolean>\",\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3a13c5f5-1cd2-46de-b017-e276c7ad3150",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"<string>\",\n  \"delStatus\": \"<boolean>\",\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "587501b1-3980-4a85-8518-d03a96289cfa",
+      "name": "Individual MBS Group Message Delivery (Document)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "509ff566-ce49-4ce3-ab86-859200bb0e5a",
+          "name": "Retrieve an existing Individual MBS Group Message Delivery resource.",
+          "request": {
+            "name": "Retrieve an existing Individual MBS Group Message Delivery resource.",
+            "description": {},
+            "url": {
+              "path": [
+                "deliveries",
+                ":delRef"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "delRef",
+                  "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b8e74c5c-40c1-43da-b856-03c580ee80fe",
+              "name": "OK. The requested Individual MBS Group Message Delivery resource is successfully returned.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"string\",\n  \"delStatus\": true,\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3630b1cb-e347-441a-95e7-ee2ef795fa9c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "eb9a3e06-90bd-47d3-bfb8-824f6e6e0f19",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "59667ebf-a168-42ee-a1e0-0c05520d8719",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "31ace33c-ecd2-40d9-8083-4dff4376222f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "03a77e44-8b7b-4670-943a-ff81c57f9ac2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "84b134c1-69a8-44e7-933d-86f54a858400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "df4aa9c8-06c8-437c-9ff0-ad9f091901b8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "268c3a80-a08b-4200-838e-60c2cec6b841",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9d7f65f6-be77-4e1c-a37b-83f0057aa5f8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8940aee8-6131-4f4f-a998-11dae6328d81",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6ce18702-d41e-4a76-a985-13fbaf73be76",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8928bdda-511d-4d55-9bfa-c5be52b073ee",
+          "name": "Request the modification of an existing Individual MBS Group Message Delivery resource.",
+          "request": {
+            "name": "Request the modification of an existing Individual MBS Group Message Delivery resource.",
+            "description": {},
+            "url": {
+              "path": [
+                "deliveries",
+                ":delRef"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "delRef",
+                  "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/merge-patch+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "073794fc-e86f-4cc3-ae7b-a87985711239",
+              "name": "OK. The MBS Group Message Delivery is successfully modified and a representation of the updated resource is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"extGroupId\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/ExternalGroupId not found in the OpenAPI spec\"\n  },\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"afId\": \"string\",\n  \"delStatus\": true,\n  \"mbsUserServAnmt\": {\n    \"value\": \"reference TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription not found in the OpenAPI spec\"\n  },\n  \"servAreaWithoutMbs\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0cf01ff1-09fa-4f7a-b631-bdd7d26480d2",
+              "name": "No Content. The MBS Group Message Delivery is successfully modified and no content is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a96f2007-5ae8-4b34-b2d3-7b6114ee5768",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4dc173e0-ec8a-4140-8fe7-c0267c0c99f6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f54d65b0-aa7b-4288-a2e0-f3bbcefa4f75",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2f0209cd-6ac9-4601-a6aa-1b2f8c9780d6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "28185d87-8c57-487b-8e5f-bcaa2985f442",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "23ff7e8c-29be-4c28-a2d3-11d3bb63ecae",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f1449fc2-ba18-49a8-bbe7-437f22fc04f5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "642cbac6-f10b-46c1-93be-2faf5a6dc63f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "665dd8b6-ffdf-4525-ba97-0a487858f311",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0f15a23b-38c5-4d80-a5b9-9fb4fd595e1b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1b0f575b-2009-47a3-a0ea-4b671ed2966f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "219af809-9d1a-4f91-a1eb-0993b5fff70d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d4496523-a20f-413f-b397-38f823d1ddd9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"payload\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Bytes not found in the OpenAPI spec\"\n  },\n  \"mbsServArea\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MbsServiceArea not found in the OpenAPI spec\"\n  },\n  \"startTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"endTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"notifUri\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"nrRedCapUeInfo\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d5922518-c57a-4989-b0f6-9fa3ff80d5c2",
+          "name": "Request the deletion of an existing Individual MBS Group Message Delivery resource.",
+          "request": {
+            "name": "Request the deletion of an existing Individual MBS Group Message Delivery resource.",
+            "description": {},
+            "url": {
+              "path": [
+                "deliveries",
+                ":delRef"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "delRef",
+                  "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4bfaa2c5-f5be-4c6d-87f6-3e21ca019c10",
+              "name": "No Content. The Individual MBS Group Message Delivery resource is successfully deleted.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6ce38103-47a8-4c19-adfa-e05a9e1dbe16",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0b1a63d2-0680-43e3-9a5b-8ef8b557ab6a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b205ff12-4f64-409f-9fa1-0afebd0f60d5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fa37ba96-9d57-419c-bbc0-52403c6bb812",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dbd1d8d7-3d71-440e-a809-1cd7c20f4341",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "58d321f6-f59e-4d69-aca3-0b7a1e68b2c9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dfed3b93-6437-43c8-9945-80449704ce55",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5dea16e9-83c4-4ca1-a3b2-7347ef9e161b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6cafe794-760b-4d05-b90a-89e537ddcd1b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8e731935-143f-498d-a891-253c2d36f09f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "deliveries",
+                    ":delRef"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "delRef",
+                      "description": "(Required) Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/3gpp-mbs-group-msg/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "33da123f-890d-41fe-a6bd-fe03bfc6607a",
+    "name": "3gpp-mbs-group-msg",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for MBS Group Message Delivery.\n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

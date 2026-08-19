@@ -1,0 +1,3556 @@
+{
+  "item": [
+    {
+      "id": "7ec07aa5-26bf-4a1d-82cb-0e5afbe3e57c",
+      "name": "ECS Address Provision Configurations (Collection)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4e79e619-22af-4c8b-86db-5eb3478f54a1",
+          "name": "Read all active configurations for a given AF",
+          "request": {
+            "name": "Read all active configurations for a given AF",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "configurations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f48ce3d1-ee5a-4121-bf94-89d3a6b31f92",
+              "name": "OK (Successful get all of the active resources for the AF)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"ecsServerAddr\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n    },\n    \"suppFeat\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    },\n    \"self\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n    },\n    \"mtcProviderId\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n    },\n    \"spatialValidityCond\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n    },\n    \"tgtUe\": {\n      \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n    },\n    \"plmnId\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n    },\n    \"ecsAuthMethods\": [\n      {\n        \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n      }\n    ],\n    \"supportedPlmns\": [\n      {\n        \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  {\n    \"ecsServerAddr\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n    },\n    \"suppFeat\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    },\n    \"self\": {\n      \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n    },\n    \"mtcProviderId\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n    },\n    \"spatialValidityCond\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n    },\n    \"tgtUe\": {\n      \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n    },\n    \"plmnId\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n    },\n    \"ecsAuthMethods\": [\n      {\n        \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n      }\n    ],\n    \"supportedPlmns\": [\n      {\n        \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "65f6b7a9-019b-4abb-a14c-3ca98f90e94f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "77f68d38-65b1-4d2e-a416-dcbf9de06229",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "657ca089-aa34-495d-bab7-3cb79ad6b03f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "74c16ee0-4be4-45ad-b552-1115b9b49d01",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "98dabf95-2c9d-4675-b7c1-ab78b42c687e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "49ff5e53-2eb3-4e35-915d-e51a18e120e8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ddeb265b-1170-4857-917a-1f9edf78e3d4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a8b47a24-204b-4874-bf83-2063b1821412",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "17f440ca-201f-4bfb-9bd8-0e44e0136c31",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fd805d6c-5dcb-494e-a50e-d936284d5a9c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "463abca4-27be-4545-b77d-4868b2aaec49",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5ed4ca1a-ea4d-454a-8816-949032b0e1a7",
+          "name": "Creates a new configuration resource",
+          "request": {
+            "name": "Creates a new configuration resource",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "configurations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "af4e2894-9272-4ab0-88d2-0d9e3d331dc2",
+              "name": "Created (Successful creation)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "61703cbc-81fa-48fe-b329-1fa5d5282ab8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b95fae86-31e3-4609-b371-8720823ebfe8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "54c48aeb-a46d-4a97-b161-1edffb95f73d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7f922236-c47d-4520-976b-dd3df8386272",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6758166b-c369-4851-bf7f-2a46f94b68ba",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "23450178-4b42-4243-9e98-fae54814e185",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cb8ad5c7-6dcd-4f1f-8fa8-629d962163bf",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a24b80aa-2ec7-421c-8b35-96b1309915e5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b0faa2dc-3aac-4eb6-baa9-27923bcb1538",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "19c349e1-455c-4e2f-915a-c9bc53eb78a9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bddb6a35-e8f6-420d-a62b-fd9c34759e62",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bac902e3-23f8-4a13-8879-3525c9f69077",
+      "name": "Individual ECS Address Provision Configuration",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cb04177c-8d66-4066-9aec-a3641534b9fb",
+          "name": "Read an active resource for the AF and the configuration Id",
+          "request": {
+            "name": "Read an active resource for the AF and the configuration Id",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "configurations",
+                ":configurationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "configurationId",
+                  "description": "(Required) Identifier of the configuration resource"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0a70961d-5199-4928-b959-8391f125d910",
+              "name": "OK (Successful get the active resource)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "db5dd323-eca0-4c88-9269-5e15c283428d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1ea82568-47a2-482a-a78f-b5fd39cb64eb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e197f33e-dfc8-4f5b-a3c8-e0b63637dfdb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "68ae8d59-d289-4fc0-bf14-f788592f28fa",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "84f2e353-e0f1-4515-b530-5fbbb2099c95",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "99cbe431-572d-45c2-b624-c89fa1c4a82c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "541380e3-7401-43d5-b2b1-9b4d88f7cbce",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "398ff740-445a-4882-bcbc-7f61afed5ed9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fd1bbf53-2475-42ea-a9d7-4d55142f4b8a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "67763fe9-4b66-435b-b19f-980676df1db8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "34e0cf3a-135a-4c63-a6ab-d574c588e183",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "22712c11-896d-4dc7-b7af-4813e3b17d52",
+          "name": "Fully updates/replaces an existing resource",
+          "request": {
+            "name": "Fully updates/replaces an existing resource",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "configurations",
+                ":configurationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "configurationId",
+                  "description": "(Required) Identifier of the configuration resource"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b4346594-3dda-4eaa-95c0-7f5cda825e20",
+              "name": "OK (Successful update of the existing resource)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "31d958f0-3f81-44d4-b085-f427cbd92288",
+              "name": "Successful case. The resource has been successfully updated and no additional content is sent in the response message.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b59ef92b-8a3b-4c44-81d2-78f65b8ff64d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ff02da45-5599-42e8-aaab-774b8ff41e54",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e511f307-2be8-4975-b410-ab32a4761479",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6dca17ae-17ab-43f0-88e0-4e08d1332e24",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e56699af-9bdb-4195-bffb-744227fee9ba",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6106f36d-4239-443b-be8a-756b488f3991",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "008ef1b5-cf21-4b28-ad01-3c91c7683944",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0c0090a5-add9-4a75-b4a1-2dcd30c122ef",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d208a15b-15ad-46cc-aca0-d43ab9922855",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7bf26f01-acea-49e0-a194-97f98450ed21",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3a0773e7-110f-4a92-97ea-195d63c21d82",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "45381221-4b7e-47ba-938a-0d606a564a56",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9308c010-a75a-48be-85f8-7ed04cf586c1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ecsServerAddr\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/EcsServerAddr not found in the OpenAPI spec\"\n  },\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"self\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Link not found in the OpenAPI spec\"\n  },\n  \"mtcProviderId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation not found in the OpenAPI spec\"\n  },\n  \"spatialValidityCond\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond not found in the OpenAPI spec\"\n  },\n  \"tgtUe\": {\n    \"value\": \"reference TS29522_AnalyticsExposure.yaml#/components/schemas/TargetUeId not found in the OpenAPI spec\"\n  },\n  \"plmnId\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/PlmnIdNid not found in the OpenAPI spec\"\n  },\n  \"ecsAuthMethods\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod not found in the OpenAPI spec\"\n    }\n  ],\n  \"supportedPlmns\": [\n    {\n      \"value\": \"reference TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c2fee704-20ab-4a94-8d9b-e0f044c0231f",
+          "name": "Deletes an already existing configuration resource",
+          "request": {
+            "name": "Deletes an already existing configuration resource",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "configurations",
+                ":configurationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Identifier of the AF"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "configurationId",
+                  "description": "(Required) Identifier of the configuration resource"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90c8535e-0990-4968-8c5c-5f41211ab7ec",
+              "name": "No Content (Successful deletion of the existing resource)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76004dcd-be3a-4606-bc95-31a684f29193",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "265c2e3f-2f17-4798-864a-c5bbf1706cd2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "640da11c-a127-4e4d-90d0-0ce78ddb1513",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "51345c26-f654-473e-9984-387b3968e7c1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2fe49772-b9a1-4ca3-882e-3158ec9eedac",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d38ce7db-e557-483b-b13b-be7489584c68",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0e46f1f6-293f-4fb4-9210-fa4068eda596",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "eb0b98b3-0697-4bc1-b357-b41f06efbca5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e1567abf-748f-4cea-8af9-e465adf1eba7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9b35cae5-9882-44f4-aed6-b8310827368c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "configurations",
+                    ":configurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Identifier of the AF"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "configurationId",
+                      "description": "(Required) Identifier of the configuration resource"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/3gpp-ecs-address-provision/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "34c421fb-3e6f-4b9f-91e2-d547459f183b",
+    "name": "3gpp-ecs-address-provision",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for ECS Address Provisioning.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

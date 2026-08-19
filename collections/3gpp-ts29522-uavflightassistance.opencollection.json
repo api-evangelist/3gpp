@@ -1,0 +1,215 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-uav-fa",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "UAV Flight Assistance Configurations (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve all the active UAV Flight Assistance Configurations at the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-uav-fa/v1/:afId/configurations",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              }
+            ]
+          },
+          "docs": "Request to retrieve all the active UAV Flight Assistance Configurations at the NEF."
+        },
+        {
+          "info": {
+            "name": "Request the creation of a new UAV Flight Assistance Configuration.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-uav-fa/v1/:afId/configurations",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the creation of a new UAV Flight Assistance Configuration."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual UAV Flight Assistance Configuration (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve an existing Individual UAV Flight Assistance Configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-uav-fa/v1/:afId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual UAV Flight Assistance Configuration resource.\n"
+              }
+            ]
+          },
+          "docs": "Request to retrieve an existing Individual UAV Flight Assistance Configuration resource."
+        },
+        {
+          "info": {
+            "name": "Request to update an existing Individual UAV Flight Assistance Configuration.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-uav-fa/v1/:afId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual UAV Flight Assistance Configuration resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request to update an existing Individual UAV Flight Assistance Configuration."
+        },
+        {
+          "info": {
+            "name": "Request the deletion of an existing Individual UAV Flight Assistance Configuration.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-uav-fa/v1/:afId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual UAV Flight Assistance Configuration resource.\n"
+              }
+            ]
+          },
+          "docs": "Request the deletion of an existing Individual UAV Flight Assistance Configuration."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Group Parameters Provisioning (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request the modification of an existing Individual UAV Flight Assistance Configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-uav-fa/v1/:afId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual UAV Flight Assistance Configuration resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the modification of an existing Individual UAV Flight Assistance Configuration resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Retrieve (custom operation without associated resources)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve UAV flight information.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-uav-fa/v1/:afId/retrieve",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request to retrieve UAV flight information."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

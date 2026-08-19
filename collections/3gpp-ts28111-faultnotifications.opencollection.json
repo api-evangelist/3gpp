@@ -1,0 +1,25 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fault Management Notifications",
+    "version": "19.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Receive one of a set of alarm related notifications",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{notificationRecipientAddress}/",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "The MnS producer sends an alarm to the consumer.  This interface shall be implemented by the notification-receiver and  used by the notification-sender."
+    }
+  ],
+  "bundled": true
+}

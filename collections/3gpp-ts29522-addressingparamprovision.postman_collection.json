@@ -1,0 +1,3853 @@
+{
+  "item": [
+    {
+      "id": "bb50a25a-93e4-4224-9905-5be517baee5f",
+      "name": "Addressing Parameters Provisionings (Collection)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "181804d3-3092-4c1b-a405-45ab3105f870",
+          "name": "Request to retrieve all the active Addressing Parameters Provisionings at the NEF.",
+          "request": {
+            "name": "Request to retrieve all the active Addressing Parameters Provisionings at the NEF.",
+            "description": {},
+            "url": {
+              "path": [
+                "pp"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5e64de7-25df-4836-9436-68ec0ff499b6",
+              "name": "OK. All the Individual Addressing Parameters Provisioning resources managed by the NEF are returned. If there are no existing Individual Addressing Parameters Provisioning resources managed by the NEF, an empty array is returned.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"afId\": \"<string>\",\n    \"staticIpaddrParams\": [\n      {\n        \"dnn\": {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n        },\n        \"snssai\": {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n        },\n        \"gpsi\": {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n        },\n        \"staticIpAddresses\": [\n          {\n            \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n          }\n        ]\n      }\n    ],\n    \"suppFeat\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    }\n  },\n  {\n    \"afId\": \"<string>\",\n    \"staticIpaddrParams\": [\n      {\n        \"dnn\": {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n        },\n        \"snssai\": {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n        },\n        \"gpsi\": {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n        },\n        \"staticIpAddresses\": [\n          {\n            \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n          }\n        ]\n      }\n    ],\n    \"suppFeat\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eba1c0e8-21ed-4f01-8d9c-3597334f4473",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4325a47e-cad0-407f-8d4b-e5bc5a3111c3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cc47fb9d-7452-4ced-9467-209086cde6cd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f7821c6f-d1cb-47a7-ab84-982c6c2a0a54",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4116e7f5-bbc6-4207-a61f-1218e31358e2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "70d37c9b-8f51-4f1d-a720-2e4bca8c1f63",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7c087d99-b30b-4d5d-89f7-46dc5ed26253",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f90edde1-826f-40b0-a323-661f61061510",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ccceed6c-dc03-4561-889e-3caf3b9af728",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a2897c8a-05f2-400e-b5e0-d34e18cbaad4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a72c6a4f-93a7-4136-b4fe-90a4fb265ee5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "06344487-5e54-4bcf-b297-558cf346b918",
+          "name": "Request the creation of a new Addressing Parameters Provisioning.",
+          "request": {
+            "name": "Request the creation of a new Addressing Parameters Provisioning.",
+            "description": {},
+            "url": {
+              "path": [
+                "pp"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ab60fbb3-3d86-4f28-b3bf-95721b44e793",
+              "name": "Created. A representation of the created Individual Addressing Parameters Provisioning resource is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource.\n",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a6766b4b-2d13-44d2-a4be-883e44b1e63c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1def09aa-4db6-41e6-a459-a40bea8a891a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "124f3599-f275-4914-a473-c5b47160824c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "595cf68d-6bd3-4975-883c-f633f6ade8ab",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3e1375aa-68ad-4146-bbc2-f5e89893eaff",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8dc357ec-28d6-49dc-91e0-d1b26788bfc7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f5bf0f71-1736-4036-9787-d1f770bd298d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c4cccd5c-c206-479b-a827-577818544301",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0056773b-7b74-4e43-bacd-d784b1e5ec66",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "91e1ebca-7087-4339-94d0-d54d719fa5a6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f8322059-200e-46ba-a36e-570b725ad1f9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "320b81b2-eb0a-4da2-926b-4647e41e6540",
+      "name": "Individual Addressing Parameters Provisioning (Document)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "12f564a3-9445-4187-8420-481274650d72",
+          "name": "Request to retrieve an existing Individual Addressing Parameters Provisioning resource.",
+          "request": {
+            "name": "Request to retrieve an existing Individual Addressing Parameters Provisioning resource.",
+            "description": {},
+            "url": {
+              "path": [
+                "pp",
+                ":ppId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ppId",
+                  "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9ab97d46-4e2b-4b18-a727-2178c4426810",
+              "name": "OK. The requested Individual Group Parameters Provisioning resource is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"afId\": \"string\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d6a68f2f-8314-4872-a4d4-e336edaaa3fb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fff96d24-336b-4ca5-8d1e-52b2bfbb6c16",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d980dff5-5b44-4164-8a33-7057d96c2399",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "97b65fd1-cd8c-4680-b93f-af78ba26a238",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "155647ae-99fc-42d3-911b-38589496452a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "41a000ae-8bca-445f-8fc3-26020d47a8a4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "579fb936-3634-4e6b-b349-aedc77b2f439",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5a1d57d7-09ac-481f-891c-126fc7cecf48",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "775697b8-1997-4d6c-9b82-4cf9b7dea7e2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e02358e9-ccf1-40ee-bc80-91b5af462dee",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a91ee5c8-b0cc-4153-b73c-4bf8de9a4324",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c53a226e-43d4-4660-9976-782796aaa075",
+          "name": "Request the update of an existing Individual Addressing Parameters Provisioning resource.",
+          "request": {
+            "name": "Request the update of an existing Individual Addressing Parameters Provisioning resource.",
+            "description": {},
+            "url": {
+              "path": [
+                "pp",
+                ":ppId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ppId",
+                  "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "94c9d6a0-2406-4248-b766-4cbfdd6d078e",
+              "name": "OK. The Individual Addressing Parameters Provisioning resource is successfully updated and a representation of the updated resource is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e15e1748-0173-4c94-b91e-34dd0886b83c",
+              "name": "No Content. The Individual Addressing Parameters Provisioning resource is successfully updated and no content is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3878e8b5-7542-4069-91f4-108f125dee17",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6bc90b3c-8d5a-40cb-9194-49e86ebdab14",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ab74f337-ba1f-4eaa-ba17-d29559642f04",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9609ac63-3b70-4c37-a903-941f47332c7e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c9de91a7-8aaf-43bf-8cc2-e0c70ef9e2e1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "88eb44f0-2a66-453a-bff0-32b629e821dd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6a656355-50f2-4f5f-a531-ffdef555eb35",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5f8ea77d-6d42-4102-b20e-4391a351674c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6c614a28-7dd1-4bdf-8ea1-66cb9d3ab227",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7af8a689-f653-49d9-9bab-8b68f8defe28",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c4cd16fd-f331-4fb7-81dc-3d0ff58edb61",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3b1ec2dd-c7fa-4256-949a-4934fa7a8785",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3fc580c2-5d2e-40d7-b089-1ee7bd9c6f60",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "133f6c01-9313-46fe-b7b0-4b42fb5e73fb",
+          "name": "Request the modification of an existing Individual Addressing Parameters Provisioning resource.",
+          "request": {
+            "name": "Request the modification of an existing Individual Addressing Parameters Provisioning resource.",
+            "description": {},
+            "url": {
+              "path": [
+                "pp",
+                ":ppId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ppId",
+                  "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/merge-patch+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bde1b6ae-1dc8-45b7-8fd0-6ab4977e2b86",
+              "name": "OK. The Individual Addressing Parameters Provisioning resource is successfully modified and a representation of the updated resource is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"afId\": \"<string>\",\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ],\n  \"suppFeat\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "01458e90-d50b-4f5e-854f-e97fc4e2e15a",
+              "name": "No Content. The Individual Addressing Parameters Provisioning resource is successfully modified and no content is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "add024d5-3283-40bf-9517-9d5beddd2ad3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "988cc358-6f2b-4b87-b655-3308085eef7a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "81a55304-a2a2-4801-870c-c7a96a8586a0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6163cf10-01ca-4d6a-99ab-fc9f3b3e0e86",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "450305d9-a01e-4ad7-a7ca-62a611030ebe",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "82de7165-8f79-4e0a-a92d-20cc6d8661b1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9440915a-214f-444a-b991-ad87a4c18b56",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "728c71f7-f106-41e3-ac78-6aa1c357c7fe",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "225d49a1-c999-4f5b-90c9-e51ea2a8ff14",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "21fa6d42-716d-4eee-a658-f59b2bd1bb9c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8d314c3b-9906-4c60-a694-e8e136fd6e24",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e5aa60c4-a85e-461f-92a0-c14e89bc32a4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2902d477-6f6e-4c53-86a0-03bf2158e385",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"staticIpaddrParams\": [\n    {\n      \"dnn\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Dnn not found in the OpenAPI spec\"\n      },\n      \"snssai\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Snssai not found in the OpenAPI spec\"\n      },\n      \"gpsi\": {\n        \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Gpsi not found in the OpenAPI spec\"\n      },\n      \"staticIpAddresses\": [\n        {\n          \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/IpAddr not found in the OpenAPI spec\"\n        }\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b2d2880-dfe6-4430-844c-0cbf538fc8a1",
+          "name": "Request the deletion of an existing Individual Addressing Parameters Provisioning resource.",
+          "request": {
+            "name": "Request the deletion of an existing Individual Addressing Parameters Provisioning resource.",
+            "description": {},
+            "url": {
+              "path": [
+                "pp",
+                ":ppId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ppId",
+                  "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                },
+                {
+                  "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c28f4fd-7f51-42f7-9010-9d65feaf2d3d",
+              "name": "No Content. The Individual Addressing Parameters Provisioning resource is successfully deleted.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "46dd8b56-9db3-4264-ab3f-fbf512c226f0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f33f8104-5b85-4bbc-a168-aefa861cb313",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3019f585-9f2f-4e8a-bd0b-e563464393a9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0535cc13-034c-4885-a6e4-8064db3686dc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "27007755-1d96-4f68-808e-cbb4b128db5d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b8c45897-de38-4901-bd54-0d76e4428215",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "84956c19-0a59-44ca-8af2-d4789f76d305",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "540a4467-c89a-4152-8361-ca774e8ed2e1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "928894e3-cdac-43b1-9372-e074eef3d9e5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a129540f-b5e5-48e4-b7cf-a7ad2778756f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pp",
+                    ":ppId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ppId",
+                      "description": "(Required) Represents the identifier of the Individual Addressing Parameters Provisioning resource.\n"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/3gpp-addr-pp/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "a54503a6-107d-44de-b012-6dda2020bc07",
+    "name": "3gpp-addr-pp",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for Addressing Parameters Provisioning.  \n© 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-ims-pp",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "IMS Parameters Provisionings (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve all the active IMS Parameters Provisionings at the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-ims-pp/v1/pp"
+          },
+          "docs": "Request to retrieve all the active IMS Parameters Provisionings at the NEF."
+        },
+        {
+          "info": {
+            "name": "Request the creation of a new IMS Parameters Provisioning.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-ims-pp/v1/pp",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the creation of a new IMS Parameters Provisioning."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual IMS Parameters Provisioning (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an existing Individual IMS Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-ims-pp/v1/pp/:ppId",
+            "params": [
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual IMS Parameters Provisioning resource.\n"
+              }
+            ]
+          },
+          "docs": "Retrieve an existing Individual IMS Parameters Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Update an existing Individual IMS Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-ims-pp/v1/pp/:ppId",
+            "params": [
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual IMS Parameters Provisioning resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing Individual IMS Parameters Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Request the modification of an existing Individual IMS Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-ims-pp/v1/pp/:ppId",
+            "params": [
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual IMS Parameters Provisioning resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the modification of an existing Individual IMS Parameters Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Delete an existing Individual IMS Parameters Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-ims-pp/v1/pp/:ppId",
+            "params": [
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual IMS Parameters Provisioning resource.\n"
+              }
+            ]
+          },
+          "docs": "Delete an existing Individual IMS Parameters Provisioning resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

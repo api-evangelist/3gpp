@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Network Slice Provisioning MnS",
+    "version": "18.6.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Create a ServiceProfile",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{MnSRoot}/NSProvMnS/{MnSVersion}/ServiceProfiles",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "To create a ServiceProfile resource to represent network slice related requirements."
+    },
+    {
+      "info": {
+        "name": "Delete a ServiceProfile",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "{MnSRoot}/NSProvMnS/{MnSVersion}/ServiceProfiles/:ServiceProfileId",
+        "params": [
+          {
+            "name": "ServiceProfileId",
+            "value": "",
+            "type": "path",
+            "description": "Identifies an individual ServiceProfille."
+          },
+          {
+            "name": "networkSliceDN",
+            "value": "",
+            "type": "query",
+            "description": "Identifies the DN of NetworkSlice MOI uniquely identifying the network slice instance"
+          }
+        ]
+      },
+      "docs": "To delete a ServiceProfile resource to represent network slice related requirements."
+    }
+  ],
+  "bundled": true
+}

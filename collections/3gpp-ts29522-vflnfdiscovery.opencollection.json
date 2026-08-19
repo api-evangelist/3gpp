@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-vfl-nf-discovery",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "VFL NF discovery",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request of NWDAF(s) that are to act as VFL client(s).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-vfl-nf-discovery/v1/discover-nwdaf",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request of NWDAF(s) that are to act as VFL client(s)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "VFL NF discovery release",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to inform the external NWDAF ID(s) are not used anymore.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-vfl-nf-discovery/v1/release-nwdaf",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request to inform the external NWDAF ID(s) are not used anymore."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

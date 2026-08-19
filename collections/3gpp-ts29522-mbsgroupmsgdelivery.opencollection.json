@@ -1,0 +1,113 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-mbs-group-msg",
+    "version": "1.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MBS Group Message Deliveries (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all the active MBS Group Message Deliveries.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-mbs-group-msg/v1/deliveries"
+          },
+          "docs": "Retrieve all the active MBS Group Message Deliveries."
+        },
+        {
+          "info": {
+            "name": "Request the creation of an MBS Group Message Delivery.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-mbs-group-msg/v1/deliveries",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the creation of an MBS Group Message Delivery."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual MBS Group Message Delivery (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an existing Individual MBS Group Message Delivery resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-mbs-group-msg/v1/deliveries/:delRef",
+            "params": [
+              {
+                "name": "delRef",
+                "value": "",
+                "type": "path",
+                "description": "Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+              }
+            ]
+          },
+          "docs": "Retrieve an existing Individual MBS Group Message Delivery resource."
+        },
+        {
+          "info": {
+            "name": "Request the modification of an existing Individual MBS Group Message Delivery resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-mbs-group-msg/v1/deliveries/:delRef",
+            "params": [
+              {
+                "name": "delRef",
+                "value": "",
+                "type": "path",
+                "description": "Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the modification of an existing Individual MBS Group Message Delivery resource."
+        },
+        {
+          "info": {
+            "name": "Request the deletion of an existing Individual MBS Group Message Delivery resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-mbs-group-msg/v1/deliveries/:delRef",
+            "params": [
+              {
+                "name": "delRef",
+                "value": "",
+                "type": "path",
+                "description": "Contains the identifier of the Individual MBS Group Message Delivery resource.\n"
+              }
+            ]
+          },
+          "docs": "Request the deletion of an existing Individual MBS Group Message Delivery resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

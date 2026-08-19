@@ -1,0 +1,156 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nnwdaf_EventsSubscription",
+    "version": "1.2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NWDAF Events Subscriptions (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a new Individual NWDAF Events Subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/nnwdaf-eventssubscription/v1/subscriptions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Individual NWDAF Events Subscription"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual NWDAF Events Subscription (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update an existing Individual NWDAF Events Subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/nnwdaf-eventssubscription/v1/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying a subscription to the Nnwdaf_EventsSubscription Service"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing Individual NWDAF Events Subscription"
+        },
+        {
+          "info": {
+            "name": "Delete an existing Individual NWDAF Events Subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/nnwdaf-eventssubscription/v1/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying a subscription to the Nnwdaf_EventsSubscription Service"
+              }
+            ]
+          },
+          "docs": "Delete an existing Individual NWDAF Events Subscription"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "NWDAF Event Subscription Transfers (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Provide information about requested analytics subscriptions transfer and potentially create a new Individual NWDAF Event Subscription Transfer resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/nnwdaf-eventssubscription/v1/transfers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Provide information about requested analytics subscriptions transfer and potentially create a new Individual NWDAF Event Subscription Transfer resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual NWDAF Event Subscription Transfer (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update an existing Individual NWDAF Event Subscription Transfer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/nnwdaf-eventssubscription/v1/transfers/:transferId",
+            "params": [
+              {
+                "name": "transferId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying a request for an analytics subscription transfer to the  Nnwdaf_EventsSubscription Service\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing Individual NWDAF Event Subscription Transfer"
+        },
+        {
+          "info": {
+            "name": "Delete an existing Individual NWDAF Event Subscription Transfer",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/nnwdaf-eventssubscription/v1/transfers/:transferId",
+            "params": [
+              {
+                "name": "transferId",
+                "value": "",
+                "type": "path",
+                "description": "String identifying a request for an analytics subscription transfer to the  Nnwdaf_EventsSubscription Service\n"
+              }
+            ]
+          },
+          "docs": "Delete an existing Individual NWDAF Event Subscription Transfer"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,2965 @@
+{
+  "item": [
+    {
+      "id": "c416ff30-a30b-49c1-8820-71de53e56b8a",
+      "name": "On-boarded API Invokers (Collection)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7bda8b85-1293-49dc-8553-8fefe30f27e8",
+          "name": "Request the Creation of a new On-boarded API Invoker.",
+          "request": {
+            "name": "Request the Creation of a new On-boarded API Invoker.",
+            "description": {},
+            "url": {
+              "path": [
+                "onboardedInvokers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "edca640d-8f35-48d4-8095-792aa9c05ecf",
+              "name": "Created. The API Invoker is successfully on-boarded.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource.\n",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiInvokerId\": \"string\",\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c08372d2-3e3c-45fa-a2f8-a9229659a17b",
+              "name": "Accepted. The CCF accepted the Onboarding request and is processing it.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "70b9ee0a-56d2-4586-86a4-8e7caf879a56",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "55d1d9f3-7740-4c60-8028-e34127c1f472",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fce4033c-a7f6-4e8d-aa44-6d49ce9fb7f9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9d9ed33c-5778-4729-b2d1-e3d54e6c4cd3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "eae01de1-8feb-4302-b7bd-c93544b4df10",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "be19121c-f96f-4d68-be48-1ed21ee06e60",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7e636df8-f788-411b-9006-b26bc801ba0d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0e1ce798-7c88-4d3a-b7ca-4822cba92f03",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "98495094-2d91-4f62-b057-ebd26d26e045",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f05cc82e-3261-464c-accb-6a46f2780541",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e7b4fe51-3189-40e8-804d-b97e7cde6a58",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bc95fb11-0ce4-4671-acb4-7ac3b97d5853",
+      "name": "Individual On-boarded API Invoker (Document)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9eb19197-aec1-40bc-842b-916a8af18998",
+          "name": "Delete an existing Individual On-boarded API Invoker resource.",
+          "request": {
+            "name": "Delete an existing Individual On-boarded API Invoker resource.",
+            "description": {
+              "content": "Deletes an existing Individual On-boarded API Invoker.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "onboardedInvokers",
+                ":onboardingId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "onboardingId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7034f6d4-e126-414e-bafe-455ff18a4331",
+              "name": "No Content. The Individual On-boarded API Invoker resource is successfully deleted.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "95e991a7-eb06-48db-b98e-137a9aead707",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2a2a19ee-c2f9-4c23-8237-c8b136525312",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a433fced-2e70-46b2-9c8d-b40bb5474d69",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "63b6ea5b-cc9f-4830-84ff-6ecf1ad1f8db",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "49365372-354b-416e-a05a-84d7b7c653dc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7cc5cf36-bd37-46d4-ac6c-6eae6b489aa5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fbe8bbec-d0ce-429b-8e50-b7cc458571d9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "82fe1c97-0023-42a7-8d11-21c4f9cb0283",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "405b3b3a-2b1c-487e-8c1a-029e97746968",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f2a59101-3598-4175-a3a7-29b4bd5305f5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "123a2112-f185-4fe2-9684-ca6c097905a4",
+          "name": "Update an existing Individual On-boarded API Invoker resource.",
+          "request": {
+            "name": "Update an existing Individual On-boarded API Invoker resource.",
+            "description": {},
+            "url": {
+              "path": [
+                "onboardedInvokers",
+                ":onboardingId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "onboardingId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cba1754f-9a07-4baa-94f9-2031c74ad270",
+              "name": "OK. The Individual On-boarded API Invoker resource is successfully updated and the representation of the updated resource is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiInvokerId\": \"string\",\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47102faf-e517-4a7c-aa01-db5a4d1009bf",
+              "name": "Accepted. The request is accepted and under processing.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1b5fb196-99be-4fa6-b686-b6a6ca61feea",
+              "name": "No Content. The Individual On-boarded API Invoker resource is successfully updated and no content is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "59e3af15-8e11-44d7-a3ea-c0e7306c30c6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d0847ffe-e57c-4fb7-b0c3-88b1ea1b16c5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "681c7e94-cc01-4a49-a0df-0aee82a56ed6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3bf6d1bb-182b-4a59-b0d7-ebba650d3433",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "05b78df6-f36f-4544-a7ce-24d62f9f4a90",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "24336d51-c3e1-491a-8db9-77ec0d6d73b1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "38dd15cf-9dce-4923-bee2-45c82bbb3ca3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bacdef23-fa03-4ac9-ae83-9730556d0e55",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "82909ca2-1a76-41cd-a192-c1c2a8278dc3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e818db0b-2c6c-4923-97f4-38e7544e0961",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "55c29b0d-411e-4f8d-ab37-3be9cacd6574",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6b5e37c5-7ea5-427f-8352-0ad8da09a90d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "69a205a0-c709-4aab-bc55-dc6dd2604574",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "52bfc527-f33d-4d37-a004-eae99bde21d0",
+          "name": "Modify an existing Individual On-boarded API Invoker resource.",
+          "request": {
+            "name": "Modify an existing Individual On-boarded API Invoker resource.",
+            "description": {},
+            "url": {
+              "path": [
+                "onboardedInvokers",
+                ":onboardingId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "onboardingId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/merge-patch+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "048125bb-795e-4df4-bab1-9e9713f6dd57",
+              "name": "OK. The Individual On-boarded API Invoker resource is successfully modified and the representation of the updated resource is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiInvokerId\": \"string\",\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"failureReasons\": [\n    {\n      \"apiName\": {},\n      \"failureCode\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "46b96103-e416-4c47-965a-aba0eb235115",
+              "name": "Accepted. The request is accepted and under processing.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5266fd5f-1b16-40fb-8562-378100daca02",
+              "name": "No Content. The Individual On-boarded API Invoker resource is successfully modified and no content is returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4f9a51df-9cbd-4448-b24d-d82db21c3603",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cae66ba4-6a4d-40ea-ad09-225bf076eb38",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bf9ff01d-9580-41a2-9350-1e943345614a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5b7a9fe8-2ad6-4f48-b786-b195651da6f9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ca8876a2-c0da-4eba-b225-972abb180775",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "26e29c67-3df9-4367-8532-10f832393416",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b409397e-f840-48ad-8428-d9b14967104c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "df63780d-1972-4fb1-ba40-1380ed20fd22",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c309e2da-d9d7-4861-9e30-250c17e42559",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ed7b3097-8c02-46ff-86bb-795827b97dac",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "efe3bd4b-fb6c-4964-aa4c-e88dc32f502d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "af6968e8-0b1d-4aac-b742-fd1c1e6c0b72",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "871fecb5-27b3-4165-8fe4-cae75b9196ad",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "onboardedInvokers",
+                    ":onboardingId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "onboardingId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"onboardingInformation\": {\n    \"apiInvokerPublicKey\": \"<string>\",\n    \"apiInvokerCertificate\": \"<string>\",\n    \"onboardingSecret\": \"<string>\",\n    \"onboardingCriteria\": [\n      {\n        \"secMethods\": [\n          {\n            \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod not found in the OpenAPI spec\"\n          }\n        ],\n        \"relatedCriteria\": {}\n      }\n    ]\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"apiList\": {\n    \"serviceAPIDescriptions\": [\n      {\n        \"value\": \"reference TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  \"apiInvokerInformation\": \"<string>\",\n  \"expTime\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/DateTimeRm not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/api-invoker-management/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6a875265-c8ac-4096-b8c2-2d18bffa43eb",
+    "name": "CAPIF_API_Invoker_Management_API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for API invoker management.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

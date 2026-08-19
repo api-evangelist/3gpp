@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-mbs-tmgi",
+    "version": "1.2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TMGI Allocation or Timer Expiry Refresh",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request the allocation of TMGI(s) for new MBS session(s) or the refresh of the expiry time of already allocated TMGI(s).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-mbs-tmgi/v1/allocate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the allocation of TMGI(s) for new MBS session(s) or the refresh of the expiry time of already allocated TMGI(s)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "MBS TMGI Deallocation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request the deallocation of MBS TMGI(s).",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-mbs-tmgi/v1/deallocate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the deallocation of MBS TMGI(s)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,200 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-as-session-with-qos",
+    "version": "1.4.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AS Session with Required QoS Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all or queried active subscriptions for the SCS/AS.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-as-session-with-qos/v1/:scsAsId/subscriptions",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "ip-addrs",
+                "value": "",
+                "type": "query",
+                "description": "The IP address(es) of the requested UE(s)."
+              },
+              {
+                "name": "ip-domain",
+                "value": "",
+                "type": "query",
+                "description": "The IPv4 address domain identifier. The attribute may only be provided if IPv4 address is included in the ip-addrs query parameter.\n"
+              },
+              {
+                "name": "mac-addrs",
+                "value": "",
+                "type": "query",
+                "description": "The MAC address(es) of the requested UE(s)."
+              },
+              {
+                "name": "supp-feat",
+                "value": "",
+                "type": "query",
+                "description": "Contains the list of supported features."
+              }
+            ]
+          },
+          "docs": "Read all or queried active subscriptions for the SCS/AS."
+        },
+        {
+          "info": {
+            "name": "Creates a new subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-as-session-with-qos/v1/:scsAsId/subscriptions",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new subscription resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual AS Session with Required QoS Subscription",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read an active subscriptions for the SCS/AS and the subscription Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-as-session-with-qos/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ]
+          },
+          "docs": "Read an active subscriptions for the SCS/AS and the subscription Id."
+        },
+        {
+          "info": {
+            "name": "Updates/replaces an existing subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-as-session-with-qos/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates/replaces an existing subscription resource."
+        },
+        {
+          "info": {
+            "name": "Updates/replaces an existing subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-as-session-with-qos/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates/replaces an existing subscription resource."
+        },
+        {
+          "info": {
+            "name": "Deletes an already existing subscription.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-as-session-with-qos/v1/:scsAsId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ]
+          },
+          "docs": "Deletes an already existing subscription."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

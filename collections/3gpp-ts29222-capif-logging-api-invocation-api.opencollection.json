@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CAPIF_Logging_API_Invocation_API",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Logs (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "CreateLogEntServAPIInv",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/api-invocation-logs/v1/:aefId/logs",
+            "params": [
+              {
+                "name": "aefId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the API exposing function"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new log entry for service API invocations."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

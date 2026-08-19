@@ -1,0 +1,3270 @@
+{
+  "item": [
+    {
+      "id": "4df331d3-2777-48ae-ae64-a263f5e70c38",
+      "name": "CAPIFs Events Subscriptions (Collection)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f19415ee-e2be-4c61-866c-c65ae6798ce7",
+          "name": "Create a new CAPIFs Event Subscription.",
+          "request": {
+            "name": "Create a new CAPIFs Event Subscription.",
+            "description": {},
+            "url": {
+              "path": [
+                ":subscriberId",
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriberId",
+                  "description": "(Required) Identifier of the Subscriber"
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a10bb552-2b0c-43ae-92e7-80cd4b0925c0",
+              "name": "Created (Successful creation of subscription).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource, according to the structure.\n",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "27c124aa-c8fa-4acf-8a96-8ed398d97391",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e32af84e-bd20-40ad-ae17-df28e92c8739",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2265b769-39ba-4b6f-86b9-a20217b833e9",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "120a8a5e-d29b-495d-822d-5589fc0bc21b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "911d385f-54e0-46c5-91f1-7fad17982872",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3ff02979-f097-4fb2-9c6b-705eeb39202b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "59fa0bbb-24f8-4d8b-a915-f0e57729081e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "29f1d842-fca6-494f-83cf-e7d022d396ab",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7c92f873-f53c-4380-a04f-c286b4f46a4b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ca207b8f-56cb-4380-91be-814bf1f547fa",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e76ded98-df2a-40f4-a105-11f97bb1da95",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2f38e291-0b61-4b02-92d7-73ff9a48a8e6",
+      "name": "Individual CAPIFs Events Subscription (Document)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f8f22bbd-d25c-4a52-9efe-e92443acfede",
+          "name": "Delete an existing Individual CAPIF Events Subscription resource.",
+          "request": {
+            "name": "Delete an existing Individual CAPIF Events Subscription resource.",
+            "description": {},
+            "url": {
+              "path": [
+                ":subscriberId",
+                "subscriptions",
+                ":subscriptionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriberId",
+                  "description": "(Required) Identifier of the Subscriber"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) Identifier of an individual Events Subscription"
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bcd75ee6-0bc5-4b03-9df3-8e5abcf611f6",
+              "name": "No Content. The Individual CAPIF Events Subscription resource is successfully deleted.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of an individual Events Subscription"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d00e1dbb-cb08-4ef7-bc7e-26dfbddbb12a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of an individual Events Subscription"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5357c2f5-1628-4904-9855-f4a8d482c23d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of an individual Events Subscription"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d708cfe2-2d0b-4662-82bb-9f2acb521a2d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of an individual Events Subscription"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "51560618-83f8-4614-ba99-c9ceae2bbc63",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of an individual Events Subscription"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "87b0f11e-246c-4226-a252-95e8d14b5f9f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of an individual Events Subscription"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "09cc72f3-ed7a-4068-87b2-4e87b3c90b89",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of an individual Events Subscription"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f480b1a5-991b-421e-8b1d-0867de1a10a7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of an individual Events Subscription"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "84508e15-3a09-40cd-85d6-f49afe5f3245",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of an individual Events Subscription"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0ae02e51-f12f-41d0-b49b-aa2743a7a907",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of an individual Events Subscription"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "aa5f2c89-1edf-4ddb-9fe6-b3b8f2ee0565",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of an individual Events Subscription"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b1d5a88-91e4-4135-a2b1-d52e7f639d7e",
+          "name": "Update an existing Individual CAPIF Events Subscription resource.",
+          "request": {
+            "name": "Update an existing Individual CAPIF Events Subscription resource.",
+            "description": {},
+            "url": {
+              "path": [
+                ":subscriberId",
+                "subscriptions",
+                ":subscriptionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriberId",
+                  "description": "(Required) Identifier of the Subscriber"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) Identifier of the individual Subscriber"
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4d067cd8-d430-4080-a748-0f0ddfc420b9",
+              "name": "OK (Successful update of the subscription).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f6aa377b-75e3-47ba-885f-736637a050e4",
+              "name": "No Content. (Successful update of the subscription).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "25267aa9-6b1d-41b4-9b8c-419f78a44377",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3769106a-9e3a-4974-a1a5-c0326b238c4a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9f4f2e78-d7d8-47c7-adf7-221f24ce54d2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "758effeb-9ef6-4b78-a095-f779d79adb82",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "459b2561-1cf7-4f46-8335-fc261861fb5f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d726c24f-8c32-491b-b77d-833226ebb3f7",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "545e856c-a9ec-4760-8ee2-086488b1ef16",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2aeea34e-717b-475b-9a93-7a034ad965de",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "94cb5e3e-a3e9-46ac-8a12-8f18061d313f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "864600ab-7c24-4448-82c7-d7bc3a6c45ea",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cfff4587-5ff0-45df-8124-a0cc679e07d3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dbe7b6d2-fca4-4b00-a84d-5ce92688d9e2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "43470344-4a9e-4ac8-b94b-88f82ece91d8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa646056-0c30-4600-a01e-158bf032dbba",
+          "name": "Modify an existing Individual CAPIF Events Subscription resource.",
+          "request": {
+            "name": "Modify an existing Individual CAPIF Events Subscription resource.",
+            "description": {},
+            "url": {
+              "path": [
+                ":subscriberId",
+                "subscriptions",
+                ":subscriptionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriberId",
+                  "description": "(Required) Identifier of the Subscriber"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) Identifier of the individual Subscriber"
+                },
+                {
+                  "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/merge-patch+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7e8615be-819f-4594-a383-0d958a13edee",
+              "name": "OK (Successful modification of the subscription).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"requestTestNotification\": \"<boolean>\",\n  \"websockNotifConfig\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig not found in the OpenAPI spec\"\n  },\n  \"supportedFeatures\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9d3452e0-53fb-4c43-8454-d8505b5301df",
+              "name": "No Content (Successful modification of the subscription).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "60a5b013-f3dc-4d0c-90ae-b5db233ed28f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "35893207-45c9-4a28-b608-67f9a632d7f1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0e398197-99fa-44f6-b320-cf6759acacf4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "918be6d1-cc7f-4dfb-96ed-c68e0b8ff359",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6716b70d-edc7-4e0d-857a-71e377b2da52",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "491b5d56-ff35-403b-9624-3b22c169a0af",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1b0e4f7a-04a2-4d1f-b7c5-3ac23d7f4f7f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "40135de1-79f5-4768-95fb-e096f1dd1a37",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2bdc9419-ce4a-486f-bcfa-0b3a79dce4c2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f624dc79-238f-4d09-9522-15e51b62829f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dbc572a0-91b2-4289-95e5-dae58e9da67b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "425e5644-bed1-4312-8971-5c556638193a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6c5a8c9b-7cf6-476f-844b-426a0a3f19bd",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":subscriberId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriberId",
+                      "description": "(Required) Identifier of the Subscriber"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) Identifier of the individual Subscriber"
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"events\": [\n    \"<string>\"\n  ],\n  \"eventFilters\": [\n    {\n      \"apiIds\": [\n        \"<string>\"\n      ],\n      \"apiInvokerIds\": [\n        \"<string>\"\n      ],\n      \"aefIds\": [\n        \"<string>\"\n      ]\n    }\n  ],\n  \"eventReq\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"notificationDestination\": {\n    \"value\": \"reference TS29122_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 7.5 of 3GPP TS 29.222",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/capif-events/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "375b1428-f815-4a45-86a2-ae73fc364ddd",
+    "name": "CAPIF_Events_API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for event subscription management.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "TS 28.550 Performance Measurement Job Control Service",
+    "version": "19.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Read resources of measurement jobs",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{MnSRoot}/PerfMeasJobCtrlMnS/{MnSVersion}/measJobs",
+        "params": [
+          {
+            "name": "jobIdList",
+            "value": "",
+            "type": "query",
+            "description": "This parameter identifies the list of jobId to select the resources from the collection resources identified with the path component of the URI."
+          }
+        ]
+      },
+      "docs": "With HTTP GET, resources of measurement jobs are read. The resources to be read are identified with the path component (base resource) and the query component (jobIdList) of the URI. The fields query component allows to select the resource properties to be returned."
+    },
+    {
+      "info": {
+        "name": "Create a measurement job",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{MnSRoot}/PerfMeasJobCtrlMnS/{MnSVersion}/measJobs",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "To create a measurement job the representation of the measurement job is POSTed on the /measJobs collection resource."
+    },
+    {
+      "info": {
+        "name": "Read resource of a single measurement job",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{MnSRoot}/PerfMeasJobCtrlMnS/{MnSVersion}/measJobs/:jobId",
+        "params": [
+          {
+            "name": "jobId",
+            "value": "",
+            "type": "path",
+            "description": "Identifies the measurement job to be read."
+          }
+        ]
+      },
+      "docs": "With HTTP GET, resource of a measurement job is read. The resource to be read is identified with the path component of the URI."
+    },
+    {
+      "info": {
+        "name": "Delete a single measurement job",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "{MnSRoot}/PerfMeasJobCtrlMnS/{MnSVersion}/measJobs/:jobId",
+        "params": [
+          {
+            "name": "jobId",
+            "value": "",
+            "type": "path",
+            "description": "Identifies the measurement job to be deleted."
+          }
+        ]
+      },
+      "docs": "The measurement job is deleted by deleting the corresponding measurement job resource. The resource to be deleted is identified with the path component of the URI."
+    }
+  ],
+  "bundled": true
+}

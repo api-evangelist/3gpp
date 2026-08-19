@@ -1,0 +1,184 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-device-triggering",
+    "version": "1.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Device Triggering Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "read all active device triggering transactions for a given SCS/AS.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-device-triggering/v1/:scsAsId/transactions",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              }
+            ]
+          },
+          "docs": "read all active device triggering transactions for a given SCS/AS."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Device Triggering API Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a long-term transaction for a device triggering.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-device-triggering/v1/:scsAsId/transactions",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a long-term transaction for a device triggering."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Device Triggering Transaction",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read a device triggering transaction resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-device-triggering/v1/:scsAsId/transactions/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the transaction resource"
+              }
+            ]
+          },
+          "docs": "Read a device triggering transaction resource."
+        },
+        {
+          "info": {
+            "name": "Replace an existing device triggering transaction resource and the corresponding device trigger request.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-device-triggering/v1/:scsAsId/transactions/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the transaction resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Replace an existing device triggering transaction resource and the corresponding device trigger request."
+        },
+        {
+          "info": {
+            "name": "Modify an existing Individual Device Triggering Transaction resource and the corresponding device triggering request.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-device-triggering/v1/:scsAsId/transactions/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the transaction resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify an existing Individual Device Triggering Transaction resource and the corresponding device triggering request."
+        },
+        {
+          "info": {
+            "name": "Deletes an already existing device triggering transaction.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-device-triggering/v1/:scsAsId/transactions/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the transaction resource"
+              }
+            ]
+          },
+          "docs": "Deletes an already existing device triggering transaction."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-aiot",
+    "version": "1.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AIoT Inventory Request (custom operation without associated resources)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to perform an AIoT Inventory operation.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-aiot/v1/request-inv",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request to perform an AIoT Inventory operation."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "AIoT Command Request (custom operation without associated resources)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to perform an AIoT Command operation.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-aiot/v1/request-cmd",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request to perform an AIoT Command operation."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

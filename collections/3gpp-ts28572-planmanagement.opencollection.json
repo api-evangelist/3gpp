@@ -1,0 +1,625 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3GPP Plan Provisioning Management API",
+    "version": "19.2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Plan Descriptor Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get plan configuration descriptors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-descriptors"
+          },
+          "docs": "Retrieve a list of  existing plan descriptors."
+        },
+        {
+          "info": {
+            "name": "Create a new plan descriptor",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-descriptors",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new configuration plan descriptor that can be later activated."
+        },
+        {
+          "info": {
+            "name": "Get a specific plan descriptor by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-descriptors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the details of a single plan descriptor using its unique identifier."
+        },
+        {
+          "info": {
+            "name": "Replace a plan descriptor",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-descriptors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Replace a configuration plan descriptor"
+        },
+        {
+          "info": {
+            "name": "Delete a plan descriptor by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-descriptors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a specific configuration plan descriptor using its unique identifier"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Plan Group Descriptor Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get plan configuration descriptors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-group-descriptors"
+          },
+          "docs": "Retrieve a list of existing plan descriptors."
+        },
+        {
+          "info": {
+            "name": "Create a new plan group descriptor",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-group-descriptors",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new configuration plan group descriptor that can be later activated."
+        },
+        {
+          "info": {
+            "name": "Get a specific plan group descriptor by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-group-descriptors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the details of a plan group descriptor using its unique identifier."
+        },
+        {
+          "info": {
+            "name": "Replace a plan group descriptor",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-group-descriptors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Replace a configuration plan group descriptor"
+        },
+        {
+          "info": {
+            "name": "Delete a plan group descriptor by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-group-descriptors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a plan group descriptor using its unique identifier"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Fallback Descriptor Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get fallback configuration descriptors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/fallback-descriptors"
+          },
+          "docs": "Retrieve a list of  existing fallback descriptors."
+        },
+        {
+          "info": {
+            "name": "Get a specific fallback descriptor by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/fallback-descriptors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the details of a single fallback descriptor using its unique identifier."
+        },
+        {
+          "info": {
+            "name": "Delete a Fallback descriptor by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/fallback-descriptors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a specific fallback plan descriptor using its unique identifier"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Trigger Descriptor Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get trigger descriptors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/trigger-descriptors"
+          },
+          "docs": "Retrieve a list of existing trigger descriptors."
+        },
+        {
+          "info": {
+            "name": "Create a new trigger descriptor",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/trigger-descriptors",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new trigger descriptor"
+        },
+        {
+          "info": {
+            "name": "Get a specific trigger descriptor by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/trigger-descriptors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the details of a single descriptor using its unique identifier."
+        },
+        {
+          "info": {
+            "name": "Replace a trigger descriptor",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/trigger-descriptors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Replace a trigger descriptor"
+        },
+        {
+          "info": {
+            "name": "Delete a trigger descriptor by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/trigger-descriptors/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a specific trigger descriptor using its unique identifier"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Activation Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get plan activation jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-activation-jobs",
+            "params": [
+              {
+                "name": "job-state",
+                "value": "RUNNING",
+                "type": "query",
+                "description": "Filter jobs by their current state."
+              }
+            ]
+          },
+          "docs": "Retrieve a list of plan activation jobs."
+        },
+        {
+          "info": {
+            "name": "Create a new plan activation job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-activation-jobs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates and starts a new plan activation job based on an existing plan descriptor (or plan group descriptor or fallback descriptor).  The new job's ID will be generated by the server and returned in the Location header."
+        },
+        {
+          "info": {
+            "name": "Get plan activation job details by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-activation-jobs/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve detailed information about a specific plan activation job using its unique identifier."
+        },
+        {
+          "info": {
+            "name": "Cancel the activation job",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-activation-jobs/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Cancel the activation job"
+        },
+        {
+          "info": {
+            "name": "Delete a plan activation job by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-activation-jobs/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a specific plan activation job, typically if it's not in a terminal state (e.g., running, completed, failed)."
+        },
+        {
+          "info": {
+            "name": "Get job status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-activation-jobs/:id/status",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the current status of a specific plan activation job using its unique identifier."
+        },
+        {
+          "info": {
+            "name": "Get activation details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-activation-jobs/:id/activation-details",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "By default the activation details results shall include the FAILED operations only.  This parameter indicates whether to expand all details of the activation results to also include the 'SUCCEEDED' operations."
+              }
+            ]
+          },
+          "docs": "Retrieve detailed information about the activation results of a job"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Validation Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get plan validation jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-validation-jobs",
+            "params": [
+              {
+                "name": "job-state",
+                "value": "job-state=COMPLETED",
+                "type": "query",
+                "description": "Filter jobs by their current state."
+              }
+            ]
+          },
+          "docs": "Retrieve a list of plan validation jobs."
+        },
+        {
+          "info": {
+            "name": "Create a new plan validation job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-validation-jobs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates and starts a new plan validation job based on an existing plan descriptor.  The new job's ID will be generated by the server and returned in the Location header."
+        },
+        {
+          "info": {
+            "name": "Get plan validation job details by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-validation-jobs/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve detailed information about a specific plan validation job using its unique identifier."
+        },
+        {
+          "info": {
+            "name": "Cancel the validation job",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-validation-jobs/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Cancel the validation job"
+        },
+        {
+          "info": {
+            "name": "Delete a plan validation job by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-validation-jobs/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a specific plan validation job, typically if it's not in a terminal state (e.g., running, completed, failed)."
+        },
+        {
+          "info": {
+            "name": "Get job status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-validation-jobs/:id/status",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the current status of a specific plan validation job using its unique identifier."
+        },
+        {
+          "info": {
+            "name": "Get validation details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{MnSRoot}/plan-management/{MnSVersion}/plan-validation-jobs/:id/validation-details",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "details",
+                "value": "",
+                "type": "query",
+                "description": "Selects the level of details to return."
+              }
+            ]
+          },
+          "docs": "Retrieve detailed information about the validation results of a job"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

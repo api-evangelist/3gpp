@@ -1,0 +1,4528 @@
+{
+  "item": [
+    {
+      "id": "ac58dca8-7352-4a94-bac4-94b836048702",
+      "name": "VFL Inference Subscriptions (Collection)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0fdce00e-5581-4588-924a-47f2c038d488",
+          "name": "Retrieve all the active VFL Inference Subscriptions for the given AF.",
+          "request": {
+            "name": "Retrieve all the active VFL Inference Subscriptions for the given AF.",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Represents the identifier of the AF."
+                },
+                {
+                  "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3ea4ed5a-ca70-44ff-b4d4-b4646b69c931",
+              "name": "OK. All the Individual VFL Inference Subscription resource(s) managed by the NEF for the requested AF are returned. If there are no active Individual VFL Inference Subscription resources at the NEF for the requested AF, an empty array is returned.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"notifUri\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n    },\n    \"notifCorrId\": \"<string>\",\n    \"vflInferAnaSubs\": [\n      {\n        \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n      }\n    ],\n    \"extNwdafId\": \"<string>\",\n    \"reportingReqs\": {\n      \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n    },\n    \"suppFeats\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    },\n    \"vflInferResults\": [\n      {\n        \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  {\n    \"notifUri\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n    },\n    \"notifCorrId\": \"<string>\",\n    \"vflInferAnaSubs\": [\n      {\n        \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n      }\n    ],\n    \"extNwdafId\": \"<string>\",\n    \"reportingReqs\": {\n      \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n    },\n    \"suppFeats\": {\n      \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n    },\n    \"vflInferResults\": [\n      {\n        \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "35ceee16-2dc1-4a80-b18f-1fd9f1ed5aed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "63ec4b32-d777-4e35-8990-56dadd424481",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "02c239af-1c7e-4ae6-9e01-7850596b15c1",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "20f93e27-26f3-4d63-9306-73ee67273ba2",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "261ccb4f-d2be-479f-a516-0c56456ed445",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7fc0a78f-fa2b-45ac-9a47-c14a1a59c29a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7f6d625c-e4f8-4647-84be-d693cb65faf3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9f33d7e8-7195-4d37-a8fa-ee7913590e6c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7de4b4bc-1c45-42f3-8f8b-98f03f4a4142",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a7dcc030-69e3-4cb6-abad-61e5ec32d60f",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "19db0504-1a2f-45c0-9e39-a80af708cd98",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "397dda6c-baa9-4f93-b139-e5ef5243f6bd",
+      "name": "Subscriptions (Collection)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d9fb2d77-683b-46c0-bcb2-56fe5ca26359",
+          "name": "Create a new Individual VFL Inference Subscription resource.",
+          "request": {
+            "name": "Create a new Individual VFL Inference Subscription resource.",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Represents the identifier of the AF."
+                },
+                {
+                  "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "307dcf8b-b802-4dff-aada-d459a03c7d51",
+              "name": "Create a new Individual VFL Inference Subscription resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "(Required) Contains the URI of the newly created resource, according to the structure  {apiRoot}/3gpp-vfl-inference/v1/{afId}/subscriptions/{subscriptionId}.\n",
+                  "key": "Location",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b498cdc2-9e8d-4ae8-a275-c4c2ed4cdd61",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "63b81c28-4af0-4883-82fb-de1649d7840e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "562becc4-0294-4809-8bc6-95ac5de67452",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f65624b6-9805-4e13-b687-75e104c672be",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6b6ab868-11c1-4a7e-8d26-1f1e86982c76",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "16b6c718-6139-4b62-8c0f-28e2dbde3eae",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bc4d3eb2-67a1-4e81-93b4-c942b9f5cf8a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c09d9c5d-4f2a-4129-849b-426108277fa5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "37ccde92-685e-4a44-8a82-ea24912132e3",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "790f7531-d2a3-44de-8fbc-d3be54307c18",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f5aa690d-ea34-40bc-b98a-1e60d15c51fc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "5b250812-c8be-4da9-a7bb-2ae731563e99",
+      "name": "Individual VFL Inference Subscription (Document)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ea61416f-21f8-4d93-bb8c-4b9468bbd300",
+          "name": "Retrieve an existing Individual VFL Inference Subscription.",
+          "request": {
+            "name": "Retrieve an existing Individual VFL Inference Subscription.",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "subscriptions",
+                ":subscriptionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Represents the identifier of the AF."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) String identifying a VFL Inference Subscription."
+                },
+                {
+                  "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "476194ae-8b5a-4887-807b-c7abfcfac5cd",
+              "name": "OK. The requested Individual VFL Inference Subscription resource is successfully returned in the response body.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"string\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"string\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4524d221-9386-434d-b483-cf22bd6f6045",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9fe02f51-fbbe-4cd5-924b-84650169fc9e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f967266a-6cc8-42f8-b5fd-76ad2cf8fdc0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "36eaf7b3-6381-407d-9599-6d28c2c15af5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a812dae2-30ab-4dc3-88b8-df3c1859768d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8a5021cc-9b08-41b4-befa-ef6b7b723cb6",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5964f3ab-7399-49f8-adc0-68bdf61babf5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1406684b-02bc-4906-8ca8-90d0bcbc5503",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b81f6e8c-a228-4fd0-ae7b-2b112a30dd8d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d6461403-2a02-4d9b-b86c-c4ef0ee76a8a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1fa27e91-f09f-4af3-87be-2bcd780449bb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03ec9c1a-df6d-49e6-afe8-153251586c13",
+          "name": "Update an existing Individual VFL Inference Subscription",
+          "request": {
+            "name": "Update an existing Individual VFL Inference Subscription",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "subscriptions",
+                ":subscriptionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Represents the identifier of the AF."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) String identifying a VFL Inference Subscription."
+                },
+                {
+                  "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "37735a20-1c7f-4e99-8dfa-5181bdfcc92e",
+              "name": "The Individual VFL Inference Subscription resource was modified successfully and a representation of that resource is returned.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d85b2207-7293-42e8-9007-d534d06aa861",
+              "name": "The Individual VFL Inference Subscription resource was modified successfully.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ce50f594-88c8-4af4-9383-82aff516fc42",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6eac6f33-b16f-44c1-a2d1-e67b18296daf",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ccd9e68a-e055-4fe3-a771-03cfb766c413",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4154c4c2-23b6-4978-95d4-6303d06b6147",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cff99118-b81a-4cf0-8808-14a7de946b75",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2033a3e5-5a80-4c6b-a506-0b9360e996f4",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "99e4073b-383f-4f1e-b234-b73b9beee8d0",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "289cb9fd-70f2-4032-ba26-7e30521d8a9c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e6ba2104-a186-4896-be98-be9c9858ac0e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fa278d62-a764-4271-9d67-0493d6404b5a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7ad33846-a597-46dd-bcf6-a6fb44dd4f17",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "130bf987-4d8e-4719-b81e-47c05ee32b5d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ce794644-5a88-4710-ba1a-d145dbd0cde8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39a52b1b-8755-4cdd-ac9d-9c2d98cbbaad",
+          "name": "Partial update an existing Individual VFL Inference Subscription",
+          "request": {
+            "name": "Partial update an existing Individual VFL Inference Subscription",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "subscriptions",
+                ":subscriptionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Represents the identifier of the AF."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) String identifying a VFL Inference Subscription."
+                },
+                {
+                  "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/merge-patch+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3fa751e1-01b8-42f9-8c03-d27768edea56",
+              "name": "The Individual VFL Inference Subscription resource was partial modified successfully and a representation of that resource is returned.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ],\n  \"extNwdafId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"suppFeats\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/SupportedFeatures not found in the OpenAPI spec\"\n  },\n  \"vflInferResults\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult not found in the OpenAPI spec\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7595b713-e83c-4f9e-87a3-0d6380415b98",
+              "name": "The Individual VFL Inference Subscription resource was partial modified successfully.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a71b37a8-c2a3-4bcd-8fb1-278d59283163",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b765c9e9-d54b-4f57-8e23-3a8fbe07a5bb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "58df652c-c240-4312-a6fe-ead618ae4e2e",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d2641acc-044b-4881-a0a2-fadab5743689",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1d2daeed-b291-41d2-ad08-21b4e990177c",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1bf59ed9-2754-4dcf-b373-8052670248bc",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cbe6ff00-2d3a-44fd-946c-956df1ac9ffe",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Length Required",
+              "code": 411,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9edf84bc-8b08-463c-bbee-31ae242f0aeb",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Entity Too Large",
+              "code": 413,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2961a535-8f2e-487e-b3b8-5513d3a9fb66",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unsupported Media Type",
+              "code": 415,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5e3486b1-6c64-426f-be61-069ad574c1db",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "292c16fa-bb47-4130-a271-ce52ff542b30",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "854ab3b7-4944-4de0-8fb5-15038366a979",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "495d695e-82a7-47bd-8e4a-3fce0296ebaf",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"notifUri\": {\n    \"value\": \"reference TS29571_CommonData.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n  },\n  \"notifCorrId\": \"<string>\",\n  \"reportingReqs\": {\n    \"value\": \"reference TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation not found in the OpenAPI spec\"\n  },\n  \"vflInferAnaSubs\": [\n    {\n      \"value\": \"reference TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub not found in the OpenAPI spec\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ffbb1a51-f44c-428f-b678-955e1459e59f",
+          "name": "Delete an existing Individual VFL Inference Subscription.",
+          "request": {
+            "name": "Delete an existing Individual VFL Inference Subscription.",
+            "description": {},
+            "url": {
+              "path": [
+                ":afId",
+                "subscriptions",
+                ":subscriptionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "afId",
+                  "description": "(Required) Represents the identifier of the AF."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) String identifying a VFL Inference Subscription."
+                },
+                {
+                  "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                  "type": "any",
+                  "value": "{{apiRoot}}",
+                  "key": "apiRoot"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b1bb38db-dd8d-463b-9847-fbd71395280d",
+              "name": "No Content. The Individual VFL Inference Subscription matching the subscriptionId was deleted.\n",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "759f37c9-3b5f-4163-a1e2-cba742c6af71",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Temporary Redirect (since HTTP/1.1)",
+              "code": 307,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0ba27391-272b-4641-8969-703498b4b53a",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Resume Incomplete",
+              "code": 308,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "58df5219-00f7-458e-b6b5-bbafa3939c4b",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "95b978e4-b102-4839-ac2b-f461fe944f38",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "76ce4d39-9317-4839-9f0b-76375d08c333",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6e6e0e93-844e-41ad-9b46-ba1529f73f83",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fb0ff8cf-01ed-4988-a651-9f9c1df825a5",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "81fe9399-3483-49ea-9474-45efc97ee9fe",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c7930a25-b6c9-4bca-9d5b-2108682ccb79",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d4bee9e1-088b-4674-938b-5492e4f0a1f8",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":afId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "afId",
+                      "description": "(Required) Represents the identifier of the AF."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) String identifying a VFL Inference Subscription."
+                    },
+                    {
+                      "description": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+                      "type": "any",
+                      "value": "{{apiRoot}}",
+                      "key": "apiRoot"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "apiRoot as defined in clause 4.4 of 3GPP TS 29.501",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "https://example.com",
+      "key": "apiRoot"
+    },
+    {
+      "type": "string",
+      "value": "{{apiRoot}}/3gpp-vfl-inference/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "info": {
+    "_postman_id": "6005b678-f696-47ec-bb89-d7bcddffacac",
+    "name": "3gpp-vfl-inference",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for VFL Inference.  \n© 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n",
+      "type": "text/plain"
+    }
+  }
+}

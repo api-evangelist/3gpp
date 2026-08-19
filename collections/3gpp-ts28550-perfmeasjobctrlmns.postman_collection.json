@@ -1,0 +1,759 @@
+{
+  "item": [
+    {
+      "id": "5b5deeb9-5c43-47e7-9d73-ee2178787e60",
+      "name": "Create a measurement job",
+      "request": {
+        "name": "Create a measurement job",
+        "description": {
+          "content": "To create a measurement job the representation of the measurement job is POSTed on the /measJobs collection resource.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "measJobs"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"iOCName\": \"<string>\",\n  \"iOCInstanceList\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"measurementCategoryList\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"reportingMethod\": \"<string>\",\n  \"granularityPeriod\": \"<integer>\",\n  \"reportingPeriod\": \"<integer>\",\n  \"startTime\": \"<date-Time>\",\n  \"stopTime\": \"<date-Time>\",\n  \"schedule\": {\n    \"scheduleOption\": \"<string>\",\n    \"dailySchedule\": [\n      {\n        \"intervalStart\": \"<Time>\",\n        \"intervalEnd\": \"<Time>\"\n      },\n      {\n        \"intervalStart\": \"<Time>\",\n        \"intervalEnd\": \"<Time>\"\n      }\n    ],\n    \"weeklySchedule\": [\n      {\n        \"dayOfWeek\": \"<string>\",\n        \"intervalsOfDay\": [\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          },\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          }\n        ]\n      },\n      {\n        \"dayOfWeek\": \"<string>\",\n        \"intervalsOfDay\": [\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          },\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          }\n        ]\n      }\n    ]\n  },\n  \"streamTarget\": \"<string>\",\n  \"priority\": \"<string>\",\n  \"reliability\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "66456aac-4f04-4370-acc3-f0352ee6fb50",
+          "name": "Success case (\"201 Created\"). The representation of the newly created measurement job resource shall be returned.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "measJobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"iOCName\": \"<string>\",\n  \"iOCInstanceList\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"measurementCategoryList\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"reportingMethod\": \"<string>\",\n  \"granularityPeriod\": \"<integer>\",\n  \"reportingPeriod\": \"<integer>\",\n  \"startTime\": \"<date-Time>\",\n  \"stopTime\": \"<date-Time>\",\n  \"schedule\": {\n    \"scheduleOption\": \"<string>\",\n    \"dailySchedule\": [\n      {\n        \"intervalStart\": \"<Time>\",\n        \"intervalEnd\": \"<Time>\"\n      },\n      {\n        \"intervalStart\": \"<Time>\",\n        \"intervalEnd\": \"<Time>\"\n      }\n    ],\n    \"weeklySchedule\": [\n      {\n        \"dayOfWeek\": \"<string>\",\n        \"intervalsOfDay\": [\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          },\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          }\n        ]\n      },\n      {\n        \"dayOfWeek\": \"<string>\",\n        \"intervalsOfDay\": [\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          },\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          }\n        ]\n      }\n    ]\n  },\n  \"streamTarget\": \"<string>\",\n  \"priority\": \"<string>\",\n  \"reliability\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"unsupportedList\": [\n    {\n      \"iOCInstance\": \"<string>\",\n      \"measurementTypeName\": \"string\",\n      \"reason\": \"string\"\n    },\n    {\n      \"iOCInstance\": \"<string>\",\n      \"measurementTypeName\": \"string\",\n      \"reason\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "67d60041-27a4-4564-98b1-087542aee7d8",
+          "name": "Partial success case (\"202 Partically created\"). The representation of the newly created measurement job resource with unsupported list shall be returned.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "measJobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"iOCName\": \"<string>\",\n  \"iOCInstanceList\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"measurementCategoryList\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"reportingMethod\": \"<string>\",\n  \"granularityPeriod\": \"<integer>\",\n  \"reportingPeriod\": \"<integer>\",\n  \"startTime\": \"<date-Time>\",\n  \"stopTime\": \"<date-Time>\",\n  \"schedule\": {\n    \"scheduleOption\": \"<string>\",\n    \"dailySchedule\": [\n      {\n        \"intervalStart\": \"<Time>\",\n        \"intervalEnd\": \"<Time>\"\n      },\n      {\n        \"intervalStart\": \"<Time>\",\n        \"intervalEnd\": \"<Time>\"\n      }\n    ],\n    \"weeklySchedule\": [\n      {\n        \"dayOfWeek\": \"<string>\",\n        \"intervalsOfDay\": [\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          },\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          }\n        ]\n      },\n      {\n        \"dayOfWeek\": \"<string>\",\n        \"intervalsOfDay\": [\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          },\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          }\n        ]\n      }\n    ]\n  },\n  \"streamTarget\": \"<string>\",\n  \"priority\": \"<string>\",\n  \"reliability\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Accepted",
+          "code": 202,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"unsupportedList\": [\n    {\n      \"iOCInstance\": \"<string>\",\n      \"measurementTypeName\": \"string\",\n      \"reason\": \"string\"\n    },\n    {\n      \"iOCInstance\": \"<string>\",\n      \"measurementTypeName\": \"string\",\n      \"reason\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "ff1390d8-a17e-4831-b55e-4b5708d62e3d",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "measJobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"iOCName\": \"<string>\",\n  \"iOCInstanceList\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"measurementCategoryList\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"reportingMethod\": \"<string>\",\n  \"granularityPeriod\": \"<integer>\",\n  \"reportingPeriod\": \"<integer>\",\n  \"startTime\": \"<date-Time>\",\n  \"stopTime\": \"<date-Time>\",\n  \"schedule\": {\n    \"scheduleOption\": \"<string>\",\n    \"dailySchedule\": [\n      {\n        \"intervalStart\": \"<Time>\",\n        \"intervalEnd\": \"<Time>\"\n      },\n      {\n        \"intervalStart\": \"<Time>\",\n        \"intervalEnd\": \"<Time>\"\n      }\n    ],\n    \"weeklySchedule\": [\n      {\n        \"dayOfWeek\": \"<string>\",\n        \"intervalsOfDay\": [\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          },\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          }\n        ]\n      },\n      {\n        \"dayOfWeek\": \"<string>\",\n        \"intervalsOfDay\": [\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          },\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          }\n        ]\n      }\n    ]\n  },\n  \"streamTarget\": \"<string>\",\n  \"priority\": \"<string>\",\n  \"reliability\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": {\n    \"errorInfo\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "36537c3f-a69d-4413-a409-f13438b66120",
+      "name": "Read resources of measurement jobs",
+      "request": {
+        "name": "Read resources of measurement jobs",
+        "description": {
+          "content": "With HTTP GET, resources of measurement jobs are read. The resources to be read are identified with the path component (base resource) and the query component (jobIdList) of the URI. The fields query component allows to select the resource properties to be returned.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "measJobs"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "jobIdList",
+              "value": "<string>,<string>",
+              "description": "(Required) This parameter identifies the list of jobId to select the resources from the collection resources identified with the path component of the URI."
+            }
+          ],
+          "variable": [
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "9697f0b2-2200-4cf0-aff4-7d0753844138",
+          "name": "Success case (\"200 OK\"). The resources identified in the request for retrieval are returned in the response message body. In case the fields query parameter is used, the selected resources are returned.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "measJobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "jobIdList",
+                  "value": "<string>,<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"jobInfoList\": [\n    {\n      \"href\": \"<string>\",\n      \"iOCName\": \"string\",\n      \"iOCInstanceList\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"measurementCategoryList\": [\n        \"string\",\n        \"string\"\n      ],\n      \"reportingMethod\": \"<string>\",\n      \"granularityPeriod\": 2845,\n      \"reportingPeriod\": 851,\n      \"startTime\": \"<date-Time>\",\n      \"stopTime\": \"<date-Time>\",\n      \"schedule\": {\n        \"scheduleOption\": \"<string>\",\n        \"dailySchedule\": [\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          },\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          }\n        ],\n        \"weeklySchedule\": [\n          {\n            \"dayOfWeek\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalsOfDay\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          {\n            \"dayOfWeek\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalsOfDay\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          }\n        ]\n      },\n      \"streamTarget\": \"string\",\n      \"priority\": \"<string>\",\n      \"reliability\": \"string\"\n    },\n    {\n      \"href\": \"<string>\",\n      \"iOCName\": \"string\",\n      \"iOCInstanceList\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"measurementCategoryList\": [\n        \"string\",\n        \"string\"\n      ],\n      \"reportingMethod\": \"<string>\",\n      \"granularityPeriod\": 2543,\n      \"reportingPeriod\": 5107,\n      \"startTime\": \"<date-Time>\",\n      \"stopTime\": \"<date-Time>\",\n      \"schedule\": {\n        \"scheduleOption\": \"<string>\",\n        \"dailySchedule\": [\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          },\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          }\n        ],\n        \"weeklySchedule\": [\n          {\n            \"dayOfWeek\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalsOfDay\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          {\n            \"dayOfWeek\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalsOfDay\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          }\n        ]\n      },\n      \"streamTarget\": \"string\",\n      \"priority\": \"<string>\",\n      \"reliability\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "47681b18-6a55-4c5d-af18-8e2e083d00af",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "measJobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "jobIdList",
+                  "value": "<string>,<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": {\n    \"errorInfo\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "1dc93e77-d68a-4347-a9bd-4d5cc18f992e",
+      "name": "Read resource of a single measurement job",
+      "request": {
+        "name": "Read resource of a single measurement job",
+        "description": {
+          "content": "With HTTP GET, resource of a measurement job is read. The resource to be read is identified with the path component of the URI.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "measJobs",
+            ":jobId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "jobId",
+              "description": "(Required) Identifies the measurement job to be read."
+            },
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "aa948844-1e7b-47c4-9632-49f641352dd8",
+          "name": "Success case (\"200 OK\"). The resource identified in the path for retrieval is returned in the response message body. ",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "measJobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) Identifies the measurement job to be read."
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"jobInfoList\": [\n    {\n      \"href\": \"<string>\",\n      \"iOCName\": \"string\",\n      \"iOCInstanceList\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"measurementCategoryList\": [\n        \"string\",\n        \"string\"\n      ],\n      \"reportingMethod\": \"<string>\",\n      \"granularityPeriod\": 9548,\n      \"reportingPeriod\": 4768,\n      \"startTime\": \"<date-Time>\",\n      \"stopTime\": \"<date-Time>\",\n      \"schedule\": {\n        \"scheduleOption\": \"<string>\",\n        \"dailySchedule\": [\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          },\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          }\n        ],\n        \"weeklySchedule\": [\n          {\n            \"dayOfWeek\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalsOfDay\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          {\n            \"dayOfWeek\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalsOfDay\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          }\n        ]\n      },\n      \"streamTarget\": \"string\",\n      \"priority\": \"<string>\",\n      \"reliability\": \"string\"\n    },\n    {\n      \"href\": \"<string>\",\n      \"iOCName\": \"string\",\n      \"iOCInstanceList\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"measurementCategoryList\": [\n        \"string\",\n        \"string\"\n      ],\n      \"reportingMethod\": \"<string>\",\n      \"granularityPeriod\": 3413,\n      \"reportingPeriod\": 8832,\n      \"startTime\": \"<date-Time>\",\n      \"stopTime\": \"<date-Time>\",\n      \"schedule\": {\n        \"scheduleOption\": \"<string>\",\n        \"dailySchedule\": [\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          },\n          {\n            \"intervalStart\": \"<Time>\",\n            \"intervalEnd\": \"<Time>\"\n          }\n        ],\n        \"weeklySchedule\": [\n          {\n            \"dayOfWeek\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalsOfDay\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          {\n            \"dayOfWeek\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalsOfDay\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          }\n        ]\n      },\n      \"streamTarget\": \"string\",\n      \"priority\": \"<string>\",\n      \"reliability\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "3f0ce6ca-52e3-43a5-a77d-7cf714771125",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "measJobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) Identifies the measurement job to be read."
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": {\n    \"errorInfo\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "a2fa655b-422e-4612-817d-6e3270977f92",
+      "name": "Delete a single measurement job",
+      "request": {
+        "name": "Delete a single measurement job",
+        "description": {
+          "content": "The measurement job is deleted by deleting the corresponding measurement job resource. The resource to be deleted is identified with the path component of the URI.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "measJobs",
+            ":jobId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "jobId",
+              "description": "(Required) Identifies the measurement job to be deleted."
+            },
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "DELETE",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "2325b9e4-521e-4324-acce-1beb75f35a8c",
+          "name": "Success case (\"204 No Content\"). The measurement job resource has been deleted. The response message body is absent.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "measJobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) Identifies the measurement job to be deleted."
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "5093104e-21f0-48db-9902-a61e52d597d9",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "measJobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "jobId",
+                  "description": "(Required) Identifies the measurement job to be deleted."
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": {\n    \"errorInfo\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "See clause 4.4.2 of TS 32.158",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "http://example.com/3GPPManagement",
+      "key": "MnSRoot"
+    },
+    {
+      "description": {
+        "content": "Version number of the OpenAPI definition",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "XXX",
+      "key": "MnSVersion"
+    },
+    {
+      "type": "string",
+      "value": "{{MnSRoot}}/PerfMeasJobCtrlMnS/{{MnSVersion}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5cc62918-73cd-4cc2-b5da-a88f7a95d67a",
+    "name": "TS 28.550 Performance Measurement Job Control Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OAS 3.0.1 specification of the Performance Measurement Job Control Service @ 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.",
+      "type": "text/plain"
+    }
+  }
+}

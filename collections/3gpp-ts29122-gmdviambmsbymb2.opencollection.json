@@ -1,0 +1,378 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "GMDviaMBMSbyMB2",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TMGI Allocation Operation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "read all TMGI Allocation resource for a given SCS/AS",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-group-message-delivery-mb2/v1/:scsAsId/tmgi-allocation",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              }
+            ]
+          },
+          "docs": "read all TMGI Allocation resource for a given SCS/AS"
+        },
+        {
+          "info": {
+            "name": "Creates a new TMGI Allocation resource for a given SCS/AS.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-group-message-delivery-mb2/v1/:scsAsId/tmgi-allocation",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new TMGI Allocation resource for a given SCS/AS."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual TMGI Allocation Operation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read a TMGI Allocation resource for a given SCS/AS and a TMGI.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-group-message-delivery-mb2/v1/:scsAsId/tmgi-allocation/:tmgi",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "tmgi",
+                "value": "",
+                "type": "path",
+                "description": "TMGI"
+              }
+            ]
+          },
+          "docs": "Read a TMGI Allocation resource for a given SCS/AS and a TMGI."
+        },
+        {
+          "info": {
+            "name": "Updates an existing TMGI Allocation resource for a given SCS/AS and a TMGI.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-group-message-delivery-mb2/v1/:scsAsId/tmgi-allocation/:tmgi",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "tmgi",
+                "value": "",
+                "type": "path",
+                "description": "TMGI"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing TMGI Allocation resource for a given SCS/AS and a TMGI."
+        },
+        {
+          "info": {
+            "name": "Updates an existing TMGI Allocation resource for a given SCS/AS and a TMGI.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-group-message-delivery-mb2/v1/:scsAsId/tmgi-allocation/:tmgi",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "tmgi",
+                "value": "",
+                "type": "path",
+                "description": "TMGI"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing TMGI Allocation resource for a given SCS/AS and a TMGI."
+        },
+        {
+          "info": {
+            "name": "Deletes an existing TMGI Allocation resource for a given SCS/AS and a TMGI.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-group-message-delivery-mb2/v1/:scsAsId/tmgi-allocation/:tmgi",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "tmgi",
+                "value": "",
+                "type": "path",
+                "description": "TMGI"
+              }
+            ]
+          },
+          "docs": "Deletes an existing TMGI Allocation resource for a given SCS/AS and a TMGI."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Delivery via MBMS Operation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all group message delivery via MBMS resource for a given SCS/AS and a TMGI.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-group-message-delivery-mb2/v1/:scsAsId/tmgi-allocation/:tmgi/delivery-via-mbms",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "tmgi",
+                "value": "",
+                "type": "path",
+                "description": "TMGI"
+              }
+            ]
+          },
+          "docs": "Read all group message delivery via MBMS resource for a given SCS/AS and a TMGI."
+        },
+        {
+          "info": {
+            "name": "Creates a new delivery via MBMS for a given SCS/AS and a TMGI.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-group-message-delivery-mb2/v1/:scsAsId/tmgi-allocation/:tmgi/delivery-via-mbms",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "tmgi",
+                "value": "",
+                "type": "path",
+                "description": "TMGI"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new delivery via MBMS for a given SCS/AS and a TMGI."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Delivery via MBMS resource Operation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all group message delivery via MBMS resource for a given SCS/AS and a TMGI.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-group-message-delivery-mb2/v1/:scsAsId/tmgi-allocation/:tmgi/delivery-via-mbms/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "tmgi",
+                "value": "",
+                "type": "path",
+                "description": "TMGI"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of transaction"
+              }
+            ]
+          },
+          "docs": "Read all group message delivery via MBMS resource for a given SCS/AS and a TMGI."
+        },
+        {
+          "info": {
+            "name": "Updates a existing delivery via MBMS for a given SCS/AS, a TMGI and transaction Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-group-message-delivery-mb2/v1/:scsAsId/tmgi-allocation/:tmgi/delivery-via-mbms/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "tmgi",
+                "value": "",
+                "type": "path",
+                "description": "TMGI"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of transaction"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a existing delivery via MBMS for a given SCS/AS, a TMGI and transaction Id."
+        },
+        {
+          "info": {
+            "name": "Updates a existing delivery via MBMS for a given SCS/AS, a TMGI and transaction Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-group-message-delivery-mb2/v1/:scsAsId/tmgi-allocation/:tmgi/delivery-via-mbms/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "tmgi",
+                "value": "",
+                "type": "path",
+                "description": "TMGI"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of transaction"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a existing delivery via MBMS for a given SCS/AS, a TMGI and transaction Id."
+        },
+        {
+          "info": {
+            "name": "Deletes a delivery via MBMS resource for a given SCS/AS, a TMGI and a transcation Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-group-message-delivery-mb2/v1/:scsAsId/tmgi-allocation/:tmgi/delivery-via-mbms/:transactionId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of SCS/AS"
+              },
+              {
+                "name": "tmgi",
+                "value": "",
+                "type": "path",
+                "description": "TMGI"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of transaction"
+              }
+            ]
+          },
+          "docs": "Deletes a delivery via MBMS resource for a given SCS/AS, a TMGI and a transcation Id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

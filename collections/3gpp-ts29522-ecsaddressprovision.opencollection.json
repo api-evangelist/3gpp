@@ -1,0 +1,147 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-ecs-address-provision",
+    "version": "1.2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ECS Address Provision Configurations (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all active configurations for a given AF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-ecs-address-provision/v1/:afId/configurations",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              }
+            ]
+          },
+          "docs": "Read all active configurations for a given AF"
+        },
+        {
+          "info": {
+            "name": "Creates a new configuration resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-ecs-address-provision/v1/:afId/configurations",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new configuration resource"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual ECS Address Provision Configuration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read an active resource for the AF and the configuration Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-ecs-address-provision/v1/:afId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the configuration resource"
+              }
+            ]
+          },
+          "docs": "Read an active resource for the AF and the configuration Id"
+        },
+        {
+          "info": {
+            "name": "Fully updates/replaces an existing resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-ecs-address-provision/v1/:afId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the configuration resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Fully updates/replaces an existing resource"
+        },
+        {
+          "info": {
+            "name": "Deletes an already existing configuration resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-ecs-address-provision/v1/:afId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the configuration resource"
+              }
+            ]
+          },
+          "docs": "Deletes an already existing configuration resource"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

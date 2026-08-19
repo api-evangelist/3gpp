@@ -1,0 +1,1211 @@
+{
+  "item": [
+    {
+      "id": "f10d13b1-1631-4698-bf43-1704ade60847",
+      "name": "Replaces a complete single resource or creates it if it does not exist",
+      "request": {
+        "name": "Replaces a complete single resource or creates it if it does not exist",
+        "description": {
+          "content": "With HTTP PUT a complete resource is replaced or created if it does not exist. The target resource is identified by the target URI.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "{{className}}={{id}}"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            },
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{URI-LDN-first-part}}",
+              "key": "URI-LDN-first-part"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "PUT",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "1dd7a2f2-b1f3-4a09-b1de-fc744512ef93",
+          "name": "Success case (\"200 OK\"). This status code shall be returned when the resource is replaced, and when the replaced resource representation is not identical to the resource representation in the request. This status code may be returned when the resource is updated and when the updated resource representation is identical to the resource representation in the request. The representation of the updated resource is returned in the response message body.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "{{className}}={{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{URI-LDN-first-part}}",
+                  "key": "URI-LDN-first-part"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "da28836f-2eac-41db-a93a-915ddd5c49f8",
+          "name": "Success case (\"201 Created\"). This status code shall be returned when the resource is created. The representation of the created resource is returned in the response message body.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "{{className}}={{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{URI-LDN-first-part}}",
+                  "key": "URI-LDN-first-part"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "4a87e686-9cf0-4af9-a447-fd22d8da54ac",
+          "name": "Success case (\"204 No Content\"). This status code may be returned only when the replaced resource representation is identical to the representation in the request. The response has no message body.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "{{className}}={{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{URI-LDN-first-part}}",
+                  "key": "URI-LDN-first-part"
+                }
+              ]
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "d3453d11-e92c-4352-a099-b8c97af0f13d",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "{{className}}={{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{URI-LDN-first-part}}",
+                  "key": "URI-LDN-first-part"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "5eb0edf4-93fb-42e8-ba8e-0a697d96d0f2",
+      "name": "Reads one or multiple resources",
+      "request": {
+        "name": "Reads one or multiple resources",
+        "description": {
+          "content": "With HTTP GET resources are read. The resources to be retrieved are identified with the target URI. The attributes and fields parameter of the query components allow to select the resource properties to be returned.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "{{className}}={{id}}"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "description": {
+                "content": "This parameter extends the set of targeted resources beyond the base resource identified with the path component of the URI.",
+                "type": "text/plain"
+              },
+              "key": "scope",
+              "value": ""
+            },
+            {
+              "disabled": false,
+              "key": "value",
+              "value": "reference TS28623_ComDefs.yaml#/components/schemas/JexConditions not found in the OpenAPI spec",
+              "description": "This parameter reduces the targeted set of resources by applying a filter to the scoped set of resource representations. Only resource representations for which the filter construct evaluates to \"true\" are targeted."
+            },
+            {
+              "disabled": false,
+              "key": "attributes",
+              "value": "<string>,<string>",
+              "description": "This parameter specifies the attributes of the scoped resources that are returned."
+            },
+            {
+              "disabled": false,
+              "key": "fields",
+              "value": "<string>,<string>",
+              "description": "This parameter specifies the attribute field of the scoped resources that are returned."
+            },
+            {
+              "disabled": false,
+              "key": "value",
+              "value": "reference TS28623_ComDefs.yaml#/components/schemas/JexNodeSelectionBasic not found in the OpenAPI spec",
+              "description": "This parameter contains an expression allowing to conditionally select data nodes."
+            }
+          ],
+          "variable": [
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            },
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{URI-LDN-first-part}}",
+              "key": "URI-LDN-first-part"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "f47ae7a2-93ae-4f8b-a9e4-584eff45ecbb",
+          "name": "Success case (\"200 OK\"). The resources identified in the request for retrieval are returned in the response message body. In case the attributes or fields query parameters are used, only the selected attributes or sub-attributes are returned. The response message body is constructed according to the hierarchical response construction method (TS 32.158 [15]).",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "{{className}}={{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "scope",
+                  "value": ""
+                },
+                {
+                  "key": "value",
+                  "value": "reference TS28623_ComDefs.yaml#/components/schemas/JexConditions not found in the OpenAPI spec"
+                },
+                {
+                  "key": "attributes",
+                  "value": "<string>,<string>"
+                },
+                {
+                  "key": "fields",
+                  "value": "<string>,<string>"
+                },
+                {
+                  "key": "value",
+                  "value": "reference TS28623_ComDefs.yaml#/components/schemas/JexNodeSelectionBasic not found in the OpenAPI spec"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{URI-LDN-first-part}}",
+                  "key": "URI-LDN-first-part"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "15ac7573-1d9b-4e78-a982-dd7bc4f6a81f",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "{{className}}={{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "scope",
+                  "value": ""
+                },
+                {
+                  "key": "value",
+                  "value": "reference TS28623_ComDefs.yaml#/components/schemas/JexConditions not found in the OpenAPI spec"
+                },
+                {
+                  "key": "attributes",
+                  "value": "<string>,<string>"
+                },
+                {
+                  "key": "fields",
+                  "value": "<string>,<string>"
+                },
+                {
+                  "key": "value",
+                  "value": "reference TS28623_ComDefs.yaml#/components/schemas/JexNodeSelectionBasic not found in the OpenAPI spec"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{URI-LDN-first-part}}",
+                  "key": "URI-LDN-first-part"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "daf9ddda-d07a-4657-8ff7-977575fb8e4d",
+      "name": "Patches one or multiple resources",
+      "request": {
+        "name": "Patches one or multiple resources",
+        "description": {
+          "content": "With HTTP PATCH resources are created, updated or deleted. The resources to be modified are identified with the target URI (base resource) and the patch document included in the request message body.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "{{className}}={{id}}"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            },
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{URI-LDN-first-part}}",
+              "key": "URI-LDN-first-part"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/merge-patch+json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "PATCH",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "10aca69b-222c-49b1-bb65-5518ffce7062",
+          "name": "Success case (\"200 OK\"). This status code is returned when the updated the resource representations shall be returned for some reason. The resource representations are returned in the response message body. The response message body is constructed according to the hierarchical response construction method (TS 32.158 [15])",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "{{className}}={{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{URI-LDN-first-part}}",
+                  "key": "URI-LDN-first-part"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "460adaeb-d600-45fc-94e1-5e6f09b20b66",
+          "name": "Success case (\"204 No Content\"). This status code is returned when there is no need to return the updated resource representations. The response message body is empty.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "{{className}}={{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{URI-LDN-first-part}}",
+                  "key": "URI-LDN-first-part"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "332dc5e0-69bc-43cd-af44-d437723a9cc2",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "{{className}}={{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{URI-LDN-first-part}}",
+                  "key": "URI-LDN-first-part"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/ErrorResponseDefault not found in the OpenAPI spec\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "70109445-dcd7-4105-aa35-a3fd7a0ff6b5",
+      "name": "Deletes one resource",
+      "request": {
+        "name": "Deletes one resource",
+        "description": {
+          "content": "With HTTP DELETE one resource is deleted. The resources to be deleted is identified with the target URI.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "{{className}}={{id}}"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            },
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{URI-LDN-first-part}}",
+              "key": "URI-LDN-first-part"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "DELETE",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "b47bb143-95aa-42eb-9216-94b8dbdb9df6",
+          "name": "Success case (\"204 No Content\"). This status code is returned, when the resource has been successfully deleted. The response body is empty.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "{{className}}={{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{URI-LDN-first-part}}",
+                  "key": "URI-LDN-first-part"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "bb82c29d-3117-4c50-8048-8cca2d0950e5",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "{{className}}={{id}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{URI-LDN-first-part}}",
+                  "key": "URI-LDN-first-part"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "d22ba9c8-cc1f-4a92-9563-1cb2a75fcb51",
+      "name": "Creates a complete single resource",
+      "request": {
+        "name": "Creates a complete single resource",
+        "description": {
+          "content": "With HTTP POST a complete single resource is created. The identifier of the new resource is assigned by the MnS producer.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            ":URI-LDN-first-part"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "{{URI-LDN-first-part}}",
+              "key": "URI-LDN-first-part",
+              "description": "See clause 4.4.2 of TS 32.158"
+            },
+            {
+              "description": "See clause 4.4.2 of TS 32.158",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "3ddc8707-d482-49dd-9496-395d9fe600a0",
+          "name": "Success case (\"201 Created\"). This status code shall be returned when the resource is created. The representation of the created resource is returned in the response message body.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                ":URI-LDN-first-part"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "{{URI-LDN-first-part}}",
+                  "key": "URI-LDN-first-part",
+                  "description": "See clause 4.4.2 of TS 32.158"
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "57e45f66-2fd6-434d-b735-f50f7a026608",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                ":URI-LDN-first-part"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "{{URI-LDN-first-part}}",
+                  "key": "URI-LDN-first-part",
+                  "description": "See clause 4.4.2 of TS 32.158"
+                },
+                {
+                  "description": "See clause 4.4.2 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"objectClass\": \"<string>\",\n  \"objectInstance\": {\n    \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Dn not found in the OpenAPI spec\"\n  },\n  \"attributes\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "See clause 4.4.2 of TS 32.158",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "http://example.com/3GPPManagement",
+      "key": "MnSRoot"
+    },
+    {
+      "description": {
+        "content": "Version number of the OpenAPI definition",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "XXX",
+      "key": "MnSVersion"
+    },
+    {
+      "description": {
+        "content": "See clause 4.4.2 of TS 32.158",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "",
+      "key": "URI-LDN-first-part"
+    },
+    {
+      "type": "string",
+      "value": "{{MnSRoot}}/ProvMnS/{{MnSVersion}}/{{URI-LDN-first-part}}",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "className"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "id"
+    }
+  ],
+  "info": {
+    "_postman_id": "51f182c5-6a38-476a-807d-0da4c37a2ff9",
+    "name": "Provisioning MnS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OAS 3.0.1 definition of the Provisioning MnS © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.",
+      "type": "text/plain"
+    }
+  }
+}

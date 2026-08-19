@@ -1,0 +1,207 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-ecs-address",
+    "version": "1.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ECS Address Configuration Information Sets (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all the active ECS Address Configuration Information Set(s).",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-ecs-address/v1/:afId/configurations",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              }
+            ]
+          },
+          "docs": "Retrieve all the active ECS Address Configuration Information Set(s)."
+        },
+        {
+          "info": {
+            "name": "Create a new ECS Address Configuration Information Set.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-ecs-address/v1/:afId/configurations",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new ECS Address Configuration Information Set."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual ECS Address Configuration Information Set (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an existing Individual ECS Address Configuration Information Set resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-ecs-address/v1/:afId/configurations/:configId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "configId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual ECS Address Configuration Information Set resource.\n"
+              }
+            ]
+          },
+          "docs": "Retrieve an existing Individual ECS Address Configuration Information Set resource."
+        },
+        {
+          "info": {
+            "name": "Update an existing Individual ECS Address Configuration Information Set resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-ecs-address/v1/:afId/configurations/:configId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "configId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual ECS Address Configuration Information Set resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing Individual ECS Address Configuration Information Set resource."
+        },
+        {
+          "info": {
+            "name": "Delete an existing Individual ECS Address Configuration Information Set resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-ecs-address/v1/:afId/configurations/:configId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "configId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual ECS Address Configuration Information Set resource.\n"
+              }
+            ]
+          },
+          "docs": "Delete an existing Individual ECS Address Configuration Information Set resource"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Individual ECS Address Configuration Set (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request the modification of an existing Individual ECS Address Configuration Information Set resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-ecs-address/v1/:afId/configurations/:configId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "configId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual ECS Address Configuration Information Set resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the modification of an existing Individual ECS Address Configuration Information Set resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ECS Address Configuration Information Deletion Request",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Remove ECS Address Configuration information based on given criteria.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-ecs-address/v1/remove-ecsaddr",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove ECS Address Configuration information based on given criteria."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

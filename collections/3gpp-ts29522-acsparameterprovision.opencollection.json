@@ -1,0 +1,176 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-acs-pp",
+    "version": "1.1.2"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ACS Configuration Subscriptions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "read all of the active subscriptions for the AF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-acs-pp/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              }
+            ]
+          },
+          "docs": "read all of the active subscriptions for the AF"
+        },
+        {
+          "info": {
+            "name": "Creates a new subscription resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-acs-pp/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new subscription resource"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual ACS Configuration Subscription",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "read an active subscription for the AF and the subscription Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-acs-pp/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ]
+          },
+          "docs": "read an active subscription for the AF and the subscription Id"
+        },
+        {
+          "info": {
+            "name": "Fully updates/replaces an existing subscription resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-acs-pp/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Fully updates/replaces an existing subscription resource"
+        },
+        {
+          "info": {
+            "name": "Partial modifies an existing subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-acs-pp/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Partial modifies an existing subscription resource."
+        },
+        {
+          "info": {
+            "name": "Deletes an already existing subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-acs-pp/v1/:afId/subscriptions/:subscriptionId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "subscriptionId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the subscription resource"
+              }
+            ]
+          },
+          "docs": "Deletes an already existing subscription"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

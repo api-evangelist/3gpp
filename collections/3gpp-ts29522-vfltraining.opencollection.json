@@ -1,0 +1,176 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-vfl-training",
+    "version": "1.0.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "VFL Training Subscriptions (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve all the active VFL Training Subscriptions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-vfl-training/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF"
+              }
+            ]
+          },
+          "docs": "Retrieve all the active VFL Training Subscriptions."
+        },
+        {
+          "info": {
+            "name": "Create a new Individual VFL Training Subscription.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-vfl-training/v1/:afId/subscriptions",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Individual VFL Training Subscription."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual VFL Training Subscription (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an existing Individual VFL Training Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-vfl-training/v1/:afId/subscriptions/:subId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual VFL Training Subscription resource."
+              }
+            ]
+          },
+          "docs": "Retrieve an existing Individual VFL Training Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Request the update of an existing Individual VFL Training Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-vfl-training/v1/:afId/subscriptions/:subId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual VFL Training Subscription resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the update of an existing Individual VFL Training Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Request modification of an existing Individual VFL Training Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-vfl-training/v1/:afId/subscriptions/:subId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual VFL Training Subscription resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request modification of an existing Individual VFL Training Subscription resource."
+        },
+        {
+          "info": {
+            "name": "Request deletion of an existing Individual VFL Training Subscription resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-vfl-training/v1/:afId/subscriptions/:subId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "subId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual VFL Training Subscription resource."
+              }
+            ]
+          },
+          "docs": "Request deletion of an existing Individual VFL Training Subscription resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

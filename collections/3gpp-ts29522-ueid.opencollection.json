@@ -1,0 +1,237 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-ueid",
+    "version": "1.2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Default",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve AF specific UE ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-ueid/v1/retrieve",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieve AF specific UE ID."
+        },
+        {
+          "info": {
+            "name": "GET the MSISDN of the UE.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-ueid/v1/get-msisdn",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "GET the MSISDN of the UE."
+        },
+        {
+          "info": {
+            "name": "Request to verify whether the UE's MSISDN provided by the AF matches the UE ID in the form of MSISDN retrieved from the UDM.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-ueid/v1/verify-msisdn",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request to verify whether the UE's MSISDN provided by the AF matches the UE ID in the form of MSISDN retrieved from the UDM."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "UE ID Mapping Information Provisionings (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve all the active UE ID Mapping Information Provisionings at the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-ueid/v1/:afId/pp",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              }
+            ]
+          },
+          "docs": "Request to retrieve all the active UE ID Mapping Information Provisionings at the NEF."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "UE ID Mapping Information Provisioning (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request the creation of a new UE ID Mapping Information Provisioning.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-ueid/v1/:afId/pp",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the creation of a new UE ID Mapping Information Provisioning."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual UE ID Mapping Information Provisioning (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve an existing Individual UE ID Mapping Information Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-ueid/v1/:afId/pp/:ppId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual UE ID Mapping Information Provisioning resource.\n"
+              }
+            ]
+          },
+          "docs": "Request to retrieve an existing Individual UE ID Mapping Information Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Request the update of an existing Individual UE ID Mapping Information Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-ueid/v1/:afId/pp/:ppId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual UE ID Mapping Information Provisioning resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the update of an existing Individual UE ID Mapping Information Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Request the modification of an existing Individual UE ID Mapping Information Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-ueid/v1/:afId/pp/:ppId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual UE ID Mapping Information Provisioning resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request the modification of an existing Individual UE ID Mapping Information Provisioning resource."
+        },
+        {
+          "info": {
+            "name": "Request the deletion of an existing Individual UE ID Mapping Information Provisioning resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-ueid/v1/:afId/pp/:ppId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the AF."
+              },
+              {
+                "name": "ppId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual UE ID Mapping Information Provisioning resource.\n"
+              }
+            ]
+          },
+          "docs": "Request the deletion of an existing Individual UE ID Mapping Information Provisioning resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

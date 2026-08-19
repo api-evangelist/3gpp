@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "CAPIF_Routing_Info_API",
+    "version": "1.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Individual Service API routing Info (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetAPIRouteInfo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/capif-routing-info/v1/service-apis/:serviceApiId",
+            "params": [
+              {
+                "name": "serviceApiId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of a published service API"
+              },
+              {
+                "name": "aef-id",
+                "value": "",
+                "type": "query",
+                "description": "Identifier of the AEF"
+              },
+              {
+                "name": "supp-feat",
+                "value": "",
+                "type": "query",
+                "description": "To filter irrelevant responses related to unsupported features"
+              }
+            ]
+          },
+          "docs": "Retrieves the API routing information."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

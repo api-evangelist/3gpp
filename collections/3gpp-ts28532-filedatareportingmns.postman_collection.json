@@ -1,0 +1,569 @@
+{
+  "item": [
+    {
+      "id": "bc9d6659-bd0d-4efa-91e0-7bc1bac9a669",
+      "name": "Read information about available files",
+      "request": {
+        "name": "Read information about available files",
+        "description": {
+          "content": "Information about available files is read with HTTP GET. The files for which information shall be returned are identified with the path component (base resource) and the query component (fileDataType, beginTime, endTime) of the URI.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "files"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "fileDataType",
+              "value": "<string>",
+              "description": "(Required) This parameter selects files based on the file data type."
+            },
+            {
+              "disabled": false,
+              "key": "value",
+              "value": "reference TS28623_ComDefs.yaml#/components/schemas/DateTime not found in the OpenAPI spec",
+              "description": "This parameter selects files based on the earliest time they became available"
+            },
+            {
+              "disabled": false,
+              "key": "value",
+              "value": "reference TS28623_ComDefs.yaml#/components/schemas/DateTime not found in the OpenAPI spec",
+              "description": "This parameter selects files based on the latest time they became available"
+            }
+          ],
+          "variable": [
+            {
+              "description": "See clause 4.4.3 of TS 32.158",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "9e6e1faf-a98e-4c50-9def-38ac4afe21ae",
+          "name": "'Success case (\"200 OK\"). The resources identified in the request for retrieval are returned in the response message body.'",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "fileDataType",
+                  "value": "<string>"
+                },
+                {
+                  "key": "value",
+                  "value": "reference TS28623_ComDefs.yaml#/components/schemas/DateTime not found in the OpenAPI spec"
+                },
+                {
+                  "key": "value",
+                  "value": "reference TS28623_ComDefs.yaml#/components/schemas/DateTime not found in the OpenAPI spec"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "See clause 4.4.3 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "[\n  {\n    \"fileLocation\": {\n      \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n    },\n    \"fileSize\": 210,\n    \"fileReadyTime\": {\n      \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n    },\n    \"fileExpirationTime\": {\n      \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n    },\n    \"fileCompression\": \"string\",\n    \"fileFormat\": \"string\",\n    \"fileDataType\": \"<string>\",\n    \"jobId\": \"string\"\n  },\n  {\n    \"fileLocation\": {\n      \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/Uri not found in the OpenAPI spec\"\n    },\n    \"fileSize\": 5071,\n    \"fileReadyTime\": {\n      \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n    },\n    \"fileExpirationTime\": {\n      \"value\": \"reference TS28623_ComDefs.yaml#/components/schemas/DateTime not found in the OpenAPI spec\"\n    },\n    \"fileCompression\": \"string\",\n    \"fileFormat\": \"string\",\n    \"fileDataType\": \"<string>\",\n    \"jobId\": \"string\"\n  }\n]",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "645b310d-92d3-4ba1-9275-74c72234a818",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "fileDataType",
+                  "value": "<string>"
+                },
+                {
+                  "key": "value",
+                  "value": "reference TS28623_ComDefs.yaml#/components/schemas/DateTime not found in the OpenAPI spec"
+                },
+                {
+                  "key": "value",
+                  "value": "reference TS28623_ComDefs.yaml#/components/schemas/DateTime not found in the OpenAPI spec"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "See clause 4.4.3 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "c4c99f25-6c3e-4cba-8814-c6acb004bead",
+      "name": "Create a subscription",
+      "request": {
+        "name": "Create a subscription",
+        "description": {
+          "content": "To create a subscription the representation of the subscription is POSTed on the /subscriptions collection resource.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "subscriptions"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "description": "See clause 4.4.3 of TS 32.158",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "55468ad5-5ac9-4846-b61e-5a723b10a544",
+          "name": "Success case (\"201 Created\"). The representation of the newly created subscription resource shall be returned.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.3 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "header": [
+            {
+              "disabled": false,
+              "description": "(Required) URI of the newly created subscription resource",
+              "key": "Location",
+              "value": "string"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "38b8dda9-1576-42ef-bba3-7042c1517e7b",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "See clause 4.4.3 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "d8844def-971b-4951-97a8-0a36ca08658e",
+      "name": "Delete a subscription",
+      "request": {
+        "name": "Delete a subscription",
+        "description": {
+          "content": "The subscription is deleted by deleting the corresponding subscription resource. The resource to be deleted is identified with the path component of the URI.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "subscriptions",
+            ":subscriptionId"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "subscriptionId",
+              "description": "(Required) Identifies the subscription to be deleted."
+            },
+            {
+              "description": "See clause 4.4.3 of TS 32.158",
+              "type": "any",
+              "value": "{{MnSRoot}}",
+              "key": "MnSRoot"
+            },
+            {
+              "description": "Version number of the OpenAPI definition",
+              "type": "any",
+              "value": "{{MnSVersion}}",
+              "key": "MnSVersion"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "DELETE",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "c1f60818-835d-4d15-a3a0-796254b2a6ef",
+          "name": "Success case (\"204 No Content\"). The subscription resource has been deleted. The response message body is absent.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) Identifies the subscription to be deleted."
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "No Content",
+          "code": 204,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "ea38442f-d375-4dce-8576-b0cacf8b704c",
+          "name": "Error case.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) Identifies the subscription to be deleted."
+                },
+                {
+                  "description": "See clause 4.4.3 of TS 32.158",
+                  "type": "any",
+                  "value": "{{MnSRoot}}",
+                  "key": "MnSRoot"
+                },
+                {
+                  "description": "Version number of the OpenAPI definition",
+                  "type": "any",
+                  "value": "{{MnSVersion}}",
+                  "key": "MnSVersion"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "See clause 4.4.3 of TS 32.158",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "http://example.com/3GPPManagement",
+      "key": "MnSRoot"
+    },
+    {
+      "description": {
+        "content": "Version number of the OpenAPI definition",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "XXX",
+      "key": "MnSVersion"
+    },
+    {
+      "type": "string",
+      "value": "{{MnSRoot}}/fileDataReportingMnS/{{MnSVersion}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ae22046b-6df6-4eeb-b73e-e2bddea6df13",
+    "name": "File Data Reporting MnS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OAS 3.0.1 definition of the File Data Reporting MnS © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.",
+      "type": "text/plain"
+    }
+  }
+}

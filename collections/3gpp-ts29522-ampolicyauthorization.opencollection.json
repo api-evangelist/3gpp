@@ -1,0 +1,190 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-am-policyauthorization",
+    "version": "1.2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Application AM Contexts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Creates a new Individual application AM Context resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-am-policyauthorization/v1/:afId/app-am-contexts",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new Individual application AM Context resource"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Application AM Context",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "read an existing Individual application AM context",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-am-policyauthorization/v1/:afId/app-am-contexts/:appAmContextId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "appAmContextId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the Individual application AM context"
+              }
+            ]
+          },
+          "docs": "read an existing Individual application AM context"
+        },
+        {
+          "info": {
+            "name": "partial modifies an existing Individual application AM context",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-am-policyauthorization/v1/:afId/app-am-contexts/:appAmContextId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "appAmContextId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the application AM context resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "partial modifies an existing Individual application AM context"
+        },
+        {
+          "info": {
+            "name": "Deletes an existing Individual Application AM Context",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-am-policyauthorization/v1/:afId/app-am-contexts/:appAmContextId",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "appAmContextId",
+                "value": "",
+                "type": "path",
+                "description": "string identifying the Individual aaplication AM context resource"
+              }
+            ]
+          },
+          "docs": "Deletes an existing Individual Application AM Context"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "AM Policy Events Subscription",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "creates or modifies an AM Policy Events Subscription sub-resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-am-policyauthorization/v1/:afId/app-am-contexts/:appAmContextId/events-subscription",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "appAmContextId",
+                "value": "",
+                "type": "path",
+                "description": "string identifying the AM Policy Events Subscription subresource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "creates or modifies an AM Policy Events Subscription sub-resource."
+        },
+        {
+          "info": {
+            "name": "deletes the AM Policy Events Subscription sub-resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-am-policyauthorization/v1/:afId/app-am-contexts/:appAmContextId/events-subscription",
+            "params": [
+              {
+                "name": "afId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the AF"
+              },
+              {
+                "name": "appAmContextId",
+                "value": "",
+                "type": "path",
+                "description": "string identifying the Individual Application AM Context resource."
+              }
+            ]
+          },
+          "docs": "deletes the AM Policy Events Subscription sub-resource"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

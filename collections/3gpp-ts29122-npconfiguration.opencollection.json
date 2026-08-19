@@ -1,0 +1,176 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-network-parameter-configuration",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Np Configurations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read all of the active configurations for the SCS/AS.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-network-parameter-configuration/v1/:scsAsId/configurations",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              }
+            ]
+          },
+          "docs": "Read all of the active configurations for the SCS/AS."
+        },
+        {
+          "info": {
+            "name": "Creates a new configuration resource for network parameter configuration.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-network-parameter-configuration/v1/:scsAsId/configurations",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new configuration resource for network parameter configuration."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual Np Configuration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read an active configuration for the SCS/AS and the configuration Id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-network-parameter-configuration/v1/:scsAsId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the configuration resource"
+              }
+            ]
+          },
+          "docs": "Read an active configuration for the SCS/AS and the configuration Id."
+        },
+        {
+          "info": {
+            "name": "Updates/replaces an existing configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-network-parameter-configuration/v1/:scsAsId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the configuration resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates/replaces an existing configuration resource."
+        },
+        {
+          "info": {
+            "name": "Updates/replaces an existing configuration resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-network-parameter-configuration/v1/:scsAsId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the configuration resource"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates/replaces an existing configuration resource."
+        },
+        {
+          "info": {
+            "name": "Deletes an already existing configuration.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-network-parameter-configuration/v1/:scsAsId/configurations/:configurationId",
+            "params": [
+              {
+                "name": "scsAsId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the SCS/AS"
+              },
+              {
+                "name": "configurationId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier of the configuration resource"
+              }
+            ]
+          },
+          "docs": "Deletes an already existing configuration."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

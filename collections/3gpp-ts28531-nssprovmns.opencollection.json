@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Network Slice Subnet Provisioning MnS",
+    "version": "18.6.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Create a SliceProfile",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{MnSRoot}/NSSProvMnS/{MnSVersion}/SliceProfiles",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "To create a SliceeProfile resource to represent network slice subnet related requirements."
+    },
+    {
+      "info": {
+        "name": "Delete a SliceProfile",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "{MnSRoot}/NSSProvMnS/{MnSVersion}/SliceProfiles/:SliceProfileId",
+        "params": [
+          {
+            "name": "SliceProfileId",
+            "value": "",
+            "type": "path",
+            "description": "Identifies an individual SliceProfille."
+          },
+          {
+            "name": "networkSliceSubnetDN",
+            "value": "",
+            "type": "query",
+            "description": "Identifies the DN of NetworkSliceSubnet MOI uniquely identifying the network slice subnet instance"
+          }
+        ]
+      },
+      "docs": "To delete a SliceProfile resource to represent network slice suubnet related requirements."
+    }
+  ],
+  "bundled": true
+}

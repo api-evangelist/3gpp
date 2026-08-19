@@ -1,0 +1,94 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nnwdaf_AnalyticsInfo",
+    "version": "1.2.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NWDAF Analytics (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Read a NWDAF Analytics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/nnwdaf-analyticsinfo/v1/analytics",
+            "params": [
+              {
+                "name": "event-id",
+                "value": "",
+                "type": "query",
+                "description": "Identify the analytics."
+              },
+              {
+                "name": "ana-req",
+                "value": "",
+                "type": "query",
+                "description": "Identifies the analytics reporting requirement information."
+              },
+              {
+                "name": "event-filter",
+                "value": "",
+                "type": "query",
+                "description": "Identify the analytics."
+              },
+              {
+                "name": "supported-features",
+                "value": "",
+                "type": "query",
+                "description": "To filter irrelevant responses related to unsupported features."
+              },
+              {
+                "name": "tgt-ue",
+                "value": "",
+                "type": "query",
+                "description": "Identify the target UE information."
+              }
+            ]
+          },
+          "docs": "Read a NWDAF Analytics"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "NWDAF Context (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get context information related to analytics subscriptions.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/nnwdaf-analyticsinfo/v1/context",
+            "params": [
+              {
+                "name": "context-ids",
+                "value": "",
+                "type": "query",
+                "description": "Identifies specific context information related to analytics subscriptions."
+              },
+              {
+                "name": "req-context",
+                "value": "",
+                "type": "query",
+                "description": "Identfies the type(s) of the analytics context information the consumer wishes to receive.\n"
+              }
+            ]
+          },
+          "docs": "Get context information related to analytics subscriptions."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

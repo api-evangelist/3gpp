@@ -1,0 +1,152 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "3gpp-ims-sm",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "IMS Sessions (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to retrieve all the active IMS Sessions managed by the NEF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-ims-sm/v1/ims-sessions"
+          },
+          "docs": "Request to retrieve all the active IMS Sessions managed by the NEF."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "IMS Session Creation (Collection)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request to create a new IMS Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/3gpp-ims-sm/v1/ims-sessions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request to create a new IMS Session resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual IMS Session (Document)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve an existing Individual IMS Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{apiRoot}/3gpp-ims-sm/v1/ims-sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual IMS Session resource.\n"
+              }
+            ]
+          },
+          "docs": "Retrieve an existing Individual IMS Session resource."
+        },
+        {
+          "info": {
+            "name": "Update an existing Individual IMS Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{apiRoot}/3gpp-ims-sm/v1/ims-sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual IMS Session resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing Individual IMS Session resource."
+        },
+        {
+          "info": {
+            "name": "Delete an existing Individual IMS Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{apiRoot}/3gpp-ims-sm/v1/ims-sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual IMS Session resource.\n"
+              }
+            ]
+          },
+          "docs": "Delete an existing Individual IMS Session resource."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Individual IMS Session",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Modify an existing Individual IMS Session resource.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{apiRoot}/3gpp-ims-sm/v1/ims-sessions/:sessionId",
+            "params": [
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path",
+                "description": "Represents the identifier of the Individual IMS Session resource.\n"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Modify an existing Individual IMS Session resource."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

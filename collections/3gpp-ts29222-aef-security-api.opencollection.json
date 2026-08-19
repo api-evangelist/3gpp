@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AEF_Security_API",
+    "version": "1.4.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Check Authentication Request",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check authentication.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/aef-security/v1/check-authentication",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Check authentication."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Revoke Authorization Request",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Revoke authorization for service APIs.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{apiRoot}/aef-security/v1/revoke-authorization",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Revoke authorization for service APIs."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

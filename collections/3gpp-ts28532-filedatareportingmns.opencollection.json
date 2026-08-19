@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "File Data Reporting MnS",
+    "version": "19.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Read information about available files",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "{MnSRoot}/fileDataReportingMnS/{MnSVersion}/files",
+        "params": [
+          {
+            "name": "fileDataType",
+            "value": "",
+            "type": "query",
+            "description": "This parameter selects files based on the file data type."
+          },
+          {
+            "name": "beginTime",
+            "value": "",
+            "type": "query",
+            "description": "This parameter selects files based on the earliest time they became available"
+          },
+          {
+            "name": "endTime",
+            "value": "",
+            "type": "query",
+            "description": "This parameter selects files based on the latest time they became available"
+          }
+        ]
+      },
+      "docs": "Information about available files is read with HTTP GET. The files for which information shall be returned are identified with the path component (base resource) and the query component (fileDataType, beginTime, endTime) of the URI."
+    },
+    {
+      "info": {
+        "name": "Create a subscription",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "{MnSRoot}/fileDataReportingMnS/{MnSVersion}/subscriptions",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "To create a subscription the representation of the subscription is POSTed on the /subscriptions collection resource."
+    },
+    {
+      "info": {
+        "name": "Delete a subscription",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "{MnSRoot}/fileDataReportingMnS/{MnSVersion}/subscriptions/:subscriptionId",
+        "params": [
+          {
+            "name": "subscriptionId",
+            "value": "",
+            "type": "path",
+            "description": "Identifies the subscription to be deleted."
+          }
+        ]
+      },
+      "docs": "The subscription is deleted by deleting the corresponding subscription resource. The resource to be deleted is identified with the path component of the URI."
+    }
+  ],
+  "bundled": true
+}
