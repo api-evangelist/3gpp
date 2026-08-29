@@ -1,0 +1,282 @@
+openapi: 3.2.0
+info:
+  title: CAPIF_Events_ Individual CAPIFs Events Subscription (Document) API
+  description: "API for event subscription management.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  version: 1.4.0
+servers:
+- url: '{apiRoot}/capif-events/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 7.5 of 3GPP TS 29.222
+tags:
+- name: Individual CAPIFs Events Subscription (Document)
+paths:
+  /{subscriberId}/subscriptions/{subscriptionId}:
+    delete:
+      summary: Delete an existing Individual CAPIF Events Subscription resource.
+      operationId: DeleteIndEventSubsc
+      tags:
+      - Individual CAPIFs Events Subscription (Document)
+      parameters:
+      - name: subscriberId
+        in: path
+        description: Identifier of the Subscriber
+        required: true
+        schema:
+          type: string
+      - name: subscriptionId
+        in: path
+        description: Identifier of an individual Events Subscription
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: 'No Content. The Individual CAPIF Events Subscription resource is successfully deleted.
+
+            '
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    put:
+      summary: Update an existing Individual CAPIF Events Subscription resource.
+      operationId: UpdateIndEventSubsc
+      tags:
+      - Individual CAPIFs Events Subscription (Document)
+      parameters:
+      - name: subscriberId
+        in: path
+        description: Identifier of the Subscriber
+        required: true
+        schema:
+          type: string
+      - name: subscriptionId
+        in: path
+        description: Identifier of the individual Subscriber
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EventSubscription'
+      responses:
+        '200':
+          description: OK (Successful update of the subscription).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventSubscription'
+        '204':
+          description: No Content. (Successful update of the subscription).
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '411':
+          $ref: TS29122_CommonData.yaml#/components/responses/411
+        '413':
+          $ref: TS29122_CommonData.yaml#/components/responses/413
+        '415':
+          $ref: TS29122_CommonData.yaml#/components/responses/415
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    patch:
+      summary: Modify an existing Individual CAPIF Events Subscription resource.
+      operationId: ModifyIndEventSubsc
+      tags:
+      - Individual CAPIFs Events Subscription (Document)
+      parameters:
+      - name: subscriberId
+        in: path
+        description: Identifier of the Subscriber
+        required: true
+        schema:
+          type: string
+      - name: subscriptionId
+        in: path
+        description: Identifier of the individual Subscriber
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/EventSubscriptionPatch'
+      responses:
+        '200':
+          description: OK (Successful modification of the subscription).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventSubscription'
+        '204':
+          description: No Content (Successful modification of the subscription).
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '411':
+          $ref: TS29122_CommonData.yaml#/components/responses/411
+        '413':
+          $ref: TS29122_CommonData.yaml#/components/responses/413
+        '415':
+          $ref: TS29122_CommonData.yaml#/components/responses/415
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  schemas:
+    EventSubscriptionPatch:
+      type: object
+      description: 'Represents the parameters to request the modification of a CAPIF Events Subscription resource.
+
+        '
+      properties:
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/CAPIFEvent'
+          minItems: 1
+          description: Subscribed events.
+        eventFilters:
+          type: array
+          items:
+            $ref: '#/components/schemas/CAPIFEventFilter'
+          minItems: 1
+          description: Subscribed event filters.
+        eventReq:
+          $ref: TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+    CAPIFEvent:
+      anyOf:
+      - type: string
+        enum:
+        - SERVICE_API_AVAILABLE
+        - SERVICE_API_UNAVAILABLE
+        - SERVICE_API_UPDATE
+        - API_INVOKER_ONBOARDED
+        - API_INVOKER_OFFBOARDED
+        - SERVICE_API_INVOCATION_SUCCESS
+        - SERVICE_API_INVOCATION_FAILURE
+        - ACCESS_CONTROL_POLICY_UPDATE
+        - ACCESS_CONTROL_POLICY_UNAVAILABLE
+        - API_INVOKER_AUTHORIZATION_REVOKED
+        - API_INVOKER_UPDATED
+        - API_TOPOLOGY_HIDING_CREATED
+        - API_TOPOLOGY_HIDING_REVOKED
+        - API_INVOKER_ONBOARDING_CRITERIA_FAILED
+        - SERVICE_API_ONBOARDED_BY_API_INVOKERS_COUNT
+        - SERVICE_API_DISCOVERY_BY_API_INVOKERS_COUNT
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Describes the CAPIF event.  \nPossible values are:\n- SERVICE_API_AVAILABLE:\n  Events related to the availability of service APIs after the service APIs are\n  published.\n- SERVICE_API_UNAVAILABLE:\n  Events related to the unavailability of service APIs after the service APIs are\n  unpublished.\n- SERVICE_API_UPDATE: Events related to change in service API information.\n- API_INVOKER_ONBOARDED: Events related to API invoker onboarded to CAPIF.\n- API_INVOKER_OFFBOARDED: Events related to API invoker offboarded from CAPIF.\n- SERVICE_API_INVOCATION_SUCCESS:\n  Events related to the successful invocation of service APIs.\n- SERVICE_API_INVOCATION_FAILURE: Events related to the failed invocation of service APIs.\n- ACCESS_CONTROL_POLICY_UPDATE:\n  Events related to the update for the access control policy related to the service APIs.\n- ACCESS_CONTROL_POLICY_UNAVAILABLE:\n  Events related to the unavailability of the access control policy related to\n  the service APIs.\n- API_INVOKER_AUTHORIZATION_REVOKED: Events related to the revocation of the authorization\n  of API invokers to access the service APIs.\n- API_INVOKER_UPDATED: Events related to API invoker profile updated to CAPIF.\n- API_TOPOLOGY_HIDING_CREATED:\n  Events related to the creation or update of the API topology hiding\n  information of the service APIs after the service APIs are published.\n- API_TOPOLOGY_HIDING_REVOKED:\n  Events related to the revocation of the API topology hiding information of\n  the service APIs after the service APIs are unpublished.\n- API_INVOKER_ONBOARDING_CRITERIA_FAILED: Events related to API Invoker onboarding criteria\n  failed to be met. \n- SERVICE_API_ONBOARDED_BY_API_INVOKERS_COUNT: Events related to the number of times the\n  API Invokers requested to onboard the targeted service API(s).\n- SERVICE_API_DISCOVERY_BY_API_INVOKERS_COUNT: Events related to the number of times the\n  API Invokers requested and/or received the targeted service API(s)during the\n  discovery service.\n"
+    CAPIFEventFilter:
+      type: object
+      description: Represents a CAPIF event filter.
+      properties:
+        apiIds:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: Identifier of the service API.
+        apiInvokerIds:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: Identity of the API invoker.
+        aefIds:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: Identifier of the API exposing function.
+    EventSubscription:
+      type: object
+      description: Represents a CAPIF Events Subscription.
+      properties:
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/CAPIFEvent'
+          minItems: 1
+          description: Subscribed events.
+        eventFilters:
+          type: array
+          items:
+            $ref: '#/components/schemas/CAPIFEventFilter'
+          minItems: 1
+          description: Subscribed event filters.
+        eventReq:
+          $ref: TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        requestTestNotification:
+          type: boolean
+          description: 'Set to true by Subscriber to request the CAPIF core function to send a test notification as defined in in clause 7.6. Set to false or omitted otherwise.
+
+            '
+        websockNotifConfig:
+          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
+        supportedFeatures:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - events
+      - notificationDestination
+externalDocs:
+  description: 3GPP TS 29.222 V19.5.0 Common API Framework for 3GPP Northbound APIs
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.222/

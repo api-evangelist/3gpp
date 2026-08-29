@@ -1,0 +1,211 @@
+openapi: 3.2.0
+info:
+  title: 3gpp-asti Individual ASTI Configuration API
+  version: 1.2.0
+  description: "API for ASTI.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+servers:
+- url: '{apiRoot}/3gpp-asti/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+tags:
+- name: Individual ASTI Configuration
+paths:
+  /{afId}/configurations/{configId}:
+    get:
+      summary: Reads an active configuration for the AF and the configuration Id
+      operationId: ReadAnConfiguration
+      tags:
+      - Individual ASTI Configuration
+      parameters:
+      - name: afId
+        in: path
+        description: Identifier of the AF
+        required: true
+        schema:
+          type: string
+      - name: configId
+        in: path
+        description: Identifier of the configuration resource
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK (Successful get the active configuration)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessTimeDistributionData'
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '406':
+          $ref: TS29122_CommonData.yaml#/components/responses/406
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    put:
+      summary: Modifies an active configuration for the AF and the configuration Id
+      operationId: FullyModifyAnConfiguration
+      tags:
+      - Individual ASTI Configuration
+      parameters:
+      - name: afId
+        in: path
+        description: Identifier of the AF
+        required: true
+        schema:
+          type: string
+      - name: configId
+        in: path
+        description: Identifier of the configuration resource
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Parameters to update/replace the existing configuration
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccessTimeDistributionData'
+      responses:
+        '200':
+          description: OK (Successful update of the configuration)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessTimeDistributionData'
+        '204':
+          description: No Content
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '411':
+          $ref: TS29122_CommonData.yaml#/components/responses/411
+        '413':
+          $ref: TS29122_CommonData.yaml#/components/responses/413
+        '415':
+          $ref: TS29122_CommonData.yaml#/components/responses/415
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    delete:
+      summary: Deletes an already existing configuration
+      operationId: DeleteAnConfiguration
+      tags:
+      - Individual ASTI Configuration
+      parameters:
+      - name: afId
+        in: path
+        description: Identifier of the AF
+        required: true
+        schema:
+          type: string
+      - name: configId
+        in: path
+        description: Identifier of the configuration resource
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: No Content (Successful deletion of the existing configuration)
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  schemas:
+    AccessTimeDistributionData:
+      description: 'Contains the parameters for the creation of 5G access stratum time distribution configuration.
+
+        '
+      type: object
+      properties:
+        gpsis:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+          minItems: 1
+        exterGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        asTimeDisParam:
+          $ref: TS29565_Ntsctsf_ASTI.yaml#/components/schemas/AfAsTimeDistributionParam
+        coverageArea:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+        astiNotifUri:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        astiNotifId:
+          type: string
+          description: Notification correlation identifier.
+      required:
+      - asTimeDisParam
+      oneOf:
+      - required:
+        - gpsis
+      - required:
+        - exterGroupId
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: '{tokenUrl}'
+          scopes: {}
+externalDocs:
+  description: '3GPP TS 29.522 V19.5.0; 5G System; Network Exposure Function Northbound APIs.
+
+    '
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/

@@ -1,0 +1,339 @@
+openapi: 3.2.0
+info:
+  title: 3GPP Plan Provisioning Management Fallback Descriptor Management API
+  version: 19.2.0
+  description: OAS 3.0.1 specification of API for managing network configuration plans and related jobs © 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
+servers:
+- url: '{MnSRoot}/plan-management/{MnSVersion}'
+  variables:
+    MnSRoot:
+      description: See clause 4.4.2 of TS 32.158
+      default: http://example.com/cm
+    MnSVersion:
+      description: Version number of the OpenAPI definition
+      default: v1
+tags:
+- name: Fallback Descriptor Management
+paths:
+  /fallback-descriptors:
+    get:
+      tags:
+      - Fallback Descriptor Management
+      summary: Get fallback configuration descriptors
+      description: Retrieve a list of  existing fallback descriptors.
+      operationId: getFallbackDescriptors
+      responses:
+        '200':
+          description: List of the fallback configuration descriptors retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DescriptorListEntry'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+  /fallback-descriptors/{id}:
+    parameters:
+    - in: path
+      name: id
+      schema:
+        type: string
+        description: Unique identifier of the fallback descriptor.
+        example: Fallback-Dublin-plan-001
+      required: true
+    get:
+      tags:
+      - Fallback Descriptor Management
+      summary: Get a specific fallback descriptor by ID
+      description: Retrieve the details of a single fallback descriptor using its unique identifier.
+      operationId: getFallbackDescriptorById
+      responses:
+        '200':
+          description: Fallback Plan descriptor retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FallbackConfigurationDescriptorResponse'
+        '404':
+          description: Fallback descriptor does not exist
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+    delete:
+      tags:
+      - Fallback Descriptor Management
+      summary: Delete a Fallback descriptor by ID
+      description: Deletes a specific fallback plan descriptor using its unique identifier
+      operationId: deleteFallbackDescriptorById
+      responses:
+        '204':
+          description: Fallback descriptor deleted successfully.
+        '404':
+          description: Fallback descriptor not found.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '409':
+          description: Conflict - The fallback descriptor cannot be deleted due to its current state.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+components:
+  schemas:
+    FallbackConfigurationDescriptor:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique id of the fallback configuration descriptor
+          example: fallback-001
+        name:
+          type: string
+          description: Descriptive name of the fallback configuration descriptor
+          example: Fallback-Rollout-5G-Dublin-East
+        description:
+          type: string
+          description: Used to describe the purpose of the fallback configuration
+          example: Fallback for configuration plan Rollout-5G-Dublin-East.
+        version:
+          type: string
+          description: The version of the fallback configuration. Its format is implementation specific.
+          example: 1.0.0
+        customProperties:
+          type: object
+          description: A dynamic set of custom properties provided by client
+          additionalProperties: true
+          example:
+            technology-type: NR
+            location: Dublin
+        activationJob:
+          type: string
+          description: The identifier of the related activation job.
+      required:
+      - activationJob
+      oneOf:
+      - type: object
+        description: COMPLETE_RESTORE type fallback
+        required:
+        - fallbackConfig
+        properties:
+          fallbackConfig:
+            type: string
+            description: The fallback configuration associated with COMPLETE_RESTORE
+      - type: object
+        description: The configuration changes associated with UNDO type fallback
+        properties:
+          configChangesContentType:
+            $ref: '#/components/schemas/ConfigChangesContentType'
+          configChanges:
+            type: array
+            description: 'The configuration change set specifying the configuration in case the fallback configuration is of the "UNDO" type. The format of "configChanges" is specified in "configChangesContentType". Exactly one of this element or the fallbackConfig shall be present.
+
+              '
+            items:
+              $ref: '#/components/schemas/ConfigChangeWritable'
+        required:
+        - configChanges
+        - configChangesContentType
+    DescriptorListEntry:
+      type: object
+      properties:
+        id:
+          type: string
+          description: id of the descriptor.
+          example: plan-descriptor-1
+        name:
+          type: string
+          description: name of the descriptor.
+          example: Dublin East Rollout
+        version:
+          type: string
+          description: version of the descriptor.
+          example: 1.0.0
+        description:
+          type: string
+          description: description/purpose of the descriptor.
+          example: plan-descriptor-1
+      required:
+      - id
+    ErrorDetail:
+      type: object
+      properties:
+        title:
+          type: string
+          description: A short, human-readable summary of the problem type
+          example: Data already exists; cannot be created
+        type:
+          type: string
+          description: The type of the error
+          enum:
+          - SCHEMA_VALIDATION_ERROR
+          - DATA_NODE_TREE_ERROR
+          - MODIFICATION_NOT_ALLOWED
+          - ACCESS_CONTROL_CONFLICT
+          - APPLICATION_LAYER_ERROR
+          - SERVER_ERROR
+          - OTHER
+        reason:
+          type: string
+          enum:
+          - NEW_DATA_NODE_NAME_INVALID
+          - NEW_DATA_NODE_VALUE_INVALID
+          - NEW_DATA_NODE_CONTAINMENT_INVALID
+          - FINAL_DATA_NODE_VALUE_INVALID
+          - FINAL_DATA_NODE_UNIQUENESS_INVALID
+          - FINAL_DATA_NODE_MULTIPLICITY_INVALID
+          - FINAL_DATA_NODE_CARDINALITY_INVALID
+          - TARGET_DATA_NODE_NOT_FOUND
+          - TARGET_DATA_NODE_PARENT_NOT_FOUND
+          - TARGET_DATA_NODE_FOUND
+          - TARGET_DATA_NODE_NOT_WRITABLE
+          - TARGET_DATA_NODE_INVARIANT
+          - TARGET_DATA_NODE_CREATION_NOT_ALLOWED
+          - TARGET_DATA_NODE_DELETION_NOT_ALLOWED
+          - ACCESS_DENIED
+          - OTHER
+          example: NEW_DATA_NODE_CONTAINMENT_INVALID
+        detail:
+          type: string
+          description: A human-readable explanation specific to this occurrence of the problem.
+          example: NRCellDU=1234 already exists in the network
+        badDataNode:
+          type: string
+          example: /_3gpp-common-subnetwork:SubNetwork=Irl/_3gpp-common-mecontext:MeContext=Dublin-1
+        errorInfo:
+          type: object
+          description: additional error info (e.g. stackdump)
+          additionalProperties: true
+      required:
+      - type
+      - badDataNode
+    ConfigChangeWritable:
+      type: object
+      properties:
+        modifyOperator:
+          type: string
+          enum:
+          - create
+          - merge
+          - merge-create
+          - delete
+          description: The operation to perform
+          example: create
+        description:
+          type: string
+          description: text describing the change
+          example: modify NR cell for optimisation
+        target:
+          type: string
+          description: Target data node path
+          example: /_3gpp-common-subnetwork:SubNetwork=Irl/3gpp-common-mecontext:MeContext=Dublin-1/_3gpp_nrm_managedelement:ManagedElement=1/_3gpp_nrm_nrcelldu:NRCellDU=4
+        changeId:
+          description: The identifier of the operation. It may or may not be provided If provided, it shall be unique within an instance of "configChanges" and it shall be provided for all changes in "configChanges".
+          example: cell-operation-001
+        value:
+          type: object
+          additionalProperties: true
+          description: Value to apply (for create/merge/merge-create operations)
+      additionalProperties: true
+      required:
+      - modifyOperator
+      - target
+    ConfigChangesContentType:
+      type: string
+      description: The supported configuration content types.
+      enum:
+      - YANG_BASED
+      - OPENAPI_BASED
+      default: YANG_BASED
+    FallbackConfigurationDescriptorResponse:
+      allOf:
+      - $ref: '#/components/schemas/FallbackConfigurationDescriptor'
+      - type: object
+        properties:
+          _links:
+            type: object
+            description: Hypermedia links for fallback descriptor
+            allOf:
+            - $ref: '#/components/schemas/SelfLink'
+            example:
+              self:
+                href: '{root-url}/plan-management/v1/fallback-descriptors/pd-001'
+                templated: true
+                type: application/json
+                title: The newly created FallbackConfigurationDescriptor
+    LinkObject:
+      type: object
+      description: Defines the structure of a single hypermedia link.
+      properties:
+        href:
+          type: string
+          format: uri-reference
+          description: The target URI of the link.
+        templated:
+          type: boolean
+          description: Indicates if the href is a URI Template (RFC 6570).
+          default: true
+        type:
+          type: string
+          description: The content type expected when following this link (MIME type).
+        title:
+          type: string
+          description: A human-readable title that describes the link's purpose.
+        method:
+          type: string
+          enum:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+          description: The HTTP method to use for this action link.
+      required:
+      - href
+    SelfLink:
+      type: object
+      description: Hypermedia links for this resource, including fixed and dynamic relations.
+      properties:
+        self:
+          allOf:
+          - $ref: '#/components/schemas/LinkObject'
+          description: A link to the resource itself.
+      additionalProperties:
+        $ref: '#/components/schemas/LinkObject'
+      required:
+      - self
+      example:
+        self:
+          href: '{root-url}/plan-management/v1/plan-descriptors/pd-001'
+          templated: true
+          type: application/json
+          title: The newly created PlanConfigurationDescriptor
+        help:
+          href: '{root-url}/help-service/v1/topics/plan-descriptors'
+          templated: true
+          type: application/json
+          title: online help for the plan descriptor
+externalDocs:
+  description: 3GPP TS 28.572; Generic management services
+  url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.572/

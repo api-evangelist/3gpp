@@ -1,0 +1,442 @@
+openapi: 3.2.0
+info:
+  title: 3gpp-time-sync Time Synchronization Exposure Subscriptions API
+  version: 1.2.0
+  description: "API for time synchronization exposure.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+servers:
+- url: '{apiRoot}/3gpp-time-sync/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+tags:
+- name: Time Synchronization Exposure Subscriptions
+paths:
+  /{afId}/subscriptions:
+    get:
+      summary: read all of the active subscriptions for the AF
+      operationId: ReadAllSubscriptions
+      tags:
+      - Time Synchronization Exposure Subscriptions
+      parameters:
+      - name: afId
+        in: path
+        description: Identifier of the AF
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK (Successful get all of the active subscriptions for the AF)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TimeSyncExposureSubsc'
+                minItems: 0
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '406':
+          $ref: TS29122_CommonData.yaml#/components/responses/406
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    post:
+      summary: Creates a new subscription resource
+      operationId: CreateNewSubscription
+      tags:
+      - Time Synchronization Exposure Subscriptions
+      parameters:
+      - name: afId
+        in: path
+        description: Identifier of the AF
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: new subscription creation
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TimeSyncExposureSubsc'
+      responses:
+        '201':
+          description: Created (Successful creation)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeSyncExposureSubsc'
+          headers:
+            Location:
+              description: Contains the URI of the newly created resource
+              required: true
+              schema:
+                type: string
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '411':
+          $ref: TS29122_CommonData.yaml#/components/responses/411
+        '413':
+          $ref: TS29122_CommonData.yaml#/components/responses/413
+        '415':
+          $ref: TS29122_CommonData.yaml#/components/responses/415
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+      callbacks:
+        timeSyncSubsNotification:
+          '{$request.body#/subsNotifUri}':
+            post:
+              requestBody:
+                description: Notification for Time Synchronization Capability for a list of UEs.
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/TimeSyncExposureSubsNotif'
+              responses:
+                '204':
+                  description: Expected response to a successful callback processing without a body
+                '307':
+                  $ref: TS29122_CommonData.yaml#/components/responses/307
+                '308':
+                  $ref: TS29122_CommonData.yaml#/components/responses/308
+                '400':
+                  $ref: TS29122_CommonData.yaml#/components/responses/400
+                '401':
+                  $ref: TS29122_CommonData.yaml#/components/responses/401
+                '403':
+                  $ref: TS29122_CommonData.yaml#/components/responses/403
+                '404':
+                  $ref: TS29122_CommonData.yaml#/components/responses/404
+                '411':
+                  $ref: TS29122_CommonData.yaml#/components/responses/411
+                '413':
+                  $ref: TS29122_CommonData.yaml#/components/responses/413
+                '415':
+                  $ref: TS29122_CommonData.yaml#/components/responses/415
+                '429':
+                  $ref: TS29122_CommonData.yaml#/components/responses/429
+                '500':
+                  $ref: TS29122_CommonData.yaml#/components/responses/500
+                '503':
+                  $ref: TS29122_CommonData.yaml#/components/responses/503
+                default:
+                  $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  schemas:
+    GmCapable:
+      anyOf:
+      - type: string
+        enum:
+        - GPTP
+        - PTP
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the supported grandmaster.  \nPossible values are:\n- GPTP: gPTP grandmaster is supported.\n- PTP: PTP grandmaste is supported.\n"
+    TimeSyncExposureSubsc:
+      description: 'Contains requested parameters for the subscription to the notification of time synchronization capability.
+
+        '
+      type: object
+      properties:
+        exterGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        gpsis:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+          minItems: 1
+          description: 'Contains a list of UE for which the time synchronization capabilities is requested.
+
+            '
+        anyUeInd:
+          type: boolean
+          description: 'Any UE indication. This IE shall be present if the event subscription is applicable to any UE. Default value "false" is used, if not present.
+
+            '
+        afServiceId:
+          type: string
+          description: Identifies a service on behalf of which the AF is issuing the request.
+        dnn:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Dnn
+        snssai:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
+        subsNotifId:
+          type: string
+          description: Notification Correlation ID assigned by the AF.
+        subsNotifUri:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        subscribedEvents:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubscribedEvent'
+          minItems: 1
+          description: Subscribed events
+        eventFilters:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventFilter'
+          minItems: 1
+          description: 'Contains the filter conditions to match for notifying the event(s) of time synchronization capabilities for a list of UE(s).
+
+            '
+        notifMethod:
+          $ref: TS29508_Nsmf_EventExposure.yaml#/components/schemas/NotificationMethod
+        maxReportNbr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        expiry:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        repPeriod:
+          $ref: TS29571_CommonData.yaml#/components/schemas/DurationSec
+        requestTestNotification:
+          type: boolean
+          description: 'Set to true by the SCS/AS to request the SCEF to send a test notification as defined in clause 5.2.5.3 of 3GPP TS 29.122. Set to false or omitted otherwise.
+
+            '
+        websockNotifConfig:
+          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - subsNotifUri
+      - subsNotifId
+      oneOf:
+      - required:
+        - gpsis
+      - required:
+        - anyUeInd
+      - required:
+        - exterGroupId
+    InstanceType:
+      anyOf:
+      - type: string
+        enum:
+        - BOUNDARY_CLOCK
+        - E2E_TRANS_CLOCK
+        - P2P_TRANS_CLOCK
+        - P2P_RELAY_INSTANCE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the supported PTP instance type.  \nPossible values are:\n- BOUNDARY_CLOCK: Indicates Boundary Clock as defined in IEEE Std 1588.\n- E2E_TRANS_CLOCK: Indicates End-to-End Transparent Clock as defined in IEEE Std 1588.\n- P2P_TRANS_CLOCK: Indicates Peer-to-Peer Transparent Clock as defined in IEEE Std 1588.\n- P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS.\n"
+    SubsEventNotification:
+      description: Notifications about subscribed Individual Events.
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/SubscribedEvent'
+        timeSyncCapas:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimeSyncCapability'
+          minItems: 1
+          description: 'Contains a list of time synchronization capabilities for the UE(s).
+
+            '
+      required:
+      - event
+    AvailStatus:
+      anyOf:
+      - type: string
+        enum:
+        - PDU_SESSION_TERMINATION
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the availability status.  \nPossible values are:\n- PDU_SESSION_TERMINATION: The UE is not available for (g)PTP services because the PDU\n  session is terminated.\n"
+    AsTimeResource:
+      anyOf:
+      - type: string
+        enum:
+        - ATOMIC_CLOCK
+        - GNSS
+        - TERRESTRIAL_RADIO
+        - SERIAL_TIME_CODE
+        - PTP
+        - NTP
+        - HAND_SET
+        - INTERNAL_OSCILLATOR
+        - OTHER
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the supported 5G clock quality.  \nPossible values are:\n- ATOMIC_CLOCK: Indicates atomic clock is supported.\n- GNSS: Indicates Global Navigation Satellite System is supported.\n- TERRESTRIAL_RADIO: Indicates terrestrial radio is supported.\n- SERIAL_TIME_CODE: Indicates serial time code is supported.\n- PTP: Indicates PTP is supported.\n- NTP: Indicates NTP is supported.\n- HAND_SET: Indicates hand set is supported.\n- INTERNAL_OSCILLATOR: Indicates internal oscillator is supported.\n- OTHER: Indicates other source of time is supported.\n"
+    TimeSyncCapability:
+      description: Contains time synchronization capability.
+      type: object
+      properties:
+        upNodeId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uint64
+        gmCapables:
+          type: array
+          items:
+            $ref: '#/components/schemas/GmCapable'
+          description: 'Indicates whether user plane node supports acting as a gPTP and/or PTP grandmaster.
+
+            '
+        asTimeRes:
+          $ref: '#/components/schemas/AsTimeResource'
+        ptpCapForUes:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/PtpCapabilitiesPerUe'
+          minProperties: 1
+          description: 'Contains the PTP capabilities supported by each of the UE(s). The key of the map is the gpsi.
+
+            '
+      required:
+      - upNodeId
+      anyOf:
+      - required:
+        - gmCapables
+      - required:
+        - asTimeRes
+    EventFilter:
+      description: 'Contains the filter conditions to match for notifying the event(s) of time synchronization capabilities.
+
+        '
+      type: object
+      properties:
+        instanceTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstanceType'
+          minItems: 1
+          description: 'Indicates the PTP instance type(s).
+
+            '
+        transProtocols:
+          type: array
+          items:
+            $ref: '#/components/schemas/Protocol'
+          minItems: 1
+          description: 'Indicates the transport protocol type(s).
+
+            '
+        ptpProfiles:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: 'Identifies the supported PTP profiles.
+
+            '
+    AvailReport:
+      description: Contains the availability status for a UE/DS-TT.
+      type: object
+      properties:
+        avStatus:
+          $ref: '#/components/schemas/AvailStatus'
+    TimeSyncExposureSubsNotif:
+      description: Contains the notification of time synchronization capability.
+      type: object
+      properties:
+        subsNotifId:
+          type: string
+          description: Notification Correlation ID assigned by the AF.
+        eventNotifs:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubsEventNotification'
+          minItems: 1
+          description: 'Notifications about subscribed Individual Events.
+
+            '
+      required:
+      - subsNotifId
+      - eventNotifs
+    ReportedCapability:
+      allOf:
+      - $ref: '#/components/schemas/EventFilter'
+      - $ref: '#/components/schemas/AvailReport'
+      description: 'Extends the EventFilter data type to indicate the availability status of the UE/DS-TT.
+
+        '
+    Protocol:
+      anyOf:
+      - type: string
+        enum:
+        - ETH
+        - IPV4
+        - IPV6
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the supported protocol.  \nPossible values are:\n- ETH: Indicates Ethernet as defined in IEEE Std 1588 [45] Annex E is supported.\n- IPV4: Indicates IPv4 as defined in IEEE Std 1588 [45] Annex C is supported.\n- IPV6: Indicates IPv6 as defined in IEEE Std 1588 [45] Annex D is supported.\n"
+    SubscribedEvent:
+      anyOf:
+      - type: string
+        enum:
+        - AVAILABILITY_FOR_TIME_SYNC_SERVICE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the supported event.  \nPossible values are:\n- AVAILABILITY_FOR_TIME_SYNC_SERVICE: 5GS and/or UE availability and capability for time synchronization\n  service.\n"
+    PtpCapabilitiesPerUe:
+      description: Contains the supported PTP capabilities per UE.
+      type: object
+      properties:
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        ptpCaps:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportedCapability'
+          minItems: 1
+          description: 'Contains the reported PTP capabilities for the UE.
+
+            '
+      required:
+      - gpsi
+      - ptpCaps
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: '{tokenUrl}'
+          scopes: {}
+externalDocs:
+  description: '3GPP TS 29.522 V19.5.0; 5G System; Network Exposure Function Northbound APIs.
+
+    '
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/

@@ -1,0 +1,507 @@
+openapi: 3.2.0
+info:
+  title: 3GPP Plan Provisioning Management Plan Descriptor Management API
+  version: 19.2.0
+  description: OAS 3.0.1 specification of API for managing network configuration plans and related jobs © 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
+servers:
+- url: '{MnSRoot}/plan-management/{MnSVersion}'
+  variables:
+    MnSRoot:
+      description: See clause 4.4.2 of TS 32.158
+      default: http://example.com/cm
+    MnSVersion:
+      description: Version number of the OpenAPI definition
+      default: v1
+tags:
+- name: Plan Descriptor Management
+paths:
+  /plan-descriptors:
+    post:
+      tags:
+      - Plan Descriptor Management
+      summary: Create a new plan descriptor
+      description: Creates a new configuration plan descriptor that can be later activated.
+      operationId: createPlanDescriptor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlanConfigurationDescriptorRequest'
+            example:
+              name: Rollout-5G-Dublin-East
+              version: 1.0.0
+              description: This is the plan for the new 5G rollout in Dublin east.
+              customProperties:
+                technology-type: NR
+                location: Dublin
+              configChangesContentType: YANG_BASED
+              configChanges:
+              - modifyOperator: create
+                changeId: add-nr-cell-001
+                description: Add new NR cell for initial deployment in Dublin-4 area.
+                target: /SubNetwork=Irl/MeContext=Dublin-1/ManagedElement=1/GNBDUFunction=1
+                value:
+                  NRCellDU:
+                  - id: '4'
+                    attributes:
+                      userLabel: Dublin-1-Cell-4
+                      ssbDuration: 2
+      responses:
+        '201':
+          description: Plan descriptor created successfully
+          headers:
+            Location:
+              description: URI of the created plan descriptor.
+              schema:
+                type: string
+                format: uri-reference
+                example: /plan-descriptors/my-plan11
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanConfigurationDescriptorResponse'
+        '400':
+          description: Invalid request parameters or malformed input.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '409':
+          description: A plan descriptor with the given ID already exists.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+    get:
+      tags:
+      - Plan Descriptor Management
+      summary: Get plan configuration descriptors
+      description: Retrieve a list of  existing plan descriptors.
+      operationId: getPlanDescriptors
+      responses:
+        '200':
+          description: List of the plan configuration descriptors retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DescriptorListEntry'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+  /plan-descriptors/{id}:
+    parameters:
+    - in: path
+      name: id
+      schema:
+        type: string
+        description: Unique identifier of the plan descriptor.
+        example: NewNetworkElement10-group-plan-001
+      required: true
+    get:
+      tags:
+      - Plan Descriptor Management
+      summary: Get a specific plan descriptor by ID
+      description: Retrieve the details of a single plan descriptor using its unique identifier.
+      operationId: getPlanDescriptorById
+      responses:
+        '200':
+          description: Plan descriptor retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanConfigurationDescriptorResponse'
+        '404':
+          description: Plan descriptor does not exist
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+    put:
+      tags:
+      - Plan Descriptor Management
+      summary: Replace a plan descriptor
+      description: Replace a configuration plan descriptor
+      operationId: putPlanDescriptor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlanConfigurationDescriptorRequest'
+            example:
+              name: Rollout-5G-Dublin-East
+              description: This is the plan for the new 5G rollout in Dublin east.
+              customProperties:
+                technology-type: NR
+                location: Dublin
+              configChanges:
+              - modifyOperator: merge
+                changeId: Dublin-Center_DC-01_555777999
+                target: /SubNetwork=Dublin-Center/ManagedElement=DC-001/NRCellDU=1
+                value:
+                  ssbDuration: 2
+      responses:
+        '204':
+          description: Plan descriptor replaced successfully. No content is returned
+        '400':
+          description: Invalid request parameters or malformed input.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '404':
+          description: Plan descriptor not found.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+    delete:
+      tags:
+      - Plan Descriptor Management
+      summary: Delete a plan descriptor by ID
+      description: Deletes a specific configuration plan descriptor using its unique identifier
+      operationId: deletePlanDescriptorById
+      responses:
+        '204':
+          description: Plan descriptor deleted successfully.
+        '404':
+          description: Plan descriptor not found.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '409':
+          description: Conflict - The plan descriptor cannot be deleted due to its current state or dependencies (For example, it is referenced in a plan group descriptor).
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+components:
+  schemas:
+    PlanConfigurationDescriptorBaseProperties:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Descriptive name of the plan group configuration descriptor
+          example: Rollout-5G-Dublin-East
+        version:
+          type: string
+          description: The version of the planned configuration. Its format is implementation specific.
+          example: 1.0.0
+        description:
+          type: string
+          description: Used to describe the purpose of the plan configuration
+          example: This is the plan for the new 5G rollout in Dublin east.
+        customProperties:
+          type: object
+          description: A dynamic set of custom properties provided by client
+          additionalProperties: true
+          example:
+            technology-type: NR
+            location: Dublin
+        configChangesContentType:
+          $ref: '#/components/schemas/ConfigChangesContentType'
+        activationMode:
+          type: string
+          enum:
+          - ATOMIC
+          - BEST_EFFORT
+          - STOP_ON_ERROR
+          default: BEST_EFFORT
+          description: Specifies the execution behavior when the plan is activated
+          example: BEST_EFFORT
+    DescriptorListEntry:
+      type: object
+      properties:
+        id:
+          type: string
+          description: id of the descriptor.
+          example: plan-descriptor-1
+        name:
+          type: string
+          description: name of the descriptor.
+          example: Dublin East Rollout
+        version:
+          type: string
+          description: version of the descriptor.
+          example: 1.0.0
+        description:
+          type: string
+          description: description/purpose of the descriptor.
+          example: plan-descriptor-1
+      required:
+      - id
+    ErrorDetail:
+      type: object
+      properties:
+        title:
+          type: string
+          description: A short, human-readable summary of the problem type
+          example: Data already exists; cannot be created
+        type:
+          type: string
+          description: The type of the error
+          enum:
+          - SCHEMA_VALIDATION_ERROR
+          - DATA_NODE_TREE_ERROR
+          - MODIFICATION_NOT_ALLOWED
+          - ACCESS_CONTROL_CONFLICT
+          - APPLICATION_LAYER_ERROR
+          - SERVER_ERROR
+          - OTHER
+        reason:
+          type: string
+          enum:
+          - NEW_DATA_NODE_NAME_INVALID
+          - NEW_DATA_NODE_VALUE_INVALID
+          - NEW_DATA_NODE_CONTAINMENT_INVALID
+          - FINAL_DATA_NODE_VALUE_INVALID
+          - FINAL_DATA_NODE_UNIQUENESS_INVALID
+          - FINAL_DATA_NODE_MULTIPLICITY_INVALID
+          - FINAL_DATA_NODE_CARDINALITY_INVALID
+          - TARGET_DATA_NODE_NOT_FOUND
+          - TARGET_DATA_NODE_PARENT_NOT_FOUND
+          - TARGET_DATA_NODE_FOUND
+          - TARGET_DATA_NODE_NOT_WRITABLE
+          - TARGET_DATA_NODE_INVARIANT
+          - TARGET_DATA_NODE_CREATION_NOT_ALLOWED
+          - TARGET_DATA_NODE_DELETION_NOT_ALLOWED
+          - ACCESS_DENIED
+          - OTHER
+          example: NEW_DATA_NODE_CONTAINMENT_INVALID
+        detail:
+          type: string
+          description: A human-readable explanation specific to this occurrence of the problem.
+          example: NRCellDU=1234 already exists in the network
+        badDataNode:
+          type: string
+          example: /_3gpp-common-subnetwork:SubNetwork=Irl/_3gpp-common-mecontext:MeContext=Dublin-1
+        errorInfo:
+          type: object
+          description: additional error info (e.g. stackdump)
+          additionalProperties: true
+      required:
+      - type
+      - badDataNode
+    PlanConfigurationDescriptorResponse:
+      allOf:
+      - $ref: '#/components/schemas/PlanConfigurationDescriptor'
+      - type: object
+        properties:
+          _links:
+            allOf:
+            - $ref: '#/components/schemas/SelfLink'
+            example:
+              self:
+                href: '{root-url}/plan-management/v1/plan-descriptors/pd-001'
+                templated: true
+                type: application/json
+                title: The newly created PlanConfigurationDescriptor
+    ConfigChange:
+      type: object
+      properties:
+        modifyOperator:
+          type: string
+          enum:
+          - create
+          - merge
+          - merge-create
+          - delete
+          description: The operation to perform
+          example: create
+        description:
+          type: string
+          description: text describing the change
+          example: modify NR cell for optimisation
+        target:
+          type: string
+          description: Target data node path
+          example: /_3gpp-common-subnetwork:SubNetwork=Irl/3gpp-common-mecontext:MeContext=Dublin-1/_3gpp_nrm_managedelement:ManagedElement=1/_3gpp_nrm_nrcelldu:NRCellDU=4
+        value:
+          type: object
+          additionalProperties: true
+          description: Value to apply (for create/merge/merge-create operations)
+        changeId:
+          type: string
+          description: The identifier of the operation. It may or may not be provided. If provided, it shall be unique within an instance of "configChanges" and it shall be provided for all changes in "configChanges".
+          example: cell-operation-001
+      additionalProperties: true
+      required:
+      - modifyOperator
+      - target
+    PlanConfigurationDescriptor:
+      allOf:
+      - $ref: '#/components/schemas/PlanConfigurationDescriptorBaseProperties'
+      - type: object
+        required:
+        - id
+        - activationMode
+        - lastModifiedAt
+        - validationState
+        - configChangesContentType
+        - configChanges
+        properties:
+          id:
+            type: string
+            description: The identifier of the planned configuration
+            example: plan-001
+          configChanges:
+            description: The plan configuration changes
+            type: array
+            items:
+              $ref: '#/components/schemas/ConfigChange'
+          validationState:
+            type: string
+            enum:
+            - NOT_VALIDATED
+            - VALID
+            - INVALID
+            default: NOT_VALIDATED
+            description: The validation state of the plan.
+            example: NOT_VALIDATED
+          lastModifiedAt:
+            type: string
+            format: date-time
+            description: the last time the plan was modified
+            example: 2025-03-06 16:50:26-08:00
+          lastValidatedAt:
+            type: string
+            format: date-time
+            description: last time the plan was validated
+            example: 2025-03-06 16:50:29-08:00
+    ConfigChangeWritable:
+      type: object
+      properties:
+        modifyOperator:
+          type: string
+          enum:
+          - create
+          - merge
+          - merge-create
+          - delete
+          description: The operation to perform
+          example: create
+        description:
+          type: string
+          description: text describing the change
+          example: modify NR cell for optimisation
+        target:
+          type: string
+          description: Target data node path
+          example: /_3gpp-common-subnetwork:SubNetwork=Irl/3gpp-common-mecontext:MeContext=Dublin-1/_3gpp_nrm_managedelement:ManagedElement=1/_3gpp_nrm_nrcelldu:NRCellDU=4
+        changeId:
+          description: The identifier of the operation. It may or may not be provided If provided, it shall be unique within an instance of "configChanges" and it shall be provided for all changes in "configChanges".
+          example: cell-operation-001
+        value:
+          type: object
+          additionalProperties: true
+          description: Value to apply (for create/merge/merge-create operations)
+      additionalProperties: true
+      required:
+      - modifyOperator
+      - target
+    ConfigChangesContentType:
+      type: string
+      description: The supported configuration content types.
+      enum:
+      - YANG_BASED
+      - OPENAPI_BASED
+      default: YANG_BASED
+    PlanConfigurationDescriptorRequest:
+      allOf:
+      - $ref: '#/components/schemas/PlanConfigurationDescriptorBaseProperties'
+      - type: object
+        required:
+        - configChanges
+        properties:
+          configChanges:
+            description: The plan configuration changes
+            type: array
+            items:
+              $ref: '#/components/schemas/ConfigChangeWritable'
+    LinkObject:
+      type: object
+      description: Defines the structure of a single hypermedia link.
+      properties:
+        href:
+          type: string
+          format: uri-reference
+          description: The target URI of the link.
+        templated:
+          type: boolean
+          description: Indicates if the href is a URI Template (RFC 6570).
+          default: true
+        type:
+          type: string
+          description: The content type expected when following this link (MIME type).
+        title:
+          type: string
+          description: A human-readable title that describes the link's purpose.
+        method:
+          type: string
+          enum:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+          description: The HTTP method to use for this action link.
+      required:
+      - href
+    SelfLink:
+      type: object
+      description: Hypermedia links for this resource, including fixed and dynamic relations.
+      properties:
+        self:
+          allOf:
+          - $ref: '#/components/schemas/LinkObject'
+          description: A link to the resource itself.
+      additionalProperties:
+        $ref: '#/components/schemas/LinkObject'
+      required:
+      - self
+      example:
+        self:
+          href: '{root-url}/plan-management/v1/plan-descriptors/pd-001'
+          templated: true
+          type: application/json
+          title: The newly created PlanConfigurationDescriptor
+        help:
+          href: '{root-url}/help-service/v1/topics/plan-descriptors'
+          templated: true
+          type: application/json
+          title: online help for the plan descriptor
+externalDocs:
+  description: 3GPP TS 28.572; Generic management services
+  url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.572/

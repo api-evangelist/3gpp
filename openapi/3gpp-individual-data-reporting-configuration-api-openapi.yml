@@ -1,0 +1,214 @@
+openapi: 3.2.0
+info:
+  title: 3gpp-data-reporting-provisioning Individual Data Reporting Configuration API
+  version: 1.2.0
+  description: "API for 3GPP Data Reporting and Provisioning.  \n© 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+servers:
+- url: '{apiRoot}/3gpp-data-reporting-provisioning/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+tags:
+- name: Individual Data Reporting Configuration
+paths:
+  /sessions/{sessionId}/configurations/{configurationId}:
+    parameters:
+    - name: sessionId
+      in: path
+      description: Identifier of the Data Reporting Provisioning Session.
+      required: true
+      schema:
+        type: string
+    - name: configurationId
+      in: path
+      description: Identifier of the Data Reporting Configuration.
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Request the retrieval of an existing Individual Data Reporting Configuration resource.
+      operationId: GetIndDataRepConfig
+      tags:
+      - Individual Data Reporting Configuration
+      responses:
+        '200':
+          description: 'OK. The requested Individual Data Reporting Configuration resource is successfully returned.
+
+            '
+          content:
+            application/json:
+              schema:
+                $ref: TS26532_Ndcaf_DataReportingProvisioning.yaml#/components/schemas/DataReportingConfiguration
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '411':
+          $ref: TS29122_CommonData.yaml#/components/responses/411
+        '413':
+          $ref: TS29122_CommonData.yaml#/components/responses/413
+        '415':
+          $ref: TS29122_CommonData.yaml#/components/responses/415
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    put:
+      summary: Request to update an existing Individual Data Reporting Configuration resource.
+      operationId: UpdateIndDataRepConfig
+      tags:
+      - Individual Data Reporting Configuration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: TS26532_Ndcaf_DataReportingProvisioning.yaml#/components/schemas/DataReportingConfiguration
+      responses:
+        '200':
+          description: 'OK. The Individual Data Reporting Configuration resource was successfully updated.
+
+            '
+          content:
+            application/json:
+              schema:
+                $ref: TS26532_Ndcaf_DataReportingProvisioning.yaml#/components/schemas/DataReportingConfiguration
+        '204':
+          description: 'No Content. The Individual Data Reporting Configuration resource was successfully updated and no content is returned in the response body.
+
+            '
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '411':
+          $ref: TS29122_CommonData.yaml#/components/responses/411
+        '413':
+          $ref: TS29122_CommonData.yaml#/components/responses/413
+        '415':
+          $ref: TS29122_CommonData.yaml#/components/responses/415
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    patch:
+      summary: Request to modify an existing Individual Data Reporting Configuration resource.
+      operationId: ModifyIndDataRepConfig
+      tags:
+      - Individual Data Reporting Configuration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: TS26532_Ndcaf_DataReportingProvisioning.yaml#/components/schemas/DataReportingConfigurationPatch
+      responses:
+        '200':
+          description: 'OK. The Individual Data Reporting Configuration resource was successfully modified.
+
+            '
+          content:
+            application/json:
+              schema:
+                $ref: TS26532_Ndcaf_DataReportingProvisioning.yaml#/components/schemas/DataReportingConfiguration
+        '204':
+          description: 'No Content. The Individual Data Reporting Configuration resource was successfully modified and no content is returned in the response body.
+
+            '
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '411':
+          $ref: TS29122_CommonData.yaml#/components/responses/411
+        '413':
+          $ref: TS29122_CommonData.yaml#/components/responses/413
+        '415':
+          $ref: TS29122_CommonData.yaml#/components/responses/415
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    delete:
+      summary: Deletes an already existing Data Reporting Configuration resource.
+      operationId: DeleteIndDataRepConfig
+      tags:
+      - Individual Data Reporting Configuration
+      responses:
+        '204':
+          description: 'No Content. The concerned Individual Data Reporting Configuration resource was successfully deleted.
+
+            '
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: '{tokenUrl}'
+          scopes: {}
+externalDocs:
+  description: '3GPP TS 29.522 V19.5.0; 5G System; Network Exposure Function Northbound APIs.
+
+    '
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/

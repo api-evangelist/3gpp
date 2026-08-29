@@ -1,0 +1,423 @@
+openapi: 3.2.0
+info:
+  title: 3GPP Plan Provisioning Management Plan Group Descriptor Management API
+  version: 19.2.0
+  description: OAS 3.0.1 specification of API for managing network configuration plans and related jobs © 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
+servers:
+- url: '{MnSRoot}/plan-management/{MnSVersion}'
+  variables:
+    MnSRoot:
+      description: See clause 4.4.2 of TS 32.158
+      default: http://example.com/cm
+    MnSVersion:
+      description: Version number of the OpenAPI definition
+      default: v1
+tags:
+- name: Plan Group Descriptor Management
+paths:
+  /plan-group-descriptors:
+    post:
+      tags:
+      - Plan Group Descriptor Management
+      summary: Create a new plan group descriptor
+      description: Creates a new configuration plan group descriptor that can be later activated.
+      operationId: createPlanGroupDescriptor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlanConfigurationGroupDescriptor'
+      responses:
+        '201':
+          description: Plan group descriptor created successfully
+          headers:
+            Location:
+              description: URI of the created plan descriptor.
+              schema:
+                type: string
+                format: uri-reference
+                example: /plan-group-descriptors/mygroup-11
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanConfigurationGroupDescriptorResponse'
+        '400':
+          description: Invalid request parameters or malformed input.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+    get:
+      tags:
+      - Plan Group Descriptor Management
+      summary: Get plan configuration descriptors
+      description: Retrieve a list of existing plan descriptors.
+      operationId: getPlanGroupDescriptors
+      responses:
+        '200':
+          description: List of the plan configuration descriptors retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DescriptorListEntry'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+  /plan-group-descriptors/{id}:
+    parameters:
+    - in: path
+      name: id
+      schema:
+        type: string
+        description: Unique identifier of the plan group descriptor.
+        example: NewNetworkElement10-group-plan-001
+      required: true
+    get:
+      tags:
+      - Plan Group Descriptor Management
+      summary: Get a specific plan group descriptor by ID
+      description: Retrieve the details of a plan group descriptor using its unique identifier.
+      operationId: getPlanGroupDescriptorById
+      responses:
+        '200':
+          description: Plan group descriptor retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanConfigurationGroupDescriptorResponse'
+        '404':
+          description: Plan group descriptor does not exist
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+    put:
+      tags:
+      - Plan Group Descriptor Management
+      summary: Replace a plan group descriptor
+      description: Replace a configuration plan group descriptor
+      operationId: putPlanGroupDescriptor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlanConfigurationGroupDescriptor'
+      responses:
+        '200':
+          description: Plan group descriptor replaced successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanConfigurationGroupDescriptorResponse'
+        '400':
+          description: Invalid request parameters or malformed input.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '404':
+          description: Plan group descriptor not found.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+    delete:
+      tags:
+      - Plan Group Descriptor Management
+      summary: Delete a plan group descriptor by ID
+      description: Deletes a plan group descriptor using its unique identifier
+      operationId: deletePlanGroupDescriptorById
+      responses:
+        '204':
+          description: Plan descriptor deleted successfully.
+        '404':
+          description: Plan descriptor not found.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '409':
+          description: The plan group descriptor cannot be deleted due to its current state or dependencies (For example, it is referenced in a plan group descriptor).
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+components:
+  schemas:
+    DescriptorListEntry:
+      type: object
+      properties:
+        id:
+          type: string
+          description: id of the descriptor.
+          example: plan-descriptor-1
+        name:
+          type: string
+          description: name of the descriptor.
+          example: Dublin East Rollout
+        version:
+          type: string
+          description: version of the descriptor.
+          example: 1.0.0
+        description:
+          type: string
+          description: description/purpose of the descriptor.
+          example: plan-descriptor-1
+      required:
+      - id
+    Member:
+      type: object
+      description: "Defines a member identified by EITHER a single Plan Configuration Descriptor ID \nOR a Plan Configuration Group Descriptor ID, but not both.\n"
+      oneOf:
+      - type: object
+        required:
+        - planConfigDescrId
+        properties:
+          planConfigDescrId:
+            type: string
+            description: Unique id of the plan configuration descriptor.
+            example: pcd-001
+      - type: object
+        required:
+        - planConfigGroupDescrId
+        properties:
+          planConfigGroupDescrId:
+            type: string
+            description: Unique id of the plan configuration group descriptor.
+            example: pgc-001
+    ErrorDetail:
+      type: object
+      properties:
+        title:
+          type: string
+          description: A short, human-readable summary of the problem type
+          example: Data already exists; cannot be created
+        type:
+          type: string
+          description: The type of the error
+          enum:
+          - SCHEMA_VALIDATION_ERROR
+          - DATA_NODE_TREE_ERROR
+          - MODIFICATION_NOT_ALLOWED
+          - ACCESS_CONTROL_CONFLICT
+          - APPLICATION_LAYER_ERROR
+          - SERVER_ERROR
+          - OTHER
+        reason:
+          type: string
+          enum:
+          - NEW_DATA_NODE_NAME_INVALID
+          - NEW_DATA_NODE_VALUE_INVALID
+          - NEW_DATA_NODE_CONTAINMENT_INVALID
+          - FINAL_DATA_NODE_VALUE_INVALID
+          - FINAL_DATA_NODE_UNIQUENESS_INVALID
+          - FINAL_DATA_NODE_MULTIPLICITY_INVALID
+          - FINAL_DATA_NODE_CARDINALITY_INVALID
+          - TARGET_DATA_NODE_NOT_FOUND
+          - TARGET_DATA_NODE_PARENT_NOT_FOUND
+          - TARGET_DATA_NODE_FOUND
+          - TARGET_DATA_NODE_NOT_WRITABLE
+          - TARGET_DATA_NODE_INVARIANT
+          - TARGET_DATA_NODE_CREATION_NOT_ALLOWED
+          - TARGET_DATA_NODE_DELETION_NOT_ALLOWED
+          - ACCESS_DENIED
+          - OTHER
+          example: NEW_DATA_NODE_CONTAINMENT_INVALID
+        detail:
+          type: string
+          description: A human-readable explanation specific to this occurrence of the problem.
+          example: NRCellDU=1234 already exists in the network
+        badDataNode:
+          type: string
+          example: /_3gpp-common-subnetwork:SubNetwork=Irl/_3gpp-common-mecontext:MeContext=Dublin-1
+        errorInfo:
+          type: object
+          description: additional error info (e.g. stackdump)
+          additionalProperties: true
+      required:
+      - type
+      - badDataNode
+    PlanConfigurationGroupDescriptorResponse:
+      allOf:
+      - $ref: '#/components/schemas/PlanConfigurationGroupDescriptor'
+      - type: object
+        required:
+        - id
+        - activationMode
+        - validationState
+        - isOrdered
+        - isFailOnMemberConflicts
+        - members
+        properties:
+          _links:
+            type: object
+            description: Hypermedia links for plan descriptor
+            allOf:
+            - $ref: '#/components/schemas/SelfLink'
+            example:
+              self:
+                href: '{root-url}/plan-management/v1/plan-group-descriptors/pgd-001'
+                templated: true
+                type: application/json
+                title: The newly created PlanConfigurationGroupDescriptor
+    PlanConfigurationGroupDescriptor:
+      type: object
+      required:
+      - members
+      properties:
+        id:
+          type: string
+          description: Unique id of the plan group configuration descriptor
+          example: plan-001
+        name:
+          type: string
+          description: Descriptive name of the plan group configuration descriptor
+          example: Rollout-5G-Dublin-East
+        version:
+          type: string
+          description: version of the plan group configuration descriptor
+          example: 1.0.0
+        description:
+          type: string
+          description: Used to describe the purpose of the plan group configuration
+          example: This is the plan for the new 5G rollout in Dublin east.
+        customProperties:
+          type: object
+          description: A dynamic set of custom properties provided by client
+          additionalProperties: true
+          example:
+            technology-type: NR
+            location: Dublin
+        isOrdered:
+          type: boolean
+          description: Specifies if the members of the planned configuration group are ordered. When ordered, the planned configuration group members shall be validated/activated in the specified order. When not ordered the planned configuration group members can be validated/activated in any order
+          default: false
+        isFailOnMemberConflicts:
+          type: boolean
+          description: Specifies if the activation shall fail on detection of conflicts between planned configuration group members, or if the operations shall be processed as if there were no conflicts
+          default: false
+        activationMode:
+          type: string
+          enum:
+          - ATOMIC
+          - BEST_EFFORT
+          - STOP_ON_ERROR
+          default: BEST_EFFORT
+          description: Specifies the execution behavior when the plan configuration group is activated
+          example: BEST_EFFORT
+        validationState:
+          type: string
+          enum:
+          - NOT_VALIDATED
+          - PARTIALLY_VALID
+          - VALID
+          - INVALID
+          default: NOT_VALIDATED
+          description: The validation state for the last time plan configuration group was validated
+          example: NOT_VALIDATED
+        lastModifiedAt:
+          type: string
+          format: date-time
+          description: the last time the plan was modified
+          example: '2025-03-06T16:50:26-08:00'
+        lastValidatedAt:
+          type: string
+          format: date-time
+          description: last time the plan was validated
+          example: '2025-03-06T16:50:29-08:00'
+        members:
+          type: array
+          description: list of plan or plan group descriptor identifiers
+          items:
+            $ref: '#/components/schemas/Member'
+          example:
+          - planConfigDescrId: pcd-network-101
+          - planConfigGroupDescrId: pgc-europe-east-group
+          - planConfigDescrId: pcd-radio-tuning-005
+          - planConfigGroupDescrId: pgc-5g-core-rollout
+    LinkObject:
+      type: object
+      description: Defines the structure of a single hypermedia link.
+      properties:
+        href:
+          type: string
+          format: uri-reference
+          description: The target URI of the link.
+        templated:
+          type: boolean
+          description: Indicates if the href is a URI Template (RFC 6570).
+          default: true
+        type:
+          type: string
+          description: The content type expected when following this link (MIME type).
+        title:
+          type: string
+          description: A human-readable title that describes the link's purpose.
+        method:
+          type: string
+          enum:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+          description: The HTTP method to use for this action link.
+      required:
+      - href
+    SelfLink:
+      type: object
+      description: Hypermedia links for this resource, including fixed and dynamic relations.
+      properties:
+        self:
+          allOf:
+          - $ref: '#/components/schemas/LinkObject'
+          description: A link to the resource itself.
+      additionalProperties:
+        $ref: '#/components/schemas/LinkObject'
+      required:
+      - self
+      example:
+        self:
+          href: '{root-url}/plan-management/v1/plan-descriptors/pd-001'
+          templated: true
+          type: application/json
+          title: The newly created PlanConfigurationDescriptor
+        help:
+          href: '{root-url}/help-service/v1/topics/plan-descriptors'
+          templated: true
+          type: application/json
+          title: online help for the plan descriptor
+externalDocs:
+  description: 3GPP TS 28.572; Generic management services
+  url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.572/

@@ -1,0 +1,82 @@
+openapi: 3.2.0
+info:
+  title: 3gpp-data-reporting Data Reporting Sessions API
+  version: 1.2.0
+  description: "API for 3GPP Data Reporting.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+servers:
+- url: '{apiRoot}/3gpp-data-reporting/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+tags:
+- name: Data Reporting Sessions
+paths:
+  /sessions:
+    post:
+      summary: Create a new Data Reporting Session.
+      operationId: CreateDataRepSession
+      tags:
+      - Data Reporting Sessions
+      requestBody:
+        description: 'Representation of the Data Reporting Session to be created in the NEF.
+
+          '
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: TS26532_Ndcaf_DataReporting.yaml#/components/schemas/DataReportingSession
+      responses:
+        '201':
+          description: Created. Successful creation of a new Data Reporting Session.
+          content:
+            application/json:
+              schema:
+                $ref: TS26532_Ndcaf_DataReporting.yaml#/components/schemas/DataReportingSession
+          headers:
+            Location:
+              required: true
+              schema:
+                type: string
+              description: 'Contains the URI of the newly created resource, according to the structure {apiRoot}/3gpp-data-reporting/<apiVersion>/sessions/{sessionId}
+
+                '
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '411':
+          $ref: TS29122_CommonData.yaml#/components/responses/411
+        '413':
+          $ref: TS29122_CommonData.yaml#/components/responses/413
+        '415':
+          $ref: TS29122_CommonData.yaml#/components/responses/415
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: '{tokenUrl}'
+          scopes: {}
+externalDocs:
+  description: '3GPP TS 29.522 V19.5.0; 5G System; Network Exposure Function Northbound APIs.
+
+    '
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/

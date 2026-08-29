@@ -1,0 +1,328 @@
+openapi: 3.2.0
+info:
+  title: 3gpp-uav-fa Individual UAV Flight Assistance Configuration (Document) API
+  version: 1.0.0
+  description: "API for UAV Flight Assistance.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+servers:
+- url: '{apiRoot}/3gpp-uav-fa/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+tags:
+- name: Individual UAV Flight Assistance Configuration (Document)
+paths:
+  /{afId}/configurations/{configurationId}:
+    parameters:
+    - name: afId
+      description: Represents the identifier of the AF.
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: configurationId
+      description: 'Represents the identifier of the Individual UAV Flight Assistance Configuration resource.
+
+        '
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Request to retrieve an existing Individual UAV Flight Assistance Configuration resource.
+      operationId: GetIndUavFlightAssistConfig
+      tags:
+      - Individual UAV Flight Assistance Configuration (Document)
+      responses:
+        '200':
+          description: 'OK. The requested Individual UAV Flight Assistance Configuration resource is returned in the response body.
+
+            '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UavFlightAssistance'
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '406':
+          $ref: TS29122_CommonData.yaml#/components/responses/406
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    put:
+      summary: Request to update an existing Individual UAV Flight Assistance Configuration.
+      operationId: UpdateIndUavFlightAssistConfig
+      tags:
+      - Individual UAV Flight Assistance Configuration (Document)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UavFlightAssistance'
+      responses:
+        '200':
+          description: 'OK. The Individual UAV Flight Assistance Configuration resource is successfully updated and a representation of the updated resource is returned in the response body.
+
+            '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UavFlightAssistance'
+        '204':
+          description: 'No Content. The Individual UAV Flight Assistance Configuration resource is successfully updated and no content is returned in the response body.
+
+            '
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '411':
+          $ref: TS29122_CommonData.yaml#/components/responses/411
+        '413':
+          $ref: TS29122_CommonData.yaml#/components/responses/413
+        '415':
+          $ref: TS29122_CommonData.yaml#/components/responses/415
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    delete:
+      summary: Request the deletion of an existing Individual UAV Flight Assistance Configuration.
+      operationId: DeleteIndUavFlightAssistConfig
+      tags:
+      - Individual UAV Flight Assistance Configuration (Document)
+      responses:
+        '204':
+          description: 'No Content. The Individual UAV Flight Assistance Configuration resource is successfully deleted.
+
+            '
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  schemas:
+    FlightPath:
+      description: Represents a flight path.
+      type: object
+      properties:
+        pathSegInfo:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlightPathSegInfo'
+          minItems: 1
+      required:
+      - pathSegInfo
+    AltitudeRepEvent:
+      anyOf:
+      - type: string
+        enum:
+        - TA_CHANGE
+        - RAN_NODE_CHANGE
+        - GEO_LOCATION_CHANGE
+        - ANY_ALTITUDE_CHANGE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the UAV's altitude reporting event.  \nPossible values are:\n- TA_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of the UAV's\n  serving TA.\n- RAN_NODE_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of the\n  UAV's serving RAN node.\n- GEO_LOCATION_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of\n  the UAV's geographical location.\n- ANY_ALTITUDE_CHANGE: Indicates that the UAV's altitude reporting trigger is any change of\n  the UAV's altitude.\n"
+    UavFlightAssistance:
+      description: Represents the UAV Flight Assistance Configuration.
+      type: object
+      properties:
+        uavId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        reqPurpose:
+          $ref: '#/components/schemas/RequestPurpose'
+        monitorMode:
+          $ref: '#/components/schemas/MonitoringMode'
+        environingUavs:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+          minItems: 1
+        preSetDistance:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/LinearDistance
+        qosSustReq:
+          $ref: TS29522_AnalyticsExposure.yaml#/components/schemas/AnalyticsEventFilter
+        notifUri:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        flightPath:
+          $ref: '#/components/schemas/FlightPath'
+        altitudeRep:
+          type: array
+          items:
+            $ref: '#/components/schemas/AltitudeReport'
+          minItems: 1
+        altitudeRepReqs:
+          $ref: '#/components/schemas/AltitudeRepReqs'
+        stopAltRepInd:
+          type: boolean
+          enum:
+          - true
+          description: 'Indicates whether to stop the altitude reporting for the UAV UE. Set to true indicates to stop the altitude reporting for the UAV UE. When present, this attribute shall be set to true. The presence of this attribute set to the value false is forbidden. This attribute may be present only in the PUT request.
+
+            '
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - uavId
+      - reqPurpose
+      - notifUri
+    MonitoringMode:
+      anyOf:
+      - type: string
+        enum:
+        - UAV_LOCATION
+        - FLIGHT_TRAJECTORY
+        - FLIGHT_ENVIRONMENT
+        - RANGING_SIDELINK_POSITION
+        - QOS_SUSTAINABILITY_ANALYTICS
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents in UAV Flight Assistance monitoring mode.  \nPossible values are:\n  - UAV_LOCATION: Indicates that the monitoring mode is UAV location monitoring.\n  - FLIGHT_TRAJECTORY: Indicates that the monitoring mode is flight trajectory\n    monitoring.\n  - FLIGHT_ENVIRONMENT: Indicates that the monitoring mode is flight environment\n    monitoring.\n  - RANGING_SIDELINK_POSITION: Indicates that the monitoring mode is\n    Ranging/Sidelink positioning location monitoring.\n  - QOS_SUSTAINABILITY_ANALYTICS: Indicates that the monitoring mode is QoS sustainability\n    analytics monitoring.\n"
+    FlightPathSegInfo:
+      description: Represents a flight path segment.
+      type: object
+      properties:
+        flightSeg:
+          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
+        ussId:
+          type: string
+        candBdCrsPoints:
+          type: array
+          items:
+            $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
+          minItems: 1
+        uavSpeed:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Float
+        altitude:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/Altitude
+        timeSchedule:
+          $ref: TS29122_CommonData.yaml#/components/schemas/TimeWindow
+        timeDuration:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
+      required:
+      - flightSeg
+      - ussId
+      not:
+        required:
+        - timeSchedule
+        - timeDuration
+    AltThresholds:
+      description: Represents the UAV's altitude thresholds.
+      type: object
+      properties:
+        lowerBound:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/Altitude
+        upperBound:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/Altitude
+      anyOf:
+      - required:
+        - lowerBound
+      - required:
+        - upperBound
+    AltitudeReport:
+      description: Represents the UAV's altitude report.
+      type: object
+      properties:
+        altitude:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/Altitude
+        event:
+          $ref: '#/components/schemas/AltitudeRepEvent'
+        timeStamp:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+      required:
+      - altitude
+    AltitudeRepReqs:
+      description: Represents the UAV's altitude reporting requirements.
+      type: object
+      properties:
+        repThresholds:
+          $ref: '#/components/schemas/AltThresholds'
+        repPeriodicity:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        repEvents:
+          type: array
+          items:
+            $ref: '#/components/schemas/AltitudeRepEvent'
+          minItems: 1
+      oneOf:
+      - required:
+        - repThresholds
+      - required:
+        - repPeriodicity
+      - required:
+        - repEvents
+    RequestPurpose:
+      anyOf:
+      - type: string
+        enum:
+        - USS_CHANGEOVER
+        - IN_FLIGHT_MONITORING
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the UAV Flight Assitance request purpose.  \nPossible values are:\n  - USS_CHANGEOVER: Indicates that the purpose of the request is pre-flight planning.\n  - IN_FLIGHT_MONITORING:Indicates that the purpose of the request is in-flight monitoring.\n"
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: '{tokenUrl}'
+          scopes: {}
+externalDocs:
+  description: '3GPP TS 29.522 V19.5.0; 5G System; Network Exposure Function Northbound APIs.
+
+    '
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/

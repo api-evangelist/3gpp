@@ -1,0 +1,407 @@
+openapi: 3.2.0
+info:
+  title: 3GPP Plan Provisioning Management Trigger Descriptor Management API
+  version: 19.2.0
+  description: OAS 3.0.1 specification of API for managing network configuration plans and related jobs © 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
+servers:
+- url: '{MnSRoot}/plan-management/{MnSVersion}'
+  variables:
+    MnSRoot:
+      description: See clause 4.4.2 of TS 32.158
+      default: http://example.com/cm
+    MnSVersion:
+      description: Version number of the OpenAPI definition
+      default: v1
+tags:
+- name: Trigger Descriptor Management
+paths:
+  /trigger-descriptors:
+    post:
+      tags:
+      - Trigger Descriptor Management
+      summary: Create a new trigger descriptor
+      description: Creates a new trigger descriptor
+      operationId: createTriggerDescriptor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TriggerDescriptorRequest'
+      responses:
+        '201':
+          description: Trigger descriptor created successfully
+          headers:
+            Location:
+              description: URI of the created trigger descriptor.
+              schema:
+                type: string
+                format: uri-reference
+                example: /trigger-descriptors/mytrigger-11
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TriggerDescriptorResponse'
+        '400':
+          description: Invalid request parameters or malformed input.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+    get:
+      tags:
+      - Trigger Descriptor Management
+      summary: Get trigger descriptors
+      description: Retrieve a list of existing trigger descriptors.
+      operationId: getTriggerDescriptors
+      responses:
+        '200':
+          description: List of the trigger descriptors retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DescriptorListEntry'
+  /trigger-descriptors/{id}:
+    parameters:
+    - in: path
+      name: id
+      schema:
+        type: string
+        description: Unique identifier of the  descriptor.
+        example: NewNetworkElement10-trigger-001
+      required: true
+    get:
+      tags:
+      - Trigger Descriptor Management
+      summary: Get a specific trigger descriptor by ID
+      description: Retrieve the details of a single descriptor using its unique identifier.
+      operationId: getTriggerDescriptorById
+      responses:
+        '200':
+          description: Trigger descriptor retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TriggerDescriptorResponse'
+        '404':
+          description: Trigger descriptor not found
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+    put:
+      tags:
+      - Trigger Descriptor Management
+      summary: Replace a trigger descriptor
+      description: Replace a trigger descriptor
+      operationId: putTriggerDescriptor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TriggerDescriptorRequest'
+      responses:
+        '204':
+          description: Trigger descriptor created successfully
+        '400':
+          description: Invalid request parameters or malformed input.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '404':
+          description: Trigger descriptor not found
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+    delete:
+      tags:
+      - Trigger Descriptor Management
+      summary: Delete a trigger descriptor by ID
+      description: Deletes a specific trigger descriptor using its unique identifier
+      operationId: deleteTriggerDescriptorById
+      responses:
+        '204':
+          description: Trigger descriptor deleted successfully.
+        '404':
+          description: Trigger descriptor not found.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+        '500':
+          description: Internal server error.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ErrorDetail'
+components:
+  schemas:
+    TriggerDescriptorRequest:
+      allOf:
+      - $ref: '#/components/schemas/TriggerDescriptorBaseProperties'
+    DescriptorListEntry:
+      type: object
+      properties:
+        id:
+          type: string
+          description: id of the descriptor.
+          example: plan-descriptor-1
+        name:
+          type: string
+          description: name of the descriptor.
+          example: Dublin East Rollout
+        version:
+          type: string
+          description: version of the descriptor.
+          example: 1.0.0
+        description:
+          type: string
+          description: description/purpose of the descriptor.
+          example: plan-descriptor-1
+      required:
+      - id
+    ErrorDetail:
+      type: object
+      properties:
+        title:
+          type: string
+          description: A short, human-readable summary of the problem type
+          example: Data already exists; cannot be created
+        type:
+          type: string
+          description: The type of the error
+          enum:
+          - SCHEMA_VALIDATION_ERROR
+          - DATA_NODE_TREE_ERROR
+          - MODIFICATION_NOT_ALLOWED
+          - ACCESS_CONTROL_CONFLICT
+          - APPLICATION_LAYER_ERROR
+          - SERVER_ERROR
+          - OTHER
+        reason:
+          type: string
+          enum:
+          - NEW_DATA_NODE_NAME_INVALID
+          - NEW_DATA_NODE_VALUE_INVALID
+          - NEW_DATA_NODE_CONTAINMENT_INVALID
+          - FINAL_DATA_NODE_VALUE_INVALID
+          - FINAL_DATA_NODE_UNIQUENESS_INVALID
+          - FINAL_DATA_NODE_MULTIPLICITY_INVALID
+          - FINAL_DATA_NODE_CARDINALITY_INVALID
+          - TARGET_DATA_NODE_NOT_FOUND
+          - TARGET_DATA_NODE_PARENT_NOT_FOUND
+          - TARGET_DATA_NODE_FOUND
+          - TARGET_DATA_NODE_NOT_WRITABLE
+          - TARGET_DATA_NODE_INVARIANT
+          - TARGET_DATA_NODE_CREATION_NOT_ALLOWED
+          - TARGET_DATA_NODE_DELETION_NOT_ALLOWED
+          - ACCESS_DENIED
+          - OTHER
+          example: NEW_DATA_NODE_CONTAINMENT_INVALID
+        detail:
+          type: string
+          description: A human-readable explanation specific to this occurrence of the problem.
+          example: NRCellDU=1234 already exists in the network
+        badDataNode:
+          type: string
+          example: /_3gpp-common-subnetwork:SubNetwork=Irl/_3gpp-common-mecontext:MeContext=Dublin-1
+        errorInfo:
+          type: object
+          description: additional error info (e.g. stackdump)
+          additionalProperties: true
+      required:
+      - type
+      - badDataNode
+    TriggerDescriptor:
+      allOf:
+      - $ref: '#/components/schemas/TriggerDescriptorBaseProperties'
+      - type: object
+        properties:
+          id:
+            type: string
+            description: Unique id of the plan configuration descriptor
+            example: trigger-001
+          currentEvaluationResult:
+            type: boolean
+            default: false
+            description: The current result of evaluating the "condition-expression".
+            example: false
+          lastModifiedAt:
+            type: string
+            format: date-time
+            description: The date and time at which the trigger condition was modified the last time by a MnS consumer. Upon creation of the trigger condition descriptor the value of the information element is set to the date and time at which the descriptor is created.
+            example: '2025-03-06T16:50:29-08:00'
+          lastTriggeredAt:
+            type: string
+            format: date-time
+            description: The date and time at which the evaluation result of the trigger condition changed the last time from "False" to "True".
+            example: '2025-03-06T16:50:29-08:00'
+          isTriggerActive:
+            type: boolean
+            default: false
+            description: The indication if the trigger can start activation jobs (trigger is active), or if the trigger cannot start activation jobs (trigger is inactive).
+            example: false
+        required:
+        - conditionExpression
+        - evaluationPeriod
+    TriggerDescriptorBaseProperties:
+      type: object
+      required:
+      - conditionExpression
+      - evaluationPeriod
+      - activationJobs
+      properties:
+        name:
+          type: string
+          description: Descriptive name of the trigger descriptor
+          example: Rollout-5G-Dublin-East
+        description:
+          type: string
+          description: Used to describe the purpose of the trigger
+          example: This is the plan for the new 5G rollout in Dublin east.
+        version:
+          type: string
+          description: an optional version for the Trigger Descriptor
+          example: 1.0.0
+        customProperties:
+          type: object
+          description: A dynamic set of custom properties provided by client
+          additionalProperties: true
+          example:
+            technology-type: NR
+            location: Dublin
+        conditionExpression:
+          type: string
+          description: The condition expression
+        activationJobs:
+          type: array
+          items:
+            type: string
+          description: The identifiers of one or more activation jobs that shall be triggered by this condition.
+        startEvaluationAt:
+          type: string
+          format: date-time
+          description: The date and time at which the evaluation of the condition expression shall start. The evaluation result is set to "False" before that date and time. If the information element is not specified, evaluation of the trigger condition shall start immediately.
+          example: '2025-03-06T16:50:26-08:00'
+        stopEvaluationAt:
+          type: string
+          format: date-time
+          description: The date and time at which the evaluation of the condition expression shall stop. The evaluation result is set to "False" after that date and time. If the information element is not specified, evaluation of the trigger condition shall continue until the deletion of the trigger condition descriptor.
+          example: '2025-03-06T16:50:26-08:00'
+        isTriggerOnce:
+          type: boolean
+          default: true
+          description: The boolean indication, if the trigger is disarmed after the first firing.
+          example: false
+        evaluationPeriod:
+          type: integer
+          description: The evaluation period specifies the interval of time in seconds  between two consecutive condition expression evaluations.
+        hysteresis:
+          type: object
+          allOf:
+          - $ref: '#/components/schemas/Hysteresis'
+          description: The hysteresis, when present, specifies that the trigger shall not be activated immediately when the evaluation result changes from false to true or a specified number of times.  Values greater or equal to 1 are allowed
+      additionalProperties: true
+    Hysteresis:
+      type: object
+      properties:
+        timeOfTrueEvaluations:
+          type: integer
+          description: The hysteresis, when present, specifies that the trigger shall not be activated immediately, when the evaluation result changes from false to true, but only when the evaluation results is true for a specified time (which must be a multiple of the evaluation period). Unit is seconds
+        numberOfTrueEvaluations:
+          type: integer
+          description: This information element, when present, specifies that the trigger shall not be activated immediately, when the evaluation result changes from false to true, but only when the evaluation results is true for a specified time (which must be a multiple of the evaluation period) or a specified number of times.
+    LinkObject:
+      type: object
+      description: Defines the structure of a single hypermedia link.
+      properties:
+        href:
+          type: string
+          format: uri-reference
+          description: The target URI of the link.
+        templated:
+          type: boolean
+          description: Indicates if the href is a URI Template (RFC 6570).
+          default: true
+        type:
+          type: string
+          description: The content type expected when following this link (MIME type).
+        title:
+          type: string
+          description: A human-readable title that describes the link's purpose.
+        method:
+          type: string
+          enum:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+          description: The HTTP method to use for this action link.
+      required:
+      - href
+    SelfLink:
+      type: object
+      description: Hypermedia links for this resource, including fixed and dynamic relations.
+      properties:
+        self:
+          allOf:
+          - $ref: '#/components/schemas/LinkObject'
+          description: A link to the resource itself.
+      additionalProperties:
+        $ref: '#/components/schemas/LinkObject'
+      required:
+      - self
+      example:
+        self:
+          href: '{root-url}/plan-management/v1/plan-descriptors/pd-001'
+          templated: true
+          type: application/json
+          title: The newly created PlanConfigurationDescriptor
+        help:
+          href: '{root-url}/help-service/v1/topics/plan-descriptors'
+          templated: true
+          type: application/json
+          title: online help for the plan descriptor
+    TriggerDescriptorResponse:
+      allOf:
+      - $ref: '#/components/schemas/TriggerDescriptor'
+      - type: object
+        properties:
+          _links:
+            type: object
+            description: Hypermedia links for trigger descriptor
+            allOf:
+            - $ref: '#/components/schemas/SelfLink'
+            example:
+              self:
+                href: '{root-url}/plan-management/v1/trigger-descriptors/trigger-001'
+                templated: true
+                type: application/json
+                title: The newly created TriggerDescriptor
+externalDocs:
+  description: 3GPP TS 28.572; Generic management services
+  url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.572/

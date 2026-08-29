@@ -1,0 +1,147 @@
+openapi: 3.2.0
+info:
+  title: 3gpp-grp-pp Group Parameters Provisionings (Collection) API
+  version: 1.1.0
+  description: "API for Group Parameters Provisioning.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+servers:
+- url: '{apiRoot}/3gpp-grp-pp/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+tags:
+- name: Group Parameters Provisionings (Collection)
+paths:
+  /pp:
+    get:
+      summary: Request to retrieve all the active Group Parameters Provisioning resources at the NEF.
+      operationId: GetGrpParamsProvisionings
+      tags:
+      - Group Parameters Provisionings (Collection)
+      responses:
+        '200':
+          description: 'OK. All the Individual Group Parameters Provisioning resources managed by the NEF are returned. If there are no existing Individual Group Parameters Provisioning resources managed at the NEF, an empty array is returned.
+
+            '
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GrpPpData'
+                minItems: 0
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '406':
+          $ref: TS29122_CommonData.yaml#/components/responses/406
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  schemas:
+    GrpPpData:
+      description: Represents the Group Parameters Provisioning data.
+      type: object
+      properties:
+        afId:
+          type: string
+        mtcProviderId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation
+        dnnSnssaiGrpData:
+          $ref: '#/components/schemas/DnnSnssaiGrpData'
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afId
+    DnnSnssaiGrpData:
+      description: Represents DNN and S-NSSAI specific Group Parameters data.
+      type: object
+      properties:
+        extGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        dnn:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Dnn
+        snssai:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
+        defQos:
+          $ref: '#/components/schemas/AfReqDefaultQoS'
+        ladnServArea:
+          $ref: '#/components/schemas/LadnServArea'
+      required:
+      - extGroupId
+      - dnn
+      - snssai
+      anyOf:
+      - required:
+        - defQos
+      - required:
+        - ladnServArea
+    AfReqDefaultQoS:
+      description: Represents the AF requested default QoS.
+      type: object
+      properties:
+        5qi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/5Qi
+        arp:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Arp
+        priorityLevel:
+          $ref: TS29571_CommonData.yaml#/components/schemas/5QiPriorityLevelRm
+      required:
+      - 5qi
+      - arp
+    LadnServArea:
+      description: Represents an LADN Service Area.
+      type: object
+      properties:
+        geographicAreas:
+          type: array
+          items:
+            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
+          minItems: 1
+        civicAddresses:
+          type: array
+          items:
+            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
+          minItems: 1
+        tais:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Tai
+          minItems: 1
+      oneOf:
+      - required:
+        - geographicAreas
+      - required:
+        - civicAddresses
+      - required:
+        - tais
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: '{tokenUrl}'
+          scopes: {}
+externalDocs:
+  description: '3GPP TS 29.522 V19.5.0; 5G System; Network Exposure Function Northbound APIs.
+
+    '
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/

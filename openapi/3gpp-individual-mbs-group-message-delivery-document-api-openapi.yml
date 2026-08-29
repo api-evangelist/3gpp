@@ -1,0 +1,216 @@
+openapi: 3.2.0
+info:
+  title: 3gpp-mbs-group-msg Individual MBS Group Message Delivery (Document) API
+  version: 1.1.0
+  description: "API for MBS Group Message Delivery.\n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+servers:
+- url: '{apiRoot}/3gpp-mbs-group-msg/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+tags:
+- name: Individual MBS Group Message Delivery (Document)
+paths:
+  /deliveries/{delRef}:
+    parameters:
+    - name: delRef
+      in: path
+      description: 'Contains the identifier of the Individual MBS Group Message Delivery resource.
+
+        '
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieve an existing Individual MBS Group Message Delivery resource.
+      operationId: GetMbsGroupMsgDelivery
+      tags:
+      - Individual MBS Group Message Delivery (Document)
+      responses:
+        '200':
+          description: 'OK. The requested Individual MBS Group Message Delivery resource is successfully returned.
+
+            '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MbsGroupMsgDel'
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '406':
+          $ref: TS29122_CommonData.yaml#/components/responses/406
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    patch:
+      summary: Request the modification of an existing Individual MBS Group Message Delivery resource.
+      operationId: ModifyMbsGroupMsgDelivery
+      tags:
+      - Individual MBS Group Message Delivery (Document)
+      requestBody:
+        required: true
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/MbsGroupMsgDelPatch'
+      responses:
+        '200':
+          description: 'OK. The MBS Group Message Delivery is successfully modified and a representation of the updated resource is returned in the response body.
+
+            '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MbsGroupMsgDel'
+        '204':
+          description: 'No Content. The MBS Group Message Delivery is successfully modified and no content is returned in the response body.
+
+            '
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '411':
+          $ref: TS29122_CommonData.yaml#/components/responses/411
+        '413':
+          $ref: TS29122_CommonData.yaml#/components/responses/413
+        '415':
+          $ref: TS29122_CommonData.yaml#/components/responses/415
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    delete:
+      summary: Request the deletion of an existing Individual MBS Group Message Delivery resource.
+      operationId: DeleteMbsGroupMsgDelivery
+      tags:
+      - Individual MBS Group Message Delivery (Document)
+      responses:
+        '204':
+          description: 'No Content. The Individual MBS Group Message Delivery resource is successfully deleted.
+
+            '
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  schemas:
+    MbsServArea:
+      description: Represents an MBS Service Area.
+      oneOf:
+      - $ref: TS29571_CommonData.yaml#/components/schemas/MbsServiceArea
+      - $ref: TS29571_CommonData.yaml#/components/schemas/ExternalMbsServiceArea
+    MbsGroupMsgDel:
+      description: Represents the MBS Group Message Delivery.
+      type: object
+      properties:
+        afId:
+          type: string
+        extGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        payload:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
+        mbsServArea:
+          $ref: '#/components/schemas/MbsServArea'
+        startTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        endTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        notifUri:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        delStatus:
+          type: boolean
+          description: 'Indicates the status of Group Message Delivery. true indicates a successful delivery. false indicates a failed delivery.
+
+            '
+        mbsUserServAnmt:
+          $ref: TS26517_MBSUserServiceAnnouncement.yaml#/components/schemas/UserServiceDescription
+        servAreaWithoutMbs:
+          $ref: '#/components/schemas/MbsServArea'
+        nrRedCapUeInfo:
+          $ref: TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - extGroupId
+      - payload
+      - mbsServArea
+      - startTime
+      - endTime
+      - notifUri
+    MbsGroupMsgDelPatch:
+      description: Represents the requested modifications to an existing MBS Group Message Delivery.
+      type: object
+      properties:
+        payload:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
+        mbsServArea:
+          $ref: '#/components/schemas/MbsServArea'
+        startTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        endTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        notifUri:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        nrRedCapUeInfo:
+          $ref: TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: '{tokenUrl}'
+          scopes: {}
+externalDocs:
+  description: '3GPP TS 29.522 V19.5.0; 5G System; Network Exposure Function Northbound APIs.
+
+    '
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/

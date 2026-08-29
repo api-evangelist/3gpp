@@ -1,0 +1,100 @@
+openapi: 3.2.0
+info:
+  title: 3gpp-rslppi-pp RSLPPI Parameters Provisionings (Collection) API
+  version: 1.0.0
+  description: "API for RSLPPI Parameters Provisioning.  \n© 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+servers:
+- url: '{apiRoot}/3gpp-rslppi-pp/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+tags:
+- name: RSLPPI Parameters Provisionings (Collection)
+paths:
+  /pp:
+    get:
+      summary: Request to retrieve all the active RSLPPI Parameters Provisioning resources at the NEF.
+      operationId: GetRslppiParamsProvisionings
+      tags:
+      - RSLPPI Parameters Provisionings (Collection)
+      responses:
+        '200':
+          description: 'OK. All the Individual RSLPPI Parameters Provisioning resources managed by the NEF are returned. If there are no existing Individual RSLPPI Parameters Provisioning resources managed at the NEF, an empty array is returned.
+
+            '
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RslppiPpData'
+                minItems: 0
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '406':
+          $ref: TS29122_CommonData.yaml#/components/responses/406
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  schemas:
+    RslppiPpData:
+      description: Represents the RSLPPI Parameters Provisioning data.
+      type: object
+      properties:
+        afId:
+          type: string
+        rslppiData:
+          $ref: '#/components/schemas/RslppiData'
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afId
+    RslppiData:
+      description: Represents RSLPPI Parameters data.
+      type: object
+      properties:
+        extGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        rslppi:
+          $ref: TS29503_Nudm_SDM.yaml#/components/schemas/Rslppi
+      required:
+      - rslppi
+      oneOf:
+      - required:
+        - extGroupId
+      - required:
+        - gpsi
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: '{tokenUrl}'
+          scopes: {}
+externalDocs:
+  description: '3GPP TS 29.522 V18.6.0; 5G System; Network Exposure Function Northbound APIs.
+
+    '
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/

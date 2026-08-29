@@ -1,0 +1,116 @@
+openapi: 3.2.0
+info:
+  title: 3gpp-vfl-inference VFL Inference Subscriptions (Collection) API
+  version: 1.0.1
+  description: "API for VFL Inference.  \n© 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+servers:
+- url: '{apiRoot}/3gpp-vfl-inference/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 4.4 of 3GPP TS 29.501
+security:
+- {}
+- oAuth2ClientCredentials:
+  - 3gpp-vfl-inference
+tags:
+- name: VFL Inference Subscriptions (Collection)
+paths:
+  /{afId}/subscriptions:
+    parameters:
+    - name: afId
+      in: path
+      description: Represents the identifier of the AF.
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieve all the active VFL Inference Subscriptions for the given AF.
+      operationId: GetVFLInferenceSubscriptions
+      tags:
+      - VFL Inference Subscriptions (Collection)
+      responses:
+        '200':
+          description: 'OK. All the Individual VFL Inference Subscription resource(s) managed by the NEF for the requested AF are returned. If there are no active Individual VFL Inference Subscription resources at the NEF for the requested AF, an empty array is returned.
+
+            '
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VflInferSub'
+                minItems: 0
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '406':
+          $ref: TS29122_CommonData.yaml#/components/responses/406
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  schemas:
+    VflInferSub:
+      description: Represents a VFL Inference subscription.
+      type: object
+      properties:
+        notifCorrId:
+          type: string
+          description: 'String identifying the Notification Correlation ID in the corresponding notification.
+
+            '
+        notifUri:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uri
+        extNwdafId:
+          type: string
+          description: 'Contains the external identifier of the target NWDAF acting as VFL client.
+
+            '
+        reportingReqs:
+          $ref: TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation
+        suppFeats:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+        vflInferAnaSubs:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferAnaSub
+          minItems: 1
+          description: Represents inference subscription per analytics Id.
+        vflInferResults:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_VFLInference.yaml#/components/schemas/VflInferResult
+          minItems: 1
+          description: Represents intermediate VFL Inference result.
+      required:
+      - notifUri
+      - notifCorrId
+      - vflInferAnaSubs
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: '{nrfApiRoot}/oauth2/token'
+          scopes:
+            3gpp-vfl-inference: Access to the VFLInference API
+externalDocs:
+  description: '3GPP TS 29.522 V19.6.0; 5G System; Network Exposure Function Northbound APIs.
+
+    '
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/

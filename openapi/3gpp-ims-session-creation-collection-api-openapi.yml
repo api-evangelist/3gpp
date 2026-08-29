@@ -1,0 +1,138 @@
+openapi: 3.2.0
+info:
+  title: 3gpp-ims-sm IMS Session Creation (Collection) API
+  version: 1.0.0
+  description: "API for the IMS Session Management Service.\n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+servers:
+- url: '{apiRoot}/3gpp-ims-sm/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+tags:
+- name: IMS Session Creation (Collection)
+paths:
+  /ims-sessions:
+    post:
+      summary: Request to create a new IMS Session resource.
+      operationId: CreateImsSession
+      tags:
+      - IMS Session Creation (Collection)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImsSession'
+      responses:
+        '201':
+          description: 'Created. The Individual IMS Session resource is successfully created and a representation of the created resource is returned in the response body.
+
+            '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImsSession'
+          headers:
+            Location:
+              description: 'Contains the URI of the newly created resource.
+
+                '
+              required: true
+              schema:
+                type: string
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '409':
+          $ref: TS29122_CommonData.yaml#/components/responses/409
+        '411':
+          $ref: TS29122_CommonData.yaml#/components/responses/411
+        '413':
+          $ref: TS29122_CommonData.yaml#/components/responses/413
+        '415':
+          $ref: TS29122_CommonData.yaml#/components/responses/415
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+      callbacks:
+        ImsSessionNotif:
+          '{$request.body#/notifUri}':
+            post:
+              requestBody:
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      $ref: TS29175_Nimsas_ImsSessionManagement.yaml#/components/schemas/ImsSessionEventNotification
+              responses:
+                '204':
+                  description: 'No Content. The IMS Session Notification is successfully received and acknowledged.
+
+                    '
+                '307':
+                  $ref: TS29122_CommonData.yaml#/components/responses/307
+                '308':
+                  $ref: TS29122_CommonData.yaml#/components/responses/308
+                '400':
+                  $ref: TS29122_CommonData.yaml#/components/responses/400
+                '401':
+                  $ref: TS29122_CommonData.yaml#/components/responses/401
+                '403':
+                  $ref: TS29122_CommonData.yaml#/components/responses/403
+                '404':
+                  $ref: TS29122_CommonData.yaml#/components/responses/404
+                '411':
+                  $ref: TS29122_CommonData.yaml#/components/responses/411
+                '413':
+                  $ref: TS29122_CommonData.yaml#/components/responses/413
+                '415':
+                  $ref: TS29122_CommonData.yaml#/components/responses/415
+                '429':
+                  $ref: TS29122_CommonData.yaml#/components/responses/429
+                '500':
+                  $ref: TS29122_CommonData.yaml#/components/responses/500
+                '503':
+                  $ref: TS29122_CommonData.yaml#/components/responses/503
+                default:
+                  $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  schemas:
+    ImsSession:
+      description: Represents the IMS Session Information.
+      type: object
+      properties:
+        afId:
+          type: string
+        imsSessionInfo:
+          $ref: TS29175_Nimsas_ImsSessionManagement.yaml#/components/schemas/ImsSessionInfo
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afId
+      - imsSessionInfo
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: '{tokenUrl}'
+          scopes: {}
+externalDocs:
+  description: '3GPP TS 29.522 V19.5.0; 5G System; Network Exposure Function Northbound APIs.
+
+    '
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/

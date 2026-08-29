@@ -1,0 +1,136 @@
+openapi: 3.2.0
+info:
+  title: 3gpp-mbs-session Individual MBS Session API
+  version: 1.3.0
+  description: "API for MBS Session Management.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+servers:
+- url: '{apiRoot}/3gpp-mbs-session/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122
+security:
+- {}
+- oAuth2ClientCredentials: []
+tags:
+- name: Individual MBS Session
+paths:
+  /mbs-sessions/{mbsSessionRef}:
+    parameters:
+    - name: mbsSessionRef
+      in: path
+      description: Identifier of the Individual MBS Session resource.
+      required: true
+      schema:
+        type: string
+    patch:
+      summary: Request the modification of an existing Individual MBS Session resource.
+      operationId: ModifyIndMBSSession
+      tags:
+      - Individual MBS Session
+      requestBody:
+        required: true
+        content:
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                $ref: TS29571_CommonData.yaml#/components/schemas/PatchItem
+              minItems: 1
+      responses:
+        '200':
+          description: 'OK. The Individual MBS Session was successfully updated and MBS Session update related information shall be returned in the response body.
+
+            '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MbsSessionUpdateResp'
+        '204':
+          description: 'No Content. The concerned Individual MBS Session resource was successfully modified.
+
+            '
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '411':
+          $ref: TS29122_CommonData.yaml#/components/responses/411
+        '413':
+          $ref: TS29122_CommonData.yaml#/components/responses/413
+        '415':
+          $ref: TS29122_CommonData.yaml#/components/responses/415
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    delete:
+      summary: Request the Deletion of an existing Individual MBS Session resource.
+      operationId: DeleteIndMBSSession
+      tags:
+      - Individual MBS Session
+      responses:
+        '204':
+          description: 'No Content. Successful deletion of the concerned Individual MBS Session resource.
+
+            '
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  schemas:
+    MbsSessionUpdateResp:
+      description: 'Represents the parameters to be returned in an MBS Session update response during partial success.
+
+        '
+      type: object
+      properties:
+        reducedMbsServArea:
+          $ref: TS29571_CommonData.yaml#/components/schemas/MbsServiceArea
+        reducedExtMbsServArea:
+          $ref: TS29571_CommonData.yaml#/components/schemas/ExternalMbsServiceArea
+      not:
+        required:
+        - reducedMbsServArea
+        - reducedExtMbsServArea
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: '{tokenUrl}'
+          scopes: {}
+externalDocs:
+  description: '3GPP TS 29.522 V19.5.0; 5G System; Network Exposure Function Northbound APIs.
+
+    '
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/

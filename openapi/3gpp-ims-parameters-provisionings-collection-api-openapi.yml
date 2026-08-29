@@ -1,0 +1,143 @@
+openapi: 3.2.0
+info:
+  title: 3gpp-ims-pp IMS Parameters Provisionings (Collection) API
+  version: 1.0.0
+  description: "API for the IMS Parameters Provisioning Service.\n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+servers:
+- url: '{apiRoot}/3gpp-ims-pp/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+tags:
+- name: IMS Parameters Provisionings (Collection)
+paths:
+  /pp:
+    get:
+      summary: Request to retrieve all the active IMS Parameters Provisionings at the NEF.
+      operationId: GetImsParamProvisionings
+      tags:
+      - IMS Parameters Provisionings (Collection)
+      responses:
+        '200':
+          description: 'OK. All the Individual IMS Parameters Provisioning resource(s) managed by the  NEF are returned. If there are no existing Individual IMS Parameters Provisioning resources managed at the NEF, an empty array is returned.
+
+            '
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ImsPpData'
+                minItems: 0
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '406':
+          $ref: TS29122_CommonData.yaml#/components/responses/406
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    post:
+      summary: Request the creation of a new IMS Parameters Provisioning.
+      operationId: CreateImsParamProvisioning
+      tags:
+      - IMS Parameters Provisionings (Collection)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImsPpData'
+      responses:
+        '201':
+          description: 'Created. A representation of the created Individual IMS Parameters Provisioning resource is returned in the response body.
+
+            '
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImsPpData'
+          headers:
+            Location:
+              description: 'Contains the URI of the newly created resource.
+
+                '
+              required: true
+              schema:
+                type: string
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '411':
+          $ref: TS29122_CommonData.yaml#/components/responses/411
+        '413':
+          $ref: TS29122_CommonData.yaml#/components/responses/413
+        '415':
+          $ref: TS29122_CommonData.yaml#/components/responses/415
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  schemas:
+    ImsPpData:
+      description: Represents the IMS Parameters Provisioning data.
+      type: object
+      properties:
+        afId:
+          type: string
+        imsData:
+          $ref: '#/components/schemas/ImsData'
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afId
+    ImsData:
+      description: Represents the IMS parameters data for provisioning.
+      type: object
+      properties:
+        tgtUeId:
+          $ref: TS29562_Nhss_imsSDM.yaml#/components/schemas/ImsPublicId
+        rcdPropData:
+          $ref: TS29571_CommonData.yaml#/components/schemas/RcdProperties
+      required:
+      - tgtUeId
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: '{tokenUrl}'
+          scopes: {}
+externalDocs:
+  description: '3GPP TS 29.522 V19.5.0; 5G System; Network Exposure Function Northbound APIs.
+
+    '
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/

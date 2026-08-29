@@ -1,0 +1,148 @@
+openapi: 3.2.0
+info:
+  title: 3gpp-lpi-pp LPI Parameters Provisionings API
+  version: 1.2.0
+  description: "API for Location Privacy Indication Parameters Provisioning.  \n© 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+servers:
+- url: '{apiRoot}/3gpp-lpi-pp/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+tags:
+- name: LPI Parameters Provisionings
+paths:
+  /{afId}/provisionedLpis:
+    get:
+      summary: read all of the active LPI Parameters Provisioning resources for the AF
+      operationId: ReadAllResources
+      tags:
+      - LPI Parameters Provisionings
+      parameters:
+      - name: afId
+        in: path
+        description: Identifier of the AF
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK (Successful get all of the active resources for the AF)
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LpiParametersProvision'
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '406':
+          $ref: TS29122_CommonData.yaml#/components/responses/406
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+    post:
+      summary: Creates a new LPI Parameters Provisioning resource
+      operationId: CreateNewResource
+      tags:
+      - LPI Parameters Provisionings
+      parameters:
+      - name: afId
+        in: path
+        description: Identifier of the AF
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: new resource creation
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LpiParametersProvision'
+      responses:
+        '201':
+          description: Created (Successful creation)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LpiParametersProvision'
+          headers:
+            Location:
+              description: Contains the URI of the newly created resource.
+              required: true
+              schema:
+                type: string
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '411':
+          $ref: TS29122_CommonData.yaml#/components/responses/411
+        '413':
+          $ref: TS29122_CommonData.yaml#/components/responses/413
+        '415':
+          $ref: TS29122_CommonData.yaml#/components/responses/415
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  schemas:
+    LpiParametersProvision:
+      description: Represents an individual LPI Parameters Provisionings resource.
+      type: object
+      properties:
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        exterGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        lpi:
+          $ref: TS29503_Nudm_SDM.yaml#/components/schemas/Lpi
+        mtcProviderId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - lpi
+      - suppFeat
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: '{tokenUrl}'
+          scopes: {}
+externalDocs:
+  description: '3GPP TS 29.522 V18.6.0; 5G System; Network Exposure Function Northbound APIs.
+
+    '
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/

@@ -1,0 +1,84 @@
+openapi: 3.2.0
+info:
+  title: 3gpp-ims-sm IMS Sessions (Collection) API
+  version: 1.0.0
+  description: "API for the IMS Session Management Service.\n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+servers:
+- url: '{apiRoot}/3gpp-ims-sm/v1'
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+tags:
+- name: IMS Sessions (Collection)
+paths:
+  /ims-sessions:
+    get:
+      summary: Request to retrieve all the active IMS Sessions managed by the NEF.
+      operationId: GetImsSessions
+      tags:
+      - IMS Sessions (Collection)
+      responses:
+        '200':
+          description: 'OK. All the "Individual IMS Session" resource(s) managed by the NEF are returned. If there are no active "Individual IMS Session" resources at the NEF, an empty array is returned.
+
+            '
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ImsSession'
+                minItems: 0
+        '307':
+          $ref: TS29122_CommonData.yaml#/components/responses/307
+        '308':
+          $ref: TS29122_CommonData.yaml#/components/responses/308
+        '400':
+          $ref: TS29122_CommonData.yaml#/components/responses/400
+        '401':
+          $ref: TS29122_CommonData.yaml#/components/responses/401
+        '403':
+          $ref: TS29122_CommonData.yaml#/components/responses/403
+        '404':
+          $ref: TS29122_CommonData.yaml#/components/responses/404
+        '406':
+          $ref: TS29122_CommonData.yaml#/components/responses/406
+        '429':
+          $ref: TS29122_CommonData.yaml#/components/responses/429
+        '500':
+          $ref: TS29122_CommonData.yaml#/components/responses/500
+        '503':
+          $ref: TS29122_CommonData.yaml#/components/responses/503
+        default:
+          $ref: TS29122_CommonData.yaml#/components/responses/default
+components:
+  schemas:
+    ImsSession:
+      description: Represents the IMS Session Information.
+      type: object
+      properties:
+        afId:
+          type: string
+        imsSessionInfo:
+          $ref: TS29175_Nimsas_ImsSessionManagement.yaml#/components/schemas/ImsSessionInfo
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afId
+      - imsSessionInfo
+  securitySchemes:
+    oAuth2ClientCredentials:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: '{tokenUrl}'
+          scopes: {}
+externalDocs:
+  description: '3GPP TS 29.522 V19.5.0; 5G System; Network Exposure Function Northbound APIs.
+
+    '
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/
