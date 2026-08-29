@@ -1,0 +1,61 @@
+slug: 3gpp
+provider: 3GPP
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: APF published APIs (Collection)
+  spec_file: 3gpp-apf-published-apis-collection-api-openapi.yml
+  capability_id: BC-4270.10
+  capability_id_l1: BC-4270
+  capability_name: Public API Lifecycle Management
+  confidence: 0.75
+  evidence: '"API for publishing service APIs"; operations CreateAPFPubAPIs / GetAPFPubAPIs on /{apfId}/service-apis;
+    schemas ServiceAPIDescription, PublishedApiPath, Version, ApiStatus'
+  reason: 'CAPIF publish-service surface: an API provider registers and publishes service API descriptions
+    with versions, protocol/interface descriptions and lifecycle status. That is specification and versioning
+    of APIs exposed to external invokers — Public API Lifecycle Management. Some residual doubt because
+    the surface is a network exposure framework rather than a commercial developer platform.'
+- tag: Individual APF published API (Document)
+  spec_file: 3gpp-individual-apf-published-api-document-api-openapi.yml
+  capability_id: BC-4270.10
+  capability_id_l1: BC-4270
+  capability_name: Public API Lifecycle Management
+  confidence: 0.7
+  evidence: '"API for publishing service APIs"; schemas ServiceAPIDescription, Version, ApiStatus, PublishedApiPath,
+    AefProfile'
+  reason: CAPIF publish-service surface manages the description, versioning and status of service APIs
+    exposed to consumers, which is genuinely public API lifecycle/catalogue management rather than telecom
+    traffic control.
+- tag: Individual trusted API invoker (Store)
+  spec_file: 3gpp-individual-trusted-api-invoker-store-api-openapi.yml
+  capability_id: BC-4270.40
+  capability_id_l1: BC-4270
+  capability_name: Developer Identity & Credential Management
+  confidence: 0.7
+  evidence: '"API for CAPIF security management."; "Create a security context for individual API invoker.";
+    "Obtain the OAuth 2.0 authorization information."; schemas AccessTokenReq, OAuthGrantType, ServiceSecurity'
+  reason: CAPIF security management issues and manages security contexts and OAuth 2.0 tokens for third-party
+    API invokers consuming exposed APIs, matching Developer Identity & Credential Management. Confidence
+    moderate because it could alternatively be read as generic Identity & Access Management (BC-620.20).
+- tag: On-boarded API Invokers (Collection)
+  spec_file: 3gpp-on-boarded-api-invokers-collection-api-openapi.yml
+  capability_id: BC-4270.40
+  capability_id_l1: BC-4270
+  capability_name: Developer Identity & Credential Management
+  confidence: 0.7
+  evidence: 'API for API invoker management ... CreateOnboardedAPIInvoker  Request the Creation of a new
+    On-boarded API Invoker. Schemas: APIInvokerEnrolmentDetails, OnboardingInformation, OnboardingCriteria'
+  reason: CAPIF invoker onboarding registers and enrols external API consumers (invokers) into the API
+    framework, including onboarding information and enrolment details — this is developer/consumer identity
+    and credential issuance within a public API ecosystem. Confidence held at 0.7 because only one operation
+    is exposed and the credential aspect is implied by the enrolment schemas rather than stated.
