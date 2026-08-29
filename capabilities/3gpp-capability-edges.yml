@@ -3,7 +3,7 @@ provider: 3GPP
 generated_by: planning/capability-mapping/scripts/classify_capabilities.py
 model: claude-opus-5
 frame:
-- Software & Technology
+- Telecommunications
 min_confidence: 0.7
 capability_model:
   source: https://github.com/vincentmakes/turbo-ea-capabilities
@@ -11,51 +11,233 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 4
+edge_count: 21
 edges:
+- tag: Fault Management Notifications
+  spec_file: 3gpp-fault-management-notifications-api-openapi.yml
+  capability_id: BC-2600.10
+  capability_id_l1: BC-2600
+  capability_name: Network Fault Management
+  confidence: 0.92
+  evidence: '"OAS 3.0.1 definition of the Fault Supervision MnS"; POST / "Receive one of a set of alarm
+    related notifications"'
+  reason: Alarm notification delivery for the 3GPP Fault Supervision management service is squarely network
+    fault detection and alarm handling.
+- tag: MeasJobs
+  spec_file: 3gpp-measjobs-api-openapi.yml
+  capability_id: BC-2600.30
+  capability_id_l1: BC-2600
+  capability_name: Network Performance Management
+  confidence: 0.9
+  evidence: '"OAS 3.0.1 specification of the Performance Measurement Job Control Service"; POST /measJobs
+    "Create a measurement job"; schemas measJobCreation-RequestType, reportingMethod-Type, schedule-Type'
+  reason: TS 28.550 measurement job control creates, schedules and deletes jobs that collect performance
+    measurements/counters from network elements — squarely continuous capture and analysis of network
+    performance KPIs.
 - tag: APF published APIs (Collection)
   spec_file: 3gpp-apf-published-apis-collection-api-openapi.yml
   capability_id: BC-4270.10
   capability_id_l1: BC-4270
   capability_name: Public API Lifecycle Management
-  confidence: 0.75
-  evidence: '"API for publishing service APIs"; operations CreateAPFPubAPIs / GetAPFPubAPIs on /{apfId}/service-apis;
-    schemas ServiceAPIDescription, PublishedApiPath, Version, ApiStatus'
-  reason: 'CAPIF publish-service surface: an API provider registers and publishes service API descriptions
-    with versions, protocol/interface descriptions and lifecycle status. That is specification and versioning
-    of APIs exposed to external invokers — Public API Lifecycle Management. Some residual doubt because
-    the surface is a network exposure framework rather than a commercial developer platform.'
+  confidence: 0.8
+  evidence: '"API for publishing service APIs"; operations CreateAPFPubAPIs / GetAPFPubAPIs; schemas ServiceAPIDescription,
+    ApiStatus, Version, PublishedApiPath, AefProfile'
+  reason: 'CAPIF publish-service API: an API-provider function registers and retrieves descriptions of
+    the service APIs it exposes, including versions, status and interface descriptions. That is specification,
+    publication and versioning of APIs exposed to external invokers — public API lifecycle management.'
 - tag: Individual APF published API (Document)
   spec_file: 3gpp-individual-apf-published-api-document-api-openapi.yml
   capability_id: BC-4270.10
   capability_id_l1: BC-4270
   capability_name: Public API Lifecycle Management
-  confidence: 0.7
-  evidence: '"API for publishing service APIs"; schemas ServiceAPIDescription, Version, ApiStatus, PublishedApiPath,
-    AefProfile'
-  reason: CAPIF publish-service surface manages the description, versioning and status of service APIs
-    exposed to consumers, which is genuinely public API lifecycle/catalogue management rather than telecom
-    traffic control.
-- tag: Individual trusted API invoker (Store)
-  spec_file: 3gpp-individual-trusted-api-invoker-store-api-openapi.yml
+  confidence: 0.8
+  evidence: '"API for publishing service APIs"; schemas ServiceAPIDescription, ServiceAPIDescriptionPatch,
+    ApiStatus, Version, PublishedApiPath'
+  reason: 'CAPIF publish-service surface: register, update and withdraw descriptions and versions of service
+    APIs exposed to API invokers. That is public API lifecycle management (specification, versioning,
+    retirement), not a telecom network or subscriber capability.'
+- tag: Provisioning MnS
+  spec_file: 3gpp-provisioning-mns-api-openapi.yml
+  capability_id: BC-2600.20
+  capability_id_l1: BC-2600
+  capability_name: Network Configuration Management
+  confidence: 0.8
+  evidence: '"OAS 3.0.1 definition of the Provisioning MnS"; PUT/PATCH/DELETE /{className}={id} "Patches
+    one or multiple resources", schemas "NotifyMoiAttributeValueChanges", "NotifyMoiCreation", "MoiChange"'
+  reason: 3GPP Provisioning Management Service creates, modifies and deletes managed object instances
+    representing network resources — network element configuration management (with an inventory/notification
+    flavour), so BC-2600.20 with residual ambiguity vs BC-2600.40.
+- tag: Activation Management
+  spec_file: 3gpp-activation-management-api-openapi.yml
+  capability_id: BC-2600.20
+  capability_id_l1: BC-2600
+  capability_name: Network Configuration Management
+  confidence: 0.75
+  evidence: '"API for managing network configuration plans and related jobs"; "Create a new plan activation
+    job"; "Cancel the activation job"; schemas ConfigChangeWritable, FallbackPlanRef, ActivationJobStatus,
+    ExecutionDetails'
+  reason: Jobs that activate, monitor, cancel and fall back network configuration plans against network
+    elements — controlled deployment of configuration changes with rollback. Squarely telecom network
+    configuration management (adjacent to change & release), so L2 chosen with some residual ambiguity.
+- tag: Analytics Exposure Subscriptions
+  spec_file: 3gpp-analytics-exposure-subscriptions-api-openapi.yml
+  capability_id: BC-2600.30
+  capability_id_l1: BC-2600
+  capability_name: Network Performance Management
+  confidence: 0.75
+  evidence: schemas NetworkPerfExposure, CongestionAnalytics, QosSustainabilityExposure, WlanPerformInfo;
+    "API for Analytics Exposure"
+  reason: Subscriptions to network analytics events (network performance, congestion, QoS sustainability,
+    UE mobility) are capture and analysis of network performance indicators, i.e. Network Performance
+    Management.
+- tag: AnalyticsExposure API Fetch analytics information
+  spec_file: 3gpp-analyticsexposure-api-fetch-analytics-information-api-openapi.yml
+  capability_id: BC-2600.30
+  capability_id_l1: BC-2600
+  capability_name: Network Performance Management
+  confidence: 0.75
+  evidence: POST /{afId}/fetch FetchAnalyticsInfo "Fetch analytics information"; schemas NetworkPerfExposure,
+    CongestionAnalytics, QosSustainabilityExposure
+  reason: On-demand fetch of network analytics (performance, congestion, QoS sustainability) is network
+    performance analysis exposed to consumers, mapping to Network Performance Management.
+- tag: Individual On-boarded API Invoker (Document)
+  spec_file: 3gpp-individual-on-boarded-api-invoker-document-api-openapi.yml
   capability_id: BC-4270.40
   capability_id_l1: BC-4270
   capability_name: Developer Identity & Credential Management
+  confidence: 0.75
+  evidence: '"API for API invoker management"; schemas APIInvokerEnrolmentDetails, OnboardingInformation,
+    OnboardingCriteria, EnrolFailCause'
+  reason: CAPIF API invoker management handles onboarding/enrolment and credentials of external API consumers
+    of the exposure platform — developer/consumer identity and credential stewardship for a public API
+    ecosystem (BC-4270.40).
+- tag: Plan Group Descriptor Management
+  spec_file: 3gpp-plan-group-descriptor-management-api-openapi.yml
+  capability_id: BC-2600.20
+  capability_id_l1: BC-2600
+  capability_name: Network Configuration Management
+  confidence: 0.75
+  evidence: '"OAS 3.0.1 specification of API for managing network configuration plans and related jobs";
+    "createPlanGroupDescriptor  Create a new plan group descriptor", schema "PlanConfigurationGroupDescriptor"'
+  reason: Operations manage descriptors for network configuration plans on managed network elements —
+    controlled definition and deployment of network element configuration, i.e. Network Configuration
+    Management. Slight ambiguity with change/release management, hence 0.75.
+- tag: Retrieve
+  spec_file: 3gpp-retrieve-api-openapi.yml
+  capability_id: BC-2640.60
+  capability_id_l1: BC-2640
+  capability_name: Subscriber Authentication & Authorisation
+  confidence: 0.75
+  evidence: '"POST /retrieve  RetrieveAKMAAppKey  Retrieve AKMA Application Key Information."; schemas
+    "AkmaAfKeyRequest", "AKId", "UeIdInfo"'
+  reason: AKMA retrieves subscriber-credential-derived application keys and UE identity information —
+    authentication/authorisation of subscribers across access technologies. Mixed spec origin (also UEID)
+    keeps confidence moderate.
+- tag: Validation Management
+  spec_file: 3gpp-validation-management-api-openapi.yml
+  capability_id: BC-2600.20
+  capability_id_l1: BC-2600
+  capability_name: Network Configuration Management
+  confidence: 0.75
+  evidence: '''specification of API for managing network configuration plans and related jobs''; ''Create
+    a new plan validation job''; schemas ConfigChangeWritable, PlanConfigurationDescriptorBaseProperties,
+    FallbackPlanRef'
+  reason: Despite the generic tag, the operations validate network configuration change plans (with fallback
+    plan references and config-change content), which is controlled definition and verification of network
+    element configuration. Some overlap with network change & release management keeps confidence short
+    of certainty.
+- tag: Individual chargeable party resource Operation
+  spec_file: 3gpp-individual-chargeable-party-resource-operation-api-openapi.yml
+  capability_id: BC-2660.20
+  capability_id_l1: BC-2660
+  capability_name: Charging & Rating Management
+  confidence: 0.72
+  evidence: '"API for Chargeable Party management" ... "Read a chargeable party resource for a given SCS/AS
+    and a transaction Id", schema ChargeableParty'
+  reason: Designating and changing the party to be charged for a data session (sponsored connectivity)
+    is a charging concern within telecom billing and revenue management; it directly parameterises who
+    is rated/charged for usage.
+- tag: Plan Descriptor Management
+  spec_file: 3gpp-plan-descriptor-management-api-openapi.yml
+  capability_id: BC-2600.20
+  capability_id_l1: BC-2600
+  capability_name: Network Configuration Management
+  confidence: 0.72
+  evidence: specification of API for managing network configuration plans and related jobs ... createPlanDescriptor  Create
+    a new plan descriptor; schemas PlanConfigurationDescriptor, ConfigChange
+  reason: CRUD over network configuration plan descriptors containing ConfigChange entries is squarely
+    network configuration definition and controlled change deployment; some ambiguity remains between
+    configuration management and network change/release management.
+- tag: Chargeable Party Transaction Operation
+  spec_file: 3gpp-chargeable-party-transaction-operation-api-openapi.yml
+  capability_id: BC-2660.20
+  capability_id_l1: BC-2660
+  capability_name: Charging & Rating Management
   confidence: 0.7
-  evidence: '"API for CAPIF security management."; "Create a security context for individual API invoker.";
-    "Obtain the OAuth 2.0 authorization information."; schemas AccessTokenReq, OAuthGrantType, ServiceSecurity'
-  reason: CAPIF security management issues and manages security contexts and OAuth 2.0 tokens for third-party
-    API invokers consuming exposed APIs, matching Developer Identity & Credential Management. Confidence
-    moderate because it could alternatively be read as generic Identity & Access Management (BC-620.20).
-- tag: On-boarded API Invokers (Collection)
-  spec_file: 3gpp-on-boarded-api-invokers-collection-api-openapi.yml
-  capability_id: BC-4270.40
-  capability_id_l1: BC-4270
-  capability_name: Developer Identity & Credential Management
+  evidence: '"API for Chargeable Party management"; POST /{scsAsId}/transactions "Create a new chargeable
+    party transaction resource"; schema ChargeableParty'
+  reason: The 3GPP ChargeableParty API lets a third-party application request to become the charged party
+    for a data session (sponsored connectivity), i.e. it determines who is charged for usage — a charging/rating
+    control surface rather than a network-config one. Confidence held at 0.7 because the operations are
+    thin and could also be read as a generic transaction resource.
+- tag: Fallback Descriptor Management
+  spec_file: 3gpp-fallback-descriptor-management-api-openapi.yml
+  capability_id: BC-2600.20
+  capability_id_l1: BC-2600
+  capability_name: Network Configuration Management
   confidence: 0.7
-  evidence: 'API for API invoker management ... CreateOnboardedAPIInvoker  Request the Creation of a new
-    On-boarded API Invoker. Schemas: APIInvokerEnrolmentDetails, OnboardingInformation, OnboardingCriteria'
-  reason: CAPIF invoker onboarding registers and enrols external API consumers (invokers) into the API
-    framework, including onboarding information and enrolment details — this is developer/consumer identity
-    and credential issuance within a public API ecosystem. Confidence held at 0.7 because only one operation
-    is exposed and the credential aspect is implied by the enrolment schemas rather than stated.
+  evidence: '"API for managing network configuration plans and related jobs"; GET /fallback-descriptors
+    "Get fallback configuration descriptors" (FallbackConfigurationDescriptor, ConfigChangeWritable)'
+  reason: Management of fallback configuration descriptors used when applying network configuration plans
+    — definition and controlled deployment/rollback of network element configuration. Could arguably sit
+    under change & release management, hence 0.7.
+- tag: Get Msisdn
+  spec_file: 3gpp-get-msisdn-api-openapi.yml
+  capability_id: BC-2640.10
+  capability_id_l1: BC-2640
+  capability_name: Subscriber Identity Management
+  confidence: 0.7
+  evidence: '"API for UE ID service"; POST /get-msisdn "GET the MSISDN of the UE." (MsisdnInfo, MsisdnReq)'
+  reason: Resolution/retrieval of a subscriber's MSISDN identifier for a UE is subscriber identifier management
+    in the subscriber data layer. Numbering resource stewardship is a plausible alternative, so 0.7.
+- tag: Individual Network Status Reporting Subscription
+  spec_file: 3gpp-individual-network-status-reporting-subscription-api-openapi.yml
+  capability_id: BC-2600.30
+  capability_id_l1: BC-2600
+  capability_name: Network Performance Management
+  confidence: 0.7
+  evidence: '"API for reporting network status"; "Read an active network status reporting subscription
+    resource"; schemas CongestionValue, CongestionType'
+  reason: Continuous reporting of network congestion status to applications is capture and reporting of
+    network performance indicators, mapping to Network Performance Management.
+- tag: UE ID Mapping Information Provisioning (Collection)
+  spec_file: 3gpp-ue-id-mapping-information-provisioning-collection-api-openapi.yml
+  capability_id: BC-2640.10
+  capability_id_l1: BC-2640
+  capability_name: Subscriber Identity Management
+  confidence: 0.7
+  evidence: CreateUeIdMappingProvisioning — 'Request the creation of a new UE ID Mapping Information Provisioning';
+    schemas UeIdMappingInfo, RangSlUeIdMappInfo
+  reason: Provisioning of mappings between subscriber/UE identifiers in the operator's subscriber data
+    layer, which is squarely subscriber identity management rather than any technical plumbing concern.
+- tag: UE ID Mapping Information Provisionings (Collection)
+  spec_file: 3gpp-ue-id-mapping-information-provisionings-collection-api-openapi.yml
+  capability_id: BC-2640.10
+  capability_id_l1: BC-2640
+  capability_name: Subscriber Identity Management
+  confidence: 0.7
+  evidence: GetUeIdMappingProvisionings — 'Request to retrieve all the active UE ID Mapping Information
+    Provisionings at the NEF'; schema UeIdMappingInfo
+  reason: Read side of the same UE identifier mapping provisioning surface; stewardship of subscriber
+    identifiers in the subscriber data layer.
+- tag: Verify Msisdn
+  spec_file: 3gpp-verify-msisdn-api-openapi.yml
+  capability_id: BC-2640
+  capability_id_l1: BC-2640
+  capability_name: Telecom Subscriber Management
+  confidence: 0.7
+  evidence: '''Request to verify whether the UE''s MSISDN provided by the AF matches the UE ID in the
+    form of MSISDN retrieved from the UDM'''
+  reason: Verification of a subscriber's MSISDN against the operator's UDM subscriber record — clearly
+    in the subscriber identity/authentication domain, but the evidence sits between subscriber identity
+    management and subscriber authentication, so only L1 is asserted.
