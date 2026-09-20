@@ -11,7 +11,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 21
+edge_count: 23
 edges:
 - tag: Fault Management Notifications
   spec_file: 3gpp-fault-management-notifications-api-openapi.yml
@@ -210,6 +210,31 @@ edges:
     resource"; schemas CongestionValue, CongestionType'
   reason: Continuous reporting of network congestion status to applications is capture and reporting of
     network performance indicators, mapping to Network Performance Management.
+- tag: Individual trusted API invoker (Store)
+  spec_file: 3gpp-individual-trusted-api-invoker-store-api-openapi.yml
+  capability_id: BC-4270.40
+  capability_id_l1: BC-4270
+  capability_name: Developer Identity & Credential Management
+  confidence: 0.7
+  evidence: '"API for CAPIF security management."; "Create a security context for individual API invoker.";
+    "Obtain the OAuth 2.0 authorization information."; schemas AccessTokenReq, OAuthGrantType, ServiceSecurity'
+  reason: CAPIF security management issues and manages security contexts and OAuth 2.0 tokens for third-party
+    API invokers consuming exposed APIs, matching Developer Identity & Credential Management. Confidence
+    moderate because it could alternatively be read as generic Identity & Access Management (BC-620.20).
+  recovered_from: sweep-20260828T235257Z-edges.json
+- tag: On-boarded API Invokers (Collection)
+  spec_file: 3gpp-on-boarded-api-invokers-collection-api-openapi.yml
+  capability_id: BC-4270.40
+  capability_id_l1: BC-4270
+  capability_name: Developer Identity & Credential Management
+  confidence: 0.7
+  evidence: 'API for API invoker management ... CreateOnboardedAPIInvoker  Request the Creation of a new
+    On-boarded API Invoker. Schemas: APIInvokerEnrolmentDetails, OnboardingInformation, OnboardingCriteria'
+  reason: CAPIF invoker onboarding registers and enrols external API consumers (invokers) into the API
+    framework, including onboarding information and enrolment details — this is developer/consumer identity
+    and credential issuance within a public API ecosystem. Confidence held at 0.7 because only one operation
+    is exposed and the credential aspect is implied by the enrolment schemas rather than stated.
+  recovered_from: sweep-20260828T235257Z-edges.json
 - tag: UE ID Mapping Information Provisioning (Collection)
   spec_file: 3gpp-ue-id-mapping-information-provisioning-collection-api-openapi.yml
   capability_id: BC-2640.10
