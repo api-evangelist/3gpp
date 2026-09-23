@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-mbs-tmgi TMGI Allocation or Timer Expiry Refresh API
   version: 1.2.0
-  description: "API for the allocation, deallocation and management of TMGI(s) for MBS.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for the allocation, deallocation and management of TMGI(s) for MBS.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-mbs-tmgi/v1'
   variables:
@@ -17,7 +21,7 @@ tags:
 paths:
   /allocate:
     post:
-      summary: Request the allocation of TMGI(s) for new MBS session(s) or the refresh of the expiry time of already allocated TMGI(s).
+      summary: Request the allocation of TMGI(s) for new MBS session(s) or the refresh of the…
       operationId: AllocateTmgi
       tags:
       - TMGI Allocation or Timer Expiry Refresh
@@ -112,6 +116,36 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    TmgiAllocResponse:
+      description: 'Represents MBS TMGI(s) allocation information or the refreshed expiry time for already allocated TMGI(s)
+
+        '
+      type: object
+      properties:
+        tmgiInfo:
+          $ref: TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocated
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - tmgiInfo
+    ProblemDetailsTmgiAlloc:
+      description: 'Represents an extension to the ProblemDetails data structure with additional error information related to TMGI Allocation.
+
+        '
+      allOf:
+      - $ref: TS29122_CommonData.yaml#/components/schemas/ProblemDetails
+      - $ref: '#/components/schemas/ReducedMbsServArea'
+    ExpiryNotif:
+      description: Represents MBS TMGI(s) timer expiry notification information.
+      type: object
+      properties:
+        tmgis:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Tmgi
+          minItems: 1
+      required:
+      - tmgis
     ReducedMbsServArea:
       description: 'Represents the reduced MBS Service Area information.
 
@@ -146,36 +180,6 @@ components:
           required:
           - reducedExtMbsServArea
           - reducedMbsServAreas
-    ExpiryNotif:
-      description: Represents MBS TMGI(s) timer expiry notification information.
-      type: object
-      properties:
-        tmgis:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Tmgi
-          minItems: 1
-      required:
-      - tmgis
-    TmgiAllocResponse:
-      description: 'Represents MBS TMGI(s) allocation information or the refreshed expiry time for already allocated TMGI(s)
-
-        '
-      type: object
-      properties:
-        tmgiInfo:
-          $ref: TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocated
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - tmgiInfo
-    ProblemDetailsTmgiAlloc:
-      description: 'Represents an extension to the ProblemDetails data structure with additional error information related to TMGI Allocation.
-
-        '
-      allOf:
-      - $ref: TS29122_CommonData.yaml#/components/schemas/ProblemDetails
-      - $ref: '#/components/schemas/ReducedMbsServArea'
     TmgiAllocRequest:
       description: 'Represents the full set of parameters to initiate an MBS TMGI(s) allocation request or the refresh of the expiry time of already allocated TMGI(s).
 

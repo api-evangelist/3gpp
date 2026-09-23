@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-mbs-session MBS Session Subscriptions API
   version: 1.3.0
-  description: "API for MBS Session Management.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for MBS Session Management.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-mbs-session/v1'
   variables:
@@ -17,7 +21,7 @@ tags:
 paths:
   /mbs-sessions/subscriptions:
     get:
-      summary: Retrieve all the active MBS Sessions subscriptions.
+      summary: Retrieve all the active MBS Sessions subscriptions
       operationId: ReadMBSSessionsSubscs
       tags:
       - MBS Session Subscriptions
@@ -55,7 +59,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     post:
-      summary: Request the creation of a new Individual MBS Session subscription resource.
+      summary: Request the creation of a new Individual MBS Session subscription resource
       operationId: CreateMBSSessionsSubsc
       tags:
       - MBS Session Subscriptions
@@ -144,14 +148,6 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    MbsSessionStatusNotif:
-      description: Represents an MBS Session Status notification.
-      type: object
-      properties:
-        eventList:
-          $ref: TS29571_CommonData.yaml#/components/schemas/MbsSessionEventReportList
-      required:
-      - eventList
     MbsSessionSubsc:
       description: Represents an MBS Session Subscription.
       type: object
@@ -165,6 +161,14 @@ components:
       required:
       - afId
       - subscription
+    MbsSessionStatusNotif:
+      description: Represents an MBS Session Status notification.
+      type: object
+      properties:
+        eventList:
+          $ref: TS29571_CommonData.yaml#/components/schemas/MbsSessionEventReportList
+      required:
+      - eventList
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-time-sync Time Synchronization Exposure Configurations API
+  title: 3gpp-time-sync Time Synchronization Exposure Configurations…
   version: 1.2.0
-  description: "API for time synchronization exposure.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for time synchronization exposure.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-time-sync/v1'
   variables:
@@ -176,18 +180,6 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    TimeSyncExposureConfigNotif:
-      description: Contains the notification of time synchronization service state.
-      type: object
-      properties:
-        configNotifId:
-          type: string
-          description: Notification Correlation ID assigned by the AF.
-        stateOfConfig:
-          $ref: '#/components/schemas/StateOfConfiguration'
-      required:
-      - configNotifId
-      - stateOfConfig
     InstanceType:
       anyOf:
       - type: string
@@ -201,113 +193,18 @@ components:
 
           '
       description: "Identifies the supported PTP instance type.  \nPossible values are:\n- BOUNDARY_CLOCK: Indicates Boundary Clock as defined in IEEE Std 1588.\n- E2E_TRANS_CLOCK: Indicates End-to-End Transparent Clock as defined in IEEE Std 1588.\n- P2P_TRANS_CLOCK: Indicates Peer-to-Peer Transparent Clock as defined in IEEE Std 1588.\n- P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS.\n"
-    StateOfDstt:
-      description: Contains the PTP port state of a DS-TT.
-      type: object
-      properties:
-        gpsi:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-        state:
-          type: boolean
-          description: 'When the PTP port state is Leader, Follower or Passive, it is included and set to true to indicate the state of configuration for DS-TT port is active; when PTP port state is in any other case, it is included and set to false to indicate the state of  configuration for DS port is inactive.
-
-            '
-        clkQltIndOfDstt:
-          $ref: '#/components/schemas/AcceptanceCriteriaResultIndication'
-      required:
-      - gpsi
-      - state
-    TimeSyncExposureConfig:
-      description: Contains the Time Synchronization Configuration parameters.
-      type: object
-      properties:
-        upNodeId:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uint64
-        reqPtpIns:
-          $ref: '#/components/schemas/PtpInstance'
-        gmEnable:
-          type: boolean
-          description: 'Indicates that the AF requests 5GS to act as a grandmaster for PTP or gPTP if it is included and set to true.
-
-            '
-        gmPrio:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        timeDom:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        timeSyncErrBdgt:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        configNotifId:
-          type: string
-          description: Notification Correlation ID assigned by the AF.
-        configNotifUri:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
-        tempValidity:
-          $ref: TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/TemporalValidity
-        coverageArea:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond
-        clkQltDetLvl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/ClockQualityDetailLevel
-        clkQltAcptCri:
-          $ref: TS29571_CommonData.yaml#/components/schemas/ClockQualityAcceptanceCriterion
-      required:
-      - upNodeId
-      - reqPtpIns
-      - timeDom
-      - configNotifId
-      - configNotifUri
-    StateOfConfiguration:
-      description: Contains the state of the time synchronization configuration.
-      type: object
-      properties:
-        stateOfNwtt:
-          type: boolean
-          description: 'When the PTP port state is Leader, Follower or Passive, it is included and set to true to indicate the state of configuration for NW-TT port is active; when PTP port state is in any other case, it is included and set to false to indicate the state of configuration for NW-TT port is inactive. Default value is false.
-
-            '
-        clkQltIndOfNwtt:
-          $ref: '#/components/schemas/AcceptanceCriteriaResultIndication'
-        stateOfDstts:
-          description: 'Contains the PTP port states of the DS-TT(s).
-
-            '
-          type: array
-          items:
-            $ref: '#/components/schemas/StateOfDstt'
-          minItems: 1
-    AcceptanceCriteriaResultIndication:
+    Protocol:
       anyOf:
       - type: string
         enum:
-        - ACCEPTABLE
-        - NON_ACCEPTABLE
+        - ETH
+        - IPV4
+        - IPV6
       - type: string
         description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
 
           '
-      description: "Identifies the supported acceptable / not acceptable indication.  \nPossible values are:\n- ACCEPTABLE: PTP port in (g)PTP service meets the clock quality acceptance criteria.\n- NON_ACCEPTABLE: PTP port in (g)PTP service does not meet the clock quality acceptance\n  criteria.\n"
-    PtpInstance:
-      description: Contains PTP instance configuration and activation requested by the AF.
-      type: object
-      properties:
-        instanceType:
-          $ref: '#/components/schemas/InstanceType'
-        protocol:
-          $ref: '#/components/schemas/Protocol'
-        ptpProfile:
-          type: string
-          description: Identifies the PTP profile.
-        portConfigs:
-          type: array
-          items:
-            $ref: '#/components/schemas/ConfigForPort'
-          minItems: 1
-          description: 'Contains the configurations for the PTP port(s) in the PTP instance.
-
-            '
-      required:
-      - instanceType
-      - protocol
-      - ptpProfile
+      description: "Identifies the supported protocol.  \nPossible values are:\n- ETH: Indicates Ethernet as defined in IEEE Std 1588 [45] Annex E is supported.\n- IPV4: Indicates IPv4 as defined in IEEE Std 1588 [45] Annex C is supported.\n- IPV6: Indicates IPv6 as defined in IEEE Std 1588 [45] Annex D is supported.\n"
     ConfigForPort:
       description: Contains configuration for each port.
       type: object
@@ -348,18 +245,125 @@ components:
         - gpsi
       - required:
         - n6Ind
-    Protocol:
+    AcceptanceCriteriaResultIndication:
       anyOf:
       - type: string
         enum:
-        - ETH
-        - IPV4
-        - IPV6
+        - ACCEPTABLE
+        - NON_ACCEPTABLE
       - type: string
         description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
 
           '
-      description: "Identifies the supported protocol.  \nPossible values are:\n- ETH: Indicates Ethernet as defined in IEEE Std 1588 [45] Annex E is supported.\n- IPV4: Indicates IPv4 as defined in IEEE Std 1588 [45] Annex C is supported.\n- IPV6: Indicates IPv6 as defined in IEEE Std 1588 [45] Annex D is supported.\n"
+      description: "Identifies the supported acceptable / not acceptable indication.  \nPossible values are:\n- ACCEPTABLE: PTP port in (g)PTP service meets the clock quality acceptance criteria.\n- NON_ACCEPTABLE: PTP port in (g)PTP service does not meet the clock quality acceptance\n  criteria.\n"
+    PtpInstance:
+      description: Contains PTP instance configuration and activation requested by the AF.
+      type: object
+      properties:
+        instanceType:
+          $ref: '#/components/schemas/InstanceType'
+        protocol:
+          $ref: '#/components/schemas/Protocol'
+        ptpProfile:
+          type: string
+          description: Identifies the PTP profile.
+        portConfigs:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConfigForPort'
+          minItems: 1
+          description: 'Contains the configurations for the PTP port(s) in the PTP instance.
+
+            '
+      required:
+      - instanceType
+      - protocol
+      - ptpProfile
+    StateOfDstt:
+      description: Contains the PTP port state of a DS-TT.
+      type: object
+      properties:
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        state:
+          type: boolean
+          description: 'When the PTP port state is Leader, Follower or Passive, it is included and set to true to indicate the state of configuration for DS-TT port is active; when PTP port state is in any other case, it is included and set to false to indicate the state of  configuration for DS port is inactive.
+
+            '
+        clkQltIndOfDstt:
+          $ref: '#/components/schemas/AcceptanceCriteriaResultIndication'
+      required:
+      - gpsi
+      - state
+    StateOfConfiguration:
+      description: Contains the state of the time synchronization configuration.
+      type: object
+      properties:
+        stateOfNwtt:
+          type: boolean
+          description: 'When the PTP port state is Leader, Follower or Passive, it is included and set to true to indicate the state of configuration for NW-TT port is active; when PTP port state is in any other case, it is included and set to false to indicate the state of configuration for NW-TT port is inactive. Default value is false.
+
+            '
+        clkQltIndOfNwtt:
+          $ref: '#/components/schemas/AcceptanceCriteriaResultIndication'
+        stateOfDstts:
+          description: 'Contains the PTP port states of the DS-TT(s).
+
+            '
+          type: array
+          items:
+            $ref: '#/components/schemas/StateOfDstt'
+          minItems: 1
+    TimeSyncExposureConfigNotif:
+      description: Contains the notification of time synchronization service state.
+      type: object
+      properties:
+        configNotifId:
+          type: string
+          description: Notification Correlation ID assigned by the AF.
+        stateOfConfig:
+          $ref: '#/components/schemas/StateOfConfiguration'
+      required:
+      - configNotifId
+      - stateOfConfig
+    TimeSyncExposureConfig:
+      description: Contains the Time Synchronization Configuration parameters.
+      type: object
+      properties:
+        upNodeId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uint64
+        reqPtpIns:
+          $ref: '#/components/schemas/PtpInstance'
+        gmEnable:
+          type: boolean
+          description: 'Indicates that the AF requests 5GS to act as a grandmaster for PTP or gPTP if it is included and set to true.
+
+            '
+        gmPrio:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        timeDom:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        timeSyncErrBdgt:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        configNotifId:
+          type: string
+          description: Notification Correlation ID assigned by the AF.
+        configNotifUri:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        tempValidity:
+          $ref: TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/TemporalValidity
+        coverageArea:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond
+        clkQltDetLvl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/ClockQualityDetailLevel
+        clkQltAcptCri:
+          $ref: TS29571_CommonData.yaml#/components/schemas/ClockQualityAcceptanceCriterion
+      required:
+      - upNodeId
+      - reqPtpIns
+      - timeDom
+      - configNotifId
+      - configNotifUri
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

@@ -6,9 +6,7 @@ info:
 
     © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
 
-    All rights reserved.
-
-    '
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/open-api-disc/v1'
   variables:
@@ -20,9 +18,7 @@ tags:
 paths:
   /service-apis:
     get:
-      description: 'Request Open discovery of the Service API(s) according to a set of filtering criteria.
-
-        '
+      description: Request Open discovery of the Service API(s) according to a set of filtering criteria.
       operationId: GetServAPIs
       tags:
       - Service APIs (Collection)
@@ -189,29 +185,10 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/503
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
+      summary: Get serv APIs
+      x-summary-source: derived
 components:
   schemas:
-    OpenAefProfile:
-      type: object
-      description: 'Represents the AEF Profile details provided within an Open Service API Discovery response.
-
-        '
-      properties:
-        aefId:
-          type: string
-        versions:
-          type: array
-          items:
-            $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Version
-          minItems: 1
-        protocol:
-          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol
-        dataFormat:
-          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/DataFormat
-        aefLocation:
-          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/AefLocation
-        serviceKpis:
-          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceKpis
     OpenAPIDetails:
       type: object
       description: 'Represents the Service API details provided within an Open Service API Discovery response.
@@ -239,6 +216,27 @@ components:
           minItems: 1
       required:
       - apiName
+    OpenAefProfile:
+      type: object
+      description: 'Represents the AEF Profile details provided within an Open Service API Discovery response.
+
+        '
+      properties:
+        aefId:
+          type: string
+        versions:
+          type: array
+          items:
+            $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Version
+          minItems: 1
+        protocol:
+          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol
+        dataFormat:
+          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/DataFormat
+        aefLocation:
+          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/AefLocation
+        serviceKpis:
+          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceKpis
     OpenDiscoveryResp:
       type: object
       description: 'Represents the Open Service API Discovery response.

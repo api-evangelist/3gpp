@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-aiot AIoT Inventory Request (custom operation without associated resources) API
+  title: 3gpp-aiot AIoT Inventory Request (custom operation without…
   version: 1.0.1
-  description: "API for UE Address service.\n© 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for UE Address service.
+
+    © 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-aiot/v1'
   variables:
@@ -17,7 +21,7 @@ tags:
 paths:
   /request-inv:
     post:
-      summary: Request to perform an AIoT Inventory operation.
+      summary: Request to perform an AIoT Inventory operation
       operationId: InventoryRequest
       tags:
       - AIoT Inventory Request (custom operation without associated resources)
@@ -138,32 +142,6 @@ components:
           required:
           - devicesRepData
           - failCause
-    ExtTargetArea:
-      description: Represents the External Target Area for AIoT.
-      type: object
-      properties:
-        extAreaIds:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExtAreaId'
-          minItems: 1
-        geographicAreas:
-          type: array
-          items:
-            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
-          minItems: 1
-        civicAddresses:
-          type: array
-          items:
-            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
-          minItems: 1
-      oneOf:
-      - required:
-        - extAreaIds
-      - required:
-        - geographicAreas
-      - required:
-        - civicAddresses
     InventoryReq:
       description: Represents the AIoT Inventory request.
       type: object
@@ -200,6 +178,32 @@ components:
     ExtAreaId:
       description: Represents the External Area Identifier for AIoT.
       type: string
+    ExtTargetArea:
+      description: Represents the External Target Area for AIoT.
+      type: object
+      properties:
+        extAreaIds:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExtAreaId'
+          minItems: 1
+        geographicAreas:
+          type: array
+          items:
+            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
+          minItems: 1
+        civicAddresses:
+          type: array
+          items:
+            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
+          minItems: 1
+      oneOf:
+      - required:
+        - extAreaIds
+      - required:
+        - geographicAreas
+      - required:
+        - civicAddresses
     InventoryResp:
       description: Represents the AIoT Inventory response.
       type: object

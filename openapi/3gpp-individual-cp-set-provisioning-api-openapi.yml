@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-cp-parameter-provisioning Individual CP set Provisioning API
+  title: 3gpp-cp-parameter-provisioning Individual CP set…
   version: 1.4.0
-  description: "API for provisioning communication pattern parameters.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for provisioning communication pattern parameters.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-cp-parameter-provisioning/v1'
   variables:
@@ -36,7 +40,7 @@ paths:
         required: true
         schema:
           type: string
-      summary: Read CP at individual CP set(s) level associated with a CP parameter set Id.
+      summary: Read CP at individual CP set(s) level associated with a CP parameter set Id
       operationId: FetchIndCPSetProvisioning
       tags:
       - Individual CP set Provisioning
@@ -70,7 +74,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Update CP at individual CP set(s) level associated with a CP parameter set Id.
+      summary: Update CP at individual CP set(s) level associated with a CP parameter set Id
       operationId: UpdateIndCPSetProvisioning
       tags:
       - Individual CP set Provisioning
@@ -175,7 +179,7 @@ paths:
         required: true
         schema:
           type: string
-      summary: Delete CP at individual CP set(s) level associated with a CP parameter set Id.
+      summary: Delete CP at individual CP set(s) level associated with a CP parameter set Id
       operationId: DeleteIndCPSetProvisioning
       tags:
       - Individual CP set Provisioning
@@ -206,35 +210,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    ScheduledCommunicationType:
-      anyOf:
-      - type: string
-        enum:
-        - DOWNLINK
-        - UPLINK
-        - BIDIRECTIONAL
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the type of scheduled communication.  \nPossible values are:\n- DOWNLINK: Downlink only.\n- UPLINK: Uplink only.\n- BIDIRECTIONAL: Bi-directional.\n"
-    ScheduledCommunicationTime:
-      description: Represents an offered scheduled communication time.
-      type: object
-      properties:
-        daysOfWeek:
-          type: array
-          items:
-            $ref: TS29122_CommonData.yaml#/components/schemas/DayOfWeek
-          minItems: 1
-          maxItems: 6
-          description: 'Identifies the day(s) of the week. If absent, it indicates every day of the week.
-
-            '
-        timeOfDayStart:
-          $ref: TS29122_CommonData.yaml#/components/schemas/TimeOfDay
-        timeOfDayEnd:
-          $ref: TS29122_CommonData.yaml#/components/schemas/TimeOfDay
     CpParameterSet:
       description: Represents an offered communication pattern parameter set.
       type: object
@@ -292,73 +267,18 @@ components:
           pattern: ^[0]\.[0-9]{2}|[1.00]$
       required:
       - setId
-    UmtLocationArea5G:
-      description: Represents the user location area describing the UE moving trajectory.
-      allOf:
-      - $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
-      - type: object
-        properties:
-          umtTime:
-            $ref: TS29122_CommonData.yaml#/components/schemas/TimeOfDay
-          umtDuration:
-            $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
-    CpReport:
-      description: 'Represents a CP report indicating the CP set identifier(s) which CP parameter(s) are not added or modified successfully and the corresponding failure cause(s).
-
-        '
-      type: object
-      properties:
-        setIds:
-          type: array
-          items:
-            type: string
-          minItems: 1
-          description: 'Identifies the CP set identifier(s) which CP parameter(s) are not added or modified successfully
-
-            '
-        failureCode:
-          $ref: '#/components/schemas/CpFailureCode'
-      required:
-      - failureCode
-    CpFailureCode:
+    ScheduledCommunicationType:
       anyOf:
       - type: string
         enum:
-        - MALFUNCTION
-        - SET_ID_DUPLICATED
-        - OTHER_REASON
-        - CONFIDENCE_LEVEL_NOT_SUFFICIENT
-        - ACCURACY_LEVEL_NOT_SUFFICIENT
+        - DOWNLINK
+        - UPLINK
+        - BIDIRECTIONAL
       - type: string
         description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
 
           '
-      description: "Represents the failure reason of the CP parameter provisioning.  \nPossible values are\n- MALFUNCTION: This value indicates that something functions wrongly in CP parameter\n  provisioning or the CP parameter provisioning does not function at all.\n- SET_ID_DUPLICATED: The received CP set identifier(s) are already provisioned.\n- OTHER_REASON: Other reason unspecified.\n- CONFIDENCE_LEVEL_NOT_SUFFICIENT: The received confidence level for the expected UE\n  parameter is not sufficient.\n- ACCURACY_LEVEL_NOT_SUFFICIENT: The received accuracy level for the expected UE parameter\n  is not sufficient.\n"
-    BatteryIndication:
-      anyOf:
-      - type: string
-        enum:
-        - BATTERY_RECHARGE
-        - BATTERY_REPLACE
-        - BATTERY_NO_RECHARGE
-        - BATTERY_NO_REPLACE
-        - NO_BATTERY
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the type of power consumption.  \nPossible values are:\n- BATTERY_RECHARGE: UE powered with rechargeable battery.\n- BATTERY_REPLACE: UE powered with replaceable battery.\n- BATTERY_NO_RECHARGE: UE powered with no rechargeable battery.\n- BATTERY_NO_REPLACE: UE powered with no replaceable battery.\n- NO_BATTERY: UE not battery powered.\n"
-    CommunicationIndicator:
-      anyOf:
-      - type: string
-        enum:
-        - PERIODICALLY
-        - ON_DEMAND
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the type of the communication.  \nPossible values are:\n- PERIODICALLY: Identifies the UE communicates periodically\n- ON_DEMAND: Identifies the UE communicates on demand\n"
+      description: "Represents the type of scheduled communication.  \nPossible values are:\n- DOWNLINK: Downlink only.\n- UPLINK: Uplink only.\n- BIDIRECTIONAL: Bi-directional.\n"
     TrafficProfile:
       anyOf:
       - type: string
@@ -373,6 +293,16 @@ components:
 
           '
       description: "Represents the type of data transmission.  \nPossible values are:\n- SINGLE_TRANS_UL: Uplink single packet transmission.\n- SINGLE_TRANS_DL: Downlink single packet transmission.\n- DUAL_TRANS_UL_FIRST: Dual packet transmission, firstly uplink packet transmission with\n  subsequent downlink packet transmission.\n- DUAL_TRANS_DL_FIRST: Dual packet transmission, firstly downlink packet transmission with\n  subsequent uplink packet transmission.\n- MULTI_TRANS: Multiple packet transmission.\n"
+    UmtLocationArea5G:
+      description: Represents the user location area describing the UE moving trajectory.
+      allOf:
+      - $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
+      - type: object
+        properties:
+          umtTime:
+            $ref: TS29122_CommonData.yaml#/components/schemas/TimeOfDay
+          umtDuration:
+            $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
     StationaryIndication:
       anyOf:
       - type: string
@@ -416,6 +346,80 @@ components:
         - appId
       - required:
         - flowDescriptions
+    CommunicationIndicator:
+      anyOf:
+      - type: string
+        enum:
+        - PERIODICALLY
+        - ON_DEMAND
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the type of the communication.  \nPossible values are:\n- PERIODICALLY: Identifies the UE communicates periodically\n- ON_DEMAND: Identifies the UE communicates on demand\n"
+    BatteryIndication:
+      anyOf:
+      - type: string
+        enum:
+        - BATTERY_RECHARGE
+        - BATTERY_REPLACE
+        - BATTERY_NO_RECHARGE
+        - BATTERY_NO_REPLACE
+        - NO_BATTERY
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the type of power consumption.  \nPossible values are:\n- BATTERY_RECHARGE: UE powered with rechargeable battery.\n- BATTERY_REPLACE: UE powered with replaceable battery.\n- BATTERY_NO_RECHARGE: UE powered with no rechargeable battery.\n- BATTERY_NO_REPLACE: UE powered with no replaceable battery.\n- NO_BATTERY: UE not battery powered.\n"
+    CpReport:
+      description: 'Represents a CP report indicating the CP set identifier(s) which CP parameter(s) are not added or modified successfully and the corresponding failure cause(s).
+
+        '
+      type: object
+      properties:
+        setIds:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: 'Identifies the CP set identifier(s) which CP parameter(s) are not added or modified successfully
+
+            '
+        failureCode:
+          $ref: '#/components/schemas/CpFailureCode'
+      required:
+      - failureCode
+    CpFailureCode:
+      anyOf:
+      - type: string
+        enum:
+        - MALFUNCTION
+        - SET_ID_DUPLICATED
+        - OTHER_REASON
+        - CONFIDENCE_LEVEL_NOT_SUFFICIENT
+        - ACCURACY_LEVEL_NOT_SUFFICIENT
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the failure reason of the CP parameter provisioning.  \nPossible values are\n- MALFUNCTION: This value indicates that something functions wrongly in CP parameter\n  provisioning or the CP parameter provisioning does not function at all.\n- SET_ID_DUPLICATED: The received CP set identifier(s) are already provisioned.\n- OTHER_REASON: Other reason unspecified.\n- CONFIDENCE_LEVEL_NOT_SUFFICIENT: The received confidence level for the expected UE\n  parameter is not sufficient.\n- ACCURACY_LEVEL_NOT_SUFFICIENT: The received accuracy level for the expected UE parameter\n  is not sufficient.\n"
+    ScheduledCommunicationTime:
+      description: Represents an offered scheduled communication time.
+      type: object
+      properties:
+        daysOfWeek:
+          type: array
+          items:
+            $ref: TS29122_CommonData.yaml#/components/schemas/DayOfWeek
+          minItems: 1
+          maxItems: 6
+          description: 'Identifies the day(s) of the week. If absent, it indicates every day of the week.
+
+            '
+        timeOfDayStart:
+          $ref: TS29122_CommonData.yaml#/components/schemas/TimeOfDay
+        timeOfDayEnd:
+          $ref: TS29122_CommonData.yaml#/components/schemas/TimeOfDay
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

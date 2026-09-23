@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-am-policyauthorization Individual Application AM Context API
+  title: 3gpp-am-policyauthorization Individual Application AM…
   version: 1.2.0
-  description: "API for AM policy authorization.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for AM policy authorization.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-am-policyauthorization/v1'
   variables:
@@ -173,42 +177,37 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    SliceReplReqInfo:
-      description: 'Represents the AF requested Network Slice Replacement requirements information.
+    SliceReplReq:
+      description: 'Represents the requested Network Slice Replacement requirements.
 
         '
       type: object
       properties:
-        snssai:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
-        altSnssai:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
-        afServId:
-          type: string
-        altAfServId:
-          type: string
-      oneOf:
-      - required:
-        - snssai
-        - altSnssai
-      - required:
-        - afServId
-        - altAfServId
-    AppAmContextExpRespData:
-      description: 'It represents a response to a modification or creation request of an Individual Application AM resource. It may contain the notification of the already met events
+        type:
+          $ref: '#/components/schemas/SliceReplType'
+        afSliceReplReq:
+          $ref: '#/components/schemas/SliceReplReqInfo'
+      required:
+      - type
+    AppAmContextExpUpdateData:
+      description: 'Contains the modification(s) to be applied to the Individual application AM context exposure resource.
 
         '
-      anyOf:
-      - $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AppAmContextData
-      - $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsNotification
-    GeographicalArea:
-      description: Contains geographical area information (e.g.a civic address or shapes).
       type: object
       properties:
-        civicAddress:
-          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
-        shapes:
-          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
+        evSubscs:
+          $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm
+        highThruInd:
+          type: boolean
+        covReqs:
+          type: array
+          items:
+            $ref: '#/components/schemas/GeographicalArea'
+          minItems: 1
+        policyDuration:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
+        sliceReplReq:
+          $ref: '#/components/schemas/SliceReplReq'
     SliceReplType:
       anyOf:
       - type: string
@@ -261,37 +260,42 @@ components:
         - covReqs
       - required:
         - sliceReplReq
-    SliceReplReq:
-      description: 'Represents the requested Network Slice Replacement requirements.
+    GeographicalArea:
+      description: Contains geographical area information (e.g.a civic address or shapes).
+      type: object
+      properties:
+        civicAddress:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
+        shapes:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
+    AppAmContextExpRespData:
+      description: 'It represents a response to a modification or creation request of an Individual Application AM resource. It may contain the notification of the already met events
+
+        '
+      anyOf:
+      - $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AppAmContextData
+      - $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsNotification
+    SliceReplReqInfo:
+      description: 'Represents the AF requested Network Slice Replacement requirements information.
 
         '
       type: object
       properties:
-        type:
-          $ref: '#/components/schemas/SliceReplType'
-        afSliceReplReq:
-          $ref: '#/components/schemas/SliceReplReqInfo'
-      required:
-      - type
-    AppAmContextExpUpdateData:
-      description: 'Contains the modification(s) to be applied to the Individual application AM context exposure resource.
-
-        '
-      type: object
-      properties:
-        evSubscs:
-          $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm
-        highThruInd:
-          type: boolean
-        covReqs:
-          type: array
-          items:
-            $ref: '#/components/schemas/GeographicalArea'
-          minItems: 1
-        policyDuration:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
-        sliceReplReq:
-          $ref: '#/components/schemas/SliceReplReq'
+        snssai:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
+        altSnssai:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
+        afServId:
+          type: string
+        altAfServId:
+          type: string
+      oneOf:
+      - required:
+        - snssai
+        - altSnssai
+      - required:
+        - afServId
+        - altAfServId
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

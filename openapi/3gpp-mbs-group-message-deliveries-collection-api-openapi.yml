@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-mbs-group-msg MBS Group Message Deliveries (Collection) API
+  title: 3gpp-mbs-group-msg MBS Group Message Deliveries…
   version: 1.1.0
-  description: "API for MBS Group Message Delivery.\n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for MBS Group Message Delivery.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-mbs-group-msg/v1'
   variables:
@@ -17,7 +21,7 @@ tags:
 paths:
   /deliveries:
     get:
-      summary: Retrieve all the active MBS Group Message Deliveries.
+      summary: Retrieve all the active MBS Group Message Deliveries
       operationId: GetMbsGroupMsgDeliveries
       tags:
       - MBS Group Message Deliveries (Collection)
@@ -56,7 +60,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     post:
-      summary: Request the creation of an MBS Group Message Delivery.
+      summary: Request the creation of an MBS Group Message Delivery
       operationId: CreateMbsGroupMsgDelivery
       tags:
       - MBS Group Message Deliveries (Collection)
@@ -149,6 +153,11 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    MbsServArea:
+      description: Represents an MBS Service Area.
+      oneOf:
+      - $ref: TS29571_CommonData.yaml#/components/schemas/MbsServiceArea
+      - $ref: TS29571_CommonData.yaml#/components/schemas/ExternalMbsServiceArea
     MbsGroupMsgDel:
       description: Represents the MBS Group Message Delivery.
       type: object
@@ -187,11 +196,6 @@ components:
       - startTime
       - endTime
       - notifUri
-    MbsServArea:
-      description: Represents an MBS Service Area.
-      oneOf:
-      - $ref: TS29571_CommonData.yaml#/components/schemas/MbsServiceArea
-      - $ref: TS29571_CommonData.yaml#/components/schemas/ExternalMbsServiceArea
     MbsGroupMsgDelStatusNotif:
       description: Represents the status notification information for an MBS group message delivery.
       type: object

@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-ue-address Individual UE Address Subscription (Document) API
+  title: 3gpp-ue-address Individual UE Address Subscription…
   version: 1.1.0
-  description: "API for UE Address service.\n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for UE Address service.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-ue-address/v1'
   variables:
@@ -24,7 +28,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Request to retrieve an existing Individual UE Address Subscription resource.
+      summary: Request to retrieve an existing Individual UE Address Subscription resource
       operationId: GetIndUEAddrSubsc
       tags:
       - Individual UE Address Subscription (Document)
@@ -60,7 +64,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Request the deletion of an existing Individual UE Address Subscription resource.
+      summary: Request the deletion of an existing Individual UE Address Subscription resource
       operationId: DeleteIndUEAddrSubsc
       tags:
       - Individual UE Address Subscription (Document)
@@ -91,6 +95,27 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    UeAddrInfo:
+      description: Represents the UE Public Address information.
+      type: object
+      properties:
+        uePrivateIpAddr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
+        ipDomain:
+          type: string
+        remoteIpv4Addr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Ipv4Addr
+        remoteIpv6Addr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Ipv6Addr
+        remotePortNumber:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uint16
+      required:
+      - uePrivateIpAddr
+      oneOf:
+      - required:
+        - remoteIpv4Addr
+      - required:
+        - remoteIpv6Addr
     UeAddrSubsc:
       description: Represents the UE Address Subscription.
       type: object
@@ -116,27 +141,6 @@ components:
       - notifUri
       - notifId
       - afId
-    UeAddrInfo:
-      description: Represents the UE Public Address information.
-      type: object
-      properties:
-        uePrivateIpAddr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
-        ipDomain:
-          type: string
-        remoteIpv4Addr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Ipv4Addr
-        remoteIpv6Addr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Ipv6Addr
-        remotePortNumber:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uint16
-      required:
-      - uePrivateIpAddr
-      oneOf:
-      - required:
-        - remoteIpv4Addr
-      - required:
-        - remoteIpv6Addr
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

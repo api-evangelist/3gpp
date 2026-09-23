@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: CAPIF_API_Invoker_Management_ Individual On-boarded API Invoker (Document) API
+  title: CAPIF_API_Invoker_Management_ Individual On-boarded API…
   version: 1.4.0
-  description: "API for API invoker management.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for API invoker management.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/api-invoker-management/v1'
   variables:
@@ -21,7 +25,7 @@ paths:
         type: string
     delete:
       description: Deletes an existing Individual On-boarded API Invoker.
-      summary: Delete an existing Individual On-boarded API Invoker resource.
+      summary: Delete an existing Individual On-boarded API Invoker resource
       operationId: DeleteIndOnboardedAPIInvoker
       tags:
       - Individual On-boarded API Invoker (Document)
@@ -51,7 +55,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Update an existing Individual On-boarded API Invoker resource.
+      summary: Update an existing Individual On-boarded API Invoker resource
       operationId: UpdateIndOnboardedAPIInvoker
       tags:
       - Individual On-boarded API Invoker (Document)
@@ -105,7 +109,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     patch:
-      summary: Modify an existing Individual On-boarded API Invoker resource.
+      summary: Modify an existing Individual On-boarded API Invoker resource
       operationId: ModifyIndOnboardedAPIInvoker
       tags:
       - Individual On-boarded API Invoker (Document)
@@ -172,18 +176,23 @@ components:
           description: 'Represents the list of service APIs that the API Invoker is allowed to invoke.
 
             '
-    EnrolFailCause:
-      anyOf:
-      - type: string
-        enum:
-        - AUTHORIZATION_ISSUE
-        - ONBOARDING_CRI_NOT_MET
-        - UNSPECIFIED
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+    APIInvokerEnrolmentDetailsPatch:
+      type: object
+      description: Represents an API Invoker's enrolment details to be updated.
+      properties:
+        onboardingInformation:
+          $ref: '#/components/schemas/OnboardingInformation'
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        apiList:
+          $ref: '#/components/schemas/APIList'
+        apiInvokerInformation:
+          type: string
+          description: 'Generic information related to the API invoker such as details of the device or the application.
 
-          '
-      description: "Represents API Invoker's per API enrollment failure code.  \nPossible values are:\n- AUTHORIZATION_ISSUE: Indicates that the service API enrollment failed because the service\n  API is not authorized for the API Invoker.\n- ONBOARDING_CRI_NOT_MET: Indicates that the service API entollment failed because the\n  onboarding criteria not met for this service API for the API Invoker.\n- UNSPECIFIED: Indicates that the service API enrollment failed due to an unspecified\n  reason.\n"
+            '
+        expTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRm
     OnboardingCriteria:
       type: object
       description: Represents the onboarding criteria information.
@@ -222,46 +231,6 @@ components:
       required:
       - apiName
       - failureCode
-    APIInvokerEnrolmentDetails:
-      description: Represents the onboarding information of the API Invoker.
-      type: object
-      properties:
-        apiInvokerId:
-          type: string
-          description: 'API invoker ID assigned by the CAPIF core function to the API invoker while on-boarding the API invoker. Shall not be present in the HTTP POST request from the API invoker to the CAPIF core function, to on-board itself. Shall be present in all other HTTP requests and responses.
-
-            '
-          readOnly: true
-        onboardingInformation:
-          $ref: '#/components/schemas/OnboardingInformation'
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
-        requestTestNotification:
-          type: boolean
-          description: 'Set to true to request the CCF to send a test notification as defined in in clause 7.6. Set to false or omitted otherwise.
-
-            '
-        websockNotifConfig:
-          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
-        apiList:
-          $ref: '#/components/schemas/APIList'
-        apiInvokerInformation:
-          type: string
-          description: 'Generic information related to the API invoker such as details of the device or the application.
-
-            '
-        expTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        supportedFeatures:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-        failureReasons:
-          type: array
-          items:
-            $ref: '#/components/schemas/EnrolFailReason'
-          minItems: 1
-      required:
-      - onboardingInformation
-      - notificationDestination
     RelatedCriteria:
       type: object
       description: Represents onboarding related criteria.
@@ -312,14 +281,27 @@ components:
           minItems: 1
       required:
       - apiInvokerPublicKey
-    APIInvokerEnrolmentDetailsPatch:
+    APIInvokerEnrolmentDetails:
+      description: Represents the onboarding information of the API Invoker.
       type: object
-      description: Represents an API Invoker's enrolment details to be updated.
       properties:
+        apiInvokerId:
+          type: string
+          description: 'API invoker ID assigned by the CAPIF core function to the API invoker while on-boarding the API invoker. Shall not be present in the HTTP POST request from the API invoker to the CAPIF core function, to on-board itself. Shall be present in all other HTTP requests and responses.
+
+            '
+          readOnly: true
         onboardingInformation:
           $ref: '#/components/schemas/OnboardingInformation'
         notificationDestination:
           $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        requestTestNotification:
+          type: boolean
+          description: 'Set to true to request the CCF to send a test notification as defined in in clause 7.6. Set to false or omitted otherwise.
+
+            '
+        websockNotifConfig:
+          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
         apiList:
           $ref: '#/components/schemas/APIList'
         apiInvokerInformation:
@@ -328,7 +310,29 @@ components:
 
             '
         expTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRm
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        supportedFeatures:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+        failureReasons:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnrolFailReason'
+          minItems: 1
+      required:
+      - onboardingInformation
+      - notificationDestination
+    EnrolFailCause:
+      anyOf:
+      - type: string
+        enum:
+        - AUTHORIZATION_ISSUE
+        - ONBOARDING_CRI_NOT_MET
+        - UNSPECIFIED
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents API Invoker's per API enrollment failure code.  \nPossible values are:\n- AUTHORIZATION_ISSUE: Indicates that the service API enrollment failed because the service\n  API is not authorized for the API Invoker.\n- ONBOARDING_CRI_NOT_MET: Indicates that the service API entollment failed because the\n  onboarding criteria not met for this service API for the API Invoker.\n- UNSPECIFIED: Indicates that the service API enrollment failed due to an unspecified\n  reason.\n"
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

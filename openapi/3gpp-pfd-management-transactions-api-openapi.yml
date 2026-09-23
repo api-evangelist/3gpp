@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-pfd-management PFD Management Transactions API
   version: 1.4.0
-  description: "API for PFD management.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for PFD management.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-pfd-management/v1'
   variables:
@@ -24,7 +28,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Read all or queried PFDs for a given SCS/AS.
+      summary: Read all or queried PFDs for a given SCS/AS
       operationId: FetchAllPFDManagementTransactions
       tags:
       - PFD Management Transactions
@@ -76,7 +80,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     post:
-      summary: Create PFDs for a given SCS/AS and one or more external Application Identifier(s).
+      summary: Create PFDs for a given SCS/AS and one or more external Application…
       operationId: CreatePFDManagementTransaction
       tags:
       - PFD Management Transactions
@@ -180,73 +184,6 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    UserPlaneLocationArea:
-      description: 'Represents location area(s) of the user plane functions which are unable to enforce the provisioned PFD(s) successfully.
-
-        '
-      type: object
-      properties:
-        locationArea:
-          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea
-        locationArea5G:
-          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
-        dnais:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Dnai
-          minItems: 0
-          description: Identifies a list of DNAI which the user plane functions support.
-    FailureCode:
-      anyOf:
-      - type: string
-        enum:
-        - MALFUNCTION
-        - RESOURCE_LIMITATION
-        - SHORT_DELAY
-        - APP_ID_DUPLICATED
-        - PARTIAL_FAILURE
-        - OTHER_REASON
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the failure reason of the PFD management.  \nPossible values are:\n- MALFUNCTION: This value indicates that something functions wrongly in PFD provisioning\n  or the PFD provisioning does not function at all.\n- RESOURCE_LIMITATION: This value indicates there is resource limitation for PFD storage.\n- SHORT_DELAY: This value indicates that the allowed delay is too short and PFD(s)\n  are not stored.\n- APP_ID_DUPLICATED: The received external application identifier(s) are already\n  provisioned.\n- PARTIAL_FAILURE: The PFD(s) are not provisioned to all PCEFs/TDFs/SMFs.\n- OTHER_REASON: Other reason unspecified.\n"
-    DomainNameProtocol:
-      anyOf:
-      - type: string
-        enum:
-        - DNS_QNAME
-        - TLS_SNI
-        - TLS_SAN
-        - TSL_SCN
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the type of Domain Name Protocol.  \nPossible values are:\n- DNS_QNAME: Identifies the DNS protocol and the question name in DNS query.\n- TLS_SNI: Identifies the Server Name Indication in TLS ClientHello message.\n- TLS_SAN: Identifies the Subject Alternative Name in TLS ServerCertificate message.\n- TSL_SCN: Identifies the Subject Common Name in TLS ServerCertificate message.\n"
-    PfdData:
-      description: 'Represents a PFD request to add, update or remove PFD(s) for one external application identifier.
-
-        '
-      type: object
-      properties:
-        externalAppId:
-          type: string
-          description: Each element uniquely external application identifier
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        pfds:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Pfd'
-          description: "Contains the PFDs of the external application identifier. Each PFD is identified in the map via a key containing the PFD identifier. \n"
-        allowedDelay:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
-        cachingTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRo
-      required:
-      - externalAppId
-      - pfds
     PfdReport:
       description: 'Represents a PFD report indicating the external application identifier(s) which PFD(s) are not added or modified successfully and the corresponding failure cause(s).
 
@@ -270,39 +207,6 @@ components:
       required:
       - externalAppIds
       - failureCode
-    Pfd:
-      description: Represents a PFD for an external Application Identifier.
-      type: object
-      properties:
-        pfdId:
-          type: string
-          description: Identifies a PDF of an application identifier.
-        flowDescriptions:
-          type: array
-          items:
-            type: string
-          minItems: 1
-          description: 'Represents a 3-tuple with protocol, server ip and server port for UL/DL application traffic. The content of the string has the same encoding as the IPFilterRule AVP value as defined in IETF RFC 6733.
-
-            '
-        urls:
-          type: array
-          items:
-            type: string
-          minItems: 1
-          description: 'Indicates a URL or a regular expression which is used to match the significant parts of the URL.
-
-            '
-        domainNames:
-          type: array
-          items:
-            type: string
-          minItems: 1
-          description: Indicates an FQDN or a regular expression as a domain name matching criteria.
-        dnProtocol:
-          $ref: '#/components/schemas/DomainNameProtocol'
-      required:
-      - pfdId
     PfdManagement:
       description: Represents a PFD management resource for a PFD management request.
       type: object
@@ -339,6 +243,106 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
       required:
       - pfdDatas
+    DomainNameProtocol:
+      anyOf:
+      - type: string
+        enum:
+        - DNS_QNAME
+        - TLS_SNI
+        - TLS_SAN
+        - TSL_SCN
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the type of Domain Name Protocol.  \nPossible values are:\n- DNS_QNAME: Identifies the DNS protocol and the question name in DNS query.\n- TLS_SNI: Identifies the Server Name Indication in TLS ClientHello message.\n- TLS_SAN: Identifies the Subject Alternative Name in TLS ServerCertificate message.\n- TSL_SCN: Identifies the Subject Common Name in TLS ServerCertificate message.\n"
+    Pfd:
+      description: Represents a PFD for an external Application Identifier.
+      type: object
+      properties:
+        pfdId:
+          type: string
+          description: Identifies a PDF of an application identifier.
+        flowDescriptions:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: 'Represents a 3-tuple with protocol, server ip and server port for UL/DL application traffic. The content of the string has the same encoding as the IPFilterRule AVP value as defined in IETF RFC 6733.
+
+            '
+        urls:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: 'Indicates a URL or a regular expression which is used to match the significant parts of the URL.
+
+            '
+        domainNames:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: Indicates an FQDN or a regular expression as a domain name matching criteria.
+        dnProtocol:
+          $ref: '#/components/schemas/DomainNameProtocol'
+      required:
+      - pfdId
+    FailureCode:
+      anyOf:
+      - type: string
+        enum:
+        - MALFUNCTION
+        - RESOURCE_LIMITATION
+        - SHORT_DELAY
+        - APP_ID_DUPLICATED
+        - PARTIAL_FAILURE
+        - OTHER_REASON
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the failure reason of the PFD management.  \nPossible values are:\n- MALFUNCTION: This value indicates that something functions wrongly in PFD provisioning\n  or the PFD provisioning does not function at all.\n- RESOURCE_LIMITATION: This value indicates there is resource limitation for PFD storage.\n- SHORT_DELAY: This value indicates that the allowed delay is too short and PFD(s)\n  are not stored.\n- APP_ID_DUPLICATED: The received external application identifier(s) are already\n  provisioned.\n- PARTIAL_FAILURE: The PFD(s) are not provisioned to all PCEFs/TDFs/SMFs.\n- OTHER_REASON: Other reason unspecified.\n"
+    UserPlaneLocationArea:
+      description: 'Represents location area(s) of the user plane functions which are unable to enforce the provisioned PFD(s) successfully.
+
+        '
+      type: object
+      properties:
+        locationArea:
+          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea
+        locationArea5G:
+          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
+        dnais:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Dnai
+          minItems: 0
+          description: Identifies a list of DNAI which the user plane functions support.
+    PfdData:
+      description: 'Represents a PFD request to add, update or remove PFD(s) for one external application identifier.
+
+        '
+      type: object
+      properties:
+        externalAppId:
+          type: string
+          description: Each element uniquely external application identifier
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        pfds:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Pfd'
+          description: "Contains the PFDs of the external application identifier. Each PFD is identified in the map via a key containing the PFD identifier. \n"
+        allowedDelay:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
+        cachingTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRo
+      required:
+      - externalAppId
+      - pfds
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

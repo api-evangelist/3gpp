@@ -13,7 +13,7 @@ servers:
       description: Version number of the OpenAPI definition
       default: XXX
 tags:
-- name: ServiceProfiles
+- name: Service Profiles
 paths:
   /ServiceProfiles:
     post:
@@ -39,7 +39,9 @@ paths:
               schema:
                 $ref: TS28623_ComDefs.yaml#/components/schemas/ErrorResponseDefault
       tags:
-      - ServiceProfiles
+      - Service Profiles
+      operationId: postServiceProfiles
+      x-operation-id-source: derived
   /ServiceProfiles/{ServiceProfileId}:
     delete:
       summary: Delete a ServiceProfile
@@ -67,7 +69,9 @@ paths:
               schema:
                 $ref: TS28623_ComDefs.yaml#/components/schemas/ErrorResponseDefault
       tags:
-      - ServiceProfiles
+      - Service Profiles
+      operationId: deleteServiceProfilesByServiceProfileId
+      x-operation-id-source: derived
 components:
   schemas:
     ServiceProfile-Type:

@@ -1,7 +1,11 @@
 openapi: 3.2.0
 info:
-  title: CAPIF_Discover_Service_ All published service APIs (Collection) API
-  description: "API for discovering service APIs.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  title: CAPIF_Discover_Service_ All published service APIs…
+  description: 'API for discovering service APIs.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
   version: 1.4.0
 servers:
 - url: '{apiRoot}/service-apis/v1'
@@ -14,9 +18,7 @@ tags:
 paths:
   /allServiceAPIs:
     get:
-      description: 'Discover published service APIs and retrieve a collection of APIs according to certain filter criteria.
-
-        '
+      description: Discover published service APIs and retrieve a collection of APIs according to certain filter criteria.
       operationId: GetPubServAPIs
       tags:
       - All published service APIs (Collection)
@@ -188,21 +190,10 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/503
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
+      summary: Get pub serv APIs
+      x-summary-source: derived
 components:
   schemas:
-    IpAddrInfo:
-      type: object
-      description: Represents the UE IP address information.
-      properties:
-        ipv4Addr:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv4Addr
-        ipv6Addr:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv6Addr
-      oneOf:
-      - required:
-        - ipv4Addr
-      - required:
-        - ipv6Addr
     ResOperInfo:
       type: object
       description: 'Represents the resourse and/or service operation.
@@ -221,6 +212,19 @@ components:
           items:
             type: string
           minItems: 1
+    IpAddrInfo:
+      type: object
+      description: Represents the UE IP address information.
+      properties:
+        ipv4Addr:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv4Addr
+        ipv6Addr:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv6Addr
+      oneOf:
+      - required:
+        - ipv4Addr
+      - required:
+        - ipv6Addr
     DiscoveredAPIs:
       type: object
       description: 'Represents a list of APIs currently registered in the CAPIF core function and satisfying a number of filter criteria provided by the API consumer.

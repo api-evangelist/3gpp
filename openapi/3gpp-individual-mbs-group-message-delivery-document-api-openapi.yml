@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-mbs-group-msg Individual MBS Group Message Delivery (Document) API
+  title: 3gpp-mbs-group-msg Individual MBS Group Message Delivery…
   version: 1.1.0
-  description: "API for MBS Group Message Delivery.\n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for MBS Group Message Delivery.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-mbs-group-msg/v1'
   variables:
@@ -26,7 +30,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Retrieve an existing Individual MBS Group Message Delivery resource.
+      summary: Retrieve an existing Individual MBS Group Message Delivery resource
       operationId: GetMbsGroupMsgDelivery
       tags:
       - Individual MBS Group Message Delivery (Document)
@@ -62,7 +66,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     patch:
-      summary: Request the modification of an existing Individual MBS Group Message Delivery resource.
+      summary: Request the modification of an existing Individual MBS Group Message Delivery…
       operationId: ModifyMbsGroupMsgDelivery
       tags:
       - Individual MBS Group Message Delivery (Document)
@@ -112,7 +116,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Request the deletion of an existing Individual MBS Group Message Delivery resource.
+      summary: Request the deletion of an existing Individual MBS Group Message Delivery…
       operationId: DeleteMbsGroupMsgDelivery
       tags:
       - Individual MBS Group Message Delivery (Document)

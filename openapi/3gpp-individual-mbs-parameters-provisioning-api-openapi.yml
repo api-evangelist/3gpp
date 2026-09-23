@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-mbs-session Individual MBS Parameters Provisioning API
   version: 1.3.0
-  description: "API for MBS Session Management.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for MBS Session Management.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-mbs-session/v1'
   variables:
@@ -26,7 +30,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Request to retrieve an existing Individual MBS Parameters Provisioning resource.
+      summary: Request to retrieve an existing Individual MBS Parameters Provisioning resource
       operationId: GetIndMBSParamsProvisioning
       tags:
       - Individual MBS Parameters Provisioning
@@ -62,7 +66,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Request the update of an existing Individual MBS Parameters Provisioning resource.
+      summary: Request the update of an existing Individual MBS Parameters Provisioning…
       tags:
       - Individual MBS Parameters Provisioning
       operationId: UpdateIndMBSParamsProvisioning
@@ -115,7 +119,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     patch:
-      summary: Request the modification of an existing Individual MBS Parameters Provisioning resource.
+      summary: Request the modification of an existing Individual MBS Parameters Provisioning…
       tags:
       - Individual MBS Parameters Provisioning
       operationId: ModifyIndMBSParamsProvisioning
@@ -168,7 +172,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Request the deletion of an existing Individual MBS Parameters Provisioning resource.
+      summary: Request the deletion of an existing Individual MBS Parameters Provisioning…
       tags:
       - Individual MBS Parameters Provisioning
       operationId: DeleteIndMBSParamsProvisioning
@@ -218,16 +222,6 @@ components:
       required:
       - extGroupId
       - mbsSessionIdList
-    MbsPpDataPatch:
-      description: 'Represents the requested modification to existing MBS Parameters Provisioning data.
-
-        '
-      type: object
-      properties:
-        mbsSessAuthData:
-          $ref: '#/components/schemas/MbsSessAuthData'
-        mbsSessAssistInfo:
-          $ref: '#/components/schemas/MbsSessAssistInfo'
     MbsPpData:
       description: Represents MBS Parameters Provisioning data.
       type: object
@@ -257,6 +251,16 @@ components:
           minItems: 1
       required:
       - mbsSessAssistData
+    MbsPpDataPatch:
+      description: 'Represents the requested modification to existing MBS Parameters Provisioning data.
+
+        '
+      type: object
+      properties:
+        mbsSessAuthData:
+          $ref: '#/components/schemas/MbsSessAuthData'
+        mbsSessAssistInfo:
+          $ref: '#/components/schemas/MbsSessAssistInfo'
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-network-parameter-configuration Np Configurations API
   version: 1.4.0
-  description: "API for network parameter configuration.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for network parameter configuration.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-network-parameter-configuration/v1'
   variables:
@@ -17,7 +21,7 @@ tags:
 paths:
   /{scsAsId}/configurations:
     get:
-      summary: Read all of the active configurations for the SCS/AS.
+      summary: Read all of the active configurations for the SCS/AS
       operationId: FetchAllNPConfigurations
       tags:
       - Np Configurations
@@ -62,7 +66,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     post:
-      summary: Creates a new configuration resource for network parameter configuration.
+      summary: Creates a new configuration resource for network parameter configuration
       operationId: CreateNPConfiguration
       tags:
       - Np Configurations
@@ -156,22 +160,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    ConfigurationNotification:
-      description: Represents a configuration result notification.
-      type: object
-      properties:
-        configuration:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        configResults:
-          type: array
-          items:
-            $ref: TS29122_CommonData.yaml#/components/schemas/ConfigResult
-          minItems: 1
-          description: The grouping configuration result notification provided by the SCEF.
-        appliedParam:
-          $ref: TS29122_MonitoringEvent.yaml#/components/schemas/AppliedParameterConfiguration
-      required:
-      - configuration
     MPSforMsgInd:
       anyOf:
       - type: string
@@ -240,6 +228,22 @@ components:
         - msisdn
       - required:
         - externalGroupId
+    ConfigurationNotification:
+      description: Represents a configuration result notification.
+      type: object
+      properties:
+        configuration:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        configResults:
+          type: array
+          items:
+            $ref: TS29122_CommonData.yaml#/components/schemas/ConfigResult
+          minItems: 1
+          description: The grouping configuration result notification provided by the SCEF.
+        appliedParam:
+          $ref: TS29122_MonitoringEvent.yaml#/components/schemas/AppliedParameterConfiguration
+      required:
+      - configuration
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

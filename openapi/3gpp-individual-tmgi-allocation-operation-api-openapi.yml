@@ -1,7 +1,11 @@
 openapi: 3.2.0
 info:
   title: GMDviaMBMSbyMB2 Individual TMGI Allocation Operation API
-  description: "API for Group Message Delivery via MBMS by MB2  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for Group Message Delivery via MBMS by MB2
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
   version: 1.4.0
 servers:
 - url: '{apiRoot}/3gpp-group-message-delivery-mb2/v1'
@@ -17,7 +21,7 @@ tags:
 paths:
   /{scsAsId}/tmgi-allocation/{tmgi}:
     get:
-      summary: Read a TMGI Allocation resource for a given SCS/AS and a TMGI.
+      summary: Read a TMGI Allocation resource for a given SCS/AS and a TMGI
       operationId: FetchIndTMGIAllocation
       tags:
       - Individual TMGI Allocation Operation
@@ -64,7 +68,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Updates an existing TMGI Allocation resource for a given SCS/AS and a TMGI.
+      summary: Updates an existing TMGI Allocation resource for a given SCS/AS and a TMGI
       operationId: UpdateIndTMGIAllocation
       tags:
       - Individual TMGI Allocation Operation
@@ -126,7 +130,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     patch:
-      summary: Updates an existing TMGI Allocation resource for a given SCS/AS and a TMGI.
+      summary: Updates an existing TMGI Allocation resource for a given SCS/AS and a TMGI
       operationId: ModifyIndTMGIAllocation
       tags:
       - Individual TMGI Allocation Operation
@@ -188,7 +192,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Deletes an existing TMGI Allocation resource for a given SCS/AS and a TMGI.
+      summary: Deletes an existing TMGI Allocation resource for a given SCS/AS and a TMGI
       operationId: DeleteTMGIAllocation
       tags:
       - Individual TMGI Allocation Operation

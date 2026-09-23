@@ -40,6 +40,8 @@ paths:
                 $ref: TS28623_ComDefs.yaml#/components/schemas/ErrorResponseDefault
       tags:
       - SliceProfiles
+      operationId: postSliceProfiles
+      x-operation-id-source: derived
   /SliceProfiles/{SliceProfileId}:
     delete:
       summary: Delete a SliceProfile
@@ -68,12 +70,14 @@ paths:
                 $ref: TS28623_ComDefs.yaml#/components/schemas/ErrorResponseDefault
       tags:
       - SliceProfiles
+      operationId: deleteSliceProfilesBySliceProfileId
+      x-operation-id-source: derived
 components:
   schemas:
-    SliceProfileId-Type:
-      $ref: '#/components/schemas/uri-Type'
     ServiceProfileId-Type:
       $ref: TS28541_SliceNrm.yaml#/components/schemas/SliceProfile
+    SliceProfileId-Type:
+      $ref: '#/components/schemas/uri-Type'
     uri-Type:
       description: Resource URI
       type: string

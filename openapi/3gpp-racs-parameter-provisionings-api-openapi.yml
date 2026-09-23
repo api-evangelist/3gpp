@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-racs-parameter-provisioning RACS Parameter Provisionings API
+  title: 3gpp-racs-parameter-provisioning RACS Parameter…
   version: 1.2.0
-  description: "API for provisioning UE radio capability parameters.  \n© 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for provisioning UE radio capability parameters.
+
+    © 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-racs-pp/v1'
   variables:
@@ -24,7 +28,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Read all RACS parameter provisionings for a given AF.
+      summary: Read all RACS parameter provisionings for a given AF
       operationId: FetchAllRACSParameterProvisionings
       tags:
       - RACS Parameter Provisionings
@@ -61,7 +65,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     post:
-      summary: Create a new RACS parameter provisioning.
+      summary: Create a new RACS parameter provisioning
       operationId: CreateRACSParameterProvisioning
       tags:
       - RACS Parameter Provisionings
@@ -119,6 +123,19 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    RacsFailureCode:
+      anyOf:
+      - type: string
+        enum:
+        - MALFUNCTION
+        - RESOURCE_LIMITATION
+        - RACS_ID_DUPLICATED
+        - OTHER_REASON
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the failure result of UE radio capability provisioning.  \nPossible values are:\n- MALFUNCTION: This value indicates that something functions wrongly in RACS provisioning or\n  the RACS provisioning does not function at all.\n- RESOURCE_LIMITATION: This value indicates there is resource limitation for RACS data\n  storage.\n- RACS_ID_DUPLICATED: The received RACS identifier(s) are already provisioned.\n- OTHER_REASON: Other reason unspecified.\n"
     RacsFailureReport:
       description: Represents a radio capability data provisioning failure report.
       type: object
@@ -192,19 +209,6 @@ components:
       required:
       - racsId
       - imeiTacs
-    RacsFailureCode:
-      anyOf:
-      - type: string
-        enum:
-        - MALFUNCTION
-        - RESOURCE_LIMITATION
-        - RACS_ID_DUPLICATED
-        - OTHER_REASON
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the failure result of UE radio capability provisioning.  \nPossible values are:\n- MALFUNCTION: This value indicates that something functions wrongly in RACS provisioning or\n  the RACS provisioning does not function at all.\n- RESOURCE_LIMITATION: This value indicates there is resource limitation for RACS data\n  storage.\n- RACS_ID_DUPLICATED: The received RACS identifier(s) are already provisioned.\n- OTHER_REASON: Other reason unspecified.\n"
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

@@ -1,7 +1,11 @@
 openapi: 3.2.0
 info:
   title: GMDviaMBMSbyMB2 TMGI Allocation Operation API
-  description: "API for Group Message Delivery via MBMS by MB2  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for Group Message Delivery via MBMS by MB2
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
   version: 1.4.0
 servers:
 - url: '{apiRoot}/3gpp-group-message-delivery-mb2/v1'
@@ -58,7 +62,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     post:
-      summary: Creates a new TMGI Allocation resource for a given SCS/AS.
+      summary: Creates a new TMGI Allocation resource for a given SCS/AS
       operationId: CreateTMGIAllocation
       tags:
       - TMGI Allocation Operation
@@ -113,20 +117,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    TMGIAllocation:
-      description: Represents an individual TMGI Allocation resource.
-      type: object
-      properties:
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        supportedFeatures:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-        externalGroupId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
-        mbmsLocArea:
-          $ref: '#/components/schemas/MbmsLocArea'
-        tmgiExpiration:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRo
     MbmsLocArea:
       description: 'Represents a user location area whithin which is sent a group message delivery via MBMS request.
 
@@ -165,6 +155,20 @@ components:
             $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
           minItems: 1
           description: Identifies a civic address of the user where the UE is located.
+    TMGIAllocation:
+      description: Represents an individual TMGI Allocation resource.
+      type: object
+      properties:
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        supportedFeatures:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+        externalGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        mbmsLocArea:
+          $ref: '#/components/schemas/MbmsLocArea'
+        tmgiExpiration:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRo
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-data-reporting-provisioning Individual Data Reporting Provisioning Session API
+  title: 3gpp-data-reporting-provisioning Individual Data Reporting…
   version: 1.2.0
-  description: "API for 3GPP Data Reporting and Provisioning.  \n© 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for 3GPP Data Reporting and Provisioning.
+
+    © 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-data-reporting-provisioning/v1'
   variables:
@@ -24,7 +28,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Request the retrieval of an existing Individual Data Reporting Provisioning Session resource.
+      summary: Request the retrieval of an existing Individual Data Reporting Provisioning…
       operationId: GetIndDataRepProvSession
       tags:
       - Individual Data Reporting Provisioning Session
@@ -64,7 +68,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Deletes an already existing Individual Data Reporting Provisioning Session resource.
+      summary: Deletes an already existing Individual Data Reporting Provisioning Session…
       operationId: DeleteIndDataRepProvSession
       tags:
       - Individual Data Reporting Provisioning Session

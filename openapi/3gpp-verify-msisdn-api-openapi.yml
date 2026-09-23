@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-ueid Verify Msisdn API
   version: 1.2.0
-  description: "API for UE ID service.\n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for UE ID service.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-ueid/v1'
   variables:
@@ -17,7 +21,7 @@ tags:
 paths:
   /verify-msisdn:
     post:
-      summary: Request to verify whether the UE's MSISDN provided by the AF matches the UE ID in the form of MSISDN retrieved from the UDM.
+      summary: Request to verify whether the UE's MSISDN provided by the AF matches the UE ID…
       operationId: VerifyMsisdn
       requestBody:
         required: true
@@ -64,17 +68,6 @@ paths:
       - Verify Msisdn
 components:
   schemas:
-    MsisdnVerifResp:
-      description: Represents the MSISDN verification response.
-      type: object
-      properties:
-        verifResult:
-          type: boolean
-          description: 'Indicates the verification result on whether the UE''s MSISDN provided by the AF matches the UE''s MSISDN retrieved from the UDM or not. Set to true if the UE''s MSISDN provided by the AF matches the UE''s MSISDN retrieved from the UDM. Set to false if the UE''s MSISDN provided by the AF does not match the UE''s MSISDN retrieved from UDM.
-
-            '
-      required:
-      - verifResult
     MsisdnVerifReq:
       description: Represents the MSISDN verification request.
       type: object
@@ -109,6 +102,17 @@ components:
         - ueIpAddr
       - required:
         - ueMacAddr
+    MsisdnVerifResp:
+      description: Represents the MSISDN verification response.
+      type: object
+      properties:
+        verifResult:
+          type: boolean
+          description: 'Indicates the verification result on whether the UE''s MSISDN provided by the AF matches the UE''s MSISDN retrieved from the UDM or not. Set to true if the UE''s MSISDN provided by the AF matches the UE''s MSISDN retrieved from the UDM. Set to false if the UE''s MSISDN provided by the AF does not match the UE''s MSISDN retrieved from UDM.
+
+            '
+      required:
+      - verifResult
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

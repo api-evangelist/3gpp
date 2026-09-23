@@ -1,7 +1,11 @@
 openapi: 3.2.0
 info:
   title: AEF_Security_ Check Authentication Request API
-  description: "API for AEF security management.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for AEF security management.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
   version: 1.4.0
 servers:
 - url: '{apiRoot}/aef-security/v1'
@@ -14,7 +18,7 @@ tags:
 paths:
   /check-authentication:
     post:
-      summary: Check authentication.
+      summary: Check authentication
       operationId: CheckAuthReq
       tags:
       - Check Authentication Request
@@ -59,6 +63,14 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    CheckAuthenticationRsp:
+      type: object
+      description: Represents authentication check response data.
+      properties:
+        supportedFeatures:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - supportedFeatures
     CheckAuthenticationReq:
       type: object
       description: Represents authentication check request data.
@@ -72,14 +84,6 @@ components:
           $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
       required:
       - apiInvokerId
-      - supportedFeatures
-    CheckAuthenticationRsp:
-      type: object
-      description: Represents authentication check response data.
-      properties:
-        supportedFeatures:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
       - supportedFeatures
 externalDocs:
   description: 3GPP TS 29.222 V19.5.0 Common API Framework for 3GPP Northbound APIs

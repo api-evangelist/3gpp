@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-data-reporting-provisioning Individual Data Reporting Configuration API
+  title: 3gpp-data-reporting-provisioning Individual Data Reporting…
   version: 1.2.0
-  description: "API for 3GPP Data Reporting and Provisioning.  \n© 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for 3GPP Data Reporting and Provisioning.
+
+    © 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-data-reporting-provisioning/v1'
   variables:
@@ -30,7 +34,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Request the retrieval of an existing Individual Data Reporting Configuration resource.
+      summary: Request the retrieval of an existing Individual Data Reporting Configuration…
       operationId: GetIndDataRepConfig
       tags:
       - Individual Data Reporting Configuration
@@ -70,7 +74,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Request to update an existing Individual Data Reporting Configuration resource.
+      summary: Request to update an existing Individual Data Reporting Configuration resource
       operationId: UpdateIndDataRepConfig
       tags:
       - Individual Data Reporting Configuration
@@ -120,7 +124,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     patch:
-      summary: Request to modify an existing Individual Data Reporting Configuration resource.
+      summary: Request to modify an existing Individual Data Reporting Configuration resource
       operationId: ModifyIndDataRepConfig
       tags:
       - Individual Data Reporting Configuration
@@ -170,7 +174,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Deletes an already existing Data Reporting Configuration resource.
+      summary: Deletes an already existing Data Reporting Configuration resource
       operationId: DeleteIndDataRepConfig
       tags:
       - Individual Data Reporting Configuration

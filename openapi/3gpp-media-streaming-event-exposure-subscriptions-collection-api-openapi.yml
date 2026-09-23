@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-ms-event-exposure Media Streaming Event Exposure Subscriptions (Collection) API
+  title: 3gpp-ms-event-exposure Media Streaming Event Exposure…
   version: 1.2.1
-  description: "API for Media Streaming Event Exposure.  \n© 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for Media Streaming Event Exposure.
+
+    © 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-ms-event-exposure/v1'
   variables:
@@ -17,7 +21,7 @@ tags:
 paths:
   /subscriptions:
     get:
-      summary: Retrieve all the active Media Streaming Event Exposure Subscription resources managed by the NEF.
+      summary: Retrieve all the active Media Streaming Event Exposure Subscription resources…
       tags:
       - Media Streaming Event Exposure Subscriptions (Collection)
       operationId: RetrieveMSEventExposureSubscs
@@ -56,7 +60,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     post:
-      summary: Request the creation of a new Individual Media Streaming Event Exposure Subscription resource.
+      summary: Request the creation of a new Individual Media Streaming Event Exposure…
       tags:
       - Media Streaming Event Exposure Subscriptions (Collection)
       operationId: CreateMSEventExposureSubsc

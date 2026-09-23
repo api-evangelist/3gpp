@@ -18,7 +18,7 @@ paths:
   /:
     post:
       summary: Receive one of a set of alarm related notifications
-      description: The MnS producer sends an alarm to the consumer.  This interface shall be implemented by the notification-receiver and  used by the notification-sender.
+      description: The MnS producer sends an alarm to the consumer. This interface shall be implemented by the notification-receiver and used by the notification-sender.
       requestBody:
         required: true
         content:
@@ -46,6 +46,8 @@ paths:
                 $ref: TS28623_ComDefs.yaml#/components/schemas/ErrorResponse
       tags:
       - Fault Management Notifications
+      operationId: postRoot
+      x-operation-id-source: derived
 externalDocs:
   description: 3GPP TS 28.111; Fault Management
   url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.111/

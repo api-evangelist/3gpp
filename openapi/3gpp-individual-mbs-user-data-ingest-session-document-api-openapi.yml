@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-mbs-ud-ingest Individual MBS User Data Ingest Session (Document) API
+  title: 3gpp-mbs-ud-ingest Individual MBS User Data Ingest Session…
   version: 1.2.1
-  description: "API for MBS User Data Ingest Session.  \n© 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for MBS User Data Ingest Session.
+
+    © 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-mbs-ud-ingest/v1'
   variables:
@@ -24,7 +28,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Retrieve an existing Individual MBS User Data Ingest Session resource.
+      summary: Retrieve an existing Individual MBS User Data Ingest Session resource
       tags:
       - Individual MBS User Data Ingest Session (Document)
       operationId: RetrieveIndivMBSUserDataIngestSession
@@ -60,7 +64,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Request the update of an existing Individual MBS User Data Ingest Session resource.
+      summary: Request the update of an existing Individual MBS User Data Ingest Session…
       tags:
       - Individual MBS User Data Ingest Session (Document)
       operationId: UpdateIndivMBSUserDataIngestSession
@@ -131,7 +135,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     patch:
-      summary: Request the modification of an existing Individual MBS User Data Ingest Session resource.
+      summary: Request the modification of an existing Individual MBS User Data Ingest Session…
       tags:
       - Individual MBS User Data Ingest Session (Document)
       operationId: ModifyIndivMBSUserDataIngestSession
@@ -202,7 +206,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Deletes an existing Individual MBS User Data Ingest Session resource.
+      summary: Deletes an existing Individual MBS User Data Ingest Session resource
       tags:
       - Individual MBS User Data Ingest Session (Document)
       operationId: DeleteIndivMBSUserDataIngestSession

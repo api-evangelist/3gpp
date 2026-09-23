@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-mbs-ud-ingest MBS User Data Ingest Sessions (Collection) API
+  title: 3gpp-mbs-ud-ingest MBS User Data Ingest Sessions…
   version: 1.2.1
-  description: "API for MBS User Data Ingest Session.  \n© 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for MBS User Data Ingest Session.
+
+    © 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-mbs-ud-ingest/v1'
   variables:
@@ -17,7 +21,7 @@ tags:
 paths:
   /sessions:
     get:
-      summary: Retrieve all the active MBS User Data Ingest Sessions managed by the NEF.
+      summary: Retrieve all the active MBS User Data Ingest Sessions managed by the NEF
       tags:
       - MBS User Data Ingest Sessions (Collection)
       operationId: RetrieveMBSUserDataIngestSessions
@@ -56,7 +60,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     post:
-      summary: Request the creation of a new Individual MBS User Data Ingest Session resource.
+      summary: Request the creation of a new Individual MBS User Data Ingest Session resource
       tags:
       - MBS User Data Ingest Sessions (Collection)
       operationId: CreateMBSUserDataIngestSession

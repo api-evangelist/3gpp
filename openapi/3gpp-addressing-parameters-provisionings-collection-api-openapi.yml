@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-addr-pp Addressing Parameters Provisionings (Collection) API
+  title: 3gpp-addr-pp Addressing Parameters Provisionings…
   version: 1.0.1
-  description: "API for Addressing Parameters Provisioning.  \n© 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for Addressing Parameters Provisioning.
+
+    © 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-addr-pp/v1'
   variables:
@@ -17,7 +21,7 @@ tags:
 paths:
   /pp:
     get:
-      summary: Request to retrieve all the active Addressing Parameters Provisionings at the NEF.
+      summary: Request to retrieve all the active Addressing Parameters Provisionings at the…
       operationId: GetAddrParamsProvisionings
       tags:
       - Addressing Parameters Provisionings (Collection)
@@ -56,7 +60,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     post:
-      summary: Request the creation of a new Addressing Parameters Provisioning.
+      summary: Request the creation of a new Addressing Parameters Provisioning
       tags:
       - Addressing Parameters Provisionings (Collection)
       operationId: CreateAddrParamsProvisioning
@@ -107,21 +111,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    AddrPpData:
-      description: Represents the Addressing Parameters data.
-      type: object
-      properties:
-        afId:
-          type: string
-        staticIpaddrParams:
-          type: array
-          items:
-            $ref: '#/components/schemas/StaticIpAddrParams'
-          minItems: 1
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - afId
     StaticIpAddrParams:
       description: Represents the Static IP Address Parameters data.
       type: object
@@ -143,6 +132,21 @@ components:
       - snssai
       - gpsi
       - staticIpAddresses
+    AddrPpData:
+      description: Represents the Addressing Parameters data.
+      type: object
+      properties:
+        afId:
+          type: string
+        staticIpaddrParams:
+          type: array
+          items:
+            $ref: '#/components/schemas/StaticIpAddrParams'
+          minItems: 1
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afId
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

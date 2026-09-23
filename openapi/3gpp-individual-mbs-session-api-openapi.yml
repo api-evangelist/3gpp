@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-mbs-session Individual MBS Session API
   version: 1.3.0
-  description: "API for MBS Session Management.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for MBS Session Management.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-mbs-session/v1'
   variables:
@@ -24,7 +28,7 @@ paths:
       schema:
         type: string
     patch:
-      summary: Request the modification of an existing Individual MBS Session resource.
+      summary: Request the modification of an existing Individual MBS Session resource
       operationId: ModifyIndMBSSession
       tags:
       - Individual MBS Session
@@ -77,7 +81,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Request the Deletion of an existing Individual MBS Session resource.
+      summary: Request the Deletion of an existing Individual MBS Session resource
       operationId: DeleteIndMBSSession
       tags:
       - Individual MBS Session

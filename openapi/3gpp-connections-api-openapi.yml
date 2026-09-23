@@ -17,7 +17,7 @@ tags:
 paths:
   /connections:
     post:
-      summary: Inform consumer about reporting streams to be carried by the new connection and receive a new connection id.
+      summary: Inform consumer about reporting streams to be carried by the new connection and…
       description: Exchange of meta-data (producer informs consumer about its own identity and the nature of the data to be reported via streaming) phase of the connection establishement by streaming data reporting producer to the streaming data reporting consumer (i.e. streaming target).
       requestBody:
         required: true
@@ -41,8 +41,10 @@ paths:
                 $ref: '#/components/schemas/failedConnectionResponse-Type'
       tags:
       - Connections
+      operationId: postConnections
+      x-operation-id-source: derived
     get:
-      summary: Obtain information about connections.
+      summary: Obtain information about connections
       description: Enables the streaming data reporting service producer to obtain information about one or more streaming connections.
       parameters:
       - name: connectionIdList
@@ -80,9 +82,11 @@ paths:
                 $ref: '#/components/schemas/errorResponse-Type'
       tags:
       - Connections
+      operationId: getConnections
+      x-operation-id-source: derived
   /connections/{connectionId}:
     get:
-      summary: Obtain information about a connection.
+      summary: Obtain information about a connection
       description: Enables the streaming data reporting service producer to obtain information about one streaming connection.
       parameters:
       - name: connectionId
@@ -138,9 +142,11 @@ paths:
                 $ref: '#/components/schemas/errorResponse-Type'
       tags:
       - Connections
+      operationId: getConnectionsByConnectionId
+      x-operation-id-source: derived
   /connections/{connectionId}/streams:
     post:
-      summary: Inform consumer about new reporting streams on an existing connection.
+      summary: Inform consumer about new reporting streams on an existing connection
       description: Allows the producer to add one or more reporting streams to an already established streaming connection.
       parameters:
       - name: connectionId
@@ -182,6 +188,8 @@ paths:
                 $ref: '#/components/schemas/errorResponse-Type'
       tags:
       - Connections
+      operationId: postConnectionsByConnectionIdStreams
+      x-operation-id-source: derived
     delete:
       summary: Remove reporting streams from an existing connection
       description: Allows the producer to remove one or more reporting streams from an already established streaming connection.
@@ -213,8 +221,10 @@ paths:
                 $ref: '#/components/schemas/errorResponse-Type'
       tags:
       - Connections
+      operationId: deleteConnectionsByConnectionIdStreams
+      x-operation-id-source: derived
     get:
-      summary: Obtain information about streams.
+      summary: Obtain information about streams
       description: Enables the streaming data reporting service producer to obtain information about one or more reporting streams.
       parameters:
       - name: connectionId
@@ -258,6 +268,8 @@ paths:
                 $ref: '#/components/schemas/errorResponse-Type'
       tags:
       - Connections
+      operationId: getConnectionsByConnectionIdStreams
+      x-operation-id-source: derived
   /connections/{connectionId}/streams/{streamId}:
     get:
       summary: Obtain information about stream
@@ -290,12 +302,44 @@ paths:
                 $ref: '#/components/schemas/errorResponse-Type'
       tags:
       - Connections
+      operationId: getConnectionsByConnectionIdStreamsByStreamId
+      x-operation-id-source: derived
 components:
   schemas:
-    systemDN-Type:
-      description: See 3GPP TS 32.300 for details
+    connectionInfo-Type:
+      type: object
+      properties:
+        connection:
+          $ref: '#/components/schemas/connectionId-Type'
+        producer:
+          $ref: '#/components/schemas/producerId-Type'
+        streams:
+          type: array
+          items:
+            $ref: '#/components/schemas/streamId-Type'
+    websocketHeaderUpgrade-Type:
+      description: Header value for the upgrade to WebSocket request and response.
       type: string
-      example: SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100
+      enum:
+      - websocket
+    websocketHeader-Sec-WebSocket-Protocol-Type:
+      description: Header value for secure WebSocket request. Carries a comma-separated list of subprotocol names, in the order of preference.
+      type: string
+    connectionRequest-Type:
+      type: object
+      properties:
+        producer:
+          $ref: '#/components/schemas/producerId-Type'
+        streams:
+          type: array
+          items:
+            $ref: '#/components/schemas/streamInfo-Type'
+    uri-Type:
+      description: Resource URI
+      type: string
+    websocketHeader-Sec-WebSocket-Version-Type:
+      description: Header value for secure WebSocket request and response. Carries the WebSocket protocol version to be used.
+      type: string
     streamInfoWithReporters-Type:
       description: Reporting stream meta-data with added information about reporters.
       type: object
@@ -306,53 +350,31 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/producerId-Type'
+    performanceInfo-Type:
+      description: Information specific to performance data reporting
+      type: object
+      properties:
+        measObjDn:
+          $ref: '#/components/schemas/measObjDn-Type'
+        performanceMetrics:
+          $ref: '#/components/schemas/performanceMetrics-Type'
+        jobId:
+          type: string
+      required:
+      - measObjDn
+      - performanceMetrics
+    traceInfo-Type:
+      description: Information specific to trace data reporting
+      allOf:
+      - $ref: TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr
+    websocketHeader-Sec-WebSocket-Key-Type:
+      description: Header value for secure WebSocket request. Provides information to the server which is needed in order to confirm that the client is entitled to request an upgrade to WebSocket.
+      type: string
     serializationFormat-Type:
       type: string
       enum:
       - GPB
       - ASN1
-    analyticsInfo-Type:
-      description: Information specific to analytics reporting.
-      type: object
-      properties:
-        activityDetails:
-          type: string
-    websocketHeaderUpgrade-Type:
-      description: Header value for the upgrade to WebSocket request and response.
-      type: string
-      enum:
-      - websocket
-    traceInfo-Type:
-      description: Information specific to trace data reporting
-      allOf:
-      - $ref: TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr
-    websocketHeaderConnection-Type:
-      description: Header value for the upgrade request and response.
-      type: string
-      enum:
-      - Upgrade
-    connectionId-Type:
-      $ref: '#/components/schemas/uri-Type'
-    websocketHeader-Sec-WebSocket-Extensions-Type:
-      description: Header value for secure WebSocket request. Carries protocol extensions.
-      type: string
-    websocketHeader-Sec-WebSocket-Key-Type:
-      description: Header value for secure WebSocket request. Provides information to the server which is needed in order to confirm that the client is entitled to request an upgrade to WebSocket.
-      type: string
-    streamType-Type:
-      type: string
-      enum:
-      - TRACE
-      - PERFORMANCE
-      - ANALYTICS
-      - PROPRIETARY
-    traceReference-Type:
-      description: Trace Reference (see clause 5.6 of 3GPP TS 32.422) as stream identifier for streaming trace data reporting
-      type: string
-      example: 4358070034D7
-    uri-Type:
-      description: Resource URI
-      type: string
     streamInfo-Type:
       description: Reporting stream meta-data.
       type: object
@@ -375,48 +397,36 @@ components:
       - streamType
       - serializationFormat
       - streamId
+    websocketHeader-Sec-WebSocket-Accept-Type:
+      description: Header value for secure WebSocket response. Carries hash.
+      type: string
+    streamType-Type:
+      type: string
+      enum:
+      - TRACE
+      - PERFORMANCE
+      - ANALYTICS
+      - PROPRIETARY
+    websocketHeader-Sec-WebSocket-Extensions-Type:
+      description: Header value for secure WebSocket request. Carries protocol extensions.
+      type: string
+    connectionId-Type:
+      $ref: '#/components/schemas/uri-Type'
+    websocketHeaderConnection-Type:
+      description: Header value for the upgrade request and response.
+      type: string
+      enum:
+      - Upgrade
+    analyticsInfo-Type:
+      description: Information specific to analytics reporting.
+      type: object
+      properties:
+        activityDetails:
+          type: string
     producerId-Type:
       description: DN of the streaming data reporting MnS producer.
       allOf:
       - $ref: '#/components/schemas/systemDN-Type'
-    connectionInfo-Type:
-      type: object
-      properties:
-        connection:
-          $ref: '#/components/schemas/connectionId-Type'
-        producer:
-          $ref: '#/components/schemas/producerId-Type'
-        streams:
-          type: array
-          items:
-            $ref: '#/components/schemas/streamId-Type'
-    websocketHeader-Sec-WebSocket-Protocol-Type:
-      description: Header value for secure WebSocket request. Carries a comma-separated list of subprotocol names, in the order of preference.
-      type: string
-    vsDataContainer-Type:
-      description: container for vendor specific data (see 3GPP TS 28.622)
-      type: object
-      properties:
-        vsDataType:
-          type: string
-        vsData:
-          type: string
-        vsDataFormatVersion:
-          type: string
-    streamId-Type:
-      description: globally unique stream identifier
-      type: string
-      example: 26F452550021
-    websocketHeader-Sec-WebSocket-Version-Type:
-      description: Header value for secure WebSocket request and response. Carries the WebSocket protocol version to be used.
-      type: string
-    measObjDn-Type:
-      description: DN of the measured object instance (see 3GPP TS 28.550)
-      allOf:
-      - $ref: '#/components/schemas/systemDN-Type'
-    websocketHeader-Sec-WebSocket-Accept-Type:
-      description: Header value for secure WebSocket response. Carries hash.
-      type: string
     performanceMetrics-Type:
       description: an ordered list of performance metric names (see clause 4.4.1 of 3GPP TS 28.622[11]) whose values are to be reported by the Performance Data Stream Units (see Annex C of TS 28.550 [42]) via this stream. Performance metrics include measurement and KPI
       type: array
@@ -434,6 +444,28 @@ components:
                 $ref: '#/components/schemas/streamId-Type'
               errorReason:
                 type: string
+    measObjDn-Type:
+      description: DN of the measured object instance (see 3GPP TS 28.550)
+      allOf:
+      - $ref: '#/components/schemas/systemDN-Type'
+    traceReference-Type:
+      description: Trace Reference (see clause 5.6 of 3GPP TS 32.422) as stream identifier for streaming trace data reporting
+      type: string
+      example: 4358070034D7
+    systemDN-Type:
+      description: See 3GPP TS 32.300 for details
+      type: string
+      example: SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100
+    vsDataContainer-Type:
+      description: container for vendor specific data (see 3GPP TS 28.622)
+      type: object
+      properties:
+        vsDataType:
+          type: string
+        vsData:
+          type: string
+        vsDataFormatVersion:
+          type: string
     errorResponse-Type:
       type: object
       properties:
@@ -442,25 +474,7 @@ components:
           properties:
             errorInfo:
               type: string
-    connectionRequest-Type:
-      type: object
-      properties:
-        producer:
-          $ref: '#/components/schemas/producerId-Type'
-        streams:
-          type: array
-          items:
-            $ref: '#/components/schemas/streamInfo-Type'
-    performanceInfo-Type:
-      description: Information specific to performance data reporting
-      type: object
-      properties:
-        measObjDn:
-          $ref: '#/components/schemas/measObjDn-Type'
-        performanceMetrics:
-          $ref: '#/components/schemas/performanceMetrics-Type'
-        jobId:
-          type: string
-      required:
-      - measObjDn
-      - performanceMetrics
+    streamId-Type:
+      description: globally unique stream identifier
+      type: string
+      example: 26F452550021

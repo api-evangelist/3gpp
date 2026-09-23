@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-ue-address UE Address(es) Information Retrieval API
   version: 1.1.0
-  description: "API for UE Address service.\n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for UE Address service.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-ue-address/v1'
   variables:
@@ -17,7 +21,7 @@ tags:
 paths:
   /retrieve:
     post:
-      summary: Request to retrieve UE Address information.
+      summary: Request to retrieve UE Address information
       operationId: RetrieveUEAddress
       tags:
       - UE Address(es) Information Retrieval
@@ -64,19 +68,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    UeAddressInfo:
-      description: Represents UE Address information.
-      type: object
-      properties:
-        ueIpAddrs:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
-          minItems: 1
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - ueIpAddrs
     UeAddressReq:
       description: Represents the parameters to request the retrieval of UE Address information.
       type: object
@@ -90,6 +81,19 @@ components:
       required:
       - afId
       - gpsi
+    UeAddressInfo:
+      description: Represents UE Address information.
+      type: object
+      properties:
+        ueIpAddrs:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
+          minItems: 1
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - ueIpAddrs
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

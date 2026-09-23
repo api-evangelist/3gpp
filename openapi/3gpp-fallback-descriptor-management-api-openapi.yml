@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: 3GPP Plan Provisioning Management Fallback Descriptor Management API
+  title: 3GPP Plan Provisioning Management Fallback Descriptor…
   version: 19.2.0
   description: OAS 3.0.1 specification of API for managing network configuration plans and related jobs © 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 servers:
@@ -20,7 +20,7 @@ paths:
       tags:
       - Fallback Descriptor Management
       summary: Get fallback configuration descriptors
-      description: Retrieve a list of  existing fallback descriptors.
+      description: Retrieve a list of existing fallback descriptors.
       operationId: getFallbackDescriptors
       responses:
         '200':
@@ -100,6 +100,43 @@ paths:
                 $ref: '#/components/schemas/ErrorDetail'
 components:
   schemas:
+    DescriptorListEntry:
+      type: object
+      properties:
+        id:
+          type: string
+          description: id of the descriptor.
+          example: plan-descriptor-1
+        name:
+          type: string
+          description: name of the descriptor.
+          example: Dublin East Rollout
+        version:
+          type: string
+          description: version of the descriptor.
+          example: 1.0.0
+        description:
+          type: string
+          description: description/purpose of the descriptor.
+          example: plan-descriptor-1
+      required:
+      - id
+    FallbackConfigurationDescriptorResponse:
+      allOf:
+      - $ref: '#/components/schemas/FallbackConfigurationDescriptor'
+      - type: object
+        properties:
+          _links:
+            type: object
+            description: Hypermedia links for fallback descriptor
+            allOf:
+            - $ref: '#/components/schemas/SelfLink'
+            example:
+              self:
+                href: '{root-url}/plan-management/v1/fallback-descriptors/pd-001'
+                templated: true
+                type: application/json
+                title: The newly created FallbackConfigurationDescriptor
     FallbackConfigurationDescriptor:
       type: object
       properties:
@@ -155,27 +192,6 @@ components:
         required:
         - configChanges
         - configChangesContentType
-    DescriptorListEntry:
-      type: object
-      properties:
-        id:
-          type: string
-          description: id of the descriptor.
-          example: plan-descriptor-1
-        name:
-          type: string
-          description: name of the descriptor.
-          example: Dublin East Rollout
-        version:
-          type: string
-          description: version of the descriptor.
-          example: 1.0.0
-        description:
-          type: string
-          description: description/purpose of the descriptor.
-          example: plan-descriptor-1
-      required:
-      - id
     ErrorDetail:
       type: object
       properties:
@@ -228,6 +244,29 @@ components:
       required:
       - type
       - badDataNode
+    SelfLink:
+      type: object
+      description: Hypermedia links for this resource, including fixed and dynamic relations.
+      properties:
+        self:
+          allOf:
+          - $ref: '#/components/schemas/LinkObject'
+          description: A link to the resource itself.
+      additionalProperties:
+        $ref: '#/components/schemas/LinkObject'
+      required:
+      - self
+      example:
+        self:
+          href: '{root-url}/plan-management/v1/plan-descriptors/pd-001'
+          templated: true
+          type: application/json
+          title: The newly created PlanConfigurationDescriptor
+        help:
+          href: '{root-url}/help-service/v1/topics/plan-descriptors'
+          templated: true
+          type: application/json
+          title: online help for the plan descriptor
     ConfigChangeWritable:
       type: object
       properties:
@@ -259,29 +298,6 @@ components:
       required:
       - modifyOperator
       - target
-    ConfigChangesContentType:
-      type: string
-      description: The supported configuration content types.
-      enum:
-      - YANG_BASED
-      - OPENAPI_BASED
-      default: YANG_BASED
-    FallbackConfigurationDescriptorResponse:
-      allOf:
-      - $ref: '#/components/schemas/FallbackConfigurationDescriptor'
-      - type: object
-        properties:
-          _links:
-            type: object
-            description: Hypermedia links for fallback descriptor
-            allOf:
-            - $ref: '#/components/schemas/SelfLink'
-            example:
-              self:
-                href: '{root-url}/plan-management/v1/fallback-descriptors/pd-001'
-                templated: true
-                type: application/json
-                title: The newly created FallbackConfigurationDescriptor
     LinkObject:
       type: object
       description: Defines the structure of a single hypermedia link.
@@ -311,29 +327,13 @@ components:
           description: The HTTP method to use for this action link.
       required:
       - href
-    SelfLink:
-      type: object
-      description: Hypermedia links for this resource, including fixed and dynamic relations.
-      properties:
-        self:
-          allOf:
-          - $ref: '#/components/schemas/LinkObject'
-          description: A link to the resource itself.
-      additionalProperties:
-        $ref: '#/components/schemas/LinkObject'
-      required:
-      - self
-      example:
-        self:
-          href: '{root-url}/plan-management/v1/plan-descriptors/pd-001'
-          templated: true
-          type: application/json
-          title: The newly created PlanConfigurationDescriptor
-        help:
-          href: '{root-url}/help-service/v1/topics/plan-descriptors'
-          templated: true
-          type: application/json
-          title: online help for the plan descriptor
+    ConfigChangesContentType:
+      type: string
+      description: The supported configuration content types.
+      enum:
+      - YANG_BASED
+      - OPENAPI_BASED
+      default: YANG_BASED
 externalDocs:
   description: 3GPP TS 28.572; Generic management services
   url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.572/

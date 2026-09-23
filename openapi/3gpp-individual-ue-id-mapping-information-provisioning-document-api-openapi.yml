@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-ueid Individual UE ID Mapping Information Provisioning (Document) API
+  title: 3gpp-ueid Individual UE ID Mapping Information Provisioning…
   version: 1.2.0
-  description: "API for UE ID service.\n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for UE ID service.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-ueid/v1'
   variables:
@@ -32,7 +36,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Request to retrieve an existing Individual UE ID Mapping Information Provisioning resource.
+      summary: Request to retrieve an existing Individual UE ID Mapping Information…
       operationId: GetIndUeIdMappingProvisioning
       tags:
       - Individual UE ID Mapping Information Provisioning (Document)
@@ -68,7 +72,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Request the update of an existing Individual UE ID Mapping Information Provisioning resource.
+      summary: Request the update of an existing Individual UE ID Mapping Information…
       operationId: UpdateIndUeIdMappingProvisioning
       tags:
       - Individual UE ID Mapping Information Provisioning (Document)
@@ -118,7 +122,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     patch:
-      summary: Request the modification of an existing Individual UE ID Mapping Information Provisioning resource.
+      summary: Request the modification of an existing Individual UE ID Mapping Information…
       operationId: ModifyIndUeIdMappingProvisioning
       tags:
       - Individual UE ID Mapping Information Provisioning (Document)
@@ -168,7 +172,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Request the deletion of an existing Individual UE ID Mapping Information Provisioning resource.
+      summary: Request the deletion of an existing Individual UE ID Mapping Information…
       operationId: DeleteIndUeIdMappingProvisioning
       tags:
       - Individual UE ID Mapping Information Provisioning (Document)
@@ -199,16 +203,14 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    UeIdMappingInfo:
-      description: 'Represents the UE ID Mapping Information Provisioning.
+    UeIdMappingInfoPatch:
+      description: 'Represents the requested modification to a UE ID Mapping Information Provisioning.
 
         '
       type: object
       properties:
         rsUeIdMappingInfo:
           $ref: '#/components/schemas/RangSlUeIdMappInfo'
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
     RangSlUeIdMappInfo:
       description: 'Represents the Ranging/Sidelink UE ID mapping information between the Application Layer ID and the GPSI.
 
@@ -222,14 +224,16 @@ components:
       required:
       - appLayerId
       - gpsi
-    UeIdMappingInfoPatch:
-      description: 'Represents the requested modification to a UE ID Mapping Information Provisioning.
+    UeIdMappingInfo:
+      description: 'Represents the UE ID Mapping Information Provisioning.
 
         '
       type: object
       properties:
         rsUeIdMappingInfo:
           $ref: '#/components/schemas/RangSlUeIdMappInfo'
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

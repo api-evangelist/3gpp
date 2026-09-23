@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   version: 1.2.1
   title: Nnwdaf_AnalyticsInfo NWDAF Context (Document) API
-  description: "Nnwdaf_AnalyticsInfo Service API.  \n© 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'Nnwdaf_AnalyticsInfo Service API.
+
+    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/nnwdaf-analyticsinfo/v1'
   variables:
@@ -18,7 +22,7 @@ tags:
 paths:
   /context:
     get:
-      summary: Get context information related to analytics subscriptions.
+      summary: Get context information related to analytics subscriptions
       operationId: GetNwdafContext
       tags:
       - NWDAF Context (Document)
@@ -76,28 +80,6 @@ paths:
           $ref: TS29571_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    HistoricalData:
-      description: Contains historical data related to an analytics subscription.
-      type: object
-      properties:
-        startTime:
-          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
-        endTime:
-          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
-        subsWithSources:
-          type: array
-          items:
-            $ref: '#/components/schemas/SpecificDataSubscription'
-          minItems: 1
-          description: Information about subscriptions with the data sources.
-        data:
-          type: array
-          items:
-            type: string
-          minItems: 1
-          description: Historical data related to the analytics.
-      required:
-      - data
     ContextType:
       anyOf:
       - type: string
@@ -127,6 +109,30 @@ components:
         - ML_MODELS: Represents context information about used ML models.
 
         '
+    SpecificAnalyticsSubscription:
+      description: 'Represents an existing subscription for a specific type of analytics to a specific NWDAF.
+
+        '
+      type: object
+      properties:
+        subscriptionId:
+          type: string
+        producerId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/NfInstanceId
+        producerSetId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/NfSetId
+        nwdafEvSub:
+          $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NnwdafEventsSubscription
+      allOf:
+      - oneOf:
+        - required:
+          - producerId
+        - required:
+          - producerSetId
+      - required:
+        - subscriptionId
+      - required:
+        - nwdafEvSub
     RequestedContext:
       description: Contains types of analytics context information.
       type: object
@@ -155,6 +161,58 @@ components:
             '
       required:
       - contextElems
+    AdrfDataType:
+      anyOf:
+      - type: string
+        enum:
+        - HISTORICAL_ANALYTICS
+        - HISTORICAL_DATA
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: 'Possible values are:
+
+        - HISTORICAL_ANALYTICS: Indicates that historical analytics are stored in the ADRF.
+
+        - HISTORICAL_DATA: Indicates that historical data are stored in the ADRF.
+
+        '
+    ContextIdList:
+      description: 'Contains a list of context identifiers of context information of analytics subscriptions.
+
+        '
+      type: object
+      properties:
+        contextIds:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/AnalyticsContextIdentifier
+          minItems: 1
+      required:
+      - contextIds
+    HistoricalData:
+      description: Contains historical data related to an analytics subscription.
+      type: object
+      properties:
+        startTime:
+          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
+        endTime:
+          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
+        subsWithSources:
+          type: array
+          items:
+            $ref: '#/components/schemas/SpecificDataSubscription'
+          minItems: 1
+          description: Information about subscriptions with the data sources.
+        data:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: Historical data related to the analytics.
+      required:
+      - data
     SpecificDataSubscription:
       description: 'Represents an existing subscription for data collection to a specific data source NF.
 
@@ -241,60 +299,6 @@ components:
             '
       required:
       - contextId
-    ContextIdList:
-      description: 'Contains a list of context identifiers of context information of analytics subscriptions.
-
-        '
-      type: object
-      properties:
-        contextIds:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/AnalyticsContextIdentifier
-          minItems: 1
-      required:
-      - contextIds
-    SpecificAnalyticsSubscription:
-      description: 'Represents an existing subscription for a specific type of analytics to a specific NWDAF.
-
-        '
-      type: object
-      properties:
-        subscriptionId:
-          type: string
-        producerId:
-          $ref: TS29571_CommonData.yaml#/components/schemas/NfInstanceId
-        producerSetId:
-          $ref: TS29571_CommonData.yaml#/components/schemas/NfSetId
-        nwdafEvSub:
-          $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NnwdafEventsSubscription
-      allOf:
-      - oneOf:
-        - required:
-          - producerId
-        - required:
-          - producerSetId
-      - required:
-        - subscriptionId
-      - required:
-        - nwdafEvSub
-    AdrfDataType:
-      anyOf:
-      - type: string
-        enum:
-        - HISTORICAL_ANALYTICS
-        - HISTORICAL_DATA
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: 'Possible values are:
-
-        - HISTORICAL_ANALYTICS: Indicates that historical analytics are stored in the ADRF.
-
-        - HISTORICAL_DATA: Indicates that historical data are stored in the ADRF.
-
-        '
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

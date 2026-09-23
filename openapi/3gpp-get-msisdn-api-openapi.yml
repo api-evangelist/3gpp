@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-ueid Get Msisdn API
   version: 1.2.0
-  description: "API for UE ID service.\n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for UE ID service.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-ueid/v1'
   variables:
@@ -17,7 +21,7 @@ tags:
 paths:
   /get-msisdn:
     post:
-      summary: GET the MSISDN of the UE.
+      summary: GET the MSISDN of the UE
       operationId: GetMsisdn
       requestBody:
         required: true

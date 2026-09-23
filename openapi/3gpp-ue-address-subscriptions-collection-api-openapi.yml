@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-ue-address UE Address Subscriptions (Collection) API
   version: 1.1.0
-  description: "API for UE Address service.\n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for UE Address service.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-ue-address/v1'
   variables:
@@ -17,7 +21,7 @@ tags:
 paths:
   /subscriptions:
     get:
-      summary: Request to retrieve all the active UE Address Subscriptions.
+      summary: Request to retrieve all the active UE Address Subscriptions
       operationId: GetUEAddrSubscs
       tags:
       - UE Address Subscriptions (Collection)
@@ -65,7 +69,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     post:
-      summary: Request the creation of a new UE Address Subscription at the NEF.
+      summary: Request the creation of a new UE Address Subscription at the NEF
       operationId: CreateUEAddrSubsc
       tags:
       - UE Address Subscriptions (Collection)
@@ -155,31 +159,6 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    UeAddrSubsc:
-      description: Represents the UE Address Subscription.
-      type: object
-      properties:
-        notifUri:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
-        notifId:
-          type: string
-        afId:
-          type: string
-        ueAddrInfo:
-          $ref: '#/components/schemas/UeAddrInfo'
-        immRepInd:
-          type: boolean
-          description: 'Indicates whether immediate reporting shall be included in the corresponding response if Available.
-
-            '
-        immReport:
-          $ref: TS29564_Nupf_EventExposure.yaml#/components/schemas/UeNatMappingInfo
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - notifUri
-      - notifId
-      - afId
     UeAddrNotif:
       description: Represents the UE Address Notification.
       type: object
@@ -212,6 +191,31 @@ components:
         - remoteIpv4Addr
       - required:
         - remoteIpv6Addr
+    UeAddrSubsc:
+      description: Represents the UE Address Subscription.
+      type: object
+      properties:
+        notifUri:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        notifId:
+          type: string
+        afId:
+          type: string
+        ueAddrInfo:
+          $ref: '#/components/schemas/UeAddrInfo'
+        immRepInd:
+          type: boolean
+          description: 'Indicates whether immediate reporting shall be included in the corresponding response if Available.
+
+            '
+        immReport:
+          $ref: TS29564_Nupf_EventExposure.yaml#/components/schemas/UeNatMappingInfo
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - notifUri
+      - notifId
+      - afId
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

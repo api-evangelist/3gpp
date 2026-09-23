@@ -22,7 +22,7 @@ tags:
 paths:
   /{scsAsId}/tmgi-allocation/{tmgi}/delivery-via-mbms/{transactionId}:
     get:
-      summary: Read all group message delivery via MBMS resource for a given SCS/AS and a TMGI.
+      summary: Read all group message delivery via MBMS resource for a given SCS/AS and a TMGI
       operationId: FetchIndDeliveryViaMBMS
       tags:
       - Individual Delivery via MBMS resource Operation
@@ -75,7 +75,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Updates a existing delivery via MBMS for a given SCS/AS, a TMGI and transaction Id.
+      summary: Updates a existing delivery via MBMS for a given SCS/AS, a TMGI and transaction…
       operationId: UpdateIndDeliveryViaMBMS
       tags:
       - Individual Delivery via MBMS resource Operation
@@ -143,7 +143,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     patch:
-      summary: Updates a existing delivery via MBMS for a given SCS/AS, a TMGI and transaction Id.
+      summary: Updates a existing delivery via MBMS for a given SCS/AS, a TMGI and transaction…
       operationId: ModifyIndDeliveryViaMBMS
       tags:
       - Individual Delivery via MBMS resource Operation
@@ -211,7 +211,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Deletes a delivery via MBMS resource for a given SCS/AS, a TMGI and a transcation Id.
+      summary: Deletes a delivery via MBMS resource for a given SCS/AS, a TMGI and a…
       operationId: DeleteIndDeliveryViaMBMS
       tags:
       - Individual Delivery via MBMS resource Operation
@@ -265,7 +265,7 @@ paths:
           description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
   /{scsAsId}/services/{serviceId}/delivery-via-mbms/{transactionId}:
     get:
-      summary: Read all group message delivery via MBMS resource for a given SCS/AS and a service Id.
+      summary: Read all group message delivery via MBMS resource for a given SCS/AS and a…
       operationId: FetchIndGMDViaMBMS
       tags:
       - Individual Delivery via MBMS resource Operation
@@ -318,7 +318,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Updates an existing delivery via MBMS for a given SCS/AS, a service Id and transaction Id.
+      summary: Updates an existing delivery via MBMS for a given SCS/AS, a service Id and…
       operationId: UpdateIndGMDViaMBMS
       tags:
       - Individual Delivery via MBMS resource Operation
@@ -386,7 +386,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     patch:
-      summary: Updates an existing delivery via MBMS for a given SCS/AS, a service Id and transaction Id.
+      summary: Updates an existing delivery via MBMS for a given SCS/AS, a service Id and…
       operationId: ModifyIndGMDViaMBMS
       tags:
       - Individual Delivery via MBMS resource Operation
@@ -452,7 +452,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Deletes a delivery via MBMS resource for a given SCS/AS, a service Id and a transcation Id.
+      summary: Deletes a delivery via MBMS resource for a given SCS/AS, a service Id and a…
       operationId: DeleteIndGMDViaMBMS
       tags:
       - Individual Delivery via MBMS resource Operation
@@ -506,6 +506,51 @@ paths:
           description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
 components:
   schemas:
+    GMDViaMBMSByMb2:
+      description: Represents a group message delivery via MBMS by MB2.
+      type: object
+      properties:
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        requestTestNotification:
+          type: boolean
+          description: 'Set to true by the SCS/AS to request the SCEF to send a test notification as defined in clause 5.2.5.3. Set to false or omitted otherwise.
+
+            '
+        websockNotifConfig:
+          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
+        externalGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        mbmsLocArea:
+          $ref: '#/components/schemas/MbmsLocArea'
+        messageDeliveryStartTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        groupMessagePayload:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
+        scefMessageDeliveryIPv4:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv4AddrRo
+        scefMessageDeliveryIPv6:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv6AddrRo
+        scefMessageDeliveryPort:
+          $ref: TS29122_CommonData.yaml#/components/schemas/PortRo
+      required:
+      - notificationDestination
+    GMDViaMBMSByMb2Patch:
+      description: Represents a modification request of a group message delivery via MBMS by MB2.
+      type: object
+      properties:
+        externalGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        mbmsLocArea:
+          $ref: '#/components/schemas/MbmsLocArea'
+        messageDeliveryStartTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        groupMessagePayload:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
     MbmsLocArea:
       description: 'Represents a user location area whithin which is sent a group message delivery via MBMS request.
 
@@ -544,51 +589,20 @@ components:
             $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
           minItems: 1
           description: Identifies a civic address of the user where the UE is located.
-    GMDViaMBMSByMb2Patch:
-      description: Represents a modification request of a group message delivery via MBMS by MB2.
+    GMDViaMBMSByxMBPatch:
+      description: Represents a modification request of a group message delivery via MBMS by xMB.
       type: object
       properties:
-        externalGroupId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
         mbmsLocArea:
           $ref: '#/components/schemas/MbmsLocArea'
         messageDeliveryStartTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        messageDeliveryStopTime:
           $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
         groupMessagePayload:
           $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
         notificationDestination:
           $ref: TS29122_CommonData.yaml#/components/schemas/Link
-    GMDViaMBMSByMb2:
-      description: Represents a group message delivery via MBMS by MB2.
-      type: object
-      properties:
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        requestTestNotification:
-          type: boolean
-          description: 'Set to true by the SCS/AS to request the SCEF to send a test notification as defined in clause 5.2.5.3. Set to false or omitted otherwise.
-
-            '
-        websockNotifConfig:
-          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
-        externalGroupId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
-        mbmsLocArea:
-          $ref: '#/components/schemas/MbmsLocArea'
-        messageDeliveryStartTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        groupMessagePayload:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
-        scefMessageDeliveryIPv4:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv4AddrRo
-        scefMessageDeliveryIPv6:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv6AddrRo
-        scefMessageDeliveryPort:
-          $ref: TS29122_CommonData.yaml#/components/schemas/PortRo
-      required:
-      - notificationDestination
     GMDViaMBMSByxMB:
       description: Represents a group message delivery via MBMS by xMB.
       type: object
@@ -620,20 +634,6 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/PortRo
       required:
       - notificationDestination
-    GMDViaMBMSByxMBPatch:
-      description: Represents a modification request of a group message delivery via MBMS by xMB.
-      type: object
-      properties:
-        mbmsLocArea:
-          $ref: '#/components/schemas/MbmsLocArea'
-        messageDeliveryStartTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        messageDeliveryStopTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        groupMessagePayload:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-nidd Individual ManagePort Configuration API
   version: 1.3.0
-  description: "API for non IP data delivery.  \n© 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for non IP data delivery.
+
+    © 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-nidd/v1'
   variables:
@@ -37,7 +41,7 @@ paths:
         type: string
         pattern: ^(ue([0-9]|(1[0-5]))-ef([0-9]|(1[0-5])))$
     get:
-      summary: Read an Individual ManagePort Configuration resource to query port numbers.
+      summary: Read an Individual ManagePort Configuration resource to query port numbers
       operationId: FetchIndManagePortConfiguration
       tags:
       - Individual ManagePort Configuration
@@ -71,7 +75,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Create a new Individual ManagePort Configuration resource to reserve port numbers.
+      summary: Create a new Individual ManagePort Configuration resource to reserve port…
       operationId: UpdateIndManagePortConfiguration
       tags:
       - Individual ManagePort Configuration
@@ -126,7 +130,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Delete an Individual ManagePort Configuration resource to release port numbers.
+      summary: Delete an Individual ManagePort Configuration resource to release port numbers
       operationId: DeleteIndManagePortConfiguration
       tags:
       - Individual ManagePort Configuration
@@ -163,6 +167,18 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    SerializationFormat:
+      anyOf:
+      - type: string
+        enum:
+        - CBOR
+        - JSON
+        - XML
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents a serialization format associated with an RDS port which is applicable\nfor the Rds_serialization_format feature.\nPossible values are\n- CBOR: The CBOR Serialzition format \n- JSON: The JSON Serialzition format\n- XML: The XML Serialzition format\n"
     ManageEntity:
       anyOf:
       - type: string
@@ -175,22 +191,6 @@ components:
           '
       description: "Represents the origin that manages the RDS port.  \nPossible values are:\n- UE: Representing the UE.\n- AS: Representing the Application Server.\n"
       readOnly: true
-    RdsDownlinkDataDeliveryFailure:
-      description: Represents the failure delivery result for RDS.
-      allOf:
-      - $ref: TS29122_CommonData.yaml#/components/schemas/ProblemDetails
-      - type: object
-        properties:
-          requestedRetransmissionTime:
-            $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-          supportedUeFormats:
-            type: array
-            items:
-              $ref: '#/components/schemas/SerializationFormat'
-            minItems: 1
-            description: 'Indicates the serialization format(s) that are supported by the UE on the associated RDS port.
-
-              '
     ManagePort:
       description: Represents the configuration of a RDS dynamic port management.
       type: object
@@ -217,18 +217,22 @@ components:
           $ref: '#/components/schemas/SerializationFormat'
       required:
       - appId
-    SerializationFormat:
-      anyOf:
-      - type: string
-        enum:
-        - CBOR
-        - JSON
-        - XML
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+    RdsDownlinkDataDeliveryFailure:
+      description: Represents the failure delivery result for RDS.
+      allOf:
+      - $ref: TS29122_CommonData.yaml#/components/schemas/ProblemDetails
+      - type: object
+        properties:
+          requestedRetransmissionTime:
+            $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+          supportedUeFormats:
+            type: array
+            items:
+              $ref: '#/components/schemas/SerializationFormat'
+            minItems: 1
+            description: 'Indicates the serialization format(s) that are supported by the UE on the associated RDS port.
 
-          '
-      description: "Represents a serialization format associated with an RDS port which is applicable\nfor the Rds_serialization_format feature.\nPossible values are\n- CBOR: The CBOR Serialzition format \n- JSON: The JSON Serialzition format\n- XML: The XML Serialzition format\n"
+              '
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

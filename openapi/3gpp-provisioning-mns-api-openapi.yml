@@ -192,6 +192,8 @@ paths:
                         $ref: TS28623_ComDefs.yaml#/components/schemas/ErrorResponse
       tags:
       - Provisioning MnS
+      operationId: putByClassName}={id
+      x-operation-id-source: derived
     get:
       summary: Reads one or multiple resources
       description: With HTTP GET resources are read. The resources to be retrieved are identified with the target URI. The attributes and fields parameter of the query components allow to select the resource properties to be returned.
@@ -261,6 +263,8 @@ paths:
                 $ref: TS28623_ComDefs.yaml#/components/schemas/ErrorResponseGet
       tags:
       - Provisioning MnS
+      operationId: getByClassName}={id
+      x-operation-id-source: derived
     patch:
       summary: Patches one or multiple resources
       description: With HTTP PATCH resources are created, updated or deleted. The resources to be modified are identified with the target URI (base resource) and the patch document included in the request message body.
@@ -303,6 +307,8 @@ paths:
                 - $ref: TS28623_ComDefs.yaml#/components/schemas/ErrorResponsePatch
       tags:
       - Provisioning MnS
+      operationId: patchByClassName}={id
+      x-operation-id-source: derived
     delete:
       summary: Deletes one resource
       description: With HTTP DELETE one resource is deleted. The resources to be deleted is identified with the target URI.
@@ -317,6 +323,8 @@ paths:
                 $ref: TS28623_ComDefs.yaml#/components/schemas/ErrorResponseDefault
       tags:
       - Provisioning MnS
+      operationId: deleteByClassName}={id
+      x-operation-id-source: derived
   /{URI-LDN-first-part}:
     parameters:
     - name: URI-LDN-first-part
@@ -348,85 +356,10 @@ paths:
                 $ref: TS28623_ComDefs.yaml#/components/schemas/ErrorResponseDefault
       tags:
       - Provisioning MnS
+      operationId: postByURILDNFirstPart
+      x-operation-id-source: derived
 components:
   schemas:
-    ScopeType:
-      type: string
-      enum:
-      - BASE_ONLY
-      - BASE_NTH_LEVEL
-      - BASE_SUBTREE
-      - BASE_ALL
-    PatchOperation:
-      type: string
-      enum:
-      - add
-      - replace
-      - remove
-      - copy
-      - move
-      - test
-    NotifyMoiAttributeValueChanges:
-      allOf:
-      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
-      - type: object
-        properties:
-          correlatedNotifications:
-            type: array
-            items:
-              $ref: '#/components/schemas/CorrelatedNotification'
-          additionalText:
-            type: string
-          sourceIndicator:
-            $ref: '#/components/schemas/SourceIndicator'
-          attributeListValueChanges:
-            $ref: TS28623_ComDefs.yaml#/components/schemas/AttributeValueChangeSet
-        required:
-        - attributeListValueChanges
-    NotifyEvent:
-      allOf:
-      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
-      - type: object
-        required:
-        - specificProblem
-        properties:
-          specificProblem:
-            $ref: TS28111_FaultNrm.yaml#/components/schemas/SpecificProblem
-          additionalText:
-            type: string
-          additionalInformation:
-            $ref: TS28623_ComDefs.yaml#/components/schemas/AttributeNameValuePairSet
-    NotifyMoiChanges:
-      allOf:
-      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
-      - type: object
-        properties:
-          moiChanges:
-            type: array
-            items:
-              $ref: '#/components/schemas/MoiChange'
-        required:
-        - moiChanges
-    SourceIndicator:
-      type: string
-      enum:
-      - RESOURCE_OPERATION
-      - MANAGEMENT_OPERATION
-      - SON_OPERATION
-      - UNKNOWN
-    Scope:
-      type: object
-      properties:
-        scopeType:
-          $ref: '#/components/schemas/ScopeType'
-        scopeLevel:
-          type: integer
-    Operation:
-      type: string
-      enum:
-      - add
-      - remove
-      - replace
     Resource:
       oneOf:
       - type: object
@@ -446,25 +379,21 @@ components:
         required:
         - id
       - $ref: TS28623_FeatureNrm.yaml#/components/schemas/resources-feature
-    CorrelatedNotification:
-      type: object
-      properties:
-        source:
-          $ref: TS28623_ComDefs.yaml#/components/schemas/Dn
-        notificationIds:
-          type: array
-          items:
-            $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationId
-      required:
-      - source
-      - notificationIds
-    NotifyDataNodeTreeSyncRecommended:
+    NotifyMoiDeletion:
       allOf:
       - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
       - type: object
         properties:
-          scope:
-            $ref: TS28623_SubscriptionControlNrm.yaml#/components/schemas/Scope
+          correlatedNotifications:
+            type: array
+            items:
+              $ref: '#/components/schemas/CorrelatedNotification'
+          additionalText:
+            type: string
+          sourceIndicator:
+            $ref: '#/components/schemas/SourceIndicator'
+          attributeList:
+            $ref: TS28623_ComDefs.yaml#/components/schemas/AttributeNameValuePairSet
     MoiChange:
       type: object
       properties:
@@ -490,33 +419,50 @@ components:
       - notificationId
       - op
       - path
+    NotifyMoiChanges:
+      allOf:
+      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
+      - type: object
+        properties:
+          moiChanges:
+            type: array
+            items:
+              $ref: '#/components/schemas/MoiChange'
+        required:
+        - moiChanges
+    NotifyEvent:
+      allOf:
+      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
+      - type: object
+        required:
+        - specificProblem
+        properties:
+          specificProblem:
+            $ref: TS28111_FaultNrm.yaml#/components/schemas/SpecificProblem
+          additionalText:
+            type: string
+          additionalInformation:
+            $ref: TS28623_ComDefs.yaml#/components/schemas/AttributeNameValuePairSet
+    PatchOperation:
+      type: string
+      enum:
+      - add
+      - replace
+      - remove
+      - copy
+      - move
+      - test
     Insert:
       type: string
       enum:
       - before
       - after
-    NotifyPotentialFaultyDataNodeTree:
-      allOf:
-      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
-      - type: object
-        properties:
-          scope:
-            $ref: TS28623_SubscriptionControlNrm.yaml#/components/schemas/Scope
-    NotifyMoiDeletion:
-      allOf:
-      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
-      - type: object
-        properties:
-          correlatedNotifications:
-            type: array
-            items:
-              $ref: '#/components/schemas/CorrelatedNotification'
-          additionalText:
-            type: string
-          sourceIndicator:
-            $ref: '#/components/schemas/SourceIndicator'
-          attributeList:
-            $ref: TS28623_ComDefs.yaml#/components/schemas/AttributeNameValuePairSet
+    Operation:
+      type: string
+      enum:
+      - add
+      - remove
+      - replace
     PatchItem:
       type: object
       properties:
@@ -530,6 +476,70 @@ components:
       required:
       - op
       - path
+    SourceIndicator:
+      type: string
+      enum:
+      - RESOURCE_OPERATION
+      - MANAGEMENT_OPERATION
+      - SON_OPERATION
+      - UNKNOWN
+    NotifyDataNodeTreeSyncRecommended:
+      allOf:
+      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
+      - type: object
+        properties:
+          scope:
+            $ref: TS28623_SubscriptionControlNrm.yaml#/components/schemas/Scope
+    NotifyPotentialFaultyDataNodeTree:
+      allOf:
+      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
+      - type: object
+        properties:
+          scope:
+            $ref: TS28623_SubscriptionControlNrm.yaml#/components/schemas/Scope
+    Scope:
+      type: object
+      properties:
+        scopeType:
+          $ref: '#/components/schemas/ScopeType'
+        scopeLevel:
+          type: integer
+    NotifyMoiAttributeValueChanges:
+      allOf:
+      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
+      - type: object
+        properties:
+          correlatedNotifications:
+            type: array
+            items:
+              $ref: '#/components/schemas/CorrelatedNotification'
+          additionalText:
+            type: string
+          sourceIndicator:
+            $ref: '#/components/schemas/SourceIndicator'
+          attributeListValueChanges:
+            $ref: TS28623_ComDefs.yaml#/components/schemas/AttributeValueChangeSet
+        required:
+        - attributeListValueChanges
+    ScopeType:
+      type: string
+      enum:
+      - BASE_ONLY
+      - BASE_NTH_LEVEL
+      - BASE_SUBTREE
+      - BASE_ALL
+    CorrelatedNotification:
+      type: object
+      properties:
+        source:
+          $ref: TS28623_ComDefs.yaml#/components/schemas/Dn
+        notificationIds:
+          type: array
+          items:
+            $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationId
+      required:
+      - source
+      - notificationIds
     NotifyMoiCreation:
       allOf:
       - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader

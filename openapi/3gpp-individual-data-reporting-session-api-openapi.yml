@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-data-reporting Individual Data Reporting Session API
   version: 1.2.0
-  description: "API for 3GPP Data Reporting.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for 3GPP Data Reporting.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-data-reporting/v1'
   variables:
@@ -24,7 +28,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Request the retrieval of an existing Individual Data Reporting Session resource.
+      summary: Request the retrieval of an existing Individual Data Reporting Session resource
       operationId: GetIndDataRepSession
       tags:
       - Individual Data Reporting Session
@@ -64,7 +68,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Request the update of an existing Individual Data Reporting Session resource.
+      summary: Request the update of an existing Individual Data Reporting Session resource
       operationId: UpdateIndDataRepSession
       tags:
       - Individual Data Reporting Session
@@ -114,7 +118,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Deletes an already existing Data Reporting Session resource.
+      summary: Deletes an already existing Data Reporting Session resource
       operationId: DeleteIndDataRepSession
       tags:
       - Individual Data Reporting Session
@@ -152,7 +156,7 @@ paths:
       schema:
         type: string
     post:
-      summary: Report collected UE data.
+      summary: Report collected UE data
       operationId: ReportUEData
       tags:
       - Individual Data Reporting Session

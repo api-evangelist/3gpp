@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-addr-pp Individual Addressing Parameters Provisioning (Document) API
+  title: 3gpp-addr-pp Individual Addressing Parameters Provisioning…
   version: 1.0.1
-  description: "API for Addressing Parameters Provisioning.  \n© 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for Addressing Parameters Provisioning.
+
+    © 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-addr-pp/v1'
   variables:
@@ -26,7 +30,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Request to retrieve an existing Individual Addressing Parameters Provisioning resource.
+      summary: Request to retrieve an existing Individual Addressing Parameters Provisioning…
       operationId: GetIndAddrParamsProvisioning
       tags:
       - Individual Addressing Parameters Provisioning (Document)
@@ -62,7 +66,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Request the update of an existing Individual Addressing Parameters Provisioning resource.
+      summary: Request the update of an existing Individual Addressing Parameters Provisioning…
       tags:
       - Individual Addressing Parameters Provisioning (Document)
       operationId: UpdateIndAddrParamsProvisioning
@@ -112,7 +116,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     patch:
-      summary: Request the modification of an existing Individual Addressing Parameters Provisioning resource.
+      summary: Request the modification of an existing Individual Addressing Parameters…
       tags:
       - Individual Addressing Parameters Provisioning (Document)
       operationId: ModifyIndAddrParamsProvisioning
@@ -162,7 +166,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Request the deletion of an existing Individual Addressing Parameters Provisioning resource.
+      summary: Request the deletion of an existing Individual Addressing Parameters…
       tags:
       - Individual Addressing Parameters Provisioning (Document)
       operationId: DeleteIndAddrParamsProvisioning
@@ -193,21 +197,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    AddrPpData:
-      description: Represents the Addressing Parameters data.
-      type: object
-      properties:
-        afId:
-          type: string
-        staticIpaddrParams:
-          type: array
-          items:
-            $ref: '#/components/schemas/StaticIpAddrParams'
-          minItems: 1
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - afId
     StaticIpAddrParams:
       description: Represents the Static IP Address Parameters data.
       type: object
@@ -229,6 +218,21 @@ components:
       - snssai
       - gpsi
       - staticIpAddresses
+    AddrPpData:
+      description: Represents the Addressing Parameters data.
+      type: object
+      properties:
+        afId:
+          type: string
+        staticIpaddrParams:
+          type: array
+          items:
+            $ref: '#/components/schemas/StaticIpAddrParams'
+          minItems: 1
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afId
     AddrPpDataPatch:
       description: 'Represents the requested modification to an existing Addressing Parameters Provisioning.
 

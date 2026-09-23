@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-network-parameter-configuration Individual Np Configuration API
+  title: 3gpp-network-parameter-configuration Individual Np…
   version: 1.4.0
-  description: "API for network parameter configuration.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for network parameter configuration.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-network-parameter-configuration/v1'
   variables:
@@ -17,7 +21,7 @@ tags:
 paths:
   /{scsAsId}/configurations/{configurationId}:
     get:
-      summary: Read an active configuration for the SCS/AS and the configuration Id.
+      summary: Read an active configuration for the SCS/AS and the configuration Id
       operationId: FetchIndNPConfiguration
       tags:
       - Individual Np Configuration
@@ -64,7 +68,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Updates/replaces an existing configuration resource.
+      summary: Updates/replaces an existing configuration resource
       operationId: UpdateIndNPConfiguration
       tags:
       - Individual Np Configuration
@@ -124,7 +128,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     patch:
-      summary: Updates/replaces an existing configuration resource.
+      summary: Updates/replaces an existing configuration resource
       operationId: ModifyIndNPConfiguration
       tags:
       - Individual Np Configuration
@@ -183,7 +187,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Deletes an already existing configuration.
+      summary: Deletes an already existing configuration
       operationId: DeleteIndNPConfiguration
       tags:
       - Individual Np Configuration
@@ -237,43 +241,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    NpConfigurationPatch:
-      description: 'Represents parameters used to request the modification of a network parameters configuration resource.
-
-        '
-      type: object
-      properties:
-        maximumLatency:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
-        maximumResponseTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
-        suggestedNumberOfDlPackets:
-          type:
-          - integer
-          - 'null'
-          minimum: 0
-          description: 'This parameter may be included to identify the number of packets that the serving gateway shall buffer in case that the UE is not reachable.
-
-            '
-        groupReportGuardTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
-        validityTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRm
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        mpsforMsgInd:
-          $ref: '#/components/schemas/MPSforMsgInd'
-    MPSforMsgInd:
-      anyOf:
-      - type: string
-        enum:
-        - DISABLE_MPS_FOR_MSG
-        - ENABLE_MPS_FOR_MSG
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Indicates the MPS for Messaging for the priority treatment of messaging service \nis enabled or disabled.\nPossible values are:\n- DISABLE_MPS_FOR_MSG: Disable MPS for messaging service of the UE.\n- ENABLE_MPS_FOR_MSG: Enable MPS for messaging service of the UE.\n"
     NpConfiguration:
       description: Represents a network parameters configuration.
       type: object
@@ -331,6 +298,43 @@ components:
         - msisdn
       - required:
         - externalGroupId
+    NpConfigurationPatch:
+      description: 'Represents parameters used to request the modification of a network parameters configuration resource.
+
+        '
+      type: object
+      properties:
+        maximumLatency:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
+        maximumResponseTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
+        suggestedNumberOfDlPackets:
+          type:
+          - integer
+          - 'null'
+          minimum: 0
+          description: 'This parameter may be included to identify the number of packets that the serving gateway shall buffer in case that the UE is not reachable.
+
+            '
+        groupReportGuardTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
+        validityTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRm
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        mpsforMsgInd:
+          $ref: '#/components/schemas/MPSforMsgInd'
+    MPSforMsgInd:
+      anyOf:
+      - type: string
+        enum:
+        - DISABLE_MPS_FOR_MSG
+        - ENABLE_MPS_FOR_MSG
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Indicates the MPS for Messaging for the priority treatment of messaging service \nis enabled or disabled.\nPossible values are:\n- DISABLE_MPS_FOR_MSG: Disable MPS for messaging service of the UE.\n- ENABLE_MPS_FOR_MSG: Enable MPS for messaging service of the UE.\n"
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

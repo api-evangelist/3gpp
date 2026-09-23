@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-vfl-training Individual VFL Training Subscription (Document) API
+  title: 3gpp-vfl-training Individual VFL Training Subscription…
   version: 1.0.1
-  description: "API for VFL Training.  \n© 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for VFL Training.
+
+    © 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-vfl-training/v1'
   variables:
@@ -30,7 +34,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Retrieve an existing Individual VFL Training Subscription resource.
+      summary: Retrieve an existing Individual VFL Training Subscription resource
       operationId: GetVFLTrainingSubscription
       tags:
       - Individual VFL Training Subscription (Document)
@@ -66,7 +70,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Request the update of an existing Individual VFL Training Subscription resource.
+      summary: Request the update of an existing Individual VFL Training Subscription resource
       operationId: UpdateVFLTrainingSubscription
       tags:
       - Individual VFL Training Subscription (Document)
@@ -116,7 +120,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     patch:
-      summary: Request modification of an existing Individual VFL Training Subscription resource.
+      summary: Request modification of an existing Individual VFL Training Subscription…
       operationId: ModifyVFLTrainingSubscription
       tags:
       - Individual VFL Training Subscription (Document)
@@ -166,7 +170,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Request deletion of an existing Individual VFL Training Subscription resource.
+      summary: Request deletion of an existing Individual VFL Training Subscription resource
       operationId: DeleteVFLTrainingSubscription
       tags:
       - Individual VFL Training Subscription (Document)

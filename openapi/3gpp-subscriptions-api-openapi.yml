@@ -83,6 +83,8 @@ paths:
                         $ref: TS28623_ComDefs.yaml#/components/schemas/ErrorResponse
       tags:
       - Subscriptions
+      operationId: postSubscriptions
+      x-operation-id-source: derived
   /subscriptions/{subscriptionId}:
     delete:
       summary: Delete a subscription
@@ -105,32 +107,10 @@ paths:
                 $ref: TS28623_ComDefs.yaml#/components/schemas/ErrorResponse
       tags:
       - Subscriptions
+      operationId: deleteSubscriptionsBySubscriptionId
+      x-operation-id-source: derived
 components:
   schemas:
-    NotifyFilePreparationError:
-      allOf:
-      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
-      - type: object
-        properties:
-          fileInfoList:
-            type: array
-            items:
-              $ref: '#/components/schemas/FileCreationErrorInfoList'
-          reason:
-            type: string
-          additionalText:
-            type: string
-    NotifyFileReady:
-      allOf:
-      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
-      - type: object
-        properties:
-          fileInfoList:
-            type: array
-            items:
-              $ref: '#/components/schemas/FileInfo'
-          additionalText:
-            type: string
     FileDataType:
       type: string
       enum:
@@ -157,6 +137,17 @@ components:
           $ref: '#/components/schemas/FileDataType'
         jobId:
           type: string
+    NotifyFileReady:
+      allOf:
+      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
+      - type: object
+        properties:
+          fileInfoList:
+            type: array
+            items:
+              $ref: '#/components/schemas/FileInfo'
+          additionalText:
+            type: string
     FileCreationErrorInfoList:
       type: object
       properties:
@@ -166,6 +157,19 @@ components:
           $ref: '#/components/schemas/FileDataType'
         jobId:
           type: string
+    NotifyFilePreparationError:
+      allOf:
+      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
+      - type: object
+        properties:
+          fileInfoList:
+            type: array
+            items:
+              $ref: '#/components/schemas/FileCreationErrorInfoList'
+          reason:
+            type: string
+          additionalText:
+            type: string
 externalDocs:
   description: 3GPP TS 28.532; Generic management services
   url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.532/

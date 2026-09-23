@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: CAPIF_API_Invoker_Management_ On-boarded API Invokers (Collection) API
+  title: CAPIF_API_Invoker_Management_ On-boarded API Invokers…
   version: 1.4.0
-  description: "API for API invoker management.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for API invoker management.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/api-invoker-management/v1'
   variables:
@@ -14,7 +18,7 @@ tags:
 paths:
   /onboardedInvokers:
     post:
-      summary: Request the Creation of a new On-boarded API Invoker.
+      summary: Request the Creation of a new On-boarded API Invoker
       operationId: CreateOnboardedAPIInvoker
       tags:
       - On-boarded API Invokers (Collection)
@@ -122,18 +126,23 @@ components:
           description: 'Represents the list of service APIs that the API Invoker is allowed to invoke.
 
             '
-    EnrolFailCause:
-      anyOf:
-      - type: string
-        enum:
-        - AUTHORIZATION_ISSUE
-        - ONBOARDING_CRI_NOT_MET
-        - UNSPECIFIED
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents API Invoker's per API enrollment failure code.  \nPossible values are:\n- AUTHORIZATION_ISSUE: Indicates that the service API enrollment failed because the service\n  API is not authorized for the API Invoker.\n- ONBOARDING_CRI_NOT_MET: Indicates that the service API entollment failed because the\n  onboarding criteria not met for this service API for the API Invoker.\n- UNSPECIFIED: Indicates that the service API enrollment failed due to an unspecified\n  reason.\n"
+    OnboardingNotification:
+      type: object
+      description: Represents a notification of on-boarding creation or update result.
+      properties:
+        result:
+          type: boolean
+          description: Set to "true" to indicate successful on-boarding. Otherwise set to "false".
+        resourceLocation:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        apiInvokerEnrolmentDetails:
+          $ref: '#/components/schemas/APIInvokerEnrolmentDetails'
+        apiList:
+          $ref: '#/components/schemas/APIList'
+        failReason:
+          $ref: '#/components/schemas/OnboardingFailReason'
+      required:
+      - result
     OnboardingCriteria:
       type: object
       description: Represents the onboarding criteria information.
@@ -172,6 +181,32 @@ components:
       required:
       - apiName
       - failureCode
+    RelatedCriteria:
+      type: object
+      description: Represents onboarding related criteria.
+      properties:
+        aefIds:
+          type: array
+          items:
+            type: string
+          minItems: 1
+        apis:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiInfo'
+          minItems: 1
+        serviceAPICategories:
+          type: array
+          items:
+            type: string
+          minItems: 1
+      anyOf:
+      - required:
+        - aefIds
+      - required:
+        - serviceAPICategories
+      - required:
+        - apis
     OnboardingFailReason:
       anyOf:
       - type: string
@@ -184,6 +219,30 @@ components:
 
           '
       description: "Represents the API Invoker onboarding failure reason.  \nPossible values are:\n- API_INVOKER_NOT_ALLOWED: Indicates that the onboarding of the API Invoker failed because\n  the API Invoker is not allowed.\n- ONBOARDING_CRI_NOT_MET: Indicates that the onboarding of the API Invoker failed because\n  the onboarding criteria is not met.\n- OTHER: Indicates that the onboarding of the API Invoker failed because of other reasons.\n"
+    OnboardingInformation:
+      type: object
+      description: Represents the on-boarding information of the API Invoker.
+      properties:
+        apiInvokerPublicKey:
+          type: string
+          description: The API Invoker's public key
+        apiInvokerCertificate:
+          type: string
+          description: 'The API Invoker''s generic client certificate, provided by the CAPIF core function.
+
+            '
+        onboardingSecret:
+          type: string
+          description: 'The API Invoker''s onboarding secret, provided by the CAPIF core function.
+
+            '
+        onboardingCriteria:
+          type: array
+          items:
+            $ref: '#/components/schemas/OnboardingCriteria'
+          minItems: 1
+      required:
+      - apiInvokerPublicKey
     APIInvokerEnrolmentDetails:
       description: Represents the onboarding information of the API Invoker.
       type: object
@@ -224,73 +283,18 @@ components:
       required:
       - onboardingInformation
       - notificationDestination
-    RelatedCriteria:
-      type: object
-      description: Represents onboarding related criteria.
-      properties:
-        aefIds:
-          type: array
-          items:
-            type: string
-          minItems: 1
-        apis:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApiInfo'
-          minItems: 1
-        serviceAPICategories:
-          type: array
-          items:
-            type: string
-          minItems: 1
+    EnrolFailCause:
       anyOf:
-      - required:
-        - aefIds
-      - required:
-        - serviceAPICategories
-      - required:
-        - apis
-    OnboardingNotification:
-      type: object
-      description: Represents a notification of on-boarding creation or update result.
-      properties:
-        result:
-          type: boolean
-          description: Set to "true" to indicate successful on-boarding. Otherwise set to "false".
-        resourceLocation:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
-        apiInvokerEnrolmentDetails:
-          $ref: '#/components/schemas/APIInvokerEnrolmentDetails'
-        apiList:
-          $ref: '#/components/schemas/APIList'
-        failReason:
-          $ref: '#/components/schemas/OnboardingFailReason'
-      required:
-      - result
-    OnboardingInformation:
-      type: object
-      description: Represents the on-boarding information of the API Invoker.
-      properties:
-        apiInvokerPublicKey:
-          type: string
-          description: The API Invoker's public key
-        apiInvokerCertificate:
-          type: string
-          description: 'The API Invoker''s generic client certificate, provided by the CAPIF core function.
+      - type: string
+        enum:
+        - AUTHORIZATION_ISSUE
+        - ONBOARDING_CRI_NOT_MET
+        - UNSPECIFIED
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
 
-            '
-        onboardingSecret:
-          type: string
-          description: 'The API Invoker''s onboarding secret, provided by the CAPIF core function.
-
-            '
-        onboardingCriteria:
-          type: array
-          items:
-            $ref: '#/components/schemas/OnboardingCriteria'
-          minItems: 1
-      required:
-      - apiInvokerPublicKey
+          '
+      description: "Represents API Invoker's per API enrollment failure code.  \nPossible values are:\n- AUTHORIZATION_ISSUE: Indicates that the service API enrollment failed because the service\n  API is not authorized for the API Invoker.\n- ONBOARDING_CRI_NOT_MET: Indicates that the service API entollment failed because the\n  onboarding criteria not met for this service API for the API Invoker.\n- UNSPECIFIED: Indicates that the service API enrollment failed due to an unspecified\n  reason.\n"
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

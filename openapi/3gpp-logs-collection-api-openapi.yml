@@ -1,7 +1,11 @@
 openapi: 3.2.0
 info:
   title: CAPIF_Logging_API_Invocation_ Logs (Collection) API
-  description: "API for invocation logs.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for invocation logs.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
   version: 1.4.0
 servers:
 - url: '{apiRoot}/api-invocation-logs/v1'
@@ -70,6 +74,8 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/503
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
+      summary: Create log ent serv API inv
+      x-summary-source: derived
 components:
   schemas:
     DurationMs:

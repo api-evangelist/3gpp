@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-time-sync Individual Time Synchronization Exposure Subscription API
+  title: 3gpp-time-sync Individual Time Synchronization Exposure…
   version: 1.2.0
-  description: "API for time synchronization exposure.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for time synchronization exposure.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-time-sync/v1'
   variables:
@@ -222,6 +226,124 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    InstanceType:
+      anyOf:
+      - type: string
+        enum:
+        - BOUNDARY_CLOCK
+        - E2E_TRANS_CLOCK
+        - P2P_TRANS_CLOCK
+        - P2P_RELAY_INSTANCE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the supported PTP instance type.  \nPossible values are:\n- BOUNDARY_CLOCK: Indicates Boundary Clock as defined in IEEE Std 1588.\n- E2E_TRANS_CLOCK: Indicates End-to-End Transparent Clock as defined in IEEE Std 1588.\n- P2P_TRANS_CLOCK: Indicates Peer-to-Peer Transparent Clock as defined in IEEE Std 1588.\n- P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS.\n"
+    Protocol:
+      anyOf:
+      - type: string
+        enum:
+        - ETH
+        - IPV4
+        - IPV6
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the supported protocol.  \nPossible values are:\n- ETH: Indicates Ethernet as defined in IEEE Std 1588 [45] Annex E is supported.\n- IPV4: Indicates IPv4 as defined in IEEE Std 1588 [45] Annex C is supported.\n- IPV6: Indicates IPv6 as defined in IEEE Std 1588 [45] Annex D is supported.\n"
+    ConfigForPort:
+      description: Contains configuration for each port.
+      type: object
+      properties:
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        n6Ind:
+          type: boolean
+          enum:
+          - true
+        ptpEnable:
+          type: boolean
+          description: 'This is used to set the portDS.portEnable. If omitted, the default value as described in the PTP Profile is used.
+
+            '
+        logSyncInter:
+          type: integer
+          description: 'Specifies the mean time interval between successive Sync messages.
+
+            '
+        logSyncInterInd:
+          type: boolean
+          description: 'When set to "false", the value of "logSyncInter" attribute is used to set the initialLogSyncInterval as described in IEEE Std 802.1AS [46]. When set to "true", the value of "logSyncInter" attribute is used to set the mgtSettableLogSyncInterval as described in IEEE Std 802.1AS [46].
+
+            '
+        logAnnouInter:
+          type: integer
+          description: 'Specifies the mean time interval between successive Announce messages.
+
+            '
+        logAnnouInterInd:
+          type: boolean
+          description: 'When set to "false", the value of "logAnnouInter" attribute is used to set the initialLogAnnounceInterval as described in IEEE 802.1AS [46]. When set to "true", the value of "logAnnouInter" attribute is used to set the  mgtSettableLogAnnounceInterval as described in IEEE Std 802.1AS [46].
+
+            '
+      oneOf:
+      - required:
+        - gpsi
+      - required:
+        - n6Ind
+    PtpInstance:
+      description: Contains PTP instance configuration and activation requested by the AF.
+      type: object
+      properties:
+        instanceType:
+          $ref: '#/components/schemas/InstanceType'
+        protocol:
+          $ref: '#/components/schemas/Protocol'
+        ptpProfile:
+          type: string
+          description: Identifies the PTP profile.
+        portConfigs:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConfigForPort'
+          minItems: 1
+          description: 'Contains the configurations for the PTP port(s) in the PTP instance.
+
+            '
+      required:
+      - instanceType
+      - protocol
+      - ptpProfile
+    EventFilter:
+      description: 'Contains the filter conditions to match for notifying the event(s) of time synchronization capabilities.
+
+        '
+      type: object
+      properties:
+        instanceTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstanceType'
+          minItems: 1
+          description: 'Indicates the PTP instance type(s).
+
+            '
+        transProtocols:
+          type: array
+          items:
+            $ref: '#/components/schemas/Protocol'
+          minItems: 1
+          description: 'Indicates the transport protocol type(s).
+
+            '
+        ptpProfiles:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: 'Identifies the supported PTP profiles.
+
+            '
     TimeSyncExposureSubsc:
       description: 'Contains requested parameters for the subscription to the notification of time synchronization capability.
 
@@ -296,19 +418,16 @@ components:
         - anyUeInd
       - required:
         - exterGroupId
-    InstanceType:
+    SubscribedEvent:
       anyOf:
       - type: string
         enum:
-        - BOUNDARY_CLOCK
-        - E2E_TRANS_CLOCK
-        - P2P_TRANS_CLOCK
-        - P2P_RELAY_INSTANCE
+        - AVAILABILITY_FOR_TIME_SYNC_SERVICE
       - type: string
         description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
 
           '
-      description: "Identifies the supported PTP instance type.  \nPossible values are:\n- BOUNDARY_CLOCK: Indicates Boundary Clock as defined in IEEE Std 1588.\n- E2E_TRANS_CLOCK: Indicates End-to-End Transparent Clock as defined in IEEE Std 1588.\n- P2P_TRANS_CLOCK: Indicates Peer-to-Peer Transparent Clock as defined in IEEE Std 1588.\n- P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS.\n"
+      description: "Identifies the supported event.  \nPossible values are:\n- AVAILABILITY_FOR_TIME_SYNC_SERVICE: 5GS and/or UE availability and capability for time synchronization\n  service.\n"
     TimeSyncExposureConfig:
       description: Contains the Time Synchronization Configuration parameters.
       type: object
@@ -347,121 +466,6 @@ components:
       - timeDom
       - configNotifId
       - configNotifUri
-    PtpInstance:
-      description: Contains PTP instance configuration and activation requested by the AF.
-      type: object
-      properties:
-        instanceType:
-          $ref: '#/components/schemas/InstanceType'
-        protocol:
-          $ref: '#/components/schemas/Protocol'
-        ptpProfile:
-          type: string
-          description: Identifies the PTP profile.
-        portConfigs:
-          type: array
-          items:
-            $ref: '#/components/schemas/ConfigForPort'
-          minItems: 1
-          description: 'Contains the configurations for the PTP port(s) in the PTP instance.
-
-            '
-      required:
-      - instanceType
-      - protocol
-      - ptpProfile
-    EventFilter:
-      description: 'Contains the filter conditions to match for notifying the event(s) of time synchronization capabilities.
-
-        '
-      type: object
-      properties:
-        instanceTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/InstanceType'
-          minItems: 1
-          description: 'Indicates the PTP instance type(s).
-
-            '
-        transProtocols:
-          type: array
-          items:
-            $ref: '#/components/schemas/Protocol'
-          minItems: 1
-          description: 'Indicates the transport protocol type(s).
-
-            '
-        ptpProfiles:
-          type: array
-          items:
-            type: string
-          minItems: 1
-          description: 'Identifies the supported PTP profiles.
-
-            '
-    ConfigForPort:
-      description: Contains configuration for each port.
-      type: object
-      properties:
-        gpsi:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-        n6Ind:
-          type: boolean
-          enum:
-          - true
-        ptpEnable:
-          type: boolean
-          description: 'This is used to set the portDS.portEnable. If omitted, the default value as described in the PTP Profile is used.
-
-            '
-        logSyncInter:
-          type: integer
-          description: 'Specifies the mean time interval between successive Sync messages.
-
-            '
-        logSyncInterInd:
-          type: boolean
-          description: 'When set to "false", the value of "logSyncInter" attribute is used to set the initialLogSyncInterval as described in IEEE Std 802.1AS [46]. When set to "true", the value of "logSyncInter" attribute is used to set the mgtSettableLogSyncInterval as described in IEEE Std 802.1AS [46].
-
-            '
-        logAnnouInter:
-          type: integer
-          description: 'Specifies the mean time interval between successive Announce messages.
-
-            '
-        logAnnouInterInd:
-          type: boolean
-          description: 'When set to "false", the value of "logAnnouInter" attribute is used to set the initialLogAnnounceInterval as described in IEEE 802.1AS [46]. When set to "true", the value of "logAnnouInter" attribute is used to set the  mgtSettableLogAnnounceInterval as described in IEEE Std 802.1AS [46].
-
-            '
-      oneOf:
-      - required:
-        - gpsi
-      - required:
-        - n6Ind
-    Protocol:
-      anyOf:
-      - type: string
-        enum:
-        - ETH
-        - IPV4
-        - IPV6
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Identifies the supported protocol.  \nPossible values are:\n- ETH: Indicates Ethernet as defined in IEEE Std 1588 [45] Annex E is supported.\n- IPV4: Indicates IPv4 as defined in IEEE Std 1588 [45] Annex C is supported.\n- IPV6: Indicates IPv6 as defined in IEEE Std 1588 [45] Annex D is supported.\n"
-    SubscribedEvent:
-      anyOf:
-      - type: string
-        enum:
-        - AVAILABILITY_FOR_TIME_SYNC_SERVICE
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Identifies the supported event.  \nPossible values are:\n- AVAILABILITY_FOR_TIME_SYNC_SERVICE: 5GS and/or UE availability and capability for time synchronization\n  service.\n"
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

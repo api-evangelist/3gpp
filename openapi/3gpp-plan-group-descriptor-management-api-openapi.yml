@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: 3GPP Plan Provisioning Management Plan Group Descriptor Management API
+  title: 3GPP Plan Provisioning Management Plan Group Descriptor…
   version: 19.2.0
   description: OAS 3.0.1 specification of API for managing network configuration plans and related jobs © 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.
 servers:
@@ -216,58 +216,6 @@ components:
             type: string
             description: Unique id of the plan configuration group descriptor.
             example: pgc-001
-    ErrorDetail:
-      type: object
-      properties:
-        title:
-          type: string
-          description: A short, human-readable summary of the problem type
-          example: Data already exists; cannot be created
-        type:
-          type: string
-          description: The type of the error
-          enum:
-          - SCHEMA_VALIDATION_ERROR
-          - DATA_NODE_TREE_ERROR
-          - MODIFICATION_NOT_ALLOWED
-          - ACCESS_CONTROL_CONFLICT
-          - APPLICATION_LAYER_ERROR
-          - SERVER_ERROR
-          - OTHER
-        reason:
-          type: string
-          enum:
-          - NEW_DATA_NODE_NAME_INVALID
-          - NEW_DATA_NODE_VALUE_INVALID
-          - NEW_DATA_NODE_CONTAINMENT_INVALID
-          - FINAL_DATA_NODE_VALUE_INVALID
-          - FINAL_DATA_NODE_UNIQUENESS_INVALID
-          - FINAL_DATA_NODE_MULTIPLICITY_INVALID
-          - FINAL_DATA_NODE_CARDINALITY_INVALID
-          - TARGET_DATA_NODE_NOT_FOUND
-          - TARGET_DATA_NODE_PARENT_NOT_FOUND
-          - TARGET_DATA_NODE_FOUND
-          - TARGET_DATA_NODE_NOT_WRITABLE
-          - TARGET_DATA_NODE_INVARIANT
-          - TARGET_DATA_NODE_CREATION_NOT_ALLOWED
-          - TARGET_DATA_NODE_DELETION_NOT_ALLOWED
-          - ACCESS_DENIED
-          - OTHER
-          example: NEW_DATA_NODE_CONTAINMENT_INVALID
-        detail:
-          type: string
-          description: A human-readable explanation specific to this occurrence of the problem.
-          example: NRCellDU=1234 already exists in the network
-        badDataNode:
-          type: string
-          example: /_3gpp-common-subnetwork:SubNetwork=Irl/_3gpp-common-mecontext:MeContext=Dublin-1
-        errorInfo:
-          type: object
-          description: additional error info (e.g. stackdump)
-          additionalProperties: true
-      required:
-      - type
-      - badDataNode
     PlanConfigurationGroupDescriptorResponse:
       allOf:
       - $ref: '#/components/schemas/PlanConfigurationGroupDescriptor'
@@ -366,6 +314,81 @@ components:
           - planConfigGroupDescrId: pgc-europe-east-group
           - planConfigDescrId: pcd-radio-tuning-005
           - planConfigGroupDescrId: pgc-5g-core-rollout
+    ErrorDetail:
+      type: object
+      properties:
+        title:
+          type: string
+          description: A short, human-readable summary of the problem type
+          example: Data already exists; cannot be created
+        type:
+          type: string
+          description: The type of the error
+          enum:
+          - SCHEMA_VALIDATION_ERROR
+          - DATA_NODE_TREE_ERROR
+          - MODIFICATION_NOT_ALLOWED
+          - ACCESS_CONTROL_CONFLICT
+          - APPLICATION_LAYER_ERROR
+          - SERVER_ERROR
+          - OTHER
+        reason:
+          type: string
+          enum:
+          - NEW_DATA_NODE_NAME_INVALID
+          - NEW_DATA_NODE_VALUE_INVALID
+          - NEW_DATA_NODE_CONTAINMENT_INVALID
+          - FINAL_DATA_NODE_VALUE_INVALID
+          - FINAL_DATA_NODE_UNIQUENESS_INVALID
+          - FINAL_DATA_NODE_MULTIPLICITY_INVALID
+          - FINAL_DATA_NODE_CARDINALITY_INVALID
+          - TARGET_DATA_NODE_NOT_FOUND
+          - TARGET_DATA_NODE_PARENT_NOT_FOUND
+          - TARGET_DATA_NODE_FOUND
+          - TARGET_DATA_NODE_NOT_WRITABLE
+          - TARGET_DATA_NODE_INVARIANT
+          - TARGET_DATA_NODE_CREATION_NOT_ALLOWED
+          - TARGET_DATA_NODE_DELETION_NOT_ALLOWED
+          - ACCESS_DENIED
+          - OTHER
+          example: NEW_DATA_NODE_CONTAINMENT_INVALID
+        detail:
+          type: string
+          description: A human-readable explanation specific to this occurrence of the problem.
+          example: NRCellDU=1234 already exists in the network
+        badDataNode:
+          type: string
+          example: /_3gpp-common-subnetwork:SubNetwork=Irl/_3gpp-common-mecontext:MeContext=Dublin-1
+        errorInfo:
+          type: object
+          description: additional error info (e.g. stackdump)
+          additionalProperties: true
+      required:
+      - type
+      - badDataNode
+    SelfLink:
+      type: object
+      description: Hypermedia links for this resource, including fixed and dynamic relations.
+      properties:
+        self:
+          allOf:
+          - $ref: '#/components/schemas/LinkObject'
+          description: A link to the resource itself.
+      additionalProperties:
+        $ref: '#/components/schemas/LinkObject'
+      required:
+      - self
+      example:
+        self:
+          href: '{root-url}/plan-management/v1/plan-descriptors/pd-001'
+          templated: true
+          type: application/json
+          title: The newly created PlanConfigurationDescriptor
+        help:
+          href: '{root-url}/help-service/v1/topics/plan-descriptors'
+          templated: true
+          type: application/json
+          title: online help for the plan descriptor
     LinkObject:
       type: object
       description: Defines the structure of a single hypermedia link.
@@ -395,29 +418,6 @@ components:
           description: The HTTP method to use for this action link.
       required:
       - href
-    SelfLink:
-      type: object
-      description: Hypermedia links for this resource, including fixed and dynamic relations.
-      properties:
-        self:
-          allOf:
-          - $ref: '#/components/schemas/LinkObject'
-          description: A link to the resource itself.
-      additionalProperties:
-        $ref: '#/components/schemas/LinkObject'
-      required:
-      - self
-      example:
-        self:
-          href: '{root-url}/plan-management/v1/plan-descriptors/pd-001'
-          templated: true
-          type: application/json
-          title: The newly created PlanConfigurationDescriptor
-        help:
-          href: '{root-url}/help-service/v1/topics/plan-descriptors'
-          templated: true
-          type: application/json
-          title: online help for the plan descriptor
 externalDocs:
   description: 3GPP TS 28.572; Generic management services
   url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.572/

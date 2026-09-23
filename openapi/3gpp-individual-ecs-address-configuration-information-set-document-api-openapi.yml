@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-ecs-address Individual ECS Address Configuration Information Set (Document) API
+  title: 3gpp-ecs-address Individual ECS Address Configuration…
   version: 1.1.0
-  description: "API for AF provisioned ECS Address Configuration Information.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for AF provisioned ECS Address Configuration Information.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-ecs-address/v1'
   variables:
@@ -32,7 +36,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Retrieve an existing Individual ECS Address Configuration Information Set resource.
+      summary: Retrieve an existing Individual ECS Address Configuration Information Set…
       operationId: ReadEACI
       tags:
       - Individual ECS Address Configuration Information Set (Document)
@@ -68,7 +72,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Update an existing Individual ECS Address Configuration Information Set resource.
+      summary: Update an existing Individual ECS Address Configuration Information Set resource
       operationId: UpdateEACI
       tags:
       - Individual ECS Address Configuration Information Set (Document)

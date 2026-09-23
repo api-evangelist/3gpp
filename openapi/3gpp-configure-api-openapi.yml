@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-ecr-control Configure API
   version: 1.2.0
-  description: "API for enhanced converage restriction control.  \n© 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for enhanced converage restriction control.
+
+    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-ecr-control/v1'
   variables:
@@ -17,7 +21,7 @@ tags:
 paths:
   /configure:
     post:
-      summary: Configure the enhanced converage restriction for a UE.
+      summary: Configure the enhanced converage restriction for a UE
       requestBody:
         required: true
         content:
@@ -59,8 +63,20 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
       tags:
       - Configure
+      operationId: postConfigure
+      x-operation-id-source: derived
 components:
   schemas:
+    PlmnEcRestrictionDataWb:
+      description: Indicates whether enhanced coverage mode is restricted or not for a PLMN ID.
+      type: object
+      properties:
+        plmnId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/PlmnId
+        plmnEcrDataWb:
+          $ref: TS29503_Nudm_SDM.yaml#/components/schemas/EcRestrictionDataWb
+      required:
+      - plmnId
     ECRData:
       description: Represents the current visited PLMN (if any) and the current settings of enhanced coverage restriction.
       type: object
@@ -92,16 +108,6 @@ components:
         required:
         - restrictedPlmnIds
         - allowedPlmnIds
-    PlmnEcRestrictionDataWb:
-      description: Indicates whether enhanced coverage mode is restricted or not for a PLMN ID.
-      type: object
-      properties:
-        plmnId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/PlmnId
-        plmnEcrDataWb:
-          $ref: TS29503_Nudm_SDM.yaml#/components/schemas/EcRestrictionDataWb
-      required:
-      - plmnId
     ECRControl:
       description: Represents the parameters to request Enhanced Coverage Restriction control.
       type: object

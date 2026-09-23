@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-vfl-training VFL Training Subscriptions (Collection) API
+  title: 3gpp-vfl-training VFL Training Subscriptions (Collection)…
   version: 1.0.1
-  description: "API for VFL Training.  \n© 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for VFL Training.
+
+    © 2026, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-vfl-training/v1'
   variables:
@@ -24,7 +28,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Retrieve all the active VFL Training Subscriptions.
+      summary: Retrieve all the active VFL Training Subscriptions
       operationId: GetVFLTrainingSubscriptions
       tags:
       - VFL Training Subscriptions (Collection)
@@ -63,7 +67,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     post:
-      summary: Create a new Individual VFL Training Subscription.
+      summary: Create a new Individual VFL Training Subscription
       operationId: CreateVFLTrainingSubscription
       tags:
       - VFL Training Subscriptions (Collection)

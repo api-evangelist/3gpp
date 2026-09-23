@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-mbs-us Individual MBS User Service API
   version: 1.1.0
-  description: "API for MBS User Service.  \n© 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for MBS User Service.
+
+    © 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-mbs-us/v1'
   variables:
@@ -24,7 +28,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Retrieve an existing Individual MBS User Service resource.
+      summary: Retrieve an existing Individual MBS User Service resource
       tags:
       - Individual MBS User Service
       operationId: RetrieveIndivMBSUserService
@@ -60,7 +64,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     put:
-      summary: Request the update of an existing Individual MBS User Service resource.
+      summary: Request the update of an existing Individual MBS User Service resource
       tags:
       - Individual MBS User Service
       operationId: UpdateIndivMBSUserService
@@ -113,7 +117,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     patch:
-      summary: Request the modification of an existing Individual MBS User Service resource.
+      summary: Request the modification of an existing Individual MBS User Service resource
       tags:
       - Individual MBS User Service
       operationId: ModifyIndivMBSUserService
@@ -166,7 +170,7 @@ paths:
         default:
           $ref: TS29122_CommonData.yaml#/components/responses/default
     delete:
-      summary: Deletes an existing Individual MBS User Service resource.
+      summary: Deletes an existing Individual MBS User Service resource
       tags:
       - Individual MBS User Service
       operationId: DeleteIndivMBSUserService

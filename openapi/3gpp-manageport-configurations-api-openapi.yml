@@ -2,7 +2,11 @@ openapi: 3.2.0
 info:
   title: 3gpp-nidd ManagePort Configurations API
   version: 1.3.0
-  description: "API for non IP data delivery.  \n© 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for non IP data delivery.
+
+    © 2024, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-nidd/v1'
   variables:
@@ -30,7 +34,7 @@ paths:
       schema:
         type: string
     get:
-      summary: Read all RDS ManagePort Configurations.
+      summary: Read all RDS ManagePort Configurations
       operationId: FetchAllManagePortConfigurations
       tags:
       - ManagePort Configurations
@@ -69,6 +73,18 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    SerializationFormat:
+      anyOf:
+      - type: string
+        enum:
+        - CBOR
+        - JSON
+        - XML
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents a serialization format associated with an RDS port which is applicable\nfor the Rds_serialization_format feature.\nPossible values are\n- CBOR: The CBOR Serialzition format \n- JSON: The JSON Serialzition format\n- XML: The XML Serialzition format\n"
     ManageEntity:
       anyOf:
       - type: string
@@ -107,18 +123,6 @@ components:
           $ref: '#/components/schemas/SerializationFormat'
       required:
       - appId
-    SerializationFormat:
-      anyOf:
-      - type: string
-        enum:
-        - CBOR
-        - JSON
-        - XML
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents a serialization format associated with an RDS port which is applicable\nfor the Rds_serialization_format feature.\nPossible values are\n- CBOR: The CBOR Serialzition format \n- JSON: The JSON Serialzition format\n- XML: The XML Serialzition format\n"
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

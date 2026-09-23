@@ -1,8 +1,12 @@
 openapi: 3.2.0
 info:
-  title: 3gpp-eas-deployment Individual EAS Deployment Information API
+  title: 3gpp-eas-deployment Individual EAS Deployment Information…
   version: 1.2.0
-  description: "API for AF provisioned EAS Deployment.  \n© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  description: 'API for AF provisioned EAS Deployment.
+
+    © 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+
+    All rights reserved.'
 servers:
 - url: '{apiRoot}/3gpp-eas-deployment/v1'
   variables:
@@ -168,84 +172,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    N6DelayMeasurementInfo:
-      description: Contains N6 delay measurement assistance information.
-      type: object
-      properties:
-        measureEndpointAddr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
-        measureEndpointPort:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        suppMeasProtocs:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/DelayMeasurementProtocol
-          minItems: 1
-          description: Contains the list of supported N6 delay measurement protocols.
-        configParams:
-          type: string
-          description: 'Contains protocol-specific configuration parameters. The contents and the format are up to the implementation.
-
-            '
-      required:
-      - measureEndpointAddr
-    DnaiInformation:
-      description: Represents DNAI information.
-      type: object
-      properties:
-        dnai:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Dnai
-        dnsServIds:
-          type: array
-          items:
-            $ref: '#/components/schemas/DnsServerIdentifier'
-          minItems: 1
-          description: 'Contains the list of DNS server identifier for each DNAI.
-
-            '
-        easIpAddrs:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
-          minItems: 1
-          description: 'Contains the IP address(s) of the EASs in the local DN for each DNAI.
-
-            '
-      required:
-      - dnai
-      anyOf:
-      - required:
-        - dnsServIds
-      - required:
-        - easIpAddrs
-    N6DelayPerDnaiEas:
-      description: Contains N6 delay measurement assistance information per DNAI and/or EAS.
-      type: object
-      properties:
-        dnai:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Dnai
-        eas:
-          $ref: TS29571_CommonData.yaml#/components/schemas/EasServerAddress
-        n6DelayMeasureInfo:
-          $ref: '#/components/schemas/N6DelayMeasurementInfo'
-      required:
-      - n6DelayMeasureInfo
-      anyOf:
-      - required:
-        - dnai
-      - required:
-        - eas
-    DnsServerIdentifier:
-      description: Represents DNS server identifier (consisting of IP address and port).
-      type: object
-      properties:
-        dnsServIpAddr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
-        portNumber:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-      required:
-      - dnsServIpAddr
-      - portNumber
     EasDeployInfo:
       description: Represents EAS Deployment Information.
       type: object
@@ -301,6 +227,84 @@ components:
           $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
       required:
       - fqdnPatternList
+    N6DelayPerDnaiEas:
+      description: Contains N6 delay measurement assistance information per DNAI and/or EAS.
+      type: object
+      properties:
+        dnai:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Dnai
+        eas:
+          $ref: TS29571_CommonData.yaml#/components/schemas/EasServerAddress
+        n6DelayMeasureInfo:
+          $ref: '#/components/schemas/N6DelayMeasurementInfo'
+      required:
+      - n6DelayMeasureInfo
+      anyOf:
+      - required:
+        - dnai
+      - required:
+        - eas
+    DnsServerIdentifier:
+      description: Represents DNS server identifier (consisting of IP address and port).
+      type: object
+      properties:
+        dnsServIpAddr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
+        portNumber:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+      required:
+      - dnsServIpAddr
+      - portNumber
+    DnaiInformation:
+      description: Represents DNAI information.
+      type: object
+      properties:
+        dnai:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Dnai
+        dnsServIds:
+          type: array
+          items:
+            $ref: '#/components/schemas/DnsServerIdentifier'
+          minItems: 1
+          description: 'Contains the list of DNS server identifier for each DNAI.
+
+            '
+        easIpAddrs:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
+          minItems: 1
+          description: 'Contains the IP address(s) of the EASs in the local DN for each DNAI.
+
+            '
+      required:
+      - dnai
+      anyOf:
+      - required:
+        - dnsServIds
+      - required:
+        - easIpAddrs
+    N6DelayMeasurementInfo:
+      description: Contains N6 delay measurement assistance information.
+      type: object
+      properties:
+        measureEndpointAddr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
+        measureEndpointPort:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        suppMeasProtocs:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/DelayMeasurementProtocol
+          minItems: 1
+          description: Contains the list of supported N6 delay measurement protocols.
+        configParams:
+          type: string
+          description: 'Contains protocol-specific configuration parameters. The contents and the format are up to the implementation.
+
+            '
+      required:
+      - measureEndpointAddr
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2
