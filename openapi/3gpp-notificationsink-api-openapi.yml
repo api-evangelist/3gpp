@@ -42,10 +42,6 @@ components:
       enum:
       - UP
       - DOWN
-    PerfMetricValue:
-      oneOf:
-      - type: integer
-      - $ref: TS28623_ComDefs.yaml#/components/schemas/Float
     NotifyThresholdCrossing:
       allOf:
       - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
@@ -65,6 +61,10 @@ components:
             type: integer
           additionalText:
             type: string
+    PerfMetricValue:
+      oneOf:
+      - type: integer
+      - $ref: TS28623_ComDefs.yaml#/components/schemas/Float
 externalDocs:
   description: 3GPP TS 28.532; Generic management services
   url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.532/

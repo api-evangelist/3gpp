@@ -382,20 +382,6 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/PortRo
       required:
       - notificationDestination
-    GMDByMb2Notification:
-      description: Represents a group message delivery notification.
-      type: object
-      properties:
-        transaction:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        deliveryTriggerStatus:
-          type: boolean
-          description: 'Indicates whether delivery of group message payload corresponding to the TMGI was successful (TRUE) or not (FALSE)
-
-            '
-      required:
-      - transaction
-      - deliveryTriggerStatus
     MbmsLocArea:
       description: 'Represents a user location area whithin which is sent a group message delivery via MBMS request.
 
@@ -434,6 +420,20 @@ components:
             $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
           minItems: 1
           description: Identifies a civic address of the user where the UE is located.
+    GMDByMb2Notification:
+      description: Represents a group message delivery notification.
+      type: object
+      properties:
+        transaction:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        deliveryTriggerStatus:
+          type: boolean
+          description: 'Indicates whether delivery of group message payload corresponding to the TMGI was successful (TRUE) or not (FALSE)
+
+            '
+      required:
+      - transaction
+      - deliveryTriggerStatus
     GMDViaMBMSByxMB:
       description: Represents a group message delivery via MBMS by xMB.
       type: object

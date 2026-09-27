@@ -66,16 +66,6 @@ paths:
       - Get Msisdn
 components:
   schemas:
-    MsisdnInfo:
-      description: Represents MSISDN information.
-      type: object
-      properties:
-        msisdn:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Msisdn
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - msisdn
     MsisdnReq:
       description: Represents the parameters to request the retrieval of MSISDN of the UE.
       type: object
@@ -107,6 +97,16 @@ components:
         - ueIpAddr
       - required:
         - ueMacAddr
+    MsisdnInfo:
+      description: Represents MSISDN information.
+      type: object
+      properties:
+        msisdn:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Msisdn
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - msisdn
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

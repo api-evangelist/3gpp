@@ -134,6 +134,30 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    DeliveryStatus:
+      anyOf:
+      - type: string
+        enum:
+        - SUCCESS
+        - SUCCESS_NEXT_HOP_ACKNOWLEDGED
+        - SUCCESS_NEXT_HOP_UNACKNOWLEDGED
+        - SUCCESS_ACKNOWLEDGED
+        - SUCCESS_UNACKNOWLEDGED
+        - TRIGGERED
+        - BUFFERING
+        - BUFFERING_TEMPORARILY_NOT_REACHABLE
+        - SENDING
+        - FAILURE
+        - FAILURE_RDS_DISABLED
+        - FAILURE_NEXT_HOP
+        - FAILURE_TIMEOUT
+        - FAILURE_TEMPORARILY_NOT_REACHABLE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the status of a downlink NIDD data delivery resource.  \nPossible values are:\n- SUCCESS: Success but details not provided\n- SUCCESS_NEXT_HOP_ACKNOWLEDGED: Successful delivery to the next hop with acknowledgment.\n- SUCCESS_NEXT_HOP_UNACKNOWLEDGED: Successful delivery to the next hop without\n  acknowledgment\n- SUCCESS_ACKNOWLEDGED: Reliable delivery was acknowledged by the UE\n- SUCCESS_UNACKNOWLEDGED: Reliable delivery was not acknowledged by the UE\n- TRIGGERED: The SCEF triggered the device and is buffering the data.\n- BUFFERING: The SCEF is buffering the data due to no PDN connection established.\n- BUFFERING_TEMPORARILY_NOT_REACHABLE: The SCEF has been informed that the UE is temporarily\n  not reachable but is buffering the data\n- SENDING: The SCEF has forwarded the data, but they may be stored elsewhere\n- FAILURE: Delivery failure but details not provided\n- FAILURE_RDS_DISABLED: RDS was disabled\n- FAILURE_NEXT_HOP: Unsuccessful delivery to the next hop.\n- FAILURE_TIMEOUT: Unsuccessful delivery due to timeout. \n- FAILURE_TEMPORARILY_NOT_REACHABLE: The SCEF has been informed that the UE is temporarily\n  not reachable without buffering the data.\n"
+      readOnly: true
     NiddDownlinkDataTransfer:
       description: Represents the received NIDD downlink data from the SCS/AS.
       type: object
@@ -177,6 +201,17 @@ components:
         - msisdn
       - required:
         - externalGroupId
+    RdsPort:
+      description: Represents the port configuration for Reliable Data Transfer.
+      type: object
+      properties:
+        portUE:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Port
+        portSCEF:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Port
+      required:
+      - portUE
+      - portSCEF
     PdnEstablishmentOptions:
       anyOf:
       - type: string
@@ -189,17 +224,6 @@ components:
 
           '
       description: "Represents PDN establishment options that describe the network behaviour when\nthere is no PDN connection towards the addressed UE.  \nPossible values are:\n- WAIT_FOR_UE: wait for the UE to establish the PDN connection \n- INDICATE_ERROR: respond with an error cause\n- SEND_TRIGGER: send a device trigger\n"
-    RdsPort:
-      description: Represents the port configuration for Reliable Data Transfer.
-      type: object
-      properties:
-        portUE:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Port
-        portSCEF:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Port
-      required:
-      - portUE
-      - portSCEF
     NiddDownlinkDataDeliveryFailure:
       description: Represents information related to a failure delivery result.
       type: object
@@ -210,30 +234,6 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
       required:
       - problemDetail
-    DeliveryStatus:
-      anyOf:
-      - type: string
-        enum:
-        - SUCCESS
-        - SUCCESS_NEXT_HOP_ACKNOWLEDGED
-        - SUCCESS_NEXT_HOP_UNACKNOWLEDGED
-        - SUCCESS_ACKNOWLEDGED
-        - SUCCESS_UNACKNOWLEDGED
-        - TRIGGERED
-        - BUFFERING
-        - BUFFERING_TEMPORARILY_NOT_REACHABLE
-        - SENDING
-        - FAILURE
-        - FAILURE_RDS_DISABLED
-        - FAILURE_NEXT_HOP
-        - FAILURE_TIMEOUT
-        - FAILURE_TEMPORARILY_NOT_REACHABLE
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the status of a downlink NIDD data delivery resource.  \nPossible values are:\n- SUCCESS: Success but details not provided\n- SUCCESS_NEXT_HOP_ACKNOWLEDGED: Successful delivery to the next hop with acknowledgment.\n- SUCCESS_NEXT_HOP_UNACKNOWLEDGED: Successful delivery to the next hop without\n  acknowledgment\n- SUCCESS_ACKNOWLEDGED: Reliable delivery was acknowledged by the UE\n- SUCCESS_UNACKNOWLEDGED: Reliable delivery was not acknowledged by the UE\n- TRIGGERED: The SCEF triggered the device and is buffering the data.\n- BUFFERING: The SCEF is buffering the data due to no PDN connection established.\n- BUFFERING_TEMPORARILY_NOT_REACHABLE: The SCEF has been informed that the UE is temporarily\n  not reachable but is buffering the data\n- SENDING: The SCEF has forwarded the data, but they may be stored elsewhere\n- FAILURE: Delivery failure but details not provided\n- FAILURE_RDS_DISABLED: RDS was disabled\n- FAILURE_NEXT_HOP: Unsuccessful delivery to the next hop.\n- FAILURE_TIMEOUT: Unsuccessful delivery due to timeout. \n- FAILURE_TEMPORARILY_NOT_REACHABLE: The SCEF has been informed that the UE is temporarily\n  not reachable without buffering the data.\n"
-      readOnly: true
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

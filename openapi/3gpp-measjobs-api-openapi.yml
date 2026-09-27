@@ -132,36 +132,45 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    error-ResponseType:
+    scheduleOfDay-Type:
       type: object
       properties:
-        error:
-          type: object
-          properties:
-            errorInfo:
-              type: string
+        dayOfWeek:
+          $ref: '#/components/schemas/dayOfWeek-Type'
+        intervalsOfDay:
+          type: array
+          items:
+            $ref: '#/components/schemas/timeInterval-Type'
+    dateTime-Type:
+      type: string
+      format: date-Time
     reportingMethod-Type:
       type: string
       enum:
       - file
       - streaming
-    priority-Type:
-      type: string
-      enum:
-      - low
-      - medium
-      - high
-    uri-Type:
-      type: string
-    unsupportedMeas-Type:
+    schedule-Type:
       type: object
       properties:
-        iOCInstance:
-          $ref: '#/components/schemas/uri-Type'
-        measurementTypeName:
-          type: string
-        reason:
-          type: string
+        scheduleOption:
+          $ref: '#/components/schemas/scheduleOption-Type'
+        dailySchedule:
+          type: array
+          items:
+            $ref: '#/components/schemas/timeInterval-Type'
+        weeklySchedule:
+          type: array
+          items:
+            $ref: '#/components/schemas/scheduleOfDay-Type'
+    measJobCreation-ResponseType:
+      type: object
+      properties:
+        unsupportedList:
+          type: array
+          items:
+            $ref: '#/components/schemas/unsupportedMeas-Type'
+    uri-Type:
+      type: string
     measJobCreation-RequestType:
       type: object
       properties:
@@ -193,25 +202,6 @@ components:
           $ref: '#/components/schemas/priority-Type'
         reliability:
           type: string
-    scheduleOfDay-Type:
-      type: object
-      properties:
-        dayOfWeek:
-          $ref: '#/components/schemas/dayOfWeek-Type'
-        intervalsOfDay:
-          type: array
-          items:
-            $ref: '#/components/schemas/timeInterval-Type'
-    measJobsRetrieval-ResponseType:
-      type: object
-      properties:
-        jobInfoList:
-          type: array
-          items:
-            $ref: '#/components/schemas/measJobInfo-ResourceType'
-    dateTime-Type:
-      type: string
-      format: date-Time
     timeInterval-Type:
       type: object
       properties:
@@ -221,16 +211,27 @@ components:
         intervalEnd:
           type: string
           format: Time
-    dayOfWeek-Type:
+    priority-Type:
       type: string
       enum:
-      - Monday
-      - Tuesday
-      - Wednesday
-      - Thursday
-      - Friday
-      - Saturday
-      - Sunday
+      - low
+      - medium
+      - high
+    error-ResponseType:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            errorInfo:
+              type: string
+    measJobsRetrieval-ResponseType:
+      type: object
+      properties:
+        jobInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/measJobInfo-ResourceType'
     measJobInfo-ResourceType:
       type: object
       properties:
@@ -264,31 +265,30 @@ components:
           $ref: '#/components/schemas/priority-Type'
         reliability:
           type: string
-    measJobCreation-ResponseType:
-      type: object
-      properties:
-        unsupportedList:
-          type: array
-          items:
-            $ref: '#/components/schemas/unsupportedMeas-Type'
     scheduleOption-Type:
       type: string
       enum:
       - daily
       - weekly
-    schedule-Type:
+    unsupportedMeas-Type:
       type: object
       properties:
-        scheduleOption:
-          $ref: '#/components/schemas/scheduleOption-Type'
-        dailySchedule:
-          type: array
-          items:
-            $ref: '#/components/schemas/timeInterval-Type'
-        weeklySchedule:
-          type: array
-          items:
-            $ref: '#/components/schemas/scheduleOfDay-Type'
+        iOCInstance:
+          $ref: '#/components/schemas/uri-Type'
+        measurementTypeName:
+          type: string
+        reason:
+          type: string
+    dayOfWeek-Type:
+      type: string
+      enum:
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+      - Sunday
 externalDocs:
   description: 3GPP TS 28.550 Performance assurance
   url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.550/

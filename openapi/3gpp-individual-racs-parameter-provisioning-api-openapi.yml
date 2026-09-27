@@ -219,23 +219,33 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    RacsFailureReport:
-      description: Represents a radio capability data provisioning failure report.
+    RacsProvisioningData:
+      description: Represents a UE's radio capability data.
       type: object
       properties:
-        racsIds:
-          type: array
-          items:
-            type: string
-          minItems: 1
-          description: 'Identifies the RACS ID(s) for which the RACS data are not provisioned successfully.
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        supportedFeatures:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+        racsConfigs:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/RacsConfiguration'
+          minProperties: 1
+          description: 'Identifies the configuration related to manufacturer specific UE radio capability. Each element uniquely identifies an RACS configuration for an RACS ID and is identified in the map via the RACS ID as key. The response shall include successfully provisioned RACS data.
 
             '
-        failureCode:
-          $ref: '#/components/schemas/RacsFailureCode'
+        racsReports:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/RacsFailureReport'
+          minProperties: 1
+          description: 'Supplied by the SCEF. Contains the RACS IDs for which the RACS data are not provisioned successfully. Any string value can be used as a key of the map.
+
+            '
+          readOnly: true
       required:
-      - racsIds
-      - failureCode
+      - racsConfigs
     RacsProvisioningDataPatch:
       description: 'Represents parameters to request the modification of a UE''s radio capability data.
 
@@ -274,33 +284,19 @@ components:
             $ref: TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode
           minItems: 1
           description: Related UE model's IMEI-TAC values.
-    RacsProvisioningData:
-      description: Represents a UE's radio capability data.
-      type: object
-      properties:
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        supportedFeatures:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-        racsConfigs:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/RacsConfiguration'
-          minProperties: 1
-          description: 'Identifies the configuration related to manufacturer specific UE radio capability. Each element uniquely identifies an RACS configuration for an RACS ID and is identified in the map via the RACS ID as key. The response shall include successfully provisioned RACS data.
+    RacsFailureCode:
+      anyOf:
+      - type: string
+        enum:
+        - MALFUNCTION
+        - RESOURCE_LIMITATION
+        - RACS_ID_DUPLICATED
+        - OTHER_REASON
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
 
-            '
-        racsReports:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/RacsFailureReport'
-          minProperties: 1
-          description: 'Supplied by the SCEF. Contains the RACS IDs for which the RACS data are not provisioned successfully. Any string value can be used as a key of the map.
-
-            '
-          readOnly: true
-      required:
-      - racsConfigs
+          '
+      description: "Represents the failure result of UE radio capability provisioning.  \nPossible values are:\n- MALFUNCTION: This value indicates that something functions wrongly in RACS provisioning or\n  the RACS provisioning does not function at all.\n- RESOURCE_LIMITATION: This value indicates there is resource limitation for RACS data\n  storage.\n- RACS_ID_DUPLICATED: The received RACS identifier(s) are already provisioned.\n- OTHER_REASON: Other reason unspecified.\n"
     RacsConfiguration:
       description: Represents a single UE radio capability configuration data.
       type: object
@@ -330,19 +326,23 @@ components:
       required:
       - racsId
       - imeiTacs
-    RacsFailureCode:
-      anyOf:
-      - type: string
-        enum:
-        - MALFUNCTION
-        - RESOURCE_LIMITATION
-        - RACS_ID_DUPLICATED
-        - OTHER_REASON
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+    RacsFailureReport:
+      description: Represents a radio capability data provisioning failure report.
+      type: object
+      properties:
+        racsIds:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: 'Identifies the RACS ID(s) for which the RACS data are not provisioned successfully.
 
-          '
-      description: "Represents the failure result of UE radio capability provisioning.  \nPossible values are:\n- MALFUNCTION: This value indicates that something functions wrongly in RACS provisioning or\n  the RACS provisioning does not function at all.\n- RESOURCE_LIMITATION: This value indicates there is resource limitation for RACS data\n  storage.\n- RACS_ID_DUPLICATED: The received RACS identifier(s) are already provisioned.\n- OTHER_REASON: Other reason unspecified.\n"
+            '
+        failureCode:
+          $ref: '#/components/schemas/RacsFailureCode'
+      required:
+      - racsIds
+      - failureCode
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

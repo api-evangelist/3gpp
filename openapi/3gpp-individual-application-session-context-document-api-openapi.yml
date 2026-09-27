@@ -224,36 +224,69 @@ paths:
           $ref: TS29571_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    AfRequestedData:
+    ServiceUrn:
+      description: Contains values of the service URN and may include subservices.
+      type: string
+    TosTrafficClass:
+      description: 2-octet string, where each octet is encoded in hexadecimal representation. The first octet contains the IPv4 Type-of-Service or the IPv6 Traffic-Class field and the second octet contains the ToS/Traffic Class mask field.
+      type: string
+    AppSessionContextUpdateData:
+      description: Identifies the modifications to the "ascReqData" property of an Individual Application Session Context which may include the modifications to the sub-resource Events Subscription.
+      type: object
+      properties:
+        afAppId:
+          $ref: '#/components/schemas/AfAppId'
+        afRoutReq:
+          $ref: '#/components/schemas/AfRoutingRequirementRm'
+        aspId:
+          $ref: '#/components/schemas/AspId'
+        evSubsc:
+          $ref: '#/components/schemas/EventsSubscReqDataRm'
+        mcpttId:
+          description: indication of MCPTT service request
+          type: string
+        mcVideoId:
+          description: indication of modification of MCVideo service
+          type: string
+        medComponents:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/MediaComponentRm'
+          minProperties: 1
+        mpsId:
+          description: indication of MPS service request
+          type: string
+        mcsId:
+          description: indication of MCS service request
+          type: string
+        preemptControlInfo:
+          $ref: '#/components/schemas/PreemptionControlInformationRm'
+        resPrio:
+          $ref: '#/components/schemas/ReservPriority'
+        servInfStatus:
+          $ref: '#/components/schemas/ServiceInfoStatus'
+        sipForkInd:
+          $ref: '#/components/schemas/SipForkingIndication'
+        sponId:
+          $ref: '#/components/schemas/SponId'
+        sponStatus:
+          $ref: '#/components/schemas/SponsoringStatus'
+        tsnBridgeManCont:
+          $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/BridgeManagementContainer
+        tsnPortManContDstt:
+          $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/PortManagementContainer
+        tsnPortManContNwtts:
+          type: array
+          items:
+            $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/PortManagementContainer
+          minItems: 1
+    RequiredAccessInfo:
       anyOf:
       - type: string
         enum:
-        - UE_IDENTITY
+        - USER_LOCATION
+        - UE_TIME_ZONE
       - type: string
-    SpatialValidity:
-      description: describes explicitly the route to an Application location
-      type: object
-      required:
-      - presenceInfoList
-      properties:
-        presenceInfoList:
-          type: object
-          additionalProperties:
-            $ref: TS29571_CommonData.yaml#/components/schemas/PresenceInfo
-          minProperties: 1
-    ContentVersion:
-      description: Represents the content version of some content.
-      type: integer
-    TsnQosContainer:
-      description: Indicates TSC Traffic QoS.
-      type: object
-      properties:
-        maxTscBurstSize:
-          $ref: TS29571_CommonData.yaml#/components/schemas/ExtMaxDataBurstVol
-        tscPackDelay:
-          $ref: TS29571_CommonData.yaml#/components/schemas/PacketDelBudget
-        tscPrioLevel:
-          $ref: '#/components/schemas/TscPriorityLevel'
     AccessNetChargingIdentifier:
       description: Describes the access network charging identifier.
       type: object
@@ -267,65 +300,259 @@ components:
           items:
             $ref: '#/components/schemas/Flows'
           minItems: 1
-    AfRoutingRequirementRm:
-      description: this data type is defined in the same way as the AfRoutingRequirement data type, but with the OpenAPI nullable property set to true and the spVal and tempVals attributes defined as removable.
-      type:
-      - object
-      - 'null'
-      properties:
-        appReloc:
-          type: boolean
-        routeToLocs:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/RouteToLocation
-          minItems: 1
-        spVal:
-          $ref: '#/components/schemas/SpatialValidityRm'
-        tempVals:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/TemporalValidity'
-          minItems: 1
-        upPathChgSub:
-          $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/UpPathChgEvent
-        addrPreserInd:
-          type:
-          - boolean
-          - 'null'
-    TsnQosContainerRm:
-      description: Indicates removable TSC Traffic QoS.
-      type:
-      - object
-      - 'null'
-      properties:
-        maxTscBurstSize:
-          $ref: TS29571_CommonData.yaml#/components/schemas/ExtMaxDataBurstVolRm
-        tscPackDelay:
-          $ref: TS29571_CommonData.yaml#/components/schemas/PacketDelBudgetRm
-        tscPrioLevel:
-          $ref: '#/components/schemas/TscPriorityLevelRm'
-    UeIdentityInfo:
-      description: Represents 5GS-Level UE identities.
-      type: object
+    PrioritySharingIndicator:
       anyOf:
-      - required:
-        - gpsi
-      - required:
-        - pei
-      - required:
-        - supi
+      - type: string
+        enum:
+        - ENABLED
+        - DISABLED
+      - type: string
+    ReservPriority:
+      anyOf:
+      - type: string
+        enum:
+        - PRIO_1
+        - PRIO_2
+        - PRIO_3
+        - PRIO_4
+        - PRIO_5
+        - PRIO_6
+        - PRIO_7
+        - PRIO_8
+        - PRIO_9
+        - PRIO_10
+        - PRIO_11
+        - PRIO_12
+        - PRIO_13
+        - PRIO_14
+        - PRIO_15
+        - PRIO_16
+      - type: string
+    FlowStatus:
+      anyOf:
+      - type: string
+        enum:
+        - ENABLED-UPLINK
+        - ENABLED-DOWNLINK
+        - ENABLED
+        - DISABLED
+        - REMOVED
+      - type: string
+    AfEvent:
+      anyOf:
+      - type: string
+        enum:
+        - ACCESS_TYPE_CHANGE
+        - ANI_REPORT
+        - CHARGING_CORRELATION
+        - EPS_FALLBACK
+        - FAILED_RESOURCES_ALLOCATION
+        - OUT_OF_CREDIT
+        - PLMN_CHG
+        - QOS_MONITORING
+        - QOS_NOTIF
+        - RAN_NAS_CAUSE
+        - REALLOCATION_OF_CREDIT
+        - SUCCESSFUL_RESOURCES_ALLOCATION
+        - TSN_BRIDGE_INFO
+        - USAGE_REPORT
+      - type: string
+    AcceptableServiceInfo:
+      description: Indicates the maximum bandwidth that shall be authorized by the PCF.
+      type: object
       properties:
-        gpsi:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-        pei:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Pei
-        supi:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Supi
+        accBwMedComps:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/MediaComponent'
+          minProperties: 1
+        marBwUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        marBwDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+    MediaComponent:
+      description: Identifies a media component.
+      type: object
+      required:
+      - medCompN
+      properties:
+        afAppId:
+          $ref: '#/components/schemas/AfAppId'
+        afRoutReq:
+          $ref: '#/components/schemas/AfRoutingRequirement'
+        qosReference:
+          type: string
+        disUeNotif:
+          type: boolean
+        altSerReqs:
+          type: array
+          items:
+            type: string
+          minItems: 1
+        contVer:
+          $ref: '#/components/schemas/ContentVersion'
+        codecs:
+          type: array
+          items:
+            $ref: '#/components/schemas/CodecData'
+          minItems: 1
+          maxItems: 2
+        desMaxLatency:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Float
+        desMaxLoss:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Float
+        flusId:
+          type: string
+        fStatus:
+          $ref: '#/components/schemas/FlowStatus'
+        marBwDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        marBwUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        maxPacketLossRateDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/PacketLossRateRm
+        maxPacketLossRateUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/PacketLossRateRm
+        maxSuppBwDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        maxSuppBwUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        medCompN:
+          type: integer
+        medSubComps:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/MediaSubComponent'
+          minProperties: 1
+        medType:
+          $ref: '#/components/schemas/MediaType'
+        minDesBwDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        minDesBwUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        mirBwDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        mirBwUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        preemptCap:
+          $ref: TS29571_CommonData.yaml#/components/schemas/PreemptionCapability
+        preemptVuln:
+          $ref: TS29571_CommonData.yaml#/components/schemas/PreemptionVulnerability
+        prioSharingInd:
+          $ref: '#/components/schemas/PrioritySharingIndicator'
+        resPrio:
+          $ref: '#/components/schemas/ReservPriority'
+        rrBw:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        rsBw:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        sharingKeyDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uint32
+        sharingKeyUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uint32
+        tsnQos:
+          $ref: '#/components/schemas/TsnQosContainer'
+        tscaiInputDl:
+          $ref: '#/components/schemas/TscaiInputContainer'
+        tscaiInputUl:
+          $ref: '#/components/schemas/TscaiInputContainer'
+    EventsSubscReqData:
+      description: Identifies the events the application subscribes to.
+      type: object
+      required:
+      - events
+      properties:
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/AfEventSubscription'
+          minItems: 1
+        notifUri:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uri
+        reqQosMonParams:
+          type: array
+          items:
+            $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/RequestedQosMonitoringParameter
+          minItems: 1
+        qosMon:
+          $ref: '#/components/schemas/QosMonitoringInformation'
+        reqAnis:
+          type: array
+          items:
+            $ref: '#/components/schemas/RequiredAccessInfo'
+          minItems: 1
+        notifCorreId:
+          type: string
+    MediaSubComponentRm:
+      description: This data type is defined in the same way as the MediaSubComponent data type, but with the OpenAPI nullable property set to true. Removable attributes marBwDl and marBwUl are defined with the corresponding removable data type.
+      type:
+      - object
+      - 'null'
+      required:
+      - fNum
+      properties:
+        afSigProtocol:
+          $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/AfSigProtocol
+        ethfDescs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/EthFlowDescription'
+          minItems: 1
+          maxItems: 2
+        fNum:
+          type: integer
+        fDescs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/FlowDescription'
+          minItems: 1
+          maxItems: 2
+        fStatus:
+          $ref: '#/components/schemas/FlowStatus'
+        marBwDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
+        marBwUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
+        tosTrCl:
+          $ref: '#/components/schemas/TosTrafficClassRm'
+        flowUsage:
+          $ref: '#/components/schemas/FlowUsage'
+    MediaSubComponent:
+      description: Identifies a media subcomponent
+      type: object
+      required:
+      - fNum
+      properties:
+        afSigProtocol:
+          $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/AfSigProtocol
+        ethfDescs:
+          type: array
+          items:
+            $ref: '#/components/schemas/EthFlowDescription'
+          minItems: 1
+          maxItems: 2
+        fNum:
+          type: integer
+        fDescs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlowDescription'
+          minItems: 1
+          maxItems: 2
+        fStatus:
+          $ref: '#/components/schemas/FlowStatus'
+        marBwDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        marBwUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        tosTrCl:
+          $ref: '#/components/schemas/TosTrafficClass'
+        flowUsage:
+          $ref: '#/components/schemas/FlowUsage'
     EthFlowDescription:
       description: Identifies an Ethernet flow
       type: object
@@ -352,6 +579,74 @@ components:
           $ref: TS29571_CommonData.yaml#/components/schemas/MacAddr48
         destMacAddrEnd:
           $ref: TS29571_CommonData.yaml#/components/schemas/MacAddr48
+    AppSessionContext:
+      description: Represents an Individual Application Session Context resource.
+      type: object
+      properties:
+        ascReqData:
+          $ref: '#/components/schemas/AppSessionContextReqData'
+        ascRespData:
+          $ref: '#/components/schemas/AppSessionContextRespData'
+        evsNotif:
+          $ref: '#/components/schemas/EventsNotification'
+    AfRequestedData:
+      anyOf:
+      - type: string
+        enum:
+        - UE_IDENTITY
+      - type: string
+    ContentVersion:
+      description: Represents the content version of some content.
+      type: integer
+    PreemptionControlInformation:
+      anyOf:
+      - type: string
+        enum:
+        - MOST_RECENT
+        - LEAST_RECENT
+        - HIGHEST_BW
+      - type: string
+    SpatialValidity:
+      description: describes explicitly the route to an Application location
+      type: object
+      required:
+      - presenceInfoList
+      properties:
+        presenceInfoList:
+          type: object
+          additionalProperties:
+            $ref: TS29571_CommonData.yaml#/components/schemas/PresenceInfo
+          minProperties: 1
+    QosNotifType:
+      anyOf:
+      - type: string
+        enum:
+        - GUARANTEED
+        - NOT_GUARANTEED
+      - type: string
+    FlowUsage:
+      anyOf:
+      - type: string
+        enum:
+        - NO_INFO
+        - RTCP
+        - AF_SIGNALLING
+      - type: string
+    QosMonitoringInformationRm:
+      description: this data type is defined in the same way as the QosMonitoringInformation data type, but with the OpenAPI nullable property set to true.
+      type:
+      - object
+      - 'null'
+      properties:
+        repThreshDl:
+          type: integer
+        repThreshUl:
+          type: integer
+        repThreshRp:
+          type: integer
+    CodecData:
+      description: Contains codec related information.
+      type: string
     AppSessionContextReqData:
       description: Identifies the service requirements of an Individual Application Session Context.
       type: object
@@ -436,203 +731,12 @@ components:
           items:
             $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/PortManagementContainer
           minItems: 1
-    ServAuthInfo:
-      anyOf:
-      - type: string
-        enum:
-        - TP_NOT_KNOWN
-        - TP_EXPIRED
-        - TP_NOT_YET_OCURRED
-      - type: string
-    TscaiInputContainer:
-      description: Indicates TSC Traffic pattern.
-      type:
-      - object
-      - 'null'
-      properties:
-        periodicity:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        burstArrivalTime:
-          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
-    AppSessionContextUpdateData:
-      description: Identifies the modifications to the "ascReqData" property of an Individual Application Session Context which may include the modifications to the sub-resource Events Subscription.
+    AppSessionContextUpdateDataPatch:
+      description: Identifies the modifications to an Individual Application Session Context and/or the modifications to the sub-resource Events Subscription.
       type: object
       properties:
-        afAppId:
-          $ref: '#/components/schemas/AfAppId'
-        afRoutReq:
-          $ref: '#/components/schemas/AfRoutingRequirementRm'
-        aspId:
-          $ref: '#/components/schemas/AspId'
-        evSubsc:
-          $ref: '#/components/schemas/EventsSubscReqDataRm'
-        mcpttId:
-          description: indication of MCPTT service request
-          type: string
-        mcVideoId:
-          description: indication of modification of MCVideo service
-          type: string
-        medComponents:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/MediaComponentRm'
-          minProperties: 1
-        mpsId:
-          description: indication of MPS service request
-          type: string
-        mcsId:
-          description: indication of MCS service request
-          type: string
-        preemptControlInfo:
-          $ref: '#/components/schemas/PreemptionControlInformationRm'
-        resPrio:
-          $ref: '#/components/schemas/ReservPriority'
-        servInfStatus:
-          $ref: '#/components/schemas/ServiceInfoStatus'
-        sipForkInd:
-          $ref: '#/components/schemas/SipForkingIndication'
-        sponId:
-          $ref: '#/components/schemas/SponId'
-        sponStatus:
-          $ref: '#/components/schemas/SponsoringStatus'
-        tsnBridgeManCont:
-          $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/BridgeManagementContainer
-        tsnPortManContDstt:
-          $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/PortManagementContainer
-        tsnPortManContNwtts:
-          type: array
-          items:
-            $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/PortManagementContainer
-          minItems: 1
-    QosNotifType:
-      anyOf:
-      - type: string
-        enum:
-        - GUARANTEED
-        - NOT_GUARANTEED
-      - type: string
-    EventsSubscReqData:
-      description: Identifies the events the application subscribes to.
-      type: object
-      required:
-      - events
-      properties:
-        events:
-          type: array
-          items:
-            $ref: '#/components/schemas/AfEventSubscription'
-          minItems: 1
-        notifUri:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uri
-        reqQosMonParams:
-          type: array
-          items:
-            $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/RequestedQosMonitoringParameter
-          minItems: 1
-        qosMon:
-          $ref: '#/components/schemas/QosMonitoringInformation'
-        reqAnis:
-          type: array
-          items:
-            $ref: '#/components/schemas/RequiredAccessInfo'
-          minItems: 1
-        notifCorreId:
-          type: string
-    PreemptionControlInformation:
-      anyOf:
-      - type: string
-        enum:
-        - MOST_RECENT
-        - LEAST_RECENT
-        - HIGHEST_BW
-      - type: string
-    FlowStatus:
-      anyOf:
-      - type: string
-        enum:
-        - ENABLED-UPLINK
-        - ENABLED-DOWNLINK
-        - ENABLED
-        - DISABLED
-        - REMOVED
-      - type: string
-    ExtendedProblemDetails:
-      description: Extends ProblemDetails to also include the acceptable service info.
-      allOf:
-      - $ref: TS29571_CommonData.yaml#/components/schemas/ProblemDetails
-      - type: object
-        properties:
-          acceptableServInfo:
-            $ref: '#/components/schemas/AcceptableServiceInfo'
-    TosTrafficClass:
-      description: 2-octet string, where each octet is encoded in hexadecimal representation. The first octet contains the IPv4 Type-of-Service or the IPv6 Traffic-Class field and the second octet contains the ToS/Traffic Class mask field.
-      type: string
-    SponsoringStatus:
-      anyOf:
-      - type: string
-        enum:
-        - SPONSOR_DISABLED
-        - SPONSOR_ENABLED
-      - type: string
-    TscPriorityLevel:
-      type: integer
-      minimum: 1
-      maximum: 8
-    ServiceInfoStatus:
-      anyOf:
-      - type: string
-        enum:
-        - FINAL
-        - PRELIMINARY
-      - type: string
-    MediaSubComponentRm:
-      description: This data type is defined in the same way as the MediaSubComponent data type, but with the OpenAPI nullable property set to true. Removable attributes marBwDl and marBwUl are defined with the corresponding removable data type.
-      type:
-      - object
-      - 'null'
-      required:
-      - fNum
-      properties:
-        afSigProtocol:
-          $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/AfSigProtocol
-        ethfDescs:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/EthFlowDescription'
-          minItems: 1
-          maxItems: 2
-        fNum:
-          type: integer
-        fDescs:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/FlowDescription'
-          minItems: 1
-          maxItems: 2
-        fStatus:
-          $ref: '#/components/schemas/FlowStatus'
-        marBwDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
-        marBwUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
-        tosTrCl:
-          $ref: '#/components/schemas/TosTrafficClassRm'
-        flowUsage:
-          $ref: '#/components/schemas/FlowUsage'
-    SponId:
-      description: Contains an identity of a sponsor.
-      type: string
-    RequiredAccessInfo:
-      anyOf:
-      - type: string
-        enum:
-        - USER_LOCATION
-        - UE_TIME_ZONE
-      - type: string
+        ascReqData:
+          $ref: '#/components/schemas/AppSessionContextUpdateData'
     AfEventSubscription:
       description: describes the event information delivered in the subscription
       type: object
@@ -647,165 +751,44 @@ components:
           $ref: TS29571_CommonData.yaml#/components/schemas/DurationSec
         waitTime:
           $ref: TS29571_CommonData.yaml#/components/schemas/DurationSec
-    MediaComponentRm:
-      description: This data type is defined in the same way as the MediaComponent data type, but with the OpenAPI nullable property set to true
-      type:
-      - object
-      - 'null'
-      required:
-      - medCompN
-      properties:
-        afAppId:
-          $ref: '#/components/schemas/AfAppId'
-        afRoutReq:
-          $ref: '#/components/schemas/AfRoutingRequirementRm'
-        qosReference:
-          type:
-          - string
-          - 'null'
-        altSerReqs:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-          minItems: 1
-        disUeNotif:
-          type: boolean
-        contVer:
-          $ref: '#/components/schemas/ContentVersion'
-        codecs:
-          type: array
-          items:
-            $ref: '#/components/schemas/CodecData'
-          minItems: 1
-          maxItems: 2
-        desMaxLatency:
-          $ref: TS29571_CommonData.yaml#/components/schemas/FloatRm
-        desMaxLoss:
-          $ref: TS29571_CommonData.yaml#/components/schemas/FloatRm
-        flusId:
-          type:
-          - string
-          - 'null'
-        fStatus:
-          $ref: '#/components/schemas/FlowStatus'
-        marBwDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
-        marBwUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
-        maxPacketLossRateDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/PacketLossRateRm
-        maxPacketLossRateUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/PacketLossRateRm
-        maxSuppBwDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
-        maxSuppBwUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
-        medCompN:
-          type: integer
-        medSubComps:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/MediaSubComponentRm'
-          minProperties: 1
-        medType:
-          $ref: '#/components/schemas/MediaType'
-        minDesBwDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
-        minDesBwUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
-        mirBwDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
-        mirBwUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
-        preemptCap:
-          $ref: TS29571_CommonData.yaml#/components/schemas/PreemptionCapabilityRm
-        preemptVuln:
-          $ref: TS29571_CommonData.yaml#/components/schemas/PreemptionVulnerabilityRm
-        prioSharingInd:
-          $ref: '#/components/schemas/PrioritySharingIndicator'
-        resPrio:
-          $ref: '#/components/schemas/ReservPriority'
-        rrBw:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
-        rsBw:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
-        sharingKeyDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uint32Rm
-        sharingKeyUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uint32Rm
-        tsnQos:
-          $ref: '#/components/schemas/TsnQosContainerRm'
-        tscaiInputDl:
-          $ref: '#/components/schemas/TscaiInputContainer'
-        tscaiInputUl:
-          $ref: '#/components/schemas/TscaiInputContainer'
-    AspId:
-      description: Contains an identity of an application service provider.
-      type: string
-    MediaType:
-      anyOf:
-      - type: string
-        enum:
-        - AUDIO
-        - VIDEO
-        - DATA
-        - APPLICATION
-        - CONTROL
-        - TEXT
-        - MESSAGE
-        - OTHER
-      - type: string
-    TosTrafficClassRm:
-      description: this data type is defined in the same way as the TosTrafficClass data type, but with the OpenAPI nullable property set to true
-      type:
-      - string
-      - 'null'
-    MediaComponentResourcesStatus:
-      anyOf:
-      - type: string
-        enum:
-        - ACTIVE
-        - INACTIVE
-      - type: string
-    QosMonitoringInformationRm:
-      description: this data type is defined in the same way as the QosMonitoringInformation data type, but with the OpenAPI nullable property set to true.
+    TscaiInputContainer:
+      description: Indicates TSC Traffic pattern.
       type:
       - object
       - 'null'
       properties:
-        repThreshDl:
-          type: integer
-        repThreshUl:
-          type: integer
-        repThreshRp:
-          type: integer
-    AfEventNotification:
-      description: describes the event information delivered in the notification
+        periodicity:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        burstArrivalTime:
+          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
+    QosNotificationControlInfo:
+      description: Indicates whether the QoS targets for a GRB flow are not guaranteed or guaranteed again
       type: object
       required:
-      - event
+      - notifType
       properties:
-        event:
-          $ref: '#/components/schemas/AfEvent'
+        notifType:
+          $ref: '#/components/schemas/QosNotifType'
         flows:
           type: array
           items:
             $ref: '#/components/schemas/Flows'
           minItems: 1
-    CodecData:
-      description: Contains codec related information.
-      type: string
-    FlowDescription:
-      description: Defines a packet filter of an IP flow.
-      type: string
-    AppSessionContextUpdateDataPatch:
-      description: Identifies the modifications to an Individual Application Session Context and/or the modifications to the sub-resource Events Subscription.
+        altSerReq:
+          type: string
+    TosTrafficClassRm:
+      description: this data type is defined in the same way as the TosTrafficClass data type, but with the OpenAPI nullable property set to true
+      type:
+      - string
+      - 'null'
+    TemporalValidity:
+      description: Indicates the time interval(s) during which the AF request is to be applied
       type: object
       properties:
-        ascReqData:
-          $ref: '#/components/schemas/AppSessionContextUpdateData'
+        startTime:
+          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
+        stopTime:
+          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
     AfNotifMethod:
       anyOf:
       - type: string
@@ -815,106 +798,37 @@ components:
         - PERIODIC
         - PDU_SESSION_RELEASE
       - type: string
-    AnGwAddress:
-      description: describes the address of the access network gateway control node
+    QosMonitoringReport:
+      description: QoS Monitoring reporting information
       type: object
-      anyOf:
-      - required:
-        - anGwIpv4Addr
-      - required:
-        - anGwIpv6Addr
       properties:
-        anGwIpv4Addr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Ipv4Addr
-        anGwIpv6Addr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Ipv6Addr
-    MediaSubComponent:
-      description: Identifies a media subcomponent
-      type: object
-      required:
-      - fNum
-      properties:
-        afSigProtocol:
-          $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/AfSigProtocol
-        ethfDescs:
+        flows:
           type: array
           items:
-            $ref: '#/components/schemas/EthFlowDescription'
+            $ref: '#/components/schemas/Flows'
           minItems: 1
-          maxItems: 2
-        fNum:
-          type: integer
-        fDescs:
+        ulDelays:
           type: array
           items:
-            $ref: '#/components/schemas/FlowDescription'
+            type: integer
           minItems: 1
-          maxItems: 2
-        fStatus:
-          $ref: '#/components/schemas/FlowStatus'
-        marBwDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        marBwUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        tosTrCl:
-          $ref: '#/components/schemas/TosTrafficClass'
-        flowUsage:
-          $ref: '#/components/schemas/FlowUsage'
-    ReservPriority:
+        dlDelays:
+          type: array
+          items:
+            type: integer
+          minItems: 1
+        rtDelays:
+          type: array
+          items:
+            type: integer
+          minItems: 1
+    ServiceInfoStatus:
       anyOf:
       - type: string
         enum:
-        - PRIO_1
-        - PRIO_2
-        - PRIO_3
-        - PRIO_4
-        - PRIO_5
-        - PRIO_6
-        - PRIO_7
-        - PRIO_8
-        - PRIO_9
-        - PRIO_10
-        - PRIO_11
-        - PRIO_12
-        - PRIO_13
-        - PRIO_14
-        - PRIO_15
-        - PRIO_16
+        - FINAL
+        - PRELIMINARY
       - type: string
-    TemporalValidity:
-      description: Indicates the time interval(s) during which the AF request is to be applied
-      type: object
-      properties:
-        startTime:
-          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
-        stopTime:
-          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
-    AcceptableServiceInfo:
-      description: Indicates the maximum bandwidth that shall be authorized by the PCF.
-      type: object
-      properties:
-        accBwMedComps:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/MediaComponent'
-          minProperties: 1
-        marBwUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        marBwDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-    SpatialValidityRm:
-      description: this data type is defined in the same way as the SpatialValidity data type, but with the OpenAPI nullable property set to true
-      type:
-      - object
-      - 'null'
-      required:
-      - presenceInfoList
-      properties:
-        presenceInfoList:
-          type: object
-          additionalProperties:
-            $ref: TS29571_CommonData.yaml#/components/schemas/PresenceInfo
-          minProperties: 1
     AppSessionContextRespData:
       description: Describes the authorization data of an Individual Application Session Context created by the PCF.
       type: object
@@ -1009,35 +923,6 @@ components:
           items:
             $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/PortManagementContainer
           minItems: 1
-    TscPriorityLevelRm:
-      type:
-      - integer
-      - 'null'
-      minimum: 1
-      maximum: 8
-    FlowUsage:
-      anyOf:
-      - type: string
-        enum:
-        - NO_INFO
-        - RTCP
-        - AF_SIGNALLING
-      - type: string
-    QosNotificationControlInfo:
-      description: Indicates whether the QoS targets for a GRB flow are not guaranteed or guaranteed again
-      type: object
-      required:
-      - notifType
-      properties:
-        notifType:
-          $ref: '#/components/schemas/QosNotifType'
-        flows:
-          type: array
-          items:
-            $ref: '#/components/schemas/Flows'
-          minItems: 1
-        altSerReq:
-          type: string
     ResourcesAllocationInfo:
       description: describes the status of the PCC rule(s) related to certain media components.
       type: object
@@ -1051,110 +936,47 @@ components:
           minItems: 1
         altSerReq:
           type: string
-    ServiceUrn:
-      description: Contains values of the service URN and may include subservices.
+    AspId:
+      description: Contains an identity of an application service provider.
       type: string
-    QosMonitoringInformation:
-      description: Indicates the QoS Monitoring information to report, i.e. UL and/or DL and or round trip delay.
-      type: object
-      properties:
-        repThreshDl:
-          type: integer
-        repThreshUl:
-          type: integer
-        repThreshRp:
-          type: integer
-    SipForkingIndication:
+    MediaType:
       anyOf:
       - type: string
         enum:
-        - SINGLE_DIALOGUE
-        - SEVERAL_DIALOGUES
+        - AUDIO
+        - VIDEO
+        - DATA
+        - APPLICATION
+        - CONTROL
+        - TEXT
+        - MESSAGE
+        - OTHER
       - type: string
-    PreemptionControlInformationRm:
-      anyOf:
-      - $ref: '#/components/schemas/PreemptionControlInformation'
-      - $ref: TS29571_CommonData.yaml#/components/schemas/NullValue
-    Flows:
-      description: Identifies the flows
-      type: object
-      required:
-      - medCompN
-      properties:
-        contVers:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContentVersion'
-          minItems: 1
-        fNums:
-          type: array
-          items:
-            type: integer
-          minItems: 1
-        medCompN:
-          type: integer
-    QosMonitoringReport:
-      description: QoS Monitoring reporting information
-      type: object
-      properties:
-        flows:
-          type: array
-          items:
-            $ref: '#/components/schemas/Flows'
-          minItems: 1
-        ulDelays:
-          type: array
-          items:
-            type: integer
-          minItems: 1
-        dlDelays:
-          type: array
-          items:
-            type: integer
-          minItems: 1
-        rtDelays:
-          type: array
-          items:
-            type: integer
-          minItems: 1
-    AfEvent:
-      anyOf:
-      - type: string
-        enum:
-        - ACCESS_TYPE_CHANGE
-        - ANI_REPORT
-        - CHARGING_CORRELATION
-        - EPS_FALLBACK
-        - FAILED_RESOURCES_ALLOCATION
-        - OUT_OF_CREDIT
-        - PLMN_CHG
-        - QOS_MONITORING
-        - QOS_NOTIF
-        - RAN_NAS_CAUSE
-        - REALLOCATION_OF_CREDIT
-        - SUCCESSFUL_RESOURCES_ALLOCATION
-        - TSN_BRIDGE_INFO
-        - USAGE_REPORT
-      - type: string
-    MediaComponent:
-      description: Identifies a media component.
-      type: object
+    MediaComponentRm:
+      description: This data type is defined in the same way as the MediaComponent data type, but with the OpenAPI nullable property set to true
+      type:
+      - object
+      - 'null'
       required:
       - medCompN
       properties:
         afAppId:
           $ref: '#/components/schemas/AfAppId'
         afRoutReq:
-          $ref: '#/components/schemas/AfRoutingRequirement'
+          $ref: '#/components/schemas/AfRoutingRequirementRm'
         qosReference:
-          type: string
-        disUeNotif:
-          type: boolean
+          type:
+          - string
+          - 'null'
         altSerReqs:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
           minItems: 1
+        disUeNotif:
+          type: boolean
         contVer:
           $ref: '#/components/schemas/ContentVersion'
         codecs:
@@ -1164,110 +986,70 @@ components:
           minItems: 1
           maxItems: 2
         desMaxLatency:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Float
+          $ref: TS29571_CommonData.yaml#/components/schemas/FloatRm
         desMaxLoss:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Float
+          $ref: TS29571_CommonData.yaml#/components/schemas/FloatRm
         flusId:
-          type: string
+          type:
+          - string
+          - 'null'
         fStatus:
           $ref: '#/components/schemas/FlowStatus'
         marBwDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
         marBwUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
         maxPacketLossRateDl:
           $ref: TS29571_CommonData.yaml#/components/schemas/PacketLossRateRm
         maxPacketLossRateUl:
           $ref: TS29571_CommonData.yaml#/components/schemas/PacketLossRateRm
         maxSuppBwDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
         maxSuppBwUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
         medCompN:
           type: integer
         medSubComps:
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/MediaSubComponent'
+            $ref: '#/components/schemas/MediaSubComponentRm'
           minProperties: 1
         medType:
           $ref: '#/components/schemas/MediaType'
         minDesBwDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
         minDesBwUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
         mirBwDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
         mirBwUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
         preemptCap:
-          $ref: TS29571_CommonData.yaml#/components/schemas/PreemptionCapability
+          $ref: TS29571_CommonData.yaml#/components/schemas/PreemptionCapabilityRm
         preemptVuln:
-          $ref: TS29571_CommonData.yaml#/components/schemas/PreemptionVulnerability
+          $ref: TS29571_CommonData.yaml#/components/schemas/PreemptionVulnerabilityRm
         prioSharingInd:
           $ref: '#/components/schemas/PrioritySharingIndicator'
         resPrio:
           $ref: '#/components/schemas/ReservPriority'
         rrBw:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
         rsBw:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRateRm
         sharingKeyDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uint32
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uint32Rm
         sharingKeyUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uint32
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uint32Rm
         tsnQos:
-          $ref: '#/components/schemas/TsnQosContainer'
+          $ref: '#/components/schemas/TsnQosContainerRm'
         tscaiInputDl:
           $ref: '#/components/schemas/TscaiInputContainer'
         tscaiInputUl:
           $ref: '#/components/schemas/TscaiInputContainer'
-    AppSessionContext:
-      description: Represents an Individual Application Session Context resource.
-      type: object
-      properties:
-        ascReqData:
-          $ref: '#/components/schemas/AppSessionContextReqData'
-        ascRespData:
-          $ref: '#/components/schemas/AppSessionContextRespData'
-        evsNotif:
-          $ref: '#/components/schemas/EventsNotification'
-    AfAppId:
-      description: Contains an AF application identifier.
-      type: string
-    AfRoutingRequirement:
-      description: describes the event information delivered in the subscription
-      type: object
-      properties:
-        appReloc:
-          type: boolean
-        routeToLocs:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/RouteToLocation
-          minItems: 1
-        spVal:
-          $ref: '#/components/schemas/SpatialValidity'
-        tempVals:
-          type: array
-          items:
-            $ref: '#/components/schemas/TemporalValidity'
-          minItems: 1
-        upPathChgSub:
-          $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/UpPathChgEvent
-        addrPreserInd:
-          type: boolean
-    OutOfCreditInformation:
-      description: Indicates the SDFs without available credit and the corresponding termination action.
-      type: object
-      required:
-      - finUnitAct
-      properties:
-        flows:
-          type: array
-          items:
-            $ref: '#/components/schemas/Flows'
-          minItems: 1
+    PreemptionControlInformationRm:
+      anyOf:
+      - $ref: '#/components/schemas/PreemptionControlInformation'
+      - $ref: TS29571_CommonData.yaml#/components/schemas/NullValue
     EventsSubscReqDataRm:
       description: this data type is defined in the same way as the EventsSubscReqData data type, but with the OpenAPI nullable property set to true.
       type:
@@ -1296,13 +1078,231 @@ components:
           minItems: 1
         notifCorreId:
           type: string
-    PrioritySharingIndicator:
+    AnGwAddress:
+      description: describes the address of the access network gateway control node
+      type: object
+      anyOf:
+      - required:
+        - anGwIpv4Addr
+      - required:
+        - anGwIpv6Addr
+      properties:
+        anGwIpv4Addr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Ipv4Addr
+        anGwIpv6Addr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Ipv6Addr
+    Flows:
+      description: Identifies the flows
+      type: object
+      required:
+      - medCompN
+      properties:
+        contVers:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContentVersion'
+          minItems: 1
+        fNums:
+          type: array
+          items:
+            type: integer
+          minItems: 1
+        medCompN:
+          type: integer
+    TscPriorityLevelRm:
+      type:
+      - integer
+      - 'null'
+      minimum: 1
+      maximum: 8
+    ServAuthInfo:
       anyOf:
       - type: string
         enum:
-        - ENABLED
-        - DISABLED
+        - TP_NOT_KNOWN
+        - TP_EXPIRED
+        - TP_NOT_YET_OCURRED
       - type: string
+    TsnQosContainer:
+      description: Indicates TSC Traffic QoS.
+      type: object
+      properties:
+        maxTscBurstSize:
+          $ref: TS29571_CommonData.yaml#/components/schemas/ExtMaxDataBurstVol
+        tscPackDelay:
+          $ref: TS29571_CommonData.yaml#/components/schemas/PacketDelBudget
+        tscPrioLevel:
+          $ref: '#/components/schemas/TscPriorityLevel'
+    AfAppId:
+      description: Contains an AF application identifier.
+      type: string
+    AfRoutingRequirementRm:
+      description: this data type is defined in the same way as the AfRoutingRequirement data type, but with the OpenAPI nullable property set to true and the spVal and tempVals attributes defined as removable.
+      type:
+      - object
+      - 'null'
+      properties:
+        appReloc:
+          type: boolean
+        routeToLocs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/RouteToLocation
+          minItems: 1
+        spVal:
+          $ref: '#/components/schemas/SpatialValidityRm'
+        tempVals:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/TemporalValidity'
+          minItems: 1
+        upPathChgSub:
+          $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/UpPathChgEvent
+        addrPreserInd:
+          type:
+          - boolean
+          - 'null'
+    TsnQosContainerRm:
+      description: Indicates removable TSC Traffic QoS.
+      type:
+      - object
+      - 'null'
+      properties:
+        maxTscBurstSize:
+          $ref: TS29571_CommonData.yaml#/components/schemas/ExtMaxDataBurstVolRm
+        tscPackDelay:
+          $ref: TS29571_CommonData.yaml#/components/schemas/PacketDelBudgetRm
+        tscPrioLevel:
+          $ref: '#/components/schemas/TscPriorityLevelRm'
+    AfEventNotification:
+      description: describes the event information delivered in the notification
+      type: object
+      required:
+      - event
+      properties:
+        event:
+          $ref: '#/components/schemas/AfEvent'
+        flows:
+          type: array
+          items:
+            $ref: '#/components/schemas/Flows'
+          minItems: 1
+    QosMonitoringInformation:
+      description: Indicates the QoS Monitoring information to report, i.e. UL and/or DL and or round trip delay.
+      type: object
+      properties:
+        repThreshDl:
+          type: integer
+        repThreshUl:
+          type: integer
+        repThreshRp:
+          type: integer
+    UeIdentityInfo:
+      description: Represents 5GS-Level UE identities.
+      type: object
+      anyOf:
+      - required:
+        - gpsi
+      - required:
+        - pei
+      - required:
+        - supi
+      properties:
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        pei:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Pei
+        supi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Supi
+    AfRoutingRequirement:
+      description: describes the event information delivered in the subscription
+      type: object
+      properties:
+        appReloc:
+          type: boolean
+        routeToLocs:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/RouteToLocation
+          minItems: 1
+        spVal:
+          $ref: '#/components/schemas/SpatialValidity'
+        tempVals:
+          type: array
+          items:
+            $ref: '#/components/schemas/TemporalValidity'
+          minItems: 1
+        upPathChgSub:
+          $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/UpPathChgEvent
+        addrPreserInd:
+          type: boolean
+    TscPriorityLevel:
+      type: integer
+      minimum: 1
+      maximum: 8
+    FlowDescription:
+      description: Defines a packet filter of an IP flow.
+      type: string
+    SponId:
+      description: Contains an identity of a sponsor.
+      type: string
+    SpatialValidityRm:
+      description: this data type is defined in the same way as the SpatialValidity data type, but with the OpenAPI nullable property set to true
+      type:
+      - object
+      - 'null'
+      required:
+      - presenceInfoList
+      properties:
+        presenceInfoList:
+          type: object
+          additionalProperties:
+            $ref: TS29571_CommonData.yaml#/components/schemas/PresenceInfo
+          minProperties: 1
+    SipForkingIndication:
+      anyOf:
+      - type: string
+        enum:
+        - SINGLE_DIALOGUE
+        - SEVERAL_DIALOGUES
+      - type: string
+    SponsoringStatus:
+      anyOf:
+      - type: string
+        enum:
+        - SPONSOR_DISABLED
+        - SPONSOR_ENABLED
+      - type: string
+    OutOfCreditInformation:
+      description: Indicates the SDFs without available credit and the corresponding termination action.
+      type: object
+      required:
+      - finUnitAct
+      properties:
+        flows:
+          type: array
+          items:
+            $ref: '#/components/schemas/Flows'
+          minItems: 1
+    MediaComponentResourcesStatus:
+      anyOf:
+      - type: string
+        enum:
+        - ACTIVE
+        - INACTIVE
+      - type: string
+    ExtendedProblemDetails:
+      description: Extends ProblemDetails to also include the acceptable service info.
+      allOf:
+      - $ref: TS29571_CommonData.yaml#/components/schemas/ProblemDetails
+      - type: object
+        properties:
+          acceptableServInfo:
+            $ref: '#/components/schemas/AcceptableServiceInfo'
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

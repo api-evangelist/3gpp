@@ -167,26 +167,112 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    AltitudeRepReqs:
-      description: Represents the UAV's altitude reporting requirements.
+    UAVFlightAssistNotifResp:
+      description: Represents the response to a UAV Flight Assistance Notification.
       type: object
       properties:
-        repThresholds:
-          $ref: '#/components/schemas/AltThresholds'
-        repPeriodicity:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        repEvents:
+        ussChgInd:
+          type: boolean
+          description: 'This attribute is used to indicate whether the USS changeover was completed successfully. true indicates that USS changeover was successful. false indicates that USS changeover failed.
+
+            '
+      required:
+      - ussChgInd
+    FlightPathSegInfo:
+      description: Represents a flight path segment.
+      type: object
+      properties:
+        flightSeg:
+          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
+        ussId:
+          type: string
+        candBdCrsPoints:
           type: array
           items:
-            $ref: '#/components/schemas/AltitudeRepEvent'
+            $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
           minItems: 1
-      oneOf:
+        uavSpeed:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Float
+        altitude:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/Altitude
+        timeSchedule:
+          $ref: TS29122_CommonData.yaml#/components/schemas/TimeWindow
+        timeDuration:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
+      required:
+      - flightSeg
+      - ussId
+      not:
+        required:
+        - timeSchedule
+        - timeDuration
+    AltThresholds:
+      description: Represents the UAV's altitude thresholds.
+      type: object
+      properties:
+        lowerBound:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/Altitude
+        upperBound:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/Altitude
+      anyOf:
       - required:
-        - repThresholds
+        - lowerBound
       - required:
-        - repPeriodicity
-      - required:
-        - repEvents
+        - upperBound
+    FlightPath:
+      description: Represents a flight path.
+      type: object
+      properties:
+        pathSegInfo:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlightPathSegInfo'
+          minItems: 1
+      required:
+      - pathSegInfo
+    UavFlightAssistance:
+      description: Represents the UAV Flight Assistance Configuration.
+      type: object
+      properties:
+        uavId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        reqPurpose:
+          $ref: '#/components/schemas/RequestPurpose'
+        monitorMode:
+          $ref: '#/components/schemas/MonitoringMode'
+        environingUavs:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+          minItems: 1
+        preSetDistance:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/LinearDistance
+        qosSustReq:
+          $ref: TS29522_AnalyticsExposure.yaml#/components/schemas/AnalyticsEventFilter
+        notifUri:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        flightPath:
+          $ref: '#/components/schemas/FlightPath'
+        altitudeRep:
+          type: array
+          items:
+            $ref: '#/components/schemas/AltitudeReport'
+          minItems: 1
+        altitudeRepReqs:
+          $ref: '#/components/schemas/AltitudeRepReqs'
+        stopAltRepInd:
+          type: boolean
+          enum:
+          - true
+          description: 'Indicates whether to stop the altitude reporting for the UAV UE. Set to true indicates to stop the altitude reporting for the UAV UE. When present, this attribute shall be set to true. The presence of this attribute set to the value false is forbidden. This attribute may be present only in the PUT request.
+
+            '
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - uavId
+      - reqPurpose
+      - notifUri
     UAVFlightAssistNotif:
       description: Represents the UAV Flight Assistance Notification.
       type: object
@@ -249,58 +335,17 @@ components:
 
           '
       description: "Represents in UAV Flight Assistance monitoring mode.  \nPossible values are:\n  - UAV_LOCATION: Indicates that the monitoring mode is UAV location monitoring.\n  - FLIGHT_TRAJECTORY: Indicates that the monitoring mode is flight trajectory\n    monitoring.\n  - FLIGHT_ENVIRONMENT: Indicates that the monitoring mode is flight environment\n    monitoring.\n  - RANGING_SIDELINK_POSITION: Indicates that the monitoring mode is\n    Ranging/Sidelink positioning location monitoring.\n  - QOS_SUSTAINABILITY_ANALYTICS: Indicates that the monitoring mode is QoS sustainability\n    analytics monitoring.\n"
-    UAVFlightAssistNotifResp:
-      description: Represents the response to a UAV Flight Assistance Notification.
-      type: object
-      properties:
-        ussChgInd:
-          type: boolean
-          description: 'This attribute is used to indicate whether the USS changeover was completed successfully. true indicates that USS changeover was successful. false indicates that USS changeover failed.
-
-            '
-      required:
-      - ussChgInd
-    FlightPathSegInfo:
-      description: Represents a flight path segment.
-      type: object
-      properties:
-        flightSeg:
-          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
-        ussId:
-          type: string
-        candBdCrsPoints:
-          type: array
-          items:
-            $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
-          minItems: 1
-        uavSpeed:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Float
-        altitude:
-          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/Altitude
-        timeSchedule:
-          $ref: TS29122_CommonData.yaml#/components/schemas/TimeWindow
-        timeDuration:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
-      required:
-      - flightSeg
-      - ussId
-      not:
-        required:
-        - timeSchedule
-        - timeDuration
-    AltThresholds:
-      description: Represents the UAV's altitude thresholds.
-      type: object
-      properties:
-        lowerBound:
-          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/Altitude
-        upperBound:
-          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/Altitude
+    RequestPurpose:
       anyOf:
-      - required:
-        - lowerBound
-      - required:
-        - upperBound
+      - type: string
+        enum:
+        - USS_CHANGEOVER
+        - IN_FLIGHT_MONITORING
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the UAV Flight Assitance request purpose.  \nPossible values are:\n  - USS_CHANGEOVER: Indicates that the purpose of the request is pre-flight planning.\n  - IN_FLIGHT_MONITORING:Indicates that the purpose of the request is in-flight monitoring.\n"
     RangSlUavData:
       description: Represents the Ranging and Slidelink UAV data.
       type: object
@@ -321,73 +366,6 @@ components:
         - presetDistInd
       - required:
         - rangSlDistance
-    UavStatus:
-      anyOf:
-      - type: string
-        enum:
-        - LEAVING
-        - ENTERING
-        - DEVIATING
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the status of the UAV.  \nPossible values are:\n- LEAVING: Indicates that the UAV status is leaving an area which is part of the planned\n  flight path.\n- ENTERING: Indicates that the UAV status is entering an area which is part of the planned\n  flight path.\n- DEVIATING: Indicates that the UAV status is deviating from the planned flight path.\n"
-    UavFlightAssistance:
-      description: Represents the UAV Flight Assistance Configuration.
-      type: object
-      properties:
-        uavId:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-        reqPurpose:
-          $ref: '#/components/schemas/RequestPurpose'
-        monitorMode:
-          $ref: '#/components/schemas/MonitoringMode'
-        environingUavs:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-          minItems: 1
-        preSetDistance:
-          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/LinearDistance
-        qosSustReq:
-          $ref: TS29522_AnalyticsExposure.yaml#/components/schemas/AnalyticsEventFilter
-        notifUri:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
-        flightPath:
-          $ref: '#/components/schemas/FlightPath'
-        altitudeRep:
-          type: array
-          items:
-            $ref: '#/components/schemas/AltitudeReport'
-          minItems: 1
-        altitudeRepReqs:
-          $ref: '#/components/schemas/AltitudeRepReqs'
-        stopAltRepInd:
-          type: boolean
-          enum:
-          - true
-          description: 'Indicates whether to stop the altitude reporting for the UAV UE. Set to true indicates to stop the altitude reporting for the UAV UE. When present, this attribute shall be set to true. The presence of this attribute set to the value false is forbidden. This attribute may be present only in the PUT request.
-
-            '
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - uavId
-      - reqPurpose
-      - notifUri
-    AltitudeReport:
-      description: Represents the UAV's altitude report.
-      type: object
-      properties:
-        altitude:
-          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/Altitude
-        event:
-          $ref: '#/components/schemas/AltitudeRepEvent'
-        timeStamp:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-      required:
-      - altitude
     AltitudeRepEvent:
       anyOf:
       - type: string
@@ -401,28 +379,50 @@ components:
 
           '
       description: "Represents the UAV's altitude reporting event.  \nPossible values are:\n- TA_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of the UAV's\n  serving TA.\n- RAN_NODE_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of the\n  UAV's serving RAN node.\n- GEO_LOCATION_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of\n  the UAV's geographical location.\n- ANY_ALTITUDE_CHANGE: Indicates that the UAV's altitude reporting trigger is any change of\n  the UAV's altitude.\n"
-    RequestPurpose:
+    UavStatus:
       anyOf:
       - type: string
         enum:
-        - USS_CHANGEOVER
-        - IN_FLIGHT_MONITORING
+        - LEAVING
+        - ENTERING
+        - DEVIATING
       - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
 
           '
-      description: "Represents the UAV Flight Assitance request purpose.  \nPossible values are:\n  - USS_CHANGEOVER: Indicates that the purpose of the request is pre-flight planning.\n  - IN_FLIGHT_MONITORING:Indicates that the purpose of the request is in-flight monitoring.\n"
-    FlightPath:
-      description: Represents a flight path.
+      description: "Represents the status of the UAV.  \nPossible values are:\n- LEAVING: Indicates that the UAV status is leaving an area which is part of the planned\n  flight path.\n- ENTERING: Indicates that the UAV status is entering an area which is part of the planned\n  flight path.\n- DEVIATING: Indicates that the UAV status is deviating from the planned flight path.\n"
+    AltitudeReport:
+      description: Represents the UAV's altitude report.
       type: object
       properties:
-        pathSegInfo:
+        altitude:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/Altitude
+        event:
+          $ref: '#/components/schemas/AltitudeRepEvent'
+        timeStamp:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+      required:
+      - altitude
+    AltitudeRepReqs:
+      description: Represents the UAV's altitude reporting requirements.
+      type: object
+      properties:
+        repThresholds:
+          $ref: '#/components/schemas/AltThresholds'
+        repPeriodicity:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        repEvents:
           type: array
           items:
-            $ref: '#/components/schemas/FlightPathSegInfo'
+            $ref: '#/components/schemas/AltitudeRepEvent'
           minItems: 1
-      required:
-      - pathSegInfo
+      oneOf:
+      - required:
+        - repThresholds
+      - required:
+        - repPeriodicity
+      - required:
+        - repEvents
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

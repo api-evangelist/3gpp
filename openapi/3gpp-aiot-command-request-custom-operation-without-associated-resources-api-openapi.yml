@@ -109,6 +109,90 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    ExtTargetArea:
+      description: Represents the External Target Area for AIoT.
+      type: object
+      properties:
+        extAreaIds:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExtAreaId'
+          minItems: 1
+        geographicAreas:
+          type: array
+          items:
+            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
+          minItems: 1
+        civicAddresses:
+          type: array
+          items:
+            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
+          minItems: 1
+      oneOf:
+      - required:
+        - extAreaIds
+      - required:
+        - geographicAreas
+      - required:
+        - civicAddresses
+    AIoTNotif:
+      description: Represents the AIoT Operations Notification.
+      type: object
+      properties:
+        afTransId:
+          type: string
+        devicesRepData:
+          type: array
+          items:
+            $ref: TS29569_Naiotf_AIoT.yaml#/components/schemas/DevicesRepInfo
+          minItems: 1
+        lastRepInd:
+          type: boolean
+          default: false
+          description: 'Indicates that this is the last reporting from the NEF for the AIoT service operation identified by the afTransId attribute. This attribute shall be present only when this is the last reporting from the NEF for the AIoT service operation identified by the afTransId attribute. When present, this attribute shall be set to true. The presence of this attribute set to the value false is forbidden.
+
+            '
+        failCause:
+          $ref: TS29569_Naiotf_AIoT.yaml#/components/schemas/FailureCause
+      required:
+      - afTransId
+      allOf:
+      - anyOf:
+        - required:
+          - devicesRepData
+        - required:
+          - lastRepInd
+        - required:
+          - failCause
+      - not:
+          required:
+          - devicesRepData
+          - failCause
+    ExtAreaId:
+      description: Represents the External Area Identifier for AIoT.
+      type: string
+    CommandResp:
+      description: Represents the AIoT Command response.
+      type: object
+      properties:
+        afTransId:
+          type: string
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afTransId
+    CommandType:
+      anyOf:
+      - type: string
+        enum:
+        - READ
+        - WRITE
+        - PERMANENT_DISABLE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the type of AIoT Command.  \nPossible values are:\n  - READ: Indicates that the AIoT Command is Read (i.e., retrieve information).\n  - WRITE: Indicates that the AIoT Command is Write (i.e., provision information).\n  - PERMANENT_DISABLE: Indicates that the AIoT Command is Permanent Disable (i.e., disable\n    the capability to transmit information).\n"
     CommandReq:
       description: Represents the AIoT Command request.
       type: object
@@ -151,90 +235,6 @@ components:
         - extTargetArea
       - required:
         - targetDevices
-    CommandResp:
-      description: Represents the AIoT Command response.
-      type: object
-      properties:
-        afTransId:
-          type: string
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - afTransId
-    AIoTNotif:
-      description: Represents the AIoT Operations Notification.
-      type: object
-      properties:
-        afTransId:
-          type: string
-        devicesRepData:
-          type: array
-          items:
-            $ref: TS29569_Naiotf_AIoT.yaml#/components/schemas/DevicesRepInfo
-          minItems: 1
-        lastRepInd:
-          type: boolean
-          default: false
-          description: 'Indicates that this is the last reporting from the NEF for the AIoT service operation identified by the afTransId attribute. This attribute shall be present only when this is the last reporting from the NEF for the AIoT service operation identified by the afTransId attribute. When present, this attribute shall be set to true. The presence of this attribute set to the value false is forbidden.
-
-            '
-        failCause:
-          $ref: TS29569_Naiotf_AIoT.yaml#/components/schemas/FailureCause
-      required:
-      - afTransId
-      allOf:
-      - anyOf:
-        - required:
-          - devicesRepData
-        - required:
-          - lastRepInd
-        - required:
-          - failCause
-      - not:
-          required:
-          - devicesRepData
-          - failCause
-    ExtAreaId:
-      description: Represents the External Area Identifier for AIoT.
-      type: string
-    CommandType:
-      anyOf:
-      - type: string
-        enum:
-        - READ
-        - WRITE
-        - PERMANENT_DISABLE
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the type of AIoT Command.  \nPossible values are:\n  - READ: Indicates that the AIoT Command is Read (i.e., retrieve information).\n  - WRITE: Indicates that the AIoT Command is Write (i.e., provision information).\n  - PERMANENT_DISABLE: Indicates that the AIoT Command is Permanent Disable (i.e., disable\n    the capability to transmit information).\n"
-    ExtTargetArea:
-      description: Represents the External Target Area for AIoT.
-      type: object
-      properties:
-        extAreaIds:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExtAreaId'
-          minItems: 1
-        geographicAreas:
-          type: array
-          items:
-            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
-          minItems: 1
-        civicAddresses:
-          type: array
-          items:
-            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
-          minItems: 1
-      oneOf:
-      - required:
-        - extAreaIds
-      - required:
-        - geographicAreas
-      - required:
-        - civicAddresses
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

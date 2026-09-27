@@ -203,32 +203,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    UeAddInfo:
-      description: Represent the UE address information.
-      properties:
-        ueIpAddr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
-        portNumber:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Port
-    MultiModalFlows:
-      description: Represents a flow information within a single-modal data flow.
-      type: object
-      properties:
-        medCompN:
-          type: integer
-          description: 'It contains the ordinal number of the single-modal data flow. Identifies the single-modal data flow.
-
-            '
-        flowIds:
-          type: array
-          items:
-            type: integer
-          minItems: 1
-          description: 'Identifies the affected flow(s) within the single-modal data flow (identified by the medCompN attribute). It may be omitted when all flows are affected.
-
-            '
-      required:
-      - medCompN
     AsSessionWithQoSSubscription:
       description: Represents an individual AS session with required QoS subscription resource.
       type: object
@@ -425,109 +399,11 @@ components:
             '
       required:
       - notificationDestination
-    QosMonitoringInformation:
-      description: Represents QoS monitoring information.
-      type: object
-      properties:
-        reqQosMonParams:
-          type: array
-          items:
-            $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/RequestedQosMonitoringParameter
-          minItems: 1
-        repFreqs:
-          type: array
-          items:
-            $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/ReportingFrequency
-          minItems: 1
-        repThreshDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        repThreshUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        repThreshRp:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        conThreshDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        conThreshUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        waitTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
-        repPeriod:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
-        repThreshDatRateDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        repThreshDatRateUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        consDataRateThrDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        consDataRateThrUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        avlBitrateUlThrs:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-          minItems: 1
-          description: Indicates a list of thresholds for uplink available bitrate reporting.
-        avlBitrateDlThrs:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-          minItems: 1
-          description: Indicates a list of thresholds for downlink available bitrate reporting.
-      required:
-      - reqQosMonParams
-      - repFreqs
-    TscQosRequirement:
-      description: Represents QoS requirements for time sensitive communication.
-      type: object
-      properties:
-        reqGbrDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        reqGbrUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        reqMbrDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        reqMbrUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        maxTscBurstSize:
-          $ref: TS29571_CommonData.yaml#/components/schemas/ExtMaxDataBurstVol
-        maxTscBurstSizeSmall:
-          $ref: TS29571_CommonData.yaml#/components/schemas/MaxDataBurstVol
-        req5Gsdelay:
-          $ref: TS29571_CommonData.yaml#/components/schemas/PacketDelBudget
-        reqPer:
-          $ref: TS29571_CommonData.yaml#/components/schemas/PacketErrRate
-        priority:
-          $ref: TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/TscPriorityLevel
-        tscaiTimeDom:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        tscaiInputDl:
-          $ref: TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/TscaiInputContainer
-        tscaiInputUl:
-          $ref: TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/TscaiInputContainer
-        capBatAdaptation:
-          type: boolean
-          description: 'Indicates the capability for AF to adjust the burst sending time, when it is supported and set to "true". The default value is "false" if omitted.
-
-            '
-      not:
-        required:
-        - maxTscBurstSize
-        - maxTscBurstSizeSmall
-    UserPlaneNotificationData:
-      description: Represents the parameters to be conveyed in a user plane event(s) notification.
-      type: object
-      properties:
-        transaction:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        eventReports:
-          type: array
-          items:
-            $ref: '#/components/schemas/UserPlaneEventReport'
-          minItems: 1
-          description: Contains the reported event and applicable information
-      required:
-      - transaction
-      - eventReports
+    ProblemDetailsAsSessionWithQos:
+      description: Extends ProblemDetails to also include the acceptable service info.
+      allOf:
+      - $ref: TS29122_CommonData.yaml#/components/schemas/ProblemDetails
+      - $ref: '#/components/schemas/AdditionInfoAsSessionWithQos'
     UserPlaneEventReport:
       description: Represents an event report for user plane.
       type: object
@@ -622,6 +498,129 @@ components:
           $ref: TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/RateLimitRepo
       required:
       - event
+    UserPlaneNotificationData:
+      description: Represents the parameters to be conveyed in a user plane event(s) notification.
+      type: object
+      properties:
+        transaction:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        eventReports:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserPlaneEventReport'
+          minItems: 1
+          description: Contains the reported event and applicable information
+      required:
+      - transaction
+      - eventReports
+    UserPlaneEvent:
+      anyOf:
+      - type: string
+        enum:
+        - SESSION_TERMINATION
+        - LOSS_OF_BEARER
+        - RECOVERY_OF_BEARER
+        - RELEASE_OF_BEARER
+        - USAGE_REPORT
+        - FAILED_RESOURCES_ALLOCATION
+        - QOS_GUARANTEED
+        - QOS_NOT_GUARANTEED
+        - QOS_NOT_GUARANTEED_DL
+        - QOS_NOT_GUARANTEED_UL
+        - QOS_MONITORING
+        - SUCCESSFUL_RESOURCES_ALLOCATION
+        - ACCESS_TYPE_CHANGE
+        - PLMN_CHG
+        - L4S_NOT_AVAILABLE
+        - L4S_AVAILABLE
+        - BAT_OFFSET_INFO
+        - RT_DELAY_TWO_QOS_FLOWS
+        - PACK_DELAY_VAR
+        - QOS_MON_CAP_REPO
+        - RATE_LIMIT_INFO_REPO
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the user plane event.  \nPossible values are:\n- SESSION_TERMINATION: Indicates that Rx session is terminated.\n- LOSS_OF_BEARER : Indicates a loss of a bearer.\n- RECOVERY_OF_BEARER: Indicates a recovery of a bearer.\n- RELEASE_OF_BEARER: Indicates a release of a bearer.\n- USAGE_REPORT: Indicates the usage report event.\n- FAILED_RESOURCES_ALLOCATION: Indicates the resource allocation is failed.\n- QOS_GUARANTEED: The QoS targets of one or more SDFs are guaranteed again.\n- QOS_NOT_GUARANTEED: The QoS targets of one or more SDFs are not being guaranteed.\n- QOS_NOT_GUARANTEED_DL: The QoS targets of one or more SDFs are not being guaranteed in DL\n  direction.\n- QOS_NOT_GUARANTEED_UL: The QoS targets of one or more SDFs are not being guaranteed in UL\n  direction.\n- QOS_MONITORING: Indicates a QoS monitoring event.\n- SUCCESSFUL_RESOURCES_ALLOCATION: Indicates the resource allocation is successful.\n- ACCESS_TYPE_CHANGE: Indicates an Access type change.\n- PLMN_CHG: Indicates a PLMN change.\n- L4S_NOT_AVAILABLE: The ECN marking for L4S of one or more SDFs is not available.\n- L4S_AVAILABLE: The ECN marking for L4S of one or more SDFs is available again.\n- BAT_OFFSET_INFO: Indicates the network provided BAT offset and the optionally adjusted\n  periodicity.\n- RT_DELAY_TWO_QOS_FLOWS: Indicates round-trip delay on UL and DL flows over two QoS flows.\n- PACK_DELAY_VAR: Indicates Packet Delay Variation is enabled for the SDF.\n- QOS_MON_CAP_REPO: Indicates whether the QoS Monitoring can be performed or not.\n- RATE_LIMIT_INFO_REPO: Indicates whether support of reporting rate limitation information.\n"
+    UeAddInfo:
+      description: Represent the UE address information.
+      properties:
+        ueIpAddr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
+        portNumber:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Port
+    TscQosRequirement:
+      description: Represents QoS requirements for time sensitive communication.
+      type: object
+      properties:
+        reqGbrDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        reqGbrUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        reqMbrDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        reqMbrUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        maxTscBurstSize:
+          $ref: TS29571_CommonData.yaml#/components/schemas/ExtMaxDataBurstVol
+        maxTscBurstSizeSmall:
+          $ref: TS29571_CommonData.yaml#/components/schemas/MaxDataBurstVol
+        req5Gsdelay:
+          $ref: TS29571_CommonData.yaml#/components/schemas/PacketDelBudget
+        reqPer:
+          $ref: TS29571_CommonData.yaml#/components/schemas/PacketErrRate
+        priority:
+          $ref: TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/TscPriorityLevel
+        tscaiTimeDom:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        tscaiInputDl:
+          $ref: TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/TscaiInputContainer
+        tscaiInputUl:
+          $ref: TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/TscaiInputContainer
+        capBatAdaptation:
+          type: boolean
+          description: 'Indicates the capability for AF to adjust the burst sending time, when it is supported and set to "true". The default value is "false" if omitted.
+
+            '
+      not:
+        required:
+        - maxTscBurstSize
+        - maxTscBurstSizeSmall
+    QosMonitoringReport:
+      description: Represents a QoS monitoring report.
+      type: object
+      properties:
+        ulDelays:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+          minItems: 1
+        dlDelays:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+          minItems: 1
+        rtDelays:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+          minItems: 1
+        pdmf:
+          type: boolean
+          description: Represents the packet delay measurement failure indicator.
+        ulDataRate:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        dlDataRate:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        ulAggrDataRate:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        dlAggrDataRate:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        ulConInfo:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        dlConInfo:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
     AsSessionMediaComponent:
       description: 'Representmedia component data for a single-modal data flow of a multi-modal service.
 
@@ -728,81 +727,82 @@ components:
           description: 'Indicates whether the RAN-Controlled UL Bitrate Recommendation for a media flow is supported or not. Set to "true" indicates that the RAN-controlled UL Bitrate Recommendation is supported. Set to "false" indicates that the RAN-controlled UL Bitrate Recommendation is not supported. The default value "false" is used if this attribute is omitted.
 
             '
-    QosMonitoringReport:
-      description: Represents a QoS monitoring report.
+    QosMonitoringInformation:
+      description: Represents QoS monitoring information.
       type: object
       properties:
-        ulDelays:
+        reqQosMonParams:
           type: array
           items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+            $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/RequestedQosMonitoringParameter
           minItems: 1
-        dlDelays:
+        repFreqs:
           type: array
           items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+            $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/ReportingFrequency
           minItems: 1
-        rtDelays:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-          minItems: 1
-        pdmf:
-          type: boolean
-          description: Represents the packet delay measurement failure indicator.
-        ulDataRate:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        dlDataRate:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        ulAggrDataRate:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        dlAggrDataRate:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        ulConInfo:
+        repThreshDl:
           $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        dlConInfo:
+        repThreshUl:
           $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-    UserPlaneEvent:
-      anyOf:
-      - type: string
-        enum:
-        - SESSION_TERMINATION
-        - LOSS_OF_BEARER
-        - RECOVERY_OF_BEARER
-        - RELEASE_OF_BEARER
-        - USAGE_REPORT
-        - FAILED_RESOURCES_ALLOCATION
-        - QOS_GUARANTEED
-        - QOS_NOT_GUARANTEED
-        - QOS_NOT_GUARANTEED_DL
-        - QOS_NOT_GUARANTEED_UL
-        - QOS_MONITORING
-        - SUCCESSFUL_RESOURCES_ALLOCATION
-        - ACCESS_TYPE_CHANGE
-        - PLMN_CHG
-        - L4S_NOT_AVAILABLE
-        - L4S_AVAILABLE
-        - BAT_OFFSET_INFO
-        - RT_DELAY_TWO_QOS_FLOWS
-        - PACK_DELAY_VAR
-        - QOS_MON_CAP_REPO
-        - RATE_LIMIT_INFO_REPO
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        repThreshRp:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        conThreshDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        conThreshUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        waitTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
+        repPeriod:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
+        repThreshDatRateDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        repThreshDatRateUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        consDataRateThrDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        consDataRateThrUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        avlBitrateUlThrs:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+          minItems: 1
+          description: Indicates a list of thresholds for uplink available bitrate reporting.
+        avlBitrateDlThrs:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+          minItems: 1
+          description: Indicates a list of thresholds for downlink available bitrate reporting.
+      required:
+      - reqQosMonParams
+      - repFreqs
+    MultiModalFlows:
+      description: Represents a flow information within a single-modal data flow.
+      type: object
+      properties:
+        medCompN:
+          type: integer
+          description: 'It contains the ordinal number of the single-modal data flow. Identifies the single-modal data flow.
 
-          '
-      description: "Represents the user plane event.  \nPossible values are:\n- SESSION_TERMINATION: Indicates that Rx session is terminated.\n- LOSS_OF_BEARER : Indicates a loss of a bearer.\n- RECOVERY_OF_BEARER: Indicates a recovery of a bearer.\n- RELEASE_OF_BEARER: Indicates a release of a bearer.\n- USAGE_REPORT: Indicates the usage report event.\n- FAILED_RESOURCES_ALLOCATION: Indicates the resource allocation is failed.\n- QOS_GUARANTEED: The QoS targets of one or more SDFs are guaranteed again.\n- QOS_NOT_GUARANTEED: The QoS targets of one or more SDFs are not being guaranteed.\n- QOS_NOT_GUARANTEED_DL: The QoS targets of one or more SDFs are not being guaranteed in DL\n  direction.\n- QOS_NOT_GUARANTEED_UL: The QoS targets of one or more SDFs are not being guaranteed in UL\n  direction.\n- QOS_MONITORING: Indicates a QoS monitoring event.\n- SUCCESSFUL_RESOURCES_ALLOCATION: Indicates the resource allocation is successful.\n- ACCESS_TYPE_CHANGE: Indicates an Access type change.\n- PLMN_CHG: Indicates a PLMN change.\n- L4S_NOT_AVAILABLE: The ECN marking for L4S of one or more SDFs is not available.\n- L4S_AVAILABLE: The ECN marking for L4S of one or more SDFs is available again.\n- BAT_OFFSET_INFO: Indicates the network provided BAT offset and the optionally adjusted\n  periodicity.\n- RT_DELAY_TWO_QOS_FLOWS: Indicates round-trip delay on UL and DL flows over two QoS flows.\n- PACK_DELAY_VAR: Indicates Packet Delay Variation is enabled for the SDF.\n- QOS_MON_CAP_REPO: Indicates whether the QoS Monitoring can be performed or not.\n- RATE_LIMIT_INFO_REPO: Indicates whether support of reporting rate limitation information.\n"
+            '
+        flowIds:
+          type: array
+          items:
+            type: integer
+          minItems: 1
+          description: 'Identifies the affected flow(s) within the single-modal data flow (identified by the medCompN attribute). It may be omitted when all flows are affected.
+
+            '
+      required:
+      - medCompN
     AdditionInfoAsSessionWithQos:
       description: Describes additional error information specific for this API.
       type: object
       properties:
         acceptableServInfo:
           $ref: TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/AcceptableServiceInfo
-    ProblemDetailsAsSessionWithQos:
-      description: Extends ProblemDetails to also include the acceptable service info.
-      allOf:
-      - $ref: TS29122_CommonData.yaml#/components/schemas/ProblemDetails
-      - $ref: '#/components/schemas/AdditionInfoAsSessionWithQos'
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

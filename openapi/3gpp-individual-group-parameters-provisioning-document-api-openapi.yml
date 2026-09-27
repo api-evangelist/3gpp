@@ -87,40 +87,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    AltitudeRepReqs:
-      description: Represents the UAV's altitude reporting requirements.
-      type: object
-      properties:
-        repThresholds:
-          $ref: '#/components/schemas/AltThresholds'
-        repPeriodicity:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        repEvents:
-          type: array
-          items:
-            $ref: '#/components/schemas/AltitudeRepEvent'
-          minItems: 1
-      oneOf:
-      - required:
-        - repThresholds
-      - required:
-        - repPeriodicity
-      - required:
-        - repEvents
-    MonitoringMode:
-      anyOf:
-      - type: string
-        enum:
-        - UAV_LOCATION
-        - FLIGHT_TRAJECTORY
-        - FLIGHT_ENVIRONMENT
-        - RANGING_SIDELINK_POSITION
-        - QOS_SUSTAINABILITY_ANALYTICS
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents in UAV Flight Assistance monitoring mode.  \nPossible values are:\n  - UAV_LOCATION: Indicates that the monitoring mode is UAV location monitoring.\n  - FLIGHT_TRAJECTORY: Indicates that the monitoring mode is flight trajectory\n    monitoring.\n  - FLIGHT_ENVIRONMENT: Indicates that the monitoring mode is flight environment\n    monitoring.\n  - RANGING_SIDELINK_POSITION: Indicates that the monitoring mode is\n    Ranging/Sidelink positioning location monitoring.\n  - QOS_SUSTAINABILITY_ANALYTICS: Indicates that the monitoring mode is QoS sustainability\n    analytics monitoring.\n"
     FlightPathSegInfo:
       description: Represents a flight path segment.
       type: object
@@ -162,6 +128,17 @@ components:
         - lowerBound
       - required:
         - upperBound
+    FlightPath:
+      description: Represents a flight path.
+      type: object
+      properties:
+        pathSegInfo:
+          type: array
+          items:
+            $ref: '#/components/schemas/FlightPathSegInfo'
+          minItems: 1
+      required:
+      - pathSegInfo
     UavFlightAssistance:
       description: Represents the UAV Flight Assistance Configuration.
       type: object
@@ -205,6 +182,44 @@ components:
       - uavId
       - reqPurpose
       - notifUri
+    MonitoringMode:
+      anyOf:
+      - type: string
+        enum:
+        - UAV_LOCATION
+        - FLIGHT_TRAJECTORY
+        - FLIGHT_ENVIRONMENT
+        - RANGING_SIDELINK_POSITION
+        - QOS_SUSTAINABILITY_ANALYTICS
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents in UAV Flight Assistance monitoring mode.  \nPossible values are:\n  - UAV_LOCATION: Indicates that the monitoring mode is UAV location monitoring.\n  - FLIGHT_TRAJECTORY: Indicates that the monitoring mode is flight trajectory\n    monitoring.\n  - FLIGHT_ENVIRONMENT: Indicates that the monitoring mode is flight environment\n    monitoring.\n  - RANGING_SIDELINK_POSITION: Indicates that the monitoring mode is\n    Ranging/Sidelink positioning location monitoring.\n  - QOS_SUSTAINABILITY_ANALYTICS: Indicates that the monitoring mode is QoS sustainability\n    analytics monitoring.\n"
+    RequestPurpose:
+      anyOf:
+      - type: string
+        enum:
+        - USS_CHANGEOVER
+        - IN_FLIGHT_MONITORING
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the UAV Flight Assitance request purpose.  \nPossible values are:\n  - USS_CHANGEOVER: Indicates that the purpose of the request is pre-flight planning.\n  - IN_FLIGHT_MONITORING:Indicates that the purpose of the request is in-flight monitoring.\n"
+    AltitudeRepEvent:
+      anyOf:
+      - type: string
+        enum:
+        - TA_CHANGE
+        - RAN_NODE_CHANGE
+        - GEO_LOCATION_CHANGE
+        - ANY_ALTITUDE_CHANGE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the UAV's altitude reporting event.  \nPossible values are:\n- TA_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of the UAV's\n  serving TA.\n- RAN_NODE_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of the\n  UAV's serving RAN node.\n- GEO_LOCATION_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of\n  the UAV's geographical location.\n- ANY_ALTITUDE_CHANGE: Indicates that the UAV's altitude reporting trigger is any change of\n  the UAV's altitude.\n"
     UavFlightAssistancePatch:
       description: Represents the requested modifications to a UAV Flight Assistance Configuration.
       type: object
@@ -239,41 +254,26 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
       required:
       - altitude
-    AltitudeRepEvent:
-      anyOf:
-      - type: string
-        enum:
-        - TA_CHANGE
-        - RAN_NODE_CHANGE
-        - GEO_LOCATION_CHANGE
-        - ANY_ALTITUDE_CHANGE
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the UAV's altitude reporting event.  \nPossible values are:\n- TA_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of the UAV's\n  serving TA.\n- RAN_NODE_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of the\n  UAV's serving RAN node.\n- GEO_LOCATION_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of\n  the UAV's geographical location.\n- ANY_ALTITUDE_CHANGE: Indicates that the UAV's altitude reporting trigger is any change of\n  the UAV's altitude.\n"
-    RequestPurpose:
-      anyOf:
-      - type: string
-        enum:
-        - USS_CHANGEOVER
-        - IN_FLIGHT_MONITORING
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the UAV Flight Assitance request purpose.  \nPossible values are:\n  - USS_CHANGEOVER: Indicates that the purpose of the request is pre-flight planning.\n  - IN_FLIGHT_MONITORING:Indicates that the purpose of the request is in-flight monitoring.\n"
-    FlightPath:
-      description: Represents a flight path.
+    AltitudeRepReqs:
+      description: Represents the UAV's altitude reporting requirements.
       type: object
       properties:
-        pathSegInfo:
+        repThresholds:
+          $ref: '#/components/schemas/AltThresholds'
+        repPeriodicity:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        repEvents:
           type: array
           items:
-            $ref: '#/components/schemas/FlightPathSegInfo'
+            $ref: '#/components/schemas/AltitudeRepEvent'
           minItems: 1
-      required:
-      - pathSegInfo
+      oneOf:
+      - required:
+        - repThresholds
+      - required:
+        - repPeriodicity
+      - required:
+        - repEvents
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

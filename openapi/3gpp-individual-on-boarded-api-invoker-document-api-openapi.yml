@@ -164,18 +164,46 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    APIList:
+    APIInvokerEnrolmentDetails:
+      description: Represents the onboarding information of the API Invoker.
       type: object
-      description: Represents a list of APIs with the corresponding information.
       properties:
-        serviceAPIDescriptions:
-          type: array
-          items:
-            $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription
-          minItems: 1
-          description: 'Represents the list of service APIs that the API Invoker is allowed to invoke.
+        apiInvokerId:
+          type: string
+          description: 'API invoker ID assigned by the CAPIF core function to the API invoker while on-boarding the API invoker. Shall not be present in the HTTP POST request from the API invoker to the CAPIF core function, to on-board itself. Shall be present in all other HTTP requests and responses.
 
             '
+          readOnly: true
+        onboardingInformation:
+          $ref: '#/components/schemas/OnboardingInformation'
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        requestTestNotification:
+          type: boolean
+          description: 'Set to true to request the CCF to send a test notification as defined in in clause 7.6. Set to false or omitted otherwise.
+
+            '
+        websockNotifConfig:
+          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
+        apiList:
+          $ref: '#/components/schemas/APIList'
+        apiInvokerInformation:
+          type: string
+          description: 'Generic information related to the API invoker such as details of the device or the application.
+
+            '
+        expTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        supportedFeatures:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+        failureReasons:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnrolFailReason'
+          minItems: 1
+      required:
+      - onboardingInformation
+      - notificationDestination
     APIInvokerEnrolmentDetailsPatch:
       type: object
       description: Represents an API Invoker's enrolment details to be updated.
@@ -206,31 +234,6 @@ components:
           $ref: '#/components/schemas/RelatedCriteria'
       required:
       - secMethods
-    ApiInfo:
-      type: object
-      description: Represents service API identification related information.
-      properties:
-        apiName:
-          type: string
-        supportedApiVersions:
-          type: array
-          items:
-            type: string
-          minItems: 1
-      required:
-      - apiName
-    EnrolFailReason:
-      type: object
-      description: Represents the failure reason for not those APIs not enrolled successfully.
-      properties:
-        apiName:
-          items:
-            type: string
-        failureCode:
-          $ref: '#/components/schemas/EnrolFailCause'
-      required:
-      - apiName
-      - failureCode
     RelatedCriteria:
       type: object
       description: Represents onboarding related criteria.
@@ -281,46 +284,30 @@ components:
           minItems: 1
       required:
       - apiInvokerPublicKey
-    APIInvokerEnrolmentDetails:
-      description: Represents the onboarding information of the API Invoker.
+    APIList:
       type: object
+      description: Represents a list of APIs with the corresponding information.
       properties:
-        apiInvokerId:
-          type: string
-          description: 'API invoker ID assigned by the CAPIF core function to the API invoker while on-boarding the API invoker. Shall not be present in the HTTP POST request from the API invoker to the CAPIF core function, to on-board itself. Shall be present in all other HTTP requests and responses.
-
-            '
-          readOnly: true
-        onboardingInformation:
-          $ref: '#/components/schemas/OnboardingInformation'
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
-        requestTestNotification:
-          type: boolean
-          description: 'Set to true to request the CCF to send a test notification as defined in in clause 7.6. Set to false or omitted otherwise.
-
-            '
-        websockNotifConfig:
-          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
-        apiList:
-          $ref: '#/components/schemas/APIList'
-        apiInvokerInformation:
-          type: string
-          description: 'Generic information related to the API invoker such as details of the device or the application.
-
-            '
-        expTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        supportedFeatures:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-        failureReasons:
+        serviceAPIDescriptions:
           type: array
           items:
-            $ref: '#/components/schemas/EnrolFailReason'
+            $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription
           minItems: 1
+          description: 'Represents the list of service APIs that the API Invoker is allowed to invoke.
+
+            '
+    EnrolFailReason:
+      type: object
+      description: Represents the failure reason for not those APIs not enrolled successfully.
+      properties:
+        apiName:
+          items:
+            type: string
+        failureCode:
+          $ref: '#/components/schemas/EnrolFailCause'
       required:
-      - onboardingInformation
-      - notificationDestination
+      - apiName
+      - failureCode
     EnrolFailCause:
       anyOf:
       - type: string
@@ -333,6 +320,19 @@ components:
 
           '
       description: "Represents API Invoker's per API enrollment failure code.  \nPossible values are:\n- AUTHORIZATION_ISSUE: Indicates that the service API enrollment failed because the service\n  API is not authorized for the API Invoker.\n- ONBOARDING_CRI_NOT_MET: Indicates that the service API entollment failed because the\n  onboarding criteria not met for this service API for the API Invoker.\n- UNSPECIFIED: Indicates that the service API enrollment failed due to an unspecified\n  reason.\n"
+    ApiInfo:
+      type: object
+      description: Represents service API identification related information.
+      properties:
+        apiName:
+          type: string
+        supportedApiVersions:
+          type: array
+          items:
+            type: string
+          minItems: 1
+      required:
+      - apiName
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

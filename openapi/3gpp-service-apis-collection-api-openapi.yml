@@ -189,6 +189,27 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    OpenAefProfile:
+      type: object
+      description: 'Represents the AEF Profile details provided within an Open Service API Discovery response.
+
+        '
+      properties:
+        aefId:
+          type: string
+        versions:
+          type: array
+          items:
+            $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Version
+          minItems: 1
+        protocol:
+          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol
+        dataFormat:
+          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/DataFormat
+        aefLocation:
+          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/AefLocation
+        serviceKpis:
+          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceKpis
     OpenAPIDetails:
       type: object
       description: 'Represents the Service API details provided within an Open Service API Discovery response.
@@ -216,27 +237,6 @@ components:
           minItems: 1
       required:
       - apiName
-    OpenAefProfile:
-      type: object
-      description: 'Represents the AEF Profile details provided within an Open Service API Discovery response.
-
-        '
-      properties:
-        aefId:
-          type: string
-        versions:
-          type: array
-          items:
-            $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Version
-          minItems: 1
-        protocol:
-          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/Protocol
-        dataFormat:
-          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/DataFormat
-        aefLocation:
-          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/AefLocation
-        serviceKpis:
-          $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceKpis
     OpenDiscoveryResp:
       type: object
       description: 'Represents the Open Service API Discovery response.

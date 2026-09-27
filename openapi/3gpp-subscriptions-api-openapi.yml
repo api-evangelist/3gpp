@@ -111,13 +111,30 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    FileDataType:
-      type: string
-      enum:
-      - Performance
-      - Trace
-      - Analytics
-      - Proprietary
+    NotifyFileReady:
+      allOf:
+      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
+      - type: object
+        properties:
+          fileInfoList:
+            type: array
+            items:
+              $ref: '#/components/schemas/FileInfo'
+          additionalText:
+            type: string
+    NotifyFilePreparationError:
+      allOf:
+      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
+      - type: object
+        properties:
+          fileInfoList:
+            type: array
+            items:
+              $ref: '#/components/schemas/FileCreationErrorInfoList'
+          reason:
+            type: string
+          additionalText:
+            type: string
     FileInfo:
       type: object
       properties:
@@ -137,17 +154,6 @@ components:
           $ref: '#/components/schemas/FileDataType'
         jobId:
           type: string
-    NotifyFileReady:
-      allOf:
-      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
-      - type: object
-        properties:
-          fileInfoList:
-            type: array
-            items:
-              $ref: '#/components/schemas/FileInfo'
-          additionalText:
-            type: string
     FileCreationErrorInfoList:
       type: object
       properties:
@@ -157,19 +163,13 @@ components:
           $ref: '#/components/schemas/FileDataType'
         jobId:
           type: string
-    NotifyFilePreparationError:
-      allOf:
-      - $ref: TS28623_ComDefs.yaml#/components/schemas/NotificationHeader
-      - type: object
-        properties:
-          fileInfoList:
-            type: array
-            items:
-              $ref: '#/components/schemas/FileCreationErrorInfoList'
-          reason:
-            type: string
-          additionalText:
-            type: string
+    FileDataType:
+      type: string
+      enum:
+      - Performance
+      - Trace
+      - Analytics
+      - Proprietary
 externalDocs:
   description: 3GPP TS 28.532; Generic management services
   url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.532/

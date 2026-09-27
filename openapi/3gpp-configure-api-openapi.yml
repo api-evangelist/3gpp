@@ -67,47 +67,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    PlmnEcRestrictionDataWb:
-      description: Indicates whether enhanced coverage mode is restricted or not for a PLMN ID.
-      type: object
-      properties:
-        plmnId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/PlmnId
-        plmnEcrDataWb:
-          $ref: TS29503_Nudm_SDM.yaml#/components/schemas/EcRestrictionDataWb
-      required:
-      - plmnId
-    ECRData:
-      description: Represents the current visited PLMN (if any) and the current settings of enhanced coverage restriction.
-      type: object
-      properties:
-        supportedFeatures:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-        visitedPlmnId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/PlmnId
-        ecrDataWbs:
-          type: array
-          items:
-            $ref: '#/components/schemas/PlmnEcRestrictionDataWb'
-          minItems: 0
-        restrictedPlmnIds:
-          type: array
-          items:
-            $ref: TS29122_CommonData.yaml#/components/schemas/PlmnId
-          minItems: 0
-          description: Indicates a complete list (and possibly empty) of serving PLMNs where Enhanced Coverage shall be restricted.
-        allowedPlmnIds:
-          type: array
-          items:
-            $ref: TS29122_CommonData.yaml#/components/schemas/PlmnId
-          minItems: 0
-          description: Indicates a complete list (and possibly empty) of serving PLMNs where Enhanced Coverage shall be allowed.
-      required:
-      - supportedFeatures
-      not:
-        required:
-        - restrictedPlmnIds
-        - allowedPlmnIds
     ECRControl:
       description: Represents the parameters to request Enhanced Coverage Restriction control.
       type: object
@@ -152,6 +111,47 @@ components:
         required:
         - restrictedPlmnIds
         - allowedPlmnIds
+    ECRData:
+      description: Represents the current visited PLMN (if any) and the current settings of enhanced coverage restriction.
+      type: object
+      properties:
+        supportedFeatures:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+        visitedPlmnId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/PlmnId
+        ecrDataWbs:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlmnEcRestrictionDataWb'
+          minItems: 0
+        restrictedPlmnIds:
+          type: array
+          items:
+            $ref: TS29122_CommonData.yaml#/components/schemas/PlmnId
+          minItems: 0
+          description: Indicates a complete list (and possibly empty) of serving PLMNs where Enhanced Coverage shall be restricted.
+        allowedPlmnIds:
+          type: array
+          items:
+            $ref: TS29122_CommonData.yaml#/components/schemas/PlmnId
+          minItems: 0
+          description: Indicates a complete list (and possibly empty) of serving PLMNs where Enhanced Coverage shall be allowed.
+      required:
+      - supportedFeatures
+      not:
+        required:
+        - restrictedPlmnIds
+        - allowedPlmnIds
+    PlmnEcRestrictionDataWb:
+      description: Indicates whether enhanced coverage mode is restricted or not for a PLMN ID.
+      type: object
+      properties:
+        plmnId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/PlmnId
+        plmnEcrDataWb:
+          $ref: TS29503_Nudm_SDM.yaml#/components/schemas/EcRestrictionDataWb
+      required:
+      - plmnId
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

@@ -123,36 +123,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    RacsFailureCode:
-      anyOf:
-      - type: string
-        enum:
-        - MALFUNCTION
-        - RESOURCE_LIMITATION
-        - RACS_ID_DUPLICATED
-        - OTHER_REASON
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the failure result of UE radio capability provisioning.  \nPossible values are:\n- MALFUNCTION: This value indicates that something functions wrongly in RACS provisioning or\n  the RACS provisioning does not function at all.\n- RESOURCE_LIMITATION: This value indicates there is resource limitation for RACS data\n  storage.\n- RACS_ID_DUPLICATED: The received RACS identifier(s) are already provisioned.\n- OTHER_REASON: Other reason unspecified.\n"
-    RacsFailureReport:
-      description: Represents a radio capability data provisioning failure report.
-      type: object
-      properties:
-        racsIds:
-          type: array
-          items:
-            type: string
-          minItems: 1
-          description: 'Identifies the RACS ID(s) for which the RACS data are not provisioned successfully.
-
-            '
-        failureCode:
-          $ref: '#/components/schemas/RacsFailureCode'
-      required:
-      - racsIds
-      - failureCode
     RacsProvisioningData:
       description: Represents a UE's radio capability data.
       type: object
@@ -209,6 +179,36 @@ components:
       required:
       - racsId
       - imeiTacs
+    RacsFailureCode:
+      anyOf:
+      - type: string
+        enum:
+        - MALFUNCTION
+        - RESOURCE_LIMITATION
+        - RACS_ID_DUPLICATED
+        - OTHER_REASON
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the failure result of UE radio capability provisioning.  \nPossible values are:\n- MALFUNCTION: This value indicates that something functions wrongly in RACS provisioning or\n  the RACS provisioning does not function at all.\n- RESOURCE_LIMITATION: This value indicates there is resource limitation for RACS data\n  storage.\n- RACS_ID_DUPLICATED: The received RACS identifier(s) are already provisioned.\n- OTHER_REASON: Other reason unspecified.\n"
+    RacsFailureReport:
+      description: Represents a radio capability data provisioning failure report.
+      type: object
+      properties:
+        racsIds:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: 'Identifies the RACS ID(s) for which the RACS data are not provisioned successfully.
+
+            '
+        failureCode:
+          $ref: '#/components/schemas/RacsFailureCode'
+      required:
+      - racsIds
+      - failureCode
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

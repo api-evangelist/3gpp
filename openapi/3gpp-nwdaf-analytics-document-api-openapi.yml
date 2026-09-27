@@ -105,6 +105,62 @@ paths:
           $ref: TS29571_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    EventId:
+      anyOf:
+      - type: string
+        enum:
+        - LOAD_LEVEL_INFORMATION
+        - NETWORK_PERFORMANCE
+        - NF_LOAD
+        - SERVICE_EXPERIENCE
+        - UE_MOBILITY
+        - UE_COMMUNICATION
+        - QOS_SUSTAINABILITY
+        - ABNORMAL_BEHAVIOUR
+        - USER_DATA_CONGESTION
+        - NSI_LOAD_LEVEL
+        - SM_CONGESTION
+        - DISPERSION
+        - RED_TRANS_EXP
+        - WLAN_PERFORMANCE
+        - DN_PERFORMANCE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: 'Possible values are:
+
+        - LOAD_LEVEL_INFORMATION: Represent the analytics of load level information of corresponding network slice.
+
+        - NETWORK_PERFORMANCE: Represent the analytics of network performance information.
+
+        - NF_LOAD: Indicates that the event subscribed is NF Load.
+
+        - SERVICE_EXPERIENCE: Represent the analytics of service experience information of the specific applications.
+
+        - UE_MOBILITY: Represent the analytics of UE mobility.
+
+        - UE_COMMUNICATION: Represent the analytics of UE communication.
+
+        - QOS_SUSTAINABILITY: Represent the analytics of QoS sustainability information in the certain area.
+
+        - ABNORMAL_BEHAVIOUR: Indicates that the event subscribed is abnormal behaviour information.
+
+        - USER_DATA_CONGESTION: Represent the analytics of the user data congestion in the certain area.
+
+        - NSI_LOAD_LEVEL: Represent the analytics of Network Slice and the optionally associated Network Slice Instance.
+
+        - SM_CONGESTION: Represent the analytics of Session Management congestion control experience information for specific DNN and/or S-NSSAI.
+
+        - DISPERSION: Represents the analytics of dispersion.
+
+        - RED_TRANS_EXP: Represents the analytics of Redundant Transmission Experience.
+
+        - WLAN_PERFORMANCE: Represents the analytics of WLAN performance.
+
+        - DN_PERFORMANCE: Represents the analytics of DN performance.
+
+        '
     AnalyticsData:
       description: 'Represents the description of analytics with parameters as relevant for the requesting NF  service consumer.
 
@@ -225,18 +281,13 @@ components:
         - mediumLevel
       - required:
         - lowLevel
-    SmcceInfo:
-      description: Represents the Session Management congestion control experience information.
-      type: object
-      properties:
-        dnn:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Dnn
-        snssai:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
-        smcceUeList:
-          $ref: '#/components/schemas/SmcceUeList'
-      required:
-      - smcceUeList
+    ProblemDetailsAnalyticsInfoRequest:
+      description: 'Extends ProblemDetails to indicate more details why the analytics request is rejected.
+
+        '
+      allOf:
+      - $ref: TS29571_CommonData.yaml#/components/schemas/ProblemDetails
+      - $ref: '#/components/schemas/AdditionInfoAnalyticsInfoRequest'
     EventFilter:
       description: Represents the event filters used to identify the requested analytics.
       type: object
@@ -342,75 +393,24 @@ components:
         required:
         - anySlice
         - snssais
-    ProblemDetailsAnalyticsInfoRequest:
-      description: 'Extends ProblemDetails to indicate more details why the analytics request is rejected.
-
-        '
-      allOf:
-      - $ref: TS29571_CommonData.yaml#/components/schemas/ProblemDetails
-      - $ref: '#/components/schemas/AdditionInfoAnalyticsInfoRequest'
+    SmcceInfo:
+      description: Represents the Session Management congestion control experience information.
+      type: object
+      properties:
+        dnn:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Dnn
+        snssai:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
+        smcceUeList:
+          $ref: '#/components/schemas/SmcceUeList'
+      required:
+      - smcceUeList
     AdditionInfoAnalyticsInfoRequest:
       description: Indicates additional information why the analytics request is rejected.
       type: object
       properties:
         rvWaitTime:
           $ref: TS29571_CommonData.yaml#/components/schemas/DurationSec
-    EventId:
-      anyOf:
-      - type: string
-        enum:
-        - LOAD_LEVEL_INFORMATION
-        - NETWORK_PERFORMANCE
-        - NF_LOAD
-        - SERVICE_EXPERIENCE
-        - UE_MOBILITY
-        - UE_COMMUNICATION
-        - QOS_SUSTAINABILITY
-        - ABNORMAL_BEHAVIOUR
-        - USER_DATA_CONGESTION
-        - NSI_LOAD_LEVEL
-        - SM_CONGESTION
-        - DISPERSION
-        - RED_TRANS_EXP
-        - WLAN_PERFORMANCE
-        - DN_PERFORMANCE
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: 'Possible values are:
-
-        - LOAD_LEVEL_INFORMATION: Represent the analytics of load level information of corresponding network slice.
-
-        - NETWORK_PERFORMANCE: Represent the analytics of network performance information.
-
-        - NF_LOAD: Indicates that the event subscribed is NF Load.
-
-        - SERVICE_EXPERIENCE: Represent the analytics of service experience information of the specific applications.
-
-        - UE_MOBILITY: Represent the analytics of UE mobility.
-
-        - UE_COMMUNICATION: Represent the analytics of UE communication.
-
-        - QOS_SUSTAINABILITY: Represent the analytics of QoS sustainability information in the certain area.
-
-        - ABNORMAL_BEHAVIOUR: Indicates that the event subscribed is abnormal behaviour information.
-
-        - USER_DATA_CONGESTION: Represent the analytics of the user data congestion in the certain area.
-
-        - NSI_LOAD_LEVEL: Represent the analytics of Network Slice and the optionally associated Network Slice Instance.
-
-        - SM_CONGESTION: Represent the analytics of Session Management congestion control experience information for specific DNN and/or S-NSSAI.
-
-        - DISPERSION: Represents the analytics of dispersion.
-
-        - RED_TRANS_EXP: Represents the analytics of Redundant Transmission Experience.
-
-        - WLAN_PERFORMANCE: Represents the analytics of WLAN performance.
-
-        - DN_PERFORMANCE: Represents the analytics of DN performance.
-
-        '
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

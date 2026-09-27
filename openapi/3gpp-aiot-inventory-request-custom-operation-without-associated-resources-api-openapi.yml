@@ -109,6 +109,32 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    ExtTargetArea:
+      description: Represents the External Target Area for AIoT.
+      type: object
+      properties:
+        extAreaIds:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExtAreaId'
+          minItems: 1
+        geographicAreas:
+          type: array
+          items:
+            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
+          minItems: 1
+        civicAddresses:
+          type: array
+          items:
+            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
+          minItems: 1
+      oneOf:
+      - required:
+        - extAreaIds
+      - required:
+        - geographicAreas
+      - required:
+        - civicAddresses
     AIoTNotif:
       description: Represents the AIoT Operations Notification.
       type: object
@@ -142,6 +168,19 @@ components:
           required:
           - devicesRepData
           - failCause
+    InventoryResp:
+      description: Represents the AIoT Inventory response.
+      type: object
+      properties:
+        afTransId:
+          type: string
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afTransId
+    ExtAreaId:
+      description: Represents the External Area Identifier for AIoT.
+      type: string
     InventoryReq:
       description: Represents the AIoT Inventory request.
       type: object
@@ -175,45 +214,6 @@ components:
         - extTargetArea
       - required:
         - targetDevices
-    ExtAreaId:
-      description: Represents the External Area Identifier for AIoT.
-      type: string
-    ExtTargetArea:
-      description: Represents the External Target Area for AIoT.
-      type: object
-      properties:
-        extAreaIds:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExtAreaId'
-          minItems: 1
-        geographicAreas:
-          type: array
-          items:
-            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
-          minItems: 1
-        civicAddresses:
-          type: array
-          items:
-            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
-          minItems: 1
-      oneOf:
-      - required:
-        - extAreaIds
-      - required:
-        - geographicAreas
-      - required:
-        - civicAddresses
-    InventoryResp:
-      description: Represents the AIoT Inventory response.
-      type: object
-      properties:
-        afTransId:
-          type: string
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - afTransId
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

@@ -148,6 +148,14 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    MbsSessionStatusNotif:
+      description: Represents an MBS Session Status notification.
+      type: object
+      properties:
+        eventList:
+          $ref: TS29571_CommonData.yaml#/components/schemas/MbsSessionEventReportList
+      required:
+      - eventList
     MbsSessionSubsc:
       description: Represents an MBS Session Subscription.
       type: object
@@ -161,14 +169,6 @@ components:
       required:
       - afId
       - subscription
-    MbsSessionStatusNotif:
-      description: Represents an MBS Session Status notification.
-      type: object
-      properties:
-        eventList:
-          $ref: TS29571_CommonData.yaml#/components/schemas/MbsSessionEventReportList
-      required:
-      - eventList
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

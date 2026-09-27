@@ -73,6 +73,19 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    MbsSessAssistInfo:
+      description: 'Represents the MBS Session Assistance information data set(s).
+
+        '
+      type: object
+      properties:
+        mbsSessAssistData:
+          type: array
+          items:
+            $ref: TS29503_Nudm_PP.yaml#/components/schemas/MbsAssistanceInfo
+          minItems: 1
+      required:
+      - mbsSessAssistData
     MbsSessAuthData:
       description: Represents the MBS Session Authorization data.
       type: object
@@ -108,19 +121,6 @@ components:
           $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
       required:
       - afId
-    MbsSessAssistInfo:
-      description: 'Represents the MBS Session Assistance information data set(s).
-
-        '
-      type: object
-      properties:
-        mbsSessAssistData:
-          type: array
-          items:
-            $ref: TS29503_Nudm_PP.yaml#/components/schemas/MbsAssistanceInfo
-          minItems: 1
-      required:
-      - mbsSessAssistData
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

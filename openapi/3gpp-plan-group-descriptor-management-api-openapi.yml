@@ -175,70 +175,6 @@ paths:
                 $ref: '#/components/schemas/ErrorDetail'
 components:
   schemas:
-    DescriptorListEntry:
-      type: object
-      properties:
-        id:
-          type: string
-          description: id of the descriptor.
-          example: plan-descriptor-1
-        name:
-          type: string
-          description: name of the descriptor.
-          example: Dublin East Rollout
-        version:
-          type: string
-          description: version of the descriptor.
-          example: 1.0.0
-        description:
-          type: string
-          description: description/purpose of the descriptor.
-          example: plan-descriptor-1
-      required:
-      - id
-    Member:
-      type: object
-      description: "Defines a member identified by EITHER a single Plan Configuration Descriptor ID \nOR a Plan Configuration Group Descriptor ID, but not both.\n"
-      oneOf:
-      - type: object
-        required:
-        - planConfigDescrId
-        properties:
-          planConfigDescrId:
-            type: string
-            description: Unique id of the plan configuration descriptor.
-            example: pcd-001
-      - type: object
-        required:
-        - planConfigGroupDescrId
-        properties:
-          planConfigGroupDescrId:
-            type: string
-            description: Unique id of the plan configuration group descriptor.
-            example: pgc-001
-    PlanConfigurationGroupDescriptorResponse:
-      allOf:
-      - $ref: '#/components/schemas/PlanConfigurationGroupDescriptor'
-      - type: object
-        required:
-        - id
-        - activationMode
-        - validationState
-        - isOrdered
-        - isFailOnMemberConflicts
-        - members
-        properties:
-          _links:
-            type: object
-            description: Hypermedia links for plan descriptor
-            allOf:
-            - $ref: '#/components/schemas/SelfLink'
-            example:
-              self:
-                href: '{root-url}/plan-management/v1/plan-group-descriptors/pgd-001'
-                templated: true
-                type: application/json
-                title: The newly created PlanConfigurationGroupDescriptor
     PlanConfigurationGroupDescriptor:
       type: object
       required:
@@ -314,6 +250,93 @@ components:
           - planConfigGroupDescrId: pgc-europe-east-group
           - planConfigDescrId: pcd-radio-tuning-005
           - planConfigGroupDescrId: pgc-5g-core-rollout
+    PlanConfigurationGroupDescriptorResponse:
+      allOf:
+      - $ref: '#/components/schemas/PlanConfigurationGroupDescriptor'
+      - type: object
+        required:
+        - id
+        - activationMode
+        - validationState
+        - isOrdered
+        - isFailOnMemberConflicts
+        - members
+        properties:
+          _links:
+            type: object
+            description: Hypermedia links for plan descriptor
+            allOf:
+            - $ref: '#/components/schemas/SelfLink'
+            example:
+              self:
+                href: '{root-url}/plan-management/v1/plan-group-descriptors/pgd-001'
+                templated: true
+                type: application/json
+                title: The newly created PlanConfigurationGroupDescriptor
+    SelfLink:
+      type: object
+      description: Hypermedia links for this resource, including fixed and dynamic relations.
+      properties:
+        self:
+          allOf:
+          - $ref: '#/components/schemas/LinkObject'
+          description: A link to the resource itself.
+      additionalProperties:
+        $ref: '#/components/schemas/LinkObject'
+      required:
+      - self
+      example:
+        self:
+          href: '{root-url}/plan-management/v1/plan-descriptors/pd-001'
+          templated: true
+          type: application/json
+          title: The newly created PlanConfigurationDescriptor
+        help:
+          href: '{root-url}/help-service/v1/topics/plan-descriptors'
+          templated: true
+          type: application/json
+          title: online help for the plan descriptor
+    Member:
+      type: object
+      description: "Defines a member identified by EITHER a single Plan Configuration Descriptor ID \nOR a Plan Configuration Group Descriptor ID, but not both.\n"
+      oneOf:
+      - type: object
+        required:
+        - planConfigDescrId
+        properties:
+          planConfigDescrId:
+            type: string
+            description: Unique id of the plan configuration descriptor.
+            example: pcd-001
+      - type: object
+        required:
+        - planConfigGroupDescrId
+        properties:
+          planConfigGroupDescrId:
+            type: string
+            description: Unique id of the plan configuration group descriptor.
+            example: pgc-001
+    DescriptorListEntry:
+      type: object
+      properties:
+        id:
+          type: string
+          description: id of the descriptor.
+          example: plan-descriptor-1
+        name:
+          type: string
+          description: name of the descriptor.
+          example: Dublin East Rollout
+        version:
+          type: string
+          description: version of the descriptor.
+          example: 1.0.0
+        description:
+          type: string
+          description: description/purpose of the descriptor.
+          example: plan-descriptor-1
+      required:
+      - id
     ErrorDetail:
       type: object
       properties:
@@ -366,29 +389,6 @@ components:
       required:
       - type
       - badDataNode
-    SelfLink:
-      type: object
-      description: Hypermedia links for this resource, including fixed and dynamic relations.
-      properties:
-        self:
-          allOf:
-          - $ref: '#/components/schemas/LinkObject'
-          description: A link to the resource itself.
-      additionalProperties:
-        $ref: '#/components/schemas/LinkObject'
-      required:
-      - self
-      example:
-        self:
-          href: '{root-url}/plan-management/v1/plan-descriptors/pd-001'
-          templated: true
-          type: application/json
-          title: The newly created PlanConfigurationDescriptor
-        help:
-          href: '{root-url}/help-service/v1/topics/plan-descriptors'
-          templated: true
-          type: application/json
-          title: online help for the plan descriptor
     LinkObject:
       type: object
       description: Defines the structure of a single hypermedia link.

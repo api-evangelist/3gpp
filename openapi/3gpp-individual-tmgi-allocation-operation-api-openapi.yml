@@ -234,6 +234,20 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    TMGIAllocation:
+      description: Represents an individual TMGI Allocation resource.
+      type: object
+      properties:
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        supportedFeatures:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+        externalGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        mbmsLocArea:
+          $ref: '#/components/schemas/MbmsLocArea'
+        tmgiExpiration:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRo
     TMGIAllocationPatch:
       description: 'Represents the parameters to request the modification of a TMGI Allocation resource.
 
@@ -282,20 +296,6 @@ components:
             $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
           minItems: 1
           description: Identifies a civic address of the user where the UE is located.
-    TMGIAllocation:
-      description: Represents an individual TMGI Allocation resource.
-      type: object
-      properties:
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        supportedFeatures:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-        externalGroupId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
-        mbmsLocArea:
-          $ref: '#/components/schemas/MbmsLocArea'
-        tmgiExpiration:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRo
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

@@ -137,19 +137,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    InstanceType:
-      anyOf:
-      - type: string
-        enum:
-        - BOUNDARY_CLOCK
-        - E2E_TRANS_CLOCK
-        - P2P_TRANS_CLOCK
-        - P2P_RELAY_INSTANCE
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Identifies the supported PTP instance type.  \nPossible values are:\n- BOUNDARY_CLOCK: Indicates Boundary Clock as defined in IEEE Std 1588.\n- E2E_TRANS_CLOCK: Indicates End-to-End Transparent Clock as defined in IEEE Std 1588.\n- P2P_TRANS_CLOCK: Indicates Peer-to-Peer Transparent Clock as defined in IEEE Std 1588.\n- P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS.\n"
     Protocol:
       anyOf:
       - type: string
@@ -162,6 +149,29 @@ components:
 
           '
       description: "Identifies the supported protocol.  \nPossible values are:\n- ETH: Indicates Ethernet as defined in IEEE Std 1588 [45] Annex E is supported.\n- IPV4: Indicates IPv4 as defined in IEEE Std 1588 [45] Annex C is supported.\n- IPV6: Indicates IPv6 as defined in IEEE Std 1588 [45] Annex D is supported.\n"
+    PtpInstance:
+      description: Contains PTP instance configuration and activation requested by the AF.
+      type: object
+      properties:
+        instanceType:
+          $ref: '#/components/schemas/InstanceType'
+        protocol:
+          $ref: '#/components/schemas/Protocol'
+        ptpProfile:
+          type: string
+          description: Identifies the PTP profile.
+        portConfigs:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConfigForPort'
+          minItems: 1
+          description: 'Contains the configurations for the PTP port(s) in the PTP instance.
+
+            '
+      required:
+      - instanceType
+      - protocol
+      - ptpProfile
     ConfigForPort:
       description: Contains configuration for each port.
       type: object
@@ -202,29 +212,6 @@ components:
         - gpsi
       - required:
         - n6Ind
-    PtpInstance:
-      description: Contains PTP instance configuration and activation requested by the AF.
-      type: object
-      properties:
-        instanceType:
-          $ref: '#/components/schemas/InstanceType'
-        protocol:
-          $ref: '#/components/schemas/Protocol'
-        ptpProfile:
-          type: string
-          description: Identifies the PTP profile.
-        portConfigs:
-          type: array
-          items:
-            $ref: '#/components/schemas/ConfigForPort'
-          minItems: 1
-          description: 'Contains the configurations for the PTP port(s) in the PTP instance.
-
-            '
-      required:
-      - instanceType
-      - protocol
-      - ptpProfile
     TimeSyncExposureConfig:
       description: Contains the Time Synchronization Configuration parameters.
       type: object
@@ -263,6 +250,19 @@ components:
       - timeDom
       - configNotifId
       - configNotifUri
+    InstanceType:
+      anyOf:
+      - type: string
+        enum:
+        - BOUNDARY_CLOCK
+        - E2E_TRANS_CLOCK
+        - P2P_TRANS_CLOCK
+        - P2P_RELAY_INSTANCE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the supported PTP instance type.  \nPossible values are:\n- BOUNDARY_CLOCK: Indicates Boundary Clock as defined in IEEE Std 1588.\n- E2E_TRANS_CLOCK: Indicates End-to-End Transparent Clock as defined in IEEE Std 1588.\n- P2P_TRANS_CLOCK: Indicates Peer-to-Peer Transparent Clock as defined in IEEE Std 1588.\n- P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS.\n"
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

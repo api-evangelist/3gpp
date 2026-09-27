@@ -111,6 +111,21 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    AddrPpData:
+      description: Represents the Addressing Parameters data.
+      type: object
+      properties:
+        afId:
+          type: string
+        staticIpaddrParams:
+          type: array
+          items:
+            $ref: '#/components/schemas/StaticIpAddrParams'
+          minItems: 1
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afId
     StaticIpAddrParams:
       description: Represents the Static IP Address Parameters data.
       type: object
@@ -132,21 +147,6 @@ components:
       - snssai
       - gpsi
       - staticIpAddresses
-    AddrPpData:
-      description: Represents the Addressing Parameters data.
-      type: object
-      properties:
-        afId:
-          type: string
-        staticIpaddrParams:
-          type: array
-          items:
-            $ref: '#/components/schemas/StaticIpAddrParams'
-          minItems: 1
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - afId
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

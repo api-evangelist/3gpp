@@ -170,18 +170,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ApiProviderFuncRole:
-      anyOf:
-      - type: string
-        enum:
-        - AEF
-        - APF
-        - AMF
-      - type: string
-        description: 'This string provides forward-compatiblity with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Indicates the role (e.g. AEF, APF, etc.) of an API provider domain function.  \nPossible values are:\n- AEF: API provider function is API Exposing Function.\n- APF: API provider function is API Publishing Function.\n- AMF: API Provider function is API Management Function.\n"
     APIProviderFunctionDetails:
       type: object
       description: Represents an API provider domain function's details.
@@ -203,6 +191,32 @@ components:
       required:
       - regInfo
       - apiProvFuncRole
+    ApiProviderFuncRole:
+      anyOf:
+      - type: string
+        enum:
+        - AEF
+        - APF
+        - AMF
+      - type: string
+        description: 'This string provides forward-compatiblity with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Indicates the role (e.g. AEF, APF, etc.) of an API provider domain function.  \nPossible values are:\n- AEF: API provider function is API Exposing Function.\n- APF: API provider function is API Publishing Function.\n- AMF: API Provider function is API Management Function.\n"
+    RegistrationInformation:
+      type: object
+      description: 'Represents registration information of an individual API provider domain function.
+
+        '
+      properties:
+        apiProvPubKey:
+          type: string
+          description: Public Key of API Provider domain function.
+        apiProvCert:
+          type: string
+          description: API provider domain function's client certificate
+      required:
+      - apiProvPubKey
     APIProviderEnrolmentDetailsPatch:
       type: object
       description: 'Represents a list of modifications for the API provider domain''s enrolment details.
@@ -220,20 +234,6 @@ components:
           description: 'Generic information related to the API provider domain such as details of the API provider applications.
 
             '
-    RegistrationInformation:
-      type: object
-      description: 'Represents registration information of an individual API provider domain function.
-
-        '
-      properties:
-        apiProvPubKey:
-          type: string
-          description: Public Key of API Provider domain function.
-        apiProvCert:
-          type: string
-          description: API provider domain function's client certificate
-      required:
-      - apiProvPubKey
     APIProviderEnrolmentDetails:
       type: object
       description: Represents an API provider domain's enrolment details.

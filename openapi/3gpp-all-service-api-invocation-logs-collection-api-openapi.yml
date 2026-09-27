@@ -148,13 +148,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    InvocationLogsRetrieveRes:
-      description: 'Represents the result of an invocation logs retrieval request.
-
-        '
-      oneOf:
-      - $ref: TS29222_CAPIF_Logging_API_Invocation_API.yaml#/components/schemas/InvocationLog
-      - $ref: '#/components/schemas/InvocationLogs'
     InvocationLogs:
       type: object
       description: 'Represents several (more than one) invocation logs.
@@ -170,6 +163,13 @@ components:
           $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
       required:
       - multipleInvocationLogs
+    InvocationLogsRetrieveRes:
+      description: 'Represents the result of an invocation logs retrieval request.
+
+        '
+      oneOf:
+      - $ref: TS29222_CAPIF_Logging_API_Invocation_API.yaml#/components/schemas/InvocationLog
+      - $ref: '#/components/schemas/InvocationLogs'
 externalDocs:
   description: 3GPP TS 29.222 V19.4.0 Common API Framework for 3GPP Northbound APIs
   url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.222/
