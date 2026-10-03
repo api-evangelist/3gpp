@@ -79,6 +79,18 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    MbsSessionCreateRsp:
+      description: Represents the parameters to be returned in an MBS Session creation response..
+      type: object
+      properties:
+        mbsSession:
+          $ref: TS29571_CommonData.yaml#/components/schemas/MbsSession
+        eventList:
+          $ref: TS29571_CommonData.yaml#/components/schemas/MbsSessionEventReportList
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - mbsSession
     MbsSessionCreateReq:
       description: Represents the parameters to request MBS Session creation.
       type: object
@@ -91,18 +103,6 @@ components:
           $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
       required:
       - afId
-      - mbsSession
-    MbsSessionCreateRsp:
-      description: Represents the parameters to be returned in an MBS Session creation response..
-      type: object
-      properties:
-        mbsSession:
-          $ref: TS29571_CommonData.yaml#/components/schemas/MbsSession
-        eventList:
-          $ref: TS29571_CommonData.yaml#/components/schemas/MbsSessionEventReportList
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
       - mbsSession
   securitySchemes:
     oAuth2ClientCredentials:

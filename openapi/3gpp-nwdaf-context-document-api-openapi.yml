@@ -80,6 +80,101 @@ paths:
           $ref: TS29571_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    SpecificDataSubscription:
+      description: 'Represents an existing subscription for data collection to a specific data source NF.
+
+        '
+      type: object
+      properties:
+        subscriptionId:
+          type: string
+        producerId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/NfInstanceId
+        producerSetId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/NfSetId
+        dataSub:
+          type: string
+      allOf:
+      - oneOf:
+        - required:
+          - producerId
+        - required:
+          - producerSetId
+      - required:
+        - subscriptionId
+      - required:
+        - dataSub
+    RequestedContext:
+      description: Contains types of analytics context information.
+      type: object
+      properties:
+        contexts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContextType'
+          minItems: 1
+          description: List of analytics context types.
+      required:
+      - contexts
+    SpecificAnalyticsSubscription:
+      description: 'Represents an existing subscription for a specific type of analytics to a specific NWDAF.
+
+        '
+      type: object
+      properties:
+        subscriptionId:
+          type: string
+        producerId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/NfInstanceId
+        producerSetId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/NfSetId
+        nwdafEvSub:
+          $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NnwdafEventsSubscription
+      allOf:
+      - oneOf:
+        - required:
+          - producerId
+        - required:
+          - producerSetId
+      - required:
+        - subscriptionId
+      - required:
+        - nwdafEvSub
+    HistoricalData:
+      description: Contains historical data related to an analytics subscription.
+      type: object
+      properties:
+        startTime:
+          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
+        endTime:
+          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
+        subsWithSources:
+          type: array
+          items:
+            $ref: '#/components/schemas/SpecificDataSubscription'
+          minItems: 1
+          description: Information about subscriptions with the data sources.
+        data:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: Historical data related to the analytics.
+      required:
+      - data
+    ContextIdList:
+      description: 'Contains a list of context identifiers of context information of analytics subscriptions.
+
+        '
+      type: object
+      properties:
+        contextIds:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/AnalyticsContextIdentifier
+          minItems: 1
+      required:
+      - contextIds
     ContextElement:
       description: Contains context information corresponding with a specific context identifier.
       type: object
@@ -142,134 +237,6 @@ components:
             '
       required:
       - contextId
-    AdrfDataType:
-      anyOf:
-      - type: string
-        enum:
-        - HISTORICAL_ANALYTICS
-        - HISTORICAL_DATA
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: 'Possible values are:
-
-        - HISTORICAL_ANALYTICS: Indicates that historical analytics are stored in the ADRF.
-
-        - HISTORICAL_DATA: Indicates that historical data are stored in the ADRF.
-
-        '
-    SpecificDataSubscription:
-      description: 'Represents an existing subscription for data collection to a specific data source NF.
-
-        '
-      type: object
-      properties:
-        subscriptionId:
-          type: string
-        producerId:
-          $ref: TS29571_CommonData.yaml#/components/schemas/NfInstanceId
-        producerSetId:
-          $ref: TS29571_CommonData.yaml#/components/schemas/NfSetId
-        dataSub:
-          type: string
-      allOf:
-      - oneOf:
-        - required:
-          - producerId
-        - required:
-          - producerSetId
-      - required:
-        - subscriptionId
-      - required:
-        - dataSub
-    ContextIdList:
-      description: 'Contains a list of context identifiers of context information of analytics subscriptions.
-
-        '
-      type: object
-      properties:
-        contextIds:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/AnalyticsContextIdentifier
-          minItems: 1
-      required:
-      - contextIds
-    RequestedContext:
-      description: Contains types of analytics context information.
-      type: object
-      properties:
-        contexts:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContextType'
-          minItems: 1
-          description: List of analytics context types.
-      required:
-      - contexts
-    ContextData:
-      description: 'Contains context information related to analytics subscriptions corresponding with one or  more context identifiers.
-
-        '
-      type: object
-      properties:
-        contextElems:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContextElement'
-          minItems: 1
-          description: 'List of items that contain context information corresponding with a context identifier.
-
-            '
-      required:
-      - contextElems
-    HistoricalData:
-      description: Contains historical data related to an analytics subscription.
-      type: object
-      properties:
-        startTime:
-          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
-        endTime:
-          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
-        subsWithSources:
-          type: array
-          items:
-            $ref: '#/components/schemas/SpecificDataSubscription'
-          minItems: 1
-          description: Information about subscriptions with the data sources.
-        data:
-          type: array
-          items:
-            type: string
-          minItems: 1
-          description: Historical data related to the analytics.
-      required:
-      - data
-    SpecificAnalyticsSubscription:
-      description: 'Represents an existing subscription for a specific type of analytics to a specific NWDAF.
-
-        '
-      type: object
-      properties:
-        subscriptionId:
-          type: string
-        producerId:
-          $ref: TS29571_CommonData.yaml#/components/schemas/NfInstanceId
-        producerSetId:
-          $ref: TS29571_CommonData.yaml#/components/schemas/NfSetId
-        nwdafEvSub:
-          $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NnwdafEventsSubscription
-      allOf:
-      - oneOf:
-        - required:
-          - producerId
-        - required:
-          - producerSetId
-      - required:
-        - subscriptionId
-      - required:
-        - nwdafEvSub
     ContextType:
       anyOf:
       - type: string
@@ -299,6 +266,39 @@ components:
         - ML_MODELS: Represents context information about used ML models.
 
         '
+    AdrfDataType:
+      anyOf:
+      - type: string
+        enum:
+        - HISTORICAL_ANALYTICS
+        - HISTORICAL_DATA
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: 'Possible values are:
+
+        - HISTORICAL_ANALYTICS: Indicates that historical analytics are stored in the ADRF.
+
+        - HISTORICAL_DATA: Indicates that historical data are stored in the ADRF.
+
+        '
+    ContextData:
+      description: 'Contains context information related to analytics subscriptions corresponding with one or  more context identifiers.
+
+        '
+      type: object
+      properties:
+        contextElems:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContextElement'
+          minItems: 1
+          description: 'List of items that contain context information corresponding with a context identifier.
+
+            '
+      required:
+      - contextElems
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

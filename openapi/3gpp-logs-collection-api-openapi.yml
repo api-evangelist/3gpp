@@ -78,10 +78,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    DurationMs:
-      type: integer
-      description: Represents a period of time in units of milliseconds.
-      minimum: 0
     InvocationLog:
       type: object
       description: 'Represents a set of Service API invocation logs to be stored in a CAPIF core function.
@@ -165,6 +161,10 @@ components:
       - resourceName
       - protocol
       - result
+    DurationMs:
+      type: integer
+      description: Represents a period of time in units of milliseconds.
+      minimum: 0
 externalDocs:
   description: 3GPP TS 29.222 V19.5.0 Common API Framework for 3GPP Northbound APIs
   url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.222/

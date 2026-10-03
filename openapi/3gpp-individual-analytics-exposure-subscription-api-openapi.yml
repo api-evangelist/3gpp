@@ -178,58 +178,21 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    CongestionAnalytics:
-      description: 'Represents data congestion analytics for transfer over the user plane, control plane or both.
-
-        '
-      type: object
-      properties:
-        cngType:
-          $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/CongestionType
-        tmWdw:
-          $ref: TS29122_CommonData.yaml#/components/schemas/TimeWindow
-        nsi:
-          $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/ThresholdLevel
-        confidence:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        topAppListUl:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/TopApplication
-          minItems: 1
-        topAppListDl:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/TopApplication
-          minItems: 1
-      required:
-      - cngType
-      - tmWdw
-      - nsi
-    AnalyticsEvent:
+    AnalyticsFailureCode:
       anyOf:
       - type: string
         enum:
-        - UE_MOBILITY
-        - UE_COMM
-        - ABNORMAL_BEHAVIOR
-        - CONGESTION
-        - NETWORK_PERFORMANCE
-        - QOS_SUSTAINABILITY
-        - DISPERSION
-        - DN_PERFORMANCE
-        - SERVICE_EXPERIENCE
-        - E2E_DATA_VOL_TRANS_TIME
-        - MOVEMENT_BEHAVIOUR
-        - RELATIVE_PROXIMITY
-        - WLAN_PERFORMANCE
-        - NS_LOAD_LEVEL
-        - SIGNALLING_STORM
+        - UNAVAILABLE_DATA
+        - BOTH_STAT_PRED_NOT_ALLOWED
+        - UNSATISFIED_REQUESTED_ANALYTICS_TIME
+        - NO_ROAMING_SUPPORT
+        - PREDICTION_NOT_ALLOWED
+        - OTHER
       - type: string
         description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
 
           '
-      description: "Represents the analytics event that is subscribed or notified.  \nPossible values are:\n- UE_MOBILITY: The AF requests to be notified about analytics information of UE mobility.\n- UE_COMM: The AF requests to be notified about analytics information of UE communication.\n- ABNORMAL_BEHAVIOR: The AF requests to be notified about analytics information of UE's\n  abnormal behavior.\n- CONGESTION: The AF requests to be notified about analytics information of user data\n  congestion information. \n- NETWORK_PERFORMANCE: The AF requests to be notified about analytics information\n  of network performance. \n- QOS_SUSTAINABILITY: The AF requests to be notified about analytics information\n  of QoS sustainability.\n- DISPERSION: The AF requests to be notified about analytics information of Dispersion\n  analytics.\n- DN_PERFORMANCE: The AF requests to be notified about analytics information of DN\n  performance.\n- SERVICE_EXPERIENCE: The AF requests to be notified about analytics information of service\n  experience.\n- E2E_DATA_VOL_TRANS_TIME: The AF requests to be notified about analytics information of\n  E2E data volume transfer time.\n- MOVEMENT_BEHAVIOUR: The AF requests to be notified about analytics information of\n  Movement Behaviour.\n- RELATIVE_PROXIMITY: The AF requests to be notified about analytics information of\n  Relative Proximity.\n- WLAN_PERFORMANCE: Indicates that the event subscribed is the Wlan Performance\n  information.\n- NS_LOAD_LEVEL: Indicates that the event subscribed is load level information of Network\n  Slice.\n- SIGNALLING_STORM: The AF requests to be notified about analytics information of Signalling\n  Storm.\n"
+      description: "Identifies the failure reason.  \nPossible values are:\n- UNAVAILABLE_DATA: The event is rejected since necessary data to perform the service\n  is unavailable.\n- BOTH_STAT_PRED_NOT_ALLOWED: The event is rejected since the start time is in the past\n  and the end time is in the future, which means the AF requested both\n  statistics and prediction for the analytics.\n- UNSATISFIED_REQUESTED_ANALYTICS_TIME: Indicates that the requested event is rejected\n  since the analytics information is not ready when the time indicated by the timeAnaNeeded\n  attribute (as provided during the creation or modification of subscription) is reached.\n- NO_ROAMING_SUPPORT: Indicates that the request shall be rejected because roaming analytics\n  or data are required and the NWDAF that was invoked by the NEF neither supported roaming\n  exchange capabilitiy nor could it forward the request to another NWDAF.\n- PREDICTION_NOT_ALLOWED: Indicates that the request for the prediction of the analytics\n  event is not allowed.\n- OTHER: The event is rejected due to other reasons.\n"
     AbnormalExposure:
       description: Represents a user's abnormal behavior information.
       type: object
@@ -255,6 +218,38 @@ components:
           $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/AdditionalMeasurement
       required:
       - excep
+    AnalyticsFailureEventInfo:
+      description: 'Represents an event for which the subscription request was not successful and including the associated failure reason.
+
+        '
+      type: object
+      properties:
+        event:
+          $ref: '#/components/schemas/AnalyticsEvent'
+        failureCode:
+          $ref: '#/components/schemas/AnalyticsFailureCode'
+      required:
+      - event
+      - failureCode
+    UeLocationInfo:
+      description: Represents a UE location information.
+      type: object
+      properties:
+        loc:
+          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
+        geoLoc:
+          $ref: TS29522_AMPolicyAuthorization.yaml#/components/schemas/GeographicalArea
+        ratio:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SamplingRatio
+        confidence:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        geoDistrInfos:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/GeoDistributionInfo
+          minItems: 1
+      required:
+      - loc
     AnalyticsEventFilterSubsc:
       description: Represents an analytics event filter.
       type: object
@@ -475,19 +470,16 @@ components:
             $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/TimestampedLocation
           minItems: 1
           description: Contains the last known location of target UE(s).
-    AnalyticsFailureEventInfo:
-      description: 'Represents an event for which the subscription request was not successful and including the associated failure reason.
-
-        '
+    TargetUeId:
+      description: Represents the target UE(s) information.
       type: object
       properties:
-        event:
-          $ref: '#/components/schemas/AnalyticsEvent'
-        failureCode:
-          $ref: '#/components/schemas/AnalyticsFailureCode'
-      required:
-      - event
-      - failureCode
+        anyUeInd:
+          type: boolean
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        exterGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
     UeMobilityExposure:
       description: Represents a UE mobility information.
       type: object
@@ -513,20 +505,6 @@ components:
       required:
       - duration
       - locInfo
-    CongestInfo:
-      description: Represents a UE's user data congestion information.
-      type: object
-      properties:
-        locArea:
-          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
-        cngAnas:
-          type: array
-          items:
-            $ref: '#/components/schemas/CongestionAnalytics'
-          minItems: 1
-      required:
-      - locArea
-      - cngAnas
     AnalyticsExposureSubsc:
       description: Represents an analytics exposure subscription.
       type: object
@@ -567,6 +545,34 @@ components:
       - analyEventsSubs
       - notifUri
       - notifId
+    CongestionAnalytics:
+      description: 'Represents data congestion analytics for transfer over the user plane, control plane or both.
+
+        '
+      type: object
+      properties:
+        cngType:
+          $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/CongestionType
+        tmWdw:
+          $ref: TS29122_CommonData.yaml#/components/schemas/TimeWindow
+        nsi:
+          $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/ThresholdLevel
+        confidence:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        topAppListUl:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/TopApplication
+          minItems: 1
+        topAppListDl:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/TopApplication
+          minItems: 1
+      required:
+      - cngType
+      - tmWdw
+      - nsi
     WlanPerformInfo:
       description: The WLAN performance related information.
       type: object
@@ -588,6 +594,86 @@ components:
             '
       required:
       - wlanPerSsidInfos
+    QosSustainabilityExposure:
+      description: Represents a QoS sustainability information.
+      type: object
+      properties:
+        locArea:
+          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
+        fineAreaInfos:
+          type: array
+          items:
+            $ref: TS29522_AMPolicyAuthorization.yaml#/components/schemas/GeographicalArea
+          minItems: 1
+          description: This attribute contains the geographical locations in a fine granularity.
+        startTs:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        endTs:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        qosFlowRetThd:
+          $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/RetainabilityThreshold
+        ranUeThrouThd:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        e2eDelayThd:
+          $ref: TS29571_CommonData.yaml#/components/schemas/PacketDelBudget
+        snssai:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
+        confidence:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+      required:
+      - locArea
+      - startTs
+      - endTs
+    AnalyticsEventSubsc:
+      description: Represents a subscribed analytics event.
+      type: object
+      properties:
+        analyEvent:
+          $ref: '#/components/schemas/AnalyticsEvent'
+        analyEventFilter:
+          $ref: '#/components/schemas/AnalyticsEventFilterSubsc'
+        tgtUe:
+          $ref: '#/components/schemas/TargetUeId'
+      required:
+      - analyEvent
+    CongestInfo:
+      description: Represents a UE's user data congestion information.
+      type: object
+      properties:
+        locArea:
+          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
+        cngAnas:
+          type: array
+          items:
+            $ref: '#/components/schemas/CongestionAnalytics'
+          minItems: 1
+      required:
+      - locArea
+      - cngAnas
+    AnalyticsEvent:
+      anyOf:
+      - type: string
+        enum:
+        - UE_MOBILITY
+        - UE_COMM
+        - ABNORMAL_BEHAVIOR
+        - CONGESTION
+        - NETWORK_PERFORMANCE
+        - QOS_SUSTAINABILITY
+        - DISPERSION
+        - DN_PERFORMANCE
+        - SERVICE_EXPERIENCE
+        - E2E_DATA_VOL_TRANS_TIME
+        - MOVEMENT_BEHAVIOUR
+        - RELATIVE_PROXIMITY
+        - WLAN_PERFORMANCE
+        - NS_LOAD_LEVEL
+        - SIGNALLING_STORM
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the analytics event that is subscribed or notified.  \nPossible values are:\n- UE_MOBILITY: The AF requests to be notified about analytics information of UE mobility.\n- UE_COMM: The AF requests to be notified about analytics information of UE communication.\n- ABNORMAL_BEHAVIOR: The AF requests to be notified about analytics information of UE's\n  abnormal behavior.\n- CONGESTION: The AF requests to be notified about analytics information of user data\n  congestion information. \n- NETWORK_PERFORMANCE: The AF requests to be notified about analytics information\n  of network performance. \n- QOS_SUSTAINABILITY: The AF requests to be notified about analytics information\n  of QoS sustainability.\n- DISPERSION: The AF requests to be notified about analytics information of Dispersion\n  analytics.\n- DN_PERFORMANCE: The AF requests to be notified about analytics information of DN\n  performance.\n- SERVICE_EXPERIENCE: The AF requests to be notified about analytics information of service\n  experience.\n- E2E_DATA_VOL_TRANS_TIME: The AF requests to be notified about analytics information of\n  E2E data volume transfer time.\n- MOVEMENT_BEHAVIOUR: The AF requests to be notified about analytics information of\n  Movement Behaviour.\n- RELATIVE_PROXIMITY: The AF requests to be notified about analytics information of\n  Relative Proximity.\n- WLAN_PERFORMANCE: Indicates that the event subscribed is the Wlan Performance\n  information.\n- NS_LOAD_LEVEL: Indicates that the event subscribed is load level information of Network\n  Slice.\n- SIGNALLING_STORM: The AF requests to be notified about analytics information of Signalling\n  Storm.\n"
     NetworkPerfExposure:
       description: Represents network performance information.
       type: object
@@ -724,92 +810,6 @@ components:
       required:
       - analyEvent
       - timeStamp
-    TargetUeId:
-      description: Represents the target UE(s) information.
-      type: object
-      properties:
-        anyUeInd:
-          type: boolean
-        gpsi:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-        exterGroupId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
-    AnalyticsEventSubsc:
-      description: Represents a subscribed analytics event.
-      type: object
-      properties:
-        analyEvent:
-          $ref: '#/components/schemas/AnalyticsEvent'
-        analyEventFilter:
-          $ref: '#/components/schemas/AnalyticsEventFilterSubsc'
-        tgtUe:
-          $ref: '#/components/schemas/TargetUeId'
-      required:
-      - analyEvent
-    UeLocationInfo:
-      description: Represents a UE location information.
-      type: object
-      properties:
-        loc:
-          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
-        geoLoc:
-          $ref: TS29522_AMPolicyAuthorization.yaml#/components/schemas/GeographicalArea
-        ratio:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SamplingRatio
-        confidence:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        geoDistrInfos:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/GeoDistributionInfo
-          minItems: 1
-      required:
-      - loc
-    QosSustainabilityExposure:
-      description: Represents a QoS sustainability information.
-      type: object
-      properties:
-        locArea:
-          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
-        fineAreaInfos:
-          type: array
-          items:
-            $ref: TS29522_AMPolicyAuthorization.yaml#/components/schemas/GeographicalArea
-          minItems: 1
-          description: This attribute contains the geographical locations in a fine granularity.
-        startTs:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        endTs:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        qosFlowRetThd:
-          $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/RetainabilityThreshold
-        ranUeThrouThd:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        e2eDelayThd:
-          $ref: TS29571_CommonData.yaml#/components/schemas/PacketDelBudget
-        snssai:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
-        confidence:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-      required:
-      - locArea
-      - startTs
-      - endTs
-    AnalyticsFailureCode:
-      anyOf:
-      - type: string
-        enum:
-        - UNAVAILABLE_DATA
-        - BOTH_STAT_PRED_NOT_ALLOWED
-        - UNSATISFIED_REQUESTED_ANALYTICS_TIME
-        - NO_ROAMING_SUPPORT
-        - PREDICTION_NOT_ALLOWED
-        - OTHER
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Identifies the failure reason.  \nPossible values are:\n- UNAVAILABLE_DATA: The event is rejected since necessary data to perform the service\n  is unavailable.\n- BOTH_STAT_PRED_NOT_ALLOWED: The event is rejected since the start time is in the past\n  and the end time is in the future, which means the AF requested both\n  statistics and prediction for the analytics.\n- UNSATISFIED_REQUESTED_ANALYTICS_TIME: Indicates that the requested event is rejected\n  since the analytics information is not ready when the time indicated by the timeAnaNeeded\n  attribute (as provided during the creation or modification of subscription) is reached.\n- NO_ROAMING_SUPPORT: Indicates that the request shall be rejected because roaming analytics\n  or data are required and the NWDAF that was invoked by the NEF neither supported roaming\n  exchange capabilitiy nor could it forward the request to another NWDAF.\n- PREDICTION_NOT_ALLOWED: Indicates that the request for the prediction of the analytics\n  event is not allowed.\n- OTHER: The event is rejected due to other reasons.\n"
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

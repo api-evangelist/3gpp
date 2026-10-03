@@ -537,6 +537,20 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/PortRo
       required:
       - notificationDestination
+    GMDViaMBMSByMb2Patch:
+      description: Represents a modification request of a group message delivery via MBMS by MB2.
+      type: object
+      properties:
+        externalGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        mbmsLocArea:
+          $ref: '#/components/schemas/MbmsLocArea'
+        messageDeliveryStartTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        groupMessagePayload:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
     MbmsLocArea:
       description: 'Represents a user location area whithin which is sent a group message delivery via MBMS request.
 
@@ -575,15 +589,15 @@ components:
             $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
           minItems: 1
           description: Identifies a civic address of the user where the UE is located.
-    GMDViaMBMSByMb2Patch:
-      description: Represents a modification request of a group message delivery via MBMS by MB2.
+    GMDViaMBMSByxMBPatch:
+      description: Represents a modification request of a group message delivery via MBMS by xMB.
       type: object
       properties:
-        externalGroupId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
         mbmsLocArea:
           $ref: '#/components/schemas/MbmsLocArea'
         messageDeliveryStartTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        messageDeliveryStopTime:
           $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
         groupMessagePayload:
           $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
@@ -620,20 +634,6 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/PortRo
       required:
       - notificationDestination
-    GMDViaMBMSByxMBPatch:
-      description: Represents a modification request of a group message delivery via MBMS by xMB.
-      type: object
-      properties:
-        mbmsLocArea:
-          $ref: '#/components/schemas/MbmsLocArea'
-        messageDeliveryStartTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        messageDeliveryStopTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        groupMessagePayload:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

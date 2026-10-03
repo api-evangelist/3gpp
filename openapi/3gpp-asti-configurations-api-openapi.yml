@@ -209,6 +209,64 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    AstiConfigStateNotification:
+      description: 'Contains the report of a change in the 5G Access Stratum Time Distribution parameters applied to a UE.
+
+        '
+      type: object
+      properties:
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        event:
+          $ref: TS29565_Ntsctsf_ASTI.yaml#/components/schemas/AstiEvent
+      required:
+      - event
+      - gpsi
+    ActiveUe:
+      description: 'Contains the UE identifier whose status of the access stratum time distribution is active and the optional requested time synchronization error budget.
+
+        '
+      type: object
+      properties:
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        timeSyncErrBdgt:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+    AstiConfigNotification:
+      description: 'Contains the report of a change in the 5G Access Stratum Time Distribution parameters applied to the UE(s).
+
+        '
+      type: object
+      properties:
+        astiNotifId:
+          type: string
+          description: 'It is used to set the value of Notification Correlation ID in the corresponding notification
+
+            '
+        stateConfigs:
+          type: array
+          items:
+            $ref: '#/components/schemas/AstiConfigStateNotification'
+          minItems: 1
+          description: 'It contains the reported event(s) and event information.
+
+            '
+      required:
+      - astiNotifId
+      - stateConfigs
+    StatusRequestData:
+      description: 'Contains the parameters for retrieval of the status of the access stratum time distribution for a list of UEs.
+
+        '
+      type: object
+      properties:
+        gpsis:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+          minItems: 1
+      required:
+      - gpsis
     StatusResponseData:
       description: 'Contains the parameters for the status of the access stratum time distribution for a list of UEs.
 
@@ -256,64 +314,6 @@ components:
         - gpsis
       - required:
         - exterGroupId
-    AstiConfigNotification:
-      description: 'Contains the report of a change in the 5G Access Stratum Time Distribution parameters applied to the UE(s).
-
-        '
-      type: object
-      properties:
-        astiNotifId:
-          type: string
-          description: 'It is used to set the value of Notification Correlation ID in the corresponding notification
-
-            '
-        stateConfigs:
-          type: array
-          items:
-            $ref: '#/components/schemas/AstiConfigStateNotification'
-          minItems: 1
-          description: 'It contains the reported event(s) and event information.
-
-            '
-      required:
-      - astiNotifId
-      - stateConfigs
-    AstiConfigStateNotification:
-      description: 'Contains the report of a change in the 5G Access Stratum Time Distribution parameters applied to a UE.
-
-        '
-      type: object
-      properties:
-        gpsi:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-        event:
-          $ref: TS29565_Ntsctsf_ASTI.yaml#/components/schemas/AstiEvent
-      required:
-      - event
-      - gpsi
-    ActiveUe:
-      description: 'Contains the UE identifier whose status of the access stratum time distribution is active and the optional requested time synchronization error budget.
-
-        '
-      type: object
-      properties:
-        gpsi:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-        timeSyncErrBdgt:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-    StatusRequestData:
-      description: 'Contains the parameters for retrieval of the status of the access stratum time distribution for a list of UEs.
-
-        '
-      type: object
-      properties:
-        gpsis:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-          minItems: 1
-      required:
-      - gpsis
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

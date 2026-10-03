@@ -160,18 +160,45 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    Protocol:
+    AvailReport:
+      description: Contains the availability status for a UE/DS-TT.
+      type: object
+      properties:
+        avStatus:
+          $ref: '#/components/schemas/AvailStatus'
+    InstanceType:
       anyOf:
       - type: string
         enum:
-        - ETH
-        - IPV4
-        - IPV6
+        - BOUNDARY_CLOCK
+        - E2E_TRANS_CLOCK
+        - P2P_TRANS_CLOCK
+        - P2P_RELAY_INSTANCE
       - type: string
         description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
 
           '
-      description: "Identifies the supported protocol.  \nPossible values are:\n- ETH: Indicates Ethernet as defined in IEEE Std 1588 [45] Annex E is supported.\n- IPV4: Indicates IPv4 as defined in IEEE Std 1588 [45] Annex C is supported.\n- IPV6: Indicates IPv6 as defined in IEEE Std 1588 [45] Annex D is supported.\n"
+      description: "Identifies the supported PTP instance type.  \nPossible values are:\n- BOUNDARY_CLOCK: Indicates Boundary Clock as defined in IEEE Std 1588.\n- E2E_TRANS_CLOCK: Indicates End-to-End Transparent Clock as defined in IEEE Std 1588.\n- P2P_TRANS_CLOCK: Indicates Peer-to-Peer Transparent Clock as defined in IEEE Std 1588.\n- P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS.\n"
+    SubscribedEvent:
+      anyOf:
+      - type: string
+        enum:
+        - AVAILABILITY_FOR_TIME_SYNC_SERVICE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the supported event.  \nPossible values are:\n- AVAILABILITY_FOR_TIME_SYNC_SERVICE: 5GS and/or UE availability and capability for time synchronization\n  service.\n"
+    AvailStatus:
+      anyOf:
+      - type: string
+        enum:
+        - PDU_SESSION_TERMINATION
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the availability status.  \nPossible values are:\n- PDU_SESSION_TERMINATION: The UE is not available for (g)PTP services because the PDU\n  session is terminated.\n"
     SubsEventNotification:
       description: Notifications about subscribed Individual Events.
       type: object
@@ -188,13 +215,6 @@ components:
             '
       required:
       - event
-    ReportedCapability:
-      allOf:
-      - $ref: '#/components/schemas/EventFilter'
-      - $ref: '#/components/schemas/AvailReport'
-      description: 'Extends the EventFilter data type to indicate the availability status of the UE/DS-TT.
-
-        '
     TimeSyncCapability:
       description: Contains time synchronization capability.
       type: object
@@ -225,105 +245,6 @@ components:
         - gmCapables
       - required:
         - asTimeRes
-    AvailReport:
-      description: Contains the availability status for a UE/DS-TT.
-      type: object
-      properties:
-        avStatus:
-          $ref: '#/components/schemas/AvailStatus'
-    AvailStatus:
-      anyOf:
-      - type: string
-        enum:
-        - PDU_SESSION_TERMINATION
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Identifies the availability status.  \nPossible values are:\n- PDU_SESSION_TERMINATION: The UE is not available for (g)PTP services because the PDU\n  session is terminated.\n"
-    AsTimeResource:
-      anyOf:
-      - type: string
-        enum:
-        - ATOMIC_CLOCK
-        - GNSS
-        - TERRESTRIAL_RADIO
-        - SERIAL_TIME_CODE
-        - PTP
-        - NTP
-        - HAND_SET
-        - INTERNAL_OSCILLATOR
-        - OTHER
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Identifies the supported 5G clock quality.  \nPossible values are:\n- ATOMIC_CLOCK: Indicates atomic clock is supported.\n- GNSS: Indicates Global Navigation Satellite System is supported.\n- TERRESTRIAL_RADIO: Indicates terrestrial radio is supported.\n- SERIAL_TIME_CODE: Indicates serial time code is supported.\n- PTP: Indicates PTP is supported.\n- NTP: Indicates NTP is supported.\n- HAND_SET: Indicates hand set is supported.\n- INTERNAL_OSCILLATOR: Indicates internal oscillator is supported.\n- OTHER: Indicates other source of time is supported.\n"
-    TimeSyncExposureSubsNotif:
-      description: Contains the notification of time synchronization capability.
-      type: object
-      properties:
-        subsNotifId:
-          type: string
-          description: Notification Correlation ID assigned by the AF.
-        eventNotifs:
-          type: array
-          items:
-            $ref: '#/components/schemas/SubsEventNotification'
-          minItems: 1
-          description: 'Notifications about subscribed Individual Events.
-
-            '
-      required:
-      - subsNotifId
-      - eventNotifs
-    PtpCapabilitiesPerUe:
-      description: Contains the supported PTP capabilities per UE.
-      type: object
-      properties:
-        gpsi:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-        ptpCaps:
-          type: array
-          items:
-            $ref: '#/components/schemas/ReportedCapability'
-          minItems: 1
-          description: 'Contains the reported PTP capabilities for the UE.
-
-            '
-      required:
-      - gpsi
-      - ptpCaps
-    EventFilter:
-      description: 'Contains the filter conditions to match for notifying the event(s) of time synchronization capabilities.
-
-        '
-      type: object
-      properties:
-        instanceTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/InstanceType'
-          minItems: 1
-          description: 'Indicates the PTP instance type(s).
-
-            '
-        transProtocols:
-          type: array
-          items:
-            $ref: '#/components/schemas/Protocol'
-          minItems: 1
-          description: 'Indicates the transport protocol type(s).
-
-            '
-        ptpProfiles:
-          type: array
-          items:
-            type: string
-          minItems: 1
-          description: 'Identifies the supported PTP profiles.
-
-            '
     TimeSyncExposureSubsc:
       description: 'Contains requested parameters for the subscription to the notification of time synchronization capability.
 
@@ -398,29 +319,13 @@ components:
         - anyUeInd
       - required:
         - exterGroupId
-    SubscribedEvent:
-      anyOf:
-      - type: string
-        enum:
-        - AVAILABILITY_FOR_TIME_SYNC_SERVICE
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+    ReportedCapability:
+      allOf:
+      - $ref: '#/components/schemas/EventFilter'
+      - $ref: '#/components/schemas/AvailReport'
+      description: 'Extends the EventFilter data type to indicate the availability status of the UE/DS-TT.
 
-          '
-      description: "Identifies the supported event.  \nPossible values are:\n- AVAILABILITY_FOR_TIME_SYNC_SERVICE: 5GS and/or UE availability and capability for time synchronization\n  service.\n"
-    InstanceType:
-      anyOf:
-      - type: string
-        enum:
-        - BOUNDARY_CLOCK
-        - E2E_TRANS_CLOCK
-        - P2P_TRANS_CLOCK
-        - P2P_RELAY_INSTANCE
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Identifies the supported PTP instance type.  \nPossible values are:\n- BOUNDARY_CLOCK: Indicates Boundary Clock as defined in IEEE Std 1588.\n- E2E_TRANS_CLOCK: Indicates End-to-End Transparent Clock as defined in IEEE Std 1588.\n- P2P_TRANS_CLOCK: Indicates Peer-to-Peer Transparent Clock as defined in IEEE Std 1588.\n- P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS.\n"
+        '
     GmCapable:
       anyOf:
       - type: string
@@ -432,6 +337,101 @@ components:
 
           '
       description: "Identifies the supported grandmaster.  \nPossible values are:\n- GPTP: gPTP grandmaster is supported.\n- PTP: PTP grandmaste is supported.\n"
+    Protocol:
+      anyOf:
+      - type: string
+        enum:
+        - ETH
+        - IPV4
+        - IPV6
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the supported protocol.  \nPossible values are:\n- ETH: Indicates Ethernet as defined in IEEE Std 1588 [45] Annex E is supported.\n- IPV4: Indicates IPv4 as defined in IEEE Std 1588 [45] Annex C is supported.\n- IPV6: Indicates IPv6 as defined in IEEE Std 1588 [45] Annex D is supported.\n"
+    TimeSyncExposureSubsNotif:
+      description: Contains the notification of time synchronization capability.
+      type: object
+      properties:
+        subsNotifId:
+          type: string
+          description: Notification Correlation ID assigned by the AF.
+        eventNotifs:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubsEventNotification'
+          minItems: 1
+          description: 'Notifications about subscribed Individual Events.
+
+            '
+      required:
+      - subsNotifId
+      - eventNotifs
+    AsTimeResource:
+      anyOf:
+      - type: string
+        enum:
+        - ATOMIC_CLOCK
+        - GNSS
+        - TERRESTRIAL_RADIO
+        - SERIAL_TIME_CODE
+        - PTP
+        - NTP
+        - HAND_SET
+        - INTERNAL_OSCILLATOR
+        - OTHER
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the supported 5G clock quality.  \nPossible values are:\n- ATOMIC_CLOCK: Indicates atomic clock is supported.\n- GNSS: Indicates Global Navigation Satellite System is supported.\n- TERRESTRIAL_RADIO: Indicates terrestrial radio is supported.\n- SERIAL_TIME_CODE: Indicates serial time code is supported.\n- PTP: Indicates PTP is supported.\n- NTP: Indicates NTP is supported.\n- HAND_SET: Indicates hand set is supported.\n- INTERNAL_OSCILLATOR: Indicates internal oscillator is supported.\n- OTHER: Indicates other source of time is supported.\n"
+    EventFilter:
+      description: 'Contains the filter conditions to match for notifying the event(s) of time synchronization capabilities.
+
+        '
+      type: object
+      properties:
+        instanceTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstanceType'
+          minItems: 1
+          description: 'Indicates the PTP instance type(s).
+
+            '
+        transProtocols:
+          type: array
+          items:
+            $ref: '#/components/schemas/Protocol'
+          minItems: 1
+          description: 'Indicates the transport protocol type(s).
+
+            '
+        ptpProfiles:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: 'Identifies the supported PTP profiles.
+
+            '
+    PtpCapabilitiesPerUe:
+      description: Contains the supported PTP capabilities per UE.
+      type: object
+      properties:
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        ptpCaps:
+          type: array
+          items:
+            $ref: '#/components/schemas/ReportedCapability'
+          minItems: 1
+          description: 'Contains the reported PTP capabilities for the UE.
+
+            '
+      required:
+      - gpsi
+      - ptpCaps
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

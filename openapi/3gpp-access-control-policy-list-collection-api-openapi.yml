@@ -80,6 +80,26 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    TimeRangeList:
+      type: object
+      description: 'Represents the time range during which the invocation of a service API is allowed by the API invoker.
+
+        '
+      properties:
+        startTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        stopTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+    AccessControlPolicyList:
+      type: object
+      description: Represents the access control policy list for a published service API.
+      properties:
+        apiInvokerPolicies:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiInvokerPolicy'
+          minItems: 0
+          description: Policy of each API invoker.
     ApiInvokerPolicy:
       type: object
       description: Represents the policy of an API Invoker.
@@ -108,26 +128,6 @@ components:
           minItems: 1
       required:
       - apiInvokerId
-    TimeRangeList:
-      type: object
-      description: 'Represents the time range during which the invocation of a service API is allowed by the API invoker.
-
-        '
-      properties:
-        startTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        stopTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-    AccessControlPolicyList:
-      type: object
-      description: Represents the access control policy list for a published service API.
-      properties:
-        apiInvokerPolicies:
-          type: array
-          items:
-            $ref: '#/components/schemas/ApiInvokerPolicy'
-          minItems: 0
-          description: Policy of each API invoker.
 externalDocs:
   description: 3GPP TS 29.222 V19.5.0 Common API Framework for 3GPP Northbound APIs
   url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.222/

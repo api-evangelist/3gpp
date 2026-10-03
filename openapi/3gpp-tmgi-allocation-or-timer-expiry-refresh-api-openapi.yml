@@ -116,6 +116,53 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    ExpiryNotif:
+      description: Represents MBS TMGI(s) timer expiry notification information.
+      type: object
+      properties:
+        tmgis:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Tmgi
+          minItems: 1
+      required:
+      - tmgis
+    ProblemDetailsTmgiAlloc:
+      description: 'Represents an extension to the ProblemDetails data structure with additional error information related to TMGI Allocation.
+
+        '
+      allOf:
+      - $ref: TS29122_CommonData.yaml#/components/schemas/ProblemDetails
+      - $ref: '#/components/schemas/ReducedMbsServArea'
+    TmgiAllocRequest:
+      description: 'Represents the full set of parameters to initiate an MBS TMGI(s) allocation request or the refresh of the expiry time of already allocated TMGI(s).
+
+        '
+      type: object
+      properties:
+        afId:
+          type: string
+        tmgiParams:
+          $ref: TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate
+        notificationUri:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        mbsServiceArea:
+          $ref: TS29571_CommonData.yaml#/components/schemas/MbsServiceArea
+        extMbsServiceArea:
+          $ref: TS29571_CommonData.yaml#/components/schemas/ExternalMbsServiceArea
+        requestTestNotification:
+          type: boolean
+        websockNotifConfig:
+          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afId
+      - tmgiParams
+      not:
+        required:
+        - mbsServiceArea
+        - extMbsServiceArea
     ReducedMbsServArea:
       description: 'Represents the reduced MBS Service Area information.
 
@@ -162,53 +209,6 @@ components:
           $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
       required:
       - tmgiInfo
-    ProblemDetailsTmgiAlloc:
-      description: 'Represents an extension to the ProblemDetails data structure with additional error information related to TMGI Allocation.
-
-        '
-      allOf:
-      - $ref: TS29122_CommonData.yaml#/components/schemas/ProblemDetails
-      - $ref: '#/components/schemas/ReducedMbsServArea'
-    TmgiAllocRequest:
-      description: 'Represents the full set of parameters to initiate an MBS TMGI(s) allocation request or the refresh of the expiry time of already allocated TMGI(s).
-
-        '
-      type: object
-      properties:
-        afId:
-          type: string
-        tmgiParams:
-          $ref: TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate
-        notificationUri:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
-        mbsServiceArea:
-          $ref: TS29571_CommonData.yaml#/components/schemas/MbsServiceArea
-        extMbsServiceArea:
-          $ref: TS29571_CommonData.yaml#/components/schemas/ExternalMbsServiceArea
-        requestTestNotification:
-          type: boolean
-        websockNotifConfig:
-          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - afId
-      - tmgiParams
-      not:
-        required:
-        - mbsServiceArea
-        - extMbsServiceArea
-    ExpiryNotif:
-      description: Represents MBS TMGI(s) timer expiry notification information.
-      type: object
-      properties:
-        tmgis:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Tmgi
-          minItems: 1
-      required:
-      - tmgis
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

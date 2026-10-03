@@ -164,6 +164,68 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    EnrolFailCause:
+      anyOf:
+      - type: string
+        enum:
+        - AUTHORIZATION_ISSUE
+        - ONBOARDING_CRI_NOT_MET
+        - UNSPECIFIED
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents API Invoker's per API enrollment failure code.  \nPossible values are:\n- AUTHORIZATION_ISSUE: Indicates that the service API enrollment failed because the service\n  API is not authorized for the API Invoker.\n- ONBOARDING_CRI_NOT_MET: Indicates that the service API entollment failed because the\n  onboarding criteria not met for this service API for the API Invoker.\n- UNSPECIFIED: Indicates that the service API enrollment failed due to an unspecified\n  reason.\n"
+    APIList:
+      type: object
+      description: Represents a list of APIs with the corresponding information.
+      properties:
+        serviceAPIDescriptions:
+          type: array
+          items:
+            $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription
+          minItems: 1
+          description: 'Represents the list of service APIs that the API Invoker is allowed to invoke.
+
+            '
+    EnrolFailReason:
+      type: object
+      description: Represents the failure reason for not those APIs not enrolled successfully.
+      properties:
+        apiName:
+          items:
+            type: string
+        failureCode:
+          $ref: '#/components/schemas/EnrolFailCause'
+      required:
+      - apiName
+      - failureCode
+    ApiInfo:
+      type: object
+      description: Represents service API identification related information.
+      properties:
+        apiName:
+          type: string
+        supportedApiVersions:
+          type: array
+          items:
+            type: string
+          minItems: 1
+      required:
+      - apiName
+    OnboardingCriteria:
+      type: object
+      description: Represents the onboarding criteria information.
+      properties:
+        secMethods:
+          type: array
+          items:
+            $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod
+          minItems: 1
+        relatedCriteria:
+          $ref: '#/components/schemas/RelatedCriteria'
+      required:
+      - secMethods
     APIInvokerEnrolmentDetails:
       description: Represents the onboarding information of the API Invoker.
       type: object
@@ -204,36 +266,30 @@ components:
       required:
       - onboardingInformation
       - notificationDestination
-    APIInvokerEnrolmentDetailsPatch:
+    OnboardingInformation:
       type: object
-      description: Represents an API Invoker's enrolment details to be updated.
+      description: Represents the on-boarding information of the API Invoker.
       properties:
-        onboardingInformation:
-          $ref: '#/components/schemas/OnboardingInformation'
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
-        apiList:
-          $ref: '#/components/schemas/APIList'
-        apiInvokerInformation:
+        apiInvokerPublicKey:
           type: string
-          description: 'Generic information related to the API invoker such as details of the device or the application.
+          description: The API Invoker's public key
+        apiInvokerCertificate:
+          type: string
+          description: 'The API Invoker''s generic client certificate, provided by the CAPIF core function.
 
             '
-        expTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRm
-    OnboardingCriteria:
-      type: object
-      description: Represents the onboarding criteria information.
-      properties:
-        secMethods:
+        onboardingSecret:
+          type: string
+          description: 'The API Invoker''s onboarding secret, provided by the CAPIF core function.
+
+            '
+        onboardingCriteria:
           type: array
           items:
-            $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/SecurityMethod
+            $ref: '#/components/schemas/OnboardingCriteria'
           minItems: 1
-        relatedCriteria:
-          $ref: '#/components/schemas/RelatedCriteria'
       required:
-      - secMethods
+      - apiInvokerPublicKey
     RelatedCriteria:
       type: object
       description: Represents onboarding related criteria.
@@ -260,79 +316,23 @@ components:
         - serviceAPICategories
       - required:
         - apis
-    OnboardingInformation:
+    APIInvokerEnrolmentDetailsPatch:
       type: object
-      description: Represents the on-boarding information of the API Invoker.
+      description: Represents an API Invoker's enrolment details to be updated.
       properties:
-        apiInvokerPublicKey:
+        onboardingInformation:
+          $ref: '#/components/schemas/OnboardingInformation'
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        apiList:
+          $ref: '#/components/schemas/APIList'
+        apiInvokerInformation:
           type: string
-          description: The API Invoker's public key
-        apiInvokerCertificate:
-          type: string
-          description: 'The API Invoker''s generic client certificate, provided by the CAPIF core function.
+          description: 'Generic information related to the API invoker such as details of the device or the application.
 
             '
-        onboardingSecret:
-          type: string
-          description: 'The API Invoker''s onboarding secret, provided by the CAPIF core function.
-
-            '
-        onboardingCriteria:
-          type: array
-          items:
-            $ref: '#/components/schemas/OnboardingCriteria'
-          minItems: 1
-      required:
-      - apiInvokerPublicKey
-    APIList:
-      type: object
-      description: Represents a list of APIs with the corresponding information.
-      properties:
-        serviceAPIDescriptions:
-          type: array
-          items:
-            $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription
-          minItems: 1
-          description: 'Represents the list of service APIs that the API Invoker is allowed to invoke.
-
-            '
-    EnrolFailReason:
-      type: object
-      description: Represents the failure reason for not those APIs not enrolled successfully.
-      properties:
-        apiName:
-          items:
-            type: string
-        failureCode:
-          $ref: '#/components/schemas/EnrolFailCause'
-      required:
-      - apiName
-      - failureCode
-    EnrolFailCause:
-      anyOf:
-      - type: string
-        enum:
-        - AUTHORIZATION_ISSUE
-        - ONBOARDING_CRI_NOT_MET
-        - UNSPECIFIED
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents API Invoker's per API enrollment failure code.  \nPossible values are:\n- AUTHORIZATION_ISSUE: Indicates that the service API enrollment failed because the service\n  API is not authorized for the API Invoker.\n- ONBOARDING_CRI_NOT_MET: Indicates that the service API entollment failed because the\n  onboarding criteria not met for this service API for the API Invoker.\n- UNSPECIFIED: Indicates that the service API enrollment failed due to an unspecified\n  reason.\n"
-    ApiInfo:
-      type: object
-      description: Represents service API identification related information.
-      properties:
-        apiName:
-          type: string
-        supportedApiVersions:
-          type: array
-          items:
-            type: string
-          minItems: 1
-      required:
-      - apiName
+        expTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRm
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

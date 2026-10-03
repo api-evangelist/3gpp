@@ -113,17 +113,6 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    ApiInvokerCount:
-      type: object
-      description: Represents the count data for onboarding.
-      properties:
-        apiId:
-          type: string
-        count:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-      required:
-      - apiId
-      - count
     TopologyHiding:
       type: object
       description: Represents the routing rules information of a service API.
@@ -138,6 +127,71 @@ components:
       required:
       - apiId
       - routingRules
+    CAPIFEventFilter:
+      type: object
+      description: Represents a CAPIF event filter.
+      properties:
+        apiIds:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: Identifier of the service API.
+        apiInvokerIds:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: Identity of the API invoker.
+        aefIds:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: Identifier of the API exposing function.
+    ApiInvokerCount:
+      type: object
+      description: Represents the count data for onboarding.
+      properties:
+        apiId:
+          type: string
+        count:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+      required:
+      - apiId
+      - count
+    EventSubscription:
+      type: object
+      description: Represents a CAPIF Events Subscription.
+      properties:
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/CAPIFEvent'
+          minItems: 1
+          description: Subscribed events.
+        eventFilters:
+          type: array
+          items:
+            $ref: '#/components/schemas/CAPIFEventFilter'
+          minItems: 1
+          description: Subscribed event filters.
+        eventReq:
+          $ref: TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        requestTestNotification:
+          type: boolean
+          description: 'Set to true by Subscriber to request the CAPIF core function to send a test notification as defined in in clause 7.6. Set to false or omitted otherwise.
+
+            '
+        websockNotifConfig:
+          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
+        supportedFeatures:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - events
+      - notificationDestination
     AccessControlPolicyListExt:
       description: Represents the extension for access control policies.
       allOf:
@@ -148,23 +202,6 @@ components:
             type: string
       required:
       - apiId
-    DiscoveryCount:
-      type: object
-      description: Represents the count data for discovery.
-      properties:
-        apiId:
-          type: string
-        discoveryReqCount:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        discoveryRspCount:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-      required:
-      - apiId
-      anyOf:
-      - required:
-        - discoveryReqCount
-      - required:
-        - discoveryRspCount
     CAPIFEventDetail:
       type: object
       description: Represents the CAPIF event related details.
@@ -212,60 +249,23 @@ components:
           items:
             $ref: '#/components/schemas/DiscoveryCount'
           minItems: 1
-    EventSubscription:
+    DiscoveryCount:
       type: object
-      description: Represents a CAPIF Events Subscription.
+      description: Represents the count data for discovery.
       properties:
-        events:
-          type: array
-          items:
-            $ref: '#/components/schemas/CAPIFEvent'
-          minItems: 1
-          description: Subscribed events.
-        eventFilters:
-          type: array
-          items:
-            $ref: '#/components/schemas/CAPIFEventFilter'
-          minItems: 1
-          description: Subscribed event filters.
-        eventReq:
-          $ref: TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
-        requestTestNotification:
-          type: boolean
-          description: 'Set to true by Subscriber to request the CAPIF core function to send a test notification as defined in in clause 7.6. Set to false or omitted otherwise.
-
-            '
-        websockNotifConfig:
-          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
-        supportedFeatures:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+        apiId:
+          type: string
+        discoveryReqCount:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        discoveryRspCount:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
       required:
-      - events
-      - notificationDestination
-    CAPIFEventFilter:
-      type: object
-      description: Represents a CAPIF event filter.
-      properties:
-        apiIds:
-          type: array
-          items:
-            type: string
-          minItems: 1
-          description: Identifier of the service API.
-        apiInvokerIds:
-          type: array
-          items:
-            type: string
-          minItems: 1
-          description: Identity of the API invoker.
-        aefIds:
-          type: array
-          items:
-            type: string
-          minItems: 1
-          description: Identifier of the API exposing function.
+      - apiId
+      anyOf:
+      - required:
+        - discoveryReqCount
+      - required:
+        - discoveryRspCount
     CAPIFEvent:
       anyOf:
       - type: string

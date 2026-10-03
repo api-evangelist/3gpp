@@ -194,6 +194,19 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    IpAddrInfo:
+      type: object
+      description: Represents the UE IP address information.
+      properties:
+        ipv4Addr:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv4Addr
+        ipv6Addr:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv6Addr
+      oneOf:
+      - required:
+        - ipv4Addr
+      - required:
+        - ipv6Addr
     ResOperInfo:
       type: object
       description: 'Represents the resourse and/or service operation.
@@ -212,19 +225,6 @@ components:
           items:
             type: string
           minItems: 1
-    IpAddrInfo:
-      type: object
-      description: Represents the UE IP address information.
-      properties:
-        ipv4Addr:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv4Addr
-        ipv6Addr:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv6Addr
-      oneOf:
-      - required:
-        - ipv4Addr
-      - required:
-        - ipv6Addr
     DiscoveredAPIs:
       type: object
       description: 'Represents a list of APIs currently registered in the CAPIF core function and satisfying a number of filter criteria provided by the API consumer.

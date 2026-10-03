@@ -249,6 +249,19 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    DomainNameProtocol:
+      anyOf:
+      - type: string
+        enum:
+        - DNS_QNAME
+        - TLS_SNI
+        - TLS_SAN
+        - TSL_SCN
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the type of Domain Name Protocol.  \nPossible values are:\n- DNS_QNAME: Identifies the DNS protocol and the question name in DNS query.\n- TLS_SNI: Identifies the Server Name Indication in TLS ClientHello message.\n- TLS_SAN: Identifies the Subject Alternative Name in TLS ServerCertificate message.\n- TSL_SCN: Identifies the Subject Common Name in TLS ServerCertificate message.\n"
     Pfd:
       description: Represents a PFD for an external Application Identifier.
       type: object
@@ -282,19 +295,6 @@ components:
           $ref: '#/components/schemas/DomainNameProtocol'
       required:
       - pfdId
-    DomainNameProtocol:
-      anyOf:
-      - type: string
-        enum:
-        - DNS_QNAME
-        - TLS_SNI
-        - TLS_SAN
-        - TSL_SCN
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the type of Domain Name Protocol.  \nPossible values are:\n- DNS_QNAME: Identifies the DNS protocol and the question name in DNS query.\n- TLS_SNI: Identifies the Server Name Indication in TLS ClientHello message.\n- TLS_SAN: Identifies the Subject Alternative Name in TLS ServerCertificate message.\n- TSL_SCN: Identifies the Subject Common Name in TLS ServerCertificate message.\n"
     UserPlaneLocationArea:
       description: 'Represents location area(s) of the user plane functions which are unable to enforce the provisioned PFD(s) successfully.
 

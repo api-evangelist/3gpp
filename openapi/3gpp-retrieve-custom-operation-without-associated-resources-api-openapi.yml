@@ -75,47 +75,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    UAVFlightInfoResp:
-      description: Represents the UAV Flight information retrieval response.
-      type: object
-      properties:
-        retrievedResults:
-          type: array
-          items:
-            $ref: '#/components/schemas/UAVFlightAssistNotif'
-          minItems: 1
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - retrievedResults
-    FlightPathSegInfo:
-      description: Represents a flight path segment.
-      type: object
-      properties:
-        flightSeg:
-          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
-        ussId:
-          type: string
-        candBdCrsPoints:
-          type: array
-          items:
-            $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
-          minItems: 1
-        uavSpeed:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Float
-        altitude:
-          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/Altitude
-        timeSchedule:
-          $ref: TS29122_CommonData.yaml#/components/schemas/TimeWindow
-        timeDuration:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
-      required:
-      - flightSeg
-      - ussId
-      not:
-        required:
-        - timeSchedule
-        - timeDuration
     CandidateFlightPathInfo:
       description: Represents the candidate flight path information.
       type: object
@@ -128,17 +87,17 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
         canFlightPath:
           $ref: '#/components/schemas/FlightPath'
-    FlightPath:
-      description: Represents a flight path.
-      type: object
-      properties:
-        pathSegInfo:
-          type: array
-          items:
-            $ref: '#/components/schemas/FlightPathSegInfo'
-          minItems: 1
-      required:
-      - pathSegInfo
+    RetrievePurpose:
+      anyOf:
+      - type: string
+        enum:
+        - USS_CHANGEOVER
+        - PRE_FLIGHT_PLANNING
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the purpose of the retrieved UAV flight information.  \nPossible values are:\n  - USS_CHANGEOVER: Indicates that the purpose of the UAV Flight information retrieval is\n    USS changeover.\n  - PRE_FLIGHT_PLANNING: Indicates that the purpose of the UAV Flight information retrieval\n    is pre-flight planning.\n"
     UAVFlightAssistNotif:
       description: Represents the UAV Flight Assistance Notification.
       type: object
@@ -187,6 +146,87 @@ components:
         required:
         - altitude
         - altitudeRptInd
+    UAVFlightInfoResp:
+      description: Represents the UAV Flight information retrieval response.
+      type: object
+      properties:
+        retrievedResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/UAVFlightAssistNotif'
+          minItems: 1
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - retrievedResults
+    AltitudeRepReqs:
+      description: Represents the UAV's altitude reporting requirements.
+      type: object
+      properties:
+        repThresholds:
+          $ref: '#/components/schemas/AltThresholds'
+        repPeriodicity:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        repEvents:
+          type: array
+          items:
+            $ref: '#/components/schemas/AltitudeRepEvent'
+          minItems: 1
+      oneOf:
+      - required:
+        - repThresholds
+      - required:
+        - repPeriodicity
+      - required:
+        - repEvents
+    UavStatus:
+      anyOf:
+      - type: string
+        enum:
+        - LEAVING
+        - ENTERING
+        - DEVIATING
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the status of the UAV.  \nPossible values are:\n- LEAVING: Indicates that the UAV status is leaving an area which is part of the planned\n  flight path.\n- ENTERING: Indicates that the UAV status is entering an area which is part of the planned\n  flight path.\n- DEVIATING: Indicates that the UAV status is deviating from the planned flight path.\n"
+    UAVFlightInfoReq:
+      description: Represents the UAV Flight information retrieval request.
+      type: object
+      properties:
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        retrievePurpose:
+          $ref: '#/components/schemas/RetrievePurpose'
+        targetUssList:
+          type: array
+          items:
+            type: string
+          minItems: 1
+        canFltPathsInfo:
+          type: array
+          items:
+            $ref: '#/components/schemas/CandidateFlightPathInfo'
+          minItems: 1
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - gpsi
+      - retrievePurpose
+    AltitudeRepEvent:
+      anyOf:
+      - type: string
+        enum:
+        - TA_CHANGE
+        - RAN_NODE_CHANGE
+        - GEO_LOCATION_CHANGE
+        - ANY_ALTITUDE_CHANGE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the UAV's altitude reporting event.  \nPossible values are:\n- TA_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of the UAV's\n  serving TA.\n- RAN_NODE_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of the\n  UAV's serving RAN node.\n- GEO_LOCATION_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of\n  the UAV's geographical location.\n- ANY_ALTITUDE_CHANGE: Indicates that the UAV's altitude reporting trigger is any change of\n  the UAV's altitude.\n"
     AltThresholds:
       description: Represents the UAV's altitude thresholds.
       type: object
@@ -220,85 +260,45 @@ components:
         - presetDistInd
       - required:
         - rangSlDistance
-    AltitudeRepEvent:
-      anyOf:
-      - type: string
-        enum:
-        - TA_CHANGE
-        - RAN_NODE_CHANGE
-        - GEO_LOCATION_CHANGE
-        - ANY_ALTITUDE_CHANGE
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the UAV's altitude reporting event.  \nPossible values are:\n- TA_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of the UAV's\n  serving TA.\n- RAN_NODE_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of the\n  UAV's serving RAN node.\n- GEO_LOCATION_CHANGE: Indicates that the UAV's altitude reporting trigger is the change of\n  the UAV's geographical location.\n- ANY_ALTITUDE_CHANGE: Indicates that the UAV's altitude reporting trigger is any change of\n  the UAV's altitude.\n"
-    UAVFlightInfoReq:
-      description: Represents the UAV Flight information retrieval request.
+    FlightPath:
+      description: Represents a flight path.
       type: object
       properties:
-        gpsi:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-        retrievePurpose:
-          $ref: '#/components/schemas/RetrievePurpose'
-        targetUssList:
+        pathSegInfo:
           type: array
           items:
-            type: string
+            $ref: '#/components/schemas/FlightPathSegInfo'
           minItems: 1
-        canFltPathsInfo:
-          type: array
-          items:
-            $ref: '#/components/schemas/CandidateFlightPathInfo'
-          minItems: 1
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
       required:
-      - gpsi
-      - retrievePurpose
-    UavStatus:
-      anyOf:
-      - type: string
-        enum:
-        - LEAVING
-        - ENTERING
-        - DEVIATING
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the status of the UAV.  \nPossible values are:\n- LEAVING: Indicates that the UAV status is leaving an area which is part of the planned\n  flight path.\n- ENTERING: Indicates that the UAV status is entering an area which is part of the planned\n  flight path.\n- DEVIATING: Indicates that the UAV status is deviating from the planned flight path.\n"
-    RetrievePurpose:
-      anyOf:
-      - type: string
-        enum:
-        - USS_CHANGEOVER
-        - PRE_FLIGHT_PLANNING
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the purpose of the retrieved UAV flight information.  \nPossible values are:\n  - USS_CHANGEOVER: Indicates that the purpose of the UAV Flight information retrieval is\n    USS changeover.\n  - PRE_FLIGHT_PLANNING: Indicates that the purpose of the UAV Flight information retrieval\n    is pre-flight planning.\n"
-    AltitudeRepReqs:
-      description: Represents the UAV's altitude reporting requirements.
+      - pathSegInfo
+    FlightPathSegInfo:
+      description: Represents a flight path segment.
       type: object
       properties:
-        repThresholds:
-          $ref: '#/components/schemas/AltThresholds'
-        repPeriodicity:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        repEvents:
+        flightSeg:
+          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
+        ussId:
+          type: string
+        candBdCrsPoints:
           type: array
           items:
-            $ref: '#/components/schemas/AltitudeRepEvent'
+            $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
           minItems: 1
-      oneOf:
-      - required:
-        - repThresholds
-      - required:
-        - repPeriodicity
-      - required:
-        - repEvents
+        uavSpeed:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Float
+        altitude:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/Altitude
+        timeSchedule:
+          $ref: TS29122_CommonData.yaml#/components/schemas/TimeWindow
+        timeDuration:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
+      required:
+      - flightSeg
+      - ussId
+      not:
+        required:
+        - timeSchedule
+        - timeDuration
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

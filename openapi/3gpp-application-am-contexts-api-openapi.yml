@@ -123,6 +123,55 @@ components:
       anyOf:
       - $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AppAmContextData
       - $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsNotification
+    AppAmContextExpData:
+      description: Represents an Individual application AM context exposure resource.
+      type: object
+      properties:
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        evSubscs:
+          $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscData
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        highThruInd:
+          type: boolean
+        covReqs:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/GeographicalArea'
+          minItems: 1
+        policyDuration:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
+        sliceReplReq:
+          $ref: '#/components/schemas/SliceReplReq'
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+        requestTestNotification:
+          type: boolean
+          description: 'Set to true by the AF to request the NEF to send a test notification as defined in clause 5.2.5.3 of 3GPP TS 29.122. Set to false or omitted otherwise.
+
+            '
+        websockNotifConfig:
+          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
+      required:
+      - gpsi
+      anyOf:
+      - required:
+        - highThruInd
+      - required:
+        - covReqs
+      - required:
+        - sliceReplReq
+    GeographicalArea:
+      description: Contains geographical area information (e.g.a civic address or shapes).
+      type: object
+      properties:
+        civicAddress:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
+        shapes:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
     SliceReplReq:
       description: 'Represents the requested Network Slice Replacement requirements.
 
@@ -167,55 +216,6 @@ components:
 
           '
       description: "Represents the type of the requested Network Slice Replacement.\nPossible values are:\n- INITIATE_AF_REQ_SLICE_REP: Indicates that the type of the requested Network Slice\n  Replacement is the initiation of an AF requested Network Slice Replacement.\n- TERMINATE_AF_REQ_SLICE_REP: Indicates that the type of the requested Network Slice\n  Replacement is the termination of a previously requested Network Slice Replacement from\n  the AF.\n"
-    GeographicalArea:
-      description: Contains geographical area information (e.g.a civic address or shapes).
-      type: object
-      properties:
-        civicAddress:
-          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
-        shapes:
-          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
-    AppAmContextExpData:
-      description: Represents an Individual application AM context exposure resource.
-      type: object
-      properties:
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        evSubscs:
-          $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscData
-        gpsi:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-        highThruInd:
-          type: boolean
-        covReqs:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/GeographicalArea'
-          minItems: 1
-        policyDuration:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
-        sliceReplReq:
-          $ref: '#/components/schemas/SliceReplReq'
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-        requestTestNotification:
-          type: boolean
-          description: 'Set to true by the AF to request the NEF to send a test notification as defined in clause 5.2.5.3 of 3GPP TS 29.122. Set to false or omitted otherwise.
-
-            '
-        websockNotifConfig:
-          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
-      required:
-      - gpsi
-      anyOf:
-      - required:
-        - highThruInd
-      - required:
-        - covReqs
-      - required:
-        - sliceReplReq
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

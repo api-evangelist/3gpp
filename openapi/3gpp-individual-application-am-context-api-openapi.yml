@@ -184,77 +184,6 @@ components:
       anyOf:
       - $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AppAmContextData
       - $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsNotification
-    SliceReplReq:
-      description: 'Represents the requested Network Slice Replacement requirements.
-
-        '
-      type: object
-      properties:
-        type:
-          $ref: '#/components/schemas/SliceReplType'
-        afSliceReplReq:
-          $ref: '#/components/schemas/SliceReplReqInfo'
-      required:
-      - type
-    AppAmContextExpUpdateData:
-      description: 'Contains the modification(s) to be applied to the Individual application AM context exposure resource.
-
-        '
-      type: object
-      properties:
-        evSubscs:
-          $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm
-        highThruInd:
-          type: boolean
-        covReqs:
-          type: array
-          items:
-            $ref: '#/components/schemas/GeographicalArea'
-          minItems: 1
-        policyDuration:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
-        sliceReplReq:
-          $ref: '#/components/schemas/SliceReplReq'
-    SliceReplReqInfo:
-      description: 'Represents the AF requested Network Slice Replacement requirements information.
-
-        '
-      type: object
-      properties:
-        snssai:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
-        altSnssai:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
-        afServId:
-          type: string
-        altAfServId:
-          type: string
-      oneOf:
-      - required:
-        - snssai
-        - altSnssai
-      - required:
-        - afServId
-        - altAfServId
-    SliceReplType:
-      anyOf:
-      - type: string
-        enum:
-        - INITIATE_AF_REQ_SLICE_REP
-        - TERMINATE_AF_REQ_SLICE_REP
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the type of the requested Network Slice Replacement.\nPossible values are:\n- INITIATE_AF_REQ_SLICE_REP: Indicates that the type of the requested Network Slice\n  Replacement is the initiation of an AF requested Network Slice Replacement.\n- TERMINATE_AF_REQ_SLICE_REP: Indicates that the type of the requested Network Slice\n  Replacement is the termination of a previously requested Network Slice Replacement from\n  the AF.\n"
-    GeographicalArea:
-      description: Contains geographical area information (e.g.a civic address or shapes).
-      type: object
-      properties:
-        civicAddress:
-          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
-        shapes:
-          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
     AppAmContextExpData:
       description: Represents an Individual application AM context exposure resource.
       type: object
@@ -296,6 +225,77 @@ components:
         - covReqs
       - required:
         - sliceReplReq
+    GeographicalArea:
+      description: Contains geographical area information (e.g.a civic address or shapes).
+      type: object
+      properties:
+        civicAddress:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
+        shapes:
+          $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
+    SliceReplReq:
+      description: 'Represents the requested Network Slice Replacement requirements.
+
+        '
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/SliceReplType'
+        afSliceReplReq:
+          $ref: '#/components/schemas/SliceReplReqInfo'
+      required:
+      - type
+    SliceReplReqInfo:
+      description: 'Represents the AF requested Network Slice Replacement requirements information.
+
+        '
+      type: object
+      properties:
+        snssai:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
+        altSnssai:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
+        afServId:
+          type: string
+        altAfServId:
+          type: string
+      oneOf:
+      - required:
+        - snssai
+        - altSnssai
+      - required:
+        - afServId
+        - altAfServId
+    SliceReplType:
+      anyOf:
+      - type: string
+        enum:
+        - INITIATE_AF_REQ_SLICE_REP
+        - TERMINATE_AF_REQ_SLICE_REP
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the type of the requested Network Slice Replacement.\nPossible values are:\n- INITIATE_AF_REQ_SLICE_REP: Indicates that the type of the requested Network Slice\n  Replacement is the initiation of an AF requested Network Slice Replacement.\n- TERMINATE_AF_REQ_SLICE_REP: Indicates that the type of the requested Network Slice\n  Replacement is the termination of a previously requested Network Slice Replacement from\n  the AF.\n"
+    AppAmContextExpUpdateData:
+      description: 'Contains the modification(s) to be applied to the Individual application AM context exposure resource.
+
+        '
+      type: object
+      properties:
+        evSubscs:
+          $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsSubscDataRm
+        highThruInd:
+          type: boolean
+        covReqs:
+          type: array
+          items:
+            $ref: '#/components/schemas/GeographicalArea'
+          minItems: 1
+        policyDuration:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
+        sliceReplReq:
+          $ref: '#/components/schemas/SliceReplReq'
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

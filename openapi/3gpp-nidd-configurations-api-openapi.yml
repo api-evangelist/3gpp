@@ -192,170 +192,18 @@ components:
         - externalId
       - required:
         - msisdn
-    DeliveryStatus:
+    SerializationFormat:
       anyOf:
       - type: string
         enum:
-        - SUCCESS
-        - SUCCESS_NEXT_HOP_ACKNOWLEDGED
-        - SUCCESS_NEXT_HOP_UNACKNOWLEDGED
-        - SUCCESS_ACKNOWLEDGED
-        - SUCCESS_UNACKNOWLEDGED
-        - TRIGGERED
-        - BUFFERING
-        - BUFFERING_TEMPORARILY_NOT_REACHABLE
-        - SENDING
-        - FAILURE
-        - FAILURE_RDS_DISABLED
-        - FAILURE_NEXT_HOP
-        - FAILURE_TIMEOUT
-        - FAILURE_TEMPORARILY_NOT_REACHABLE
+        - CBOR
+        - JSON
+        - XML
       - type: string
         description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
 
           '
-      description: "Represents the status of a downlink NIDD data delivery resource.  \nPossible values are:\n- SUCCESS: Success but details not provided\n- SUCCESS_NEXT_HOP_ACKNOWLEDGED: Successful delivery to the next hop with acknowledgment.\n- SUCCESS_NEXT_HOP_UNACKNOWLEDGED: Successful delivery to the next hop without\n  acknowledgment\n- SUCCESS_ACKNOWLEDGED: Reliable delivery was acknowledged by the UE\n- SUCCESS_UNACKNOWLEDGED: Reliable delivery was not acknowledged by the UE\n- TRIGGERED: The SCEF triggered the device and is buffering the data.\n- BUFFERING: The SCEF is buffering the data due to no PDN connection established.\n- BUFFERING_TEMPORARILY_NOT_REACHABLE: The SCEF has been informed that the UE is temporarily\n  not reachable but is buffering the data\n- SENDING: The SCEF has forwarded the data, but they may be stored elsewhere\n- FAILURE: Delivery failure but details not provided\n- FAILURE_RDS_DISABLED: RDS was disabled\n- FAILURE_NEXT_HOP: Unsuccessful delivery to the next hop.\n- FAILURE_TIMEOUT: Unsuccessful delivery due to timeout. \n- FAILURE_TEMPORARILY_NOT_REACHABLE: The SCEF has been informed that the UE is temporarily\n  not reachable without buffering the data.\n"
-      readOnly: true
-    NiddStatus:
-      anyOf:
-      - type: string
-        enum:
-        - ACTIVE
-        - TERMINATED_UE_NOT_AUTHORIZED
-        - TERMINATED
-        - RDS_PORT_UNKNOWN
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the status of a NIDD configuration.  \nPossible values are:\n- ACTIVE: The NIDD configuration is active.\n- TERMINATED_UE_NOT_AUTHORIZED: The NIDD configuration was terminated because the UE´s\n  authorisation was revoked.\n- TERMINATED: The NIDD configuration was terminated.\n- RDS_PORT_UNKNOWN: The RDS port is unknown.\n"
-      readOnly: true
-    ManagePort:
-      description: Represents the configuration of a RDS dynamic port management.
-      type: object
-      properties:
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        appId:
-          type: string
-          description: Identifies the application.
-        manageEntity:
-          $ref: '#/components/schemas/ManageEntity'
-        skipUeInquiry:
-          type: boolean
-          description: Indicate whether to skip UE inquiry.
-        supportedFormats:
-          type: array
-          items:
-            $ref: '#/components/schemas/SerializationFormat'
-          minItems: 1
-          description: 'Indicates the serialization format(s) that are supported by the SCS/AS on the associated RDS port.
-
-            '
-        configuredFormat:
-          $ref: '#/components/schemas/SerializationFormat'
-      required:
-      - appId
-    GmdResult:
-      description: Represents the group message delivery result.
-      type: object
-      properties:
-        externalId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalId
-        msisdn:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Msisdn
-        deliveryStatus:
-          $ref: '#/components/schemas/DeliveryStatus'
-        requestedRetransmissionTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-      required:
-      - deliveryStatus
-      oneOf:
-      - required:
-        - externalId
-      - required:
-        - msisdn
-    NiddDownlinkDataTransfer:
-      description: Represents the received NIDD downlink data from the SCS/AS.
-      type: object
-      properties:
-        externalId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalId
-        externalGroupId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
-        msisdn:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Msisdn
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        data:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
-        reliableDataService:
-          type: boolean
-          description: 'Indicates whether the reliable data service (as defined in clause 4.5.14.3 of 3GPP TS 23.682) acknowledgement is requested (true) or not (false). Default value is false.
-
-            '
-        rdsPort:
-          $ref: '#/components/schemas/RdsPort'
-        maximumLatency:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
-        priority:
-          type: integer
-          description: 'It is used to indicate the priority of the non-IP data packet relative to other non-IP data packets.
-
-            '
-        pdnEstablishmentOption:
-          $ref: '#/components/schemas/PdnEstablishmentOptions'
-        deliveryStatus:
-          $ref: '#/components/schemas/DeliveryStatus'
-        requestedRetransmissionTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-      required:
-      - data
-      oneOf:
-      - required:
-        - externalId
-      - required:
-        - msisdn
-      - required:
-        - externalGroupId
-    NiddConfigurationStatusNotification:
-      description: Represents an NIDD configuration status notification.
-      type: object
-      properties:
-        niddConfiguration:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        externalId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalId
-        msisdn:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Msisdn
-        status:
-          $ref: '#/components/schemas/NiddStatus'
-        rdsCapIndication:
-          type: boolean
-          description: 'It indicates whether the network capability for the reliable data service is enabled or not.
-
-            '
-        rdsPort:
-          $ref: '#/components/schemas/RdsPort'
-      required:
-      - niddConfiguration
-      - status
-      oneOf:
-      - required:
-        - externalId
-      - required:
-        - msisdn
-    RdsPort:
-      description: Represents the port configuration for Reliable Data Transfer.
-      type: object
-      properties:
-        portUE:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Port
-        portSCEF:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Port
-      required:
-      - portUE
-      - portSCEF
+      description: "Represents a serialization format associated with an RDS port which is applicable\nfor the Rds_serialization_format feature.\nPossible values are\n- CBOR: The CBOR Serialzition format \n- JSON: The JSON Serialzition format\n- XML: The XML Serialzition format\n"
     NiddDownlinkDataDeliveryStatusNotification:
       description: Represents the delivery status of a specific NIDD downlink data delivery.
       type: object
@@ -369,45 +217,6 @@ components:
       required:
       - niddDownlinkDataTransfer
       - deliveryStatus
-    ManageEntity:
-      anyOf:
-      - type: string
-        enum:
-        - UE
-        - AS
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the origin that manages the RDS port.  \nPossible values are:\n- UE: Representing the UE.\n- AS: Representing the Application Server.\n"
-      readOnly: true
-    GmdNiddDownlinkDataDeliveryNotification:
-      description: Represents the delivery status of a specific group NIDD downlink data delivery.
-      type: object
-      properties:
-        niddDownlinkDataTransfer:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        gmdResults:
-          type: array
-          items:
-            $ref: '#/components/schemas/GmdResult'
-          minItems: 1
-          description: Indicates the group message delivery result.
-      required:
-      - niddDownlinkDataTransfer
-      - gmdResults
-    PdnEstablishmentOptions:
-      anyOf:
-      - type: string
-        enum:
-        - WAIT_FOR_UE
-        - INDICATE_ERROR
-        - SEND_TRIGGER
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents PDN establishment options that describe the network behaviour when\nthere is no PDN connection towards the addressed UE.  \nPossible values are:\n- WAIT_FOR_UE: wait for the UE to establish the PDN connection \n- INDICATE_ERROR: respond with an error cause\n- SEND_TRIGGER: send a device trigger\n"
     ManagePortNotification:
       description: Represents a ManagePort notification of port numbers that are reserved.
       type: object
@@ -498,18 +307,209 @@ components:
         - msisdn
       - required:
         - externalGroupId
-    SerializationFormat:
+    NiddStatus:
       anyOf:
       - type: string
         enum:
-        - CBOR
-        - JSON
-        - XML
+        - ACTIVE
+        - TERMINATED_UE_NOT_AUTHORIZED
+        - TERMINATED
+        - RDS_PORT_UNKNOWN
       - type: string
         description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
 
           '
-      description: "Represents a serialization format associated with an RDS port which is applicable\nfor the Rds_serialization_format feature.\nPossible values are\n- CBOR: The CBOR Serialzition format \n- JSON: The JSON Serialzition format\n- XML: The XML Serialzition format\n"
+      description: "Represents the status of a NIDD configuration.  \nPossible values are:\n- ACTIVE: The NIDD configuration is active.\n- TERMINATED_UE_NOT_AUTHORIZED: The NIDD configuration was terminated because the UE´s\n  authorisation was revoked.\n- TERMINATED: The NIDD configuration was terminated.\n- RDS_PORT_UNKNOWN: The RDS port is unknown.\n"
+      readOnly: true
+    NiddConfigurationStatusNotification:
+      description: Represents an NIDD configuration status notification.
+      type: object
+      properties:
+        niddConfiguration:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        externalId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalId
+        msisdn:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Msisdn
+        status:
+          $ref: '#/components/schemas/NiddStatus'
+        rdsCapIndication:
+          type: boolean
+          description: 'It indicates whether the network capability for the reliable data service is enabled or not.
+
+            '
+        rdsPort:
+          $ref: '#/components/schemas/RdsPort'
+      required:
+      - niddConfiguration
+      - status
+      oneOf:
+      - required:
+        - externalId
+      - required:
+        - msisdn
+    RdsPort:
+      description: Represents the port configuration for Reliable Data Transfer.
+      type: object
+      properties:
+        portUE:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Port
+        portSCEF:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Port
+      required:
+      - portUE
+      - portSCEF
+    ManageEntity:
+      anyOf:
+      - type: string
+        enum:
+        - UE
+        - AS
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the origin that manages the RDS port.  \nPossible values are:\n- UE: Representing the UE.\n- AS: Representing the Application Server.\n"
+      readOnly: true
+    GmdNiddDownlinkDataDeliveryNotification:
+      description: Represents the delivery status of a specific group NIDD downlink data delivery.
+      type: object
+      properties:
+        niddDownlinkDataTransfer:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        gmdResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/GmdResult'
+          minItems: 1
+          description: Indicates the group message delivery result.
+      required:
+      - niddDownlinkDataTransfer
+      - gmdResults
+    NiddDownlinkDataTransfer:
+      description: Represents the received NIDD downlink data from the SCS/AS.
+      type: object
+      properties:
+        externalId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalId
+        externalGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        msisdn:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Msisdn
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        data:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
+        reliableDataService:
+          type: boolean
+          description: 'Indicates whether the reliable data service (as defined in clause 4.5.14.3 of 3GPP TS 23.682) acknowledgement is requested (true) or not (false). Default value is false.
+
+            '
+        rdsPort:
+          $ref: '#/components/schemas/RdsPort'
+        maximumLatency:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
+        priority:
+          type: integer
+          description: 'It is used to indicate the priority of the non-IP data packet relative to other non-IP data packets.
+
+            '
+        pdnEstablishmentOption:
+          $ref: '#/components/schemas/PdnEstablishmentOptions'
+        deliveryStatus:
+          $ref: '#/components/schemas/DeliveryStatus'
+        requestedRetransmissionTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+      required:
+      - data
+      oneOf:
+      - required:
+        - externalId
+      - required:
+        - msisdn
+      - required:
+        - externalGroupId
+    GmdResult:
+      description: Represents the group message delivery result.
+      type: object
+      properties:
+        externalId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalId
+        msisdn:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Msisdn
+        deliveryStatus:
+          $ref: '#/components/schemas/DeliveryStatus'
+        requestedRetransmissionTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+      required:
+      - deliveryStatus
+      oneOf:
+      - required:
+        - externalId
+      - required:
+        - msisdn
+    ManagePort:
+      description: Represents the configuration of a RDS dynamic port management.
+      type: object
+      properties:
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        appId:
+          type: string
+          description: Identifies the application.
+        manageEntity:
+          $ref: '#/components/schemas/ManageEntity'
+        skipUeInquiry:
+          type: boolean
+          description: Indicate whether to skip UE inquiry.
+        supportedFormats:
+          type: array
+          items:
+            $ref: '#/components/schemas/SerializationFormat'
+          minItems: 1
+          description: 'Indicates the serialization format(s) that are supported by the SCS/AS on the associated RDS port.
+
+            '
+        configuredFormat:
+          $ref: '#/components/schemas/SerializationFormat'
+      required:
+      - appId
+    DeliveryStatus:
+      anyOf:
+      - type: string
+        enum:
+        - SUCCESS
+        - SUCCESS_NEXT_HOP_ACKNOWLEDGED
+        - SUCCESS_NEXT_HOP_UNACKNOWLEDGED
+        - SUCCESS_ACKNOWLEDGED
+        - SUCCESS_UNACKNOWLEDGED
+        - TRIGGERED
+        - BUFFERING
+        - BUFFERING_TEMPORARILY_NOT_REACHABLE
+        - SENDING
+        - FAILURE
+        - FAILURE_RDS_DISABLED
+        - FAILURE_NEXT_HOP
+        - FAILURE_TIMEOUT
+        - FAILURE_TEMPORARILY_NOT_REACHABLE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the status of a downlink NIDD data delivery resource.  \nPossible values are:\n- SUCCESS: Success but details not provided\n- SUCCESS_NEXT_HOP_ACKNOWLEDGED: Successful delivery to the next hop with acknowledgment.\n- SUCCESS_NEXT_HOP_UNACKNOWLEDGED: Successful delivery to the next hop without\n  acknowledgment\n- SUCCESS_ACKNOWLEDGED: Reliable delivery was acknowledged by the UE\n- SUCCESS_UNACKNOWLEDGED: Reliable delivery was not acknowledged by the UE\n- TRIGGERED: The SCEF triggered the device and is buffering the data.\n- BUFFERING: The SCEF is buffering the data due to no PDN connection established.\n- BUFFERING_TEMPORARILY_NOT_REACHABLE: The SCEF has been informed that the UE is temporarily\n  not reachable but is buffering the data\n- SENDING: The SCEF has forwarded the data, but they may be stored elsewhere\n- FAILURE: Delivery failure but details not provided\n- FAILURE_RDS_DISABLED: RDS was disabled\n- FAILURE_NEXT_HOP: Unsuccessful delivery to the next hop.\n- FAILURE_TIMEOUT: Unsuccessful delivery due to timeout. \n- FAILURE_TEMPORARILY_NOT_REACHABLE: The SCEF has been informed that the UE is temporarily\n  not reachable without buffering the data.\n"
+      readOnly: true
+    PdnEstablishmentOptions:
+      anyOf:
+      - type: string
+        enum:
+        - WAIT_FOR_UE
+        - INDICATE_ERROR
+        - SEND_TRIGGER
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents PDN establishment options that describe the network behaviour when\nthere is no PDN connection towards the addressed UE.  \nPossible values are:\n- WAIT_FOR_UE: wait for the UE to establish the PDN connection \n- INDICATE_ERROR: respond with an error cause\n- SEND_TRIGGER: send a device trigger\n"
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

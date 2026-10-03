@@ -434,6 +434,20 @@ components:
       required:
       - transaction
       - deliveryTriggerStatus
+    GMDByxMBNotification:
+      description: Represents a group message delivery notification.
+      type: object
+      properties:
+        transaction:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        deliveryTriggerStatus:
+          type: boolean
+          description: 'Indicates whether delivery of group message payload was successful(TRUE) or not (FALSE).
+
+            '
+      required:
+      - transaction
+      - deliveryTriggerStatus
     GMDViaMBMSByxMB:
       description: Represents a group message delivery via MBMS by xMB.
       type: object
@@ -465,20 +479,6 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/PortRo
       required:
       - notificationDestination
-    GMDByxMBNotification:
-      description: Represents a group message delivery notification.
-      type: object
-      properties:
-        transaction:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        deliveryTriggerStatus:
-          type: boolean
-          description: 'Indicates whether delivery of group message payload was successful(TRUE) or not (FALSE).
-
-            '
-      required:
-      - transaction
-      - deliveryTriggerStatus
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

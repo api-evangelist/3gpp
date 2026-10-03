@@ -79,6 +79,16 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    UeIdMappingInfo:
+      description: 'Represents the UE ID Mapping Information Provisioning.
+
+        '
+      type: object
+      properties:
+        rsUeIdMappingInfo:
+          $ref: '#/components/schemas/RangSlUeIdMappInfo'
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
     RangSlUeIdMappInfo:
       description: 'Represents the Ranging/Sidelink UE ID mapping information between the Application Layer ID and the GPSI.
 
@@ -92,16 +102,6 @@ components:
       required:
       - appLayerId
       - gpsi
-    UeIdMappingInfo:
-      description: 'Represents the UE ID Mapping Information Provisioning.
-
-        '
-      type: object
-      properties:
-        rsUeIdMappingInfo:
-          $ref: '#/components/schemas/RangSlUeIdMappInfo'
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

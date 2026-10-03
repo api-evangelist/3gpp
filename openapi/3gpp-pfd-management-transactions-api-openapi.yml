@@ -184,6 +184,19 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    DomainNameProtocol:
+      anyOf:
+      - type: string
+        enum:
+        - DNS_QNAME
+        - TLS_SNI
+        - TLS_SAN
+        - TSL_SCN
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the type of Domain Name Protocol.  \nPossible values are:\n- DNS_QNAME: Identifies the DNS protocol and the question name in DNS query.\n- TLS_SNI: Identifies the Server Name Indication in TLS ClientHello message.\n- TLS_SAN: Identifies the Subject Alternative Name in TLS ServerCertificate message.\n- TSL_SCN: Identifies the Subject Common Name in TLS ServerCertificate message.\n"
     Pfd:
       description: Represents a PFD for an external Application Identifier.
       type: object
@@ -217,19 +230,6 @@ components:
           $ref: '#/components/schemas/DomainNameProtocol'
       required:
       - pfdId
-    DomainNameProtocol:
-      anyOf:
-      - type: string
-        enum:
-        - DNS_QNAME
-        - TLS_SNI
-        - TLS_SAN
-        - TSL_SCN
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the type of Domain Name Protocol.  \nPossible values are:\n- DNS_QNAME: Identifies the DNS protocol and the question name in DNS query.\n- TLS_SNI: Identifies the Server Name Indication in TLS ClientHello message.\n- TLS_SAN: Identifies the Subject Alternative Name in TLS ServerCertificate message.\n- TSL_SCN: Identifies the Subject Common Name in TLS ServerCertificate message.\n"
     UserPlaneLocationArea:
       description: 'Represents location area(s) of the user plane functions which are unable to enforce the provisioned PFD(s) successfully.
 
@@ -261,42 +261,6 @@ components:
 
           '
       description: "Represents the failure reason of the PFD management.  \nPossible values are:\n- MALFUNCTION: This value indicates that something functions wrongly in PFD provisioning\n  or the PFD provisioning does not function at all.\n- RESOURCE_LIMITATION: This value indicates there is resource limitation for PFD storage.\n- SHORT_DELAY: This value indicates that the allowed delay is too short and PFD(s)\n  are not stored.\n- APP_ID_DUPLICATED: The received external application identifier(s) are already\n  provisioned.\n- PARTIAL_FAILURE: The PFD(s) are not provisioned to all PCEFs/TDFs/SMFs.\n- OTHER_REASON: Other reason unspecified.\n"
-    PfdManagement:
-      description: Represents a PFD management resource for a PFD management request.
-      type: object
-      properties:
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        supportedFeatures:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-        pfdDatas:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/PfdData'
-          minProperties: 1
-          description: 'Each element uniquely identifies the PFDs for an external application identifier. Each element is identified in the map via an external application identifier as key. The response shall include successfully provisioned PFD data of application(s).
-
-            '
-        pfdReports:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/PfdReport'
-          minProperties: 1
-          description: 'Supplied by the SCEF and contains the external application identifiers for which PFD(s) are not added or modified successfully. The failure reason is also included. Each element provides the related information for one or more external application identifier(s) and is identified in the map via the failure identifier as key.
-
-            '
-          readOnly: true
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        requestTestNotification:
-          type: boolean
-          description: 'Set to true by the SCS/AS to request the SCEF to send a test notification as defined in clause 5.2.5.3. Set to false or omitted otherwise.
-
-            '
-        websockNotifConfig:
-          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
-      required:
-      - pfdDatas
     PfdData:
       description: 'Represents a PFD request to add, update or remove PFD(s) for one external application identifier.
 
@@ -343,6 +307,42 @@ components:
       required:
       - externalAppIds
       - failureCode
+    PfdManagement:
+      description: Represents a PFD management resource for a PFD management request.
+      type: object
+      properties:
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        supportedFeatures:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+        pfdDatas:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/PfdData'
+          minProperties: 1
+          description: 'Each element uniquely identifies the PFDs for an external application identifier. Each element is identified in the map via an external application identifier as key. The response shall include successfully provisioned PFD data of application(s).
+
+            '
+        pfdReports:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/PfdReport'
+          minProperties: 1
+          description: 'Supplied by the SCEF and contains the external application identifiers for which PFD(s) are not added or modified successfully. The failure reason is also included. Each element provides the related information for one or more external application identifier(s) and is identified in the map via the failure identifier as key.
+
+            '
+          readOnly: true
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        requestTestNotification:
+          type: boolean
+          description: 'Set to true by the SCS/AS to request the SCEF to send a test notification as defined in clause 5.2.5.3. Set to false or omitted otherwise.
+
+            '
+        websockNotifConfig:
+          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
+      required:
+      - pfdDatas
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

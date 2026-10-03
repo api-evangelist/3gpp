@@ -167,30 +167,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    SerializationFormat:
-      anyOf:
-      - type: string
-        enum:
-        - CBOR
-        - JSON
-        - XML
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents a serialization format associated with an RDS port which is applicable\nfor the Rds_serialization_format feature.\nPossible values are\n- CBOR: The CBOR Serialzition format \n- JSON: The JSON Serialzition format\n- XML: The XML Serialzition format\n"
-    ManageEntity:
-      anyOf:
-      - type: string
-        enum:
-        - UE
-        - AS
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the origin that manages the RDS port.  \nPossible values are:\n- UE: Representing the UE.\n- AS: Representing the Application Server.\n"
-      readOnly: true
     ManagePort:
       description: Represents the configuration of a RDS dynamic port management.
       type: object
@@ -217,6 +193,18 @@ components:
           $ref: '#/components/schemas/SerializationFormat'
       required:
       - appId
+    ManageEntity:
+      anyOf:
+      - type: string
+        enum:
+        - UE
+        - AS
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the origin that manages the RDS port.  \nPossible values are:\n- UE: Representing the UE.\n- AS: Representing the Application Server.\n"
+      readOnly: true
     RdsDownlinkDataDeliveryFailure:
       description: Represents the failure delivery result for RDS.
       allOf:
@@ -233,6 +221,18 @@ components:
             description: 'Indicates the serialization format(s) that are supported by the UE on the associated RDS port.
 
               '
+    SerializationFormat:
+      anyOf:
+      - type: string
+        enum:
+        - CBOR
+        - JSON
+        - XML
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents a serialization format associated with an RDS port which is applicable\nfor the Rds_serialization_format feature.\nPossible values are\n- CBOR: The CBOR Serialzition format \n- JSON: The JSON Serialzition format\n- XML: The XML Serialzition format\n"
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

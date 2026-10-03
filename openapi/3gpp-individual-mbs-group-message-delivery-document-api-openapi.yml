@@ -147,6 +147,27 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    MbsGroupMsgDelPatch:
+      description: Represents the requested modifications to an existing MBS Group Message Delivery.
+      type: object
+      properties:
+        payload:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
+        mbsServArea:
+          $ref: '#/components/schemas/MbsServArea'
+        startTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        endTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        notifUri:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        nrRedCapUeInfo:
+          $ref: TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo
+    MbsServArea:
+      description: Represents an MBS Service Area.
+      oneOf:
+      - $ref: TS29571_CommonData.yaml#/components/schemas/MbsServiceArea
+      - $ref: TS29571_CommonData.yaml#/components/schemas/ExternalMbsServiceArea
     MbsGroupMsgDel:
       description: Represents the MBS Group Message Delivery.
       type: object
@@ -185,27 +206,6 @@ components:
       - startTime
       - endTime
       - notifUri
-    MbsGroupMsgDelPatch:
-      description: Represents the requested modifications to an existing MBS Group Message Delivery.
-      type: object
-      properties:
-        payload:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
-        mbsServArea:
-          $ref: '#/components/schemas/MbsServArea'
-        startTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        endTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        notifUri:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
-        nrRedCapUeInfo:
-          $ref: TS29571_CommonData.yaml#/components/schemas/NrRedCapUeInfo
-    MbsServArea:
-      description: Represents an MBS Service Area.
-      oneOf:
-      - $ref: TS29571_CommonData.yaml#/components/schemas/MbsServiceArea
-      - $ref: TS29571_CommonData.yaml#/components/schemas/ExternalMbsServiceArea
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

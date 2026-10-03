@@ -306,18 +306,27 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    systemDN-Type:
-      description: See 3GPP TS 32.300 for details
+    measObjDn-Type:
+      description: DN of the measured object instance (see 3GPP TS 28.550)
+      allOf:
+      - $ref: '#/components/schemas/systemDN-Type'
+    vsDataContainer-Type:
+      description: container for vendor specific data (see 3GPP TS 28.622)
+      type: object
+      properties:
+        vsDataType:
+          type: string
+        vsData:
+          type: string
+        vsDataFormatVersion:
+          type: string
+    websocketHeader-Sec-WebSocket-Protocol-Type:
+      description: Header value for secure WebSocket request. Carries a comma-separated list of subprotocol names, in the order of preference.
       type: string
-      example: SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100
-    websocketHeaderUpgrade-Type:
-      description: Header value for the upgrade to WebSocket request and response.
-      type: string
-      enum:
-      - websocket
-    websocketHeader-Sec-WebSocket-Key-Type:
-      description: Header value for secure WebSocket request. Provides information to the server which is needed in order to confirm that the client is entitled to request an upgrade to WebSocket.
-      type: string
+    producerId-Type:
+      description: DN of the streaming data reporting MnS producer.
+      allOf:
+      - $ref: '#/components/schemas/systemDN-Type'
     performanceInfo-Type:
       description: Information specific to performance data reporting
       type: object
@@ -331,111 +340,17 @@ components:
       required:
       - measObjDn
       - performanceMetrics
-    websocketHeader-Sec-WebSocket-Protocol-Type:
-      description: Header value for secure WebSocket request. Carries a comma-separated list of subprotocol names, in the order of preference.
+    websocketHeader-Sec-WebSocket-Version-Type:
+      description: Header value for secure WebSocket request and response. Carries the WebSocket protocol version to be used.
       type: string
-    traceReference-Type:
-      description: Trace Reference (see clause 5.6 of 3GPP TS 32.422) as stream identifier for streaming trace data reporting
-      type: string
-      example: 4358070034D7
-    uri-Type:
-      description: Resource URI
-      type: string
-    websocketHeaderConnection-Type:
-      description: Header value for the upgrade request and response.
+    websocketHeaderUpgrade-Type:
+      description: Header value for the upgrade to WebSocket request and response.
       type: string
       enum:
-      - Upgrade
-    vsDataContainer-Type:
-      description: container for vendor specific data (see 3GPP TS 28.622)
-      type: object
-      properties:
-        vsDataType:
-          type: string
-        vsData:
-          type: string
-        vsDataFormatVersion:
-          type: string
-    connectionId-Type:
-      $ref: '#/components/schemas/uri-Type'
+      - websocket
     websocketHeader-Sec-WebSocket-Accept-Type:
       description: Header value for secure WebSocket response. Carries hash.
       type: string
-    failedConnectionResponse-Type:
-      type: object
-      properties:
-        error:
-          type: array
-          items:
-            type: object
-            properties:
-              streamId:
-                $ref: '#/components/schemas/streamId-Type'
-              errorReason:
-                type: string
-    performanceMetrics-Type:
-      description: an ordered list of performance metric names (see clause 4.4.1 of 3GPP TS 28.622[11]) whose values are to be reported by the Performance Data Stream Units (see Annex C of TS 28.550 [42]) via this stream. Performance metrics include measurement and KPI
-      type: array
-      items:
-        type: string
-    traceInfo-Type:
-      description: Information specific to trace data reporting
-      allOf:
-      - $ref: TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr
-    websocketHeader-Sec-WebSocket-Extensions-Type:
-      description: Header value for secure WebSocket request. Carries protocol extensions.
-      type: string
-    serializationFormat-Type:
-      type: string
-      enum:
-      - GPB
-      - ASN1
-    connectionInfo-Type:
-      type: object
-      properties:
-        connection:
-          $ref: '#/components/schemas/connectionId-Type'
-        producer:
-          $ref: '#/components/schemas/producerId-Type'
-        streams:
-          type: array
-          items:
-            $ref: '#/components/schemas/streamId-Type'
-    connectionRequest-Type:
-      type: object
-      properties:
-        producer:
-          $ref: '#/components/schemas/producerId-Type'
-        streams:
-          type: array
-          items:
-            $ref: '#/components/schemas/streamInfo-Type'
-    errorResponse-Type:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            errorInfo:
-              type: string
-    streamId-Type:
-      description: globally unique stream identifier
-      type: string
-      example: 26F452550021
-    streamInfoWithReporters-Type:
-      description: Reporting stream meta-data with added information about reporters.
-      type: object
-      properties:
-        streamInfo:
-          $ref: '#/components/schemas/streamInfo-Type'
-        reporters:
-          type: array
-          items:
-            $ref: '#/components/schemas/producerId-Type'
-    producerId-Type:
-      description: DN of the streaming data reporting MnS producer.
-      allOf:
-      - $ref: '#/components/schemas/systemDN-Type'
     streamInfo-Type:
       description: Reporting stream meta-data.
       type: object
@@ -458,15 +373,80 @@ components:
       - streamType
       - serializationFormat
       - streamId
-    websocketHeader-Sec-WebSocket-Version-Type:
-      description: Header value for secure WebSocket request and response. Carries the WebSocket protocol version to be used.
+    serializationFormat-Type:
       type: string
+      enum:
+      - GPB
+      - ASN1
+    streamInfoWithReporters-Type:
+      description: Reporting stream meta-data with added information about reporters.
+      type: object
+      properties:
+        streamInfo:
+          $ref: '#/components/schemas/streamInfo-Type'
+        reporters:
+          type: array
+          items:
+            $ref: '#/components/schemas/producerId-Type'
+    uri-Type:
+      description: Resource URI
+      type: string
+    errorResponse-Type:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            errorInfo:
+              type: string
+    connectionInfo-Type:
+      type: object
+      properties:
+        connection:
+          $ref: '#/components/schemas/connectionId-Type'
+        producer:
+          $ref: '#/components/schemas/producerId-Type'
+        streams:
+          type: array
+          items:
+            $ref: '#/components/schemas/streamId-Type'
+    traceInfo-Type:
+      description: Information specific to trace data reporting
+      allOf:
+      - $ref: TS28623_TraceControlNrm.yaml#/components/schemas/TraceJob-Attr
     analyticsInfo-Type:
       description: Information specific to analytics reporting.
       type: object
       properties:
         activityDetails:
           type: string
+    failedConnectionResponse-Type:
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            type: object
+            properties:
+              streamId:
+                $ref: '#/components/schemas/streamId-Type'
+              errorReason:
+                type: string
+    websocketHeader-Sec-WebSocket-Key-Type:
+      description: Header value for secure WebSocket request. Provides information to the server which is needed in order to confirm that the client is entitled to request an upgrade to WebSocket.
+      type: string
+    connectionId-Type:
+      $ref: '#/components/schemas/uri-Type'
+    performanceMetrics-Type:
+      description: an ordered list of performance metric names (see clause 4.4.1 of 3GPP TS 28.622[11]) whose values are to be reported by the Performance Data Stream Units (see Annex C of TS 28.550 [42]) via this stream. Performance metrics include measurement and KPI
+      type: array
+      items:
+        type: string
+    websocketHeaderConnection-Type:
+      description: Header value for the upgrade request and response.
+      type: string
+      enum:
+      - Upgrade
     streamType-Type:
       type: string
       enum:
@@ -474,7 +454,27 @@ components:
       - PERFORMANCE
       - ANALYTICS
       - PROPRIETARY
-    measObjDn-Type:
-      description: DN of the measured object instance (see 3GPP TS 28.550)
-      allOf:
-      - $ref: '#/components/schemas/systemDN-Type'
+    connectionRequest-Type:
+      type: object
+      properties:
+        producer:
+          $ref: '#/components/schemas/producerId-Type'
+        streams:
+          type: array
+          items:
+            $ref: '#/components/schemas/streamInfo-Type'
+    traceReference-Type:
+      description: Trace Reference (see clause 5.6 of 3GPP TS 32.422) as stream identifier for streaming trace data reporting
+      type: string
+      example: 4358070034D7
+    systemDN-Type:
+      description: See 3GPP TS 32.300 for details
+      type: string
+      example: SubNetwork=ABCNetwork,SubNetwork=MUC01,GNBDUFunction=XYZ0100
+    streamId-Type:
+      description: globally unique stream identifier
+      type: string
+      example: 26F452550021
+    websocketHeader-Sec-WebSocket-Extensions-Type:
+      description: Header value for secure WebSocket request. Carries protocol extensions.
+      type: string

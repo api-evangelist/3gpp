@@ -201,6 +201,22 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    VflTrainingSubsPatch:
+      description: Represents contents for modifying a VFL Training subscription.
+      type: object
+      properties:
+        vflTrainSubs:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub
+          minItems: 1
+        notifUri:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uri
+        notifCorrId:
+          type: string
+          description: Notification correlation identifier.
+        reportingReqs:
+          $ref: TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation
     VflTrainingSubs:
       description: Represents VFL Training subscription.
       type: object
@@ -237,22 +253,6 @@ components:
       required:
       - vflTrainSubs
       - extNwdafId
-    VflTrainingSubsPatch:
-      description: Represents contents for modifying a VFL Training subscription.
-      type: object
-      properties:
-        vflTrainSubs:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_VFLTraining.yaml#/components/schemas/VflTrainingSub
-          minItems: 1
-        notifUri:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uri
-        notifCorrId:
-          type: string
-          description: Notification correlation identifier.
-        reportingReqs:
-          $ref: TS29523_Npcf_EventExposure.yaml#/components/schemas/ReportingInformation
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

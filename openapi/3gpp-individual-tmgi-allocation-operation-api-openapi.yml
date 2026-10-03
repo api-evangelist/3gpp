@@ -234,6 +234,16 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    TMGIAllocationPatch:
+      description: 'Represents the parameters to request the modification of a TMGI Allocation resource.
+
+        '
+      type: object
+      properties:
+        externalGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        mbmsLocArea:
+          $ref: '#/components/schemas/MbmsLocArea'
     TMGIAllocation:
       description: Represents an individual TMGI Allocation resource.
       type: object
@@ -248,16 +258,6 @@ components:
           $ref: '#/components/schemas/MbmsLocArea'
         tmgiExpiration:
           $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRo
-    TMGIAllocationPatch:
-      description: 'Represents the parameters to request the modification of a TMGI Allocation resource.
-
-        '
-      type: object
-      properties:
-        externalGroupId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
-        mbmsLocArea:
-          $ref: '#/components/schemas/MbmsLocArea'
     MbmsLocArea:
       description: 'Represents a user location area whithin which is sent a group message delivery via MBMS request.
 
