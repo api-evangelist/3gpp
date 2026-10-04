@@ -153,17 +153,6 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    MbsGroupMsgDelStatusNotif:
-      description: Represents the status notification information for an MBS group message delivery.
-      type: object
-      properties:
-        delStatus:
-          type: boolean
-          description: 'Indicates the status of Group Message Delivery. true indicates a successful delivery. false indicates a failed delivery.
-
-            '
-      required:
-      - delStatus
     MbsServArea:
       description: Represents an MBS Service Area.
       oneOf:
@@ -207,6 +196,17 @@ components:
       - startTime
       - endTime
       - notifUri
+    MbsGroupMsgDelStatusNotif:
+      description: Represents the status notification information for an MBS group message delivery.
+      type: object
+      properties:
+        delStatus:
+          type: boolean
+          description: 'Indicates the status of Group Message Delivery. true indicates a successful delivery. false indicates a failed delivery.
+
+            '
+      required:
+      - delStatus
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

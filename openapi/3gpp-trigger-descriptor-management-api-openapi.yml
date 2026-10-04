@@ -158,18 +158,6 @@ paths:
                 $ref: '#/components/schemas/ErrorDetail'
 components:
   schemas:
-    TriggerDescriptorRequest:
-      allOf:
-      - $ref: '#/components/schemas/TriggerDescriptorBaseProperties'
-    Hysteresis:
-      type: object
-      properties:
-        timeOfTrueEvaluations:
-          type: integer
-          description: The hysteresis, when present, specifies that the trigger shall not be activated immediately, when the evaluation result changes from false to true, but only when the evaluation results is true for a specified time (which must be a multiple of the evaluation period). Unit is seconds
-        numberOfTrueEvaluations:
-          type: integer
-          description: This information element, when present, specifies that the trigger shall not be activated immediately, when the evaluation result changes from false to true, but only when the evaluation results is true for a specified time (which must be a multiple of the evaluation period) or a specified number of times.
     LinkObject:
       type: object
       description: Defines the structure of a single hypermedia link.
@@ -199,22 +187,38 @@ components:
           description: The HTTP method to use for this action link.
       required:
       - href
-    TriggerDescriptorResponse:
+    TriggerDescriptor:
       allOf:
-      - $ref: '#/components/schemas/TriggerDescriptor'
+      - $ref: '#/components/schemas/TriggerDescriptorBaseProperties'
       - type: object
         properties:
-          _links:
-            type: object
-            description: Hypermedia links for trigger descriptor
-            allOf:
-            - $ref: '#/components/schemas/SelfLink'
-            example:
-              self:
-                href: '{root-url}/plan-management/v1/trigger-descriptors/trigger-001'
-                templated: true
-                type: application/json
-                title: The newly created TriggerDescriptor
+          id:
+            type: string
+            description: Unique id of the plan configuration descriptor
+            example: trigger-001
+          currentEvaluationResult:
+            type: boolean
+            default: false
+            description: The current result of evaluating the "condition-expression".
+            example: false
+          lastModifiedAt:
+            type: string
+            format: date-time
+            description: The date and time at which the trigger condition was modified the last time by a MnS consumer. Upon creation of the trigger condition descriptor the value of the information element is set to the date and time at which the descriptor is created.
+            example: '2025-03-06T16:50:29-08:00'
+          lastTriggeredAt:
+            type: string
+            format: date-time
+            description: The date and time at which the evaluation result of the trigger condition changed the last time from "False" to "True".
+            example: '2025-03-06T16:50:29-08:00'
+          isTriggerActive:
+            type: boolean
+            default: false
+            description: The indication if the trigger can start activation jobs (trigger is active), or if the trigger cannot start activation jobs (trigger is inactive).
+            example: false
+        required:
+        - conditionExpression
+        - evaluationPeriod
     ErrorDetail:
       type: object
       properties:
@@ -267,82 +271,6 @@ components:
       required:
       - type
       - badDataNode
-    DescriptorListEntry:
-      type: object
-      properties:
-        id:
-          type: string
-          description: id of the descriptor.
-          example: plan-descriptor-1
-        name:
-          type: string
-          description: name of the descriptor.
-          example: Dublin East Rollout
-        version:
-          type: string
-          description: version of the descriptor.
-          example: 1.0.0
-        description:
-          type: string
-          description: description/purpose of the descriptor.
-          example: plan-descriptor-1
-      required:
-      - id
-    SelfLink:
-      type: object
-      description: Hypermedia links for this resource, including fixed and dynamic relations.
-      properties:
-        self:
-          allOf:
-          - $ref: '#/components/schemas/LinkObject'
-          description: A link to the resource itself.
-      additionalProperties:
-        $ref: '#/components/schemas/LinkObject'
-      required:
-      - self
-      example:
-        self:
-          href: '{root-url}/plan-management/v1/plan-descriptors/pd-001'
-          templated: true
-          type: application/json
-          title: The newly created PlanConfigurationDescriptor
-        help:
-          href: '{root-url}/help-service/v1/topics/plan-descriptors'
-          templated: true
-          type: application/json
-          title: online help for the plan descriptor
-    TriggerDescriptor:
-      allOf:
-      - $ref: '#/components/schemas/TriggerDescriptorBaseProperties'
-      - type: object
-        properties:
-          id:
-            type: string
-            description: Unique id of the plan configuration descriptor
-            example: trigger-001
-          currentEvaluationResult:
-            type: boolean
-            default: false
-            description: The current result of evaluating the "condition-expression".
-            example: false
-          lastModifiedAt:
-            type: string
-            format: date-time
-            description: The date and time at which the trigger condition was modified the last time by a MnS consumer. Upon creation of the trigger condition descriptor the value of the information element is set to the date and time at which the descriptor is created.
-            example: '2025-03-06T16:50:29-08:00'
-          lastTriggeredAt:
-            type: string
-            format: date-time
-            description: The date and time at which the evaluation result of the trigger condition changed the last time from "False" to "True".
-            example: '2025-03-06T16:50:29-08:00'
-          isTriggerActive:
-            type: boolean
-            default: false
-            description: The indication if the trigger can start activation jobs (trigger is active), or if the trigger cannot start activation jobs (trigger is inactive).
-            example: false
-        required:
-        - conditionExpression
-        - evaluationPeriod
     TriggerDescriptorBaseProperties:
       type: object
       required:
@@ -401,6 +329,78 @@ components:
           - $ref: '#/components/schemas/Hysteresis'
           description: The hysteresis, when present, specifies that the trigger shall not be activated immediately when the evaluation result changes from false to true or a specified number of times.  Values greater or equal to 1 are allowed
       additionalProperties: true
+    DescriptorListEntry:
+      type: object
+      properties:
+        id:
+          type: string
+          description: id of the descriptor.
+          example: plan-descriptor-1
+        name:
+          type: string
+          description: name of the descriptor.
+          example: Dublin East Rollout
+        version:
+          type: string
+          description: version of the descriptor.
+          example: 1.0.0
+        description:
+          type: string
+          description: description/purpose of the descriptor.
+          example: plan-descriptor-1
+      required:
+      - id
+    TriggerDescriptorResponse:
+      allOf:
+      - $ref: '#/components/schemas/TriggerDescriptor'
+      - type: object
+        properties:
+          _links:
+            type: object
+            description: Hypermedia links for trigger descriptor
+            allOf:
+            - $ref: '#/components/schemas/SelfLink'
+            example:
+              self:
+                href: '{root-url}/plan-management/v1/trigger-descriptors/trigger-001'
+                templated: true
+                type: application/json
+                title: The newly created TriggerDescriptor
+    TriggerDescriptorRequest:
+      allOf:
+      - $ref: '#/components/schemas/TriggerDescriptorBaseProperties'
+    SelfLink:
+      type: object
+      description: Hypermedia links for this resource, including fixed and dynamic relations.
+      properties:
+        self:
+          allOf:
+          - $ref: '#/components/schemas/LinkObject'
+          description: A link to the resource itself.
+      additionalProperties:
+        $ref: '#/components/schemas/LinkObject'
+      required:
+      - self
+      example:
+        self:
+          href: '{root-url}/plan-management/v1/plan-descriptors/pd-001'
+          templated: true
+          type: application/json
+          title: The newly created PlanConfigurationDescriptor
+        help:
+          href: '{root-url}/help-service/v1/topics/plan-descriptors'
+          templated: true
+          type: application/json
+          title: online help for the plan descriptor
+    Hysteresis:
+      type: object
+      properties:
+        timeOfTrueEvaluations:
+          type: integer
+          description: The hysteresis, when present, specifies that the trigger shall not be activated immediately, when the evaluation result changes from false to true, but only when the evaluation results is true for a specified time (which must be a multiple of the evaluation period). Unit is seconds
+        numberOfTrueEvaluations:
+          type: integer
+          description: This information element, when present, specifies that the trigger shall not be activated immediately, when the evaluation result changes from false to true, but only when the evaluation results is true for a specified time (which must be a multiple of the evaluation period) or a specified number of times.
 externalDocs:
   description: 3GPP TS 28.572; Generic management services
   url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.572/

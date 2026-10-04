@@ -203,16 +203,22 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    MbsPpDataPatch:
-      description: 'Represents the requested modification to existing MBS Parameters Provisioning data.
-
-        '
+    MbsPpData:
+      description: Represents MBS Parameters Provisioning data.
       type: object
       properties:
+        afId:
+          type: string
+        mtcProviderId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation
         mbsSessAuthData:
           $ref: '#/components/schemas/MbsSessAuthData'
         mbsSessAssistInfo:
           $ref: '#/components/schemas/MbsSessAssistInfo'
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afId
     MbsSessAuthData:
       description: Represents the MBS Session Authorization data.
       type: object
@@ -245,22 +251,16 @@ components:
           minItems: 1
       required:
       - mbsSessAssistData
-    MbsPpData:
-      description: Represents MBS Parameters Provisioning data.
+    MbsPpDataPatch:
+      description: 'Represents the requested modification to existing MBS Parameters Provisioning data.
+
+        '
       type: object
       properties:
-        afId:
-          type: string
-        mtcProviderId:
-          $ref: TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation
         mbsSessAuthData:
           $ref: '#/components/schemas/MbsSessAuthData'
         mbsSessAssistInfo:
           $ref: '#/components/schemas/MbsSessAssistInfo'
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - afId
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

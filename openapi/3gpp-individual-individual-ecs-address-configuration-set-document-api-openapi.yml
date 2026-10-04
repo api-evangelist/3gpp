@@ -87,6 +87,26 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    EcsAddrInfoPatch:
+      description: 'Represents the requested modifications to an ECS Address Configuration Information Set.
+
+        '
+      type: object
+      properties:
+        ecsServerAddr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/EcsServerAddr
+        ecsAuthMethods:
+          type: array
+          items:
+            $ref: TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod
+          minItems: 1
+        supportedPlmns:
+          type: array
+          items:
+            $ref: TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn
+          minItems: 1
+        spatialValidityCond:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond
     EcsAddrInfo:
       description: Represents an ECS Address Configuration Information Set.
       type: object
@@ -115,26 +135,6 @@ components:
           $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
       required:
       - ecsServerAddr
-    EcsAddrInfoPatch:
-      description: 'Represents the requested modifications to an ECS Address Configuration Information Set.
-
-        '
-      type: object
-      properties:
-        ecsServerAddr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/EcsServerAddr
-        ecsAuthMethods:
-          type: array
-          items:
-            $ref: TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod
-          minItems: 1
-        supportedPlmns:
-          type: array
-          items:
-            $ref: TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn
-          minItems: 1
-        spatialValidityCond:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

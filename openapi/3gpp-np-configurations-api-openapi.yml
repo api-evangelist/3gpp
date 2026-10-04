@@ -160,6 +160,33 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    ConfigurationNotification:
+      description: Represents a configuration result notification.
+      type: object
+      properties:
+        configuration:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        configResults:
+          type: array
+          items:
+            $ref: TS29122_CommonData.yaml#/components/schemas/ConfigResult
+          minItems: 1
+          description: The grouping configuration result notification provided by the SCEF.
+        appliedParam:
+          $ref: TS29122_MonitoringEvent.yaml#/components/schemas/AppliedParameterConfiguration
+      required:
+      - configuration
+    MPSforMsgInd:
+      anyOf:
+      - type: string
+        enum:
+        - DISABLE_MPS_FOR_MSG
+        - ENABLE_MPS_FOR_MSG
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Indicates the MPS for Messaging for the priority treatment of messaging service \nis enabled or disabled.\nPossible values are:\n- DISABLE_MPS_FOR_MSG: Disable MPS for messaging service of the UE.\n- ENABLE_MPS_FOR_MSG: Enable MPS for messaging service of the UE.\n"
     NpConfiguration:
       description: Represents a network parameters configuration.
       type: object
@@ -217,33 +244,6 @@ components:
         - msisdn
       - required:
         - externalGroupId
-    ConfigurationNotification:
-      description: Represents a configuration result notification.
-      type: object
-      properties:
-        configuration:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        configResults:
-          type: array
-          items:
-            $ref: TS29122_CommonData.yaml#/components/schemas/ConfigResult
-          minItems: 1
-          description: The grouping configuration result notification provided by the SCEF.
-        appliedParam:
-          $ref: TS29122_MonitoringEvent.yaml#/components/schemas/AppliedParameterConfiguration
-      required:
-      - configuration
-    MPSforMsgInd:
-      anyOf:
-      - type: string
-        enum:
-        - DISABLE_MPS_FOR_MSG
-        - ENABLE_MPS_FOR_MSG
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Indicates the MPS for Messaging for the priority treatment of messaging service \nis enabled or disabled.\nPossible values are:\n- DISABLE_MPS_FOR_MSG: Disable MPS for messaging service of the UE.\n- ENABLE_MPS_FOR_MSG: Enable MPS for messaging service of the UE.\n"
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

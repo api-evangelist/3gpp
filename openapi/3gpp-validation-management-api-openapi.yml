@@ -250,27 +250,6 @@ paths:
                 $ref: '#/components/schemas/ErrorDetail'
 components:
   schemas:
-    SummaryStatus:
-      type: object
-      properties:
-        notFinished:
-          type: integer
-          example: 1
-        succeeded:
-          type: integer
-          example: 3
-        failed:
-          type: integer
-          example: 3
-        rollbackSucceeded:
-          type: integer
-          example: 0
-        rollbackFailed:
-          type: integer
-          example: 0
-        conflicting:
-          type: integer
-          example: 0
     ExecutionDetails:
       type: object
       description: Details of the execution of the operations that are contained in the planned configuration or planned configuration group referenced in the job.
@@ -295,42 +274,6 @@ components:
           conflicting: 0
         results: []
         memberConflicts: []
-    LinkObject:
-      type: object
-      description: Defines the structure of a single hypermedia link.
-      properties:
-        href:
-          type: string
-          format: uri-reference
-          description: The target URI of the link.
-        templated:
-          type: boolean
-          description: Indicates if the href is a URI Template (RFC 6570).
-          default: true
-        type:
-          type: string
-          description: The content type expected when following this link (MIME type).
-        title:
-          type: string
-          description: A human-readable title that describes the link's purpose.
-        method:
-          type: string
-          enum:
-          - GET
-          - POST
-          - PUT
-          - DELETE
-          - PATCH
-          description: The HTTP method to use for this action link.
-      required:
-      - href
-    EmbeddedPlanGroup:
-      type: object
-      required:
-      - planConfigGroupDescr
-      properties:
-        planConfigGroupDescr:
-          $ref: '#/components/schemas/PlanConfigurationGroupDescriptor'
     ConfigChangesContentType:
       type: string
       description: The supported configuration content types.
@@ -338,70 +281,6 @@ components:
       - YANG_BASED
       - OPENAPI_BASED
       default: YANG_BASED
-    MemberOp:
-      type: object
-      description: The identification of two or more operation members that have a conflict.
-      properties:
-        planConfigDescrId:
-          type: string
-          description: The plan configuration descriptor Id.
-        target:
-          description: The path of the target change resource.
-          type: string
-      required:
-      - planConfigDescrId
-      - target
-      oneOf:
-      - required:
-        - changeId
-        properties:
-          changeId:
-            type: string
-            description: The identifier of the operation. It may or may not be provided If provided, it shall be unique within an instance of "configChanges" and it shall be provided for all changes in "configChanges".
-            example: change-cell-001-1
-      - required:
-        - changeIndex
-        properties:
-          changeIndex:
-            type: integer
-            description: The identification of the operation. It is the positional index of the operation in the operation set ("changeIndex"). The positional index of the leftmost element is "0". Exactly one of "changeId" or "changeIndex" shall be provided.
-            example: 0
-    MemberConflict:
-      type: object
-      properties:
-        memberConflict:
-          type: array
-          items:
-            $ref: '#/components/schemas/MemberOp'
-    JobDetails:
-      properties:
-        message:
-          type: string
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/ErrorDetail'
-      additionalProperties: true
-    Member:
-      type: object
-      description: "Defines a member identified by EITHER a single Plan Configuration Descriptor ID \nOR a Plan Configuration Group Descriptor ID, but not both.\n"
-      oneOf:
-      - type: object
-        required:
-        - planConfigDescrId
-        properties:
-          planConfigDescrId:
-            type: string
-            description: Unique id of the plan configuration descriptor.
-            example: pcd-001
-      - type: object
-        required:
-        - planConfigGroupDescrId
-        properties:
-          planConfigGroupDescrId:
-            type: string
-            description: Unique id of the plan configuration group descriptor.
-            example: pgc-001
     ErrorDetail:
       type: object
       properties:
@@ -454,35 +333,75 @@ components:
       required:
       - type
       - badDataNode
-    ValidationJobRequest:
+    MemberOp:
+      type: object
+      description: The identification of two or more operation members that have a conflict.
+      properties:
+        planConfigDescrId:
+          type: string
+          description: The plan configuration descriptor Id.
+        target:
+          description: The path of the target change resource.
+          type: string
+      required:
+      - planConfigDescrId
+      - target
+      oneOf:
+      - required:
+        - changeId
+        properties:
+          changeId:
+            type: string
+            description: The identifier of the operation. It may or may not be provided If provided, it shall be unique within an instance of "configChanges" and it shall be provided for all changes in "configChanges".
+            example: change-cell-001-1
+      - required:
+        - changeIndex
+        properties:
+          changeIndex:
+            type: integer
+            description: The identification of the operation. It is the positional index of the operation in the operation set ("changeIndex"). The positional index of the leftmost element is "0". Exactly one of "changeId" or "changeIndex" shall be provided.
+            example: 0
+    EmbeddedPlanGroup:
+      type: object
+      required:
+      - planConfigGroupDescr
+      properties:
+        planConfigGroupDescr:
+          $ref: '#/components/schemas/PlanConfigurationGroupDescriptor'
+    ValidationJob:
       allOf:
       - $ref: '#/components/schemas/ValidationJobBaseProperties'
-      example:
-        name: 5G-Dublin-East-Rollout
-        description: Optimize the 5G network in Dublin East
-        planConfigDescr:
-          activationMode: ATOMIC
-          customProperties:
-            technology-type: NR
-            location: Dublin
-          configChangesContentType: YANG_BASED
-          configChanges:
-          - modifyOperator: merge
-            changeId: Dublin-Center_DC-01_555777999
-            target: /SubNetwork=Dublin-Center/ManagedElement=DC-001/NRCellDU=1
-            value:
-              ssbDuration: 2
-    CancelRequest:
-      type: object
-      properties:
-        cancelRequest:
-          type: boolean
-          description: Must be set to true to initiate cancellation.
-          enum:
-          - true
-      required:
-      - cancelRequest
-      additionalProperties: false
+      - $ref: '#/components/schemas/ValidationJobStatus'
+      - type: object
+        properties:
+          id:
+            type: string
+            description: id of the validation job
+            example: job-id-3985199134
+          currentConfigTime:
+            type: string
+            format: date-time
+            description: The date and time of the current configuration state against which the planned configuration or planned configuration group is validated.
+          cancelRequest:
+            type: boolean
+            description: boolean indicating the request of a job cancellation
+            default: false
+            example: true
+          jobDetails:
+            $ref: '#/components/schemas/JobDetails'
+          validationDetails:
+            $ref: '#/components/schemas/ExecutionDetails'
+          _links:
+            $ref: '#/components/schemas/ValidationJobLinks'
+        required:
+        - id
+        - jobState
+        - jobDetails
+        - cancelRequest
+        - validationMode
+        - validationState
+        - validationDetails
+        - _links
     ValidationJobBaseProperties:
       type: object
       properties:
@@ -528,6 +447,49 @@ components:
             value:
               ssbDuration: 2
       additionalProperties: true
+    JobListEntry:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            description: id of the job.
+            example: plan-job-1
+          name:
+            type: string
+            description: name of the job.
+            example: Dublin East Rollout Job
+          description:
+            type: string
+            description: description/purpose of the job.
+            example: Job to do dublin east rollout
+          jobState:
+            $ref: '#/components/schemas/JobState'
+        required:
+        - id
+        - jobState
+    ValidationJobStatus:
+      type: object
+      required:
+      - jobState
+      - validationState
+      properties:
+        jobState:
+          allOf:
+          - $ref: '#/components/schemas/JobState'
+          example: COMPLETED
+        validationState:
+          allOf:
+          - $ref: '#/components/schemas/ValidationState'
+          example: NOT_VALIDATED
+        startedAt:
+          type: string
+          format: date-time
+          example: '2024-12-02T13:16:54.088Z'
+        stoppedAt:
+          type: string
+          format: date-time
+          example: '2024-12-02T13:16:58.088Z'
     PlanConfigurationDescriptorRequest:
       allOf:
       - $ref: '#/components/schemas/PlanConfigurationDescriptorBaseProperties'
@@ -540,81 +502,42 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/ConfigChangeWritable'
-    PlanConfigurationGroupDescriptor:
+    PlanGroupRef:
       type: object
       required:
-      - members
+      - planConfigGroupDescrId
       properties:
-        id:
+        planConfigGroupDescrId:
           type: string
-          description: Unique id of the plan group configuration descriptor
-          example: plan-001
-        name:
+    LinkObject:
+      type: object
+      description: Defines the structure of a single hypermedia link.
+      properties:
+        href:
           type: string
-          description: Descriptive name of the plan group configuration descriptor
-          example: Rollout-5G-Dublin-East
-        version:
-          type: string
-          description: version of the plan group configuration descriptor
-          example: 1.0.0
-        description:
-          type: string
-          description: Used to describe the purpose of the plan group configuration
-          example: This is the plan for the new 5G rollout in Dublin east.
-        customProperties:
-          type: object
-          description: A dynamic set of custom properties provided by client
-          additionalProperties: true
-          example:
-            technology-type: NR
-            location: Dublin
-        isOrdered:
+          format: uri-reference
+          description: The target URI of the link.
+        templated:
           type: boolean
-          description: Specifies if the members of the planned configuration group are ordered. When ordered, the planned configuration group members shall be validated/activated in the specified order. When not ordered the planned configuration group members can be validated/activated in any order
-          default: false
-        isFailOnMemberConflicts:
-          type: boolean
-          description: Specifies if the activation shall fail on detection of conflicts between planned configuration group members, or if the operations shall be processed as if there were no conflicts
-          default: false
-        activationMode:
+          description: Indicates if the href is a URI Template (RFC 6570).
+          default: true
+        type:
+          type: string
+          description: The content type expected when following this link (MIME type).
+        title:
+          type: string
+          description: A human-readable title that describes the link's purpose.
+        method:
           type: string
           enum:
-          - ATOMIC
-          - BEST_EFFORT
-          - STOP_ON_ERROR
-          default: BEST_EFFORT
-          description: Specifies the execution behavior when the plan configuration group is activated
-          example: BEST_EFFORT
-        validationState:
-          type: string
-          enum:
-          - NOT_VALIDATED
-          - PARTIALLY_VALID
-          - VALID
-          - INVALID
-          default: NOT_VALIDATED
-          description: The validation state for the last time plan configuration group was validated
-          example: NOT_VALIDATED
-        lastModifiedAt:
-          type: string
-          format: date-time
-          description: the last time the plan was modified
-          example: '2025-03-06T16:50:26-08:00'
-        lastValidatedAt:
-          type: string
-          format: date-time
-          description: last time the plan was validated
-          example: '2025-03-06T16:50:29-08:00'
-        members:
-          type: array
-          description: list of plan or plan group descriptor identifiers
-          items:
-            $ref: '#/components/schemas/Member'
-          example:
-          - planConfigDescrId: pcd-network-101
-          - planConfigGroupDescrId: pgc-europe-east-group
-          - planConfigDescrId: pcd-radio-tuning-005
-          - planConfigGroupDescrId: pgc-5g-core-rollout
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+          description: The HTTP method to use for this action link.
+      required:
+      - href
     ValidationJobLinks:
       allOf:
       - type: object
@@ -741,6 +664,124 @@ components:
         - status
         - validationDetails
         - cancel
+    PlanRef:
+      type: object
+      required:
+      - planConfigDescrId
+      properties:
+        planConfigDescrId:
+          type: string
+    PlanConfigurationDescriptorBaseProperties:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Descriptive name of the plan group configuration descriptor
+          example: Rollout-5G-Dublin-East
+        version:
+          type: string
+          description: The version of the planned configuration. Its format is implementation specific.
+          example: 1.0.0
+        description:
+          type: string
+          description: Used to describe the purpose of the plan configuration
+          example: This is the plan for the new 5G rollout in Dublin east.
+        customProperties:
+          type: object
+          description: A dynamic set of custom properties provided by client
+          additionalProperties: true
+          example:
+            technology-type: NR
+            location: Dublin
+        configChangesContentType:
+          $ref: '#/components/schemas/ConfigChangesContentType'
+        activationMode:
+          type: string
+          enum:
+          - ATOMIC
+          - BEST_EFFORT
+          - STOP_ON_ERROR
+          default: BEST_EFFORT
+          description: Specifies the execution behavior when the plan is activated
+          example: BEST_EFFORT
+    ValidationJobRequest:
+      allOf:
+      - $ref: '#/components/schemas/ValidationJobBaseProperties'
+      example:
+        name: 5G-Dublin-East-Rollout
+        description: Optimize the 5G network in Dublin East
+        planConfigDescr:
+          activationMode: ATOMIC
+          customProperties:
+            technology-type: NR
+            location: Dublin
+          configChangesContentType: YANG_BASED
+          configChanges:
+          - modifyOperator: merge
+            changeId: Dublin-Center_DC-01_555777999
+            target: /SubNetwork=Dublin-Center/ManagedElement=DC-001/NRCellDU=1
+            value:
+              ssbDuration: 2
+    SummaryStatus:
+      type: object
+      properties:
+        notFinished:
+          type: integer
+          example: 1
+        succeeded:
+          type: integer
+          example: 3
+        failed:
+          type: integer
+          example: 3
+        rollbackSucceeded:
+          type: integer
+          example: 0
+        rollbackFailed:
+          type: integer
+          example: 0
+        conflicting:
+          type: integer
+          example: 0
+    EmbeddedPlan:
+      type: object
+      required:
+      - planConfigDescr
+      properties:
+        planConfigDescr:
+          $ref: '#/components/schemas/PlanConfigurationDescriptorRequest'
+    JobState:
+      type: string
+      enum:
+      - NOT_STARTED
+      - QUEUED
+      - RUNNING
+      - CANCELLING
+      - CANCELLED
+      - COMPLETED
+      - FAILED
+      default: NOT_STARTED
+      example: COMPLETED
+    Member:
+      type: object
+      description: "Defines a member identified by EITHER a single Plan Configuration Descriptor ID \nOR a Plan Configuration Group Descriptor ID, but not both.\n"
+      oneOf:
+      - type: object
+        required:
+        - planConfigDescrId
+        properties:
+          planConfigDescrId:
+            type: string
+            description: Unique id of the plan configuration descriptor.
+            example: pcd-001
+      - type: object
+        required:
+        - planConfigGroupDescrId
+        properties:
+          planConfigGroupDescrId:
+            type: string
+            description: Unique id of the plan configuration group descriptor.
+            example: pgc-001
     ValidationState:
       type: string
       enum:
@@ -835,82 +876,53 @@ components:
       required:
       - modifyOperator
       - target
-    ValidationJob:
-      allOf:
-      - $ref: '#/components/schemas/ValidationJobBaseProperties'
-      - $ref: '#/components/schemas/ValidationJobStatus'
-      - type: object
-        properties:
-          id:
-            type: string
-            description: id of the validation job
-            example: job-id-3985199134
-          currentConfigTime:
-            type: string
-            format: date-time
-            description: The date and time of the current configuration state against which the planned configuration or planned configuration group is validated.
-          cancelRequest:
-            type: boolean
-            description: boolean indicating the request of a job cancellation
-            default: false
-            example: true
-          jobDetails:
-            $ref: '#/components/schemas/JobDetails'
-          validationDetails:
-            $ref: '#/components/schemas/ExecutionDetails'
-          _links:
-            $ref: '#/components/schemas/ValidationJobLinks'
-        required:
-        - id
-        - jobState
-        - jobDetails
-        - cancelRequest
-        - validationMode
-        - validationState
-        - validationDetails
-        - _links
-    PlanRef:
+    FallbackPlanRef:
       type: object
       required:
-      - planConfigDescrId
+      - fallbackConfigDescrId
       properties:
-        planConfigDescrId:
+        fallbackConfigDescrId:
           type: string
-    JobListEntry:
-      allOf:
-      - type: object
-        properties:
-          id:
-            type: string
-            description: id of the job.
-            example: plan-job-1
-          name:
-            type: string
-            description: name of the job.
-            example: Dublin East Rollout Job
-          description:
-            type: string
-            description: description/purpose of the job.
-            example: Job to do dublin east rollout
-          jobState:
-            $ref: '#/components/schemas/JobState'
-        required:
-        - id
-        - jobState
-    PlanConfigurationDescriptorBaseProperties:
+    JobDetails:
+      properties:
+        message:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrorDetail'
+      additionalProperties: true
+    CancelRequest:
       type: object
       properties:
+        cancelRequest:
+          type: boolean
+          description: Must be set to true to initiate cancellation.
+          enum:
+          - true
+      required:
+      - cancelRequest
+      additionalProperties: false
+    PlanConfigurationGroupDescriptor:
+      type: object
+      required:
+      - members
+      properties:
+        id:
+          type: string
+          description: Unique id of the plan group configuration descriptor
+          example: plan-001
         name:
           type: string
           description: Descriptive name of the plan group configuration descriptor
           example: Rollout-5G-Dublin-East
         version:
           type: string
-          description: The version of the planned configuration. Its format is implementation specific.
+          description: version of the plan group configuration descriptor
           example: 1.0.0
         description:
           type: string
-          description: Used to describe the purpose of the plan configuration
+          description: Used to describe the purpose of the plan group configuration
           example: This is the plan for the new 5G rollout in Dublin east.
         customProperties:
           type: object
@@ -919,8 +931,14 @@ components:
           example:
             technology-type: NR
             location: Dublin
-        configChangesContentType:
-          $ref: '#/components/schemas/ConfigChangesContentType'
+        isOrdered:
+          type: boolean
+          description: Specifies if the members of the planned configuration group are ordered. When ordered, the planned configuration group members shall be validated/activated in the specified order. When not ordered the planned configuration group members can be validated/activated in any order
+          default: false
+        isFailOnMemberConflicts:
+          type: boolean
+          description: Specifies if the activation shall fail on detection of conflicts between planned configuration group members, or if the operations shall be processed as if there were no conflicts
+          default: false
         activationMode:
           type: string
           enum:
@@ -928,63 +946,45 @@ components:
           - BEST_EFFORT
           - STOP_ON_ERROR
           default: BEST_EFFORT
-          description: Specifies the execution behavior when the plan is activated
+          description: Specifies the execution behavior when the plan configuration group is activated
           example: BEST_EFFORT
-    PlanGroupRef:
-      type: object
-      required:
-      - planConfigGroupDescrId
-      properties:
-        planConfigGroupDescrId:
-          type: string
-    ValidationJobStatus:
-      type: object
-      required:
-      - jobState
-      - validationState
-      properties:
-        jobState:
-          allOf:
-          - $ref: '#/components/schemas/JobState'
-          example: COMPLETED
         validationState:
-          allOf:
-          - $ref: '#/components/schemas/ValidationState'
+          type: string
+          enum:
+          - NOT_VALIDATED
+          - PARTIALLY_VALID
+          - VALID
+          - INVALID
+          default: NOT_VALIDATED
+          description: The validation state for the last time plan configuration group was validated
           example: NOT_VALIDATED
-        startedAt:
+        lastModifiedAt:
           type: string
           format: date-time
-          example: '2024-12-02T13:16:54.088Z'
-        stoppedAt:
+          description: the last time the plan was modified
+          example: '2025-03-06T16:50:26-08:00'
+        lastValidatedAt:
           type: string
           format: date-time
-          example: '2024-12-02T13:16:58.088Z'
-    JobState:
-      type: string
-      enum:
-      - NOT_STARTED
-      - QUEUED
-      - RUNNING
-      - CANCELLING
-      - CANCELLED
-      - COMPLETED
-      - FAILED
-      default: NOT_STARTED
-      example: COMPLETED
-    EmbeddedPlan:
+          description: last time the plan was validated
+          example: '2025-03-06T16:50:29-08:00'
+        members:
+          type: array
+          description: list of plan or plan group descriptor identifiers
+          items:
+            $ref: '#/components/schemas/Member'
+          example:
+          - planConfigDescrId: pcd-network-101
+          - planConfigGroupDescrId: pgc-europe-east-group
+          - planConfigDescrId: pcd-radio-tuning-005
+          - planConfigGroupDescrId: pgc-5g-core-rollout
+    MemberConflict:
       type: object
-      required:
-      - planConfigDescr
       properties:
-        planConfigDescr:
-          $ref: '#/components/schemas/PlanConfigurationDescriptorRequest'
-    FallbackPlanRef:
-      type: object
-      required:
-      - fallbackConfigDescrId
-      properties:
-        fallbackConfigDescrId:
-          type: string
+        memberConflict:
+          type: array
+          items:
+            $ref: '#/components/schemas/MemberOp'
 externalDocs:
   description: 3GPP TS 28.572; Generic management services
   url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.572/

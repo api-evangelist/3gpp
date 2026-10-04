@@ -164,6 +164,18 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    EnrolFailReason:
+      type: object
+      description: Represents the failure reason for not those APIs not enrolled successfully.
+      properties:
+        apiName:
+          items:
+            type: string
+        failureCode:
+          $ref: '#/components/schemas/EnrolFailCause'
+      required:
+      - apiName
+      - failureCode
     EnrolFailCause:
       anyOf:
       - type: string
@@ -188,31 +200,6 @@ components:
           description: 'Represents the list of service APIs that the API Invoker is allowed to invoke.
 
             '
-    EnrolFailReason:
-      type: object
-      description: Represents the failure reason for not those APIs not enrolled successfully.
-      properties:
-        apiName:
-          items:
-            type: string
-        failureCode:
-          $ref: '#/components/schemas/EnrolFailCause'
-      required:
-      - apiName
-      - failureCode
-    ApiInfo:
-      type: object
-      description: Represents service API identification related information.
-      properties:
-        apiName:
-          type: string
-        supportedApiVersions:
-          type: array
-          items:
-            type: string
-          minItems: 1
-      required:
-      - apiName
     OnboardingCriteria:
       type: object
       description: Represents the onboarding criteria information.
@@ -266,30 +253,19 @@ components:
       required:
       - onboardingInformation
       - notificationDestination
-    OnboardingInformation:
+    ApiInfo:
       type: object
-      description: Represents the on-boarding information of the API Invoker.
+      description: Represents service API identification related information.
       properties:
-        apiInvokerPublicKey:
+        apiName:
           type: string
-          description: The API Invoker's public key
-        apiInvokerCertificate:
-          type: string
-          description: 'The API Invoker''s generic client certificate, provided by the CAPIF core function.
-
-            '
-        onboardingSecret:
-          type: string
-          description: 'The API Invoker''s onboarding secret, provided by the CAPIF core function.
-
-            '
-        onboardingCriteria:
+        supportedApiVersions:
           type: array
           items:
-            $ref: '#/components/schemas/OnboardingCriteria'
+            type: string
           minItems: 1
       required:
-      - apiInvokerPublicKey
+      - apiName
     RelatedCriteria:
       type: object
       description: Represents onboarding related criteria.
@@ -316,6 +292,30 @@ components:
         - serviceAPICategories
       - required:
         - apis
+    OnboardingInformation:
+      type: object
+      description: Represents the on-boarding information of the API Invoker.
+      properties:
+        apiInvokerPublicKey:
+          type: string
+          description: The API Invoker's public key
+        apiInvokerCertificate:
+          type: string
+          description: 'The API Invoker''s generic client certificate, provided by the CAPIF core function.
+
+            '
+        onboardingSecret:
+          type: string
+          description: 'The API Invoker''s onboarding secret, provided by the CAPIF core function.
+
+            '
+        onboardingCriteria:
+          type: array
+          items:
+            $ref: '#/components/schemas/OnboardingCriteria'
+          minItems: 1
+      required:
+      - apiInvokerPublicKey
     APIInvokerEnrolmentDetailsPatch:
       type: object
       description: Represents an API Invoker's enrolment details to be updated.

@@ -243,20 +243,6 @@ components:
             $ref: TS29571_CommonData.yaml#/components/schemas/TypeAllocationCode
           minItems: 1
           description: Related UE model's IMEI-TAC values.
-    RacsProvisioningDataPatch:
-      description: 'Represents parameters to request the modification of a UE''s radio capability data.
-
-        '
-      type: object
-      properties:
-        racsConfigs:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/RacsConfigurationRm'
-          minProperties: 1
-          description: 'Identifies the configuration related to manufactuer specific UE radio capability. Each element uniquely identifies an RACS configuration for an RACS ID and is identified in the map via the RACS ID as key.
-
-            '
     RacsConfiguration:
       description: Represents a single UE radio capability configuration data.
       type: object
@@ -326,6 +312,20 @@ components:
           readOnly: true
       required:
       - racsConfigs
+    RacsProvisioningDataPatch:
+      description: 'Represents parameters to request the modification of a UE''s radio capability data.
+
+        '
+      type: object
+      properties:
+        racsConfigs:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/RacsConfigurationRm'
+          minProperties: 1
+          description: 'Identifies the configuration related to manufactuer specific UE radio capability. Each element uniquely identifies an RACS configuration for an RACS ID and is identified in the map via the RACS ID as key.
+
+            '
     RacsFailureReport:
       description: Represents a radio capability data provisioning failure report.
       type: object

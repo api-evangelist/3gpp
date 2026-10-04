@@ -120,6 +120,27 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    N6DelayMeasurementInfo:
+      description: Contains N6 delay measurement assistance information.
+      type: object
+      properties:
+        measureEndpointAddr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
+        measureEndpointPort:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        suppMeasProtocs:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/DelayMeasurementProtocol
+          minItems: 1
+          description: Contains the list of supported N6 delay measurement protocols.
+        configParams:
+          type: string
+          description: 'Contains protocol-specific configuration parameters. The contents and the format are up to the implementation.
+
+            '
+      required:
+      - measureEndpointAddr
     DnaiInformation:
       description: Represents DNAI information.
       type: object
@@ -149,6 +170,17 @@ components:
         - dnsServIds
       - required:
         - easIpAddrs
+    DnsServerIdentifier:
+      description: Represents DNS server identifier (consisting of IP address and port).
+      type: object
+      properties:
+        dnsServIpAddr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
+        portNumber:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+      required:
+      - dnsServIpAddr
+      - portNumber
     N6DelayPerDnaiEas:
       description: Contains N6 delay measurement assistance information per DNAI and/or EAS.
       type: object
@@ -221,38 +253,6 @@ components:
           $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
       required:
       - fqdnPatternList
-    N6DelayMeasurementInfo:
-      description: Contains N6 delay measurement assistance information.
-      type: object
-      properties:
-        measureEndpointAddr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
-        measureEndpointPort:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        suppMeasProtocs:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/DelayMeasurementProtocol
-          minItems: 1
-          description: Contains the list of supported N6 delay measurement protocols.
-        configParams:
-          type: string
-          description: 'Contains protocol-specific configuration parameters. The contents and the format are up to the implementation.
-
-            '
-      required:
-      - measureEndpointAddr
-    DnsServerIdentifier:
-      description: Represents DNS server identifier (consisting of IP address and port).
-      type: object
-      properties:
-        dnsServIpAddr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
-        portNumber:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-      required:
-      - dnsServIpAddr
-      - portNumber
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

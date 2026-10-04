@@ -180,57 +180,17 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    InstanceType:
+    AcceptanceCriteriaResultIndication:
       anyOf:
       - type: string
         enum:
-        - BOUNDARY_CLOCK
-        - E2E_TRANS_CLOCK
-        - P2P_TRANS_CLOCK
-        - P2P_RELAY_INSTANCE
+        - ACCEPTABLE
+        - NON_ACCEPTABLE
       - type: string
         description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
 
           '
-      description: "Identifies the supported PTP instance type.  \nPossible values are:\n- BOUNDARY_CLOCK: Indicates Boundary Clock as defined in IEEE Std 1588.\n- E2E_TRANS_CLOCK: Indicates End-to-End Transparent Clock as defined in IEEE Std 1588.\n- P2P_TRANS_CLOCK: Indicates Peer-to-Peer Transparent Clock as defined in IEEE Std 1588.\n- P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS.\n"
-    TimeSyncExposureConfig:
-      description: Contains the Time Synchronization Configuration parameters.
-      type: object
-      properties:
-        upNodeId:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uint64
-        reqPtpIns:
-          $ref: '#/components/schemas/PtpInstance'
-        gmEnable:
-          type: boolean
-          description: 'Indicates that the AF requests 5GS to act as a grandmaster for PTP or gPTP if it is included and set to true.
-
-            '
-        gmPrio:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        timeDom:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        timeSyncErrBdgt:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-        configNotifId:
-          type: string
-          description: Notification Correlation ID assigned by the AF.
-        configNotifUri:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
-        tempValidity:
-          $ref: TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/TemporalValidity
-        coverageArea:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond
-        clkQltDetLvl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/ClockQualityDetailLevel
-        clkQltAcptCri:
-          $ref: TS29571_CommonData.yaml#/components/schemas/ClockQualityAcceptanceCriterion
-      required:
-      - upNodeId
-      - reqPtpIns
-      - timeDom
-      - configNotifId
-      - configNotifUri
+      description: "Identifies the supported acceptable / not acceptable indication.  \nPossible values are:\n- ACCEPTABLE: PTP port in (g)PTP service meets the clock quality acceptance criteria.\n- NON_ACCEPTABLE: PTP port in (g)PTP service does not meet the clock quality acceptance\n  criteria.\n"
     ConfigForPort:
       description: Contains configuration for each port.
       type: object
@@ -271,29 +231,56 @@ components:
         - gpsi
       - required:
         - n6Ind
-    AcceptanceCriteriaResultIndication:
-      anyOf:
-      - type: string
-        enum:
-        - ACCEPTABLE
-        - NON_ACCEPTABLE
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+    TimeSyncExposureConfig:
+      description: Contains the Time Synchronization Configuration parameters.
+      type: object
+      properties:
+        upNodeId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uint64
+        reqPtpIns:
+          $ref: '#/components/schemas/PtpInstance'
+        gmEnable:
+          type: boolean
+          description: 'Indicates that the AF requests 5GS to act as a grandmaster for PTP or gPTP if it is included and set to true.
 
-          '
-      description: "Identifies the supported acceptable / not acceptable indication.  \nPossible values are:\n- ACCEPTABLE: PTP port in (g)PTP service meets the clock quality acceptance criteria.\n- NON_ACCEPTABLE: PTP port in (g)PTP service does not meet the clock quality acceptance\n  criteria.\n"
-    Protocol:
-      anyOf:
-      - type: string
-        enum:
-        - ETH
-        - IPV4
-        - IPV6
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Identifies the supported protocol.  \nPossible values are:\n- ETH: Indicates Ethernet as defined in IEEE Std 1588 [45] Annex E is supported.\n- IPV4: Indicates IPv4 as defined in IEEE Std 1588 [45] Annex C is supported.\n- IPV6: Indicates IPv6 as defined in IEEE Std 1588 [45] Annex D is supported.\n"
+            '
+        gmPrio:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        timeDom:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        timeSyncErrBdgt:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+        configNotifId:
+          type: string
+          description: Notification Correlation ID assigned by the AF.
+        configNotifUri:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        tempValidity:
+          $ref: TS29514_Npcf_PolicyAuthorization.yaml#/components/schemas/TemporalValidity
+        coverageArea:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond
+        clkQltDetLvl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/ClockQualityDetailLevel
+        clkQltAcptCri:
+          $ref: TS29571_CommonData.yaml#/components/schemas/ClockQualityAcceptanceCriterion
+      required:
+      - upNodeId
+      - reqPtpIns
+      - timeDom
+      - configNotifId
+      - configNotifUri
+    TimeSyncExposureConfigNotif:
+      description: Contains the notification of time synchronization service state.
+      type: object
+      properties:
+        configNotifId:
+          type: string
+          description: Notification Correlation ID assigned by the AF.
+        stateOfConfig:
+          $ref: '#/components/schemas/StateOfConfiguration'
+      required:
+      - configNotifId
+      - stateOfConfig
     PtpInstance:
       description: Contains PTP instance configuration and activation requested by the AF.
       type: object
@@ -317,34 +304,19 @@ components:
       - instanceType
       - protocol
       - ptpProfile
-    TimeSyncExposureConfigNotif:
-      description: Contains the notification of time synchronization service state.
-      type: object
-      properties:
-        configNotifId:
-          type: string
-          description: Notification Correlation ID assigned by the AF.
-        stateOfConfig:
-          $ref: '#/components/schemas/StateOfConfiguration'
-      required:
-      - configNotifId
-      - stateOfConfig
-    StateOfDstt:
-      description: Contains the PTP port state of a DS-TT.
-      type: object
-      properties:
-        gpsi:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-        state:
-          type: boolean
-          description: 'When the PTP port state is Leader, Follower or Passive, it is included and set to true to indicate the state of configuration for DS-TT port is active; when PTP port state is in any other case, it is included and set to false to indicate the state of  configuration for DS port is inactive.
+    InstanceType:
+      anyOf:
+      - type: string
+        enum:
+        - BOUNDARY_CLOCK
+        - E2E_TRANS_CLOCK
+        - P2P_TRANS_CLOCK
+        - P2P_RELAY_INSTANCE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
 
-            '
-        clkQltIndOfDstt:
-          $ref: '#/components/schemas/AcceptanceCriteriaResultIndication'
-      required:
-      - gpsi
-      - state
+          '
+      description: "Identifies the supported PTP instance type.  \nPossible values are:\n- BOUNDARY_CLOCK: Indicates Boundary Clock as defined in IEEE Std 1588.\n- E2E_TRANS_CLOCK: Indicates End-to-End Transparent Clock as defined in IEEE Std 1588.\n- P2P_TRANS_CLOCK: Indicates Peer-to-Peer Transparent Clock as defined in IEEE Std 1588.\n- P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS.\n"
     StateOfConfiguration:
       description: Contains the state of the time synchronization configuration.
       type: object
@@ -364,6 +336,34 @@ components:
           items:
             $ref: '#/components/schemas/StateOfDstt'
           minItems: 1
+    StateOfDstt:
+      description: Contains the PTP port state of a DS-TT.
+      type: object
+      properties:
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        state:
+          type: boolean
+          description: 'When the PTP port state is Leader, Follower or Passive, it is included and set to true to indicate the state of configuration for DS-TT port is active; when PTP port state is in any other case, it is included and set to false to indicate the state of  configuration for DS port is inactive.
+
+            '
+        clkQltIndOfDstt:
+          $ref: '#/components/schemas/AcceptanceCriteriaResultIndication'
+      required:
+      - gpsi
+      - state
+    Protocol:
+      anyOf:
+      - type: string
+        enum:
+        - ETH
+        - IPV4
+        - IPV6
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the supported protocol.  \nPossible values are:\n- ETH: Indicates Ethernet as defined in IEEE Std 1588 [45] Annex E is supported.\n- IPV4: Indicates IPv4 as defined in IEEE Std 1588 [45] Annex C is supported.\n- IPV6: Indicates IPv6 as defined in IEEE Std 1588 [45] Annex D is supported.\n"
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

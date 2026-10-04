@@ -69,27 +69,18 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    APIProviderFunctionDetails:
-      type: object
-      description: Represents an API provider domain function's details.
-      properties:
-        apiProvFuncId:
-          type: string
-          description: 'API provider domain functionID assigned by the CAPIF core function to the API provider domain function while registering/updating the API provider domain. Shall not be present in the HTTP POST request from the API management function to the CAPIF core function, to register itself. Shall be present in all other HTTP requests and responses.
+    ApiProviderFuncRole:
+      anyOf:
+      - type: string
+        enum:
+        - AEF
+        - APF
+        - AMF
+      - type: string
+        description: 'This string provides forward-compatiblity with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
 
-            '
-        regInfo:
-          $ref: '#/components/schemas/RegistrationInformation'
-        apiProvFuncRole:
-          $ref: '#/components/schemas/ApiProviderFuncRole'
-        apiProvFuncInfo:
-          type: string
-          description: 'Generic information related to the API provider domain function such as details of the API provider applications.
-
-            '
-      required:
-      - regInfo
-      - apiProvFuncRole
+          '
+      description: "Indicates the role (e.g. AEF, APF, etc.) of an API provider domain function.  \nPossible values are:\n- AEF: API provider function is API Exposing Function.\n- APF: API provider function is API Publishing Function.\n- AMF: API Provider function is API Management Function.\n"
     APIProviderEnrolmentDetails:
       type: object
       description: Represents an API provider domain's enrolment details.
@@ -130,18 +121,6 @@ components:
           description: Represents the API provider name.
       required:
       - regSec
-    ApiProviderFuncRole:
-      anyOf:
-      - type: string
-        enum:
-        - AEF
-        - APF
-        - AMF
-      - type: string
-        description: 'This string provides forward-compatiblity with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Indicates the role (e.g. AEF, APF, etc.) of an API provider domain function.  \nPossible values are:\n- AEF: API provider function is API Exposing Function.\n- APF: API provider function is API Publishing Function.\n- AMF: API Provider function is API Management Function.\n"
     RegistrationInformation:
       type: object
       description: 'Represents registration information of an individual API provider domain function.
@@ -156,6 +135,27 @@ components:
           description: API provider domain function's client certificate
       required:
       - apiProvPubKey
+    APIProviderFunctionDetails:
+      type: object
+      description: Represents an API provider domain function's details.
+      properties:
+        apiProvFuncId:
+          type: string
+          description: 'API provider domain functionID assigned by the CAPIF core function to the API provider domain function while registering/updating the API provider domain. Shall not be present in the HTTP POST request from the API management function to the CAPIF core function, to register itself. Shall be present in all other HTTP requests and responses.
+
+            '
+        regInfo:
+          $ref: '#/components/schemas/RegistrationInformation'
+        apiProvFuncRole:
+          $ref: '#/components/schemas/ApiProviderFuncRole'
+        apiProvFuncInfo:
+          type: string
+          description: 'Generic information related to the API provider domain function such as details of the API provider applications.
+
+            '
+      required:
+      - regInfo
+      - apiProvFuncRole
 externalDocs:
   description: 3GPP TS 29.222 V19.5.0 Common API Framework for 3GPP Northbound APIs
   url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.222/

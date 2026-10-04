@@ -63,14 +63,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    CheckAuthenticationRsp:
-      type: object
-      description: Represents authentication check response data.
-      properties:
-        supportedFeatures:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - supportedFeatures
     CheckAuthenticationReq:
       type: object
       description: Represents authentication check request data.
@@ -84,6 +76,14 @@ components:
           $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
       required:
       - apiInvokerId
+      - supportedFeatures
+    CheckAuthenticationRsp:
+      type: object
+      description: Represents authentication check response data.
+      properties:
+        supportedFeatures:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
       - supportedFeatures
 externalDocs:
   description: 3GPP TS 29.222 V19.5.0 Common API Framework for 3GPP Northbound APIs

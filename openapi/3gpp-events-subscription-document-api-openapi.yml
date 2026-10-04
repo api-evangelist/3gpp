@@ -164,24 +164,6 @@ paths:
           $ref: TS29571_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    Flows:
-      description: Identifies the flows
-      type: object
-      required:
-      - medCompN
-      properties:
-        contVers:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContentVersion'
-          minItems: 1
-        fNums:
-          type: array
-          items:
-            type: integer
-          minItems: 1
-        medCompN:
-          type: integer
     AnGwAddress:
       description: describes the address of the access network gateway control node
       type: object
@@ -195,42 +177,6 @@ components:
           $ref: TS29571_CommonData.yaml#/components/schemas/Ipv4Addr
         anGwIpv6Addr:
           $ref: TS29571_CommonData.yaml#/components/schemas/Ipv6Addr
-    AfNotifMethod:
-      anyOf:
-      - type: string
-        enum:
-        - EVENT_DETECTION
-        - ONE_TIME
-        - PERIODIC
-        - PDU_SESSION_RELEASE
-      - type: string
-    MediaComponentResourcesStatus:
-      anyOf:
-      - type: string
-        enum:
-        - ACTIVE
-        - INACTIVE
-      - type: string
-    RequiredAccessInfo:
-      anyOf:
-      - type: string
-        enum:
-        - USER_LOCATION
-        - UE_TIME_ZONE
-      - type: string
-    AccessNetChargingIdentifier:
-      description: Describes the access network charging identifier.
-      type: object
-      required:
-      - accNetChaIdValue
-      properties:
-        accNetChaIdValue:
-          $ref: TS29571_CommonData.yaml#/components/schemas/ChargingId
-        flows:
-          type: array
-          items:
-            $ref: '#/components/schemas/Flows'
-          minItems: 1
     QosNotificationControlInfo:
       description: Indicates whether the QoS targets for a GRB flow are not guaranteed or guaranteed again
       type: object
@@ -246,99 +192,28 @@ components:
           minItems: 1
         altSerReq:
           type: string
-    ContentVersion:
-      description: Represents the content version of some content.
-      type: integer
-    AfEvent:
+    RequiredAccessInfo:
       anyOf:
       - type: string
         enum:
-        - ACCESS_TYPE_CHANGE
-        - ANI_REPORT
-        - CHARGING_CORRELATION
-        - EPS_FALLBACK
-        - FAILED_RESOURCES_ALLOCATION
-        - OUT_OF_CREDIT
-        - PLMN_CHG
-        - QOS_MONITORING
-        - QOS_NOTIF
-        - RAN_NAS_CAUSE
-        - REALLOCATION_OF_CREDIT
-        - SUCCESSFUL_RESOURCES_ALLOCATION
-        - TSN_BRIDGE_INFO
-        - USAGE_REPORT
+        - USER_LOCATION
+        - UE_TIME_ZONE
       - type: string
-    AfEventNotification:
-      description: describes the event information delivered in the notification
-      type: object
-      required:
-      - event
-      properties:
-        event:
-          $ref: '#/components/schemas/AfEvent'
-        flows:
-          type: array
-          items:
-            $ref: '#/components/schemas/Flows'
-          minItems: 1
-    QosNotifType:
+    EventsSubscPutData:
+      description: Identifies the events the application subscribes to within an Events Subscription sub-resource data. It may contain the notification of the already met events
       anyOf:
-      - type: string
-        enum:
-        - GUARANTEED
-        - NOT_GUARANTEED
-      - type: string
-    EventsSubscReqData:
-      description: Identifies the events the application subscribes to.
-      type: object
-      required:
-      - events
-      properties:
-        events:
-          type: array
-          items:
-            $ref: '#/components/schemas/AfEventSubscription'
-          minItems: 1
-        notifUri:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uri
-        reqQosMonParams:
-          type: array
-          items:
-            $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/RequestedQosMonitoringParameter
-          minItems: 1
-        qosMon:
-          $ref: '#/components/schemas/QosMonitoringInformation'
-        reqAnis:
-          type: array
-          items:
-            $ref: '#/components/schemas/RequiredAccessInfo'
-          minItems: 1
-        notifCorreId:
-          type: string
-    QosMonitoringReport:
-      description: QoS Monitoring reporting information
+      - $ref: '#/components/schemas/EventsSubscReqData'
+      - $ref: '#/components/schemas/EventsNotification'
+    QosMonitoringInformation:
+      description: Indicates the QoS Monitoring information to report, i.e. UL and/or DL and or round trip delay.
       type: object
       properties:
-        flows:
-          type: array
-          items:
-            $ref: '#/components/schemas/Flows'
-          minItems: 1
-        ulDelays:
-          type: array
-          items:
-            type: integer
-          minItems: 1
-        dlDelays:
-          type: array
-          items:
-            type: integer
-          minItems: 1
-        rtDelays:
-          type: array
-          items:
-            type: integer
-          minItems: 1
+        repThreshDl:
+          type: integer
+        repThreshUl:
+          type: integer
+        repThreshRp:
+          type: integer
     EventsNotification:
       description: describes the notification of a matched event
       type: object
@@ -420,21 +295,71 @@ components:
           items:
             $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/PortManagementContainer
           minItems: 1
-    EventsSubscPutData:
-      description: Identifies the events the application subscribes to within an Events Subscription sub-resource data. It may contain the notification of the already met events
+    MediaComponentResourcesStatus:
       anyOf:
-      - $ref: '#/components/schemas/EventsSubscReqData'
-      - $ref: '#/components/schemas/EventsNotification'
-    QosMonitoringInformation:
-      description: Indicates the QoS Monitoring information to report, i.e. UL and/or DL and or round trip delay.
+      - type: string
+        enum:
+        - ACTIVE
+        - INACTIVE
+      - type: string
+    QosNotifType:
+      anyOf:
+      - type: string
+        enum:
+        - GUARANTEED
+        - NOT_GUARANTEED
+      - type: string
+    EventsSubscReqData:
+      description: Identifies the events the application subscribes to.
+      type: object
+      required:
+      - events
+      properties:
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/AfEventSubscription'
+          minItems: 1
+        notifUri:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uri
+        reqQosMonParams:
+          type: array
+          items:
+            $ref: TS29512_Npcf_SMPolicyControl.yaml#/components/schemas/RequestedQosMonitoringParameter
+          minItems: 1
+        qosMon:
+          $ref: '#/components/schemas/QosMonitoringInformation'
+        reqAnis:
+          type: array
+          items:
+            $ref: '#/components/schemas/RequiredAccessInfo'
+          minItems: 1
+        notifCorreId:
+          type: string
+    QosMonitoringReport:
+      description: QoS Monitoring reporting information
       type: object
       properties:
-        repThreshDl:
-          type: integer
-        repThreshUl:
-          type: integer
-        repThreshRp:
-          type: integer
+        flows:
+          type: array
+          items:
+            $ref: '#/components/schemas/Flows'
+          minItems: 1
+        ulDelays:
+          type: array
+          items:
+            type: integer
+          minItems: 1
+        dlDelays:
+          type: array
+          items:
+            type: integer
+          minItems: 1
+        rtDelays:
+          type: array
+          items:
+            type: integer
+          minItems: 1
     ResourcesAllocationInfo:
       description: describes the status of the PCC rule(s) related to certain media components.
       type: object
@@ -448,6 +373,72 @@ components:
           minItems: 1
         altSerReq:
           type: string
+    AfEvent:
+      anyOf:
+      - type: string
+        enum:
+        - ACCESS_TYPE_CHANGE
+        - ANI_REPORT
+        - CHARGING_CORRELATION
+        - EPS_FALLBACK
+        - FAILED_RESOURCES_ALLOCATION
+        - OUT_OF_CREDIT
+        - PLMN_CHG
+        - QOS_MONITORING
+        - QOS_NOTIF
+        - RAN_NAS_CAUSE
+        - REALLOCATION_OF_CREDIT
+        - SUCCESSFUL_RESOURCES_ALLOCATION
+        - TSN_BRIDGE_INFO
+        - USAGE_REPORT
+      - type: string
+    AfEventNotification:
+      description: describes the event information delivered in the notification
+      type: object
+      required:
+      - event
+      properties:
+        event:
+          $ref: '#/components/schemas/AfEvent'
+        flows:
+          type: array
+          items:
+            $ref: '#/components/schemas/Flows'
+          minItems: 1
+    AccessNetChargingIdentifier:
+      description: Describes the access network charging identifier.
+      type: object
+      required:
+      - accNetChaIdValue
+      properties:
+        accNetChaIdValue:
+          $ref: TS29571_CommonData.yaml#/components/schemas/ChargingId
+        flows:
+          type: array
+          items:
+            $ref: '#/components/schemas/Flows'
+          minItems: 1
+    ContentVersion:
+      description: Represents the content version of some content.
+      type: integer
+    Flows:
+      description: Identifies the flows
+      type: object
+      required:
+      - medCompN
+      properties:
+        contVers:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContentVersion'
+          minItems: 1
+        fNums:
+          type: array
+          items:
+            type: integer
+          minItems: 1
+        medCompN:
+          type: integer
     AfEventSubscription:
       description: describes the event information delivered in the subscription
       type: object
@@ -462,6 +453,15 @@ components:
           $ref: TS29571_CommonData.yaml#/components/schemas/DurationSec
         waitTime:
           $ref: TS29571_CommonData.yaml#/components/schemas/DurationSec
+    AfNotifMethod:
+      anyOf:
+      - type: string
+        enum:
+        - EVENT_DETECTION
+        - ONE_TIME
+        - PERIODIC
+        - PDU_SESSION_RELEASE
+      - type: string
     OutOfCreditInformation:
       description: Indicates the SDFs without available credit and the corresponding termination action.
       type: object

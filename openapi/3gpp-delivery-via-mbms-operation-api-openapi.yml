@@ -351,37 +351,6 @@ paths:
           description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
 components:
   schemas:
-    GMDViaMBMSByMb2:
-      description: Represents a group message delivery via MBMS by MB2.
-      type: object
-      properties:
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        requestTestNotification:
-          type: boolean
-          description: 'Set to true by the SCS/AS to request the SCEF to send a test notification as defined in clause 5.2.5.3. Set to false or omitted otherwise.
-
-            '
-        websockNotifConfig:
-          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
-        externalGroupId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
-        mbmsLocArea:
-          $ref: '#/components/schemas/MbmsLocArea'
-        messageDeliveryStartTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        groupMessagePayload:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
-        scefMessageDeliveryIPv4:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv4AddrRo
-        scefMessageDeliveryIPv6:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv6AddrRo
-        scefMessageDeliveryPort:
-          $ref: TS29122_CommonData.yaml#/components/schemas/PortRo
-      required:
-      - notificationDestination
     MbmsLocArea:
       description: 'Represents a user location area whithin which is sent a group message delivery via MBMS request.
 
@@ -420,6 +389,37 @@ components:
             $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
           minItems: 1
           description: Identifies a civic address of the user where the UE is located.
+    GMDViaMBMSByMb2:
+      description: Represents a group message delivery via MBMS by MB2.
+      type: object
+      properties:
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        requestTestNotification:
+          type: boolean
+          description: 'Set to true by the SCS/AS to request the SCEF to send a test notification as defined in clause 5.2.5.3. Set to false or omitted otherwise.
+
+            '
+        websockNotifConfig:
+          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
+        externalGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        mbmsLocArea:
+          $ref: '#/components/schemas/MbmsLocArea'
+        messageDeliveryStartTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        groupMessagePayload:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
+        scefMessageDeliveryIPv4:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv4AddrRo
+        scefMessageDeliveryIPv6:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv6AddrRo
+        scefMessageDeliveryPort:
+          $ref: TS29122_CommonData.yaml#/components/schemas/PortRo
+      required:
+      - notificationDestination
     GMDByMb2Notification:
       description: Represents a group message delivery notification.
       type: object
@@ -429,20 +429,6 @@ components:
         deliveryTriggerStatus:
           type: boolean
           description: 'Indicates whether delivery of group message payload corresponding to the TMGI was successful (TRUE) or not (FALSE)
-
-            '
-      required:
-      - transaction
-      - deliveryTriggerStatus
-    GMDByxMBNotification:
-      description: Represents a group message delivery notification.
-      type: object
-      properties:
-        transaction:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        deliveryTriggerStatus:
-          type: boolean
-          description: 'Indicates whether delivery of group message payload was successful(TRUE) or not (FALSE).
 
             '
       required:
@@ -479,6 +465,20 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/PortRo
       required:
       - notificationDestination
+    GMDByxMBNotification:
+      description: Represents a group message delivery notification.
+      type: object
+      properties:
+        transaction:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        deliveryTriggerStatus:
+          type: boolean
+          description: 'Indicates whether delivery of group message payload was successful(TRUE) or not (FALSE).
+
+            '
+      required:
+      - transaction
+      - deliveryTriggerStatus
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

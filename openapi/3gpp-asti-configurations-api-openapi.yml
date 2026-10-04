@@ -209,29 +209,19 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    AstiConfigStateNotification:
-      description: 'Contains the report of a change in the 5G Access Stratum Time Distribution parameters applied to a UE.
+    StatusRequestData:
+      description: 'Contains the parameters for retrieval of the status of the access stratum time distribution for a list of UEs.
 
         '
       type: object
       properties:
-        gpsi:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-        event:
-          $ref: TS29565_Ntsctsf_ASTI.yaml#/components/schemas/AstiEvent
+        gpsis:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+          minItems: 1
       required:
-      - event
-      - gpsi
-    ActiveUe:
-      description: 'Contains the UE identifier whose status of the access stratum time distribution is active and the optional requested time synchronization error budget.
-
-        '
-      type: object
-      properties:
-        gpsi:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-        timeSyncErrBdgt:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+      - gpsis
     AstiConfigNotification:
       description: 'Contains the report of a change in the 5G Access Stratum Time Distribution parameters applied to the UE(s).
 
@@ -254,19 +244,29 @@ components:
       required:
       - astiNotifId
       - stateConfigs
-    StatusRequestData:
-      description: 'Contains the parameters for retrieval of the status of the access stratum time distribution for a list of UEs.
+    ActiveUe:
+      description: 'Contains the UE identifier whose status of the access stratum time distribution is active and the optional requested time synchronization error budget.
 
         '
       type: object
       properties:
-        gpsis:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-          minItems: 1
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        timeSyncErrBdgt:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+    AstiConfigStateNotification:
+      description: 'Contains the report of a change in the 5G Access Stratum Time Distribution parameters applied to a UE.
+
+        '
+      type: object
+      properties:
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        event:
+          $ref: TS29565_Ntsctsf_ASTI.yaml#/components/schemas/AstiEvent
       required:
-      - gpsis
+      - event
+      - gpsi
     StatusResponseData:
       description: 'Contains the parameters for the status of the access stratum time distribution for a list of UEs.
 

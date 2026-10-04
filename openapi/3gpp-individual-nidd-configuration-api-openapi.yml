@@ -148,13 +148,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    PdnEstablishmentOptionsRm:
-      description: 'Represents the same information as the PdnEstablishmentOptions data type with the difference that it allows also the null value.
-
-        '
-      anyOf:
-      - $ref: '#/components/schemas/PdnEstablishmentOptions'
-      - $ref: TS29571_CommonData.yaml#/components/schemas/NullValue
     NiddConfigurationPatch:
       description: Represents the parameters to update a NIDD configuration.
       type: object
@@ -180,73 +173,6 @@ components:
           $ref: '#/components/schemas/PdnEstablishmentOptionsRm'
         notificationDestination:
           $ref: TS29122_CommonData.yaml#/components/schemas/Link
-    NiddConfiguration:
-      description: Represents the configuration for NIDD.
-      type: object
-      properties:
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        supportedFeatures:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-        mtcProviderId:
-          type: string
-          description: Identifies the MTC Service Provider and/or MTC Application.
-        externalId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalId
-        msisdn:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Msisdn
-        externalGroupId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
-        duration:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        reliableDataService:
-          type: boolean
-          description: 'Indicates whether the reliable data service (as defined in clause 4.5.14.3 of 3GPP TS  23.682) acknowledgement is requested (true) or not (false). Default value is false.
-
-            '
-        rdsPorts:
-          type: array
-          items:
-            $ref: '#/components/schemas/RdsPort'
-          minItems: 1
-          description: 'Indicates the static port configuration that is used for reliable data transfer between specific applications using RDS (as defined in clause 5.2.4 and 5.2.5 of 3GPP TS 24.250).
-
-            '
-        pdnEstablishmentOption:
-          $ref: '#/components/schemas/PdnEstablishmentOptions'
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        requestTestNotification:
-          type: boolean
-          description: 'Set to true by the SCS/AS to request the SCEF to send a test notification as defined in clause 5.2.5.3. Set to false or omitted otherwise.
-
-            '
-        websockNotifConfig:
-          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
-        maximumPacketSize:
-          type: integer
-          minimum: 1
-          description: 'The Maximum Packet Size is the maximum NIDD packet size that was transferred to the UE by the SCEF in the PCO, see clause 4.5.14.1 of 3GPP TS 23.682. If no maximum packet size was provided to the UE by the SCEF, the SCEF sends a default configured max packet size to SCS/AS. Unit  bit.
-
-            '
-          readOnly: true
-        niddDownlinkDataTransfers:
-          type: array
-          items:
-            $ref: '#/components/schemas/NiddDownlinkDataTransfer'
-          minItems: 1
-          description: "The downlink data deliveries that needed to be executed by the SCEF. The cardinality of the property shall be 0..1 in the request and 0..N in the response (i.e. response may\n contain multiple buffered MT NIDD).\n"
-        status:
-          $ref: '#/components/schemas/NiddStatus'
-      required:
-      - notificationDestination
-      oneOf:
-      - required:
-        - externalId
-      - required:
-        - msisdn
-      - required:
-        - externalGroupId
     NiddStatus:
       anyOf:
       - type: string
@@ -261,17 +187,6 @@ components:
           '
       description: "Represents the status of a NIDD configuration.  \nPossible values are:\n- ACTIVE: The NIDD configuration is active.\n- TERMINATED_UE_NOT_AUTHORIZED: The NIDD configuration was terminated because the UE´s\n  authorisation was revoked.\n- TERMINATED: The NIDD configuration was terminated.\n- RDS_PORT_UNKNOWN: The RDS port is unknown.\n"
       readOnly: true
-    RdsPort:
-      description: Represents the port configuration for Reliable Data Transfer.
-      type: object
-      properties:
-        portUE:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Port
-        portSCEF:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Port
-      required:
-      - portUE
-      - portSCEF
     NiddDownlinkDataTransfer:
       description: Represents the received NIDD downlink data from the SCS/AS.
       type: object
@@ -339,6 +254,73 @@ components:
           '
       description: "Represents the status of a downlink NIDD data delivery resource.  \nPossible values are:\n- SUCCESS: Success but details not provided\n- SUCCESS_NEXT_HOP_ACKNOWLEDGED: Successful delivery to the next hop with acknowledgment.\n- SUCCESS_NEXT_HOP_UNACKNOWLEDGED: Successful delivery to the next hop without\n  acknowledgment\n- SUCCESS_ACKNOWLEDGED: Reliable delivery was acknowledged by the UE\n- SUCCESS_UNACKNOWLEDGED: Reliable delivery was not acknowledged by the UE\n- TRIGGERED: The SCEF triggered the device and is buffering the data.\n- BUFFERING: The SCEF is buffering the data due to no PDN connection established.\n- BUFFERING_TEMPORARILY_NOT_REACHABLE: The SCEF has been informed that the UE is temporarily\n  not reachable but is buffering the data\n- SENDING: The SCEF has forwarded the data, but they may be stored elsewhere\n- FAILURE: Delivery failure but details not provided\n- FAILURE_RDS_DISABLED: RDS was disabled\n- FAILURE_NEXT_HOP: Unsuccessful delivery to the next hop.\n- FAILURE_TIMEOUT: Unsuccessful delivery due to timeout. \n- FAILURE_TEMPORARILY_NOT_REACHABLE: The SCEF has been informed that the UE is temporarily\n  not reachable without buffering the data.\n"
       readOnly: true
+    NiddConfiguration:
+      description: Represents the configuration for NIDD.
+      type: object
+      properties:
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        supportedFeatures:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+        mtcProviderId:
+          type: string
+          description: Identifies the MTC Service Provider and/or MTC Application.
+        externalId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalId
+        msisdn:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Msisdn
+        externalGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        duration:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        reliableDataService:
+          type: boolean
+          description: 'Indicates whether the reliable data service (as defined in clause 4.5.14.3 of 3GPP TS  23.682) acknowledgement is requested (true) or not (false). Default value is false.
+
+            '
+        rdsPorts:
+          type: array
+          items:
+            $ref: '#/components/schemas/RdsPort'
+          minItems: 1
+          description: 'Indicates the static port configuration that is used for reliable data transfer between specific applications using RDS (as defined in clause 5.2.4 and 5.2.5 of 3GPP TS 24.250).
+
+            '
+        pdnEstablishmentOption:
+          $ref: '#/components/schemas/PdnEstablishmentOptions'
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        requestTestNotification:
+          type: boolean
+          description: 'Set to true by the SCS/AS to request the SCEF to send a test notification as defined in clause 5.2.5.3. Set to false or omitted otherwise.
+
+            '
+        websockNotifConfig:
+          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
+        maximumPacketSize:
+          type: integer
+          minimum: 1
+          description: 'The Maximum Packet Size is the maximum NIDD packet size that was transferred to the UE by the SCEF in the PCO, see clause 4.5.14.1 of 3GPP TS 23.682. If no maximum packet size was provided to the UE by the SCEF, the SCEF sends a default configured max packet size to SCS/AS. Unit  bit.
+
+            '
+          readOnly: true
+        niddDownlinkDataTransfers:
+          type: array
+          items:
+            $ref: '#/components/schemas/NiddDownlinkDataTransfer'
+          minItems: 1
+          description: "The downlink data deliveries that needed to be executed by the SCEF. The cardinality of the property shall be 0..1 in the request and 0..N in the response (i.e. response may\n contain multiple buffered MT NIDD).\n"
+        status:
+          $ref: '#/components/schemas/NiddStatus'
+      required:
+      - notificationDestination
+      oneOf:
+      - required:
+        - externalId
+      - required:
+        - msisdn
+      - required:
+        - externalGroupId
     PdnEstablishmentOptions:
       anyOf:
       - type: string
@@ -351,6 +333,24 @@ components:
 
           '
       description: "Represents PDN establishment options that describe the network behaviour when\nthere is no PDN connection towards the addressed UE.  \nPossible values are:\n- WAIT_FOR_UE: wait for the UE to establish the PDN connection \n- INDICATE_ERROR: respond with an error cause\n- SEND_TRIGGER: send a device trigger\n"
+    RdsPort:
+      description: Represents the port configuration for Reliable Data Transfer.
+      type: object
+      properties:
+        portUE:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Port
+        portSCEF:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Port
+      required:
+      - portUE
+      - portSCEF
+    PdnEstablishmentOptionsRm:
+      description: 'Represents the same information as the PdnEstablishmentOptions data type with the difference that it allows also the null value.
+
+        '
+      anyOf:
+      - $ref: '#/components/schemas/PdnEstablishmentOptions'
+      - $ref: TS29571_CommonData.yaml#/components/schemas/NullValue
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

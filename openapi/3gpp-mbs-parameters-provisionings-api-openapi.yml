@@ -61,6 +61,35 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    MbsPpData:
+      description: Represents MBS Parameters Provisioning data.
+      type: object
+      properties:
+        afId:
+          type: string
+        mtcProviderId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation
+        mbsSessAuthData:
+          $ref: '#/components/schemas/MbsSessAuthData'
+        mbsSessAssistInfo:
+          $ref: '#/components/schemas/MbsSessAssistInfo'
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afId
+    MbsSessAssistInfo:
+      description: 'Represents the MBS Session Assistance information data set(s).
+
+        '
+      type: object
+      properties:
+        mbsSessAssistData:
+          type: array
+          items:
+            $ref: TS29503_Nudm_PP.yaml#/components/schemas/MbsAssistanceInfo
+          minItems: 1
+      required:
+      - mbsSessAssistData
     MbsSessAuthData:
       description: Represents the MBS Session Authorization data.
       type: object
@@ -80,35 +109,6 @@ components:
       required:
       - extGroupId
       - mbsSessionIdList
-    MbsSessAssistInfo:
-      description: 'Represents the MBS Session Assistance information data set(s).
-
-        '
-      type: object
-      properties:
-        mbsSessAssistData:
-          type: array
-          items:
-            $ref: TS29503_Nudm_PP.yaml#/components/schemas/MbsAssistanceInfo
-          minItems: 1
-      required:
-      - mbsSessAssistData
-    MbsPpData:
-      description: Represents MBS Parameters Provisioning data.
-      type: object
-      properties:
-        afId:
-          type: string
-        mtcProviderId:
-          $ref: TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation
-        mbsSessAuthData:
-          $ref: '#/components/schemas/MbsSessAuthData'
-        mbsSessAssistInfo:
-          $ref: '#/components/schemas/MbsSessAssistInfo'
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - afId
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

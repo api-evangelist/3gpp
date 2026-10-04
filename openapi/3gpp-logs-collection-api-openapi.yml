@@ -78,32 +78,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    InvocationLog:
-      type: object
-      description: 'Represents a set of Service API invocation logs to be stored in a CAPIF core function.
-
-        '
-      properties:
-        aefId:
-          type: string
-          description: 'Identity information of the API exposing function requesting logging of service API invocations
-
-            '
-        apiInvokerId:
-          type: string
-          description: Identity of the API invoker which invoked the service API
-        logs:
-          type: array
-          items:
-            $ref: '#/components/schemas/Log'
-          minItems: 1
-          description: Service API invocation log
-        supportedFeatures:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - aefId
-      - apiInvokerId
-      - logs
     Log:
       type: object
       description: Represents an individual service API invocation log entry.
@@ -161,6 +135,32 @@ components:
       - resourceName
       - protocol
       - result
+    InvocationLog:
+      type: object
+      description: 'Represents a set of Service API invocation logs to be stored in a CAPIF core function.
+
+        '
+      properties:
+        aefId:
+          type: string
+          description: 'Identity information of the API exposing function requesting logging of service API invocations
+
+            '
+        apiInvokerId:
+          type: string
+          description: Identity of the API invoker which invoked the service API
+        logs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Log'
+          minItems: 1
+          description: Service API invocation log
+        supportedFeatures:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - aefId
+      - apiInvokerId
+      - logs
     DurationMs:
       type: integer
       description: Represents a period of time in units of milliseconds.

@@ -134,27 +134,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    NiddDownlinkDataDeliveryFailure:
-      description: Represents information related to a failure delivery result.
-      type: object
-      properties:
-        problemDetail:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ProblemDetails
-        requestedRetransmissionTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-      required:
-      - problemDetail
-    RdsPort:
-      description: Represents the port configuration for Reliable Data Transfer.
-      type: object
-      properties:
-        portUE:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Port
-        portSCEF:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Port
-      required:
-      - portUE
-      - portSCEF
     NiddDownlinkDataTransfer:
       description: Represents the received NIDD downlink data from the SCS/AS.
       type: object
@@ -234,6 +213,27 @@ components:
 
           '
       description: "Represents PDN establishment options that describe the network behaviour when\nthere is no PDN connection towards the addressed UE.  \nPossible values are:\n- WAIT_FOR_UE: wait for the UE to establish the PDN connection \n- INDICATE_ERROR: respond with an error cause\n- SEND_TRIGGER: send a device trigger\n"
+    NiddDownlinkDataDeliveryFailure:
+      description: Represents information related to a failure delivery result.
+      type: object
+      properties:
+        problemDetail:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ProblemDetails
+        requestedRetransmissionTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+      required:
+      - problemDetail
+    RdsPort:
+      description: Represents the port configuration for Reliable Data Transfer.
+      type: object
+      properties:
+        portUE:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Port
+        portSCEF:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Port
+      required:
+      - portUE
+      - portSCEF
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

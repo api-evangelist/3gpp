@@ -87,6 +87,17 @@ components:
       required:
       - start
       - end
+    RoutingInfo:
+      type: object
+      description: Represents an API routing information.
+      properties:
+        routingRules:
+          type: array
+          items:
+            $ref: '#/components/schemas/RoutingRule'
+          minItems: 1
+      required:
+      - routingRules
     RoutingRule:
       type: object
       description: Represents an API routing rule.
@@ -105,17 +116,6 @@ components:
           $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/AefProfile
       required:
       - aefProfile
-    RoutingInfo:
-      type: object
-      description: Represents an API routing information.
-      properties:
-        routingRules:
-          type: array
-          items:
-            $ref: '#/components/schemas/RoutingRule'
-          minItems: 1
-      required:
-      - routingRules
 externalDocs:
   description: 3GPP TS 29.222 V19.5.0 Common API Framework for 3GPP Northbound APIs
   url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.222/

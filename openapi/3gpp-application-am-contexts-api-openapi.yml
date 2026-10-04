@@ -123,6 +123,27 @@ components:
       anyOf:
       - $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AppAmContextData
       - $ref: TS29534_Npcf_AMPolicyAuthorization.yaml#/components/schemas/AmEventsNotification
+    SliceReplReqInfo:
+      description: 'Represents the AF requested Network Slice Replacement requirements information.
+
+        '
+      type: object
+      properties:
+        snssai:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
+        altSnssai:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
+        afServId:
+          type: string
+        altAfServId:
+          type: string
+      oneOf:
+      - required:
+        - snssai
+        - altSnssai
+      - required:
+        - afServId
+        - altAfServId
     AppAmContextExpData:
       description: Represents an Individual application AM context exposure resource.
       type: object
@@ -184,27 +205,6 @@ components:
           $ref: '#/components/schemas/SliceReplReqInfo'
       required:
       - type
-    SliceReplReqInfo:
-      description: 'Represents the AF requested Network Slice Replacement requirements information.
-
-        '
-      type: object
-      properties:
-        snssai:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
-        altSnssai:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
-        afServId:
-          type: string
-        altAfServId:
-          type: string
-      oneOf:
-      - required:
-        - snssai
-        - altSnssai
-      - required:
-        - afServId
-        - altAfServId
     SliceReplType:
       anyOf:
       - type: string

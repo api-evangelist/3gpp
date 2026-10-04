@@ -66,6 +66,16 @@ paths:
       - Retrieve
 components:
   schemas:
+    UeIdInfo:
+      description: Represents UE ID information.
+      type: object
+      properties:
+        externalId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalId
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - externalId
     UeIdReq:
       description: Represents the parameters to request the retrieval of AF specific UE ID.
       type: object
@@ -97,16 +107,6 @@ components:
         - ueIpAddr
       - required:
         - ueMacAddr
-    UeIdInfo:
-      description: Represents UE ID information.
-      type: object
-      properties:
-        externalId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalId
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - externalId
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

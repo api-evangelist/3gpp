@@ -159,38 +159,6 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    UeAddrInfo:
-      description: Represents the UE Public Address information.
-      type: object
-      properties:
-        uePrivateIpAddr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
-        ipDomain:
-          type: string
-        remoteIpv4Addr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Ipv4Addr
-        remoteIpv6Addr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Ipv6Addr
-        remotePortNumber:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uint16
-      required:
-      - uePrivateIpAddr
-      oneOf:
-      - required:
-        - remoteIpv4Addr
-      - required:
-        - remoteIpv6Addr
-    UeAddrNotif:
-      description: Represents the UE Address Notification.
-      type: object
-      properties:
-        notifId:
-          type: string
-        uePubAddrInfo:
-          $ref: TS29564_Nupf_EventExposure.yaml#/components/schemas/UeNatMappingInfo
-      required:
-      - notifId
-      - uePubAddrInfo
     UeAddrSubsc:
       description: Represents the UE Address Subscription.
       type: object
@@ -216,6 +184,38 @@ components:
       - notifUri
       - notifId
       - afId
+    UeAddrNotif:
+      description: Represents the UE Address Notification.
+      type: object
+      properties:
+        notifId:
+          type: string
+        uePubAddrInfo:
+          $ref: TS29564_Nupf_EventExposure.yaml#/components/schemas/UeNatMappingInfo
+      required:
+      - notifId
+      - uePubAddrInfo
+    UeAddrInfo:
+      description: Represents the UE Public Address information.
+      type: object
+      properties:
+        uePrivateIpAddr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
+        ipDomain:
+          type: string
+        remoteIpv4Addr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Ipv4Addr
+        remoteIpv6Addr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Ipv6Addr
+        remotePortNumber:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uint16
+      required:
+      - uePrivateIpAddr
+      oneOf:
+      - required:
+        - remoteIpv4Addr
+      - required:
+        - remoteIpv6Addr
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

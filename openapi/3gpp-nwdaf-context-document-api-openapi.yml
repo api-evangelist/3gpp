@@ -80,42 +80,6 @@ paths:
           $ref: TS29571_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    SpecificDataSubscription:
-      description: 'Represents an existing subscription for data collection to a specific data source NF.
-
-        '
-      type: object
-      properties:
-        subscriptionId:
-          type: string
-        producerId:
-          $ref: TS29571_CommonData.yaml#/components/schemas/NfInstanceId
-        producerSetId:
-          $ref: TS29571_CommonData.yaml#/components/schemas/NfSetId
-        dataSub:
-          type: string
-      allOf:
-      - oneOf:
-        - required:
-          - producerId
-        - required:
-          - producerSetId
-      - required:
-        - subscriptionId
-      - required:
-        - dataSub
-    RequestedContext:
-      description: Contains types of analytics context information.
-      type: object
-      properties:
-        contexts:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContextType'
-          minItems: 1
-          description: List of analytics context types.
-      required:
-      - contexts
     SpecificAnalyticsSubscription:
       description: 'Represents an existing subscription for a specific type of analytics to a specific NWDAF.
 
@@ -140,6 +104,92 @@ components:
         - subscriptionId
       - required:
         - nwdafEvSub
+    ContextType:
+      anyOf:
+      - type: string
+        enum:
+        - PENDING_ANALYTICS
+        - HISTORICAL_ANALYTICS
+        - AGGR_SUBS
+        - DATA
+        - AGGR_INFO
+        - ML_MODELS
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: 'Possible values are:
+
+        - PENDING_ANALYTICS: Represents context information that relates to pending output analytics.
+
+        - HISTORICAL_ANALYTICS: Represents context information that relates to historical output analytics.
+
+        - AGGR_SUBS: Represents context information about the analytics subscriptions that an NWDAF has with other NWDAFs that collectively serve an analytics subscription.
+
+        - DATA: Represents context information about historical data that is available.
+
+        - AGGR_INFO: Represents context information that is related to aggregation of analytics from multiple NWDAF subscriptions.
+
+        - ML_MODELS: Represents context information about used ML models.
+
+        '
+    SpecificDataSubscription:
+      description: 'Represents an existing subscription for data collection to a specific data source NF.
+
+        '
+      type: object
+      properties:
+        subscriptionId:
+          type: string
+        producerId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/NfInstanceId
+        producerSetId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/NfSetId
+        dataSub:
+          type: string
+      allOf:
+      - oneOf:
+        - required:
+          - producerId
+        - required:
+          - producerSetId
+      - required:
+        - subscriptionId
+      - required:
+        - dataSub
+    AdrfDataType:
+      anyOf:
+      - type: string
+        enum:
+        - HISTORICAL_ANALYTICS
+        - HISTORICAL_DATA
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: 'Possible values are:
+
+        - HISTORICAL_ANALYTICS: Indicates that historical analytics are stored in the ADRF.
+
+        - HISTORICAL_DATA: Indicates that historical data are stored in the ADRF.
+
+        '
+    ContextData:
+      description: 'Contains context information related to analytics subscriptions corresponding with one or  more context identifiers.
+
+        '
+      type: object
+      properties:
+        contextElems:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContextElement'
+          minItems: 1
+          description: 'List of items that contain context information corresponding with a context identifier.
+
+            '
+      required:
+      - contextElems
     HistoricalData:
       description: Contains historical data related to an analytics subscription.
       type: object
@@ -162,19 +212,6 @@ components:
           description: Historical data related to the analytics.
       required:
       - data
-    ContextIdList:
-      description: 'Contains a list of context identifiers of context information of analytics subscriptions.
-
-        '
-      type: object
-      properties:
-        contextIds:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/AnalyticsContextIdentifier
-          minItems: 1
-      required:
-      - contextIds
     ContextElement:
       description: Contains context information corresponding with a specific context identifier.
       type: object
@@ -237,68 +274,31 @@ components:
             '
       required:
       - contextId
-    ContextType:
-      anyOf:
-      - type: string
-        enum:
-        - PENDING_ANALYTICS
-        - HISTORICAL_ANALYTICS
-        - AGGR_SUBS
-        - DATA
-        - AGGR_INFO
-        - ML_MODELS
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: 'Possible values are:
-
-        - PENDING_ANALYTICS: Represents context information that relates to pending output analytics.
-
-        - HISTORICAL_ANALYTICS: Represents context information that relates to historical output analytics.
-
-        - AGGR_SUBS: Represents context information about the analytics subscriptions that an NWDAF has with other NWDAFs that collectively serve an analytics subscription.
-
-        - DATA: Represents context information about historical data that is available.
-
-        - AGGR_INFO: Represents context information that is related to aggregation of analytics from multiple NWDAF subscriptions.
-
-        - ML_MODELS: Represents context information about used ML models.
-
-        '
-    AdrfDataType:
-      anyOf:
-      - type: string
-        enum:
-        - HISTORICAL_ANALYTICS
-        - HISTORICAL_DATA
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: 'Possible values are:
-
-        - HISTORICAL_ANALYTICS: Indicates that historical analytics are stored in the ADRF.
-
-        - HISTORICAL_DATA: Indicates that historical data are stored in the ADRF.
-
-        '
-    ContextData:
-      description: 'Contains context information related to analytics subscriptions corresponding with one or  more context identifiers.
+    RequestedContext:
+      description: Contains types of analytics context information.
+      type: object
+      properties:
+        contexts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContextType'
+          minItems: 1
+          description: List of analytics context types.
+      required:
+      - contexts
+    ContextIdList:
+      description: 'Contains a list of context identifiers of context information of analytics subscriptions.
 
         '
       type: object
       properties:
-        contextElems:
+        contextIds:
           type: array
           items:
-            $ref: '#/components/schemas/ContextElement'
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/AnalyticsContextIdentifier
           minItems: 1
-          description: 'List of items that contain context information corresponding with a context identifier.
-
-            '
       required:
-      - contextElems
+      - contextIds
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

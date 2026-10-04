@@ -109,28 +109,32 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    CommandResp:
-      description: Represents the AIoT Command response.
+    ExtTargetArea:
+      description: Represents the External Target Area for AIoT.
       type: object
       properties:
-        afTransId:
-          type: string
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - afTransId
-    CommandType:
-      anyOf:
-      - type: string
-        enum:
-        - READ
-        - WRITE
-        - PERMANENT_DISABLE
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the type of AIoT Command.  \nPossible values are:\n  - READ: Indicates that the AIoT Command is Read (i.e., retrieve information).\n  - WRITE: Indicates that the AIoT Command is Write (i.e., provision information).\n  - PERMANENT_DISABLE: Indicates that the AIoT Command is Permanent Disable (i.e., disable\n    the capability to transmit information).\n"
+        extAreaIds:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExtAreaId'
+          minItems: 1
+        geographicAreas:
+          type: array
+          items:
+            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
+          minItems: 1
+        civicAddresses:
+          type: array
+          items:
+            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
+          minItems: 1
+      oneOf:
+      - required:
+        - extAreaIds
+      - required:
+        - geographicAreas
+      - required:
+        - civicAddresses
     CommandReq:
       description: Represents the AIoT Command request.
       type: object
@@ -173,32 +177,18 @@ components:
         - extTargetArea
       - required:
         - targetDevices
-    ExtTargetArea:
-      description: Represents the External Target Area for AIoT.
-      type: object
-      properties:
-        extAreaIds:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExtAreaId'
-          minItems: 1
-        geographicAreas:
-          type: array
-          items:
-            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/GeographicArea
-          minItems: 1
-        civicAddresses:
-          type: array
-          items:
-            $ref: TS29572_Nlmf_Location.yaml#/components/schemas/CivicAddress
-          minItems: 1
-      oneOf:
-      - required:
-        - extAreaIds
-      - required:
-        - geographicAreas
-      - required:
-        - civicAddresses
+    CommandType:
+      anyOf:
+      - type: string
+        enum:
+        - READ
+        - WRITE
+        - PERMANENT_DISABLE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the type of AIoT Command.  \nPossible values are:\n  - READ: Indicates that the AIoT Command is Read (i.e., retrieve information).\n  - WRITE: Indicates that the AIoT Command is Write (i.e., provision information).\n  - PERMANENT_DISABLE: Indicates that the AIoT Command is Permanent Disable (i.e., disable\n    the capability to transmit information).\n"
     AIoTNotif:
       description: Represents the AIoT Operations Notification.
       type: object
@@ -235,6 +225,16 @@ components:
     ExtAreaId:
       description: Represents the External Area Identifier for AIoT.
       type: string
+    CommandResp:
+      description: Represents the AIoT Command response.
+      type: object
+      properties:
+        afTransId:
+          type: string
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afTransId
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

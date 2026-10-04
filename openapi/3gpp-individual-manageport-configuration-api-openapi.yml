@@ -167,32 +167,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    ManagePort:
-      description: Represents the configuration of a RDS dynamic port management.
-      type: object
-      properties:
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        appId:
-          type: string
-          description: Identifies the application.
-        manageEntity:
-          $ref: '#/components/schemas/ManageEntity'
-        skipUeInquiry:
-          type: boolean
-          description: Indicate whether to skip UE inquiry.
-        supportedFormats:
-          type: array
-          items:
-            $ref: '#/components/schemas/SerializationFormat'
-          minItems: 1
-          description: 'Indicates the serialization format(s) that are supported by the SCS/AS on the associated RDS port.
-
-            '
-        configuredFormat:
-          $ref: '#/components/schemas/SerializationFormat'
-      required:
-      - appId
     ManageEntity:
       anyOf:
       - type: string
@@ -221,6 +195,32 @@ components:
             description: 'Indicates the serialization format(s) that are supported by the UE on the associated RDS port.
 
               '
+    ManagePort:
+      description: Represents the configuration of a RDS dynamic port management.
+      type: object
+      properties:
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        appId:
+          type: string
+          description: Identifies the application.
+        manageEntity:
+          $ref: '#/components/schemas/ManageEntity'
+        skipUeInquiry:
+          type: boolean
+          description: Indicate whether to skip UE inquiry.
+        supportedFormats:
+          type: array
+          items:
+            $ref: '#/components/schemas/SerializationFormat'
+          minItems: 1
+          description: 'Indicates the serialization format(s) that are supported by the SCS/AS on the associated RDS port.
+
+            '
+        configuredFormat:
+          $ref: '#/components/schemas/SerializationFormat'
+      required:
+      - appId
     SerializationFormat:
       anyOf:
       - type: string

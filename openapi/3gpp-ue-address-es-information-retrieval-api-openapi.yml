@@ -68,19 +68,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    UeAddressReq:
-      description: Represents the parameters to request the retrieval of UE Address information.
-      type: object
-      properties:
-        afId:
-          type: string
-        gpsi:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - afId
-      - gpsi
     UeAddressInfo:
       description: Represents UE Address information.
       type: object
@@ -94,6 +81,19 @@ components:
           $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
       required:
       - ueIpAddrs
+    UeAddressReq:
+      description: Represents the parameters to request the retrieval of UE Address information.
+      type: object
+      properties:
+        afId:
+          type: string
+        gpsi:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afId
+      - gpsi
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

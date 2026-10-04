@@ -69,28 +69,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    VFLCapabilityType:
-      anyOf:
-      - type: string
-        enum:
-        - VFL_CLIENT
-      - type: string
-        description: Represents the VFL capability type to be discovered.
-      description: "Represents the VFL capability type to be discovered.  \nPossible values are:\n  - VFL_CLIENT: Represents the VFL capability type to be discovered is VFL client.\n"
-    NwdafDiscoveryResponse:
-      description: 'Represents the external NWDAF ID(s) to act as the VFL client(s).
-
-        '
-      type: object
-      properties:
-        exNwdafIds:
-          type: array
-          items:
-            type: string
-          description: The current external NWDAF identifier.
-          minItems: 1
-      required:
-      - exNwdafIds
     NwdafDiscoveryRequest:
       description: 'Represents the parameters to request the NWDAF(s) that are to act as VFL client(s).
 
@@ -122,6 +100,28 @@ components:
       required:
       - analyticIds
       - vflCapType
+    VFLCapabilityType:
+      anyOf:
+      - type: string
+        enum:
+        - VFL_CLIENT
+      - type: string
+        description: Represents the VFL capability type to be discovered.
+      description: "Represents the VFL capability type to be discovered.  \nPossible values are:\n  - VFL_CLIENT: Represents the VFL capability type to be discovered is VFL client.\n"
+    NwdafDiscoveryResponse:
+      description: 'Represents the external NWDAF ID(s) to act as the VFL client(s).
+
+        '
+      type: object
+      properties:
+        exNwdafIds:
+          type: array
+          items:
+            type: string
+          description: The current external NWDAF identifier.
+          minItems: 1
+      required:
+      - exNwdafIds
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

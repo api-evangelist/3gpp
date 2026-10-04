@@ -241,6 +241,43 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    NpConfigurationPatch:
+      description: 'Represents parameters used to request the modification of a network parameters configuration resource.
+
+        '
+      type: object
+      properties:
+        maximumLatency:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
+        maximumResponseTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
+        suggestedNumberOfDlPackets:
+          type:
+          - integer
+          - 'null'
+          minimum: 0
+          description: 'This parameter may be included to identify the number of packets that the serving gateway shall buffer in case that the UE is not reachable.
+
+            '
+        groupReportGuardTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
+        validityTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRm
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        mpsforMsgInd:
+          $ref: '#/components/schemas/MPSforMsgInd'
+    MPSforMsgInd:
+      anyOf:
+      - type: string
+        enum:
+        - DISABLE_MPS_FOR_MSG
+        - ENABLE_MPS_FOR_MSG
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Indicates the MPS for Messaging for the priority treatment of messaging service \nis enabled or disabled.\nPossible values are:\n- DISABLE_MPS_FOR_MSG: Disable MPS for messaging service of the UE.\n- ENABLE_MPS_FOR_MSG: Enable MPS for messaging service of the UE.\n"
     NpConfiguration:
       description: Represents a network parameters configuration.
       type: object
@@ -298,43 +335,6 @@ components:
         - msisdn
       - required:
         - externalGroupId
-    NpConfigurationPatch:
-      description: 'Represents parameters used to request the modification of a network parameters configuration resource.
-
-        '
-      type: object
-      properties:
-        maximumLatency:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
-        maximumResponseTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
-        suggestedNumberOfDlPackets:
-          type:
-          - integer
-          - 'null'
-          minimum: 0
-          description: 'This parameter may be included to identify the number of packets that the serving gateway shall buffer in case that the UE is not reachable.
-
-            '
-        groupReportGuardTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
-        validityTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRm
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        mpsforMsgInd:
-          $ref: '#/components/schemas/MPSforMsgInd'
-    MPSforMsgInd:
-      anyOf:
-      - type: string
-        enum:
-        - DISABLE_MPS_FOR_MSG
-        - ENABLE_MPS_FOR_MSG
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Indicates the MPS for Messaging for the priority treatment of messaging service \nis enabled or disabled.\nPossible values are:\n- DISABLE_MPS_FOR_MSG: Disable MPS for messaging service of the UE.\n- ENABLE_MPS_FOR_MSG: Enable MPS for messaging service of the UE.\n"
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

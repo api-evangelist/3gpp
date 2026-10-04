@@ -105,144 +105,6 @@ paths:
           $ref: TS29571_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    SmcceUeList:
-      description: 'Represents the List of UEs classified based on experience level of Session Management  congestion control.
-
-        '
-      type: object
-      properties:
-        highLevel:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Supi
-          minItems: 1
-        mediumLevel:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Supi
-          minItems: 1
-        lowLevel:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Supi
-          minItems: 1
-      anyOf:
-      - required:
-        - highLevel
-      - required:
-        - mediumLevel
-      - required:
-        - lowLevel
-    AnalyticsData:
-      description: 'Represents the description of analytics with parameters as relevant for the requesting NF  service consumer.
-
-        '
-      type: object
-      properties:
-        start:
-          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
-        expiry:
-          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
-        timeStampGen:
-          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
-        anaMetaInfo:
-          $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/AnalyticsMetadataInfo
-        sliceLoadLevelInfos:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/SliceLoadLevelInformation
-          minItems: 1
-          description: The slices and their load level information.
-        nsiLoadLevelInfos:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NsiLoadLevelInfo
-          minItems: 1
-        nfLoadLevelInfos:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NfLoadLevelInformation
-          minItems: 1
-        nwPerfs:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NetworkPerfInfo
-          minItems: 1
-        svcExps:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/ServiceExperienceInfo
-          minItems: 1
-        qosSustainInfos:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/QosSustainabilityInfo
-          minItems: 1
-        ueMobs:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/UeMobility
-          minItems: 1
-        ueComms:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/UeCommunication
-          minItems: 1
-        userDataCongInfos:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/UserDataCongestionInfo
-          minItems: 1
-        abnorBehavrs:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/AbnormalBehaviour
-          minItems: 1
-        smccExps:
-          type: array
-          items:
-            $ref: '#/components/schemas/SmcceInfo'
-          minItems: 1
-        disperInfos:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/DispersionInfo
-          minItems: 1
-        redTransInfos:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/RedundantTransmissionExpInfo
-          minItems: 1
-        wlanInfos:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/WlanPerformanceInfo
-          minItems: 1
-        dnPerfInfos:
-          type: array
-          items:
-            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/DnPerfInfo
-          minItems: 1
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-    AdditionInfoAnalyticsInfoRequest:
-      description: Indicates additional information why the analytics request is rejected.
-      type: object
-      properties:
-        rvWaitTime:
-          $ref: TS29571_CommonData.yaml#/components/schemas/DurationSec
-    SmcceInfo:
-      description: Represents the Session Management congestion control experience information.
-      type: object
-      properties:
-        dnn:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Dnn
-        snssai:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
-        smcceUeList:
-          $ref: '#/components/schemas/SmcceUeList'
-      required:
-      - smcceUeList
     EventId:
       anyOf:
       - type: string
@@ -299,13 +161,34 @@ components:
         - DN_PERFORMANCE: Represents the analytics of DN performance.
 
         '
-    ProblemDetailsAnalyticsInfoRequest:
-      description: 'Extends ProblemDetails to indicate more details why the analytics request is rejected.
+    SmcceUeList:
+      description: 'Represents the List of UEs classified based on experience level of Session Management  congestion control.
 
         '
-      allOf:
-      - $ref: TS29571_CommonData.yaml#/components/schemas/ProblemDetails
-      - $ref: '#/components/schemas/AdditionInfoAnalyticsInfoRequest'
+      type: object
+      properties:
+        highLevel:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Supi
+          minItems: 1
+        mediumLevel:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Supi
+          minItems: 1
+        lowLevel:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Supi
+          minItems: 1
+      anyOf:
+      - required:
+        - highLevel
+      - required:
+        - mediumLevel
+      - required:
+        - lowLevel
     EventFilter:
       description: Represents the event filters used to identify the requested analytics.
       type: object
@@ -411,6 +294,123 @@ components:
         required:
         - anySlice
         - snssais
+    AnalyticsData:
+      description: 'Represents the description of analytics with parameters as relevant for the requesting NF  service consumer.
+
+        '
+      type: object
+      properties:
+        start:
+          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
+        expiry:
+          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
+        timeStampGen:
+          $ref: TS29571_CommonData.yaml#/components/schemas/DateTime
+        anaMetaInfo:
+          $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/AnalyticsMetadataInfo
+        sliceLoadLevelInfos:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/SliceLoadLevelInformation
+          minItems: 1
+          description: The slices and their load level information.
+        nsiLoadLevelInfos:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NsiLoadLevelInfo
+          minItems: 1
+        nfLoadLevelInfos:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NfLoadLevelInformation
+          minItems: 1
+        nwPerfs:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/NetworkPerfInfo
+          minItems: 1
+        svcExps:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/ServiceExperienceInfo
+          minItems: 1
+        qosSustainInfos:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/QosSustainabilityInfo
+          minItems: 1
+        ueMobs:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/UeMobility
+          minItems: 1
+        ueComms:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/UeCommunication
+          minItems: 1
+        userDataCongInfos:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/UserDataCongestionInfo
+          minItems: 1
+        abnorBehavrs:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/AbnormalBehaviour
+          minItems: 1
+        smccExps:
+          type: array
+          items:
+            $ref: '#/components/schemas/SmcceInfo'
+          minItems: 1
+        disperInfos:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/DispersionInfo
+          minItems: 1
+        redTransInfos:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/RedundantTransmissionExpInfo
+          minItems: 1
+        wlanInfos:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/WlanPerformanceInfo
+          minItems: 1
+        dnPerfInfos:
+          type: array
+          items:
+            $ref: TS29520_Nnwdaf_EventsSubscription.yaml#/components/schemas/DnPerfInfo
+          minItems: 1
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+    ProblemDetailsAnalyticsInfoRequest:
+      description: 'Extends ProblemDetails to indicate more details why the analytics request is rejected.
+
+        '
+      allOf:
+      - $ref: TS29571_CommonData.yaml#/components/schemas/ProblemDetails
+      - $ref: '#/components/schemas/AdditionInfoAnalyticsInfoRequest'
+    AdditionInfoAnalyticsInfoRequest:
+      description: Indicates additional information why the analytics request is rejected.
+      type: object
+      properties:
+        rvWaitTime:
+          $ref: TS29571_CommonData.yaml#/components/schemas/DurationSec
+    SmcceInfo:
+      description: Represents the Session Management congestion control experience information.
+      type: object
+      properties:
+        dnn:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Dnn
+        snssai:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
+        smcceUeList:
+          $ref: '#/components/schemas/SmcceUeList'
+      required:
+      - smcceUeList
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

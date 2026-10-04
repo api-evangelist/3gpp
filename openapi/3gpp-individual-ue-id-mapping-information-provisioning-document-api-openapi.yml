@@ -203,6 +203,14 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    UeIdMappingInfoPatch:
+      description: 'Represents the requested modification to a UE ID Mapping Information Provisioning.
+
+        '
+      type: object
+      properties:
+        rsUeIdMappingInfo:
+          $ref: '#/components/schemas/RangSlUeIdMappInfo'
     UeIdMappingInfo:
       description: 'Represents the UE ID Mapping Information Provisioning.
 
@@ -226,14 +234,6 @@ components:
       required:
       - appLayerId
       - gpsi
-    UeIdMappingInfoPatch:
-      description: 'Represents the requested modification to a UE ID Mapping Information Provisioning.
-
-        '
-      type: object
-      properties:
-        rsUeIdMappingInfo:
-          $ref: '#/components/schemas/RangSlUeIdMappInfo'
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

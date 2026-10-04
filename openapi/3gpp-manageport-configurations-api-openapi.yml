@@ -73,6 +73,18 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    ManageEntity:
+      anyOf:
+      - type: string
+        enum:
+        - UE
+        - AS
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the origin that manages the RDS port.  \nPossible values are:\n- UE: Representing the UE.\n- AS: Representing the Application Server.\n"
+      readOnly: true
     ManagePort:
       description: Represents the configuration of a RDS dynamic port management.
       type: object
@@ -99,18 +111,6 @@ components:
           $ref: '#/components/schemas/SerializationFormat'
       required:
       - appId
-    ManageEntity:
-      anyOf:
-      - type: string
-        enum:
-        - UE
-        - AS
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the origin that manages the RDS port.  \nPossible values are:\n- UE: Representing the UE.\n- AS: Representing the Application Server.\n"
-      readOnly: true
     SerializationFormat:
       anyOf:
       - type: string
