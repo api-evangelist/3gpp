@@ -226,6 +226,72 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    EventFilter:
+      description: 'Contains the filter conditions to match for notifying the event(s) of time synchronization capabilities.
+
+        '
+      type: object
+      properties:
+        instanceTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/InstanceType'
+          minItems: 1
+          description: 'Indicates the PTP instance type(s).
+
+            '
+        transProtocols:
+          type: array
+          items:
+            $ref: '#/components/schemas/Protocol'
+          minItems: 1
+          description: 'Indicates the transport protocol type(s).
+
+            '
+        ptpProfiles:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          description: 'Identifies the supported PTP profiles.
+
+            '
+    PtpInstance:
+      description: Contains PTP instance configuration and activation requested by the AF.
+      type: object
+      properties:
+        instanceType:
+          $ref: '#/components/schemas/InstanceType'
+        protocol:
+          $ref: '#/components/schemas/Protocol'
+        ptpProfile:
+          type: string
+          description: Identifies the PTP profile.
+        portConfigs:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConfigForPort'
+          minItems: 1
+          description: 'Contains the configurations for the PTP port(s) in the PTP instance.
+
+            '
+      required:
+      - instanceType
+      - protocol
+      - ptpProfile
+    InstanceType:
+      anyOf:
+      - type: string
+        enum:
+        - BOUNDARY_CLOCK
+        - E2E_TRANS_CLOCK
+        - P2P_TRANS_CLOCK
+        - P2P_RELAY_INSTANCE
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Identifies the supported PTP instance type.  \nPossible values are:\n- BOUNDARY_CLOCK: Indicates Boundary Clock as defined in IEEE Std 1588.\n- E2E_TRANS_CLOCK: Indicates End-to-End Transparent Clock as defined in IEEE Std 1588.\n- P2P_TRANS_CLOCK: Indicates Peer-to-Peer Transparent Clock as defined in IEEE Std 1588.\n- P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS.\n"
     ConfigForPort:
       description: Contains configuration for each port.
       type: object
@@ -378,36 +444,6 @@ components:
       - timeDom
       - configNotifId
       - configNotifUri
-    EventFilter:
-      description: 'Contains the filter conditions to match for notifying the event(s) of time synchronization capabilities.
-
-        '
-      type: object
-      properties:
-        instanceTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/InstanceType'
-          minItems: 1
-          description: 'Indicates the PTP instance type(s).
-
-            '
-        transProtocols:
-          type: array
-          items:
-            $ref: '#/components/schemas/Protocol'
-          minItems: 1
-          description: 'Indicates the transport protocol type(s).
-
-            '
-        ptpProfiles:
-          type: array
-          items:
-            type: string
-          minItems: 1
-          description: 'Identifies the supported PTP profiles.
-
-            '
     SubscribedEvent:
       anyOf:
       - type: string
@@ -418,42 +454,6 @@ components:
 
           '
       description: "Identifies the supported event.  \nPossible values are:\n- AVAILABILITY_FOR_TIME_SYNC_SERVICE: 5GS and/or UE availability and capability for time synchronization\n  service.\n"
-    PtpInstance:
-      description: Contains PTP instance configuration and activation requested by the AF.
-      type: object
-      properties:
-        instanceType:
-          $ref: '#/components/schemas/InstanceType'
-        protocol:
-          $ref: '#/components/schemas/Protocol'
-        ptpProfile:
-          type: string
-          description: Identifies the PTP profile.
-        portConfigs:
-          type: array
-          items:
-            $ref: '#/components/schemas/ConfigForPort'
-          minItems: 1
-          description: 'Contains the configurations for the PTP port(s) in the PTP instance.
-
-            '
-      required:
-      - instanceType
-      - protocol
-      - ptpProfile
-    InstanceType:
-      anyOf:
-      - type: string
-        enum:
-        - BOUNDARY_CLOCK
-        - E2E_TRANS_CLOCK
-        - P2P_TRANS_CLOCK
-        - P2P_RELAY_INSTANCE
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Identifies the supported PTP instance type.  \nPossible values are:\n- BOUNDARY_CLOCK: Indicates Boundary Clock as defined in IEEE Std 1588.\n- E2E_TRANS_CLOCK: Indicates End-to-End Transparent Clock as defined in IEEE Std 1588.\n- P2P_TRANS_CLOCK: Indicates Peer-to-Peer Transparent Clock as defined in IEEE Std 1588.\n- P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS.\n"
     Protocol:
       anyOf:
       - type: string

@@ -109,6 +109,9 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    ExtAreaId:
+      description: Represents the External Area Identifier for AIoT.
+      type: string
     ExtTargetArea:
       description: Represents the External Target Area for AIoT.
       type: object
@@ -211,9 +214,6 @@ components:
           required:
           - devicesRepData
           - failCause
-    ExtAreaId:
-      description: Represents the External Area Identifier for AIoT.
-      type: string
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

@@ -233,6 +233,47 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    MaxGrpDataRateInfo:
+      description: 'Represents the Maximum Group Data Rate related information.
+
+        '
+      type: object
+      properties:
+        maxGrpDataRateUl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+        maxGrpDataRateDl:
+          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
+      anyOf:
+      - required:
+        - maxGrpDataRateUl
+      - required:
+        - maxGrpDataRateDl
+    LpiParams:
+      description: Represents Location Privacy Indication parameters.
+      type: object
+      properties:
+        lpi:
+          $ref: TS29503_Nudm_SDM.yaml#/components/schemas/Lpi
+      required:
+      - lpi
+    NpConfigParams:
+      description: Represents Network Parameters Configuration information.
+      type: object
+      properties:
+        maximumLatency:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
+        maximumResponseTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
+        suggestedNumberOfDlPackets:
+          type: integer
+          minimum: 0
+          description: 'Contains the number of packets that the serving gateway shall buffer in case the UE is not reachable.
+
+            '
+        groupReportingGuardTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
+        validityTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
     5GLanParameters:
       description: Represents 5G LAN service related parameters that need to be provisioned.
       type: object
@@ -313,19 +354,6 @@ components:
       - snssai
       - sessionType
       - appDesps
-    DnnSnssaiParams:
-      description: Represents DNN and S-NSSAI specific Group Parameters.
-      type: object
-      properties:
-        defQos:
-          $ref: TS29522_GroupParametersProvisioning.yaml#/components/schemas/AfReqDefaultQoS
-        ladnServArea:
-          $ref: TS29522_GroupParametersProvisioning.yaml#/components/schemas/LadnServArea
-      anyOf:
-      - required:
-        - defQos
-      - required:
-        - ladnServArea
     AppDescriptorRm:
       description: 'Represents the same as the AppDescriptor data type but with the nullable:true property.
 
@@ -340,14 +368,42 @@ components:
           description: 'Identifies applications that are running on the UE''s operating system. Any string value can be used as a key of the map.
 
             '
-    AcsParams:
-      description: Represents ACS configuration parameters.
+    5GLanParametersProvision:
+      description: Represents an individual 5G LAN parameters provision subscription resource.
       type: object
       properties:
-        acsInfo:
-          $ref: TS29571_CommonData.yaml#/components/schemas/AcsInfo
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        5gLanParams:
+          $ref: '#/components/schemas/5GLanParameters'
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
       required:
-      - acsInfo
+      - 5gLanParams
+      - suppFeat
+    5GLanParametersProvisionPatch:
+      description: 'Represents the 5G LAN parameters to request the modification of a subscription to provision parameters.
+
+        '
+      type: object
+      properties:
+        5gLanParamsPatch:
+          $ref: '#/components/schemas/5GLanParametersPatch'
+        5gLanParams:
+          $ref: '#/components/schemas/5GLanParameters'
+    DnnSnssaiParams:
+      description: Represents DNN and S-NSSAI specific Group Parameters.
+      type: object
+      properties:
+        defQos:
+          $ref: TS29522_GroupParametersProvisioning.yaml#/components/schemas/AfReqDefaultQoS
+        ladnServArea:
+          $ref: TS29522_GroupParametersProvisioning.yaml#/components/schemas/LadnServArea
+      anyOf:
+      - required:
+        - defQos
+      - required:
+        - ladnServArea
     AppDescriptor:
       description: Represents an operation system and the corresponding applications.
       type: object
@@ -365,29 +421,6 @@ components:
       required:
       - osId
       - appIds
-    CpParams:
-      description: Represents Communication Pattern parameters.
-      type: object
-      properties:
-        cpParameterSets:
-          type: object
-          additionalProperties:
-            $ref: TS29122_CpProvisioning.yaml#/components/schemas/CpParameterSet
-          minProperties: 1
-          description: 'Contains one or more set(s) of CP parameters information for the 5G VN group. Any string value may be used as a key of the map.
-
-            '
-        cpReports:
-          type: object
-          additionalProperties:
-            $ref: TS29122_CpProvisioning.yaml#/components/schemas/CpReport
-          minProperties: 1
-          description: 'Contains the identifier(s) of the set(s) of CP parameters for which the provided CP parameters are not added or modified successfully with the corresponding failure reason. Each element provides the related information for one or more CP set identifier(s). The key of the map is a string representing the failure identifier.
-
-            '
-          readOnly: true
-      required:
-      - cpParameterSets
     5GLanParametersPatch:
       deprecated: true
       description: Represents 5G LAN service related parameters that need to be modified.
@@ -423,24 +456,40 @@ components:
           $ref: '#/components/schemas/DnnSnssaiParams'
         notifUri:
           $ref: TS29122_CommonData.yaml#/components/schemas/Link
-    NpConfigParams:
-      description: Represents Network Parameters Configuration information.
+    CpParams:
+      description: Represents Communication Pattern parameters.
       type: object
       properties:
-        maximumLatency:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
-        maximumResponseTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
-        suggestedNumberOfDlPackets:
-          type: integer
-          minimum: 0
-          description: 'Contains the number of packets that the serving gateway shall buffer in case the UE is not reachable.
+        cpParameterSets:
+          type: object
+          additionalProperties:
+            $ref: TS29122_CpProvisioning.yaml#/components/schemas/CpParameterSet
+          minProperties: 1
+          description: 'Contains one or more set(s) of CP parameters information for the 5G VN group. Any string value may be used as a key of the map.
 
             '
-        groupReportingGuardTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
-        validityTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        cpReports:
+          type: object
+          additionalProperties:
+            $ref: TS29122_CpProvisioning.yaml#/components/schemas/CpReport
+          minProperties: 1
+          description: 'Contains the identifier(s) of the set(s) of CP parameters for which the provided CP parameters are not added or modified successfully with the corresponding failure reason. Each element provides the related information for one or more CP set identifier(s). The key of the map is a string representing the failure identifier.
+
+            '
+          readOnly: true
+      required:
+      - cpParameterSets
+    AaaUsage:
+      anyOf:
+      - type: string
+        enum:
+        - AUTH
+        - IP_ALLOC
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the usage of the DN-AAA server.  \nPossible values are:\n- AUTH: secondary authentication/authorization needed from DN-AAA server.\n- IP_ALLOC: UE IP address allocation needed from DN-AAA server.\n"
     ECSAddrParams:
       description: Represents ECS address configuration parameters.
       type: object
@@ -461,63 +510,14 @@ components:
           minItems: 1
       required:
       - ecsServerAddr
-    AaaUsage:
-      anyOf:
-      - type: string
-        enum:
-        - AUTH
-        - IP_ALLOC
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the usage of the DN-AAA server.  \nPossible values are:\n- AUTH: secondary authentication/authorization needed from DN-AAA server.\n- IP_ALLOC: UE IP address allocation needed from DN-AAA server.\n"
-    MaxGrpDataRateInfo:
-      description: 'Represents the Maximum Group Data Rate related information.
-
-        '
+    AcsParams:
+      description: Represents ACS configuration parameters.
       type: object
       properties:
-        maxGrpDataRateUl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-        maxGrpDataRateDl:
-          $ref: TS29571_CommonData.yaml#/components/schemas/BitRate
-      anyOf:
-      - required:
-        - maxGrpDataRateUl
-      - required:
-        - maxGrpDataRateDl
-    LpiParams:
-      description: Represents Location Privacy Indication parameters.
-      type: object
-      properties:
-        lpi:
-          $ref: TS29503_Nudm_SDM.yaml#/components/schemas/Lpi
+        acsInfo:
+          $ref: TS29571_CommonData.yaml#/components/schemas/AcsInfo
       required:
-      - lpi
-    5GLanParametersProvisionPatch:
-      description: 'Represents the 5G LAN parameters to request the modification of a subscription to provision parameters.
-
-        '
-      type: object
-      properties:
-        5gLanParamsPatch:
-          $ref: '#/components/schemas/5GLanParametersPatch'
-        5gLanParams:
-          $ref: '#/components/schemas/5GLanParameters'
-    5GLanParametersProvision:
-      description: Represents an individual 5G LAN parameters provision subscription resource.
-      type: object
-      properties:
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        5gLanParams:
-          $ref: '#/components/schemas/5GLanParameters'
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - 5gLanParams
-      - suppFeat
+      - acsInfo
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

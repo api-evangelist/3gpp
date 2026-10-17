@@ -222,28 +222,22 @@ components:
           minItems: 1
       required:
       - gpsis
-    AstiConfigNotification:
-      description: 'Contains the report of a change in the 5G Access Stratum Time Distribution parameters applied to the UE(s).
+    StatusResponseData:
+      description: 'Contains the parameters for the status of the access stratum time distribution for a list of UEs.
 
         '
       type: object
       properties:
-        astiNotifId:
-          type: string
-          description: 'It is used to set the value of Notification Correlation ID in the corresponding notification
-
-            '
-        stateConfigs:
+        inactiveUes:
           type: array
           items:
-            $ref: '#/components/schemas/AstiConfigStateNotification'
+            $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
           minItems: 1
-          description: 'It contains the reported event(s) and event information.
-
-            '
-      required:
-      - astiNotifId
-      - stateConfigs
+        activeUes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ActiveUe'
+          minItems: 1
     ActiveUe:
       description: 'Contains the UE identifier whose status of the access stratum time distribution is active and the optional requested time synchronization error budget.
 
@@ -267,22 +261,6 @@ components:
       required:
       - event
       - gpsi
-    StatusResponseData:
-      description: 'Contains the parameters for the status of the access stratum time distribution for a list of UEs.
-
-        '
-      type: object
-      properties:
-        inactiveUes:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-          minItems: 1
-        activeUes:
-          type: array
-          items:
-            $ref: '#/components/schemas/ActiveUe'
-          minItems: 1
     AccessTimeDistributionData:
       description: 'Contains the parameters for the creation of 5G access stratum time distribution configuration.
 
@@ -314,6 +292,28 @@ components:
         - gpsis
       - required:
         - exterGroupId
+    AstiConfigNotification:
+      description: 'Contains the report of a change in the 5G Access Stratum Time Distribution parameters applied to the UE(s).
+
+        '
+      type: object
+      properties:
+        astiNotifId:
+          type: string
+          description: 'It is used to set the value of Notification Correlation ID in the corresponding notification
+
+            '
+        stateConfigs:
+          type: array
+          items:
+            $ref: '#/components/schemas/AstiConfigStateNotification'
+          minItems: 1
+          description: 'It contains the reported event(s) and event information.
+
+            '
+      required:
+      - astiNotifId
+      - stateConfigs
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

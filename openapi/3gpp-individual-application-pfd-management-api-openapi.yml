@@ -249,6 +249,19 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    DomainNameProtocol:
+      anyOf:
+      - type: string
+        enum:
+        - DNS_QNAME
+        - TLS_SNI
+        - TLS_SAN
+        - TSL_SCN
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the type of Domain Name Protocol.  \nPossible values are:\n- DNS_QNAME: Identifies the DNS protocol and the question name in DNS query.\n- TLS_SNI: Identifies the Server Name Indication in TLS ClientHello message.\n- TLS_SAN: Identifies the Subject Alternative Name in TLS ServerCertificate message.\n- TSL_SCN: Identifies the Subject Common Name in TLS ServerCertificate message.\n"
     FailureCode:
       anyOf:
       - type: string
@@ -264,22 +277,6 @@ components:
 
           '
       description: "Represents the failure reason of the PFD management.  \nPossible values are:\n- MALFUNCTION: This value indicates that something functions wrongly in PFD provisioning\n  or the PFD provisioning does not function at all.\n- RESOURCE_LIMITATION: This value indicates there is resource limitation for PFD storage.\n- SHORT_DELAY: This value indicates that the allowed delay is too short and PFD(s)\n  are not stored.\n- APP_ID_DUPLICATED: The received external application identifier(s) are already\n  provisioned.\n- PARTIAL_FAILURE: The PFD(s) are not provisioned to all PCEFs/TDFs/SMFs.\n- OTHER_REASON: Other reason unspecified.\n"
-    UserPlaneLocationArea:
-      description: 'Represents location area(s) of the user plane functions which are unable to enforce the provisioned PFD(s) successfully.
-
-        '
-      type: object
-      properties:
-        locationArea:
-          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea
-        locationArea5G:
-          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
-        dnais:
-          type: array
-          items:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Dnai
-          minItems: 0
-          description: Identifies a list of DNAI which the user plane functions support.
     PfdData:
       description: 'Represents a PFD request to add, update or remove PFD(s) for one external application identifier.
 
@@ -303,19 +300,22 @@ components:
       required:
       - externalAppId
       - pfds
-    DomainNameProtocol:
-      anyOf:
-      - type: string
-        enum:
-        - DNS_QNAME
-        - TLS_SNI
-        - TLS_SAN
-        - TSL_SCN
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+    UserPlaneLocationArea:
+      description: 'Represents location area(s) of the user plane functions which are unable to enforce the provisioned PFD(s) successfully.
 
-          '
-      description: "Represents the type of Domain Name Protocol.  \nPossible values are:\n- DNS_QNAME: Identifies the DNS protocol and the question name in DNS query.\n- TLS_SNI: Identifies the Server Name Indication in TLS ClientHello message.\n- TLS_SAN: Identifies the Subject Alternative Name in TLS ServerCertificate message.\n- TSL_SCN: Identifies the Subject Common Name in TLS ServerCertificate message.\n"
+        '
+      type: object
+      properties:
+        locationArea:
+          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea
+        locationArea5G:
+          $ref: TS29122_CommonData.yaml#/components/schemas/LocationArea5G
+        dnais:
+          type: array
+          items:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Dnai
+          minItems: 0
+          description: Identifies a list of DNAI which the user plane functions support.
     PfdReport:
       description: 'Represents a PFD report indicating the external application identifier(s) which PFD(s) are not added or modified successfully and the corresponding failure cause(s).
 

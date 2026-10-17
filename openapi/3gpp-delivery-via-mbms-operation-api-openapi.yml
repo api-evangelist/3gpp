@@ -351,6 +351,20 @@ paths:
           description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
 components:
   schemas:
+    GMDByMb2Notification:
+      description: Represents a group message delivery notification.
+      type: object
+      properties:
+        transaction:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        deliveryTriggerStatus:
+          type: boolean
+          description: 'Indicates whether delivery of group message payload corresponding to the TMGI was successful (TRUE) or not (FALSE)
+
+            '
+      required:
+      - transaction
+      - deliveryTriggerStatus
     MbmsLocArea:
       description: 'Represents a user location area whithin which is sent a group message delivery via MBMS request.
 
@@ -420,7 +434,7 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/PortRo
       required:
       - notificationDestination
-    GMDByMb2Notification:
+    GMDByxMBNotification:
       description: Represents a group message delivery notification.
       type: object
       properties:
@@ -428,7 +442,7 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/Link
         deliveryTriggerStatus:
           type: boolean
-          description: 'Indicates whether delivery of group message payload corresponding to the TMGI was successful (TRUE) or not (FALSE)
+          description: 'Indicates whether delivery of group message payload was successful(TRUE) or not (FALSE).
 
             '
       required:
@@ -465,20 +479,6 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/PortRo
       required:
       - notificationDestination
-    GMDByxMBNotification:
-      description: Represents a group message delivery notification.
-      type: object
-      properties:
-        transaction:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        deliveryTriggerStatus:
-          type: boolean
-          description: 'Indicates whether delivery of group message payload was successful(TRUE) or not (FALSE).
-
-            '
-      required:
-      - transaction
-      - deliveryTriggerStatus
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

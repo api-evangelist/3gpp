@@ -172,6 +172,17 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    DnsServerIdentifier:
+      description: Represents DNS server identifier (consisting of IP address and port).
+      type: object
+      properties:
+        dnsServIpAddr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
+        portNumber:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
+      required:
+      - dnsServIpAddr
+      - portNumber
     N6DelayMeasurementInfo:
       description: Contains N6 delay measurement assistance information.
       type: object
@@ -222,17 +233,6 @@ components:
         - dnsServIds
       - required:
         - easIpAddrs
-    DnsServerIdentifier:
-      description: Represents DNS server identifier (consisting of IP address and port).
-      type: object
-      properties:
-        dnsServIpAddr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/IpAddr
-        portNumber:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Uinteger
-      required:
-      - dnsServIpAddr
-      - portNumber
     N6DelayPerDnaiEas:
       description: Contains N6 delay measurement assistance information per DNAI and/or EAS.
       type: object

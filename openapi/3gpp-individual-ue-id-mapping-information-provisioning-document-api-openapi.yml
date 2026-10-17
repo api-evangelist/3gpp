@@ -203,14 +203,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    UeIdMappingInfoPatch:
-      description: 'Represents the requested modification to a UE ID Mapping Information Provisioning.
-
-        '
-      type: object
-      properties:
-        rsUeIdMappingInfo:
-          $ref: '#/components/schemas/RangSlUeIdMappInfo'
     UeIdMappingInfo:
       description: 'Represents the UE ID Mapping Information Provisioning.
 
@@ -221,6 +213,14 @@ components:
           $ref: '#/components/schemas/RangSlUeIdMappInfo'
         suppFeat:
           $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+    UeIdMappingInfoPatch:
+      description: 'Represents the requested modification to a UE ID Mapping Information Provisioning.
+
+        '
+      type: object
+      properties:
+        rsUeIdMappingInfo:
+          $ref: '#/components/schemas/RangSlUeIdMappInfo'
     RangSlUeIdMappInfo:
       description: 'Represents the Ranging/Sidelink UE ID mapping information between the Application Layer ID and the GPSI.
 

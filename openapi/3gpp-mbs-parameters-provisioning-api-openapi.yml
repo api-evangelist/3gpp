@@ -73,6 +73,25 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    MbsSessAuthData:
+      description: Represents the MBS Session Authorization data.
+      type: object
+      properties:
+        extGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        gpsisList:
+          type: object
+          additionalProperties:
+            $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
+          minProperties: 1
+          description: 'Represents the list of the GPSI(s) of the member UE(s) constituting the multicast MBS group. Any value of type can be used as a key of the map.
+
+            '
+        mbsSessionIdList:
+          $ref: TS29503_Nudm_PP.yaml#/components/schemas/5MbsAuthorizationInfo
+      required:
+      - extGroupId
+      - mbsSessionIdList
     MbsPpData:
       description: Represents MBS Parameters Provisioning data.
       type: object
@@ -102,25 +121,6 @@ components:
           minItems: 1
       required:
       - mbsSessAssistData
-    MbsSessAuthData:
-      description: Represents the MBS Session Authorization data.
-      type: object
-      properties:
-        extGroupId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
-        gpsisList:
-          type: object
-          additionalProperties:
-            $ref: TS29571_CommonData.yaml#/components/schemas/Gpsi
-          minProperties: 1
-          description: 'Represents the list of the GPSI(s) of the member UE(s) constituting the multicast MBS group. Any value of type can be used as a key of the map.
-
-            '
-        mbsSessionIdList:
-          $ref: TS29503_Nudm_PP.yaml#/components/schemas/5MbsAuthorizationInfo
-      required:
-      - extGroupId
-      - mbsSessionIdList
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

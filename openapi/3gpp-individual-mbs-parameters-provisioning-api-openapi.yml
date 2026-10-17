@@ -203,22 +203,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    MbsPpData:
-      description: Represents MBS Parameters Provisioning data.
-      type: object
-      properties:
-        afId:
-          type: string
-        mtcProviderId:
-          $ref: TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation
-        mbsSessAuthData:
-          $ref: '#/components/schemas/MbsSessAuthData'
-        mbsSessAssistInfo:
-          $ref: '#/components/schemas/MbsSessAssistInfo'
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - afId
     MbsSessAuthData:
       description: Represents the MBS Session Authorization data.
       type: object
@@ -238,6 +222,32 @@ components:
       required:
       - extGroupId
       - mbsSessionIdList
+    MbsPpDataPatch:
+      description: 'Represents the requested modification to existing MBS Parameters Provisioning data.
+
+        '
+      type: object
+      properties:
+        mbsSessAuthData:
+          $ref: '#/components/schemas/MbsSessAuthData'
+        mbsSessAssistInfo:
+          $ref: '#/components/schemas/MbsSessAssistInfo'
+    MbsPpData:
+      description: Represents MBS Parameters Provisioning data.
+      type: object
+      properties:
+        afId:
+          type: string
+        mtcProviderId:
+          $ref: TS29571_CommonData.yaml#/components/schemas/MtcProviderInformation
+        mbsSessAuthData:
+          $ref: '#/components/schemas/MbsSessAuthData'
+        mbsSessAssistInfo:
+          $ref: '#/components/schemas/MbsSessAssistInfo'
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afId
     MbsSessAssistInfo:
       description: 'Represents the MBS Session Assistance information data set(s).
 
@@ -251,16 +261,6 @@ components:
           minItems: 1
       required:
       - mbsSessAssistData
-    MbsPpDataPatch:
-      description: 'Represents the requested modification to existing MBS Parameters Provisioning data.
-
-        '
-      type: object
-      properties:
-        mbsSessAuthData:
-          $ref: '#/components/schemas/MbsSessAuthData'
-        mbsSessAssistInfo:
-          $ref: '#/components/schemas/MbsSessAssistInfo'
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

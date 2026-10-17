@@ -132,26 +132,14 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    measJobsRetrieval-ResponseType:
-      type: object
-      properties:
-        jobInfoList:
-          type: array
-          items:
-            $ref: '#/components/schemas/measJobInfo-ResourceType'
-    error-ResponseType:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            errorInfo:
-              type: string
-    scheduleOption-Type:
+    reportingMethod-Type:
       type: string
       enum:
-      - daily
-      - weekly
+      - file
+      - streaming
+    dateTime-Type:
+      type: string
+      format: date-Time
     timeInterval-Type:
       type: object
       properties:
@@ -161,16 +149,35 @@ components:
         intervalEnd:
           type: string
           format: Time
-    uri-Type:
-      type: string
-    reportingMethod-Type:
-      type: string
-      enum:
-      - file
-      - streaming
-    dateTime-Type:
-      type: string
-      format: date-Time
+    scheduleOfDay-Type:
+      type: object
+      properties:
+        dayOfWeek:
+          $ref: '#/components/schemas/dayOfWeek-Type'
+        intervalsOfDay:
+          type: array
+          items:
+            $ref: '#/components/schemas/timeInterval-Type'
+    measJobsRetrieval-ResponseType:
+      type: object
+      properties:
+        jobInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/measJobInfo-ResourceType'
+    schedule-Type:
+      type: object
+      properties:
+        scheduleOption:
+          $ref: '#/components/schemas/scheduleOption-Type'
+        dailySchedule:
+          type: array
+          items:
+            $ref: '#/components/schemas/timeInterval-Type'
+        weeklySchedule:
+          type: array
+          items:
+            $ref: '#/components/schemas/scheduleOfDay-Type'
     measJobCreation-RequestType:
       type: object
       properties:
@@ -235,19 +242,24 @@ components:
           $ref: '#/components/schemas/priority-Type'
         reliability:
           type: string
-    schedule-Type:
+    unsupportedMeas-Type:
       type: object
       properties:
-        scheduleOption:
-          $ref: '#/components/schemas/scheduleOption-Type'
-        dailySchedule:
+        iOCInstance:
+          $ref: '#/components/schemas/uri-Type'
+        measurementTypeName:
+          type: string
+        reason:
+          type: string
+    uri-Type:
+      type: string
+    measJobCreation-ResponseType:
+      type: object
+      properties:
+        unsupportedList:
           type: array
           items:
-            $ref: '#/components/schemas/timeInterval-Type'
-        weeklySchedule:
-          type: array
-          items:
-            $ref: '#/components/schemas/scheduleOfDay-Type'
+            $ref: '#/components/schemas/unsupportedMeas-Type'
     dayOfWeek-Type:
       type: string
       enum:
@@ -258,37 +270,25 @@ components:
       - Friday
       - Saturday
       - Sunday
+    scheduleOption-Type:
+      type: string
+      enum:
+      - daily
+      - weekly
+    error-ResponseType:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            errorInfo:
+              type: string
     priority-Type:
       type: string
       enum:
       - low
       - medium
       - high
-    unsupportedMeas-Type:
-      type: object
-      properties:
-        iOCInstance:
-          $ref: '#/components/schemas/uri-Type'
-        measurementTypeName:
-          type: string
-        reason:
-          type: string
-    scheduleOfDay-Type:
-      type: object
-      properties:
-        dayOfWeek:
-          $ref: '#/components/schemas/dayOfWeek-Type'
-        intervalsOfDay:
-          type: array
-          items:
-            $ref: '#/components/schemas/timeInterval-Type'
-    measJobCreation-ResponseType:
-      type: object
-      properties:
-        unsupportedList:
-          type: array
-          items:
-            $ref: '#/components/schemas/unsupportedMeas-Type'
 externalDocs:
   description: 3GPP TS 28.550 Performance assurance
   url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.550/

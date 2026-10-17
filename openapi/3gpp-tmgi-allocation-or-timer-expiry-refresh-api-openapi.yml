@@ -134,35 +134,6 @@ components:
       allOf:
       - $ref: TS29122_CommonData.yaml#/components/schemas/ProblemDetails
       - $ref: '#/components/schemas/ReducedMbsServArea'
-    TmgiAllocRequest:
-      description: 'Represents the full set of parameters to initiate an MBS TMGI(s) allocation request or the refresh of the expiry time of already allocated TMGI(s).
-
-        '
-      type: object
-      properties:
-        afId:
-          type: string
-        tmgiParams:
-          $ref: TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate
-        notificationUri:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
-        mbsServiceArea:
-          $ref: TS29571_CommonData.yaml#/components/schemas/MbsServiceArea
-        extMbsServiceArea:
-          $ref: TS29571_CommonData.yaml#/components/schemas/ExternalMbsServiceArea
-        requestTestNotification:
-          type: boolean
-        websockNotifConfig:
-          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - afId
-      - tmgiParams
-      not:
-        required:
-        - mbsServiceArea
-        - extMbsServiceArea
     ReducedMbsServArea:
       description: 'Represents the reduced MBS Service Area information.
 
@@ -197,6 +168,35 @@ components:
           required:
           - reducedExtMbsServArea
           - reducedMbsServAreas
+    TmgiAllocRequest:
+      description: 'Represents the full set of parameters to initiate an MBS TMGI(s) allocation request or the refresh of the expiry time of already allocated TMGI(s).
+
+        '
+      type: object
+      properties:
+        afId:
+          type: string
+        tmgiParams:
+          $ref: TS29532_Nmbsmf_TMGI.yaml#/components/schemas/TmgiAllocate
+        notificationUri:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Uri
+        mbsServiceArea:
+          $ref: TS29571_CommonData.yaml#/components/schemas/MbsServiceArea
+        extMbsServiceArea:
+          $ref: TS29571_CommonData.yaml#/components/schemas/ExternalMbsServiceArea
+        requestTestNotification:
+          type: boolean
+        websockNotifConfig:
+          $ref: TS29122_CommonData.yaml#/components/schemas/WebsockNotifConfig
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - afId
+      - tmgiParams
+      not:
+        required:
+        - mbsServiceArea
+        - extMbsServiceArea
     TmgiAllocResponse:
       description: 'Represents MBS TMGI(s) allocation information or the refreshed expiry time for already allocated TMGI(s)
 

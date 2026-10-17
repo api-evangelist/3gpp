@@ -64,6 +64,34 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    EcsAddrInfo:
+      description: Represents an ECS Address Configuration Information Set.
+      type: object
+      properties:
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        ecsServerAddr:
+          $ref: TS29571_CommonData.yaml#/components/schemas/EcsServerAddr
+        spatialValidityCond:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond
+        dnn:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Dnn
+        snssai:
+          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
+        ecsAuthMethods:
+          type: array
+          items:
+            $ref: TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod
+          minItems: 1
+        supportedPlmns:
+          type: array
+          items:
+            $ref: TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn
+          minItems: 1
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - ecsServerAddr
     EcsAddrDeleteCriteria:
       description: 'Contains criteria to be used for deleting ECS Address Configuration information.
 
@@ -93,34 +121,6 @@ components:
         - snssai
       - required:
         - ecsAddrInfo
-    EcsAddrInfo:
-      description: Represents an ECS Address Configuration Information Set.
-      type: object
-      properties:
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        ecsServerAddr:
-          $ref: TS29571_CommonData.yaml#/components/schemas/EcsServerAddr
-        spatialValidityCond:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SpatialValidityCond
-        dnn:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Dnn
-        snssai:
-          $ref: TS29571_CommonData.yaml#/components/schemas/Snssai
-        ecsAuthMethods:
-          type: array
-          items:
-            $ref: TS29503_Nudm_PP.yaml#/components/schemas/EcsAuthMethod
-          minItems: 1
-        supportedPlmns:
-          type: array
-          items:
-            $ref: TS29503_Nudm_PP.yaml#/components/schemas/SupportedPlmn
-          minItems: 1
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - ecsServerAddr
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

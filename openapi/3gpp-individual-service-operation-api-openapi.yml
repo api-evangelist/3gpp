@@ -110,18 +110,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    ServiceAnnouncementMode:
-      anyOf:
-      - type: string
-        enum:
-        - SACH
-        - CONTENT_PROVIDER
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the service annoucement mode.  \nPossible values are:\n- SACH: BM-SC performs the service announcement for the current service using the\n  SACH channel.\n- CONTENT_PROVIDER: BM-SC provides the necessary service access information used by\n  the Content Provider to create the service announcement information.\n"
-      readOnly: true
     ServiceCreation:
       description: Represents an individual xMB Service resource.
       type: object
@@ -162,6 +150,18 @@ components:
           readOnly: true
         serviceAnnouncementMode:
           $ref: '#/components/schemas/ServiceAnnouncementMode'
+    ServiceAnnouncementMode:
+      anyOf:
+      - type: string
+        enum:
+        - SACH
+        - CONTENT_PROVIDER
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents the service annoucement mode.  \nPossible values are:\n- SACH: BM-SC performs the service announcement for the current service using the\n  SACH channel.\n- CONTENT_PROVIDER: BM-SC provides the necessary service access information used by\n  the Content Provider to create the service announcement information.\n"
+      readOnly: true
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

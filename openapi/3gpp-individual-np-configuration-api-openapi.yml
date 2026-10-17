@@ -241,32 +241,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    NpConfigurationPatch:
-      description: 'Represents parameters used to request the modification of a network parameters configuration resource.
-
-        '
-      type: object
-      properties:
-        maximumLatency:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
-        maximumResponseTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
-        suggestedNumberOfDlPackets:
-          type:
-          - integer
-          - 'null'
-          minimum: 0
-          description: 'This parameter may be included to identify the number of packets that the serving gateway shall buffer in case that the UE is not reachable.
-
-            '
-        groupReportGuardTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
-        validityTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRm
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        mpsforMsgInd:
-          $ref: '#/components/schemas/MPSforMsgInd'
     MPSforMsgInd:
       anyOf:
       - type: string
@@ -335,6 +309,32 @@ components:
         - msisdn
       - required:
         - externalGroupId
+    NpConfigurationPatch:
+      description: 'Represents parameters used to request the modification of a network parameters configuration resource.
+
+        '
+      type: object
+      properties:
+        maximumLatency:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
+        maximumResponseTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
+        suggestedNumberOfDlPackets:
+          type:
+          - integer
+          - 'null'
+          minimum: 0
+          description: 'This parameter may be included to identify the number of packets that the serving gateway shall buffer in case that the UE is not reachable.
+
+            '
+        groupReportGuardTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSecRm
+        validityTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRm
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        mpsforMsgInd:
+          $ref: '#/components/schemas/MPSforMsgInd'
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

@@ -159,6 +159,17 @@ paths:
                   $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
+    UeAddrNotif:
+      description: Represents the UE Address Notification.
+      type: object
+      properties:
+        notifId:
+          type: string
+        uePubAddrInfo:
+          $ref: TS29564_Nupf_EventExposure.yaml#/components/schemas/UeNatMappingInfo
+      required:
+      - notifId
+      - uePubAddrInfo
     UeAddrSubsc:
       description: Represents the UE Address Subscription.
       type: object
@@ -184,17 +195,6 @@ components:
       - notifUri
       - notifId
       - afId
-    UeAddrNotif:
-      description: Represents the UE Address Notification.
-      type: object
-      properties:
-        notifId:
-          type: string
-        uePubAddrInfo:
-          $ref: TS29564_Nupf_EventExposure.yaml#/components/schemas/UeNatMappingInfo
-      required:
-      - notifId
-      - uePubAddrInfo
     UeAddrInfo:
       description: Represents the UE Public Address information.
       type: object

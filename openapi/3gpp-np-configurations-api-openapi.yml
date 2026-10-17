@@ -160,22 +160,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    ConfigurationNotification:
-      description: Represents a configuration result notification.
-      type: object
-      properties:
-        configuration:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        configResults:
-          type: array
-          items:
-            $ref: TS29122_CommonData.yaml#/components/schemas/ConfigResult
-          minItems: 1
-          description: The grouping configuration result notification provided by the SCEF.
-        appliedParam:
-          $ref: TS29122_MonitoringEvent.yaml#/components/schemas/AppliedParameterConfiguration
-      required:
-      - configuration
     MPSforMsgInd:
       anyOf:
       - type: string
@@ -244,6 +228,22 @@ components:
         - msisdn
       - required:
         - externalGroupId
+    ConfigurationNotification:
+      description: Represents a configuration result notification.
+      type: object
+      properties:
+        configuration:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        configResults:
+          type: array
+          items:
+            $ref: TS29122_CommonData.yaml#/components/schemas/ConfigResult
+          minItems: 1
+          description: The grouping configuration result notification provided by the SCEF.
+        appliedParam:
+          $ref: TS29122_MonitoringEvent.yaml#/components/schemas/AppliedParameterConfiguration
+      required:
+      - configuration
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

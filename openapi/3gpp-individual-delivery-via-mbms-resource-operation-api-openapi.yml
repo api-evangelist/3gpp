@@ -589,20 +589,6 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/PortRo
       required:
       - notificationDestination
-    GMDViaMBMSByxMBPatch:
-      description: Represents a modification request of a group message delivery via MBMS by xMB.
-      type: object
-      properties:
-        mbmsLocArea:
-          $ref: '#/components/schemas/MbmsLocArea'
-        messageDeliveryStartTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        messageDeliveryStopTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-        groupMessagePayload:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
     GMDViaMBMSByxMB:
       description: Represents a group message delivery via MBMS by xMB.
       type: object
@@ -634,6 +620,20 @@ components:
           $ref: TS29122_CommonData.yaml#/components/schemas/PortRo
       required:
       - notificationDestination
+    GMDViaMBMSByxMBPatch:
+      description: Represents a modification request of a group message delivery via MBMS by xMB.
+      type: object
+      properties:
+        mbmsLocArea:
+          $ref: '#/components/schemas/MbmsLocArea'
+        messageDeliveryStartTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        messageDeliveryStopTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+        groupMessagePayload:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2

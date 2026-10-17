@@ -216,21 +216,6 @@ components:
           minItems: 1
       required:
       - apiName
-    OpenDiscoveryResp:
-      type: object
-      description: 'Represents the Open Service API Discovery response.
-
-        '
-      properties:
-        discApis:
-          type: array
-          items:
-            $ref: '#/components/schemas/OpenAPIDetails'
-          minItems: 0
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
-      required:
-      - discApis
     OpenAefProfile:
       type: object
       description: 'Represents the AEF Profile details provided within an Open Service API Discovery response.
@@ -252,6 +237,21 @@ components:
           $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/AefLocation
         serviceKpis:
           $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceKpis
+    OpenDiscoveryResp:
+      type: object
+      description: 'Represents the Open Service API Discovery response.
+
+        '
+      properties:
+        discApis:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpenAPIDetails'
+          minItems: 0
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+      required:
+      - discApis
 externalDocs:
   description: 3GPP TS 29.222 V19.5.0; Common API Framework for 3GPP Northbound APIs
   url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.222/

@@ -194,19 +194,22 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    IpAddrInfo:
+    DiscoveredAPIs:
       type: object
-      description: Represents the UE IP address information.
+      description: 'Represents a list of APIs currently registered in the CAPIF core function and satisfying a number of filter criteria provided by the API consumer.
+
+        '
       properties:
-        ipv4Addr:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv4Addr
-        ipv6Addr:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv6Addr
-      oneOf:
-      - required:
-        - ipv4Addr
-      - required:
-        - ipv6Addr
+        serviceAPIDescriptions:
+          type: array
+          items:
+            $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription
+          minItems: 1
+          description: 'Description of the service API as published by the service. Each service API information shall include AEF profiles matching the filter criteria.
+
+            '
+        suppFeat:
+          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
     ResOperInfo:
       type: object
       description: 'Represents the resourse and/or service operation.
@@ -225,22 +228,19 @@ components:
           items:
             type: string
           minItems: 1
-    DiscoveredAPIs:
+    IpAddrInfo:
       type: object
-      description: 'Represents a list of APIs currently registered in the CAPIF core function and satisfying a number of filter criteria provided by the API consumer.
-
-        '
+      description: Represents the UE IP address information.
       properties:
-        serviceAPIDescriptions:
-          type: array
-          items:
-            $ref: TS29222_CAPIF_Publish_Service_API.yaml#/components/schemas/ServiceAPIDescription
-          minItems: 1
-          description: 'Description of the service API as published by the service. Each service API information shall include AEF profiles matching the filter criteria.
-
-            '
-        suppFeat:
-          $ref: TS29571_CommonData.yaml#/components/schemas/SupportedFeatures
+        ipv4Addr:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv4Addr
+        ipv6Addr:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Ipv6Addr
+      oneOf:
+      - required:
+        - ipv4Addr
+      - required:
+        - ipv6Addr
 externalDocs:
   description: 3GPP TS 29.222 V19.5.0 Common API Framework for 3GPP Northbound APIs
   url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.222/

@@ -148,88 +148,6 @@ paths:
           $ref: TS29122_CommonData.yaml#/components/responses/default
 components:
   schemas:
-    NiddConfigurationPatch:
-      description: Represents the parameters to update a NIDD configuration.
-      type: object
-      properties:
-        duration:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRm
-        reliableDataService:
-          type:
-          - boolean
-          - 'null'
-          description: 'Indicates whether the reliable data service (as defined in clause 4.5.14.3 of 3GPP TS  23.682) acknowledgement is requested (true) or not (false).
-
-            '
-        rdsPorts:
-          type: array
-          items:
-            $ref: '#/components/schemas/RdsPort'
-          minItems: 1
-          description: 'Indicates the static port configuration that is used for reliable data transfer between specific applications using RDS (as defined in clause 5.2.4 and 5.2.5 of 3GPP TS 24.250).
-
-            '
-        pdnEstablishmentOption:
-          $ref: '#/components/schemas/PdnEstablishmentOptionsRm'
-        notificationDestination:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-    NiddStatus:
-      anyOf:
-      - type: string
-        enum:
-        - ACTIVE
-        - TERMINATED_UE_NOT_AUTHORIZED
-        - TERMINATED
-        - RDS_PORT_UNKNOWN
-      - type: string
-        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
-
-          '
-      description: "Represents the status of a NIDD configuration.  \nPossible values are:\n- ACTIVE: The NIDD configuration is active.\n- TERMINATED_UE_NOT_AUTHORIZED: The NIDD configuration was terminated because the UE´s\n  authorisation was revoked.\n- TERMINATED: The NIDD configuration was terminated.\n- RDS_PORT_UNKNOWN: The RDS port is unknown.\n"
-      readOnly: true
-    NiddDownlinkDataTransfer:
-      description: Represents the received NIDD downlink data from the SCS/AS.
-      type: object
-      properties:
-        externalId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalId
-        externalGroupId:
-          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
-        msisdn:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Msisdn
-        self:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Link
-        data:
-          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
-        reliableDataService:
-          type: boolean
-          description: 'Indicates whether the reliable data service (as defined in clause 4.5.14.3 of 3GPP TS 23.682) acknowledgement is requested (true) or not (false). Default value is false.
-
-            '
-        rdsPort:
-          $ref: '#/components/schemas/RdsPort'
-        maximumLatency:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
-        priority:
-          type: integer
-          description: 'It is used to indicate the priority of the non-IP data packet relative to other non-IP data packets.
-
-            '
-        pdnEstablishmentOption:
-          $ref: '#/components/schemas/PdnEstablishmentOptions'
-        deliveryStatus:
-          $ref: '#/components/schemas/DeliveryStatus'
-        requestedRetransmissionTime:
-          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
-      required:
-      - data
-      oneOf:
-      - required:
-        - externalId
-      - required:
-        - msisdn
-      - required:
-        - externalGroupId
     DeliveryStatus:
       anyOf:
       - type: string
@@ -321,18 +239,88 @@ components:
         - msisdn
       - required:
         - externalGroupId
-    PdnEstablishmentOptions:
+    NiddConfigurationPatch:
+      description: Represents the parameters to update a NIDD configuration.
+      type: object
+      properties:
+        duration:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTimeRm
+        reliableDataService:
+          type:
+          - boolean
+          - 'null'
+          description: 'Indicates whether the reliable data service (as defined in clause 4.5.14.3 of 3GPP TS  23.682) acknowledgement is requested (true) or not (false).
+
+            '
+        rdsPorts:
+          type: array
+          items:
+            $ref: '#/components/schemas/RdsPort'
+          minItems: 1
+          description: 'Indicates the static port configuration that is used for reliable data transfer between specific applications using RDS (as defined in clause 5.2.4 and 5.2.5 of 3GPP TS 24.250).
+
+            '
+        pdnEstablishmentOption:
+          $ref: '#/components/schemas/PdnEstablishmentOptionsRm'
+        notificationDestination:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+    NiddDownlinkDataTransfer:
+      description: Represents the received NIDD downlink data from the SCS/AS.
+      type: object
+      properties:
+        externalId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalId
+        externalGroupId:
+          $ref: TS29122_CommonData.yaml#/components/schemas/ExternalGroupId
+        msisdn:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Msisdn
+        self:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Link
+        data:
+          $ref: TS29122_CommonData.yaml#/components/schemas/Bytes
+        reliableDataService:
+          type: boolean
+          description: 'Indicates whether the reliable data service (as defined in clause 4.5.14.3 of 3GPP TS 23.682) acknowledgement is requested (true) or not (false). Default value is false.
+
+            '
+        rdsPort:
+          $ref: '#/components/schemas/RdsPort'
+        maximumLatency:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DurationSec
+        priority:
+          type: integer
+          description: 'It is used to indicate the priority of the non-IP data packet relative to other non-IP data packets.
+
+            '
+        pdnEstablishmentOption:
+          $ref: '#/components/schemas/PdnEstablishmentOptions'
+        deliveryStatus:
+          $ref: '#/components/schemas/DeliveryStatus'
+        requestedRetransmissionTime:
+          $ref: TS29122_CommonData.yaml#/components/schemas/DateTime
+      required:
+      - data
+      oneOf:
+      - required:
+        - externalId
+      - required:
+        - msisdn
+      - required:
+        - externalGroupId
+    NiddStatus:
       anyOf:
       - type: string
         enum:
-        - WAIT_FOR_UE
-        - INDICATE_ERROR
-        - SEND_TRIGGER
+        - ACTIVE
+        - TERMINATED_UE_NOT_AUTHORIZED
+        - TERMINATED
+        - RDS_PORT_UNKNOWN
       - type: string
         description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
 
           '
-      description: "Represents PDN establishment options that describe the network behaviour when\nthere is no PDN connection towards the addressed UE.  \nPossible values are:\n- WAIT_FOR_UE: wait for the UE to establish the PDN connection \n- INDICATE_ERROR: respond with an error cause\n- SEND_TRIGGER: send a device trigger\n"
+      description: "Represents the status of a NIDD configuration.  \nPossible values are:\n- ACTIVE: The NIDD configuration is active.\n- TERMINATED_UE_NOT_AUTHORIZED: The NIDD configuration was terminated because the UE´s\n  authorisation was revoked.\n- TERMINATED: The NIDD configuration was terminated.\n- RDS_PORT_UNKNOWN: The RDS port is unknown.\n"
+      readOnly: true
     RdsPort:
       description: Represents the port configuration for Reliable Data Transfer.
       type: object
@@ -351,6 +339,18 @@ components:
       anyOf:
       - $ref: '#/components/schemas/PdnEstablishmentOptions'
       - $ref: TS29571_CommonData.yaml#/components/schemas/NullValue
+    PdnEstablishmentOptions:
+      anyOf:
+      - type: string
+        enum:
+        - WAIT_FOR_UE
+        - INDICATE_ERROR
+        - SEND_TRIGGER
+      - type: string
+        description: 'This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+
+          '
+      description: "Represents PDN establishment options that describe the network behaviour when\nthere is no PDN connection towards the addressed UE.  \nPossible values are:\n- WAIT_FOR_UE: wait for the UE to establish the PDN connection \n- INDICATE_ERROR: respond with an error cause\n- SEND_TRIGGER: send a device trigger\n"
   securitySchemes:
     oAuth2ClientCredentials:
       type: oauth2
