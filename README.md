@@ -1,4 +1,4 @@
-# 3GPP (3gpp)
+# 3GPP
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,385 +66,320 @@
 
 3GPP (the 3rd Generation Partnership Project) is the global standards partnership that writes the technical specifications for mobile networks — GSM, UMTS, LTE, 5G and the ongoing 6G work — through seven regional Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA and TTC) and a membership of operators, vendors and chipset makers. It is not a service provider and sells nothing to developers; it sits at the very top of the telecom value chain, defining the network functions that every mobile operator on earth deploys and that every CPaaS aggregator ultimately resells. Its API posture is unusually open for a standards body: all 3GPP specifications are published free of charge with no membership or login, and since Release 15 the RESTful Service-Based Architecture, the SCEF/NEF northbound exposure APIs and the SA5 management services have been published as machine-readable OpenAPI 3.0 YAML in a public GitLab instance at forge.3gpp.org. What 3GPP does not run is a developer programme — there is no portal, no key, no sandbox and no callable endpoint; the specifications describe interfaces that operators instantiate, and the developer-facing abstraction over them is CAMARA and GSMA Open Gateway, not 3GPP itself.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/3gpp/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/3gpp/refs/heads/main/apis.yml)
-
-## Tags
-
-- Telecommunications
-- Global
-- Standards
-- Standards Body
-- Network APIs
-- 5G
-- Network Exposure
-- NEF
-- SCEF
-- CAPIF
-- Service Based Architecture
-- OpenAPI
-- OSS
-- Network Functions
-- 6G
-
-## Timestamps
-
-- **Created:** 2026-07-25
-- **Modified:** 2026-07-25
-
-## Developer Surface — an honest reading
-
-3GPP runs no developer portal. `developer.3gpp.org`, `developers.3gpp.org` and `docs.3gpp.org` do not resolve; `api.3gpp.org` returns 404; `www.3gpp.org/developer` returns 200 but is an ordinary CMS content page with no signup, no key, no sandbox and no console. There is nothing to call: every base URL in every specification below is a template (`{apiRoot}`, `{nrfApiRoot}`) because 3GPP defines interfaces that mobile operators instantiate.
-
-What 3GPP does do — and it is the opposite of most standards bodies in telecom — is give everything away. Technical specifications are published free of charge four times a year with no membership and no login (`https://www.3gpp.org/ftp/Specs/archive/` served a full spec ZIP anonymously at review time), and the RESTful APIs inside those specifications are mirrored as machine-readable OpenAPI 3.0 YAML in a public GitLab at [forge.3gpp.org](https://forge.3gpp.org/). Membership buys a vote, not the output.
-
-**116 OpenAPI documents were harvested verbatim** from two public 3GPP Forge repositories and all 116 parse as valid OpenAPI 3.0.0/3.0.1 — 72 from [all/5G_APIs](https://forge.3gpp.org/rep/all/5G_APIs) at `REL-20` (TS 29.122 T8/SCEF, TS 29.222 CAPIF, TS 29.522 5G NEF northbound) and 44 from [sa5/MnS](https://forge.3gpp.org/rep/sa5/MnS) at `Rel-19` (SA5 management services). 214 paths in total; 43 documents declare OpenAPI `callbacks` (the subscribe/notify pattern that carries network events); 63 declare an OAuth 2.0 client-credentials security scheme with an NRF-issued token URL.
-
-### CAMARA posture
-
-**Underlying standard, not an implementer.** 3GPP publishes no CAMARA API and exposes nothing callable. It writes the layer beneath: CAMARA's Quality on Demand abstracts 3GPP `TS29122_AsSessionWithQoS`, and the device location/status families abstract `TS29122_MonitoringEvent` — both harvested here as the underlay, not as CAMARA implementations. The only CAMARA reference on 3gpp.org is a first-party statement that CAPIF is designed to host non-3GPP APIs "defined by other SDO or consortiums such as ETSI ISG MEC, TM Forum, CAMARA, etc." 3GPP is not a GSMA Open Gateway participant — Open Gateway is an operator commitment programme, and GSMA sits in 3GPP as a Market Representation Partner, not one of the seven Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). CIBA does not appear anywhere in the harvested specifications; 3GPP's consent mechanism is CAPIF RNAA (Resource owner-aware Northbound API Access, Rel-18).
-
-## APIs
-
-All 116 entries below point at a specification 3GPP publishes openly. None is a hosted, callable service.
-
-### TS 28.104 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.104/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.104/)
-
-- **Mda Nrm** — [OpenAPI](openapi/3gpp-ts28104-mdanrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28104_MdaNrm.yaml)
-- **Mda Report** — [OpenAPI](openapi/3gpp-ts28104-mdareport.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28104_MdaReport.yaml)
-
-### TS 28.105 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.105/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.105/)
-
-- **Ai Ml Nrm** — [OpenAPI](openapi/3gpp-ts28105-aimlnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28105_AiMlNrm.yaml)
-
-### TS 28.111 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.111/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.111/)
-
-- **Fault Notifications** — [OpenAPI](openapi/3gpp-ts28111-faultnotifications.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28111_FaultNotifications.yaml)  
-  `{notificationRecipientAddress}`
-- **Fault Nrm** — [OpenAPI](openapi/3gpp-ts28111-faultnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28111_FaultNrm.yaml)  
-  `{MnSRoot}/FaultSupervisionMnS/{MnSversion}`
-
-### TS 28.310 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.310/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.310/)
-
-- **Energy Information Nrm** — [OpenAPI](openapi/3gpp-ts28310-energyinformationnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28310_EnergyInformationNrm.yaml)
-
-### TS 28.312 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.312/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.312/)
-
-- **Intent Expectations** — [OpenAPI](openapi/3gpp-ts28312-intentexpectations.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28312_IntentExpectations.yaml)
-- **Intent Nrm** — [OpenAPI](openapi/3gpp-ts28312-intentnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28312_IntentNrm.yaml)
-
-### TS 28.317 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.317/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.317/)
-
-- **Ran Sc Nrm** — [OpenAPI](openapi/3gpp-ts28317-ranscnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28317_RanScNrm.yaml)
-
-### TS 28.318 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.318/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.318/)
-
-- **Dso Nrm** — [OpenAPI](openapi/3gpp-ts28318-dsonrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28318_DsoNrm.yaml)
-
-### TS 28.319 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.319/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.319/)
-
-- **Msac Nrm** — [OpenAPI](openapi/3gpp-ts28319-msacnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28319_MsacNrm.yaml)
-
-### TS 28.531 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.531/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.531/)
-
-- **NS Prov Mn S** — [OpenAPI](openapi/3gpp-ts28531-nsprovmns.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28531_NSProvMnS.yaml)  
-  `{MnSRoot}/NSProvMnS/{MnSVersion}`
-- **NSS Prov Mn S** — [OpenAPI](openapi/3gpp-ts28531-nssprovmns.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28531_NSSProvMnS.yaml)  
-  `{MnSRoot}/NSSProvMnS/{MnSVersion}`
-
-### TS 28.532 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.532/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.532/)
-
-- **File Data Reporting Mn S** — [OpenAPI](openapi/3gpp-ts28532-filedatareportingmns.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28532_FileDataReportingMnS.yaml)  
-  `{MnSRoot}/fileDataReportingMnS/{MnSVersion}`
-- **Heartbeat Ntf** — [OpenAPI](openapi/3gpp-ts28532-heartbeatntf.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28532_HeartbeatNtf.yaml)
-- **Perf Mn S** — [OpenAPI](openapi/3gpp-ts28532-perfmns.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28532_PerfMnS.yaml)  
-  `{root}`
-- **Prov Mn S** — [OpenAPI](openapi/3gpp-ts28532-provmns.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28532_ProvMnS.yaml)  
-  `{MnSRoot}/ProvMnS/{MnSVersion}/{URI-LDN-first-part}`
-- **Streaming Data Mn S** — [OpenAPI](openapi/3gpp-ts28532-streamingdatamns.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28532_StreamingDataMnS.yaml)  
-  `{MnSRoot}/StreamingDataReportingMnS/{MnSVersion}`
-
-### TS 28.536 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.536/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.536/)
-
-- **Cosla Nrm** — [OpenAPI](openapi/3gpp-ts28536-coslanrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28536_CoslaNrm.yaml)
-
-### TS 28.538 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.538/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.538/)
-
-- **Edge Nrm** — [OpenAPI](openapi/3gpp-ts28538-edgenrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28538_EdgeNrm.yaml)
-
-### TS 28.541 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.541/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.541/)
-
-- **5 Gc Nrm** — [OpenAPI](openapi/3gpp-ts28541-5gcnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28541_5GcNrm.yaml)
-- **Nr Nrm** — [OpenAPI](openapi/3gpp-ts28541-nrnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28541_NrNrm.yaml)
-- **Slice Nrm** — [OpenAPI](openapi/3gpp-ts28541-slicenrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28541_SliceNrm.yaml)
-
-### TS 28.550 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.550/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.550/)
-
-- **Perf Meas Job Ctrl Mn S** — [OpenAPI](openapi/3gpp-ts28550-perfmeasjobctrlmns.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28550_PerfMeasJobCtrlMnS.yaml)  
-  `{MnSRoot}/PerfMeasJobCtrlMnS/{MnSVersion}`
-
-### TS 28.561 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.561/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.561/)
-
-- **Ndt Nrm** — [OpenAPI](openapi/3gpp-ts28561-ndtnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28561_NdtNrm.yaml)
-
-### TS 28.567 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.567/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.567/)
-
-- **Ccl Nrm** — [OpenAPI](openapi/3gpp-ts28567-cclnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28567_CclNrm.yaml)
-
-### TS 28.572 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.572/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.572/)
-
-- **Plan Management** — [OpenAPI](openapi/3gpp-ts28572-planmanagement.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28572_PlanManagement.yaml)  
-  `{MnSRoot}/plan-management/{MnSVersion}`
-
-### TS 28.623 — Management Services (SA5 OAM)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/28_series/28.623/](https://www.3gpp.org/ftp/Specs/archive/28_series/28.623/)
-
-- **Com Defs** — [OpenAPI](openapi/3gpp-ts28623-comdefs.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28623_ComDefs.yaml)
-- **External Data Mgmt Nrm** — [OpenAPI](openapi/3gpp-ts28623-externaldatamgmtnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28623_ExternalDataMgmtNrm.yaml)
-- **Feature Nrm** — [OpenAPI](openapi/3gpp-ts28623-featurenrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28623_FeatureNrm.yaml)
-- **File Management Nrm** — [OpenAPI](openapi/3gpp-ts28623-filemanagementnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28623_FileManagementNrm.yaml)
-- **Generic Nrm** — [OpenAPI](openapi/3gpp-ts28623-genericnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28623_GenericNrm.yaml)
-- **Management Data Collection Nrm** — [OpenAPI](openapi/3gpp-ts28623-managementdatacollectionnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28623_ManagementDataCollectionNrm.yaml)
-- **Mn S Registry Nrm** — [OpenAPI](openapi/3gpp-ts28623-mnsregistrynrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28623_MnSRegistryNrm.yaml)
-- **Pm Control Nrm** — [OpenAPI](openapi/3gpp-ts28623-pmcontrolnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28623_PmControlNrm.yaml)
-- **Qo E Measurement Collection Nrm** — [OpenAPI](openapi/3gpp-ts28623-qoemeasurementcollectionnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28623_QoEMeasurementCollectionNrm.yaml)
-- **Subscription Control Nrm** — [OpenAPI](openapi/3gpp-ts28623-subscriptioncontrolnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28623_SubscriptionControlNrm.yaml)
-- **Threshold Monitor Nrm** — [OpenAPI](openapi/3gpp-ts28623-thresholdmonitornrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28623_ThresholdMonitorNrm.yaml)
-- **Trace Control Nrm** — [OpenAPI](openapi/3gpp-ts28623-tracecontrolnrm.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS28623_TraceControlNrm.yaml)
-
-### TS 29.122 — T8 Northbound APIs (SCEF / 4G–5G capability exposure)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/29_series/29.122/](https://www.3gpp.org/ftp/Specs/archive/29_series/29.122/)
-
-- **As Session With Qo S** — [OpenAPI](openapi/3gpp-ts29122-assessionwithqos.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_AsSessionWithQoS.yaml)  
-  `{apiRoot}/3gpp-as-session-with-qos/v1`
-- **Chargeable Party** — [OpenAPI](openapi/3gpp-ts29122-chargeableparty.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_ChargeableParty.yaml)  
-  `{apiRoot}/3gpp-chargeable-party/v1`
-- **Common Data** — [OpenAPI](openapi/3gpp-ts29122-commondata.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_CommonData.yaml)
-- **Cp Provisioning** — [OpenAPI](openapi/3gpp-ts29122-cpprovisioning.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_CpProvisioning.yaml)  
-  `{apiRoot}/3gpp-cp-parameter-provisioning/v1`
-- **Device Triggering** — [OpenAPI](openapi/3gpp-ts29122-devicetriggering.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_DeviceTriggering.yaml)  
-  `{apiRoot}/3gpp-device-triggering/v1`
-- **ECR Control** — [OpenAPI](openapi/3gpp-ts29122-ecrcontrol.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_ECRControl.yaml)  
-  `{apiRoot}/3gpp-ecr-control/v1`
-- **GM Dvia MBM Sby MB2** — [OpenAPI](openapi/3gpp-ts29122-gmdviambmsbymb2.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_GMDviaMBMSbyMB2.yaml)  
-  `{apiRoot}/3gpp-group-message-delivery-mb2/v1`
-- **GM Dvia MBM Sbyx MB** — [OpenAPI](openapi/3gpp-ts29122-gmdviambmsbyxmb.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_GMDviaMBMSbyxMB.yaml)  
-  `{apiRoot}/3gpp-group-message-delivery-xmb/v1`
-- **Monitoring Event** — [OpenAPI](openapi/3gpp-ts29122-monitoringevent.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_MonitoringEvent.yaml)  
-  `{apiRoot}/3gpp-monitoring-event/v1`
-- **Msisdn Less Mo Sms** — [OpenAPI](openapi/3gpp-ts29122-msisdnlessmosms.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_MsisdnLessMoSms.yaml)  
-  `{apiRoot}`
-- **NIDD** — [OpenAPI](openapi/3gpp-ts29122-nidd.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_NIDD.yaml)  
-  `{apiRoot}/3gpp-nidd/v1`
-- **Np Configuration** — [OpenAPI](openapi/3gpp-ts29122-npconfiguration.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_NpConfiguration.yaml)  
-  `{apiRoot}/3gpp-network-parameter-configuration/v1`
-- **Pfd Management** — [OpenAPI](openapi/3gpp-ts29122-pfdmanagement.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_PfdManagement.yaml)  
-  `{apiRoot}/3gpp-pfd-management/v1`
-- **Racs Parameter Provisioning** — [OpenAPI](openapi/3gpp-ts29122-racsparameterprovisioning.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_RacsParameterProvisioning.yaml)  
-  `{apiRoot}/3gpp-racs-pp/v1`
-- **Reporting Network Status** — [OpenAPI](openapi/3gpp-ts29122-reportingnetworkstatus.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_ReportingNetworkStatus.yaml)  
-  `{apiRoot}/3gpp-net-stat-report/v1`
-- **Resource Management Of Bdt** — [OpenAPI](openapi/3gpp-ts29122-resourcemanagementofbdt.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29122_ResourceManagementOfBdt.yaml)  
-  `{apiRoot}/3gpp-bdt/v1`
-
-### TS 29.222 — CAPIF, the Common API Framework
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/29_series/29.222/](https://www.3gpp.org/ftp/Specs/archive/29_series/29.222/)
-
-- **AEF Security** — [OpenAPI](openapi/3gpp-ts29222-aef-security-api.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29222_AEF_Security_API.yaml)  
-  `{apiRoot}/aef-security/v1`
-- **CAPIF Access Control Policy** — [OpenAPI](openapi/3gpp-ts29222-capif-access-control-policy-api.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29222_CAPIF_Access_Control_Policy_API.yaml)  
-  `{apiRoot}/access-control-policy/v1`
-- **CAPIF Invoker Management** — [OpenAPI](openapi/3gpp-ts29222-capif-api-invoker-management-api.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29222_CAPIF_API_Invoker_Management_API.yaml)  
-  `{apiRoot}/api-invoker-management/v1`
-- **CAPIF Provider Management** — [OpenAPI](openapi/3gpp-ts29222-capif-api-provider-management-api.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29222_CAPIF_API_Provider_Management_API.yaml)  
-  `{apiRoot}/api-provider-management/v1`
-- **CAPIF Auditing** — [OpenAPI](openapi/3gpp-ts29222-capif-auditing-api.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29222_CAPIF_Auditing_API.yaml)  
-  `{apiRoot}/logs/v1`
-- **CAPIF Discover Service** — [OpenAPI](openapi/3gpp-ts29222-capif-discover-service-api.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29222_CAPIF_Discover_Service_API.yaml)  
-  `{apiRoot}/service-apis/v1`
-- **CAPIF Events** — [OpenAPI](openapi/3gpp-ts29222-capif-events-api.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29222_CAPIF_Events_API.yaml)  
-  `{apiRoot}/capif-events/v1`
-- **CAPIF Logging Invocation** — [OpenAPI](openapi/3gpp-ts29222-capif-logging-api-invocation-api.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29222_CAPIF_Logging_API_Invocation_API.yaml)  
-  `{apiRoot}/api-invocation-logs/v1`
-- **CAPIF Open Discover Service** — [OpenAPI](openapi/3gpp-ts29222-capif-open-discover-service-api.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29222_CAPIF_Open_Discover_Service_API.yaml)  
-  `{apiRoot}/open-api-disc/v1`
-- **CAPIF Publish Service** — [OpenAPI](openapi/3gpp-ts29222-capif-publish-service-api.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29222_CAPIF_Publish_Service_API.yaml)  
-  `{apiRoot}/published-apis/v1`
-- **CAPIF Routing Info** — [OpenAPI](openapi/3gpp-ts29222-capif-routing-info-api.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29222_CAPIF_Routing_Info_API.yaml)  
-  `{apiRoot}/capif-routing-info/v1`
-- **CAPIF Security** — [OpenAPI](openapi/3gpp-ts29222-capif-security-api.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29222_CAPIF_Security_API.yaml)  
-  `{apiRoot}/capif-security/v1`
-
-### TS 29.512 — Policy Control (PCF)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/29_series/29.512/](https://www.3gpp.org/ftp/Specs/archive/29_series/29.512/)
-
-- **Npcf SM Policy Control** — [OpenAPI](openapi/3gpp-ts29512-npcf-smpolicycontrol.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS29512_Npcf_SMPolicyControl.yaml)  
-  `{apiRoot}/npcf-smpolicycontrol/v1`
-
-### TS 29.514 — Policy Authorization (PCF)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/29_series/29.514/](https://www.3gpp.org/ftp/Specs/archive/29_series/29.514/)
-
-- **Npcf Policy Authorization** — [OpenAPI](openapi/3gpp-ts29514-npcf-policyauthorization.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS29514_Npcf_PolicyAuthorization.yaml)  
-  `{apiRoot}/npcf-policyauthorization/v1`
-
-### TS 29.520 — Network Data Analytics (NWDAF)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/29_series/29.520/](https://www.3gpp.org/ftp/Specs/archive/29_series/29.520/)
-
-- **Nnwdaf Analytics Info** — [OpenAPI](openapi/3gpp-ts29520-nnwdaf-analyticsinfo.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS29520_Nnwdaf_AnalyticsInfo.yaml)  
-  `{apiRoot}/nnwdaf-analyticsinfo/v1`
-- **Nnwdaf Events Subscription** — [OpenAPI](openapi/3gpp-ts29520-nnwdaf-eventssubscription.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS29520_Nnwdaf_EventsSubscription.yaml)  
-  `{apiRoot}/nnwdaf-eventssubscription/v1`
-
-### TS 29.522 — 5G NEF Northbound APIs (network exposure to third parties)
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/](https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/)
-
-- **5 GLAN Parameter Provision** — [OpenAPI](openapi/3gpp-ts29522-5glanparameterprovision.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_5GLANParameterProvision.yaml)  
-  `{apiRoot}/3gpp-5glan-pp/v1`
-- **ACS Parameter Provision** — [OpenAPI](openapi/3gpp-ts29522-acsparameterprovision.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_ACSParameterProvision.yaml)  
-  `{apiRoot}/3gpp-acs-pp/v1`
-- **Addressing Param Provision** — [OpenAPI](openapi/3gpp-ts29522-addressingparamprovision.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_AddressingParamProvision.yaml)  
-  `{apiRoot}/3gpp-addr-pp/v1`
-- **A Io T** — [OpenAPI](openapi/3gpp-ts29522-aiot.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_AIoT.yaml)  
-  `{apiRoot}/3gpp-aiot/v1`
-- **AKMA** — [OpenAPI](openapi/3gpp-ts29522-akma.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_AKMA.yaml)  
-  `{apiRoot}/3gpp-akma/v1`
-- **AM Influence** — [OpenAPI](openapi/3gpp-ts29522-aminfluence.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_AMInfluence.yaml)  
-  `{apiRoot}/3gpp-am-influence/v1`
-- **AM Policy Authorization** — [OpenAPI](openapi/3gpp-ts29522-ampolicyauthorization.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_AMPolicyAuthorization.yaml)  
-  `{apiRoot}/3gpp-am-policyauthorization/v1`
-- **Analytics Exposure** — [OpenAPI](openapi/3gpp-ts29522-analyticsexposure.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_AnalyticsExposure.yaml)  
-  `{apiRoot}/3gpp-analyticsexposure/v1`
-- **Applying Bdt Policy** — [OpenAPI](openapi/3gpp-ts29522-applyingbdtpolicy.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_ApplyingBdtPolicy.yaml)  
-  `{apiRoot}/3gpp-applying-bdt-policy/v1`
-- **ASTI** — [OpenAPI](openapi/3gpp-ts29522-asti.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_ASTI.yaml)  
-  `{apiRoot}/3gpp-asti/v1`
-- **Cag Info Param Provision** — [OpenAPI](openapi/3gpp-ts29522-caginfoparamprovision.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_CagInfoParamProvision.yaml)  
-  `{apiRoot}/3gpp-caginfo-pp/v1`
-- **Data Reporting** — [OpenAPI](openapi/3gpp-ts29522-datareporting.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_DataReporting.yaml)  
-  `{apiRoot}/3gpp-data-reporting/v1`
-- **Data Reporting Provisioning** — [OpenAPI](openapi/3gpp-ts29522-datareportingprovisioning.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_DataReportingProvisioning.yaml)  
-  `{apiRoot}/3gpp-data-reporting-provisioning/v1`
-- **DNAI Mapping** — [OpenAPI](openapi/3gpp-ts29522-dnaimapping.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_DNAIMapping.yaml)  
-  `{apiRoot}/3gpp-dnai-mapping/v1`
-- **EAS Deployment** — [OpenAPI](openapi/3gpp-ts29522-easdeployment.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_EASDeployment.yaml)  
-  `{apiRoot}/3gpp-eas-deployment/v1`
-- **ECS Address** — [OpenAPI](openapi/3gpp-ts29522-ecsaddress.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_ECSAddress.yaml)  
-  `{apiRoot}/3gpp-ecs-address/v1`
-- **Ecs Address Provision** — [OpenAPI](openapi/3gpp-ts29522-ecsaddressprovision.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_EcsAddressProvision.yaml)  
-  `{apiRoot}/3gpp-ecs-address-provision/v1`
-- **Group Parameters Provisioning** — [OpenAPI](openapi/3gpp-ts29522-groupparametersprovisioning.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_GroupParametersProvisioning.yaml)  
-  `{apiRoot}/3gpp-grp-pp/v1`
-- **Ims Event Exposure** — [OpenAPI](openapi/3gpp-ts29522-imseventexposure.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_ImsEventExposure.yaml)  
-  `{apiRoot}/3gpp-ims-ee/v1`
-- **Ims Param Provision** — [OpenAPI](openapi/3gpp-ts29522-imsparamprovision.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_ImsParamProvision.yaml)  
-  `{apiRoot}/3gpp-ims-pp/v1`
-- **Ims Session Management** — [OpenAPI](openapi/3gpp-ts29522-imssessionmanagement.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_ImsSessionManagement.yaml)  
-  `{apiRoot}/3gpp-ims-sm/v1`
-- **IPTV Configuration** — [OpenAPI](openapi/3gpp-ts29522-iptvconfiguration.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_IPTVConfiguration.yaml)  
-  `{apiRoot}/3gpp-iptvconfiguration/v1`
-- **Lpi Parameter Provision** — [OpenAPI](openapi/3gpp-ts29522-lpiparameterprovision.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_LpiParameterProvision.yaml)  
-  `{apiRoot}/3gpp-lpi-pp/v1`
-- **MBS Group Msg Delivery** — [OpenAPI](openapi/3gpp-ts29522-mbsgroupmsgdelivery.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_MBSGroupMsgDelivery.yaml)  
-  `{apiRoot}/3gpp-mbs-group-msg/v1`
-- **MBS Session** — [OpenAPI](openapi/3gpp-ts29522-mbssession.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_MBSSession.yaml)  
-  `{apiRoot}/3gpp-mbs-session/v1`
-- **MBSTMGI** — [OpenAPI](openapi/3gpp-ts29522-mbstmgi.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_MBSTMGI.yaml)  
-  `{apiRoot}/3gpp-mbs-tmgi/v1`
-- **MBS User Data Ingest Session** — [OpenAPI](openapi/3gpp-ts29522-mbsuserdataingestsession.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_MBSUserDataIngestSession.yaml)  
-  `{apiRoot}/3gpp-mbs-ud-ingest/v1`
-- **MBS User Service** — [OpenAPI](openapi/3gpp-ts29522-mbsuserservice.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_MBSUserService.yaml)  
-  `{apiRoot}/3gpp-mbs-us/v1`
-- **Member UE Selection Assistance** — [OpenAPI](openapi/3gpp-ts29522-memberueselectionassistance.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_MemberUESelectionAssistance.yaml)  
-  `{apiRoot}/3gpp-musa/v1`
-- **Mo Lcs Notify** — [OpenAPI](openapi/3gpp-ts29522-molcsnotify.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_MoLcsNotify.yaml)  
-  `{apiRoot}/3gpp-mo-lcs-notify/v1`
-- **MS Event Exposure** — [OpenAPI](openapi/3gpp-ts29522-mseventexposure.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_MSEventExposure.yaml)  
-  `{apiRoot}/3gpp-ms-event-exposure/v1`
-- **NIDD Configuration Trigger** — [OpenAPI](openapi/3gpp-ts29522-niddconfigurationtrigger.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_NIDDConfigurationTrigger.yaml)  
-  `{apiRoot}`
-- **PDTQ Policy Negotiation** — [OpenAPI](openapi/3gpp-ts29522-pdtqpolicynegotiation.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_PDTQPolicyNegotiation.yaml)  
-  `{apiRoot}/3gpp-pdtq-policy-negotiation/v1`
-- **RSLPPI Parameters Provisioning** — [OpenAPI](openapi/3gpp-ts29522-rslppiparametersprovisioning.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_RSLPPIParametersProvisioning.yaml)  
-  `{apiRoot}/3gpp-rslppi-pp/v1`
-- **Service Parameter** — [OpenAPI](openapi/3gpp-ts29522-serviceparameter.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_ServiceParameter.yaml)  
-  `{apiRoot}/3gpp-service-parameter/v1`
-- **Slice Param Provision** — [OpenAPI](openapi/3gpp-ts29522-sliceparamprovision.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_SliceParamProvision.yaml)  
-  `{apiRoot}/3gpp-slice-pp/v1`
-- **Time Sync Exposure** — [OpenAPI](openapi/3gpp-ts29522-timesyncexposure.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_TimeSyncExposure.yaml)  
-  `{apiRoot}/3gpp-time-sync/v1`
-- **Traffic Influence** — [OpenAPI](openapi/3gpp-ts29522-trafficinfluence.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_TrafficInfluence.yaml)  
-  `{apiRoot}/3gpp-traffic-influence/v1`
-- **UAV Flight Assistance** — [OpenAPI](openapi/3gpp-ts29522-uavflightassistance.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_UAVFlightAssistance.yaml)  
-  `{apiRoot}/3gpp-uav-fa/v1`
-- **UE Address** — [OpenAPI](openapi/3gpp-ts29522-ueaddress.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_UEAddress.yaml)  
-  `{apiRoot}/3gpp-ue-address/v1`
-- **UE Id** — [OpenAPI](openapi/3gpp-ts29522-ueid.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_UEId.yaml)  
-  `{apiRoot}/3gpp-ueid/v1`
-- **VFL Inference** — [OpenAPI](openapi/3gpp-ts29522-vflinference.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_VFLInference.yaml)  
-  `{apiRoot}/3gpp-vfl-inference/v1`
-- **VFLNF Discovery** — [OpenAPI](openapi/3gpp-ts29522-vflnfdiscovery.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_VFLNFDiscovery.yaml)  
-  `{apiRoot}/3gpp-vfl-nf-discovery/v1`
-- **VFL Training** — [OpenAPI](openapi/3gpp-ts29522-vfltraining.yml) · [source](https://forge.3gpp.org/rep/all/5G_APIs/-/raw/REL-20/TS29522_VFLTraining.yaml)  
-  `{apiRoot}/3gpp-vfl-training/v1`
-
-### TS 29.571 — 5G Common Data Types
-
-Specification archive: [https://www.3gpp.org/ftp/Specs/archive/29_series/29.571/](https://www.3gpp.org/ftp/Specs/archive/29_series/29.571/)
-
-- **Common Data** — [OpenAPI](openapi/3gpp-ts29571-commondata.yml) · [source](https://forge.3gpp.org/rep/sa5/MnS/-/raw/Rel-19/OpenAPI/TS29571_CommonData.yaml)
-
-## Common Properties
+**Areas:** Telecommunications · Global · Standards · Standards Body · Network APIs · 5G · Network Exposure · NEF · SCEF · CAPIF · Service Based Architecture · OpenAPI
+
+## 3GPP on APIs.io
+
+Everything profiled for 3GPP is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/3gpp/](https://apis.io/providers/3gpp/)** — or go straight to one of the APIs or properties below.
+
+### APIs (144)
+
+- [3GPP Forge API](https://apis.io/apis/3gpp/forge-gitlab-api/) — The 3GPP Forge (forge.3gpp.org) is a self-managed GitLab instance where 3GPP publishes the machine-readable OpenAPI for the 5G Service Based Architecture,…
+- [3GPP 5GLAN Parameters Provision Subscriptions API](https://apis.io/apis/3gpp/3gpp-5glan-parameters-provision-subscriptions-api/) — The 5GLAN Parameters Provision Subscriptions API from 3GPP — 1 operation(s) for 5glan parameters provision subscriptions.
+- [3GPP Access Control Policy List (Collection) API](https://apis.io/apis/3gpp/3gpp-access-control-policy-list-collection-api/) — The Access Control Policy List (Collection) API from 3GPP — 1 operation(s) for access control policy list (collection).
+- [3GPP Activation Management API](https://apis.io/apis/3gpp/3gpp-activation-management-api/) — The Activation Management API from 3GPP — 4 operation(s) for activation management.
+- [3GPP Addressing Parameters Provisionings (Collection) API](https://apis.io/apis/3gpp/3gpp-addressing-parameters-provisionings-collection-api/) — The Addressing Parameters Provisionings (Collection) API from 3GPP — 1 operation(s) for addressing parameters provisionings (collection).
+- [3GPP AIoT Command Request (custom operation without associated resources) API](https://apis.io/apis/3gpp/3gpp-aiot-command-request-custom-operation-without-associated-resources-api/) — The AIoT Command Request (custom operation without associated resources) API from 3GPP — 1 operation(s) for aiot command request (custom operation without…
+- [3GPP AIoT Inventory Request (custom operation without associated resources) API](https://apis.io/apis/3gpp/3gpp-aiot-inventory-request-custom-operation-without-associated-resources-api/) — The AIoT Inventory Request (custom operation without associated resources) API from 3GPP — 1 operation(s) for aiot inventory request (custom operation…
+- [3GPP All API Provider Domains Registrations (Collection) API](https://apis.io/apis/3gpp/3gpp-all-api-provider-domains-registrations-collection-api/) — The All API Provider Domains Registrations (Collection) API from 3GPP — 1 operation(s) for all api provider domains registrations (collection).
+- [3GPP All published service APIs (Collection) API](https://apis.io/apis/3gpp/3gpp-all-published-service-apis-collection-api/) — The All published service APIs (Collection) API from 3GPP — 1 operation(s) for all published service apis (collection).
+- [3GPP All service API invocation logs (Collection) API](https://apis.io/apis/3gpp/3gpp-all-service-api-invocation-logs-collection-api/) — The All service API invocation logs (Collection) API from 3GPP — 1 operation(s) for all service api invocation logs (collection).
+- [3GPP AM Policy Events Subscription API](https://apis.io/apis/3gpp/3gpp-am-policy-events-subscription-api/) — The AM Policy Events Subscription API from 3GPP — 1 operation(s) for am policy events subscription.
+- [3GPP Analytics Exposure Subscriptions API](https://apis.io/apis/3gpp/3gpp-analytics-exposure-subscriptions-api/) — The Analytics Exposure Subscriptions API from 3GPP — 1 operation(s) for analytics exposure subscriptions.
+- [3GPP AnalyticsExposure API Fetch analytics information API](https://apis.io/apis/3gpp/3gpp-analyticsexposure-api-fetch-analytics-information-api/) — The AnalyticsExposure API Fetch analytics information API from 3GPP — 1 operation(s) for analyticsexposure api fetch analytics information.
+- [3GPP APF published APIs (Collection) API](https://apis.io/apis/3gpp/3gpp-apf-published-apis-collection-api/) — The APF published APIs (Collection) API from 3GPP — 1 operation(s) for apf published apis (collection).
+- [3GPP Application AM Contexts API](https://apis.io/apis/3gpp/3gpp-application-am-contexts-api/) — The Application AM Contexts API from 3GPP — 1 operation(s) for application am contexts.
+- [3GPP Application Sessions (Collection) API](https://apis.io/apis/3gpp/3gpp-application-sessions-collection-api/) — The Application Sessions (Collection) API from 3GPP — 1 operation(s) for application sessions (collection).
+- [3GPP AS Session with Required QoS Subscriptions API](https://apis.io/apis/3gpp/3gpp-as-session-with-required-qos-subscriptions-api/) — The AS Session with Required QoS Subscriptions API from 3GPP — 1 operation(s) for as session with required qos subscriptions.
+- [3GPP ASTI Configurations API](https://apis.io/apis/3gpp/3gpp-asti-configurations-api/) — The ASTI Configurations API from 3GPP — 2 operation(s) for asti configurations.
+- [3GPP CAPIFs Events Subscriptions (Collection) API](https://apis.io/apis/3gpp/3gpp-capifs-events-subscriptions-collection-api/) — The CAPIFs Events Subscriptions (Collection) API from 3GPP — 1 operation(s) for capifs events subscriptions (collection).
+- [3GPP Check Authentication Request API](https://apis.io/apis/3gpp/3gpp-check-authentication-request-api/) — The Check Authentication Request API from 3GPP — 1 operation(s) for check authentication request.
+- [3GPP Configure API](https://apis.io/apis/3gpp/3gpp-configure-api/) — The Configure API from 3GPP — 1 operation(s) for configure.
+- [3GPP Connections API](https://apis.io/apis/3gpp/3gpp-connections-api/) — The Connections API from 3GPP — 4 operation(s) for connections.
+- [3GPP CP provisioning Subscriptions API](https://apis.io/apis/3gpp/3gpp-cp-provisioning-subscriptions-api/) — The CP provisioning Subscriptions API from 3GPP — 1 operation(s) for cp provisioning subscriptions.
+- [3GPP Data Reporting Configurations API](https://apis.io/apis/3gpp/3gpp-data-reporting-configurations-api/) — The Data Reporting Configurations API from 3GPP — 1 operation(s) for data reporting configurations.
+- [3GPP Data Reporting Provisioning Sessions API](https://apis.io/apis/3gpp/3gpp-data-reporting-provisioning-sessions-api/) — The Data Reporting Provisioning Sessions API from 3GPP — 1 operation(s) for data reporting provisioning sessions.
+- [3GPP Data Reporting Sessions API](https://apis.io/apis/3gpp/3gpp-data-reporting-sessions-api/) — The Data Reporting Sessions API from 3GPP — 1 operation(s) for data reporting sessions.
+- [3GPP Delivery via MBMS Operation API](https://apis.io/apis/3gpp/3gpp-delivery-via-mbms-operation-api/) — The Delivery via MBMS Operation API from 3GPP — 2 operation(s) for delivery via mbms operation.
+- [3GPP EAS Deployment Information (Collection) API](https://apis.io/apis/3gpp/3gpp-eas-deployment-information-collection-api/) — The EAS Deployment Information (Collection) API from 3GPP — 1 operation(s) for eas deployment information (collection).
+- [3GPP EAS Deployment Information removal API](https://apis.io/apis/3gpp/3gpp-eas-deployment-information-removal-api/) — The EAS Deployment Information removal API from 3GPP — 1 operation(s) for eas deployment information removal.
+- [3GPP ECS Address Configuration Information Deletion Request API](https://apis.io/apis/3gpp/3gpp-ecs-address-configuration-information-deletion-request-api/) — The ECS Address Configuration Information Deletion Request API from 3GPP — 1 operation(s) for ecs address configuration information deletion request.
+- [3GPP ECS Address Configuration Information Sets (Collection) API](https://apis.io/apis/3gpp/3gpp-ecs-address-configuration-information-sets-collection-api/) — The ECS Address Configuration Information Sets (Collection) API from 3GPP — 1 operation(s) for ecs address configuration information sets (collection).
+- [3GPP Events Subscription (Document) API](https://apis.io/apis/3gpp/3gpp-events-subscription-document-api/) — The Events Subscription (Document) API from 3GPP — 1 operation(s) for events subscription (document).
+- [3GPP Fallback Descriptor Management API](https://apis.io/apis/3gpp/3gpp-fallback-descriptor-management-api/) — The Fallback Descriptor Management API from 3GPP — 2 operation(s) for fallback descriptor management.
+- [3GPP Fault Management Notifications API](https://apis.io/apis/3gpp/3gpp-fault-management-notifications-api/) — The Fault Management Notifications API from 3GPP — 1 operation(s) for fault management notifications.
+- [3GPP Files API](https://apis.io/apis/3gpp/3gpp-files-api/) — The Files API from 3GPP — 1 operation(s) for files.
+- [3GPP Get Msisdn API](https://apis.io/apis/3gpp/3gpp-get-msisdn-api/) — The Get Msisdn API from 3GPP — 1 operation(s) for get msisdn.
+- [3GPP IMS Session Creation (Collection) API](https://apis.io/apis/3gpp/3gpp-ims-session-creation-collection-api/) — The IMS Session Creation (Collection) API from 3GPP — 1 operation(s) for ims session creation (collection).
+- [3GPP IMS Sessions (Collection) API](https://apis.io/apis/3gpp/3gpp-ims-sessions-collection-api/) — The IMS Sessions (Collection) API from 3GPP — 1 operation(s) for ims sessions (collection).
+- [3GPP Individual 5GLAN Parameters Provision Subscription API](https://apis.io/apis/3gpp/3gpp-individual-5glan-parameters-provision-subscription-api/) — The Individual 5GLAN Parameters Provision Subscription API from 3GPP — 1 operation(s) for individual 5glan parameters provision subscription.
+- [3GPP Individual Addressing Parameters Provisioning (Document) API](https://apis.io/apis/3gpp/3gpp-individual-addressing-parameters-provisioning-document-api/) — The Individual Addressing Parameters Provisioning (Document) API from 3GPP — 1 operation(s) for individual addressing parameters provisioning (document).
+- [3GPP Individual Analytics Exposure Subscription API](https://apis.io/apis/3gpp/3gpp-individual-analytics-exposure-subscription-api/) — The Individual Analytics Exposure Subscription API from 3GPP — 1 operation(s) for individual analytics exposure subscription.
+- [3GPP Individual APF published API (Document) API](https://apis.io/apis/3gpp/3gpp-individual-apf-published-api-document-api/) — The Individual APF published API (Document) API from 3GPP — 1 operation(s) for individual apf published api (document).
+- [3GPP Individual API Provider Domain Registration (Document) API](https://apis.io/apis/3gpp/3gpp-individual-api-provider-domain-registration-document-api/) — The Individual API Provider Domain Registration (Document) API from 3GPP — 1 operation(s) for individual api provider domain registration (document).
+- [3GPP Individual Application AM Context API](https://apis.io/apis/3gpp/3gpp-individual-application-am-context-api/) — The Individual Application AM Context API from 3GPP — 1 operation(s) for individual application am context.
+- [3GPP Individual Application PFD Management API](https://apis.io/apis/3gpp/3gpp-individual-application-pfd-management-api/) — The Individual Application PFD Management API from 3GPP — 1 operation(s) for individual application pfd management.
+- [3GPP Individual Application Session Context (Document) API](https://apis.io/apis/3gpp/3gpp-individual-application-session-context-document-api/) — The Individual Application Session Context (Document) API from 3GPP — 2 operation(s) for individual application session context (document).
+- [3GPP Individual AS Session with Required QoS Subscription API](https://apis.io/apis/3gpp/3gpp-individual-as-session-with-required-qos-subscription-api/) — The Individual AS Session with Required QoS Subscription API from 3GPP — 1 operation(s) for individual as session with required qos subscription.
+- [3GPP Individual ASTI Configuration API](https://apis.io/apis/3gpp/3gpp-individual-asti-configuration-api/) — The Individual ASTI Configuration API from 3GPP — 1 operation(s) for individual asti configuration.
+- [3GPP Individual CAPIFs Events Subscription (Document) API](https://apis.io/apis/3gpp/3gpp-individual-capifs-events-subscription-document-api/) — The Individual CAPIFs Events Subscription (Document) API from 3GPP — 1 operation(s) for individual capifs events subscription (document).
+- [3GPP Individual CP Provisioning Subscription API](https://apis.io/apis/3gpp/3gpp-individual-cp-provisioning-subscription-api/) — The Individual CP Provisioning Subscription API from 3GPP — 1 operation(s) for individual cp provisioning subscription.
+- [3GPP Individual CP set Provisioning API](https://apis.io/apis/3gpp/3gpp-individual-cp-set-provisioning-api/) — The Individual CP set Provisioning API from 3GPP — 1 operation(s) for individual cp set provisioning.
+- [3GPP Individual Data Reporting Configuration API](https://apis.io/apis/3gpp/3gpp-individual-data-reporting-configuration-api/) — The Individual Data Reporting Configuration API from 3GPP — 1 operation(s) for individual data reporting configuration.
+- [3GPP Individual Data Reporting Provisioning Session API](https://apis.io/apis/3gpp/3gpp-individual-data-reporting-provisioning-session-api/) — The Individual Data Reporting Provisioning Session API from 3GPP — 1 operation(s) for individual data reporting provisioning session.
+- [3GPP Individual Data Reporting Session API](https://apis.io/apis/3gpp/3gpp-individual-data-reporting-session-api/) — The Individual Data Reporting Session API from 3GPP — 2 operation(s) for individual data reporting session.
+- [3GPP Individual Delivery via MBMS resource Operation API](https://apis.io/apis/3gpp/3gpp-individual-delivery-via-mbms-resource-operation-api/) — The Individual Delivery via MBMS resource Operation API from 3GPP — 2 operation(s) for individual delivery via mbms resource operation.
+- [3GPP Individual EAS Deployment Information API](https://apis.io/apis/3gpp/3gpp-individual-eas-deployment-information-api/) — The Individual EAS Deployment Information API from 3GPP — 1 operation(s) for individual eas deployment information.
+- [3GPP Individual ECS Address Configuration Information Set (Document) API](https://apis.io/apis/3gpp/3gpp-individual-ecs-address-configuration-information-set-document-api/) — The Individual ECS Address Configuration Information Set (Document) API from 3GPP — 1 operation(s) for individual ecs address configuration information set…
+- [3GPP Individual Group Parameters Provisioning (Document) API](https://apis.io/apis/3gpp/3gpp-individual-group-parameters-provisioning-document-api/) — The Individual Group Parameters Provisioning (Document) API from 3GPP — 2 operation(s) for individual group parameters provisioning (document).
+- [3GPP Individual IMS Session API](https://apis.io/apis/3gpp/3gpp-individual-ims-session-api/) — The Individual IMS Session API from 3GPP — 1 operation(s) for individual ims session.
+- [3GPP Individual IMS Session (Document) API](https://apis.io/apis/3gpp/3gpp-individual-ims-session-document-api/) — The Individual IMS Session (Document) API from 3GPP — 1 operation(s) for individual ims session (document).
+- [3GPP Individual ECS Address Configuration Set (Document) API](https://apis.io/apis/3gpp/3gpp-individual-individual-ecs-address-configuration-set-document-api/) — The Individual Individual ECS Address Configuration Set (Document) API from 3GPP — 1 operation(s) for individual individual ecs address configuration set…
+- [3GPP Individual LPI Parameters Provisioning API](https://apis.io/apis/3gpp/3gpp-individual-lpi-parameters-provisioning-api/) — The Individual LPI Parameters Provisioning API from 3GPP — 1 operation(s) for individual lpi parameters provisioning.
+- [3GPP Individual ManagePort Configuration API](https://apis.io/apis/3gpp/3gpp-individual-manageport-configuration-api/) — The Individual ManagePort Configuration API from 3GPP — 1 operation(s) for individual manageport configuration.
+- [3GPP Individual MBS Group Message Delivery (Document) API](https://apis.io/apis/3gpp/3gpp-individual-mbs-group-message-delivery-document-api/) — The Individual MBS Group Message Delivery (Document) API from 3GPP — 1 operation(s) for individual mbs group message delivery (document).
+- [3GPP Individual MBS Parameters Provisioning API](https://apis.io/apis/3gpp/3gpp-individual-mbs-parameters-provisioning-api/) — The Individual MBS Parameters Provisioning API from 3GPP — 1 operation(s) for individual mbs parameters provisioning.
+- [3GPP Individual MBS Session API](https://apis.io/apis/3gpp/3gpp-individual-mbs-session-api/) — The Individual MBS Session API from 3GPP — 1 operation(s) for individual mbs session.
+- [3GPP Individual MBS Session Subscription API](https://apis.io/apis/3gpp/3gpp-individual-mbs-session-subscription-api/) — The Individual MBS Session Subscription API from 3GPP — 1 operation(s) for individual mbs session subscription.
+- [3GPP Individual MBS User Data Ingest Session (Document) API](https://apis.io/apis/3gpp/3gpp-individual-mbs-user-data-ingest-session-document-api/) — The Individual MBS User Data Ingest Session (Document) API from 3GPP — 1 operation(s) for individual mbs user data ingest session (document).
+- [3GPP Individual MBS User Data Ingest Session Status Subscription (Document) API](https://apis.io/apis/3gpp/3gpp-individual-mbs-user-data-ingest-session-status-subscription-document-api/) — The Individual MBS User Data Ingest Session Status Subscription (Document) API from 3GPP — 1 operation(s) for individual mbs user data ingest session status…
+- [3GPP Individual MBS User Service API](https://apis.io/apis/3gpp/3gpp-individual-mbs-user-service-api/) — The Individual MBS User Service API from 3GPP — 1 operation(s) for individual mbs user service.
+- [3GPP Individual Media Streaming Event Exposure Subscription (Document) API](https://apis.io/apis/3gpp/3gpp-individual-media-streaming-event-exposure-subscription-document-api/) — The Individual Media Streaming Event Exposure Subscription (Document) API from 3GPP — 1 operation(s) for individual media streaming event exposure…
+- [3GPP Individual NIDD configuration API](https://apis.io/apis/3gpp/3gpp-individual-nidd-configuration-api/) — The Individual NIDD configuration API from 3GPP — 1 operation(s) for individual nidd configuration.
+- [3GPP Individual NIDD downlink data delivery API](https://apis.io/apis/3gpp/3gpp-individual-nidd-downlink-data-delivery-api/) — The Individual NIDD downlink data delivery API from 3GPP — 1 operation(s) for individual nidd downlink data delivery.
+- [3GPP Individual Np Configuration API](https://apis.io/apis/3gpp/3gpp-individual-np-configuration-api/) — The Individual Np Configuration API from 3GPP — 1 operation(s) for individual np configuration.
+- [3GPP Individual NWDAF Event Subscription Transfer (Document) API](https://apis.io/apis/3gpp/3gpp-individual-nwdaf-event-subscription-transfer-document-api/) — The Individual NWDAF Event Subscription Transfer (Document) API from 3GPP — 1 operation(s) for individual nwdaf event subscription transfer (document).
+- [3GPP Individual NWDAF Events Subscription (Document) API](https://apis.io/apis/3gpp/3gpp-individual-nwdaf-events-subscription-document-api/) — The Individual NWDAF Events Subscription (Document) API from 3GPP — 1 operation(s) for individual nwdaf events subscription (document).
+- [3GPP Individual On-boarded API Invoker (Document) API](https://apis.io/apis/3gpp/3gpp-individual-on-boarded-api-invoker-document-api/) — The Individual On-boarded API Invoker (Document) API from 3GPP — 1 operation(s) for individual on-boarded api invoker (document).
+- [3GPP Individual PFD Management Transaction API](https://apis.io/apis/3gpp/3gpp-individual-pfd-management-transaction-api/) — The Individual PFD Management Transaction API from 3GPP — 1 operation(s) for individual pfd management transaction.
+- [3GPP Individual RACS Parameter Provisioning API](https://apis.io/apis/3gpp/3gpp-individual-racs-parameter-provisioning-api/) — The Individual RACS Parameter Provisioning API from 3GPP — 1 operation(s) for individual racs parameter provisioning.
+- [3GPP Individual Service API routing Info (Document) API](https://apis.io/apis/3gpp/3gpp-individual-service-api-routing-info-document-api/) — The Individual Service API routing Info (Document) API from 3GPP — 1 operation(s) for individual service api routing info (document).
+- [3GPP Individual Service Operation API](https://apis.io/apis/3gpp/3gpp-individual-service-operation-api/) — The Individual Service Operation API from 3GPP — 1 operation(s) for individual service operation.
+- [3GPP Individual SM Policy (Document) API](https://apis.io/apis/3gpp/3gpp-individual-sm-policy-document-api/) — The Individual SM Policy (Document) API from 3GPP — 3 operation(s) for individual sm policy (document).
+- [3GPP Individual Time Synchronization Exposure Configuration API](https://apis.io/apis/3gpp/3gpp-individual-time-synchronization-exposure-configuration-api/) — The Individual Time Synchronization Exposure Configuration API from 3GPP — 1 operation(s) for individual time synchronization exposure configuration.
+- [3GPP Individual Time Synchronization Exposure Subscription API](https://apis.io/apis/3gpp/3gpp-individual-time-synchronization-exposure-subscription-api/) — The Individual Time Synchronization Exposure Subscription API from 3GPP — 2 operation(s) for individual time synchronization exposure subscription.
+- [3GPP Individual TMGI Allocation Operation API](https://apis.io/apis/3gpp/3gpp-individual-tmgi-allocation-operation-api/) — The Individual TMGI Allocation Operation API from 3GPP — 1 operation(s) for individual tmgi allocation operation.
+- [3GPP Individual trusted API invoker (Store) API](https://apis.io/apis/3gpp/3gpp-individual-trusted-api-invoker-store-api/) — The Individual trusted API invoker (Store) API from 3GPP — 4 operation(s) for individual trusted api invoker (store).
+- [3GPP Individual UAV Flight Assistance Configuration (Document) API](https://apis.io/apis/3gpp/3gpp-individual-uav-flight-assistance-configuration-document-api/) — The Individual UAV Flight Assistance Configuration (Document) API from 3GPP — 1 operation(s) for individual uav flight assistance configuration (document).
+- [3GPP Individual UE Address Subscription (Document) API](https://apis.io/apis/3gpp/3gpp-individual-ue-address-subscription-document-api/) — The Individual UE Address Subscription (Document) API from 3GPP — 1 operation(s) for individual ue address subscription (document).
+- [3GPP Individual UE ID Mapping Information Provisioning (Document) API](https://apis.io/apis/3gpp/3gpp-individual-ue-id-mapping-information-provisioning-document-api/) — The Individual UE ID Mapping Information Provisioning (Document) API from 3GPP — 1 operation(s) for individual ue id mapping information provisioning…
+- [3GPP Individual VFL Training Subscription (Document) API](https://apis.io/apis/3gpp/3gpp-individual-vfl-training-subscription-document-api/) — The Individual VFL Training Subscription (Document) API from 3GPP — 1 operation(s) for individual vfl training subscription (document).
+- [3GPP Logs (Collection) API](https://apis.io/apis/3gpp/3gpp-logs-collection-api/) — The Logs (Collection) API from 3GPP — 1 operation(s) for logs (collection).
+- [3GPP LPI Parameters Provisionings API](https://apis.io/apis/3gpp/3gpp-lpi-parameters-provisionings-api/) — The LPI Parameters Provisionings API from 3GPP — 1 operation(s) for lpi parameters provisionings.
+- [3GPP ManagePort Configurations API](https://apis.io/apis/3gpp/3gpp-manageport-configurations-api/) — The ManagePort Configurations API from 3GPP — 1 operation(s) for manageport configurations.
+- [3GPP MBS Group Message Deliveries (Collection) API](https://apis.io/apis/3gpp/3gpp-mbs-group-message-deliveries-collection-api/) — The MBS Group Message Deliveries (Collection) API from 3GPP — 1 operation(s) for mbs group message deliveries (collection).
+- [3GPP MBS Parameters Provisioning API](https://apis.io/apis/3gpp/3gpp-mbs-parameters-provisioning-api/) — The MBS Parameters Provisioning API from 3GPP — 1 operation(s) for mbs parameters provisioning.
+- [3GPP MBS Parameters Provisionings API](https://apis.io/apis/3gpp/3gpp-mbs-parameters-provisionings-api/) — The MBS Parameters Provisionings API from 3GPP — 1 operation(s) for mbs parameters provisionings.
+- [3GPP MBS Session Subscriptions API](https://apis.io/apis/3gpp/3gpp-mbs-session-subscriptions-api/) — The MBS Session Subscriptions API from 3GPP — 1 operation(s) for mbs session subscriptions.
+- [3GPP MBS Sessions collection API](https://apis.io/apis/3gpp/3gpp-mbs-sessions-collection-api/) — The MBS Sessions collection API from 3GPP — 1 operation(s) for mbs sessions collection.
+- [3GPP MBS TMGI Deallocation API](https://apis.io/apis/3gpp/3gpp-mbs-tmgi-deallocation-api/) — The MBS TMGI Deallocation API from 3GPP — 1 operation(s) for mbs tmgi deallocation.
+- [3GPP MBS User Data Ingest Session Status Subscriptions (Collection) API](https://apis.io/apis/3gpp/3gpp-mbs-user-data-ingest-session-status-subscriptions-collection-api/) — The MBS User Data Ingest Session Status Subscriptions (Collection) API from 3GPP — 1 operation(s) for mbs user data ingest session status subscriptions…
+- [3GPP MBS User Data Ingest Sessions (Collection) API](https://apis.io/apis/3gpp/3gpp-mbs-user-data-ingest-sessions-collection-api/) — The MBS User Data Ingest Sessions (Collection) API from 3GPP — 1 operation(s) for mbs user data ingest sessions (collection).
+- [3GPP MBS User Services API](https://apis.io/apis/3gpp/3gpp-mbs-user-services-api/) — The MBS User Services API from 3GPP — 1 operation(s) for mbs user services.
+- [3GPP Meas Jobs API](https://apis.io/apis/3gpp/3gpp-measjobs-api/) — The MeasJobs API from 3GPP — 2 operation(s) for measjobs.
+- [3GPP Media Streaming Event Exposure Subscriptions (Collection) API](https://apis.io/apis/3gpp/3gpp-media-streaming-event-exposure-subscriptions-collection-api/) — The Media Streaming Event Exposure Subscriptions (Collection) API from 3GPP — 1 operation(s) for media streaming event exposure subscriptions (collection).
+- [3GPP NIDD configurations API](https://apis.io/apis/3gpp/3gpp-nidd-configurations-api/) — The NIDD configurations API from 3GPP — 1 operation(s) for nidd configurations.
+- [3GPP NIDD downlink data deliveries API](https://apis.io/apis/3gpp/3gpp-nidd-downlink-data-deliveries-api/) — The NIDD downlink data deliveries API from 3GPP — 1 operation(s) for nidd downlink data deliveries.
+- [3GPP Notification Sink API](https://apis.io/apis/3gpp/3gpp-notificationsink-api/) — The NotificationSink API from 3GPP — 1 operation(s) for notificationsink.
+- [3GPP Np Configurations API](https://apis.io/apis/3gpp/3gpp-np-configurations-api/) — The Np Configurations API from 3GPP — 1 operation(s) for np configurations.
+- [3GPP NWDAF Analytics (Document) API](https://apis.io/apis/3gpp/3gpp-nwdaf-analytics-document-api/) — The NWDAF Analytics (Document) API from 3GPP — 1 operation(s) for nwdaf analytics (document).
+- [3GPP NWDAF Context (Document) API](https://apis.io/apis/3gpp/3gpp-nwdaf-context-document-api/) — The NWDAF Context (Document) API from 3GPP — 1 operation(s) for nwdaf context (document).
+- [3GPP NWDAF Event Subscription Transfers (Collection) API](https://apis.io/apis/3gpp/3gpp-nwdaf-event-subscription-transfers-collection-api/) — The NWDAF Event Subscription Transfers (Collection) API from 3GPP — 1 operation(s) for nwdaf event subscription transfers (collection).
+- [3GPP NWDAF Events Subscriptions (Collection) API](https://apis.io/apis/3gpp/3gpp-nwdaf-events-subscriptions-collection-api/) — The NWDAF Events Subscriptions (Collection) API from 3GPP — 1 operation(s) for nwdaf events subscriptions (collection).
+- [3GPP On-boarded API Invokers (Collection) API](https://apis.io/apis/3gpp/3gpp-on-boarded-api-invokers-collection-api/) — The On-boarded API Invokers (Collection) API from 3GPP — 1 operation(s) for on-boarded api invokers (collection).
+- [3GPP PCSCF Restoration Indication API](https://apis.io/apis/3gpp/3gpp-pcscf-restoration-indication-api/) — The PCSCF Restoration Indication API from 3GPP — 1 operation(s) for pcscf restoration indication.
+- [3GPP PFD Management Transactions API](https://apis.io/apis/3gpp/3gpp-pfd-management-transactions-api/) — The PFD Management Transactions API from 3GPP — 1 operation(s) for pfd management transactions.
+- [3GPP Plan Descriptor Management API](https://apis.io/apis/3gpp/3gpp-plan-descriptor-management-api/) — The Plan Descriptor Management API from 3GPP — 2 operation(s) for plan descriptor management.
+- [3GPP Plan Group Descriptor Management API](https://apis.io/apis/3gpp/3gpp-plan-group-descriptor-management-api/) — The Plan Group Descriptor Management API from 3GPP — 2 operation(s) for plan group descriptor management.
+- [3GPP Provisioning MnS API](https://apis.io/apis/3gpp/3gpp-provisioning-mns-api/) — The Provisioning MnS API from 3GPP — 2 operation(s) for provisioning mns.
+- [3GPP Query API](https://apis.io/apis/3gpp/3gpp-query-api/) — The Query API from 3GPP — 1 operation(s) for query.
+- [3GPP RACS Parameter Provisionings API](https://apis.io/apis/3gpp/3gpp-racs-parameter-provisionings-api/) — The RACS Parameter Provisionings API from 3GPP — 1 operation(s) for racs parameter provisionings.
+- [3GPP Retrieve API](https://apis.io/apis/3gpp/3gpp-retrieve-api/) — The Retrieve API from 3GPP — 1 operation(s) for retrieve.
+- [3GPP Retrieve (custom operation without associated resources) API](https://apis.io/apis/3gpp/3gpp-retrieve-custom-operation-without-associated-resources-api/) — The Retrieve (custom operation without associated resources) API from 3GPP — 1 operation(s) for retrieve (custom operation without associated resources).
+- [3GPP Revoke Authorization Request API](https://apis.io/apis/3gpp/3gpp-revoke-authorization-request-api/) — The Revoke Authorization Request API from 3GPP — 1 operation(s) for revoke authorization request.
+- [3GPP Service APIs (Collection) API](https://apis.io/apis/3gpp/3gpp-service-apis-collection-api/) — The Service APIs (Collection) API from 3GPP — 1 operation(s) for service apis (collection).
+- [3GPP Service Operation API](https://apis.io/apis/3gpp/3gpp-service-operation-api/) — The Service Operation API from 3GPP — 1 operation(s) for service operation.
+- [3GPP Slice Profiles API](https://apis.io/apis/3gpp/3gpp-sliceprofiles-api/) — The SliceProfiles API from 3GPP — 2 operation(s) for sliceprofiles.
+- [3GPP SM Policies (Collection) API](https://apis.io/apis/3gpp/3gpp-sm-policies-collection-api/) — The SM Policies (Collection) API from 3GPP — 1 operation(s) for sm policies (collection).
+- [3GPP Subscriptions API](https://apis.io/apis/3gpp/3gpp-subscriptions-api/) — The Subscriptions API from 3GPP — 2 operation(s) for subscriptions.
+- [3GPP Time Synchronization Exposure Configurations API](https://apis.io/apis/3gpp/3gpp-time-synchronization-exposure-configurations-api/) — The Time Synchronization Exposure Configurations API from 3GPP — 1 operation(s) for time synchronization exposure configurations.
+- [3GPP Time Synchronization Exposure Subscriptions API](https://apis.io/apis/3gpp/3gpp-time-synchronization-exposure-subscriptions-api/) — The Time Synchronization Exposure Subscriptions API from 3GPP — 1 operation(s) for time synchronization exposure subscriptions.
+- [3GPP TMGI Allocation Operation API](https://apis.io/apis/3gpp/3gpp-tmgi-allocation-operation-api/) — The TMGI Allocation Operation API from 3GPP — 1 operation(s) for tmgi allocation operation.
+- [3GPP TMGI Allocation or Timer Expiry Refresh API](https://apis.io/apis/3gpp/3gpp-tmgi-allocation-or-timer-expiry-refresh-api/) — The TMGI Allocation or Timer Expiry Refresh API from 3GPP — 1 operation(s) for tmgi allocation or timer expiry refresh.
+- [3GPP Trigger Descriptor Management API](https://apis.io/apis/3gpp/3gpp-trigger-descriptor-management-api/) — The Trigger Descriptor Management API from 3GPP — 2 operation(s) for trigger descriptor management.
+- [3GPP UAV Flight Assistance Configurations (Collection) API](https://apis.io/apis/3gpp/3gpp-uav-flight-assistance-configurations-collection-api/) — The UAV Flight Assistance Configurations (Collection) API from 3GPP — 1 operation(s) for uav flight assistance configurations (collection).
+- [3GPP UE Address(es) Information Retrieval API](https://apis.io/apis/3gpp/3gpp-ue-address-es-information-retrieval-api/) — The UE Address(es) Information Retrieval API from 3GPP — 1 operation(s) for ue address(es) information retrieval.
+- [3GPP UE Address Subscriptions (Collection) API](https://apis.io/apis/3gpp/3gpp-ue-address-subscriptions-collection-api/) — The UE Address Subscriptions (Collection) API from 3GPP — 1 operation(s) for ue address subscriptions (collection).
+- [3GPP UE ID Mapping Information Provisioning (Collection) API](https://apis.io/apis/3gpp/3gpp-ue-id-mapping-information-provisioning-collection-api/) — The UE ID Mapping Information Provisioning (Collection) API from 3GPP — 1 operation(s) for ue id mapping information provisioning (collection).
+- [3GPP UE ID Mapping Information Provisionings (Collection) API](https://apis.io/apis/3gpp/3gpp-ue-id-mapping-information-provisionings-collection-api/) — The UE ID Mapping Information Provisionings (Collection) API from 3GPP — 1 operation(s) for ue id mapping information provisionings (collection).
+- [3GPP Validation Management API](https://apis.io/apis/3gpp/3gpp-validation-management-api/) — The Validation Management API from 3GPP — 4 operation(s) for validation management.
+- [3GPP Verify Msisdn API](https://apis.io/apis/3gpp/3gpp-verify-msisdn-api/) — The Verify Msisdn API from 3GPP — 1 operation(s) for verify msisdn.
+- [3GPP VFL NF discovery API](https://apis.io/apis/3gpp/3gpp-vfl-nf-discovery-api/) — The VFL NF discovery API from 3GPP — 1 operation(s) for vfl nf discovery.
+- [3GPP VFL NF discovery release API](https://apis.io/apis/3gpp/3gpp-vfl-nf-discovery-release-api/) — The VFL NF discovery release API from 3GPP — 1 operation(s) for vfl nf discovery release.
+- [3GPP VFL Training Subscriptions (Collection) API](https://apis.io/apis/3gpp/3gpp-vfl-training-subscriptions-collection-api/) — The VFL Training Subscriptions (Collection) API from 3GPP — 1 operation(s) for vfl training subscriptions (collection).
+- [3GPP Service Profiles API](https://apis.io/apis/3gpp/3gpp-service-profiles-api/) — The Service Profiles API from 3GPP — 2 operation(s) for service profiles.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [3Gpp Notifications Webhooks](https://apis.io/asyncapis/3gpp/3gpp-notifications-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [3gpp](https://apis.io/servers/3gpp/3gpp/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [3Gpp Agentic Access](https://apis.io/agentic-access/3gpp/3gpp-agentic-access/)
+
+#### Collections (116)
+
+Postman and Open Collection request collections.
+
+- [MDA NRM](https://apis.io/collections/3gpp/open-3gpp-ts28104-mdanrm/)
+- [MDA Report](https://apis.io/collections/3gpp/open-3gpp-ts28104-mdareport/)
+- [AI/ML NRM](https://apis.io/collections/3gpp/open-3gpp-ts28105-aimlnrm/)
+- [Fault Management Notifications](https://apis.io/collections/3gpp/open-3gpp-ts28111-faultnotifications/)
+- [Fault Management NRM](https://apis.io/collections/3gpp/open-3gpp-ts28111-faultnrm/)
+- [Energy Information NRM](https://apis.io/collections/3gpp/open-3gpp-ts28310-energyinformationnrm/)
+- [Scenario specific Intent Expectations](https://apis.io/collections/3gpp/open-3gpp-ts28312-intentexpectations/)
+- [Intent NRM](https://apis.io/collections/3gpp/open-3gpp-ts28312-intentnrm/)
+- [RANSC NRM](https://apis.io/collections/3gpp/open-3gpp-ts28317-ranscnrm/)
+- [3GPP NRM](https://apis.io/collections/3gpp/open-3gpp-ts28318-dsonrm/)
+- [MSAC NRM](https://apis.io/collections/3gpp/open-3gpp-ts28319-msacnrm/)
+- [Network Slice Provisioning MnS](https://apis.io/collections/3gpp/open-3gpp-ts28531-nsprovmns/)
+- [Network Slice Subnet Provisioning MnS](https://apis.io/collections/3gpp/open-3gpp-ts28531-nssprovmns/)
+- [File Data Reporting MnS](https://apis.io/collections/3gpp/open-3gpp-ts28532-filedatareportingmns/)
+- [Heartbeat notification](https://apis.io/collections/3gpp/open-3gpp-ts28532-heartbeatntf/)
+- [TS 28.532 Performance Threshold Monitoring MnS](https://apis.io/collections/3gpp/open-3gpp-ts28532-perfmns/)
+- [Provisioning MnS](https://apis.io/collections/3gpp/open-3gpp-ts28532-provmns/)
+- [TS 28.532 Streaming data reporting service](https://apis.io/collections/3gpp/open-3gpp-ts28532-streamingdatamns/)
+- [coslaNrm](https://apis.io/collections/3gpp/open-3gpp-ts28536-coslanrm/)
+- [3GPP Edge NRM](https://apis.io/collections/3gpp/open-3gpp-ts28538-edgenrm/)
+- [3GPP 5GC NRM](https://apis.io/collections/3gpp/open-3gpp-ts28541-5gcnrm/)
+- [NR NRM](https://apis.io/collections/3gpp/open-3gpp-ts28541-nrnrm/)
+- [Slice NRM](https://apis.io/collections/3gpp/open-3gpp-ts28541-slicenrm/)
+- [TS 28.550 Performance Measurement Job Control Service](https://apis.io/collections/3gpp/open-3gpp-ts28550-perfmeasjobctrlmns/)
+- [NDT NRM](https://apis.io/collections/3gpp/open-3gpp-ts28561-ndtnrm/)
+- …and 91 more published on APIs.io
+
+#### Overlays (117)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [3Gpp Ts28104 Mdanrm Overlay](https://apis.io/overlays/3gpp/3gpp-ts28104-mdanrm-overlay/)
+- [3Gpp Ts28104 Mdareport Overlay](https://apis.io/overlays/3gpp/3gpp-ts28104-mdareport-overlay/)
+- [3Gpp Ts28105 Aimlnrm Overlay](https://apis.io/overlays/3gpp/3gpp-ts28105-aimlnrm-overlay/)
+- [3Gpp Ts28111 Faultnotifications Overlay](https://apis.io/overlays/3gpp/3gpp-ts28111-faultnotifications-overlay/)
+- [3Gpp Ts28111 Faultnrm Overlay](https://apis.io/overlays/3gpp/3gpp-ts28111-faultnrm-overlay/)
+- [3Gpp Ts28310 Energyinformationnrm Overlay](https://apis.io/overlays/3gpp/3gpp-ts28310-energyinformationnrm-overlay/)
+- [3Gpp Ts28312 Intentexpectations Overlay](https://apis.io/overlays/3gpp/3gpp-ts28312-intentexpectations-overlay/)
+- [3Gpp Ts28312 Intentnrm Overlay](https://apis.io/overlays/3gpp/3gpp-ts28312-intentnrm-overlay/)
+- [3Gpp Ts28317 Ranscnrm Overlay](https://apis.io/overlays/3gpp/3gpp-ts28317-ranscnrm-overlay/)
+- [3Gpp Ts28318 Dsonrm Overlay](https://apis.io/overlays/3gpp/3gpp-ts28318-dsonrm-overlay/)
+- [3Gpp Ts28319 Msacnrm Overlay](https://apis.io/overlays/3gpp/3gpp-ts28319-msacnrm-overlay/)
+- [3Gpp Ts28531 Nsprovmns Overlay](https://apis.io/overlays/3gpp/3gpp-ts28531-nsprovmns-overlay/)
+- [3Gpp Ts28531 Nssprovmns Overlay](https://apis.io/overlays/3gpp/3gpp-ts28531-nssprovmns-overlay/)
+- [3Gpp Ts28532 Filedatareportingmns Overlay](https://apis.io/overlays/3gpp/3gpp-ts28532-filedatareportingmns-overlay/)
+- [3Gpp Ts28532 Heartbeatntf Overlay](https://apis.io/overlays/3gpp/3gpp-ts28532-heartbeatntf-overlay/)
+- [3Gpp Ts28532 Perfmns Overlay](https://apis.io/overlays/3gpp/3gpp-ts28532-perfmns-overlay/)
+- [3Gpp Ts28532 Provmns Overlay](https://apis.io/overlays/3gpp/3gpp-ts28532-provmns-overlay/)
+- [3Gpp Ts28532 Streamingdatamns Overlay](https://apis.io/overlays/3gpp/3gpp-ts28532-streamingdatamns-overlay/)
+- [3Gpp Ts28536 Coslanrm Overlay](https://apis.io/overlays/3gpp/3gpp-ts28536-coslanrm-overlay/)
+- [3Gpp Ts28538 Edgenrm Overlay](https://apis.io/overlays/3gpp/3gpp-ts28538-edgenrm-overlay/)
+- [3Gpp Ts28541 5Gcnrm Overlay](https://apis.io/overlays/3gpp/3gpp-ts28541-5gcnrm-overlay/)
+- [3Gpp Ts28541 Nrnrm Overlay](https://apis.io/overlays/3gpp/3gpp-ts28541-nrnrm-overlay/)
+- [3Gpp Ts28541 Slicenrm Overlay](https://apis.io/overlays/3gpp/3gpp-ts28541-slicenrm-overlay/)
+- [3Gpp Ts28550 Perfmeasjobctrlmns Overlay](https://apis.io/overlays/3gpp/3gpp-ts28550-perfmeasjobctrlmns-overlay/)
+- [3Gpp Ts28561 Ndtnrm Overlay](https://apis.io/overlays/3gpp/3gpp-ts28561-ndtnrm-overlay/)
+- …and 92 more published on APIs.io
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [3Gpp Authentication](https://apis.io/security/3gpp/3gpp-authentication/)
+- [3Gpp Domain Security](https://apis.io/security/3gpp/3gpp-domain-security/)
+- [3Gpp Vulnerability Disclosure](https://apis.io/security/3gpp/3gpp-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [3Gpp Scopes](https://apis.io/scopes/3gpp/3gpp-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.3gpp.org/)
 - [Documentation](https://www.3gpp.org/specifications-technologies)
-- [SpecificationsArchive](https://www.3gpp.org/ftp/Specs/archive/)
-- [Portal](https://portal.3gpp.org/)
-- [SourceCode](https://forge.3gpp.org/rep/all/5G_APIs)
-- [SourceCode](https://forge.3gpp.org/rep/sa5/MnS)
-- [Tools](https://forge.3gpp.org/swagger/tools/parser.html)
+- [Getting started](https://forge.3gpp.org/rep/all/5G_APIs/-/blob/REL-20/README.md)
+- [API reference](https://www.3gpp.org/specifications-technologies/specifications-by-series)
+- [Support](https://www.3gpp.org/contact-us)
 - [Blog](https://www.3gpp.org/news-events)
-- [LinkedIn](https://www.linkedin.com/company/3gpp)
+- [Security](https://www.3gpp.org/delegates-corner/coordinated-vulnerability-disclosure)
+- [Terms of service](https://www.3gpp.org/terms-of-use)
+- [Privacy policy](https://www.3gpp.org/about-us/legal-matters/3gpp-privacy-policy)
 
-## Maintainers
+## API Evangelist rating
 
-- Kin Lane <kin@apievangelist.com>
+**Kin Score 46.3** — developing · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 50.7 |
+| Contract governance | 4.5 |
+| Operational transparency | 42.1 |
+| Developer ergonomics | 56.5 |
+| Access clarity | 10.5 |
+
+**Agent readiness 40.4** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | verified |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 41.7** — Telecommunications
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/3gpp/](https://apis.io/providers/3gpp/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for 3GPP: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/3gpp/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
